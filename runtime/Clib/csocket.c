@@ -20,12 +20,17 @@
 /*=====================================================================*/
 #if defined( _MSC_VER) || defined( _MINGW_VER )
 #  define _BGL_WIN32_VER
+#  define WINVER  _WIN32_WINNT_WINXP  /* minimum supported windows version XP */
+#  define _WIN32_WINNT _WIN32_WINNT_WINXP
+#  define __MSYS__  1 /* disable inclusion of winsock.h in windows.h */
+#      
 #endif
 
 #include <stddef.h>
 #include <bigloo_config.h>
 #include <time.h>
 #ifndef _BGL_WIN32_VER
+#   define SOCKOPTVALTYPE void*
 #   include <sys/types.h> 
 #   include <sys/socket.h>
 #   include <netinet/in.h>
@@ -43,13 +48,14 @@
 #     include <unistd.h>
 #   endif
 #else
-#   if defined( _MINGW_VER )
-#      include "windows.h"
-#   endif
-#   include <winsock2.h>
-#   include <mswsock.h>
+#   define SOCKOPTVALTYPE char*
+
 #   include <ws2tcpip.h>
+#   include <mswsock.h>
 #   include <io.h>
+#   ifndef AI_ADDRCONFIG
+#      define AI_ADDRCONFIG 0
+#   endif
 #endif
 #include <fcntl.h>
 #include <memory.h>
@@ -990,7 +996,7 @@ gethwaddr( char *intf ) {
 #if( BGL_HAVE_GETHWADDRS )
     struct ifreq buffer;
     int s;
-    if( (s = socket( PF_INET, SOCK_DGRAM, 0 )) == -1 ) {
+    if( BAD_SOCKET(s = socket( PF_INET, SOCK_DGRAM, 0 ))) {
        return BFALSE;
     } else {
        char buf[ 6 * 3 + 1 ];
@@ -1075,7 +1081,7 @@ bgl_gethostinterfaces() {
    obj_t res = BNIL;
    void *tmpAddrPtr = 0L;
 
-   if( (fd = socket( AF_INET, SOCK_DGRAM, 0 )) >= 0 ) {
+   if( !BAD_SOCKET(fd = socket( AF_INET, SOCK_DGRAM, 0 ))) {
       conf.ifc_len = sizeof( data );
       conf.ifc_buf = (caddr_t)data;
 
@@ -1136,7 +1142,7 @@ socket_startup() {
 
    result = setsockopt( INVALID_SOCKET,
 			SOL_SOCKET, SO_OPENTYPE,
-			(const char *)&val,
+			(SOCKOPTVALTYPE)&val,
 			sizeof( val ) );
    if( 0 != result ) {
       socket_error( "make_server_socket",
@@ -1397,7 +1403,7 @@ bgl_make_client_socket( obj_t hostname, int port, int timeo, obj_t inb, obj_t ou
 	       tcp_client_socket_error( hostname, port, "Connection failed", errno );
 	    } else {
 	       int len = sizeof( int );
-	       int r = getsockopt( s, SOL_SOCKET, SO_ERROR, (void *)&err, (socklen_t *)&len );
+	       int r = getsockopt( s, SOL_SOCKET, SO_ERROR, (SOCKOPTVALTYPE)&err, (socklen_t *)&len );
 
 	       if( (r < 0) || (err != 0) ) {
 		  /* we have experienced a failure so we */
@@ -1544,7 +1550,7 @@ bgl_make_server_socket( obj_t hostname, int portnum, int backlog ) {
 
    /* set the reuse flag */
    if( setsockopt( s, SOL_SOCKET, SO_REUSEADDR,
-		   &sock_opt, sizeof( sock_opt ) ) < 0 ) {
+		   (SOCKOPTVALTYPE)&sock_opt, sizeof( sock_opt ) ) < 0 ) {
 	 system_error( msg, BINT( portnum ) );
    }
 
@@ -1826,13 +1832,10 @@ get_socket_hostname( int fd, obj_t hostip ) {
    struct hostent *host = 0;
    char *hip = BSTRING_TO_STRING( hostip );
 
-#if( BGL_HAVE_INET_ATON || BGL_HAVE_INET_PTON )
    struct sockaddr_in sin;
-#else
-   struct sockaddr_in *sin;
-#endif      
+    
       
-#if( BGL_HAVE_GETADDRINFO )
+#if(BGL_HAVE_GETADDRINFO)
    socklen_t len = sizeof( sin );
 
    /* cannot fail because we have created the socket */
@@ -1842,19 +1845,22 @@ get_socket_hostname( int fd, obj_t hostip ) {
       sin.sin_family = AF_INET;
    }
 #endif
+
+
       
 #if( BGL_HAVE_INET_ATON )
    /* For IPv4 prefer inet_aton when available because it */
    /* supports more IP format than inet_pton.             */
    if( inet_aton( BSTRING_TO_STRING( hostip ), &(sin.sin_addr) ) )
       host = bglhostbyaddr( &sin );
+   
 #else
 #  if( BGL_HAVE_INET_PTON )	 
    if( inet_pton( AF_INET, BSTRING_TO_STRING( hostip ), &sin.sin_addr ) )
       host = bglhostbyaddr( &sin );
 #  else
-   sin = inet_addr( hostip );
-   host = bglhostbyaddr( sin );
+   sin.sin_addr.s_addr = inet_addr( BSTRING_TO_STRING( hostip ) );
+   host = bglhostbyaddr( &sin );
 #  endif
 #endif      
       
@@ -2028,7 +2034,7 @@ bgl_getprotobynumber( int number ) {
       type _v;								\
       socklen_t _l = sizeof( type );					\
       									\
-      if( getsockopt( SOCKET( s ).fd, level, optname, &_v, &_l ) ) {	\
+      if( getsockopt( SOCKET( s ).fd, level, optname, (SOCKOPTVALTYPE)&_v, &_l ) ) { \
 	 return BUNSPEC;						\
       } else {								\
 	 return conv( _v );						\
@@ -2043,7 +2049,7 @@ bgl_getprotobynumber( int number ) {
       type _v = val;							\
       socklen_t _l = sizeof( type );					\
       									\
-      if( setsockopt( SOCKET( s ).fd, level, optname, &_v, _l ) ) {	\
+      if( setsockopt( SOCKET( s ).fd, level, optname, (SOCKOPTVALTYPE)&_v, _l ) ) { \
 	 return BFALSE;							\
       } else {								\
 	 return s;							\
@@ -2303,7 +2309,7 @@ bgl_setsockopt( obj_t socket, obj_t option, obj_t val ) {
       mreq.imr_interface.s_addr = htonl( INADDR_ANY );
       
       if( setsockopt( SOCKET( socket ).fd, IPPROTO_IP,
-	 IP_ADD_MEMBERSHIP, &mreq, sizeof( struct ip_mreq ) ) )
+		      IP_ADD_MEMBERSHIP, (SOCKOPTVALTYPE)&mreq, sizeof( struct ip_mreq ) ) )
 	 return BFALSE;
       else
 	 return socket;
@@ -2320,7 +2326,7 @@ bgl_setsockopt( obj_t socket, obj_t option, obj_t val ) {
       mreq.imr_multiaddr.s_addr = inet_addr( BSTRING_TO_STRING( val ) );
       mreq.imr_interface.s_addr = htonl( INADDR_ANY );
       if( setsockopt( SOCKET( socket ).fd, IPPROTO_IP,
-	 IP_DROP_MEMBERSHIP, &mreq, sizeof( struct ip_mreq ) ) )
+		      IP_DROP_MEMBERSHIP, (SOCKOPTVALTYPE)&mreq, sizeof( struct ip_mreq ) ) )
 	 return BFALSE;
       else
 	 return socket;
@@ -2358,11 +2364,18 @@ datagram_socket_write( obj_t port, void *buf, size_t len ) {
 			"socket closed",
 			sock );
    }
-
-   if( (n = sendto( fd, buf, len, 0,
+    #ifdef _BGL_WIN32_VER
+    SOCKET s2 = _get_osfhandle(fd);
+    n = sendto( s2, buf, len, 0,
+	       (struct sockaddr *)&BGL_DATAGRAM_SOCKET( sock ).server,
+	       sizeof( struct sockaddr_in ));
+    #else
+    n = sendto( fd, buf, len, 0,
 		    (struct sockaddr *)&BGL_DATAGRAM_SOCKET( sock ).server,
-		    sizeof( struct sockaddr_in ) )) == -1 ) {
-      char buffer[ 512 ];
+		sizeof( struct sockaddr_in ));
+    #endif		     
+   if( n  == -1 ) {
+     char buffer[ 512 ];
       
       BGL_MUTEX_LOCK( socket_mutex );
       sprintf( buffer, "%s (%d)", strerror( errno ), errno );
@@ -2407,10 +2420,12 @@ bgl_make_datagram_client_socket( obj_t hostname, int port, bool_t broadcast ) {
       datagram_client_socket_error( hostname, port, "cannot create socket", errno );
    }
 
+   
+
    // configure the socket
    if( broadcast ) {
       int bcast = 1;
-      if( setsockopt( s, SOL_SOCKET, SO_BROADCAST, &bcast, sizeof( bcast ) ) == -1) {
+      if( setsockopt( s, SOL_SOCKET, SO_BROADCAST, (SOCKOPTVALTYPE)&bcast, sizeof( bcast ) ) == -1) {
 	 datagram_client_socket_error( hostname, port,
 				       "cannot configure socket for broadcast",
 				       errno );
@@ -2435,6 +2450,9 @@ bgl_make_datagram_client_socket( obj_t hostname, int port, bool_t broadcast ) {
    a_socket->datagram_socket_t.hostname = hname;
    a_socket->datagram_socket_t.hostip = bgl_inet_ntop( &(server->sin_addr) );
    a_socket->datagram_socket_t.stype = BGL_SOCKET_CLIENT;
+   #ifdef _BGL_WIN32_VER
+   s = _open_osfhandle( s, _O_RDWR );
+   #endif
    a_socket->datagram_socket_t.fd = s;
    
    /* socket port */
@@ -2498,13 +2516,13 @@ bgl_make_datagram_server_socket( int portnum ) {
    for( p = servinfo; p != NULL; p = p->ai_next ) {
       int sock_opt = 1;
       
-      if( (s = socket( p->ai_family, p->ai_socktype, p->ai_protocol )) == -1 ) {
+      if( BAD_SOCKET(s = (int)socket( p->ai_family, p->ai_socktype, p->ai_protocol ))) {
 	 socket_error( msg, "cannot create socket", BINT( portnum ) );
       }
 
       /* set the reuse flag */
       if( setsockopt( s, SOL_SOCKET, SO_REUSEADDR,
-		      &sock_opt, sizeof( sock_opt ) ) < 0 ) {
+		      (SOCKOPTVALTYPE)&sock_opt, sizeof( sock_opt ) ) < 0 ) {
 	 system_error( msg, BINT( portnum ) );
       }
 
@@ -2524,6 +2542,9 @@ bgl_make_datagram_server_socket( int portnum ) {
    sock->datagram_socket_t.portnum = portnum;
    sock->datagram_socket_t.hostname = BUNSPEC;
    sock->datagram_socket_t.hostip = BFALSE;
+   #ifdef _BGL_WIN32_VER
+   s = _open_osfhandle( s, _O_RDWR );
+   #endif
    sock->datagram_socket_t.fd = s;
    sock->datagram_socket_t.stype = BGL_SOCKET_SERVER;
 
@@ -2575,7 +2596,7 @@ bgl_make_datagram_unbound_socket( obj_t family ) {
       socket_error( msg, "unsupported socket family", family );
    }
 
-   if( (s = socket( fam, SOCK_DGRAM, 0 )) == -1 ) {
+   if( BAD_SOCKET(s = (int)socket( fam, SOCK_DGRAM, 0 ))) {
       socket_error( msg, "cannot create socket", family );
    }
 
@@ -2584,6 +2605,9 @@ bgl_make_datagram_unbound_socket( obj_t family ) {
    sock->datagram_socket_t.portnum = 0;
    sock->datagram_socket_t.hostname = BUNSPEC;
    sock->datagram_socket_t.hostip = BFALSE;
+   #ifdef _BGL_WIN32_VER
+   s = _open_osfhandle( s, _O_RDWR );
+   #endif
    sock->datagram_socket_t.fd = s;
    sock->datagram_socket_t.stype = BGL_SOCKET_SERVER;
 
@@ -2709,8 +2733,16 @@ bgl_datagram_socket_receive( obj_t sock, BGL_LONG_T sz ) {
    }
 
    addr_len = sizeof( their_addr );
-   if( (n = recvfrom( fd, buf, sz - 1 , 0,
-		      (struct sockaddr *)&their_addr, &addr_len )) == -1 ) {
+
+   #ifdef _BGL_WIN32_VER 
+   SOCKET s2 = _get_osfhandle(fd);
+   n = recvfrom( s2, buf, sz - 1 , 0,
+		 (struct sockaddr *)&their_addr, &addr_len );
+   #else
+   n = recvfrom( fd, buf, sz - 1 , 0,
+		 (struct sockaddr *)&their_addr, &addr_len );
+   #endif
+   if( n == -1 ) {
       socket_error( "datagram-socket-receive", "cannot receive datagram", sock );
    } else {
       obj_t env = BGL_CURRENT_DYNAMIC_ENV();
@@ -2750,6 +2782,7 @@ bgl_datagram_socket_send( obj_t sock, obj_t str, obj_t host, int port ) {
 			sock );
    }
 
+#if BGL_HAVE_INET_PTON 
    /* FIXME: No support for AF_UNIX, etc.  */
    if( !inet_pton( AF_INET, BSTRING_TO_STRING( host ),
 		   &((struct sockaddr_in *)&their_addr)->sin_addr ) ) {
@@ -2768,8 +2801,66 @@ bgl_datagram_socket_send( obj_t sock, obj_t str, obj_t host, int port ) {
       slen = sizeof( struct sockaddr_in );
    }
 
+#elif BGL_HAVE_GETADDRINFO
+   {
+     struct addrinfo hints;
+     struct addrinfo *results = NULL;
+     int ret = 0;
+     
+     memset(&hints, 0, sizeof(struct addrinfo));
+     hints.ai_family = AF_UNSPEC;
+     hints.ai_socktype = SOCK_DGRAM;
+     hints.ai_flags = 0;
+     hints.ai_protocol = 0;
+     
+     ret = getaddrinfo(BSTRING_TO_STRING( host ),
+		       NULL,
+		       &hints,
+		       &results);
+     
+     if(0 != ret || NULL == results){
+       socket_error( "datagram-socket-send",
+		     "cannot convert destination address", sock );
+     } else {
+       /* only use the first result */
+       if(AF_INET6 == results->ai_family){
+	 
+	 ((struct sockaddr_in6 *)&their_addr)->sin6_addr = ((struct sockaddr_in6*)&(results->ai_addr))->sin6_addr;
+	 ((struct sockaddr_in6 *)&their_addr)->sin6_port = htons( port );
+	 ((struct sockaddr *)&their_addr)->sa_family = AF_INET6;
+	 slen = sizeof( struct sockaddr_in6 );
+       
+       } else if (AF_INET == results->ai_family){
+	 
+	 ((struct sockaddr_in *)&their_addr)->sin_addr = ((struct sockaddr_in*)&(results->ai_addr))->sin_addr;
+	 ((struct sockaddr_in *)&their_addr)->sin_port = htons( port );
+	 ((struct sockaddr *)&their_addr)->sa_family = AF_INET;
+	 slen = sizeof( struct sockaddr_in );
+	 
+       }
+       
+     }
+
+     if(NULL != results){
+       freeaddrinfo(results);
+     }
+   }
+#else
+
+#error "inet_pton or getaddrinfo needed for bgl_datagram_socket_send"
+
+#endif /* BGL_HAVE_INET_PTON */
+
+
+   #ifdef _BGL_WIN32_VER
+   SOCKET s2 = _get_osfhandle(fd);
+   sent = sendto( s2, BSTRING_TO_STRING( str ), STRING_LENGTH( str ), 0,
+		  (struct sockaddr *) &their_addr, slen );
+   
+   #else
    sent = sendto( fd, BSTRING_TO_STRING( str ), STRING_LENGTH( str ), 0,
 		  (struct sockaddr *) &their_addr, slen );
+   #endif
    if( sent < 0 ) {
       socket_error( "datagram-socket-send", "cannot send datagram", sock );
    }
