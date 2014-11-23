@@ -542,7 +542,7 @@ make_real( double real ) {
 /*    make_belong ...                                                  */
 /*---------------------------------------------------------------------*/
 GC_API obj_t
-make_belong( long elong ) {
+make_belong( BGL_LONG_T elong ) {
    obj_t a_elong;
 
 #if( defined( GC_THREADS ) && defined( THREAD_LOCAL_ALLOC ) )

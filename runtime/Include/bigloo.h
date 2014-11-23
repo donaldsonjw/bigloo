@@ -605,7 +605,7 @@ typedef union scmobj {
    /* exact longs (i.e., boxed C longs) */
    struct elong {
       header_t header;
-      long elong;
+      BGL_LONG_T elong;
    } elong_t;
 
    /* long longs */
@@ -1765,7 +1765,7 @@ BGL_RUNTIME_DECL double bgl_infinity();
 /*---------------------------------------------------------------------*/
 #define DEFINE_ELONG( name, aux, num ) \
    static struct { __CNST_ALIGN header_t header; \
-                   long elong; } \
+                   BGL_LONG_T elong; } \
       const aux = { __CNST_FILLER, MAKE_HEADER( ELONG_TYPE, 0 ), num }; \
       const obj_t name = BREF( &(aux.header) )
 		 
