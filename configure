@@ -2566,7 +2566,7 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
   longlong_limbs=`$autoconf limbs --type="$longlong" --cflags="-I$bootdir/lib/$release -L$bootdir/lib/$release"` || exit 1
 
   long_sign_bit=`$autoconf signbit --type="$bgl_long" --alignment="$alignment"` || exit 1
-  elong_sign_bit=`$autoconf signbit --type=long --alignment=0` || exit 1
+  elong_sign_bit=`$autoconf signbit --type="$bgl_long" --alignment=0` || exit 1
   llong_sign_bit=`$autoconf signbit --type="$longlong" --alignment=0` || exit 1
   
   # Is sigchld available for us
