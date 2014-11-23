@@ -1,0 +1,137 @@
+<!-- 95% W3C COMPLIANT, 95% CSS FREE, RAW HTML -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<title>Bdb</title>
+ <style type="text/css">
+  <!--
+  pre { font-family: monospace }
+  tt { font-family: monospace }
+  code { font-family: monospace }
+  p.flushright { text-align: right }
+  p.flushleft { text-align: left }
+  span.sc { font-variant: small-caps }
+  span.sf { font-family: sans-serif }
+  span.skribetitle { font-family: sans-serif; font-weight: bolder; font-size: x-large; }
+  span.refscreen { }
+  span.refprint { display: none; }
+  -->
+ </style>
+</head>
+
+<body class="chapter" bgcolor="#ffffff">
+<table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>6. Bdb<br/>The ``Bigloo Debugger''<br/>Nov 1999 -- Examining the Stack</big></big></big></strong></div><center>
+</center>
+</td></tr></tbody></table>
+<table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
+<td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
+<br/><center id='center1563'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc1553" align="center" colspan="1"><font color="#ffffff"><strong id='bold1551'
+>main page</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc1560" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc1556" align="left" valign="top" colspan="1"><strong id='bold1555'
+>top:</strong></td><td id="tc1557" align="right" valign="top" colspan="1"><a href="bdb.html#Bdb-The-``Bigloo-Debugger''-Nov-1999" class="inbound">Bdb<br/>The ``Bigloo Debugger''<br/>Nov 1999</a></td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center1573'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc1567" align="center" colspan="1"><font color="#ffffff"><strong id='bold1565'
+>Examining the Stack</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc1570" align="center" colspan="1"></td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center1583'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc1577" align="center" colspan="1"><font color="#ffffff"><strong id='bold1575'
+>Chapters</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc1580" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tbody>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bdb-1.html#Bdb-Copying-Conditions">Bdb Copying Conditions</a></td></tr>
+ <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bdb-2.html#Table-of-contents">Table of contents</a></td></tr>
+ <tr><td valign="top" align="left">2</td><td colspan="4" width="100%"><a href="bdb-3.html#Overview">Overview</a></td></tr>
+ <tr><td valign="top" align="left">3</td><td colspan="4" width="100%"><a href="bdb-4.html#Running-Programs-Under-BDB">Running Programs Under BDB</a></td></tr>
+ <tr><td valign="top" align="left">4</td><td colspan="4" width="100%"><a href="bdb-5.html#Stopping">Stopping</a></td></tr>
+ <tr><td valign="top" align="left">5</td><td colspan="4" width="100%"><a href="bdb-6.html#Continuing-execution-after-a-breakpoint">Continuing execution after a breakpoint</a></td></tr>
+ <tr><td valign="top" align="left">6</td><td colspan="4" width="100%"><a href="bdb-7.html#Examining-the-Stack">Examining the Stack</a></td></tr>
+ <tr><td valign="top" align="left">7</td><td colspan="4" width="100%"><a href="bdb-8.html#Using-BDB-under-Emacs">Using BDB under Emacs</a></td></tr>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bdb-9.html#Bibliography">Bibliography</a></td></tr>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bdb-10.html#Index">Index</a></td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody></table>
+</center>
+</div></td>
+<td align="left" valign="top" class="skribe-body"><div class="skribe-body">
+<a name="Stack" class="mark"></a><a name="g1218" class="mark"></a>
+When your program has stopped, the first thing you need to know is
+where it stopped and how it got there. All GDB commands apply here
+See info-file ` gdb.info', Gdb. These commands let you inspect and browse
+the C stack. In addition you may inspect the stack restricted to Bigloo
+stack frames.<br/><br/><dl class="description" id='description1263'
+> <dt><code id='code1221'
+>info stack</code></dt> <dt><code id='code1222'
+>
+</code></dt> <dt><code id='code1223'
+>i s</code></dt> <dt><code id='code1224'
+>
+</code></dt><dd><a name="g1225" class="mark"></a>Print the current stack frames. These frames may be inspected in turn
+with the <code id='code1227'
+>frame</code> command.<br/><br/></dd>
+ <dt><code id='code1230'
+>info args</code></dt> <dt><code id='code1231'
+>
+</code></dt> <dt><code id='code1232'
+>i a</code></dt> <dt><code id='code1233'
+>
+</code></dt><dd><a name="g1234" class="mark"></a>Print the arguments of the selected frame, each on a separate line.<br/><br/></dd>
+ <dt><code id='code1238'
+>cinfo args</code></dt> <dt><code id='code1239'
+>
+</code></dt> <dt><code id='code1240'
+>ci a</code></dt> <dt><code id='code1241'
+>
+</code></dt><dd><a name="g1242" class="mark"></a>If the current stack frame belongs to a Bigloo function then the arguments
+hold Bigloo values. The <code id='code1244'
+>info args</code> displays the Bigloo values
+of these arguments. In some situation it is useful to access the C 
+representation for these arguments. This can be achieved by the 
+<code id='code1245'
+>cinfo args</code> command that forces BDB not to interpret the current 
+function as a Bigloo function.<br/><br/></dd>
+ <dt><code id='code1248'
+>info locals</code></dt> <dt><code id='code1249'
+>
+</code></dt> <dt><code id='code1250'
+>i l</code></dt> <dt><code id='code1251'
+>
+</code></dt><dd><a name="g1252" class="mark"></a>Print the local variables of the selected frame, each on a separate
+line. <br/><br/></dd>
+ <dt><code id='code1256'
+>cinfo locals</code></dt> <dt><code id='code1257'
+>
+</code></dt> <dt><code id='code1258'
+>ci a</code></dt> <dt><code id='code1259'
+>
+</code></dt><dd><a name="g1260" class="mark"></a>
+Print the local variables as if they were C variables, each on a separate
+line.
+</dd>
+</dl>
+</div></td>
+</tr></table><div class="skribe-ending">
+<hr> 
+<p class="ending" id='paragraph1589'
+><font size="-1">
+This <span class="sc">Html</span> page has been produced by 
+<a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
+<br/>
+Last update <em id='it1587'
+>Fri Nov 14 08:51:47 2014</em>.</font></p></div>
+</body>
+</html>

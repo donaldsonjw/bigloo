@@ -1,0 +1,162 @@
+<!-- 95% W3C COMPLIANT, 95% CSS FREE, RAW HTML -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<title>Bdb</title>
+ <style type="text/css">
+  <!--
+  pre { font-family: monospace }
+  tt { font-family: monospace }
+  code { font-family: monospace }
+  p.flushright { text-align: right }
+  p.flushleft { text-align: left }
+  span.sc { font-variant: small-caps }
+  span.sf { font-family: sans-serif }
+  span.skribetitle { font-family: sans-serif; font-weight: bolder; font-size: x-large; }
+  span.refscreen { }
+  span.refprint { display: none; }
+  -->
+ </style>
+</head>
+
+<body class="chapter" bgcolor="#ffffff">
+<table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>4. Bdb<br/>The ``Bigloo Debugger''<br/>Nov 1999 -- Stopping</big></big></big></strong></div><center>
+</center>
+</td></tr></tbody></table>
+<table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
+<td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
+<br/><center id='center1483'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc1473" align="center" colspan="1"><font color="#ffffff"><strong id='bold1471'
+>main page</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc1480" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc1476" align="left" valign="top" colspan="1"><strong id='bold1475'
+>top:</strong></td><td id="tc1477" align="right" valign="top" colspan="1"><a href="bdb.html#Bdb-The-``Bigloo-Debugger''-Nov-1999" class="inbound">Bdb<br/>The ``Bigloo Debugger''<br/>Nov 1999</a></td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center1493'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc1487" align="center" colspan="1"><font color="#ffffff"><strong id='bold1485'
+>Stopping</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc1490" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tbody>
+ <tr><td valign="top" align="left">4.1</td><td colspan="4" width="100%"><a href="bdb-5.html#Setting-breakpoints">Setting breakpoints</a></td></tr>
+ <tr><td valign="top" align="left">4.2</td><td colspan="4" width="100%"><a href="bdb-5.html#Break-conditions">Break conditions</a></td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center1503'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc1497" align="center" colspan="1"><font color="#ffffff"><strong id='bold1495'
+>Chapters</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc1500" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tbody>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bdb-1.html#Bdb-Copying-Conditions">Bdb Copying Conditions</a></td></tr>
+ <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bdb-2.html#Table-of-contents">Table of contents</a></td></tr>
+ <tr><td valign="top" align="left">2</td><td colspan="4" width="100%"><a href="bdb-3.html#Overview">Overview</a></td></tr>
+ <tr><td valign="top" align="left">3</td><td colspan="4" width="100%"><a href="bdb-4.html#Running-Programs-Under-BDB">Running Programs Under BDB</a></td></tr>
+ <tr><td valign="top" align="left">4</td><td colspan="4" width="100%"><a href="bdb-5.html#Stopping">Stopping</a></td></tr>
+ <tr><td valign="top" align="left">5</td><td colspan="4" width="100%"><a href="bdb-6.html#Continuing-execution-after-a-breakpoint">Continuing execution after a breakpoint</a></td></tr>
+ <tr><td valign="top" align="left">6</td><td colspan="4" width="100%"><a href="bdb-7.html#Examining-the-Stack">Examining the Stack</a></td></tr>
+ <tr><td valign="top" align="left">7</td><td colspan="4" width="100%"><a href="bdb-8.html#Using-BDB-under-Emacs">Using BDB under Emacs</a></td></tr>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bdb-9.html#Bibliography">Bibliography</a></td></tr>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bdb-10.html#Index">Index</a></td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody></table>
+</center>
+</div></td>
+<td align="left" valign="top" class="skribe-body"><div class="skribe-body">
+<a name="Stopping" class="mark"></a><a name="g1102" class="mark"></a>
+In addition to the GDB commands, BDB enables breakpoints inside
+Bigloo source code 
+
+
+<!-- Setting breakpoints -->
+<a name="Setting-breakpoints"></a>
+<div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">4.1 Setting breakpoints</font>
+</h3></td></tr></table>
+</div><div class="section">
+<a name="Set-Breaks" class="mark"></a>
+You may use any of the GDB commands to set breakpoints
+The key point is that none of these
+commands know Bigloo identifiers. Setting breakpoints inside Bigloo
+functions requires special BDB commands:<br/><br/><dl class="description" id='description1131'
+> <dt><code id='code1105'
+>break FUNCTION</code></dt> <dt><code id='code1106'
+>
+</code></dt> <dt><code id='code1107'
+>b FUNCTION</code></dt> <dt><code id='code1108'
+>
+</code></dt><dd><a name="g1109" class="mark"></a>Set a breakpoint at entry to the function <code id='code1112'
+><em id='it1111'
+>FUNCTION</em></code>. IF <code id='code1114'
+><em id='it1113'
+>FUNCTION</em></code>
+is an  uppercase symbol, <code id='code1116'
+><em id='it1115'
+>FUNCTION</em></code> is interpreted as the name of a Bigloo
+function. If <code id='code1118'
+><em id='it1117'
+>FUNCTION</em></code> contains at least one lower case character it 
+is interpreted as the name of a C function.<br/><br/></dd>
+ <dt><code id='code1121'
+>tbreak FUNCTION</code></dt> <dt><code id='code1122'
+>
+</code></dt> <dt><code id='code1123'
+>tb FUNCTION</code></dt> <dt><code id='code1124'
+>
+</code></dt><dd><a name="g1125" class="mark"></a>Set a temporary breakpoint at entry to the function <code id='code1128'
+><em id='it1127'
+>FUNCTION</em></code>.<br/><br/></dd>
+</dl>
+</div><br>
+<!-- Break conditions -->
+<a name="Break-conditions"></a>
+<div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">4.2 Break conditions</font>
+</h3></td></tr></table>
+</div><div class="section">
+<a name="Conditions" class="mark"></a>
+Conditions may be associated with breakpoints inside debugged code.
+The syntax is:<br/><br/><dl class="description" id='description1148'
+> <dt><code id='code1133'
+>bcond BNUM EXPRESSION</code></dt> <dt><code id='code1134'
+>
+</code></dt><dd><a name="g1135" class="mark"></a>Specify <code id='code1138'
+><em id='it1137'
+>EXPRESSION</em></code> as the break condition for breakpoint number 
+<code id='code1140'
+><em id='it1139'
+>BNUM</em></code>. <code id='code1142'
+><em id='it1141'
+>EXPRESSION</em></code> is an expression that is evaluated in the 
+environment of the breakpoint. That is <code id='code1144'
+><em id='it1143'
+>EXPRESSION</em></code> may uses local 
+variables. If <code id='code1146'
+><em id='it1145'
+>EXPRESSION</em></code> is made of uppercase symbols, it is
+interpreted as a Bigloo expression and is thus evaluated by the Bigloo
+interpreter. Otherwise it is interpreted as a C expression.
+</dd>
+</dl>
+</div><br>
+</div></td>
+</tr></table><div class="skribe-ending">
+<hr> 
+<p class="ending" id='paragraph1509'
+><font size="-1">
+This <span class="sc">Html</span> page has been produced by 
+<a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
+<br/>
+Last update <em id='it1507'
+>Fri Nov 14 08:51:47 2014</em>.</font></p></div>
+</body>
+</html>

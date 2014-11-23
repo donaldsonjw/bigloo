@@ -1,0 +1,82 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/flac.scm,2088
+(module __flac_flac15,963
+(define (flac-decoder?29,1449
+(define (make-flac-decoder29,1449
+(define (fill-flac-decoder!29,1449
+   (export (class flac-decoder29,1449
+(define (flac-decoder-flac-decoder-init-set!30,1480
+(define (flac-decoder-flac-decoder-init30,1480
+(define (flac-decoder-$builtin::$flac-decoder31,1507
+(define (flac-decoder-%flacbuf::custom-set!32,1581
+(define (flac-decoder-%flacbuf::custom32,1581
+(define (flac-decoder-outbuf::bstring-set!33,1638
+(define (flac-decoder-outbuf::bstring33,1638
+(define (flac-decoder-%eof::bool-set!34,1676
+(define (flac-decoder-%eof::bool34,1676
+(define (flac-decoder-%sample::long-set!35,1709
+(define (flac-decoder-%sample::long35,1709
+(define (flac-decoder-%volume::double-set!36,1744
+(define (flac-decoder-%volume::double36,1744
+(define (flac-decoder-md5check::bool37,1782
+(define (flac-decoder-%bchecksum::int-set!38,1829
+(define (flac-decoder-%bchecksum::int38,1829
+(define (flac-decoder-%rchecksum::int-set!39,1869
+(define (flac-decoder-%rchecksum::int39,1869
+(define (&flac-error?41,1911
+(define (make-&flac-error41,1911
+(define (fill-&flac-error!41,1911
+	   (class &flac-error41,1911
+(define-method (object-print o::flac-decoder port print-slot68,3066
+(define (%$flac-decoder-new74,3391
+(define (%$flac-make-custom80,3667
+(define-generic (flac-decoder-init86,3945
+(define-generic (flac-decoder-close96,4450
+(define-generic (flac-decoder-decode104,4817
+(define-generic (flac-decoder-reset!115,5309
+(define (flac-decoder-get-state124,5765
+(define-generic (flac-decoder-read131,6152
+(define-generic (flac-decoder-write137,6444
+(define-generic (flac-decoder-metadata146,6794
+(define-generic (flac-decoder-tell155,7144
+(define-generic (flac-decoder-seek161,7426
+(define-generic (flac-decoder-length167,7715
+(define-generic (flac-decoder-info173,7999
+(define (flac-decoder-state->symbol181,8422
+(define (flac-error-status209,9623
+(define-generic (flac-decoder-position225,10266
+(define-generic (flac-volume-get237,10743
+(define-generic (flac-volume-set!244,11111
+(define (flac-error253,11556
+
+Llib/flac_alsadec.scm,754
+(module __flac_alsadec15,963
+(define (flac-alsa?32,1424
+(define (make-flac-alsa32,1424
+(define (fill-flac-alsa!32,1424
+   (static (class flac-alsa32,1424
+(define (flac-alsa-%alsamusic-set!33,1466
+(define (flac-alsa-%alsamusic33,1466
+(define (flac-alsa-%buffer-set!34,1499
+(define (flac-alsa-%buffer34,1499
+(define (flac-alsa-%decoder-set!35,1529
+(define (flac-alsa-%decoder35,1529
+(define (flac-alsa-%rate::int-set!36,1560
+(define (flac-alsa-%rate::int36,1560
+(define (flac-alsa-%rate-max::int-set!37,1593
+(define (flac-alsa-%rate-max::int37,1593
+(define (flac-alsa-%rate-min::int-set!38,1630
+(define (flac-alsa-%rate-min::int38,1630
+(define (flac-alsa-%last-percentage::int-set!39,1667
+(define (flac-alsa-%last-percentage::int39,1667

@@ -1,0 +1,261 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/alsa.scm,293
+(module __alsa_alsa15,963
+(define (&alsa-error?28,1208
+(define (make-&alsa-error28,1208
+(define (fill-&alsa-error!28,1208
+	   (class &alsa-error28,1208
+(define-generic (alsa-init37,1596
+(define (alsa-error43,1868
+(define (alsa-snd-version53,2219
+(define (alsa-snd-devices-list59,2498
+
+Llib/pcm.scm,1585
+(module __alsa_pcm15,963
+(define (alsa-snd-pcm?21,1033
+(define (make-alsa-snd-pcm21,1033
+(define (fill-alsa-snd-pcm!21,1033
+   (export (class alsa-snd-pcm21,1033
+(define (alsa-snd-pcm-$builtin::$snd-pcm22,1077
+(define (alsa-snd-pcm-name::bstring-set!23,1141
+(define (alsa-snd-pcm-name::bstring23,1141
+(define (alsa-snd-pcm-device::bstring24,1177
+(define (alsa-snd-pcm-stream::symbol25,1232
+(define (alsa-snd-pcm-mode::symbol26,1286
+(define-method (object-print o::alsa-snd-pcm port print-slot58,2718
+(define (%$snd-pcm-nil69,3215
+(define (alsa-snd-pcm-open75,3481
+(define (alsa-snd-pcm-close97,4267
+(define (alsa-snd-pcm-get-state106,4714
+(define (alsa-snd-pcm-avail129,5650
+(define (alsa-snd-pcm-avail-update136,6002
+(define (symbol->stream143,6368
+(define (symbol->pcm-mode155,6873
+(define (symbol->format168,7358
+(define (symbol->access226,9753
+(define (alsa-snd-pcm-set-params!241,10464
+(define (alsa-snd-pcm-writei260,11177
+(define (alsa-snd-pcm-pause273,11738
+(define (alsa-snd-pcm-wait286,12281
+(define (alsa-snd-pcm-reset299,12815
+(define (alsa-snd-pcm-recover312,13339
+(define (alsa-snd-pcm-prepare325,13894
+(define (alsa-snd-pcm-start338,14424
+(define (alsa-snd-pcm-drop351,14948
+(define (alsa-snd-pcm-drain364,15469
+(define (alsa-snd-pcm-cleanup377,15993
+(define (alsa-snd-pcm-hw-set-params!408,16852
+(define (alsa-snd-pcm-hw-params-get-buffer-size499,19931
+(define (alsa-snd-pcm-hw-params-get-buffer-time514,20546
+(define (alsa-snd-pcm-sw-set-params!529,21158
+(define (alsa-snd-pcm-write575,22763
+(define (alsa-snd-pcm-flush581,23082
+
+Llib/card.scm,344
+(module __alsa_card15,963
+(define (alsa-snd-card?21,1037
+(define (make-alsa-snd-card21,1037
+(define (fill-alsa-snd-card!21,1037
+   (export (class alsa-snd-card21,1037
+(define (alsa-snd-card-card::int22,1082
+(define (alsa-snd-card-name::bstring23,1111
+(define (alsa-snd-card-longname::bstring24,1144
+(define (alsa-snd-cards-list31,1444
+
+Llib/control.scm,1167
+(module __alsa_control15,963
+(define (alsa-snd-ctl?21,1038
+(define (make-alsa-snd-ctl21,1038
+(define (fill-alsa-snd-ctl!21,1038
+   (export  (class alsa-snd-ctl21,1038
+(define (alsa-snd-ctl-$builtin::$snd-ctl22,1083
+(define (alsa-snd-ctl-card::bstring23,1148
+(define (alsa-snd-ctl-mode::symbol24,1202
+(define (alsa-snd-ctl-card-info?26,1256
+(define (make-alsa-snd-ctl-card-info26,1256
+(define (fill-alsa-snd-ctl-card-info!26,1256
+	    (class alsa-snd-ctl-card-info26,1256
+(define (alsa-snd-ctl-card-info-ctl::alsa-snd-ctl27,1304
+(define (alsa-snd-ctl-card-info-card::int28,1342
+(define (alsa-snd-ctl-card-info-id::bstring29,1384
+(define (alsa-snd-ctl-card-info-driver::bstring30,1429
+(define (alsa-snd-ctl-card-info-name::bstring31,1478
+(define (alsa-snd-ctl-card-info-longname::bstring32,1525
+(define (alsa-snd-ctl-card-info-mixername::bstring33,1576
+(define (alsa-snd-ctl-card-info-components::bstring34,1628
+(define (%$snd-ctl-nil44,2027
+(define (%$snd-ctl-card-info-nil50,2293
+(define-method (alsa-init o::alsa-snd-ctl-card-info56,2579
+(define (alsa-snd-ctl-open62,2891
+(define (alsa-snd-ctl-close80,3588
+(define (symbol->ctl-mode88,3973
+
+Llib/mixer.scm,457
+(module __alsa_mixer15,963
+(define (alsa-snd-mixer?21,1036
+(define (make-alsa-snd-mixer21,1036
+(define (fill-alsa-snd-mixer!21,1036
+   (export  (class alsa-snd-mixer21,1036
+(define (alsa-snd-mixer-$builtin::$snd-mixer22,1083
+(define (%$snd-mixer-nil35,1658
+(define (alsa-snd-mixer-open41,1928
+(define (alsa-snd-mixer-close59,2599
+(define (alsa-snd-mixer-attach67,2998
+(define (alsa-snd-mixer-load80,3582
+(define (alsa-snd-mixer-get-count97,4263
+
+Llib/music.scm,6744
+(module __alsa_music15,963
+(define (alsaportbuffer?22,1058
+(define (make-alsaportbuffer22,1058
+(define (fill-alsaportbuffer!22,1058
+   (static  (class alsaportbuffer22,1058
+(define (alsaportbuffer-port::input-port23,1104
+(define (alsaportbuffer-readsz::long24,1141
+(define (alsaportbuffer-%inbuf::bstring25,1189
+(define (alsaportbuffer-%nexttail::long-set!26,1225
+(define (alsaportbuffer-%nexttail::long26,1225
+(define (alsaportbuffer-%seek::elong-set!27,1263
+(define (alsaportbuffer-%seek::elong27,1263
+(define (alsammapbuffer?29,1308
+(define (make-alsammapbuffer29,1308
+(define (fill-alsammapbuffer!29,1308
+	    (class alsammapbuffer29,1308
+(define (alsammapbuffer-mmap::mmap30,1347
+(define (alsamusic?32,1386
+(define (make-alsamusic32,1386
+(define (fill-alsamusic!32,1386
+   (export  (class alsamusic32,1386
+(define (alsamusic-inbuf::bstring33,1422
+(define (alsamusic-pcm::alsa-snd-pcm35,1506
+(define (alsamusic-decoders::pair-nil36,1582
+(define (alsamusic-mkthread::procedure37,1635
+(define (alsamusic-timeout-set!38,1697
+(define (alsamusic-timeout38,1697
+(define (alsamusic-%decoder-set!39,1742
+(define (alsamusic-%decoder39,1742
+(define (alsamusic-%buffer-set!40,1774
+(define (alsamusic-%buffer40,1774
+(define (alsamusic-%nextbuffer-set!41,1805
+(define (alsamusic-%nextbuffer41,1805
+(define (alsamusic-%playlist::pair-nil-set!43,1849
+(define (alsamusic-%playlist::pair-nil43,1849
+(define (alsamusic-%aready::bool-set!44,1893
+(define (alsamusic-%aready::bool44,1893
+(define (alsamusic-%amutex::mutex45,1930
+(define (alsamusic-%!pid::int-set!46,1988
+(define (alsamusic-%!pid::int46,1988
+(define (alsamusic-%acondv::condvar47,2022
+(define (alsamusic-%error::obj-set!48,2095
+(define (alsamusic-%error::obj48,2095
+(define (alsabuffer?50,2132
+(define (make-alsabuffer50,2132
+(define (fill-alsabuffer!50,2132
+	    (class alsabuffer50,2132
+(define (alsabuffer-url::bstring51,2155
+(define (alsabuffer-%eof::bool-set!52,2188
+(define (alsabuffer-%eof::bool52,2188
+(define (alsabuffer-%bcondv::condvar53,2222
+(define (alsabuffer-%bmutex::mutex54,2295
+(define (alsabuffer-%inlen::long55,2353
+(define (alsabuffer-%inbufp::string56,2386
+(define (alsabuffer-%head::long-set!57,2422
+(define (alsabuffer-%head::long57,2422
+(define (alsabuffer-%tail::long-set!58,2456
+(define (alsabuffer-%tail::long58,2456
+(define (alsabuffer-%empty::bool-set!59,2490
+(define (alsabuffer-%empty::bool59,2490
+(define (alsadecoder?61,2533
+(define (make-alsadecoder61,2533
+(define (fill-alsadecoder!61,2533
+	    (class alsadecoder61,2533
+(define (alsadecoder-alsadecoder-init-set!62,2557
+(define (alsadecoder-alsadecoder-init62,2557
+(define (alsadecoder-mimetypes::pair-nil-set!63,2584
+(define (alsadecoder-mimetypes::pair-nil63,2584
+(define (alsadecoder-buffer-time-near::int-set!64,2628
+(define (alsadecoder-buffer-time-near::int64,2628
+(define (alsadecoder-buffer-size-near-ratio::int-set!65,2677
+(define (alsadecoder-buffer-size-near-ratio::int65,2677
+(define (alsadecoder-period-size-near-ratio::int-set!66,2727
+(define (alsadecoder-period-size-near-ratio::int66,2727
+(define (alsadecoder-%!dpause::bool-set!67,2777
+(define (alsadecoder-%!dpause::bool67,2777
+(define (alsadecoder-%!dabort::bool-set!68,2815
+(define (alsadecoder-%!dabort::bool68,2815
+(define (alsadecoder-%!stop::bool-set!69,2853
+(define (alsadecoder-%!stop::bool69,2853
+(define (alsadecoder-%dmutex::mutex70,2889
+(define (alsadecoder-%dcondv::condvar71,2947
+(define (alsadecoder-%doutcondv::condvar72,3020
+(define-macro ($compiler-debug96,4249
+(define (alsa-debug102,4542
+(define *error-sleep-duration*110,4852
+(define-method (music-init o::alsamusic116,5126
+(define-method (music-close o::alsamusic126,5581
+(define-method (music-closed? o::alsamusic135,6018
+(define-method (music-reset! o::alsamusic143,6409
+(define-method (music-status o::alsamusic149,6698
+(define-method (music-playlist-get o::alsamusic161,7277
+(define-method (music-playlist-add! o::alsamusic s168,7608
+(define-method (music-playlist-delete! o::alsamusic n179,8175
+(define-method (music-playlist-clear! o::alsamusic191,8817
+(define-method (music-can-play-type? o::alsamusic mimetype::bstring202,9309
+(define-method (music-seek o::alsamusic pos . song209,9720
+(define (url-song-length223,10312
+(define (open-file237,10892
+(define-method (music-play o::alsamusic . s251,11399
+(define-method (music-stop o::alsamusic530,20155
+(define (alsamusic-wait-ready!539,20559
+(define (alsabuffer-abort!560,21357
+(define (alsadecoder-abort!570,21794
+(define-method (music-pause o::alsamusic580,22242
+(define (alsadecoder-pause589,22656
+(define-generic (alsabuffer-fill!601,23128
+(define-method (alsabuffer-fill! buffer::alsaportbuffer o::alsamusic606,23422
+(define-method (alsabuffer-fill! buffer::alsammapbuffer o::alsamusic672,25316
+(define-generic (alsadecoder-decode684,25881
+(define-method (music-volume-get o::alsamusic689,26184
+(define-method (music-volume-set! o::alsamusic vol697,26554
+(define-generic (alsadecoder-init707,27051
+(define-generic (alsadecoder-reset!713,27330
+(define-generic (alsadecoder-close723,27745
+(define-generic (alsadecoder-can-play-type?728,28023
+(define-generic (alsabuffer-stream735,28395
+(define-method (alsabuffer-stream o::alsaportbuffer741,28675
+(define-method (alsabuffer-stream o::alsammapbuffer748,29005
+(define-generic (alsabuffer-close755,29335
+(define-method (alsabuffer-close o::alsaportbuffer760,29608
+(define-method (alsabuffer-close o::alsammapbuffer767,29956
+(define-generic (alsabuffer-length774,30298
+(define-method (alsabuffer-length o::alsaportbuffer780,30588
+(define-method (alsabuffer-length o::alsammapbuffer787,30938
+(define-generic (alsabuffer-tell794,31282
+(define-method (alsabuffer-tell o::alsaportbuffer800,31560
+(define-method (alsabuffer-tell o::alsammapbuffer808,32010
+(define-generic (alsabuffer-seek815,32356
+(define-method (alsabuffer-seek buffer::alsaportbuffer offset820,32640
+(define-method (alsabuffer-seek buffer::alsammapbuffer offset838,33412
+(define-generic (alsabuffer-substring850,33900
+(define-method (alsabuffer-substring buffer::alsaportbuffer start end855,34192
+(define-method (alsabuffer-substring buffer::alsammapbuffer start end863,34606
+(define-generic (alsabuffer-blit-string!870,35018
+(define-method (alsabuffer-blit-string! buf::alsaportbuffer s0 string s1 len875,35317
+(define-method (alsabuffer-blit-string! buf::alsammapbuffer s0 string s1 len882,35710
+(define-generic (alsabuffer-available892,36188
+(define-generic (alsadecoder-position903,36659
+(define-generic (alsadecoder-info908,36951
+(define-generic (alsadecoder-seek913,37225
+(define-generic (alsadecoder-volume-set!918,37508
+(define (mime-type923,37797

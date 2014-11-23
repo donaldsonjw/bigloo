@@ -1,0 +1,95 @@
+Source: bigloo
+Section: user/programming
+Priority: optional
+Maintainer: unknown <Manuel.Serrano@inria.fr>
+Build-Depends: debhelper (>= 4.0.0), @EXTRABUILDDEPEND@
+Standards-Version: 3.6.1
+
+Package: bigloo-libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, @EXTRADEPEND@
+Description: Bigloo core Libraries
+ Base Bigloo Libraries, including standard runtime for Bigloo executables.
+
+@IFSSL@ Package: libssl-bigloo
+@IFSSL@ Architecture: any
+@IFSSL@ Depends: @LIBSSLDEPEND@, bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @EXTRADEPEND@
+@IFSSL@ Description: Bigloo bindings for OpenSSL.
+
+@IFALSA@ Package: libalsa-bigloo
+@IFALSA@ Architecture: any
+@IFALSA@ Depends: libasound2, bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @SSLDEPEND@, @EXTRADEPEND@
+@IFALSA@ Description: Bigloo bindings for the ALSA library
+
+@IFFLAC@ Package: libflac-bigloo
+@IFFLAC@ Architecture: any
+@IFFLAC@ Depends: libflac8, libalsa-bigloo, bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @FLACDEPEND@, @EXTRADEPEND@
+@IFFLAC@ Description: Bigloo bindings for the FLAC library
+
+@IFWAV@ Package: libwav-bigloo
+@IFWAV@ Architecture: any
+@IFWAV@ Depends: libalsa-bigloo, bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @WAVDEPEND@, @EXTRADEPEND@
+@IFWAV@ Description: Bigloo bindings handling WAV resources
+
+@IFMPG123@ Package: libmpg123-bigloo
+@IFMPG123@ Architecture: any
+@IFMPG123@ Depends: libmpg123-0, libalsa-bigloo, bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @MPG123DEPEND@, @EXTRADEPEND@
+@IFMPG123@ Description: Bigloo bindings for the MPG123 library
+
+@IFAVAHI@ Package: libavahi-bigloo
+@IFAVAHI@ Architecture: any
+@IFAVAHI@ Depends: bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @AVAHIDEPEND@, @EXTRADEPEND@
+@IFAVAHI@ Description: Bigloo bindings for the AVAHI library
+
+@IFSQLITE@ Package: libsqlite-bigloo
+@IFSQLITE@ Architecture: any
+@IFSQLITE@ Depends: libsqlite3-0, bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @SQLITEDEPEND@, @EXTRADEPEND@
+@IFSQLITE@ Description: Bigloo bindings for the SQLITE library
+
+@IFPKGLIB@ Package: libpkglib-bigloo
+@IFPKGLIB@ Architecture: any
+@IFPKGLIB@ Depends: libsqlite-bigloo, bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @PKGLIBDEPEND@, @EXTRADEPEND@
+@IFPKGLIB@ Description: Bigloo PKG library
+
+@IFGSTREAMER@ Package: libgstreamer-bigloo
+@IFGSTREAMER@ Architecture: any
+@IFGSTREAMER@ Depends: libgstreamer0.10-0, bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @GSTREAMERDEPEND@, @EXTRADEPEND@
+@IFGSTREAMER@ Description: Bigloo bindings for the GSTREAMER library
+
+@IFPHIDGET@ Package: libphidget-bigloo
+@IFPHIDGET@ Architecture: any
+@IFPHIDGET@ Depends: libphidget21-0, bigloo-libs, ${shlibs:Depends}, ${misc:Depends}, @PHIDGETDEPEND@, @EXTRADEPEND@
+@IFPHIDGET@ Description: Bigloo bindings for the PHIDGET library
+@IFPHIDGET@  The Phidget debian packages repository is located at:
+@IFPHIDGET@  deb http://www.phidgets.com/debian squeeze main
+
+Package: bigloo
+Architecture: any
+Depends: bigloo-libs, ${shlibs:Depends}, ${misc:Depends}
+Description: a practical Scheme compiler
+ Bigloo is a Scheme implementation devoted to one goal: enabling
+ Scheme based programming style where C(++) is usually
+ required. Bigloo attempts to make Scheme practical by offering
+ features usually presented by traditional programming languages but
+ not offered by Scheme and functional programming. Bigloo compiles
+ Scheme modules. It delivers small and fast stand alone binary
+ executables. Bigloo enables full connections between Scheme and C
+ programs, between Scheme and Java programs, and between Scheme and C#
+ programs.
+ .
+ The Bigloo C code generator delivers fast binaries executables for
+ the Unix operating system. The Bigloo JVM code generator delivers
+ highly portable JVM class files (or jar files) that can be run on any
+ JVM runtime environment (Sun's JDK, Netscape Applets, etc.). We have
+ measured that in general, Scheme modules when compiled to JVM are in
+ between 2 and 4 times slower than their C counterpart.
+ .
+ The list of features is available at:
+ http://www-sop.inria.fr/indes/fp/Bigloo/bigloo-1.html
+
+Package: bigloo-doc
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: documentation for Bigloo
+ The documentation of the Bigloo Scheme compiler.
+

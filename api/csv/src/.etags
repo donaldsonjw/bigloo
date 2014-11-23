@@ -1,0 +1,22 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/csv.scm,258
+(module csv15,963
+(define +csv-lexer+32,1592
+(define +tsv-lexer+34,1639
+(define +psv-lexer+36,1688
+(define +csv-parser+41,1957
+(define (read-csv-record111,3383
+(define (read-csv-records127,3990
+(define (csv-for-each138,4449
+(define (csv-map149,4900

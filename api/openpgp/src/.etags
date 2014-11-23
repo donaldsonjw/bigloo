@@ -1,0 +1,681 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/pgp_algo.scm,567
+(module __openpgp-algo1,0
+(define (hash-algo->procedure12,456
+(define (symmetric-key-algo-key-byte-len21,709
+(define (symmetric-key-algo-key-bit-len24,813
+(define (symmetric-key-algo-block-byte-len40,1217
+(define (symmetric-key-algo-block-bit-len43,1325
+(define (id59,1729
+(define (idea-encrypt60,1747
+(define (des3-encrypt62,1850
+(define (cast5-encrypt64,1953
+(define (aes-encrypt66,2061
+(define (idea-decrypt68,2162
+(define (des3-decrypt70,2265
+(define (cast5-decrypt76,2586
+(define (aes-decrypt78,2694
+(define (symmetric-key-algo->procedure81,2796
+
+Llib/pgp_composition.scm,3354
+(module __openpgp-composition15,963
+(define (Signed-ID?30,1398
+(define (make-Signed-ID30,1398
+(define (fill-Signed-ID!30,1398
+    (final-class Signed-ID30,1398
+(define (Signed-ID-id::PGP-ID-Packet-set!31,1425
+(define (Signed-ID-id::PGP-ID-Packet31,1425
+(define (Signed-ID-sigs::pair-nil-set!32,1450
+(define (Signed-ID-sigs::pair-nil32,1450
+(define (PGP-Subkey?33,1473
+(define (make-PGP-Subkey33,1473
+(define (fill-PGP-Subkey!33,1473
+    (final-class PGP-Subkey33,1473
+(define (PGP-Subkey-key-packet::PGP-Key-Packet-set!34,1501
+(define (PGP-Subkey-key-packet::PGP-Key-Packet34,1501
+(define (PGP-Subkey-sigs::pair-nil-set!35,1535
+(define (PGP-Subkey-sigs::pair-nil35,1535
+(define (PGP-Subkey-revocation-sigs::pair-nil-set!36,1609
+(define (PGP-Subkey-revocation-sigs::pair-nil36,1609
+(define (PGP-Subkey-pgp-key::PGP-Key-set!37,1669
+(define (PGP-Subkey-pgp-key::PGP-Key37,1669
+(define (PGP-Key?39,1759
+(define (make-PGP-Key39,1759
+(define (fill-PGP-Key!39,1759
+    (final-class PGP-Key39,1759
+(define (PGP-Key-subkeys::pair-set!40,1801
+(define (PGP-Key-subkeys::pair40,1801
+(define (PGP-Key-user-ids::pair-nil-set!41,1865
+(define (PGP-Key-user-ids::pair-nil41,1865
+(define (PGP-Encrypted?43,1958
+(define (make-PGP-Encrypted43,1958
+(define (fill-PGP-Encrypted!43,1958
+    (final-class PGP-Encrypted43,1958
+(define (PGP-Encrypted-session-keys::pair-nil-set!44,2002
+(define (PGP-Encrypted-session-keys::pair-nil44,2002
+(define (PGP-Encrypted-encrypted-data::PGP-Symmetrically-Encrypted-Packet-set!45,2095
+(define (PGP-Encrypted-encrypted-data::PGP-Symmetrically-Encrypted-Packet45,2095
+(define (PGP-Signature?47,2181
+(define (make-PGP-Signature47,2181
+(define (fill-PGP-Signature!47,2181
+    (class PGP-Signature47,2181
+(define (PGP-Signature-msg-set!48,2219
+(define (PGP-Signature-msg48,2219
+(define (PGP-Signature-sigs::pair-nil-set!49,2297
+(define (PGP-Signature-sigs::pair-nil49,2297
+(define (PGP-One-Pass-Signature?50,2347
+(define (make-PGP-One-Pass-Signature50,2347
+(define (fill-PGP-One-Pass-Signature!50,2347
+    (final-class PGP-One-Pass-Signature50,2347
+(define (PGP-One-Pass-Signature-one-pass-sigs::pair-nil-set!51,2402
+(define (PGP-One-Pass-Signature-one-pass-sigs::pair-nil51,2402
+(define (PGP-Literal?52,2473
+(define (make-PGP-Literal52,2473
+(define (fill-PGP-Literal!52,2473
+    (final-class PGP-Literal52,2473
+(define (PGP-Literal-literal::PGP-Literal-Packet-set!53,2515
+(define (PGP-Literal-literal::PGP-Literal-Packet53,2515
+(define (decode-pgp-content60,2924
+(define (parse-packets71,3448
+(define (parse-keys107,4855
+(define (parse-key123,5412
+(define (parse-encrypted-message251,9701
+(define (parse-signature283,10975
+(define (parse-one-pass-signature312,12058
+(define (parse-literal387,14437
+(define (create-chksum64401,14969
+(define (armored-pipe-port414,15581
+(define (decode-pgp483,17921
+(define (decode-armored-pgp501,18615
+(define (decode-native-pgp512,19100
+(define-generic (encode-pgp519,19433
+(define-method (encode-pgp this::PGP-Key p::output-port527,19779
+(define-method (encode-pgp this::PGP-One-Pass-Signature p::output-port557,20926
+(define-method (encode-pgp this::PGP-Signature p::output-port570,21472
+(define-method (encode-pgp this::PGP-Encrypted p::output-port580,21912
+(define (encode-native-pgp590,22395
+(define (encode-armored-pgp598,22877
+
+Llib/pgp_conversion.scm,94
+(module __openpgp-conversion1,0
+(define (fixnum->scalar8,252
+(define (scalar->fixnum21,643
+
+Llib/pgp_decode.scm,1376
+(module __openpgp-decode18,1185
+(define (decode-packet-length-v432,1548
+(define (decode-packet-length-v352,2347
+(define (content-pipe-port66,2841
+(define (decode-packet89,3473
+(define (decode-packets153,5984
+(define (decode-s2k161,6170
+(define (decode-time190,7279
+(define (decode-mpi196,7482
+(define (decode-scalar210,7895
+(define (decode-public-key-encrypted-session-key226,8412
+(define (decode-signature271,10196
+(define (decode-signature-v3285,10694
+(define (decode-sub-packet346,13099
+(define (decode-sub-packets530,19795
+(define (decode-signature-v4541,20140
+(define (decode-symmetric-key-encrypted-session-key665,25143
+(define (decode-one-pass-signature682,25866
+(define make-public-rsa-key716,27372
+(define make-public-dsa-key720,27486
+(define make-public-elgamal-key726,27615
+(define *dummy-date*732,27748
+(define (decode-public-key734,27786
+(define (decode/fill-key750,28222
+(define (decode-public-subkey810,30443
+(define (decode-secret-key819,30724
+(define (decode-secret-subkey844,31628
+(define (decode-compressed-data852,31975
+(define (decode-symmetrically-encrypted-data881,33162
+(define (decode-marker888,33514
+(define (decode-literal-data904,34035
+(define (decode-trust928,35039
+(define (decode-user-id936,35353
+(define (decode-user-attribute946,35739
+(define (decode-mdc-sym-encrypted956,36204
+(define (decode-mdc970,36785
+
+Llib/pgp_encode.scm,4100
+(module __openpgp-encode1,0
+(define (encode-packets18,522
+(define (encode-octet21,639
+(define (encode-octets27,813
+(define (encode-scalar34,1026
+(define (encode-mpi38,1163
+(define (encode-length-v446,1425
+(define (encode-time59,1809
+(define (encode-prefs62,1900
+(define-generic (packet->content-tag70,2156
+(define-method (packet->content-tag74,2318
+(define-method (packet->content-tag p::PGP-Signature-Packet77,2442
+(define-method (packet->content-tag79,2518
+(define-method (packet->content-tag p::PGP-One-Pass-Signature-Packet82,2648
+(define-method (packet->content-tag p::PGP-Secret-Key-Packet84,2742
+(define-method (packet->content-tag p::PGP-Public-Key-Packet89,2909
+(define-method (packet->content-tag p::PGP-Compressed-Packet94,3069
+(define-method (packet->content-tag p::PGP-Symmetrically-Encrypted-Packet96,3147
+(define-method (packet->content-tag p::PGP-MDC-Symmetrically-Encrypted-Packet98,3251
+(define-method (packet->content-tag p::PGP-Marker-Packet100,3363
+(define-method (packet->content-tag p::PGP-Literal-Packet102,3433
+(define-method (packet->content-tag p::PGP-Trust-Packet104,3505
+(define-method (packet->content-tag p::PGP-ID-Packet106,3573
+(define (encode-packet110,3637
+(define-generic (encode-content129,4461
+(define-method (encode-content135,4674
+(define (encode-sub-packet161,5710
+(define-generic (encode-sub-packet-content169,5980
+(define (encode-sub-packet-header175,6185
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Generic180,6399
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Creation-Time185,6637
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Expiration-Time190,6914
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Exportable196,7214
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Trust201,7489
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Revocable207,7764
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Key-Expiration-Time212,8034
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Preferred-Symmetric218,8347
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Revocation223,8652
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-ID231,9006
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Notation236,9247
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Preferred-Hash245,9650
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Preferred-Compression250,9931
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Preferred-Key-Server255,10240
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Primary-ID260,10520
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Policy265,10789
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Signer-ID270,11021
+(define-method (encode-sub-packet-content sp::PGP-Signature-Sub-Revocation-Reason275,11260
+(define (encode-sub-packets282,11592
+(define (date=?291,11864
+(define (create-signed-packet-prefix-v4298,12062
+(define (encode-insecure-sub-packets352,14141
+(define-method (encode-content373,14845
+(define (encode-s2k409,16171
+(define-method (encode-content451,17509
+(define-method (encode-content474,18440
+(define (encode-public-key-content499,19600
+(define-method (encode-content packet::PGP-Secret-Key-Packet p::output-port555,21376
+(define-method (encode-content packet::PGP-Public-Key-Packet p::output-port562,21694
+(define-method (encode-content packet::PGP-Symmetrically-Encrypted-Packet566,21875
+(define-method (encode-content packet::PGP-Marker-Packet p::output-port572,22138
+(define-method (encode-content packet::PGP-Literal-Packet p::output-port576,22286
+(define-method (encode-content packet::PGP-Trust-Packet p::output-port605,23324
+(define-method (encode-content packet::PGP-ID-Packet p::output-port611,23547
+(define-method (encode-content packet::PGP-MDC-Symmetrically-Encrypted-Packet p::output-port616,23737
+(define-method (encode-content packet::PGP-MDC-Packet p::output-port622,24037
+
+Llib/pgp_enums.scm,63
+(module __openpgp-enums1,0
+(define-macro (declare-enum23,929
+
+Llib/pgp_facade.scm,577
+(module __openpgp-facade1,0
+(define *bigloo-version*39,1263
+(define (pgp-read-string41,1322
+(define (pgp-read-port44,1406
+(define (pgp-read-file47,1472
+(define (pgp-write-string59,1766
+(define global-format64,1947
+(define (pgp-write-port66,1978
+(define (pgp-write-file85,2624
+(define (extract-subkey91,2835
+(define (pgp-sign155,5047
+(define (pgp-verify191,6261
+(define (pgp-signature-message199,6589
+(define (pgp-password-encrypt211,7148
+(define (pubkey-decrypt231,7823
+(define (pwd-decrypt259,9061
+(define (pgp-decrypt282,10127
+(define (pgp-encrypt369,13637
+
+Llib/pgp_human.scm,505
+(module __openpgp-human1,0
+(define (content-tag->human-readable16,697
+(define (literal-format->human-readable41,1812
+(define (compression-algo->human-readable47,1967
+(define (signature-type->human-readable58,2379
+(define (public-key-algo->human-readable77,3436
+(define (symmetric-key-algo->human-readable93,4139
+(define (subpacket-type->human-readable112,4955
+(define (revocation-code->human-readable143,6316
+(define (hash-algo->human-readable155,6965
+(define (s2k-algo->human-readable173,7536
+
+Llib/pgp_key_manager.scm,452
+(module __openpgp-key-manager3,66
+(define (pgp-key?23,594
+(define (pgp-subkey?24,637
+(define (pgp-subkeys26,744
+(define (pgp-key->string31,902
+(define (pgp-subkey->string36,1053
+(define (pgp-key-id42,1232
+(define (pgp-key-fingerprint48,1439
+(define (pgp-make-key-db54,1660
+(define (pgp-add-keys-to-db56,1707
+(define (pgp-add-key-to-db59,1817
+(define (valid-subkey73,2212
+(define (pgp-resolve-key82,2579
+(define (pgp-db-print-keys106,3259
+
+Llib/pgp_logic.scm,1984
+(module __openpgp-logic15,963
+(define (PGP-main-key69,3116
+(define (PGP-main-key-packet72,3225
+(define (construct-data-signature-msg79,3537
+(define (canonical-string99,4493
+(define (construct-certification-signature-str135,5614
+(define (construct-key-signature-str158,6462
+(define (construct-subkey-signature-str172,7048
+(define (verify-signature185,7595
+(define (key-id253,9850
+(define-generic (fingerprint274,10515
+(define (sign-msg300,11505
+(define (needs-password-for-decryption?320,12185
+(define (decrypt-password-protected326,12481
+(define (create-secret-rsa-key420,15989
+(define (create-secret-dsa-key425,16146
+(define (create-secret-elgamal-key433,16317
+(define (decrypt-secret-key!441,16491
+(define (verify-pgp-signature473,17787
+(define (signature->issuer-id496,18741
+(define (key-str-representation517,19396
+(define (verify-key530,19814
+(define (create-sig-packet-v4642,24367
+(define (decoded-key-packet686,25811
+(define (create-one-pass-signature731,27358
+(define (create-pgp-signature759,28455
+(define (signature-less780,29195
+(define (merge-sigs817,30334
+(define (signed-id-less835,30887
+(define (merge-user-ids842,31145
+(define (key-less866,31881
+(define (subkey-less874,32124
+(define (merge-subkey879,32316
+(define (merge-subkeys891,32739
+(define (merge-keys913,33347
+(define (key-packet->human-readable936,34325
+(define (pgp-key->human-readable941,34516
+(define (pgp-subkey->human-readable955,34980
+(define (make-0-IV968,35439
+(define (symmetric-encrypt970,35490
+(define (non-mdc-symmetric-encrypt981,35970
+(define (mdc-symmetric-encrypt1018,37651
+(define (symmetric-decrypt1057,39288
+(define (non-mdc-symmetric-decrypt1075,40048
+(define (mdc-symmetric-decrypt1130,42306
+(define (decrypt-symmetric-key-session-key1201,44967
+(define (chksum-16-bit1237,46717
+(define (decrypt-public-key-session-key1249,46984
+(define (create-password-session-key-packet1329,50493
+(define (create-public-key-session-key-packet1403,53565
+
+Llib/pgp_packets.scm,16260
+(module __openpgp-packets1,0
+(define (PGP-Packet?3,37
+(define (make-PGP-Packet3,37
+(define (fill-PGP-Packet!3,37
+    (class PGP-Packet3,37
+(define (PGP-Public-Key-Encrypted-Session-Key-Packet?5,116
+(define (make-PGP-Public-Key-Encrypted-Session-Key-Packet5,116
+(define (fill-PGP-Public-Key-Encrypted-Session-Key-Packet!5,116
+(define (PGP-Public-Key-Encrypted-Session-Key-Packet-version::long-set!7,204
+(define (PGP-Public-Key-Encrypted-Session-Key-Packet-version::long7,204
+(define (PGP-Public-Key-Encrypted-Session-Key-Packet-id::bstring-set!8,225
+(define (PGP-Public-Key-Encrypted-Session-Key-Packet-id::bstring8,225
+(define (PGP-Public-Key-Encrypted-Session-Key-Packet-algo::symbol-set!9,281
+(define (PGP-Public-Key-Encrypted-Session-Key-Packet-algo::symbol9,281
+(define (PGP-Public-Key-Encrypted-Session-Key-Packet-encrypted-session-key-set!10,301
+(define (PGP-Public-Key-Encrypted-Session-Key-Packet-encrypted-session-key10,301
+(define (PGP-Sig-Packet?15,622
+(define (make-PGP-Sig-Packet15,622
+(define (fill-PGP-Sig-Packet!15,622
+    (class PGP-Sig-Packet15,622
+(define (PGP-Sig-Packet-version::long-set!16,660
+(define (PGP-Sig-Packet-version::long16,660
+(define (PGP-Sig-Packet-signature-type::symbol-set!17,681
+(define (PGP-Sig-Packet-signature-type::symbol17,681
+(define (PGP-Sig-Packet-issuer-set!18,711
+(define (PGP-Sig-Packet-issuer18,711
+(define (PGP-Sig-Packet-public-key-algo::symbol-set!19,742
+(define (PGP-Sig-Packet-public-key-algo::symbol19,742
+(define (PGP-Sig-Packet-hash-algo::symbol-set!20,773
+(define (PGP-Sig-Packet-hash-algo::symbol20,773
+(define (PGP-Signature-Packet?21,799
+(define (make-PGP-Signature-Packet21,799
+(define (fill-PGP-Signature-Packet!21,799
+    (class PGP-Signature-Packet21,799
+(define (PGP-Signature-Packet-creation-date::date-set!22,847
+(define (PGP-Signature-Packet-creation-date::date22,847
+(define (PGP-Signature-Packet-signature-set!23,874
+(define (PGP-Signature-Packet-signature23,874
+(define (PGP-Signature-Packet-signed-packet-prefix::bstring-set!24,925
+(define (PGP-Signature-Packet-signed-packet-prefix::bstring24,925
+(define (PGP-Signature-Packet-hash-trailer::bstring-set!25,962
+(define (PGP-Signature-Packet-hash-trailer::bstring25,962
+(define (PGP-Signature-Packet-left-hash::bstring-set!26,1019
+(define (PGP-Signature-Packet-left-hash::bstring26,1019
+(define (PGP-Signature-v3-Packet?27,1046
+(define (make-PGP-Signature-v3-Packet27,1046
+(define (fill-PGP-Signature-v3-Packet!27,1046
+    (final-class PGP-Signature-v3-Packet27,1046
+(define (PGP-Signature-v4-Packet?28,1110
+(define (make-PGP-Signature-v4-Packet28,1110
+(define (fill-PGP-Signature-v4-Packet!28,1110
+    (final-class PGP-Signature-v4-Packet28,1110
+(define (PGP-Signature-v4-Packet-secure-sub-packets::pair-nil-set!29,1173
+(define (PGP-Signature-v4-Packet-secure-sub-packets::pair-nil29,1173
+(define (PGP-Signature-v4-Packet-insecure-sub-packets::pair-nil-set!30,1209
+(define (PGP-Signature-v4-Packet-insecure-sub-packets::pair-nil30,1209
+(define (PGP-Symmetric-Key-Encrypted-Session-Key-Packet?31,1248
+(define (make-PGP-Symmetric-Key-Encrypted-Session-Key-Packet31,1248
+(define (fill-PGP-Symmetric-Key-Encrypted-Session-Key-Packet!31,1248
+(define (PGP-Symmetric-Key-Encrypted-Session-Key-Packet-version::long-set!33,1339
+(define (PGP-Symmetric-Key-Encrypted-Session-Key-Packet-version::long33,1339
+(define (PGP-Symmetric-Key-Encrypted-Session-Key-Packet-algo::symbol-set!34,1360
+(define (PGP-Symmetric-Key-Encrypted-Session-Key-Packet-algo::symbol34,1360
+(define (PGP-Symmetric-Key-Encrypted-Session-Key-Packet-s2k-set!35,1380
+(define (PGP-Symmetric-Key-Encrypted-Session-Key-Packet-s2k35,1380
+(define (PGP-Symmetric-Key-Encrypted-Session-Key-Packet-encrypted-session-key-set!38,1497
+(define (PGP-Symmetric-Key-Encrypted-Session-Key-Packet-encrypted-session-key38,1497
+(define (PGP-One-Pass-Signature-Packet?39,1527
+(define (make-PGP-One-Pass-Signature-Packet39,1527
+(define (fill-PGP-One-Pass-Signature-Packet!39,1527
+    (final-class PGP-One-Pass-Signature-Packet39,1527
+(define (PGP-One-Pass-Signature-Packet-contains-nested-sig?::bool-set!40,1590
+(define (PGP-One-Pass-Signature-Packet-contains-nested-sig?::bool40,1590
+(define (PGP-Key-Packet?41,1625
+(define (make-PGP-Key-Packet41,1625
+(define (fill-PGP-Key-Packet!41,1625
+    (class PGP-Key-Packet41,1625
+(define (PGP-Key-Packet-id-set!42,1663
+(define (PGP-Key-Packet-id42,1663
+(define (PGP-Key-Packet-version::long-set!43,1721
+(define (PGP-Key-Packet-version::long43,1721
+(define (PGP-Key-Packet-subkey?::bool-set!44,1742
+(define (PGP-Key-Packet-subkey?::bool44,1742
+(define (PGP-Key-Packet-algo::symbol-set!45,1778
+(define (PGP-Key-Packet-algo::symbol45,1778
+(define (PGP-Key-Packet-creation-date::date-set!46,1798
+(define (PGP-Key-Packet-creation-date::date46,1798
+(define (PGP-Key-Packet-valid-days-set!47,1825
+(define (PGP-Key-Packet-valid-days47,1825
+(define (PGP-Key-Packet-key-set!48,1893
+(define (PGP-Key-Packet-key48,1893
+(define (PGP-Public-Key-Packet?49,1939
+(define (make-PGP-Public-Key-Packet49,1939
+(define (fill-PGP-Public-Key-Packet!49,1939
+    (final-class PGP-Public-Key-Packet49,1939
+(define (PGP-Secret-Key-Packet?50,1995
+(define (make-PGP-Secret-Key-Packet50,1995
+(define (fill-PGP-Secret-Key-Packet!50,1995
+    (final-class PGP-Secret-Key-Packet50,1995
+(define (PGP-Secret-Key-Packet-password-protected-secret-key-data::bstring-set!51,2050
+(define (PGP-Secret-Key-Packet-password-protected-secret-key-data::bstring51,2050
+(define (PGP-Secret-Key-Decoded-Packet?52,2102
+(define (make-PGP-Secret-Key-Decoded-Packet52,2102
+(define (fill-PGP-Secret-Key-Decoded-Packet!52,2102
+    (wide-class PGP-Secret-Key-Decoded-Packet52,2102
+(define (PGP-Secret-Key-Decoded-Packet-secret-key-set!53,2171
+(define (PGP-Secret-Key-Decoded-Packet-secret-key53,2171
+(define (PGP-Compressed-Packet?54,2212
+(define (make-PGP-Compressed-Packet54,2212
+(define (fill-PGP-Compressed-Packet!54,2212
+    (final-class PGP-Compressed-Packet54,2212
+(define (PGP-Compressed-Packet-packets::pair-nil-set!55,2263
+(define (PGP-Compressed-Packet-packets::pair-nil55,2263
+(define (PGP-Symmetrically-Encrypted-Packet?56,2289
+(define (make-PGP-Symmetrically-Encrypted-Packet56,2289
+(define (fill-PGP-Symmetrically-Encrypted-Packet!56,2289
+    (class PGP-Symmetrically-Encrypted-Packet56,2289
+(define (PGP-Symmetrically-Encrypted-Packet-data::bstring-set!57,2347
+(define (PGP-Symmetrically-Encrypted-Packet-data::bstring57,2347
+(define (PGP-Marker-Packet?58,2369
+(define (make-PGP-Marker-Packet58,2369
+(define (fill-PGP-Marker-Packet!58,2369
+    (final-class PGP-Marker-Packet58,2369
+(define (PGP-Literal-Packet?59,2417
+(define (make-PGP-Literal-Packet59,2417
+(define (fill-PGP-Literal-Packet!59,2417
+    (final-class PGP-Literal-Packet59,2417
+(define (PGP-Literal-Packet-format::symbol-set!60,2465
+(define (PGP-Literal-Packet-format::symbol60,2465
+(define (PGP-Literal-Packet-for-your-eyes-only?::bool-set!61,2487
+(define (PGP-Literal-Packet-for-your-eyes-only?::bool61,2487
+(define (PGP-Literal-Packet-file-name-set!62,2534
+(define (PGP-Literal-Packet-file-name62,2534
+(define (PGP-Literal-Packet-creation-date::date-set!63,2601
+(define (PGP-Literal-Packet-creation-date::date63,2601
+(define (PGP-Literal-Packet-data::bstring-set!64,2628
+(define (PGP-Literal-Packet-data::bstring64,2628
+(define (PGP-Trust-Packet?65,2650
+(define (make-PGP-Trust-Packet65,2650
+(define (fill-PGP-Trust-Packet!65,2650
+    (final-class PGP-Trust-Packet65,2650
+(define (PGP-ID-Packet?66,2697
+(define (make-PGP-ID-Packet66,2697
+(define (fill-PGP-ID-Packet!66,2697
+    (final-class PGP-ID-Packet66,2697
+(define (PGP-ID-Packet-data::bstring-set!67,2740
+(define (PGP-ID-Packet-data::bstring67,2740
+(define (PGP-Attribute-Packet?68,2762
+(define (make-PGP-Attribute-Packet68,2762
+(define (fill-PGP-Attribute-Packet!68,2762
+    (final-class PGP-Attribute-Packet68,2762
+(define (PGP-Attribute-Packet-data::bstring-set!69,2812
+(define (PGP-Attribute-Packet-data::bstring69,2812
+(define (PGP-MDC-Symmetrically-Encrypted-Packet?70,2834
+(define (make-PGP-MDC-Symmetrically-Encrypted-Packet70,2834
+(define (fill-PGP-MDC-Symmetrically-Encrypted-Packet!70,2834
+    (final-class PGP-MDC-Symmetrically-Encrypted-Packet70,2834
+(define (PGP-MDC-Symmetrically-Encrypted-Packet-version::long-set!71,2926
+(define (PGP-MDC-Symmetrically-Encrypted-Packet-version::long71,2926
+(define (PGP-MDC-Packet?72,3003
+(define (make-PGP-MDC-Packet72,3003
+(define (fill-PGP-MDC-Packet!72,3003
+    (final-class PGP-MDC-Packet72,3003
+(define (PGP-MDC-Packet-hash::bstring-set!73,3047
+(define (PGP-MDC-Packet-hash::bstring73,3047
+(define (PGP-Signature-Sub-Packet?75,3070
+(define (make-PGP-Signature-Sub-Packet75,3070
+(define (fill-PGP-Signature-Sub-Packet!75,3070
+    (class PGP-Signature-Sub-Packet75,3070
+(define (PGP-Signature-Sub-Packet-critical?::bool-set!76,3106
+(define (PGP-Signature-Sub-Packet-critical?::bool76,3106
+(define (PGP-Signature-Sub-Generic?79,3244
+(define (make-PGP-Signature-Sub-Generic79,3244
+(define (fill-PGP-Signature-Sub-Generic!79,3244
+    (final-class PGP-Signature-Sub-Generic79,3244
+(define (PGP-Signature-Sub-Generic-type::symbol-set!80,3313
+(define (PGP-Signature-Sub-Generic-type::symbol80,3313
+(define (PGP-Signature-Sub-Generic-data::bstring-set!81,3333
+(define (PGP-Signature-Sub-Generic-data::bstring81,3333
+(define (PGP-Signature-Sub-Creation-Time?82,3355
+(define (make-PGP-Signature-Sub-Creation-Time82,3355
+(define (fill-PGP-Signature-Sub-Creation-Time!82,3355
+    (final-class PGP-Signature-Sub-Creation-Time82,3355
+(define (PGP-Signature-Sub-Creation-Time-creation-date::date-set!83,3430
+(define (PGP-Signature-Sub-Creation-Time-creation-date::date83,3430
+(define (PGP-Signature-Sub-Expiration-Time?84,3458
+(define (make-PGP-Signature-Sub-Expiration-Time84,3458
+(define (fill-PGP-Signature-Sub-Expiration-Time!84,3458
+    (final-class PGP-Signature-Sub-Expiration-Time84,3458
+(define (PGP-Signature-Sub-Expiration-Time-expiration-date::date-set!85,3535
+(define (PGP-Signature-Sub-Expiration-Time-expiration-date::date85,3535
+(define (PGP-Signature-Sub-Exportable?86,3565
+(define (make-PGP-Signature-Sub-Exportable86,3565
+(define (fill-PGP-Signature-Sub-Exportable!86,3565
+    (final-class PGP-Signature-Sub-Exportable86,3565
+(define (PGP-Signature-Sub-Exportable-exportable?::bool-set!87,3637
+(define (PGP-Signature-Sub-Exportable-exportable?::bool87,3637
+(define (PGP-Signature-Sub-Trust?88,3663
+(define (make-PGP-Signature-Sub-Trust88,3663
+(define (fill-PGP-Signature-Sub-Trust!88,3663
+    (final-class PGP-Signature-Sub-Trust88,3663
+(define (PGP-Signature-Sub-Trust-level::int-set!89,3730
+(define (PGP-Signature-Sub-Trust-level::int89,3730
+(define (PGP-Signature-Sub-Trust-amount::int-set!90,3748
+(define (PGP-Signature-Sub-Trust-amount::int90,3748
+(define (PGP-Signature-Sub-Revocable?91,3768
+(define (make-PGP-Signature-Sub-Revocable91,3768
+(define (fill-PGP-Signature-Sub-Revocable!91,3768
+    (final-class PGP-Signature-Sub-Revocable91,3768
+(define (PGP-Signature-Sub-Revocable-revocable?::bool-set!92,3839
+(define (PGP-Signature-Sub-Revocable-revocable?::bool92,3839
+(define (PGP-Signature-Sub-Key-Expiration-Time?93,3864
+(define (make-PGP-Signature-Sub-Key-Expiration-Time93,3864
+(define (fill-PGP-Signature-Sub-Key-Expiration-Time!93,3864
+    (final-class PGP-Signature-Sub-Key-Expiration-Time93,3864
+(define (PGP-Signature-Sub-Key-Expiration-Time-expiration-time::long-set!94,3945
+(define (PGP-Signature-Sub-Key-Expiration-Time-expiration-time::long94,3945
+(define (PGP-Signature-Sub-Preferred-Symmetric?95,4007
+(define (make-PGP-Signature-Sub-Preferred-Symmetric95,4007
+(define (fill-PGP-Signature-Sub-Preferred-Symmetric!95,4007
+    (final-class PGP-Signature-Sub-Preferred-Symmetric95,4007
+(define (PGP-Signature-Sub-Preferred-Symmetric-algos::pair-nil-set!96,4088
+(define (PGP-Signature-Sub-Preferred-Symmetric-algos::pair-nil96,4088
+(define (PGP-Signature-Sub-Revocation?97,4112
+(define (make-PGP-Signature-Sub-Revocation97,4112
+(define (fill-PGP-Signature-Sub-Revocation!97,4112
+    (final-class PGP-Signature-Sub-Revocation97,4112
+(define (PGP-Signature-Sub-Revocation-clazz::byte-set!98,4184
+(define (PGP-Signature-Sub-Revocation-clazz::byte98,4184
+(define (PGP-Signature-Sub-Revocation-sensitive?::bool-set!99,4203
+(define (PGP-Signature-Sub-Revocation-sensitive?::bool99,4203
+(define (PGP-Signature-Sub-Revocation-algid::byte-set!100,4272
+(define (PGP-Signature-Sub-Revocation-algid::byte100,4272
+(define (PGP-Signature-Sub-Revocation-fingerprint::bstring-set!101,4315
+(define (PGP-Signature-Sub-Revocation-fingerprint::bstring101,4315
+(define (PGP-Signature-Sub-ID?102,4344
+(define (make-PGP-Signature-Sub-ID102,4344
+(define (fill-PGP-Signature-Sub-ID!102,4344
+    (final-class PGP-Signature-Sub-ID102,4344
+(define (PGP-Signature-Sub-ID-key-id::bstring-set!103,4408
+(define (PGP-Signature-Sub-ID-key-id::bstring103,4408
+(define (PGP-Signature-Sub-Notation?104,4432
+(define (make-PGP-Signature-Sub-Notation104,4432
+(define (fill-PGP-Signature-Sub-Notation!104,4432
+    (final-class PGP-Signature-Sub-Notation104,4432
+(define (PGP-Signature-Sub-Notation-flags::bstring-set!105,4502
+(define (PGP-Signature-Sub-Notation-flags::bstring105,4502
+(define (PGP-Signature-Sub-Notation-name::bstring-set!106,4536
+(define (PGP-Signature-Sub-Notation-name::bstring106,4536
+(define (PGP-Signature-Sub-Notation-value::bstring-set!106,4536
+(define (PGP-Signature-Sub-Notation-value::bstring106,4536
+(define (PGP-Signature-Sub-Preferred-Hash?107,4573
+(define (make-PGP-Signature-Sub-Preferred-Hash107,4573
+(define (fill-PGP-Signature-Sub-Preferred-Hash!107,4573
+    (final-class PGP-Signature-Sub-Preferred-Hash107,4573
+(define (PGP-Signature-Sub-Preferred-Hash-algos::pair-nil-set!108,4649
+(define (PGP-Signature-Sub-Preferred-Hash-algos::pair-nil108,4649
+(define (PGP-Signature-Sub-Preferred-Compression?109,4673
+(define (make-PGP-Signature-Sub-Preferred-Compression109,4673
+(define (fill-PGP-Signature-Sub-Preferred-Compression!109,4673
+    (final-class PGP-Signature-Sub-Preferred-Compression109,4673
+(define (PGP-Signature-Sub-Preferred-Compression-algos::pair-nil-set!110,4756
+(define (PGP-Signature-Sub-Preferred-Compression-algos::pair-nil110,4756
+(define (PGP-Signature-Sub-Preferred-Key-Server?111,4780
+(define (make-PGP-Signature-Sub-Preferred-Key-Server111,4780
+(define (fill-PGP-Signature-Sub-Preferred-Key-Server!111,4780
+    (final-class PGP-Signature-Sub-Preferred-Key-Server111,4780
+(define (PGP-Signature-Sub-Preferred-Key-Server-server::bstring-set!112,4862
+(define (PGP-Signature-Sub-Preferred-Key-Server-server::bstring112,4862
+(define (PGP-Signature-Sub-Primary-ID?113,4886
+(define (make-PGP-Signature-Sub-Primary-ID113,4886
+(define (fill-PGP-Signature-Sub-Primary-ID!113,4886
+    (final-class PGP-Signature-Sub-Primary-ID113,4886
+(define (PGP-Signature-Sub-Primary-ID-primary?::bool-set!114,4958
+(define (PGP-Signature-Sub-Primary-ID-primary?::bool114,4958
+(define (PGP-Signature-Sub-Policy?115,4981
+(define (make-PGP-Signature-Sub-Policy115,4981
+(define (fill-PGP-Signature-Sub-Policy!115,4981
+    (final-class PGP-Signature-Sub-Policy115,4981
+(define (PGP-Signature-Sub-Policy-url::bstring-set!116,5049
+(define (PGP-Signature-Sub-Policy-url::bstring116,5049
+(define (PGP-Signature-Sub-Signer-ID?117,5070
+(define (make-PGP-Signature-Sub-Signer-ID117,5070
+(define (fill-PGP-Signature-Sub-Signer-ID!117,5070
+    (final-class PGP-Signature-Sub-Signer-ID117,5070
+(define (PGP-Signature-Sub-Signer-ID-id::bstring-set!118,5141
+(define (PGP-Signature-Sub-Signer-ID-id::bstring118,5141
+(define (PGP-Signature-Sub-Revocation-Reason?119,5161
+(define (make-PGP-Signature-Sub-Revocation-Reason119,5161
+(define (fill-PGP-Signature-Sub-Revocation-Reason!119,5161
+    (final-class PGP-Signature-Sub-Revocation-Reason119,5161
+(define (PGP-Signature-Sub-Revocation-Reason-code::symbol-set!120,5240
+(define (PGP-Signature-Sub-Revocation-Reason-code::symbol120,5240
+(define (PGP-Signature-Sub-Revocation-Reason-reason::bstring-set!121,5260
+(define (PGP-Signature-Sub-Revocation-Reason-reason::bstring121,5260
+
+Llib/pgp_s2k.scm,640
+(module __openpgp-s2k1,0
+(define *s2k-salt-length*23,742
+(define (s2k-salt-length24,771
+(define *s2k-EXPBIAS*26,822
+(define *s2k-OFFSET*27,847
+(define *min-s2k-count*29,897
+(define *max-s2k-count*32,1013
+(define (round-iterated-salted-s2k-count37,1197
+(define (octet->iterated-salted-s2k-count41,1382
+(define (iterated-salted-s2k-count->octet47,1621
+(define (simple-s2k74,2749
+(define (salted-s2k77,2865
+(define (iterated-salted-s2k84,3160
+(define (make-s2k89,3351
+(define (s2k-algo96,3544
+(define (s2k-hash97,3583
+(define (s2k-salt98,3622
+(define (s2k-count99,3661
+(define-struct S2K101,3703
+(define (apply-s2k103,3745
+
+Llib/port_util.scm,265
+(module __openpgp-port-util1,0
+(define-inline (safe-read-char10,324
+(define-inline (safe-read-octet15,486
+(define-inline (safe-read-octets17,566
+(define (length-limited-pipe-port23,769
+(define (concat-pipe-port37,1146
+(define (base64-decode-pipe-port55,1606
+
+Llib/util.scm,953
+(module __openpgp-util1,0
+(define-macro (debug30,1199
+(define-macro (+fx+34,1293
+(define-macro (-fx-39,1386
+(define (bignum-bit-length42,1439
+(define-inline (/ceilingfx62,1982
+(define-inline (bignum->char70,2155
+(define-inline (char->bignum74,2327
+(define (bin-str->bignum76,2412
+(define (bignum->bin-str84,2648
+(define (bignum->bin-str!91,2881
+(define (make-random-string111,3455
+(define (make-random-bignum142,4453
+(define-inline (char-xor164,5165
+(define (string-xor167,5287
+(define-inline (string-xor!182,5733
+(define-inline (string-xor-buffer!184,5826
+(define (read-armored-base64-data195,6150
+(define-inline (str->hex-string204,6397
+(define-inline (hex-str->string207,6481
+(define-inline (hex-str->string!209,6572
+(define (gcd-ext212,6666
+(define (mod-inverse225,6949
+(define (expt-modbx234,7183
+(define (sha1sum-bin247,7439
+(define (sha256sum-bin250,7510
+(define (md5sum-bin253,7585
+(define (make-random-prime259,7876

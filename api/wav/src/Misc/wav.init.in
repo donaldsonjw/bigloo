@@ -1,0 +1,29 @@
+;*=====================================================================*/
+;*    serrano/prgm/project/bigloo/api/wav/src/Misc/wav.init.in         */
+;*    -------------------------------------------------------------    */
+;*    Author      :  Manuel Serrano                                    */
+;*    Creation    :  Wed Nov  7 05:40:36 2001                          */
+;*    Last change :  Fri Dec 13 12:51:08 2013 (serrano)                */
+;*    Copyright   :  2001-13 Manuel Serrano                            */
+;*    -------------------------------------------------------------    */
+;*    The WAV init file.                                               */
+;*=====================================================================*/
+ 
+;*---------------------------------------------------------------------*/
+;*    The library                                                      */
+;*---------------------------------------------------------------------*/
+(declare-library! 'wav
+   :srfi '(wav)
+   :basename "bigloowav"
+   :module-init '__wav_wav
+   :module-eval '__wav_makelib)
+
+;*---------------------------------------------------------------------*/
+;*    Compile and Link options                                         */
+;*---------------------------------------------------------------------*/
+(cond-expand
+   (bigloo-compile
+    ;; required multimedia
+    (set! *additional-bigloo-libraries*
+	  (cons* 'bigloomultimedia *additional-bigloo-libraries*))))
+

@@ -1,0 +1,24 @@
+;*=====================================================================*/
+;*    serrano/prgm/project/bigloo/api/web/src/Misc/web.init            */
+;*    -------------------------------------------------------------    */
+;*    Author      :  Manuel Serrano                                    */
+;*    Creation    :  Wed Nov  7 05:40:36 2001                          */
+;*    Last change :  Fri Dec 13 12:51:30 2013 (serrano)                */
+;*    Copyright   :  2001-13 Manuel Serrano                            */
+;*    -------------------------------------------------------------    */
+;*    The Web init file.                                               */
+;*=====================================================================*/
+
+;*---------------------------------------------------------------------*/
+;*    The library                                                      */
+;*---------------------------------------------------------------------*/
+(declare-library! 'web
+   :srfi '(web)
+   :basename "biglooweb"
+   :module-init '__web_xml
+   :module-eval '__web_makelib
+   :class-init "bigloo.web.xml"
+   :class-eval "bigloo.web.make_lib")
+
+   
+

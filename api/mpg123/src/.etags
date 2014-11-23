@@ -1,0 +1,50 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/mpg123.scm,1323
+(module __mpg123_mpg12315,963
+(define (mpg123-handle?21,1075
+(define (make-mpg123-handle21,1075
+(define (fill-mpg123-handle!21,1075
+   (export (class mpg123-handle21,1075
+(define (mpg123-handle-mpg123-handle-init-set!22,1107
+(define (mpg123-handle-mpg123-handle-init22,1107
+(define (mpg123-handle-$builtin::$mpg123-handle-set!23,1135
+(define (mpg123-handle-$builtin::$mpg123-handle23,1135
+(define (mpg123-handle-decoder24,1201
+(define (mpg123-handle-size::long-set!25,1241
+(define (mpg123-handle-size::long25,1241
+(define (&mpg123-error?27,1279
+(define (make-&mpg123-error27,1279
+(define (fill-&mpg123-error!27,1279
+	   (class &mpg123-error27,1279
+(define (%$mpg123-handle-nil48,2204
+(define-generic (mpg123-handle-init54,2480
+(define (mpg123-handle-close64,2959
+(define (mpg123-handle-reset!72,3315
+(define (mpg123-error80,3704
+(define (mpg123-decode90,4059
+(define (mpg123-get-format99,4530
+(define (mpg123-position108,4991
+(define (mpg123-decode-status->symbol115,5341
+(define (mpg123-format->symbol130,5957
+(define (mpg123-param-get154,7119
+(define (mpg123-param-set!161,7503
+(define (mpg123-param->symbol170,7944
+(define (symbol->mpg123-param196,9248
+(define (mpg123-info232,10836
+(define (mpg123-seek239,11181
+(define (mpg123-volume-get256,11951
+(define (mpg123-volume-set!269,12503
+
+Llib/mpg123_alsadec.scm,32
+(module __mpg123_alsadec15,963

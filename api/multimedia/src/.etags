@@ -1,0 +1,635 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/exif.scm,3256
+(module __multimedia-exif15,963
+(define (exif?17,991
+(define (make-exif17,991
+(define (fill-exif!17,991
+   (export (class exif17,991
+(define (exif-version-set!18,1014
+(define (exif-version18,1014
+(define (exif-jpeg-encoding-set!19,1044
+(define (exif-jpeg-encoding19,1044
+(define (exif-jpeg-compress-set!20,1080
+(define (exif-jpeg-compress20,1080
+(define (exif-comment-set!21,1116
+(define (exif-comment21,1116
+(define (exif-%commentpos-set!22,1146
+(define (exif-%commentpos22,1146
+(define (exif-%commentlen-set!23,1180
+(define (exif-%commentlen23,1180
+(define (exif-date-set!24,1214
+(define (exif-date24,1214
+(define (exif-make-set!25,1241
+(define (exif-make25,1241
+(define (exif-model-set!26,1268
+(define (exif-model26,1268
+(define (exif-orientation-set!27,1296
+(define (exif-orientation27,1296
+(define (exif-%orientationpos-set!28,1338
+(define (exif-%orientationpos28,1338
+(define (exif-width-set!29,1376
+(define (exif-width29,1376
+(define (exif-height-set!30,1404
+(define (exif-height30,1404
+(define (exif-ewidth-set!31,1433
+(define (exif-ewidth31,1433
+(define (exif-eheight-set!32,1462
+(define (exif-eheight32,1462
+(define (exif-xresolution-set!33,1492
+(define (exif-xresolution33,1492
+(define (exif-yresolution-set!34,1526
+(define (exif-yresolution34,1526
+(define (exif-resolution-unit-set!35,1560
+(define (exif-resolution-unit35,1560
+(define (exif-focal-length-set!36,1598
+(define (exif-focal-length36,1598
+(define (exif-flash-set!37,1633
+(define (exif-flash37,1633
+(define (exif-fnumber-set!38,1661
+(define (exif-fnumber38,1661
+(define (exif-iso-set!39,1691
+(define (exif-iso39,1691
+(define (exif-shutter-speed-value-set!40,1717
+(define (exif-shutter-speed-value40,1717
+(define (exif-exposure-time-set!41,1759
+(define (exif-exposure-time41,1759
+(define (exif-exposure-bias-value-set!42,1795
+(define (exif-exposure-bias-value42,1795
+(define (exif-aperture-set!43,1837
+(define (exif-aperture43,1837
+(define (exif-metering-mode-set!44,1868
+(define (exif-metering-mode44,1868
+(define (exif-cdd-width-set!45,1904
+(define (exif-cdd-width45,1904
+(define (exif-focal-plane-xres-set!46,1936
+(define (exif-focal-plane-xres46,1936
+(define (exif-focal-plane-units-set!47,1975
+(define (exif-focal-plane-units47,1975
+(define (exif-thumbnail-set!48,2015
+(define (exif-thumbnail48,2015
+(define (exif-thumbnail-path-set!49,2047
+(define (exif-thumbnail-path49,2047
+(define (exif-thumbnail-offset-set!50,2084
+(define (exif-thumbnail-offset50,2084
+(define (exif-thumbnail-length-set!51,2123
+(define (exif-thumbnail-length51,2123
+(define (exif-error62,2559
+(define (get16u70,3017
+(define (get32u83,3687
+(define (getformat105,4657
+(define (getformat/fx129,5457
+(define *exif-formats-size*142,5885
+(define *jpeg-markers*148,6170
+(define (jpeg-marker177,7175
+(define (read-jpeg-marker185,7620
+(define (remove-trailing-spaces!193,7969
+(define (process-exif-dir!212,8525
+(define (read-jpeg-exif!410,15114
+(define (read-COM!460,16760
+(define (read-SOFn!479,17421
+(define (read-jpeg-section489,17898
+(define (read-jpeg-sections517,19008
+(define (jpeg-exif594,21323
+(define (jpeg-exif-comment-set!609,21900
+(define (jpeg-exif-orientation-set!647,23272
+(define (parse-exif-date683,24625
+
+Llib/id3.scm,3063
+(module __multimedia-id315,963
+(define (&large-frame-exception?19,1022
+(define (make-&large-frame-exception19,1022
+(define (fill-&large-frame-exception!19,1022
+   (static (class &large-frame-exception19,1022
+(define (&large-frame-exception-size::elong20,1075
+(define (vorbis?35,1566
+(define (make-vorbis35,1566
+(define (fill-vorbis!35,1566
+	   (class vorbis35,1566
+(define (id3?37,1600
+(define (make-id337,1600
+(define (fill-id3!37,1600
+	   (class id337,1600
+(define (id3-version::bstring-set!38,1625
+(define (id3-version::bstring38,1625
+(define (id3-orchestra::obj39,1649
+(define (id3-conductor::obj40,1696
+(define (id3-recording41,1743
+(define (id3-cd::obj-set!42,1785
+(define (id3-cd::obj42,1785
+(define (id3-woaf::obj-set!43,1815
+(define (id3-woaf::obj43,1815
+(define (id3-woar::obj-set!44,1847
+(define (id3-woar::obj44,1847
+(define (id3-wors::obj-set!45,1879
+(define (id3-wors::obj45,1879
+(define (musicinfo?47,1913
+(define (make-musicinfo47,1913
+(define (fill-musicinfo!47,1913
+	   (class musicinfo47,1913
+(define (musicinfo-format::bstring48,1934
+(define (musicinfo-samplerate::long49,1969
+(define (musicinfo-channels::int50,2005
+(define (musicinfo-bps::int51,2038
+(define (musicinfo-duration::long52,2066
+(define *id3v2-genres*69,2637
+(define (string-cut!200,4999
+(define-inline (mmap-substring/len215,5455
+(define (id3v1?221,5790
+(define (id3v1.1?229,6153
+(define (mp3-id3v1237,6546
+(define (mp3-id3v11250,7372
+(define (id3v2.2?260,7802
+(define (id3v2.3?267,8145
+(define (id3v2.4?274,8486
+(define (id3v2-size281,8827
+(define (get-ucs2-string295,9415
+(define (get-utf16-be-string332,10811
+(define (id3v2-get-string348,11437
+(define (id3v2.2-frame371,12243
+(define (id3v2.2-frames384,12786
+(define (id3v2.3-frame412,13730
+(define (id3v2.3-frames428,14403
+(define (id3v2.4-frames465,15554
+(define (id3v2-get-frame471,15829
+(define (mp3-id3v2.2480,16175
+(define (id3v2-get-genre500,17095
+(define (tcon->genre509,17454
+(define (id3v2-genre518,17841
+(define (id3v2-picture534,18353
+(define (mp3-id3v2.3548,18949
+(define (mp3-id3v2.4575,20211
+(define (mp3-id3601,21430
+(define (id3v1merge607,21700
+(define (mp3-musictag638,22874
+(define (neq-input-string656,23585
+(define (ubigendian2670,24147
+(define (ubigendian3679,24587
+(define (ubigendian4692,25114
+(define (ulittlendian4706,25745
+(define (split-comment721,26356
+(define (ogg-comments->musictag733,26982
+(define (parse-metadata-block-vorbis-comment-body755,27735
+(define (parse-metadata-block-vorbis-comment772,28515
+(define (read-ogg-comments796,29809
+(define (read-flac-comments858,32404
+(define (flac-musictag885,33455
+(define (ogg-musictag897,33980
+(define (file-musictag909,34505
+(define (read-flac-musicinfo954,35975
+(define (flac-musicinfo1023,38221
+(define (read-mp3-musicinfo1035,38724
+(define (mp3-musicinfo1102,41033
+(define (read-ogg-musicinfo1114,41533
+(define (ogg-musicinfo1120,41800
+(define *musicinfo-readers*1132,42305
+(define (register-musicinfo-reader!1137,42561
+(define (file-musicinfo1143,42898
+
+Llib/mp3.scm,1233
+(module __multimedia-mp319,1259
+(define (mp3frame?21,1288
+(define (make-mp3frame21,1288
+(define (fill-mp3frame!21,1288
+   (export (class mp3frame21,1288
+(define (mp3frame-offset::elong-set!22,1315
+(define (mp3frame-offset::elong22,1315
+(define (mp3frame-version::real-set!23,1352
+(define (mp3frame-version::real23,1352
+(define (mp3frame-layer::int-set!24,1388
+(define (mp3frame-layer::int24,1388
+(define (mp3frame-crc::int-set!25,1420
+(define (mp3frame-crc::int25,1420
+(define (mp3frame-bitrate::int-set!26,1450
+(define (mp3frame-bitrate::int26,1450
+(define (mp3frame-samplerate::int-set!27,1484
+(define (mp3frame-samplerate::int27,1484
+(define (mp3frame-padding::bool-set!28,1521
+(define (mp3frame-padding::bool28,1521
+(define (mp3frame-channels::int-set!29,1557
+(define (mp3frame-channels::int29,1557
+(define (mp3frame-length::elong-set!30,1592
+(define (mp3frame-length::elong30,1592
+(define (mp3frame-duration::float-set!31,1629
+(define (mp3frame-duration::float31,1629
+(define (frame-duration42,2094
+(define (byte-bits49,2443
+(define (fill-mp3-frame!55,2769
+(define (read-mp3-frame-mmap123,5234
+(define (read-mp3-frame-input-port149,6112
+(define (read-mp3-frame190,7407
+(define (mp3-index205,8144
+
+Llib/m3u.scm,268
+(module __multimedia-m3u15,963
+(define (read-m3u23,1300
+(define (write-m3u36,1782
+(define *m3u-header-grammar*55,2440
+(define (error-msg71,3014
+(define *m3u-song-grammar*77,3320
+(define *m3u-song-length-grammar*103,4349
+(define *m3u-song-name-grammar*116,4843
+
+Llib/music.scm,3304
+(module __multimedia-music15,963
+(define (music?19,1034
+(define (make-music19,1034
+(define (fill-music!19,1034
+   (export (class music19,1034
+(define (music-music-init-set!20,1058
+(define (music-music-init20,1058
+(define (music-onstate::procedure-set!22,1086
+(define (music-onstate::procedure22,1086
+(define (music-onvolume::procedure-set!23,1158
+(define (music-onvolume::procedure23,1158
+(define (music-onerror::procedure-set!24,1229
+(define (music-onerror::procedure24,1229
+(define (music-onevent::procedure-set!25,1292
+(define (music-onevent::procedure25,1292
+(define (music-%mutex::mutex-set!27,1377
+(define (music-%mutex::mutex27,1377
+(define (music-%status::musicstatus-set!28,1423
+(define (music-%status::musicstatus28,1423
+(define (musicstatus?30,1492
+(define (make-musicstatus30,1492
+(define (fill-musicstatus!30,1492
+	   (class musicstatus30,1492
+(define (musicstatus-state::symbol-set!32,1562
+(define (musicstatus-state::symbol32,1562
+(define (musicstatus-volume::obj-set!33,1601
+(define (musicstatus-volume::obj33,1601
+(define (musicstatus-repeat::bool-set!34,1634
+(define (musicstatus-repeat::bool34,1634
+(define (musicstatus-random::bool-set!35,1669
+(define (musicstatus-random::bool35,1669
+(define (musicstatus-playlistid::int-set!36,1704
+(define (musicstatus-playlistid::int36,1704
+(define (musicstatus-playlistlength::int-set!37,1741
+(define (musicstatus-playlistlength::int37,1741
+(define (musicstatus-xfade::int-set!38,1782
+(define (musicstatus-xfade::int38,1782
+(define (musicstatus-song::int-set!39,1814
+(define (musicstatus-song::int39,1814
+(define (musicstatus-songid::int-set!40,1845
+(define (musicstatus-songid::int40,1845
+(define (musicstatus-songpos-set!41,1878
+(define (musicstatus-songpos41,1878
+(define (musicstatus-songlength::int-set!42,1907
+(define (musicstatus-songlength::int42,1907
+(define (musicstatus-bitrate::int-set!43,1944
+(define (musicstatus-bitrate::int43,1944
+(define (musicstatus-khz::int-set!44,1978
+(define (musicstatus-khz::int44,1978
+(define (musicstatus-err::obj-set!45,2008
+(define (musicstatus-err::obj45,2008
+(define (musicstatus-buffering::int-set!46,2039
+(define (musicstatus-buffering::int46,2039
+(define-generic (music-close87,3463
+(define-generic (music-closed?94,3710
+(define-generic (music-reset!95,3752
+(define-generic (music-playlist-get97,3794
+(define-generic (music-playlist-add!99,3852
+(define-generic (music-playlist-delete!103,4004
+(define-generic (music-playlist-clear!104,4062
+(define-generic (music-status106,4113
+(define-generic (music-play110,4218
+(define-generic (music-seek111,4264
+(define-generic (music-stop112,4317
+(define-generic (music-pause113,4356
+(define-generic (music-next115,4397
+(define-generic (music-prev125,4684
+(define-generic (music-crossfade135,4989
+(define-generic (music-random-set!136,5042
+(define-generic (music-repeat-set!137,5099
+(define-generic (music-reset-error!138,5156
+(define-generic (music-volume-get140,5217
+(define-generic (music-volume-set!141,5267
+(define-generic (music-init146,5543
+(define-generic (music-song154,5913
+(define-generic (music-songpos162,6271
+(define-generic (music-meta170,6638
+(define-generic (music-can-play-type?176,6917
+(define (music-charset-convert184,7361
+(define (%multimedia-init200,7943
+
+Llib/mpd.scm,3989
+(module __multimedia-mpd15,963
+(define (mpd-database?20,1048
+(define (make-mpd-database20,1048
+(define (fill-mpd-database!20,1048
+   (export (class mpd-database20,1048
+(define (mpd-database-mpd-database-init!-set!21,1079
+(define (mpd-database-mpd-database-init!21,1079
+(define (mpd-database-directories::pair-nil22,1107
+(define (mpd-database-suffixes::pair-nil-set!23,1162
+(define (mpd-database-suffixes::pair-nil23,1162
+(define (mpd-database-%base::bstring-set!24,1228
+(define (mpd-database-%base::bstring24,1228
+(define (mpd-database-%artists::pair-nil-set!25,1270
+(define (mpd-database-%artists::pair-nil25,1270
+(define (mpd-database-%albums::pair-nil-set!26,1312
+(define (mpd-database-%albums::pair-nil26,1312
+(define (mpd-database-%genres::pair-nil-set!27,1353
+(define (mpd-database-%genres::pair-nil27,1353
+(define (mpd-database-%nartists-set!28,1394
+(define (mpd-database-%nartists28,1394
+(define (mpd-database-%nalbums::int-set!29,1425
+(define (mpd-database-%nalbums::int29,1425
+(define (mpd-database-%nsongs::int-set!30,1460
+(define (mpd-database-%nsongs::int30,1460
+(define (mpd-database-%uptime-set!31,1494
+(define (mpd-database-%uptime31,1494
+(define (mpd-database-%db-update-set!32,1534
+(define (mpd-database-%db-update32,1534
+(define (mpd-version63,3431
+(define *mpd-commands*68,3693
+(define *mpd-notcommands*73,3944
+(define-macro (define-mpd-command78,4198
+(define-macro (define-command142,6126
+(define-macro (define-notcommand148,6455
+(define (string-last-index154,6774
+(define (get-line-command161,7134
+(define (get-line-arg-string-nth170,7514
+(define (get-line-arg-symbol-nth198,8424
+(define (get-line-arg-integer-nth221,9215
+(define cmdn226,9364
+(define (mpd230,9602
+(define (execute-command259,10461
+(define (mpd-list-begin279,11193
+(define (mpd-ok311,12258
+(define (mpd-not-implemented318,12551
+(define (mpd-err324,12823
+(define-macro (disp365,14362
+(define (infofile420,16341
+(define (playlistinfo432,16854
+(define (mpd-database-uri-path469,18529
+(define (currentsong-info514,20397
+(define currentsong-cache-plist560,21826
+(define currentsong-cache-num561,21862
+(define currentsong-cache-info562,21896
+(define (currentsong/cache567,22154
+(define (mpd-music-volume-get669,26341
+(define (mpd-music-volume-set!677,26676
+(define (longest-prefix923,36710
+(define (file-children?937,37148
+(define (file-system-root?949,37659
+(define-generic (mpd-database-init!956,37998
+(define (directory->sort-list988,39308
+(define (mpd->file996,39663
+(define (file->mpd1010,40197
+(define (uri->mpd1020,40621
+(define (image-file?1028,40948
+(define (directory-image1034,41272
+(define (music-file?1042,41632
+(define (directory-contains-music?1049,41983
+(define (mpd-database-directories-scan1055,42313
+(define-generic (mpd-database-file->path1095,43641
+(define-generic (mpd-database-stats1108,44204
+(define-generic (mpd-database-listall1142,45279
+(define-generic (mpd-database-listalbum1168,46110
+(define-generic (mpd-database-listartistalbum1179,46540
+(define-generic (mpd-database-listgenrealbum1189,46973
+(define-generic (mpd-database-listgenreartist1203,47524
+(define-generic (mpd-database-listgenre1213,47955
+(define-generic (mpd-database-listartist1223,48361
+(define-generic (mpd-database-lsinfo1233,48770
+(define (find-music-file1269,50123
+(define-generic (mpd-database-find-album1294,50979
+(define-generic (mpd-database-find-artist1303,51417
+(define-generic (mpd-database-search-artist-album1312,51861
+(define-generic (mpd-database-search-artist-title1345,53036
+(define-generic (mpd-database-find-title1371,53940
+(define-generic (mpd-database-find-genre1389,54520
+(define-generic (mpd-database-getgenre1407,55101
+(define-generic (mpd-database-getartist1414,55438
+(define-generic (mpd-database-getgenreartist1421,55778
+(define-generic (mpd-database-getartistalbum1431,56226
+(define (getinfofile1444,56794
+(define (get-music-file1499,58648
+(define-generic (mpd-database-get-album1517,59323
+
+Llib/mpc.scm,2355
+(module __multimedia-mpc15,963
+(define (mpc?19,1021
+(define (make-mpc19,1021
+(define (fill-mpc!19,1021
+   (export (class mpc19,1021
+(define (mpc-hello21,1058
+(define (mpc-host22,1096
+(define (mpc-port23,1142
+(define (mpc-timeout24,1181
+(define (mpc-prefix-set!25,1226
+(define (mpc-prefix25,1226
+(define (mpc-%closed::bool-set!27,1256
+(define (mpc-%closed::bool27,1256
+(define (mpc-%mpd-set!28,1292
+(define (mpc-%mpd28,1292
+(define (mpc-%socket-set!29,1319
+(define (mpc-%socket29,1319
+(define (mpc-%playid::int-set!30,1349
+(define (mpc-%playid::int30,1349
+(define (mpc-%mmutex::mutex-set!31,1384
+(define (mpc-%mmutex::mutex31,1384
+(define (mutex-locked?36,1663
+(define (mpc-skip-line45,2068
+(define-method (music-reset-error! mpc::mpc62,2671
+(define (set-error!74,3188
+(define (exec93,3850
+(define (mpc-cmd114,4924
+(define _c_181,7240
+(define debug-mpc182,7255
+(define (parse-error-msg187,7500
+(define *mpc-string-grammar*200,8012
+(define *mpc-ignore-grammar*216,8564
+(define *mpc-integer-grammar*232,9087
+(define (ok-parser248,9608
+(define-method (music-close mpc::mpc256,9998
+(define-method (music-closed? mpc::mpc277,10728
+(define-method (music-reset! mpc::mpc284,11045
+(define-method (music-playlist-get mpc::mpc294,11459
+(define-method (music-playlist-add! mpc::mpc s342,13014
+(define-method (music-playlist-delete! mpc::mpc n355,13601
+(define-method (music-playlist-clear! mpc::mpc364,14036
+(define-method (music-status mpc::mpc373,14430
+(define (music-update-status-sans-lock!383,14861
+(define-method (music-song mpc::mpc620,21908
+(define-method (music-songpos::int mpc::mpc674,23531
+(define-method (music-meta mpc::mpc735,25129
+(define-method (music-play mpc::mpc . song764,26056
+(define-method (music-seek mpc::mpc ntime::obj . nsong801,27277
+(define-method (music-stop mpc::mpc820,28086
+(define-method (music-pause mpc::mpc834,28672
+(define-method (music-next mpc::mpc843,29056
+(define-method (music-prev mpc::mpc852,29438
+(define-method (music-crossfade mpc::mpc sec::int861,29824
+(define-method (music-random-set! mpc::mpc flag::bool871,30290
+(define-method (music-repeat-set! mpc::mpc flag::bool880,30710
+(define-method (music-volume-get mpc::mpc889,31130
+(define-method (music-volume-set! mpc::mpc vol935,32380
+(define-method (music-can-play-type? mpc::mpc mimetype::bstring945,32843
+
+Llib/musicproc.scm,2942
+(module __multimedia-musicproc15,963
+(define (musicproc?19,1033
+(define (make-musicproc19,1033
+(define (fill-musicproc!19,1033
+   (export (class musicproc19,1033
+(define (musicproc-charset::symbol-set!20,1068
+(define (musicproc-charset::symbol20,1068
+(define (musicproc-%process-set!21,1116
+(define (musicproc-%process21,1116
+(define (musicproc-%playlist::pair-nil-set!22,1157
+(define (musicproc-%playlist::pair-nil22,1157
+(define (musicproc-%playid::int-set!23,1200
+(define (musicproc-%playid::int23,1200
+(define (musicproc-%quote-uri::bool-set!24,1234
+(define (musicproc-%quote-uri::bool24,1234
+(define (musicproc-%command-volume-set!25,1273
+(define (musicproc-%command-volume25,1273
+(define (musicproc-%command-stop-set!26,1321
+(define (musicproc-%command-stop26,1321
+(define (musicproc-%command-loadpaused-set!27,1367
+(define (musicproc-%command-loadpaused27,1367
+(define (musicproc-%command-load-set!28,1419
+(define (musicproc-%command-load28,1419
+(define (musicproc-%command-pause-set!29,1465
+(define (musicproc-%command-pause29,1465
+(define (musicproc-%command-seek-format-set!30,1512
+(define (musicproc-%command-seek-format30,1512
+(define (musicproc-%user-state::symbol-set!31,1565
+(define (musicproc-%user-state::symbol31,1565
+(define (musicproc-%pmutex::mutex32,1610
+(define (musicproc-%pcondv::condvar33,1667
+(define (musicproc-%inexec::bool-set!34,1739
+(define (musicproc-%inexec::bool34,1739
+(define (musicproc-exec47,2309
+(define-generic (musicproc-start90,3489
+(define-method (music-status o::musicproc95,3760
+(define-generic (musicproc-connect!102,4077
+(define-method (music-close o::musicproc111,4533
+(define-method (music-closed? o::musicproc126,5126
+(define-method (music-reset! musicproc::musicproc133,5456
+(define-method (music-playlist-get o::musicproc139,5758
+(define-method (music-playlist-add! o::musicproc s146,6089
+(define-method (music-playlist-delete! o::musicproc n158,6676
+(define-method (music-playlist-clear! o::musicproc170,7316
+(define-generic (musicproc-loadpaused182,7834
+(define-generic (musicproc-load192,8328
+(define (playlist-load-inner!202,8804
+(define (playlist-load!235,10057
+(define-method (music-play o::musicproc . s243,10455
+(define-method (music-seek o::musicproc pos . s267,11378
+(define-method (music-stop o::musicproc288,12261
+(define-method (music-pause o::musicproc298,12717
+(define-method (music-next o::musicproc310,13244
+(define-method (music-prev o::musicproc323,13874
+(define-method (music-crossfade o::musicproc sec::int336,14511
+(define-method (music-random-set! o::musicproc flag::bool342,14806
+(define-method (music-repeat-set! o::musicproc flag::bool350,15200
+(define-method (music-song o::musicproc358,15594
+(define-method (music-songpos o::musicproc369,16026
+(define-method (music-volume-get o::musicproc378,16428
+(define-method (music-volume-set! o::musicproc v386,16798
+(define-generic (musicproc-parse399,17343
+
+Llib/mplayer.scm,1079
+(module __multimedia-mplayer15,963
+(define (mplayer?20,1058
+(define (make-mplayer20,1058
+(define (fill-mplayer!20,1058
+   (export (class mplayer20,1058
+(define (mplayer-frequency::long-set!21,1095
+(define (mplayer-frequency::long21,1095
+(define (mplayer-path::bstring22,1138
+(define (mplayer-args::pair-nil23,1191
+(define (mplayer-ao::obj24,1277
+(define (mplayer-ac::obj25,1327
+(define (mplayer-%close::bool-set!26,1377
+(define (mplayer-%close::bool26,1377
+(define (mplayer-%result-acknowledge::bstring27,1412
+(define-method (music-init o::mplayer32,1707
+(define-method (musicproc-loadpaused o::mplayer m::bstring55,2603
+(define-method (music-close o::mplayer63,3067
+(define-method (music-closed? o::mplayer72,3446
+(define number-grammar79,3762
+(define (read-answer91,4313
+(define (cmd-integer112,5027
+(define (cmd-string125,5471
+(define (cmd-value137,5932
+(define-method (music-meta o::mplayer147,6311
+(define-method (musicproc-start o::mplayer165,7287
+(define-method (music-pause o::mplayer200,8566
+(define-method (musicproc-parse o::mplayer214,9155
+
+Llib/mpg123.scm,555
+(module __multimedia-mpg12315,963
+(define (mpg123?21,1078
+(define (make-mpg12321,1078
+(define (fill-mpg123!21,1078
+   (export (class mpg12321,1078
+(define (mpg123-path::bstring23,1122
+(define (mpg123-args::pair-nil24,1174
+(define (mpg123-%result-acknowledge::bstring26,1233
+(define-method (music-init o::mpg12331,1529
+(define-method (musicproc-start o::mpg12358,2522
+(define number-grammar84,3436
+(define mpg123-grammar94,3841
+(define-method (music-can-play-type? m::mpg123 mimetype206,7535
+(define-method (musicproc-parse o::mpg123212,7852
+
+Llib/mixer.scm,352
+(module __multimedia-mixer15,963
+(define (mixer?17,991
+(define (make-mixer17,991
+(define (fill-mixer!17,991
+   (export (class mixer17,991
+(define (mixer-devices::pair-nil-set!18,1015
+(define (mixer-devices::pair-nil18,1015
+(define-generic (mixer-close27,1428
+(define-generic (mixer-volume-get28,1468
+(define-generic (mixer-volume-set!29,1524
+
+Llib/soundcard.scm,731
+(module __multimedia-soundcard15,963
+(define (soundcard?28,1517
+(define (make-soundcard28,1517
+(define (fill-soundcard!28,1517
+	   (class soundcard28,1517
+(define (soundcard-soundcard-open-set!29,1545
+(define (soundcard-soundcard-open29,1545
+(define (soundcard-device::bstring30,1569
+(define (soundcard-%devices::pair-nil-set!31,1604
+(define (soundcard-%devices::pair-nil31,1604
+(define (soundcard-%mixer-set!32,1646
+(define (soundcard-%mixer32,1646
+(define (soundcard-open37,1911
+(define-method (mixer-close m::soundcard56,2670
+(define (soundcard-find-device68,3134
+(define-method (mixer-volume-set! m::soundcard dev::bstring l::int r::int83,3693
+(define-method (mixer-volume-get m::soundcard dev::bstring96,4266
+
+Llib/color.scm,428
+(module __multimedia-color15,963
+(define css2-colors30,1618
+(define (integer->string-252,2377
+(define (make-hex-color64,2902
+(define (raise-color-error75,3336
+(define (parse-hex-color84,3713
+(define (parse-rgb-color115,4907
+(define (parse-hsl-color135,5696
+(define (parse-web-color149,6230
+(define (hsv->rgb168,6920
+(define (h205,8174
+(define (rgb->hsv223,8831
+(define (hsl->rgb240,9503
+(define (rgb->hsl275,10679

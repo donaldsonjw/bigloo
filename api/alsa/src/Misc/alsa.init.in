@@ -1,0 +1,37 @@
+;; -*- mode: bee -*-
+;*=====================================================================*/
+;*    serrano/prgm/project/bigloo/api/alsa/src/Misc/alsa.init.in       */
+;*    -------------------------------------------------------------    */
+;*    Author      :  Manuel Serrano                                    */
+;*    Creation    :  Wed Nov  7 05:40:36 2001                          */
+;*    Last change :  Mon Jul 28 09:17:06 2014 (serrano)                */
+;*    Copyright   :  2001-14 Manuel Serrano                            */
+;*    -------------------------------------------------------------    */
+;*    The ALSA init file.                                              */
+;*=====================================================================*/
+ 
+;*---------------------------------------------------------------------*/
+;*    The library                                                      */
+;*---------------------------------------------------------------------*/
+(declare-library! 'alsa
+   :srfi '(alsa)
+   :basename "biglooalsa"
+   :module-init '__alsa_alsa
+   :module-eval '__alsa_makelib)
+
+;*---------------------------------------------------------------------*/
+;*    Compile and Link options                                         */
+;*---------------------------------------------------------------------*/
+(cond-expand
+   (bigloo-compile
+    ;; alsa includes
+    (set! *additional-include-foreign*
+       (cons "alsa/asoundlib.h" *additional-include-foreign*))
+    ;; required multimedia
+    (set! *additional-bigloo-libraries*
+       (cons* 'bigloomultimedia *additional-bigloo-libraries*))
+    ;; alsa C compilation options
+    (set! *cc-options* (cons "@ALSACFLAGS@" *cc-options*))
+    ;; alsa libraries
+    (set! *ld-post-options* (cons "@ALSALIBS@" *ld-post-options*))))
+

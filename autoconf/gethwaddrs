@@ -1,0 +1,99 @@
+#!/bin/sh
+#*=====================================================================*/
+#*    serrano/prgm/project/bigloo/autoconf/gethwaddrs                  */
+#*    -------------------------------------------------------------    */
+#*    Author      :  Manuel Serrano                                    */
+#*    Creation    :  Wed Aug  9 13:27:23 1995                          */
+#*    Last change :  Thu Sep 13 16:29:22 2012 (serrano)                */
+#*    -------------------------------------------------------------    */
+#*    Check for the gethwaddrs                                         */
+#*=====================================================================*/
+
+#*---------------------------------------------------------------------*/
+#*    flags                                                            */
+#*---------------------------------------------------------------------*/
+cflags=$CFLAGS
+solaris_lib="-lsocket -lnsl"
+mingw_lib="-lws2_32"
+
+#*---------------------------------------------------------------------*/
+#*    We parse the arguments                                           */
+#*---------------------------------------------------------------------*/
+while : ; do
+  case $1 in
+    "")
+      break;;
+
+    --cflags=*|-cflags=*)
+      cflags="`echo $1 | sed 's/^[-a-z]*=//'`";;
+
+    --lib=*|-lib=*)
+      lib="`echo $1 | sed 's/^[-a-z]*=//'`";;
+
+    -*)
+      echo "Unknown option \"$1\", ignored" >&2;;
+  esac
+  shift
+done
+
+file=$TMP/actest$USER
+aout=$TMP/Xactest$USER
+
+#*---------------------------------------------------------------------*/
+#*    compile                                                          */
+#*---------------------------------------------------------------------*/
+compile="$CC $cflags $file.c -o $aout $lib >/dev/null"
+compile_solaris="$CC $cflags $file.c -o $aout $solaris_lib >/dev/null"
+compile_mingw="$CC -D_MINGW_VER $cflags $file.c -o $aout $mingw_lib >/dev/null"
+
+#*---------------------------------------------------------------------*/
+#*    The test C file                                                  */
+#*---------------------------------------------------------------------*/
+if( test -f $file.c ); then
+   rm -f $file.c || exit $?
+fi
+
+#*---------------------------------------------------------------------*/
+#*    Test                                                             */
+#*---------------------------------------------------------------------*/
+cat > $file.c <<EOF
+#include <stdio.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>    
+#include <sys/socket.h>
+#include <net/if.h>
+
+int main( int argc, char *argv[] ) {
+   int s;
+   struct ifreq ifreq;
+
+   if( (s = socket( PF_INET, SOCK_DGRAM, 0 )) != -1 ) {
+      memset( &ifreq, 0x00, sizeof( ifreq ) );
+
+      strcpy(ifreq.ifr_name, argv[ 1 ]);
+      ioctl(s, SIOCGIFHWADDR, &ifreq);
+
+      printf("%.2X:", (unsigned char)ifreq.ifr_hwaddr.sa_data[5]);
+
+      close(s);
+   }
+
+   return 0;
+}
+EOF
+
+#*---------------------------------------------------------------------*/
+#*    Compilation test                                                 */
+#*---------------------------------------------------------------------*/
+if eval "$BUILDSH $compile" 2> /dev/null; then
+   \rm -f $file.*
+   rm -f $aout
+   rm -f $aout*
+   echo "1"
+else
+   \rm -f $file.*
+   rm -f $aout
+   rm -f $aout*
+   echo "0"
+fi
+exit 0

@@ -1,0 +1,174 @@
+<!-- 95% W3C COMPLIANT, 95% CSS FREE, RAW HTML -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<title>Bdb</title>
+ <style type="text/css">
+  <!--
+  pre { font-family: monospace }
+  tt { font-family: monospace }
+  code { font-family: monospace }
+  p.flushright { text-align: right }
+  p.flushleft { text-align: left }
+  span.sc { font-variant: small-caps }
+  span.sf { font-family: sans-serif }
+  span.skribetitle { font-family: sans-serif; font-weight: bolder; font-size: x-large; }
+  span.refscreen { }
+  span.refprint { display: none; }
+  -->
+ </style>
+</head>
+
+<body class="chapter" bgcolor="#ffffff">
+<table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>5. Bdb<br/>The ``Bigloo Debugger''<br/>Nov 1999 -- Continuing execution after a breakpoint</big></big></big></strong></div><center>
+</center>
+</td></tr></tbody></table>
+<table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
+<td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
+<br/><center id='center1523'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc1513" align="center" colspan="1"><font color="#ffffff"><strong id='bold1511'
+>main page</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc1520" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc1516" align="left" valign="top" colspan="1"><strong id='bold1515'
+>top:</strong></td><td id="tc1517" align="right" valign="top" colspan="1"><a href="bdb.html#Bdb-The-``Bigloo-Debugger''-Nov-1999" class="inbound">Bdb<br/>The ``Bigloo Debugger''<br/>Nov 1999</a></td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center1533'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc1527" align="center" colspan="1"><font color="#ffffff"><strong id='bold1525'
+>Continuing execution after a breakpoint</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc1530" align="center" colspan="1"></td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center1543'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc1537" align="center" colspan="1"><font color="#ffffff"><strong id='bold1535'
+>Chapters</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc1540" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tbody>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bdb-1.html#Bdb-Copying-Conditions">Bdb Copying Conditions</a></td></tr>
+ <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bdb-2.html#Table-of-contents">Table of contents</a></td></tr>
+ <tr><td valign="top" align="left">2</td><td colspan="4" width="100%"><a href="bdb-3.html#Overview">Overview</a></td></tr>
+ <tr><td valign="top" align="left">3</td><td colspan="4" width="100%"><a href="bdb-4.html#Running-Programs-Under-BDB">Running Programs Under BDB</a></td></tr>
+ <tr><td valign="top" align="left">4</td><td colspan="4" width="100%"><a href="bdb-5.html#Stopping">Stopping</a></td></tr>
+ <tr><td valign="top" align="left">5</td><td colspan="4" width="100%"><a href="bdb-6.html#Continuing-execution-after-a-breakpoint">Continuing execution after a breakpoint</a></td></tr>
+ <tr><td valign="top" align="left">6</td><td colspan="4" width="100%"><a href="bdb-7.html#Examining-the-Stack">Examining the Stack</a></td></tr>
+ <tr><td valign="top" align="left">7</td><td colspan="4" width="100%"><a href="bdb-8.html#Using-BDB-under-Emacs">Using BDB under Emacs</a></td></tr>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bdb-9.html#Bibliography">Bibliography</a></td></tr>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bdb-10.html#Index">Index</a></td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody></table>
+</center>
+</div></td>
+<td align="left" valign="top" class="skribe-body"><div class="skribe-body">
+<a name="Continuing" class="mark"></a><a name="g1149" class="mark"></a>
+When the execution has stopped at a breakpoint several commands allow the
+execution to be resumed:<br/><br/>You may use any of the GDB commands to resume an execution
+No distinction is made between Bigloo and C code. That is, it is
+possible when stepping a Bigloo function to enter a C function and vice
+versa. BDB does not try to hide the execution of C functions. Each code
+compiled in debug mode is visible from BDB.<br/><br/><dl class="description" id='description1217'
+> <dt><code id='code1153'
+>continue [IGNORE-COUNT]</code></dt> <dt><code id='code1154'
+>
+</code></dt> <dt><code id='code1155'
+>c [IGNORE-COUNT]</code></dt> <dt><code id='code1156'
+>
+</code></dt><dd><a name="g1157" class="mark"></a>Resume program execution at the address where your program last
+stopped; any breakpoints set at that address are bypassed.  The
+optional argument IGNORE-COUNT allows you to specify a further
+number of times to ignore a breakpoint at this location.<br/><br/></dd>
+ <dt><code id='code1161'
+>step [COUNT]</code></dt> <dt><code id='code1162'
+>
+</code></dt> <dt><code id='code1163'
+>s [COUNT]</code></dt> <dt><code id='code1164'
+>
+</code></dt><dd><a name="g1165" class="mark"></a>Continue running your program until control reaches a different
+Scheme source line, then stop it and return control to BDB.  This command
+is abbreviated <code id='code1167'
+>bs</code>.<br/><br/></dd>
+ <dt><code id='code1170'
+>next [COUNT]</code></dt> <dt><code id='code1171'
+>
+</code></dt> <dt><code id='code1172'
+>n [COUNT]</code></dt> <dt><code id='code1173'
+>
+</code></dt><dd><a name="g1174" class="mark"></a>Continue to the next source line in the current (innermost) stack
+frame.  This is similar to <code id='code1176'
+>step</code>, but function calls that appear
+within the line of code are executed without stopping.  Execution
+stops when control reaches a different line of code at the
+original stack level that was executing when you gave the <code id='code1177'
+>next</code>
+command.  This command is abbreviated <code id='code1178'
+>n</code>.<br/><br/>An argument COUNT is a repeat count, as for <code id='code1180'
+>step</code>.<br/><br/>The <code id='code1182'
+>next</code> command now only stops at the first instruction of a
+source line.  This prevents the multiple stops that used to occur
+in switch statements, for loops, etc.<br/><br/></dd>
+ <dt><code id='code1185'
+>finish</code></dt> <dt><code id='code1186'
+>
+</code></dt> <dt><code id='code1187'
+>f</code></dt> <dt><code id='code1188'
+>
+</code></dt><dd><a name="g1189" class="mark"></a>Continue running until just after the function in the selected stack
+frame returns.  Print the returned value (if any).<br/><br/></dd>
+ <dt><code id='code1193'
+>until</code></dt> <dt><code id='code1194'
+>
+</code></dt> <dt><code id='code1195'
+>u</code></dt> <dt><code id='code1196'
+>
+</code></dt><dd><a name="g1197" class="mark"></a>Continue running until a source line past the current line, in the
+current stack frame, is reached.  This command is used to avoid
+single stepping through a loop more than once.  It is like the
+<code id='code1199'
+>next</code> command, except that when <code id='code1200'
+>until</code> encounters a jump, it
+automatically continues execution until the program counter is
+greater than the address of the jump.<br/><br/>This means that when you reach the end of a loop after single
+stepping through it, <code id='code1202'
+>until</code> makes your program continue execution
+until it exits the loop.  In contrast, a `next' command at the end
+of a loop simply steps back to the beginning of the loop, which
+forces you to step through the next iteration.<br/><br/><code id='code1204'
+>until</code> always stops your program if it attempts to exit the
+current stack frame.<br/><br/></dd>
+ <dt><code id='code1207'
+>return [EXPRESSION]</code></dt> <dt><code id='code1208'
+>
+</code></dt> <dt><code id='code1209'
+>r [EXPRESSION]</code></dt> <dt><code id='code1210'
+>
+</code></dt><dd><a name="g1211" class="mark"></a>
+You may return from a function, using the <code id='code1213'
+>return</code> GDB command
+
+This cancels the execution of a function call.
+If you give an <code id='code1215'
+><em id='it1214'
+>EXPRESSION</em></code> argument, its value is used as the function's
+return value.
+</dd>
+</dl>
+</div></td>
+</tr></table><div class="skribe-ending">
+<hr> 
+<p class="ending" id='paragraph1549'
+><font size="-1">
+This <span class="sc">Html</span> page has been produced by 
+<a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
+<br/>
+Last update <em id='it1547'
+>Fri Nov 14 08:51:47 2014</em>.</font></p></div>
+</body>
+</html>

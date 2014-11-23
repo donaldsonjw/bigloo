@@ -1,0 +1,22 @@
+#ignore emacs backup files
+*~
+
+#ignore .afile and .jfile
+.afile
+.jfile
+
+#ignore object files
+*.o
+*.obj
+
+#ignore libraries
+*.a
+*.so
+*.lib
+*.dll
+
+#ignore intermediat files in objs directories
+**/objs
+
+#ignore .c files in comptime
+comptime/**/*.c

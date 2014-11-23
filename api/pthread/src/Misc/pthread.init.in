@@ -1,0 +1,37 @@
+;; -*- mode: bee -*-
+;*=====================================================================*/
+;*    .../prgm/project/bigloo/api/pthread/src/Misc/pthread.init.in     */
+;*    -------------------------------------------------------------    */
+;*    Author      :  Manuel Serrano                                    */
+;*    Creation    :  Wed Nov  7 05:40:36 2001                          */
+;*    Last change :  Mon Jul 28 09:37:10 2014 (serrano)                */
+;*    Copyright   :  2001-14 Manuel Serrano                            */
+;*    -------------------------------------------------------------    */
+;*    The Pthread init file.                                           */
+;*=====================================================================*/
+
+;*---------------------------------------------------------------------*/
+;*    The library                                                      */
+;*---------------------------------------------------------------------*/
+(declare-library! 'pthread
+   :basename "bigloopthread"
+   :srfi '(pthread @PTHREAD_TIMEDJOIN@)
+   :module-init '__pth_thread
+   :module-eval '__pth_makelib
+   :class-init "bigloo.pthread.pthread"
+   :class-eval "bigloo.pthread.make_lib")
+
+;*---------------------------------------------------------------------*/
+;*    Register the srfi                                                */
+;*---------------------------------------------------------------------*/
+(cond-expand
+   (bigloo-compile
+    ;; The GC thread safe version.
+    (set! *gc-lib* '@BIGLOOGC_PTH@)
+    (set! *multi-threaded-gc?* #t)
+    ;; setup
+    (set! *bigloo-libraries-c-setup*
+       (cons "bglpth_setup" *bigloo-libraries-c-setup*))
+    ;; link option
+    (unless (string=? (os-class) "win32")
+       (set! *ld-post-options* (cons "@PTHREADLIBS@" *ld-post-options*)))))

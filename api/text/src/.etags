@@ -1,0 +1,75 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/bibtex.scm,517
+(module __text_bibtex15,963
+(define (bibtex26,1449
+(define (bibtex-port38,1862
+(define (bibtex-file44,2148
+(define (bibtex-string50,2451
+(define *bibtex-string-table*56,2762
+(define (make-bibtex-hashtable61,3029
+(define (parse-bibtex74,3556
+(define (the-coord96,4290
+(define bibtex-lexer102,4599
+(define bibtex-parser237,9813
+(define (bibtex-parse-authors347,12914
+(define (bibtex-string-def!373,14049
+(define (parse-entry-value389,14626
+(define (make-bibtex-entry413,15376
+(define (untexify427,15906
+
+Llib/gb2312.scm,154
+(module __text_gb231216,1037
+(define gb2312-lock23,1333
+(define gb2312-table28,1590
+(define (load-gb2312-tables!33,1838
+(define (gb2312->ucs250,2437
+
+Llib/hyphenation.scm,461
+(module __text_hyphenation25,1703
+(define (load-hyphens33,2108
+(define (make-hyphens57,2994
+(define (make-t-hyph65,3416
+(define (fold-left84,4034
+(define t-null92,4370
+(define (a-look97,4624
+(define (a-bind106,4987
+(define (t-look115,5419
+(define (t-bind124,5808
+(define (char-num133,6257
+(define (split-pat141,6711
+(define (split-exn164,7647
+(define (t-looks178,8216
+(define (max-rule191,8739
+(define (fixup200,9157
+(define (hyphenate206,9467
+
+Llib/levenshtein.scm,675
+(module __text_levenshtein26,1612
+(define (%identity35,2064
+(define (%vector-empty?41,2315
+(define (%string->vector47,2597
+(define (levenshtein-vector/predicate60,3026
+(define (levenshtein-vector/eq94,3931
+(define (levenshtein-vector/eqv96,4009
+(define (levenshtein-vector/equal98,4089
+(define (levenshtein-vector101,4174
+(define (levenshtein-list/predicate107,4465
+(define (levenshtein-list/eq116,4705
+(define (levenshtein-list/eqv119,4781
+(define (levenshtein-list/equal122,4859
+(define (levenshtein-list125,4941
+(define (levenshtein-datatype131,5228
+(define (levenshtein/predicate151,5948
+(define (levenshtein-string190,7088
+(define (levenshtein205,7586

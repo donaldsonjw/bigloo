@@ -1,0 +1,383 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/phidget.scm,221
+(module __phidget15,963
+(define phidget-initializedp36,1624
+(define phidget-lock37,1657
+(define (phidget-init!42,1925
+(define (phidget-version54,2398
+(define (phidget-strerror60,2678
+(define (phidget-error126,5298
+
+Llib/pdgtypes.scm,6931
+(module __phidget_types15,963
+(define (&phidget-error?17,988
+(define (make-&phidget-error17,988
+(define (fill-&phidget-error!17,988
+   (export  (class &phidget-error17,988
+(define (&phidget-log-error?18,1031
+(define (make-&phidget-log-error18,1031
+(define (fill-&phidget-log-error!18,1031
+	    (class &phidget-log-error18,1031
+(define (phidget-error-event?29,1307
+(define (make-phidget-error-event29,1307
+(define (fill-phidget-error-event!29,1307
+	    (class phidget-error-event29,1307
+(define (phidget-error-event-code::int30,1355
+(define (phidget-error-event-message::string31,1385
+(define (phidget-attach-event?33,1428
+(define (make-phidget-attach-event33,1428
+(define (fill-phidget-attach-event!33,1428
+	    (class phidget-attach-event33,1428
+(define (phidget-detach-event?34,1477
+(define (make-phidget-detach-event34,1477
+(define (fill-phidget-detach-event!34,1477
+	    (class phidget-detach-event34,1477
+(define (phidget-change-event?36,1527
+(define (make-phidget-change-event36,1527
+(define (fill-phidget-change-event!36,1527
+	    (class phidget-change-event36,1527
+(define (phidget-change-event-index::int37,1576
+(define (phidget-inputchange-event?39,1609
+(define (make-phidget-inputchange-event39,1609
+(define (fill-phidget-inputchange-event!39,1609
+	    (class phidget-inputchange-event39,1609
+(define (phidget-inputchange-event-state::bool40,1669
+(define (phidget-outputchange-event?41,1702
+(define (make-phidget-outputchange-event41,1702
+(define (fill-phidget-outputchange-event!41,1702
+	    (class phidget-outputchange-event41,1702
+(define (phidget-outputchange-event-state::bool42,1763
+(define (phidget-sensorchange-event?43,1796
+(define (make-phidget-sensorchange-event43,1796
+(define (fill-phidget-sensorchange-event!43,1796
+	    (class phidget-sensorchange-event43,1796
+(define (phidget-sensorchange-event-state::int44,1857
+(define (phidget-serverconnect-event?46,1895
+(define (make-phidget-serverconnect-event46,1895
+(define (fill-phidget-serverconnect-event!46,1895
+	    (class phidget-serverconnect-event46,1895
+(define (phidget-serverdisconnect-event?47,1951
+(define (make-phidget-serverdisconnect-event47,1951
+(define (fill-phidget-serverdisconnect-event!47,1951
+	    (class phidget-serverdisconnect-event47,1951
+(define (phidget-spatialdata-event?49,2011
+(define (make-phidget-spatialdata-event49,2011
+(define (fill-phidget-spatialdata-event!49,2011
+	    (class phidget-spatialdata-event49,2011
+(define (phidget-spatialdata-event-seconds::int50,2065
+(define (phidget-spatialdata-event-microseconds::int51,2098
+(define (phidget-spatialdata-event-acx::double52,2136
+(define (phidget-spatialdata-event-acy::double53,2168
+(define (phidget-spatialdata-event-acz::double54,2200
+(define (phidget-spatialdata-event-anx::double55,2232
+(define (phidget-spatialdata-event-any::double56,2264
+(define (phidget-spatialdata-event-anz::double57,2296
+(define (phidget-spatialdata-event-mfx::double58,2328
+(define (phidget-spatialdata-event-mfy::double59,2360
+(define (phidget-spatialdata-event-mfz::double60,2392
+(define (phidget-servoposition-event?62,2426
+(define (make-phidget-servoposition-event62,2426
+(define (fill-phidget-servoposition-event!62,2426
+	    (class phidget-servoposition-event62,2426
+(define (phidget-servoposition-event-index::int63,2482
+(define (phidget-servoposition-event-position::double64,2513
+(define (phidget-servovelocity-event?66,2557
+(define (make-phidget-servovelocity-event66,2557
+(define (fill-phidget-servovelocity-event!66,2557
+	    (class phidget-servovelocity-event66,2557
+(define (phidget-servovelocity-event-index::int67,2613
+(define (phidget-servovelocity-event-velocity::double68,2644
+(define (phidget-servocurrent-event?70,2688
+(define (make-phidget-servocurrent-event70,2688
+(define (fill-phidget-servocurrent-event!70,2688
+	    (class phidget-servocurrent-event70,2688
+(define (phidget-servocurrent-event-index::int71,2743
+(define (phidget-servocurrent-event-current::double72,2774
+(define (phidget-stepperinput-event?74,2817
+(define (make-phidget-stepperinput-event74,2817
+(define (fill-phidget-stepperinput-event!74,2817
+	    (class phidget-stepperinput-event74,2817
+(define (phidget-steppervelocity-event?75,2884
+(define (make-phidget-steppervelocity-event75,2884
+(define (fill-phidget-steppervelocity-event!75,2884
+	    (class phidget-steppervelocity-event75,2884
+(define (phidget-steppervelocity-event-index::int76,2942
+(define (phidget-steppervelocity-event-velocity::double77,2973
+(define (phidget-stepperposition-event?78,3011
+(define (make-phidget-stepperposition-event78,3011
+(define (fill-phidget-stepperposition-event!78,3011
+	    (class phidget-stepperposition-event78,3011
+(define (phidget-stepperposition-event-index::int79,3069
+(define (phidget-stepperposition-event-position::llong80,3100
+(define (phidget-steppercurrent-event?81,3137
+(define (make-phidget-steppercurrent-event81,3137
+(define (fill-phidget-steppercurrent-event!81,3137
+	    (class phidget-steppercurrent-event81,3137
+(define (phidget-steppercurrent-event-index::int82,3194
+(define (phidget-steppercurrent-event-current::double83,3225
+(define (phidget-motorcontrolvelocity-event?85,3263
+(define (make-phidget-motorcontrolvelocity-event85,3263
+(define (fill-phidget-motorcontrolvelocity-event!85,3263
+	    (class phidget-motorcontrolvelocity-event85,3263
+(define (phidget-motorcontrolvelocity-event-index::int86,3326
+(define (phidget-motorcontrolvelocity-event-velocity::double87,3357
+(define (phidget-motorcontrolcurrent-event?89,3396
+(define (make-phidget-motorcontrolcurrent-event89,3396
+(define (fill-phidget-motorcontrolcurrent-event!89,3396
+	    (class phidget-motorcontrolcurrent-event89,3396
+(define (phidget-motorcontrolcurrent-event-index::int90,3458
+(define (phidget-motorcontrolcurrent-event-current::double91,3489
+(define (phidget-encoderinput-event?93,3527
+(define (make-phidget-encoderinput-event93,3527
+(define (fill-phidget-encoderinput-event!93,3527
+            (class phidget-encoderinput-event93,3527
+(define (phidget-encoderinput-event-index::int94,3589
+(define (phidget-encoderinput-event-state::bool95,3627
+(define (phidget-encoderposition-event?97,3668
+(define (make-phidget-encoderposition-event97,3668
+(define (fill-phidget-encoderposition-event!97,3668
+            (class phidget-encoderposition-event97,3668
+(define (phidget-encoderposition-event-index::int98,3733
+(define (phidget-encoderposition-event-time::int99,3771
+(define (phidget-encoderposition-event-position::int100,3808
+(define (phidget-encoderindex-event?102,3851
+(define (make-phidget-encoderindex-event102,3851
+(define (fill-phidget-encoderindex-event!102,3851
+            (class phidget-encoderindex-event102,3851
+(define (phidget-encoderindex-event-index::int103,3913
+(define (phidget-encoderindex-event-position::int104,3951
+(define-generic (%phidget-init111,4259
+
+Llib/pdg.scm,136
+(module __phidget_ctypes15,963
+(define (symbol->servo-type27,1397
+(define (servo-type->symbol84,3321
+(define (pdgbool->bool141,5508
+
+Llib/pdglogging.scm,174
+(module __phidget_logging15,963
+(define (phidget-enable-logging28,1403
+(define (phidget-disable-logging47,2184
+(define (phidget-log58,2656
+(define (symbol->level71,3206
+
+Llib/pdgmanager.scm,519
+(module __phidget_manager15,963
+(define (phidget-manager?26,1192
+(define (make-phidget-manager26,1192
+(define (fill-phidget-manager!26,1192
+   (export (class phidget-manager26,1192
+(define (phidget-manager-$builtin::$pdg-manager-set!27,1236
+(define (phidget-manager-$builtin::$pdg-manager27,1236
+(define-method (%phidget-init o::phidget-manager35,1616
+(define-method (phidget-add-event-listener! o::phidget-manager event proc45,2061
+(define (phidget-manager-open54,2533
+(define (phidget-manager-close63,2945
+
+Llib/pdgstepper.scm,1631
+(module __phidget_stepper15,963
+(define (phidget-stepper?30,1308
+(define (make-phidget-stepper30,1308
+(define (fill-phidget-stepper!30,1308
+   (export  (class phidget-stepper30,1308
+(define (phidget-stepper-input-count::int32,1378
+(define (phidget-stepper-motor-count::int38,1569
+(define ($make-stepper104,3736
+(define-method (%phidget-init o::phidget-stepper111,4085
+(define-method (phidget-add-event-listener! o::phidget-stepper event proc121,4530
+(define (phidget-stepper-input-state131,5035
+(define (phidget-stepper-acceleration140,5426
+(define (phidget-stepper-acceleration-set!149,5819
+(define (phidget-stepper-acceleration-max160,6285
+(define (phidget-stepper-acceleration-min169,6686
+(define (phidget-stepper-velocity-limit178,7087
+(define (phidget-stepper-velocity-limit-set!187,7484
+(define (phidget-stepper-velocity198,7956
+(define (phidget-stepper-velocity-max207,8341
+(define (phidget-stepper-velocity-min216,8734
+(define (phidget-stepper-target-position225,9127
+(define (phidget-stepper-target-position-set!234,9526
+(define (phidget-stepper-current-position245,10001
+(define (phidget-stepper-current-position-set!254,10402
+(define (phidget-stepper-position-max265,10880
+(define (phidget-stepper-position-min274,11273
+(define (phidget-stepper-current-limit283,11666
+(define (phidget-stepper-current-limit-set!292,12061
+(define (phidget-stepper-current303,12530
+(define (phidget-stepper-current-max312,12913
+(define (phidget-stepper-current-min321,13304
+(define (phidget-stepper-engaged330,13695
+(define (phidget-stepper-engaged-set!340,14102
+(define (phidget-stepper-stopped351,14579
+
+Llib/pdgphidget.scm,938
+(module __phidget_phidget15,963
+(define (phidget?26,1189
+(define (make-phidget26,1189
+(define (fill-phidget!26,1189
+   (export  (class phidget26,1189
+(define (phidget-$builtin::$pdg-phidget-set!27,1226
+(define (phidget-$builtin::$pdg-phidget27,1226
+(define (phidget-%serial-number::int-set!28,1289
+(define (phidget-%serial-number::int28,1289
+(define (phidget-name::bstring30,1355
+(define (phidget-serial-number::int-set!39,1615
+(define (phidget-serial-number::int39,1615
+(define (phidget-device-version::int54,1999
+(define (phidget-device-type::obj60,2159
+(define (phidget-device-id::obj66,2314
+(define (phidget-server-id::obj72,2467
+(define (%$pdg-phidget-nil87,3001
+(define ($make-phidget93,3275
+(define-method (phidget-add-event-listener! o::phidget event proc100,3596
+(define (phidget-open109,4060
+(define (phidget-open-remote118,4470
+(define (phidget-close129,5008
+(define (phidget-wait-for-attachment138,5391
+
+Llib/pdgifkit.scm,341
+(module __phidget_ifkit15,963
+(define (phidget-ifkit?28,1242
+(define (make-phidget-ifkit28,1242
+(define (fill-phidget-ifkit!28,1242
+   (export  (class phidget-ifkit28,1242
+(define ($make-ifkit35,1548
+(define-method (%phidget-init o::phidget-ifkit42,1889
+(define-method (phidget-add-event-listener! o::phidget-ifkit event proc52,2325
+
+Llib/pdgspatial.scm,558
+(module __phidget_spatial15,963
+(define (phidget-spatial?28,1259
+(define (make-phidget-spatial28,1259
+(define (fill-phidget-spatial!28,1259
+   (export  (class phidget-spatial28,1259
+(define (phidget-spatial-datarate::int-set!33,1430
+(define (phidget-spatial-datarate::int33,1430
+(define (phidget-spatial-datarate-max::int42,1699
+(define (phidget-spatial-datarate-min::int48,1892
+(define ($make-spatial59,2326
+(define-method (%phidget-init o::phidget-spatial66,2679
+(define-method (phidget-add-event-listener! o::phidget-spatial event proc76,3124
+
+Llib/pdgservo.scm,776
+(module __phidget_servo15,963
+(define (phidget-servo?29,1266
+(define (make-phidget-servo29,1266
+(define (fill-phidget-servo!29,1266
+   (export  (class phidget-servo29,1266
+(define (phidget-servo-motor-count::int31,1334
+(define ($make-servo55,2363
+(define-method (%phidget-init o::phidget-servo62,2704
+(define-method (phidget-add-event-listener! o::phidget-servo event proc72,3139
+(define (phidget-servo-position82,3636
+(define (phidget-servo-position-set!91,4015
+(define (phidget-servo-position-max102,4461
+(define (phidget-servo-position-min111,4848
+(define (phidget-servo-engaged120,5235
+(define (phidget-servo-engaged-set!130,5636
+(define (phidget-servo-parameters-set!141,6105
+(define (phidget-servo-type152,6571
+(define (phidget-servo-type-set!162,6977
+
+Llib/pdgaservo.scm,1676
+(module __phidget_advanced-servo15,963
+(define (phidget-advanced-servo?30,1346
+(define (make-phidget-advanced-servo30,1346
+(define (fill-phidget-advanced-servo!30,1346
+   (export  (class phidget-advanced-servo30,1346
+(define (phidget-advanced-servo-motor-count::int32,1423
+(define ($make-advanced-servo96,3829
+(define-method (%phidget-init o::phidget-advanced-servo103,4206
+(define-method (phidget-add-event-listener! o::phidget-advanced-servo event proc113,4686
+(define (phidget-advanced-servo-acceleration123,5219
+(define (phidget-advanced-servo-acceleration-set!132,5633
+(define (phidget-advanced-servo-acceleration-max143,6127
+(define (phidget-advanced-servo-acceleration-min152,6549
+(define (phidget-advanced-servo-velocity-limit161,6971
+(define (phidget-advanced-servo-velocity-limit-set!170,7389
+(define (phidget-advanced-servo-velocity181,7883
+(define (phidget-advanced-servo-velocity-max190,8289
+(define (phidget-advanced-servo-velocity-min199,8703
+(define (phidget-advanced-servo-position208,9117
+(define (phidget-advanced-servo-position-set!217,9523
+(define (phidget-advanced-servo-position-max228,10005
+(define (phidget-advanced-servo-position-min237,10419
+(define (phidget-advanced-servo-engaged246,10833
+(define (phidget-advanced-servo-engaged-set!256,11261
+(define (phidget-advanced-servo-speed-ramping-on267,11765
+(define (phidget-advanced-servo-speed-ramping-on-set!277,12211
+(define (phidget-advanced-servo-stopped288,12743
+(define (phidget-advanced-servo-current297,13165
+(define (phidget-advanced-servo-parameters-set!306,13569
+(define (phidget-advanced-servo-type317,14077
+(define (phidget-advanced-servo-type-set!327,14510
+
+Llib/pdgevent.scm,1418
+(module __phidget_event16,1037
+(define *phidget-mutex*86,4930
+(define *phidget-condv*87,4977
+(define (%phidget-lock!92,5260
+(define (%phidget-unlock!98,5542
+(define (%phidget-signal104,5828
+(define *phidget-thread*110,6126
+(define phidget-initializedp115,6388
+(define (%phidget-thread-init!120,6644
+(define-generic (phidget-add-event-listener!137,7289
+(define (phidget-event-error-new147,7715
+(define (phidget-event-attach-new156,8100
+(define (phidget-event-detach-new164,8483
+(define (phidget-event-inputchange-new172,8866
+(define (phidget-event-outputchange-new181,9266
+(define (phidget-event-sensorchange-new190,9668
+(define (phidget-event-serverconnect-new199,10069
+(define (phidget-event-serverdisconnect-new207,10466
+(define (phidget-event-spatialdata-new215,10869
+(define (phidget-event-servoposition-new233,11439
+(define (phidget-event-servovelocity-new242,11841
+(define (phidget-event-servocurrent-new251,12243
+(define (phidget-event-stepperinput-new260,12640
+(define (phidget-event-steppervelocity-new269,13034
+(define (phidget-event-stepperposition-new278,13443
+(define (phidget-event-steppercurrent-new287,13851
+(define (phidget-event-motorcontrolvelocity-new296,14252
+(define (phidget-event-motorcontrolcurrent-new305,14668
+(define (phidget-event-encoderinput-new314,15079
+(define (phidget-event-encoderposition-new323,15470
+(define (phidget-event-encoderindex-new333,15899
+
+Llib/pdgmotorcontrol.scm,515
+(module __phidget_motor-control15,964
+(define (phidget-motor-control?30,1330
+(define (make-phidget-motor-control30,1330
+(define (fill-phidget-motor-control!30,1330
+   (export  (class phidget-motor-control30,1330
+(define (phidget-motor-control-motor-count::int32,1406
+(define ($make-motor-control72,3101
+(define-method (%phidget-init o::phidget-motor-control79,3468
+(define-method (phidget-add-event-listener! o::phidget-motor-control event proc88,3885
+(define (phidget-motor-control-encoder-count138,5986
+
+Llib/pdgencoder.scm,540
+(module __phidget_encoder15,964
+(define (phidget-encoder?30,1288
+(define (make-phidget-encoder30,1288
+(define (fill-phidget-encoder!30,1288
+   (export  (class phidget-encoder30,1288
+(define (phidget-encoder-encoder-count::int32,1360
+(define ($make-encoder56,2512
+(define-method (%phidget-init o::phidget-encoder63,2855
+(define-method (phidget-add-event-listener! o::phidget-encoder event proc72,3242
+(define (phidget-encoder-enable!107,4417
+(define (phidget-encoder-disable!111,4590
+(define (phidget-encoder-input-count118,4987

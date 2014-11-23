@@ -1,0 +1,22 @@
+;*=====================================================================*/
+;*    serrano/prgm/project/bigloo/api/text/src/Misc/text.init          */
+;*    -------------------------------------------------------------    */
+;*    Author      :  Manuel Serrano                                    */
+;*    Creation    :  Wed Nov  7 05:40:36 2001                          */
+;*    Last change :  Fri Dec 13 12:50:16 2013 (serrano)                */
+;*    Copyright   :  2001-13 Manuel Serrano                            */
+;*    -------------------------------------------------------------    */
+;*    The Text init file.                                              */
+;*=====================================================================*/
+
+;*---------------------------------------------------------------------*/
+;*    The library                                                      */
+;*---------------------------------------------------------------------*/
+(declare-library! 'text
+   :srfi '(text)
+   :basename "biglootext"
+   :module-init '__text_bibtex
+   :module-eval '__text_makelib
+   :class-init "bigloo.text.bibtex"
+   :class-eval "bigloo.text.make_lib")
+   

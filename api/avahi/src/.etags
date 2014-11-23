@@ -1,0 +1,152 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/avahi.scm,6608
+(module __avahi_avahi15,963
+(define (&avahi-error?50,2023
+(define (make-&avahi-error50,2023
+(define (fill-&avahi-error!50,2023
+      (class &avahi-error50,2023
+(define (&avahi-error-errno::int51,2057
+(define (&avahi-collision-error?52,2095
+(define (make-&avahi-collision-error52,2095
+(define (fill-&avahi-collision-error!52,2095
+      (class &avahi-collision-error52,2095
+(define (avahi-simple-poll?61,2324
+(define (make-avahi-simple-poll61,2324
+(define (fill-avahi-simple-poll!61,2324
+      (class avahi-simple-poll61,2324
+(define (avahi-simple-poll-$builtin::$avahi-simple-poll62,2367
+(define (avahi-threaded-poll?64,2453
+(define (make-avahi-threaded-poll64,2453
+(define (fill-avahi-threaded-poll!64,2453
+      (class avahi-threaded-poll64,2453
+(define (avahi-threaded-poll-$builtin::$avahi-threaded-poll65,2498
+(define (avahi-client?67,2588
+(define (make-avahi-client67,2588
+(define (fill-avahi-client!67,2588
+      (class avahi-client67,2588
+(define (avahi-client-$builtin::$avahi-client68,2628
+(define (avahi-client-poll::avahi-poll69,2696
+(define (avahi-client-flags::symbol70,2727
+(define (avahi-client-proc::procedure71,2771
+(define (avahi-client-%groups::pair-nil-set!72,2801
+(define (avahi-client-%groups::pair-nil72,2801
+(define (avahi-client-%browsers::pair-nil-set!73,2837
+(define (avahi-client-%browsers::pair-nil73,2837
+(define (avahi-client-resolvers::pair-nil-set!74,2875
+(define (avahi-client-resolvers::pair-nil74,2875
+(define (avahi-client-version::bstring76,2933
+(define (avahi-client-hostname::bstring-set!85,3211
+(define (avahi-client-hostname::bstring85,3211
+(define (avahi-client-domainname::bstring90,3445
+(define (avahi-client-hostname-fqdn::bstring96,3633
+(define (avahi-client-state::symbol102,3815
+(define (avahi-entry-group?110,4019
+(define (make-avahi-entry-group110,4019
+(define (fill-avahi-entry-group!110,4019
+      (class avahi-entry-group110,4019
+(define (avahi-entry-group-$builtin::$avahi-entry-group111,4064
+(define (avahi-entry-group-client::avahi-client112,4142
+(define (avahi-entry-group-proc::procedure113,4177
+(define (avahi-service-browser?115,4209
+(define (make-avahi-service-browser115,4209
+(define (fill-avahi-service-browser!115,4209
+      (class avahi-service-browser115,4209
+(define (avahi-service-browser-$builtin::$avahi-service-browser116,4258
+(define (avahi-service-browser-client::avahi-client117,4344
+(define (avahi-service-browser-proc::procedure118,4379
+(define (avahi-service-browser-type::bstring119,4409
+(define (avahi-service-browser-domain::bstring120,4437
+(define (avahi-service-type-browser?122,4482
+(define (make-avahi-service-type-browser122,4482
+(define (fill-avahi-service-type-browser!122,4482
+      (class avahi-service-type-browser122,4482
+(define (avahi-service-type-browser-$builtin::$avahi-service-type-browser123,4536
+(define (avahi-service-type-browser-client::avahi-client124,4627
+(define (avahi-service-type-browser-proc::procedure125,4662
+(define (avahi-service-type-browser-domain::bstring126,4692
+(define (avahi-domain-browser?128,4737
+(define (make-avahi-domain-browser128,4737
+(define (fill-avahi-domain-browser!128,4737
+      (class avahi-domain-browser128,4737
+(define (avahi-domain-browser-$builtin::$avahi-domain-browser129,4785
+(define (avahi-domain-browser-client::avahi-client130,4870
+(define (avahi-domain-browser-proc::procedure131,4905
+(define (avahi-domain-browser-btype::symbol132,4935
+(define (avahi-domain-browser-domain::bstring133,5002
+(define (avahi-service-resolver?135,5053
+(define (make-avahi-service-resolver135,5053
+(define (fill-avahi-service-resolver!135,5053
+      (class avahi-service-resolver135,5053
+(define (avahi-service-resolver-$builtin::$avahi-service-resolver136,5103
+(define (avahi-service-resolver-client::avahi-client137,5191
+(define (avahi-service-resolver-proc::procedure138,5226
+(define (avahi-service-resolver-interface::$avahi-if-index139,5256
+(define (avahi-service-resolver-protocol::symbol140,5297
+(define (avahi-service-resolver-name::bstring141,5328
+(define (avahi-service-resolver-type::bstring142,5356
+(define (avahi-service-resolver-domain::bstring143,5384
+(define *avahi-mutex*201,7899
+(define *avahi-condv*202,7942
+(define *avahi-thread*207,8221
+(define (avahi-error212,8481
+(define (%avahi-lock!223,8845
+(define (%avahi-unlock!229,9123
+(define (%avahi-signal235,9405
+(define *avahi-gc-roots*244,9921
+(define *avahi-gc-mutex*245,9951
+(define (avahi-gc-mark!250,10216
+(define (avahi-gc-unmark!257,10561
+(define (%avahi-thread-init!264,10907
+(define-generic (avahi-init288,11745
+(define-method (avahi-init o::avahi-simple-poll294,12019
+(define (avahi-simple-poll-close304,12422
+(define (avahi-simple-poll-loop312,12777
+(define (avahi-simple-poll-timeout320,13153
+(define (avahi-simple-poll-quit331,13740
+(define-method (avahi-init o::avahi-threaded-poll339,14116
+(define (avahi-threaded-poll-close350,14550
+(define (avahi-threaded-poll-loop358,14911
+(define (avahi-threaded-poll-lock!366,15295
+(define (avahi-threaded-poll-unlock!374,15680
+(define (avahi-threaded-poll-timeout382,16069
+(define (avahi-threaded-poll-quit393,16666
+(define-method (avahi-init o::avahi-client401,17050
+(define (avahi-client-close413,17554
+(define (avahi-client-error-message424,18020
+(define (avahi-client-state->symbol431,18396
+(define-method (avahi-init o::avahi-entry-group450,19212
+(define (avahi-entry-group-close463,19798
+(define (avahi-entry-group-empty?472,20255
+(define (avahi-entry-group-commit479,20627
+(define (avahi-entry-group-reset!488,21096
+(define (avahi-entry-group-add-service!499,21657
+(define (avahi-entry-group-state->symbol563,23346
+(define (avahi-alternative-host-name586,24307
+(define (avahi-alternative-service-name592,24613
+(define-method (avahi-init o::avahi-service-browser598,24925
+(define (avahi-service-browser-close611,25533
+(define-method (avahi-init o::avahi-service-type-browser621,26019
+(define (avahi-service-type-browser-close633,26574
+(define-method (avahi-init o::avahi-domain-browser641,26959
+(define (avahi-domain-browser-close653,27538
+(define-method (avahi-init o::avahi-service-resolver661,27905
+(define (avahi-service-resolver-close674,28518
+(define (avahi-browser-event->symbol684,29011
+(define (avahi-resolver-event->symbol707,29878
+(define (avahi-if-index->symbol724,30515
+(define (avahi-protocol->symbol738,31042
+(define (avahi-symbol->protocol757,31713
+(define (avahi-lookup-flags->symbol776,32348
+(define (avahi-lookup-result-flags->symbol795,33031
+(define (avahi-symbol->domain-browser-type822,34109

@@ -1,0 +1,118 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+CFLAGS = 
+LDFLAGS =
+
+LDLIBPATH = $(CURDIR)/debian/bigloo-libs@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libsqlite-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libpkglib-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libssl-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libalsa-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libflac-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libwav-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libmpg123-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libavahi-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libgstreamer-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$(CURDIR)/debian/libphidget-bigloo@BGLPREFIX@/lib/bigloo/@BIGLOOVERSION@:$$LD_LIBRARY_PATH
+
+config.status: configure
+	dh_testdir
+	# Add here commands to configure the package.
+	# CFLAGS="$(CFLAGS) -g" ./configure --prefix=/usr --stack-check=no --debug2
+	CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" ./configure --prefix=@BGLPREFIX@ --stack-check=no --disable-srfi27 --disable-packrat --disable-thread-local-storage @BGLCONFIGUREOPT@
+
+
+build: build-stamp
+
+build-stamp:  config.status
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE)
+	#docbook-to-man debian/bigloo.sgml > bigloo.1
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp 
+
+	# Add here commands to clean up after the build process.
+	-$(MAKE) distclean
+
+	#ifneq "$(wildcard /usr/share/misc/config.sub)" ""
+	#	cp -f /usr/share/misc/config.sub config.sub
+	#endif
+	#ifneq "$(wildcard /usr/share/misc/config.guess)" ""
+	#	cp -f /usr/share/misc/config.guess config.guess
+	#endif
+
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
+
+	# Add here commands to install the package into debian/bigloo.
+	$(MAKE) install-libs DESTDIR=$(CURDIR)/debian/bigloo-libs
+	$(MAKE) install-devel DESTDIR=$(CURDIR)/debian/bigloo
+	$(MAKE) install-docs DESTDIR=$(CURDIR)/debian/bigloo-doc
+	$(MAKE) install-apis NOAPIS="sqlite pkglib ssl alsa flac wav mpg123 avahi gstreamer phidget" DESTDIR=$(CURDIR)/debian/bigloo-libs
+	@IFSQLITE@ $(MAKE) install-apis APIS=sqlite DESTDIR=$(CURDIR)/debian/libsqlite-bigloo
+	@IFPKGLIB@ $(MAKE) install-apis APIS=pkglib DESTDIR=$(CURDIR)/debian/libpkglib-bigloo
+	@IFSSL@ $(MAKE) install-apis APIS=ssl DESTDIR=$(CURDIR)/debian/libssl-bigloo
+	@IFALSA@ $(MAKE) install-apis APIS=alsa DESTDIR=$(CURDIR)/debian/libalsa-bigloo
+	@IFFLAC@ $(MAKE) install-apis APIS=flac DESTDIR=$(CURDIR)/debian/libflac-bigloo
+	@IFWAV@ $(MAKE) install-apis APIS=wav DESTDIR=$(CURDIR)/debian/libwav-bigloo
+	@IFMPG123@ $(MAKE) install-apis APIS=mpg123 DESTDIR=$(CURDIR)/debian/libmpg123-bigloo
+	@IFAVAHI@ $(MAKE) install-apis APIS=avahi DESTDIR=$(CURDIR)/debian/libavahi-bigloo
+	@IFGSTREAMER@ $(MAKE) install-apis APIS=gstreamer DESTDIR=$(CURDIR)/debian/libgstreamer-bigloo
+	@IFPHIDGET@ $(MAKE) install-apis APIS=phidget DESTDIR=$(CURDIR)/debian/libphidget-bigloo
+
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs ChangeLog
+	dh_installdocs
+	dh_installexamples
+#	dh_install
+#	dh_installmenu
+#	dh_installdebconf	
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_installinit
+#	dh_installcron
+#	dh_installinfo
+	dh_installman
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_perl
+#	dh_python
+	LD_LIBRARY_PATH=$(LDLIBPATH) dh_makeshlibs
+	dh_installdeb
+	LD_LIBRARY_PATH=$(LDLIBPATH) dh_shlibdeps -X bmem.so
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+
+.PHONY: build clean binary-indep binary-arch binary install

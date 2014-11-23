@@ -1,0 +1,67 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/soap.scm,58
+(module __upnp_soap15,963
+(define (soap-envelope21,1250
+
+Llib/content.scm,291
+(module __upnp_content-directory15,963
+(define browse-body-start31,1496
+(define browse-body-end43,2073
+(define (browse-body49,2366
+(define (content-directory-soapaction55,2675
+(define (upnp-content-directory-browse-parse-response61,3021
+(define (upnp-content-directory-browse125,5485
+
+Llib/ssdp.scm,1466
+(module __upnp_ssdp18,1088
+(define (ssdp-m-search?27,1254
+(define (make-ssdp-m-search27,1254
+(define (fill-ssdp-m-search!27,1254
+	   (class ssdp-m-search27,1254
+(define (ssdp-m-search-host::bstring28,1293
+(define (ssdp-m-search-mx::int29,1326
+(define (ssdp-m-search-st::bstring30,1353
+(define (ssdp-notify?42,1690
+(define (make-ssdp-notify42,1690
+(define (fill-ssdp-notify!42,1690
+	   (class ssdp-notify42,1690
+(define (ssdp-notify-nt::bstring44,1757
+(define (ssdp-notify-nts::bstring46,1835
+(define (ssdp-notify-host::bstring48,1882
+(define (ssdp-response?50,1917
+(define (make-ssdp-response50,1917
+(define (fill-ssdp-response!50,1917
+	   (class ssdp-response50,1917
+(define (ssdp-response-st::bstring52,1982
+(define (ssdp-root?54,2019
+(define (make-ssdp-root54,2019
+(define (fill-ssdp-root!54,2019
+	   (class ssdp-root54,2019
+(define (ssdp-root-major-set!55,2040
+(define (ssdp-root-major55,2040
+(define (ssdp-root-minor-set!56,2067
+(define (ssdp-root-minor56,2067
+(define (ssdp-root-services-set!57,2094
+(define (ssdp-root-services57,2094
+(define (ssdp-root-icons-set!58,2126
+(define (ssdp-root-icons58,2126
+(define (ssdp-root-device-set!59,2155
+(define (ssdp-root-device59,2155
+(define (ssdp-debug81,2771
+(define (ssdp-parse-header87,3022
+(define (ssdp-read-header177,6229
+(define (ssdp-discover-loop189,6885
+(define (ssdp-discover-quit219,7942
+(define (ssdp-discover-m-search227,8355
+(define (ssdp-parse-location255,9245

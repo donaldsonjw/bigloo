@@ -1,0 +1,213 @@
+@c =================================================================== @c
+@c    serrano/prgm/project/bigloo/manuals/pthread.texi                 @c
+@c    ------------------------------------------------------------     @c
+@c    Author      :  Manuel Serrano                                    @c
+@c    Creation    :  Mon Jun 15 15:09:03 1998                          @c
+@c    Last change :  Mon Nov 12 15:11:18 2001 (serrano)                @c
+@c    ------------------------------------------------------------     @c
+@c    The Bigloo Posix threads                                          @c
+@c =================================================================== @c
+
+@c ------------------------------------------------------------------- @c
+@c    Bigloo's threads                                                 @c
+@c ------------------------------------------------------------------- @c
+@node Posix Threads, Mixing Thread APIs, Fair Threads, Threads
+@comment  node-name,  next,  previous,  up
+@section Posix Threads
+@cindex Posix Threads
+@cindex Parallelism
+@cindex Threads
+
+This section describes two Posix-Like multi-threading Bigloo libraries.
+The two libraries, @code{pthread}, and @code{srfi-18} are all the same
+but the @code{mutex-state} function that returns different results.
+Because of these differences that might seem thin at first glance,
+the @code{pthread} library is significantly faster than the @code{srfi-18}
+library. For that reason, it is recommended to use the @code{pthread}
+library instead of the @code{srfi-18} library that is mostly supported
+for backward compatibility.
+
+As much as possible, the names exported by this library are compatible
+with the Fair Threads library (see Section @ref{Fair Threads}).
+
+@menu
+* Using Posix Threads::
+* Threads API::
+* Mutexes API::
+* Condition Variables API::
+* SRFI-18::
+@end menu
+
+@c -- using posix threads -------------------------------------------- @c
+@node Using Posix Threads, Threads API, ,Posix Threads
+@subsection Using Posix Threads
+
+The Bigloo modules initialization model does not permit to create threads
+before the main function is started. In other words, it is unsafe
+to use the Posix Threads API at the top level of modules. On some particular
+applications this might work correctly. On other it could produce
+an error message stating the threads cannot be created or started before
+the pthread library is initialized.
+
+
+@c -- threads -------------------------------------------------------- @c
+@node Threads API, Mutexes API, Using Posix Threads ,Posix Threads
+@subsection Threads
+
+@deffn {Bigloo syntax} instantiate::pthread (body @var{thunk}) [(name @var{name})]
+@deffnx {SRFI-18 function} make-thread @var{thunk} [@var{name}]
+Returns a new thread which is not started yet. The body of the thread
+is the body of the procedure @var{thunk}. The optional argument @var{name}
+can be use to identify the thread. It can be any Bigloo value.
+
+@b{Warning:} the @code{make-thread} function is @b{deprecated}, but
+still provided for a backward compatibility with previous release of
+Bigloo. The use of this function is @emph{highly} discouraged, in
+favor of the @code{instantiate::pthread} form.
+
+@smalllisp
+(module example
+   (library pthread)
+   (main main))
+
+(define (main argv)
+   (make-thread 
+    (lambda () 
+       (print 1)
+       (thread-yield!)
+       (print 2)) 
+    'my-thread))
+@end smalllisp
+@end deffn
+
+@deffn {SRFI-18 function} thread-start! @var{thread}
+@deffnx {SRFI-18 function} thread-start-joinable! @var{thread}
+Runs a thread created with @code{instantiate::pthread}. By default,
+threads are detached, and thus, they cannot be joined.
+@end deffn
+
+@deffn {SRFI-18 function} thread-yield!
+The current thread @emph{cooperates}. 
+@end deffn
+
+@deffn {SRFI-18 function} thread-sleep! @var{timeout}
+
+The current thread @emph{sleeps} for a certain period. It is suspended
+and the scheduler is free to select a new thread to be resumed. If
+there is only one thread started in the scheduler, the same thread
+will be resumed.  The time of @var{timeout} is used to determine the
+time the thread must sleep.
+
+Here are the possible types for @var{timeout}.
+
+@itemize @bullet
+@item @code{date}: the thread sleeps at least until the date @var{timeout}.
+@item @code{real}: the thread sleeps at least @var{timeout} seconds.
+@item @code{fixum}, @code{elong}, @code{llong}: the thread sleeps at least
+@var{timeout} milli-seconds.
+@end itemize
+
+@end deffn
+
+@deffn {SRFI-18 function} thread-terminate! @var{thread}
+Terminates @var{thread} as soon as possible.
+@end deffn
+
+@deffn {SRFI-18 function} thread-join! @var{thread} [@var{timeout}]
+The current thread waits until the @var{thread} terminates. If @var{thread}
+terminates, @code{thread-join!} returns the end-result of the @var{thread}
+or the end-exception if that thread terminates abnormally.
+
+It is possible to wait for the termination of the a thread if and only if
+it has been started with @code{thread-start-joinable!}. In particular,
+threads started with @code{thread-start!} cannot be joined.
+
+The optional argument @var{timeout}, forces to wait at for
+@var{timeout} milli-seconds for the thread to terminate. Note that not
+all systems support this facility. When supported, the
+@code{cond-expand} (see @pxref{SRFIs}) @code{pthread-timedjoin} is
+defined. When the timeout expires some systems, raise an error. Other
+systems abort silently.
+
+@end deffn
+
+@deffn {SRFI-18 function} terminated-thread-exception? @var{obj}
+@deffnx {SRFI-18 function} uncaught-exception? @var{obj}
+@deffnx {SRFI-18 function} uncaught-exception-reason @var{exc}
+@end deffn
+
+@c -- Mutexes -------------------------------------------------------- @c
+@node Mutexes API, Condition Variables API, Threads API, Posix Threads
+@subsection Mutexes
+Thread locking mechanism is common to Fair Threads and Posix Threads
+(see @ref{Thread Common Functions}).
+
+@deffn {SRFI-18 function} {mutex-state} mutex
+Returns the symbol @code{locked} when the mutex is locked by a thread.
+Otherwise, it returns the symbol @code{unlocked}.
+@end deffn
+
+@c -- Condition Variables -------------------------------------------- @c
+@node Condition Variables API, SRFI-18, Mutexes API, Posix Threads
+@subsection Condition Variables
+
+Posix thread condition variables follows the common thread API
+(see @ref{Thread Common Functions}).
+
+@smalllisp
+(module example
+  (library pthread)
+  (main main))
+
+(define (main argv)
+   (let ((res #f)
+	 (lock (make-mutex))
+	 (cv (make-condition-variable)))
+      (thread-join!
+       (thread-start-joinable!
+	(instantiate::pthread
+	   (body (lambda ()
+		    (mutex-lock! lock)
+		    (thread-start!
+		     (instantiate::pthread
+			(body (lambda ()
+				 (mutex-lock! lock)
+				 (condition-variable-signal! cv)
+				 (mutex-unlock! lock)))))
+		    (condition-variable-wait! cv lock)
+		    (set! res 23) 
+		    (mutex-unlock! lock))))))
+      res))
+@end smalllisp
+
+@c -- Condition Variables -------------------------------------------- @c
+@node SRFI-18, , Condition Variables API, Posix Threads
+@subsection SRFI-18
+
+@deffn {SRFI-18 function} {mutex-state} mutex
+
+Returns information about the state of the mutex. The possible results are:
+
+@itemize @bullet
+ @item thread T: the mutex is in the locked/owned state and thread T is the owner of the mutex
+ @item symbol @code{not-owned}: the mutex is in the locked/not-owned state
+ @item symbol @code{abandoned}: the mutex is in the unlocked/abandoned state
+ @item symbol @code{not-abandoned}: the mutex is in the unlocked/not-abandoned state 
+@end itemize
+
+Examples:
+
+@smalllisp
+(mutex-state (make-mutex))  
+   @result{} not-abandoned
+
+(define (thread-alive? thread)
+   (let ((mutex (make-mutex)))
+      (mutex-lock! mutex #f thread)
+      (let ((state (mutex-state mutex)))
+         (mutex-unlock! mutex) ; avoid space leak
+         (eq? state thread))))
+
+@end smalllisp
+
+@end deffn

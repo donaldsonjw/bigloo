@@ -1,0 +1,31 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/phone.scm,740
+(module __phone15,963
+(define-generic (phone-init50,2166
+(define-generic (phone-locales55,2428
+(define-generic (phone-current-locale56,2470
+(define-generic (phone-current-locale-set!57,2519
+(define-generic (phone-vibrate62,2808
+(define-generic (phone-vibrate-stop63,2877
+(define-generic (phone-sensor-list68,3147
+(define-generic (phone-sensor70,3200
+(define-generic (phone-sms-send75,3482
+(define-generic (phone-contact80,3777
+(define-generic (phone-contact-add!81,3819
+(define-generic (phone-contact-update!82,3873
+(define-generic (phone-contact-remove!83,3930
+(define-generic (phone-call-log88,4210
+(define-generic (phone-call-info89,4259
+(define-generic (phone-call-start90,4303
+(define-generic (phone-call-stop91,4363

@@ -1,0 +1,41 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/mutex.scm,64
+(module __srfi18_mutex15,963
+(define (make-srfi18mutex24,1309
+
+Llib/condvar.scm,68
+(module __srfi18_condvar15,963
+(define (make-srfi18condvar24,1313
+
+Llib/thread.scm,354
+(module __srfi18_thread15,963
+(define (srfi18thread?25,1117
+(define (make-srfi18thread25,1117
+(define (fill-srfi18thread!25,1117
+   (export (class srfi18thread25,1117
+(define-method (thread-initialize! o::srfi18thread35,1668
+(define-method (thread-start! t::srfi18thread . scd75,3086
+(define-method (thread-start-joinable! t::srfi18thread84,3491
+
+Llib/backend.scm,418
+(module __srfi18_backend15,963
+(define (srfi18-backend?23,1076
+(define (make-srfi18-backend23,1076
+(define (fill-srfi18-backend!23,1076
+   (static (class srfi18-backend23,1076
+(define *srfi18-backend*31,1416
+(define (srfi18-setup-backend!36,1678
+(define (get-srfi18-backend47,2176
+(define-method (tb-make-thread tb::srfi18-backend body name53,2449
+(define-method (tb-current-thread tb::srfi18-backend61,2801

@@ -1,0 +1,858 @@
+<!-- 95% W3C COMPLIANT, 95% CSS FREE, RAW HTML -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<title>Bigloo</title>
+ <style type="text/css">
+  <!--
+  pre { font-family: monospace }
+  tt { font-family: monospace }
+  code { font-family: monospace }
+  p.flushright { text-align: right }
+  p.flushleft { text-align: left }
+  span.sc { font-variant: small-caps }
+  span.sf { font-family: sans-serif }
+  span.skribetitle { font-family: sans-serif; font-weight: bolder; font-size: x-large; }
+  span.refscreen { }
+  span.refprint { display: none; }
+  -->
+ </style>
+</head>
+
+<body class="chapter" bgcolor="#ffffff">
+<table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>4. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- Core Language</big></big></big></strong></div><center>
+</center>
+</td></tr></tbody></table>
+<table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
+<td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
+<br/><center id='center30208'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc30198" align="center" colspan="1"><font color="#ffffff"><strong id='bold30196'
+>main page</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc30205" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc30201" align="left" valign="top" colspan="1"><strong id='bold30200'
+>top:</strong></td><td id="tc30202" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center30218'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc30212" align="center" colspan="1"><font color="#ffffff"><strong id='bold30210'
+>Core Language</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc30215" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tbody>
+ <tr><td valign="top" align="left">4.1</td><td colspan="4" width="100%"><a href="bigloo-5.html#Syntax">Syntax</a></td></tr>
+ <tr><td></td><td valign="top" align="left">4.1.1</td><td colspan="3" width="100%"><a href="bigloo-5.html#Comments">Comments</a></td></tr>
+ <tr><td></td><td valign="top" align="left">4.1.2</td><td colspan="3" width="100%"><a href="bigloo-5.html#Expressions">Expressions</a></td></tr>
+ <tr><td></td><td valign="top" align="left">4.1.3</td><td colspan="3" width="100%"><a href="bigloo-5.html#Definitions">Definitions</a></td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center30228'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc30222" align="center" colspan="1"><font color="#ffffff"><strong id='bold30220'
+>Chapters</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc30225" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tbody>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
+ <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
+ <tr><td valign="top" align="left">2</td><td colspan="4" width="100%"><a href="bigloo-3.html#Overview-of-Bigloo">Overview of Bigloo</a></td></tr>
+ <tr><td valign="top" align="left">3</td><td colspan="4" width="100%"><a href="bigloo-4.html#Modules">Modules</a></td></tr>
+ <tr><td valign="top" align="left">4</td><td colspan="4" width="100%"><a href="bigloo-5.html#Core-Language">Core Language</a></td></tr>
+ <tr><td valign="top" align="left">5</td><td colspan="4" width="100%"><a href="bigloo-6.html#DSSSL-support">DSSSL support</a></td></tr>
+ <tr><td valign="top" align="left">6</td><td colspan="4" width="100%"><a href="bigloo-7.html#Standard-Library">Standard Library</a></td></tr>
+ <tr><td valign="top" align="left">7</td><td colspan="4" width="100%"><a href="bigloo-8.html#Pattern-Matching">Pattern Matching</a></td></tr>
+ <tr><td valign="top" align="left">8</td><td colspan="4" width="100%"><a href="bigloo-9.html#Fast-search">Fast search</a></td></tr>
+ <tr><td valign="top" align="left">9</td><td colspan="4" width="100%"><a href="bigloo-10.html#Structures-and-Records">Structures and Records</a></td></tr>
+ <tr><td valign="top" align="left">10</td><td colspan="4" width="100%"><a href="bigloo-11.html#Object-System">Object System</a></td></tr>
+ <tr><td valign="top" align="left">11</td><td colspan="4" width="100%"><a href="bigloo-12.html#Regular-parsing">Regular parsing</a></td></tr>
+ <tr><td valign="top" align="left">12</td><td colspan="4" width="100%"><a href="bigloo-13.html#Lalr(1)-parsing">Lalr(1) parsing</a></td></tr>
+ <tr><td valign="top" align="left">13</td><td colspan="4" width="100%"><a href="bigloo-14.html#Posix-Regular-Expressions">Posix Regular Expressions</a></td></tr>
+ <tr><td valign="top" align="left">14</td><td colspan="4" width="100%"><a href="bigloo-15.html#Command-Line-Parsing">Command Line Parsing</a></td></tr>
+ <tr><td valign="top" align="left">15</td><td colspan="4" width="100%"><a href="bigloo-16.html#Cryptography">Cryptography</a></td></tr>
+ <tr><td valign="top" align="left">16</td><td colspan="4" width="100%"><a href="bigloo-17.html#Errors-Assertions-and-Traces">Errors, Assertions, and Traces</a></td></tr>
+ <tr><td valign="top" align="left">17</td><td colspan="4" width="100%"><a href="bigloo-18.html#Threads">Threads</a></td></tr>
+ <tr><td valign="top" align="left">18</td><td colspan="4" width="100%"><a href="bigloo-19.html#Database">Database</a></td></tr>
+ <tr><td valign="top" align="left">19</td><td colspan="4" width="100%"><a href="bigloo-20.html#Multimedia">Multimedia</a></td></tr>
+ <tr><td valign="top" align="left">20</td><td colspan="4" width="100%"><a href="bigloo-21.html#Mail">Mail</a></td></tr>
+ <tr><td valign="top" align="left">21</td><td colspan="4" width="100%"><a href="bigloo-22.html#Text">Text</a></td></tr>
+ <tr><td valign="top" align="left">22</td><td colspan="4" width="100%"><a href="bigloo-23.html#CSV">CSV</a></td></tr>
+ <tr><td valign="top" align="left">23</td><td colspan="4" width="100%"><a href="bigloo-24.html#Eval-and-code-interpretation">Eval and code interpretation</a></td></tr>
+ <tr><td valign="top" align="left">24</td><td colspan="4" width="100%"><a href="bigloo-25.html#Macro-expansion">Macro expansion</a></td></tr>
+ <tr><td valign="top" align="left">25</td><td colspan="4" width="100%"><a href="bigloo-26.html#Parameters">Parameters</a></td></tr>
+ <tr><td valign="top" align="left">26</td><td colspan="4" width="100%"><a href="bigloo-27.html#Explicit-typing">Explicit typing</a></td></tr>
+ <tr><td valign="top" align="left">27</td><td colspan="4" width="100%"><a href="bigloo-28.html#The-C-interface">The C interface</a></td></tr>
+ <tr><td valign="top" align="left">28</td><td colspan="4" width="100%"><a href="bigloo-29.html#The-Java-interface">The Java interface</a></td></tr>
+ <tr><td valign="top" align="left">29</td><td colspan="4" width="100%"><a href="bigloo-30.html#Bigloo-Libraries">Bigloo Libraries</a></td></tr>
+ <tr><td valign="top" align="left">30</td><td colspan="4" width="100%"><a href="bigloo-31.html#Extending-the-Runtime-System">Extending the Runtime System</a></td></tr>
+ <tr><td valign="top" align="left">31</td><td colspan="4" width="100%"><a href="bigloo-32.html#SRFIs">SRFIs</a></td></tr>
+ <tr><td valign="top" align="left">32</td><td colspan="4" width="100%"><a href="bigloo-33.html#Compiler-description">Compiler description</a></td></tr>
+ <tr><td valign="top" align="left">33</td><td colspan="4" width="100%"><a href="bigloo-34.html#Cross-Compilation">Cross Compilation</a></td></tr>
+ <tr><td valign="top" align="left">34</td><td colspan="4" width="100%"><a href="bigloo-35.html#User-Extensions">User Extensions</a></td></tr>
+ <tr><td valign="top" align="left">35</td><td colspan="4" width="100%"><a href="bigloo-36.html#Bigloo-Development-Environment">Bigloo Development Environment</a></td></tr>
+ <tr><td valign="top" align="left">36</td><td colspan="4" width="100%"><a href="bigloo-37.html#Global-Index">Global Index</a></td></tr>
+ <tr><td valign="top" align="left">37</td><td colspan="4" width="100%"><a href="bigloo-38.html#Library-Index">Library Index</a></td></tr>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-39.html#Bibliography">Bibliography</a></td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody></table>
+</center>
+</div></td>
+<td align="left" valign="top" class="skribe-body"><div class="skribe-body">
+<a name="Core-Language" class="mark"></a>
+This chapter presents the Bigloo basics. It presents the elements
+that compose the body of a module (see <a href="bigloo-4.html#Modules" class="inbound">Modules</a>).<br/><br/>
+<!-- Syntax -->
+<a name="Syntax"></a>
+<div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">4.1 Syntax</font>
+</h3></td></tr></table>
+</div><div class="section">
+<a name="Syntax" class="mark"></a><a name="g1864" class="mark"></a>
+The syntax of Bigloo is that of Scheme (a parenthesis based one) with two
+exceptions: type information and multi-line comments. Type information is 
+supplied when identifiers are introduced (via <code id='code1866'
+>lambda</code>, <code id='code1867'
+>let</code>, 
+<code id='code1868'
+>define</code>, ...) and those identifiers holding type information are 
+referred to as typed identifiers.<br/><br/><a name="g1870" class="mark"></a>They are defined by the following grammar:<br/><br/><center id='center1875'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog1873'
+>&lt;ident&gt;        ==&gt; &lt;r5rs-ident&gt; | &lt;typed-ident&gt;
+&lt;typed-ident&gt;  ==&gt; &lt;r5rs-ident&gt;::&lt;r5rs-ident&gt;
+&lt;r5rs-ident&gt;   ==&gt; the standard Scheme identifiers
+</pre>
+</td></tr>
+</tbody></table></center>
+
+For details of the standard Scheme identifiers, see 
+info-file `r5rs.info', .<br/><br/><a name="g1877" class="mark"></a><a name="g1879" class="mark"></a><a name="g1881" class="mark"></a><a name="g1883" class="mark"></a>
+Multi-lines comments (see <a href="http://srfi.schemers.org/srfi-30/">http://srfi.schemers.org/srfi-30/</a>) 
+are defined as:<br/><br/><center id='center1888'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog1886'
+>&lt;ident&gt;        ==&gt; &lt;r5rs-ident&gt; | &lt;typed-ident&gt;
+&lt;comment&gt;      ==&gt; ;&lt;all subsequent characters up to a line break&gt;
+       	       | #| &lt;comment-text&gt; (&lt;comment&gt; &lt;comment-text&gt;)* |#
+&lt;comment-text&gt; ==&gt; &lt;character sequence not containing #| or |#&gt;
+</pre>
+</td></tr>
+</tbody></table></center>
+
+<!-- Comments -->
+<a name="Comments"></a>
+<div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">4.1.1 Comments</font>
+</h3></td></tr></table>
+</div><div class="subsection">
+<a name="Comments" class="mark"></a><a name="g1889" class="mark"></a><a name="g1891" class="mark"></a>
+Comments and whitespaces are the same as in 
+<a href="./r5rs-5.html#Whitespace and comments">r5rs, Whitespace and comments</a>.<br/><br/><center id='center1899'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1897'
+><font color="#ffa600"><em id='it30229'
+>;;; The FACT procedure computes the factorial</em></font>
+<font color="#ffa600"><em id='it30231'
+>;;; of a non-negative integer.</em></font>
+(<font color="#6959cf"><strong id='bold30233'
+>define</strong></font> <font color="#6959cf"><strong id='bold30235'
+>fact</strong></font>
+  (<strong id='bold30237'
+>lambda</strong> (n)
+    (<strong id='bold30238'
+>if</strong> (= n 0)
+        1        <font color="#ffa600"><em id='it30239'
+>;; Base case: return 1</em></font>
+        (* n (fact (- n 1))))))
+</pre>
+</td></tr>
+</tbody></table></center>
+
+In addition, Bigloo supports <em id='emph1900'
+>s-expressions</em> comments. These
+are introduced with the <code id='code1901'
+>#;</code> syntax:<br/><br/><center id='center1908'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1906'
+><font color="#ffa600"><em id='it30241'
+>;;; The FACT procedure computes the factorial</em></font>
+<font color="#ffa600"><em id='it30243'
+>;;; of a non-negative integer.</em></font>
+(<font color="#6959cf"><strong id='bold30245'
+>define</strong></font> <font color="#6959cf"><strong id='bold30247'
+>fact</strong></font>
+  (<strong id='bold30249'
+>lambda</strong> (n)
+    #;(if (&lt; n 2) 1 (* #;n (fact (- n 1))))
+    (<strong id='bold30250'
+>if</strong> (= n 0)
+        1
+        (* n (fact (- n 1))))))
+</pre>
+</td></tr>
+</tbody></table></center>
+<br/><br/></div>
+<!-- Expressions -->
+<a name="Expressions"></a>
+<div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">4.1.2 Expressions</font>
+</h3></td></tr></table>
+</div><div class="subsection">
+<a name="Expressions" class="mark"></a><a name="g1910" class="mark"></a>
+Bigloo expressions are the same as in <a href="./r5rs-7.html#Expressions">r5rs, Expressions</a>.
+Bigloo has more syntactic keywords than Scheme. The Bigloo syntactic
+keywords are:<br/><br/><center id='center1915'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog1913'
+>=&gt;                      do                    or
+and                     else                  quasiquote
+begin                   if                    quote
+case                    lambda                set!
+cond                    let                   unquote
+unquote-splicing        define                let*
+delay                   letrec                module
+labels                  try                   define-struct
+unwind-protect          bind-exit             define-inline
+regular-grammar         lalr-grammar          regular-search
+define-expander         define-macro          match-case
+match-lambda            pragma                failure
+assert                  define-generic        define-method
+instantiate             duplicate             with-access
+widen!                  shrink!               multiple-value-bind
+let-syntax              letrec-syntax         define-syntax
+cond-expand             receive               args-parse
+define-record-type      and-let*              letrec*
+</pre>
+</td></tr>
+</tbody></table></center>
+
+All other non atomic Bigloo forms are evaluated as functioncalls or macro class.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc1918" align="left" colspan="1"><em id='it1917'
+>&lt;variable&gt;</em></td><td id="tc1919" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<a name="g1923" class="mark"></a><a name="quote" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc1927" align="left" colspan="1"><strong id='bold1925'
+>quote</strong><em id='it1926'
+> datum</em></td><td id="tc1928" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc1933" align="left" colspan="1"><em id='it1932'
+><code id='code1931'
+>'</code>datum</em></td><td id="tc1934" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc1938" align="left" colspan="1"><em id='it1937'
+>&lt;constant&gt;</em></td><td id="tc1939" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<center id='center1953'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1951'
+>(<font color="#6959cf"><strong id='bold30251'
+>define</strong></font> <font color="#6959cf"><strong id='bold30253'
+>x</strong></font> 28)                          =&gt;
+x                                      =&gt; 28
+(<strong id='bold30255'
+>quote</strong> a)                              =&gt; A
+(<strong id='bold30256'
+>quote</strong> #(a b c))                       =&gt; #(A B C)
+(<strong id='bold30257'
+>quote</strong> (+ 1 2))                        =&gt; (+ 1 2)
+'a                                     =&gt; A
+'#(a b c)                              =&gt; #(A B C)
+'()                                    =&gt; ()
+'(+ 1 2)                               =&gt; (+ 1 2)
+'(<strong id='bold30258'
+>quote</strong> a)                             =&gt; (QUOTE A)
+'<font color="red">&quot;abc&quot;</font>                                 =&gt; <font color="red">&quot;abc&quot;</font>
+<font color="red">&quot;abc&quot;</font>                                  =&gt; <font color="red">&quot;abc&quot;</font>
+'145932                                =&gt; 145932
+145932                                 =&gt; 145932
+'#t                                    =&gt; #t
+#t                                     =&gt; #t
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g1957" class="mark"></a><a name="operator" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc1961" align="left" colspan="1"><strong id='bold1959'
+>operator</strong><em id='it1960'
+> operand ...</em></td><td id="tc1962" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<a name="g1966" class="mark"></a><a name="g1969" class="mark"></a><center id='center1975'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1973'
+>(+ 3 4)                                =&gt; 7
+((<strong id='bold30263'
+>if</strong> #f + *) 3 4)                      =&gt; 12
+((<strong id='bold30264'
+>lambda</strong> (x) (+ 1 x)) 5)               =&gt; 6
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g1979" class="mark"></a><a name="lambda" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc1983" align="left" colspan="1"><strong id='bold1981'
+>lambda</strong><em id='it1982'
+>  formals body</em></td><td id="tc1984" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<center id='center2002'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2000'
+>(<strong id='bold30265'
+>lambda</strong> (x) (+ x x))                   =&gt; <em id='emph1987'
+>a procedure</em>
+((<strong id='bold30266'
+>lambda</strong> (x) (+ x x)) 4)               =&gt; 8<br/><br/>(<font color="#6959cf"><strong id='bold30267'
+>define</strong></font> <font color="#6959cf"><strong id='bold30269'
+>reverse-subtract</strong></font>
+  (<strong id='bold30271'
+>lambda</strong> (x y) (- y x)))
+(reverse-subtract 7 10)                =&gt; 3<br/><br/>(<font color="#6959cf"><strong id='bold30272'
+>define</strong></font> <font color="#6959cf"><strong id='bold30274'
+>add4</strong></font>
+  (<strong id='bold30276'
+>let</strong> ((x 4))
+    (<strong id='bold30277'
+>lambda</strong> (y) (+ x y))))
+(add4 6)                               =&gt; 10<br/><br/>((<strong id='bold30278'
+>lambda</strong> x x) 3 4 5 6)                 =&gt; (3 4 5 6)
+((<strong id='bold30279'
+>lambda</strong> (x y . z) z)
+ 3 4 5 6)                              =&gt; (5 6)
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2006" class="mark"></a><a name="if" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2010" align="left" colspan="1"><strong id='bold2008'
+>if</strong><em id='it2009'
+> test consequent [alternate]</em></td><td id="tc2011" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<center id='center2019'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2017'
+>(<strong id='bold30280'
+>if</strong> (&gt; 3 2) 'yes 'no)                  =&gt; yes
+(<strong id='bold30281'
+>if</strong> (&gt; 2 3) 'yes 'no)                  =&gt; no
+(<strong id='bold30282'
+>if</strong> (&gt; 3 2)
+    (- 3 2)
+    (+ 3 2))                           =&gt; 1
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2023" class="mark"></a><a name="set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2027" align="left" colspan="1"><strong id='bold2025'
+>set!</strong><em id='it2026'
+>  variable expression</em></td><td id="tc2028" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<center id='center2036'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2034'
+>(<font color="#6959cf"><strong id='bold30283'
+>define</strong></font> <font color="#6959cf"><strong id='bold30285'
+>x</strong></font> 2)
+(+ x 1)                                =&gt; 3
+(<strong id='bold30287'
+>set!</strong> x 4)                             =&gt; <em id='emph2031'
+>unspecified</em>
+(+ x 1)                                =&gt; 5
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2040" class="mark"></a><a name="cond" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2044" align="left" colspan="1"><strong id='bold2042'
+>cond</strong><em id='it2043'
+> clause clause ...</em></td><td id="tc2045" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+
+Bigloo considers <code id='code2048'
+>else</code> as a keyword. It thus ignores clauses
+following an <code id='code2049'
+>else</code>-clause.<br/><br/><center id='center2058'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2056'
+>(<strong id='bold30288'
+>cond</strong> ((&gt; 3 2) 'greater)
+      ((&lt; 3 2) 'less))                 =&gt; greater<br/><br/>(<strong id='bold30289'
+>cond</strong> ((&gt; 3 3) 'greater)
+      ((&lt; 3 3) 'less)
+      (else 'equal))                   =&gt; equal<br/><br/>(<strong id='bold30290'
+>cond</strong> ((assv 'b '((a 1) (b 2))) =&gt; cadr)
+      (else #f))                       =&gt; 2
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2062" class="mark"></a><a name="case" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2066" align="left" colspan="1"><strong id='bold2064'
+>case</strong><em id='it2065'
+> key clause clause ...</em></td><td id="tc2067" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+<center id='center2076'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2074'
+>(<strong id='bold30291'
+>case</strong> (* 2 3)
+  ((2 3 5 7) 'prime)
+  ((1 4 6 8 9) 'composite))            =&gt; composite
+(<strong id='bold30292'
+>case</strong> (car '(c d))
+  ((a) 'a)
+  ((b) 'b))                            =&gt; <em id='emph2070'
+>unspecified</em>
+(<strong id='bold30293'
+>case</strong> (car '(c d))
+  ((a e i o u) 'vowel)
+  ((w y) 'semivowel)
+  (else 'consonant))                   =&gt; consonant
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2080" class="mark"></a><a name="and" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2084" align="left" colspan="1"><strong id='bold2082'
+>and</strong><em id='it2083'
+> test ...</em></td><td id="tc2085" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+<center id='center2090'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2088'
+>(and (= 2 2) (&gt; 2 1))                  =&gt; #t
+(and (= 2 2) (&lt; 2 1))                  =&gt; #f
+(and 1 2 'c '(f g))                    =&gt; (f g)
+(and)                                  =&gt; #t
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/> 
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2094" class="mark"></a><a name="and-let*" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2098" align="left" colspan="1"><strong id='bold2096'
+>and-let*</strong><em id='it2097'
+> test ...</em></td><td id="tc2099" align="right" colspan="1">bigloo syntax</td></tr>
+</tbody></table>
+<a name="g2102" class="mark"></a>
+<center id='center2111'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2109'
+>(and-let* ((x 1) (y 2)) (cons x y))    =&gt; (1 . 2)
+(and-let* ((x 1) (z #f)) x)            =&gt; #f<br/><br/>(and-let* ((my-list (compute-list)) ((not (null? my-list))))
+          (do-something my-list))<br/><br/>(<font color="#6959cf"><strong id='bold30294'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30296'
+>look-up</strong></font> key alist)
+  (and-let* ((x (assq key alist))) (cdr x)))<br/><br/>(or (and-let* ((c (read-char))
+               ((not (eof-object? c))))
+              (string-set! some-str i c)  
+              (<strong id='bold30298'
+>set!</strong> i (+ 1 i)))
+</pre>
+</td></tr>
+</tbody></table></center>
+
+</td></tr>
+</tbody></table><br/> 
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2115" class="mark"></a><a name="or" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2119" align="left" colspan="1"><strong id='bold2117'
+>or</strong><em id='it2118'
+> test ...</em></td><td id="tc2120" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+<center id='center2125'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2123'
+>(or (= 2 2) (&gt; 2 1))                   =&gt; #t
+(or (= 2 2) (&lt; 2 1))                   =&gt; #t
+(or #f #f #f)                          =&gt; #f
+(or (memq 'b '(a b c)) 
+    (/ 3 0))                           =&gt; (b c)
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2129" class="mark"></a><a name="let" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2133" align="left" colspan="1"><strong id='bold2131'
+>let</strong><em id='it2132'
+> [name] (binding ...) body</em></td><td id="tc2134" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+<center id='center2146'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2144'
+>(<strong id='bold30299'
+>let</strong> ((x 2) (y 3))
+  (* x y))                             =&gt; 6<br/><br/>(<strong id='bold30300'
+>let</strong> ((x 2) (y 3))
+  (<strong id='bold30301'
+>let</strong> ((x 7)
+        (z (+ x y)))
+    (* z x)))                          =&gt; 35<br/><br/>(<strong id='bold30302'
+>let</strong> loop ((l '(1 2 3)))
+   (<strong id='bold30303'
+>if</strong> (null? l)
+       '()
+       (cons (+ 1 (car l)) 
+             (loop (cdr l)))))         =&gt; (2 3 4)
+</pre>
+</td></tr>
+</tbody></table></center>
+
+If a <code id='code2148'
+><em id='it2147'
+>binding</em></code> is a symbol, then, it introduces a variable bound
+to the <code id='code2149'
+>#unspecified</code> value.<br/><br/><center id='center2154'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2152'
+>(<strong id='bold30304'
+>let</strong> (x)
+   x)                                 =&gt; #unspecified
+</pre>
+</td></tr>
+</tbody></table></center>
+
+Bigloo's named let differs from R5Rs named let because <code id='code2156'
+><em id='it2155'
+>name</em></code>
+is bound in <code id='code2158'
+><em id='it2157'
+>binding</em></code>. That is,<br/><br/><center id='center2164'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2162'
+>(<strong id='bold30305'
+>let</strong> ((l 'a-symbol))
+  (<strong id='bold30306'
+>let</strong> l ((x l))
+     x))                               =&gt; #&lt;procedure&gt;
+</pre>
+</td></tr>
+</tbody></table></center>
+
+while R5Rs states that,<br/><br/><center id='center2170'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2168'
+>(<strong id='bold30307'
+>let</strong> ((l 'a-symbol))
+  (<strong id='bold30308'
+>let</strong> l ((x l))
+     x))                               =&gt; a-symbol
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2174" class="mark"></a><a name="let*" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2178" align="left" colspan="1"><strong id='bold2176'
+>let*</strong><em id='it2177'
+> (binding ...) body</em></td><td id="tc2179" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+<center id='center2186'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2184'
+>(<strong id='bold30309'
+>let</strong> ((x 2) (y 3))
+  (<strong id='bold30310'
+>let*</strong> ((x 7)
+         (z (+ x y)))
+    (* z x)))                          =&gt; 70
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2190" class="mark"></a><a name="letrec" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2194" align="left" colspan="1"><strong id='bold2192'
+>letrec</strong><em id='it2193'
+> (binding ...) body</em></td><td id="tc2195" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+<center id='center2205'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2203'
+>(<strong id='bold30311'
+>letrec</strong> ((even?
+          (<strong id='bold30312'
+>lambda</strong> (n)
+            (<strong id='bold30313'
+>if</strong> (zero? n)
+                #t
+                (odd? (- n 1)))))
+         (odd?
+          (<strong id='bold30314'
+>lambda</strong> (n)
+            (<strong id='bold30315'
+>if</strong> (zero? n)
+                #f
+                (even? (- n 1))))))
+  (even? 88))   
+                                       =&gt; #t
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2209" class="mark"></a><a name="letrec*" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2213" align="left" colspan="1"><strong id='bold2211'
+>letrec*</strong><em id='it2212'
+> (binding ...) body</em></td><td id="tc2214" align="right" colspan="1">bigloo syntax</td></tr>
+</tbody></table>
+
+Each binding has the form<br/><br/><center id='center2220'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2218'
+>((&lt;variable1&gt; &lt;init1&gt;) ...)
+</pre>
+</td></tr>
+</tbody></table></center>
+
+Each <code id='code2221'
+>&lt;init&gt;</code> is an expression.Any variable must not appear more
+than once in the <code id='code2222'
+>&lt;variable&gt;</code>s.<br/><br/>The <code id='code2224'
+>&lt;variable&gt;</code>s are bound to fresh locations, each &lt;variable&gt;
+is assigned in left-to-right order to the result of evaluating the
+corresponding <code id='code2225'
+>&lt;init&gt;</code>, the <code id='code2226'
+>&lt;body&gt;</code> is evaluated in the resulting
+environment, and the values of the last expression in &lt;body&gt; are
+returned. Despite the left-to-right evaluation and assignment order,
+each binding of a &lt;variable&gt; has the entire letrec* expression as its
+region, making it possible to define mutually recursive procedures.<br/><br/>Examples:<br/><br/><center id='center2235'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2233'
+>(letrec* ((x 1)
+          (f (<strong id='bold30316'
+>lambda</strong> (y) (+ x y))))
+   (f 3))
+                                       =&gt; 4
+(letrec* ((p (<strong id='bold30317'
+>lambda</strong> (x)
+                (+ 1 (q (- x 1)))))
+          (q (<strong id='bold30318'
+>lambda</strong> (y)
+                (<strong id='bold30319'
+>if</strong> (zero? y)
+                    0
+                    (+ 1 (p (- y 1))))))
+          (x (p 5))
+          (y x))
+  y)
+                                       =&gt; 5
+</pre>
+</td></tr>
+</tbody></table></center>
+
+It must be possible to evaluate each <code id='code2236'
+>&lt;init&gt;</code> without assigning or
+referring to the value of the corresponding &lt;variable&gt; or the
+<code id='code2237'
+>&lt;variable&gt;</code> of any of the bindings that follow it in
+&lt;bindings&gt;. Another restriction is that the continuation of each
+<code id='code2238'
+>&lt;init&gt;</code> should not be invoked more than once. <br/><br/></td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2243" class="mark"></a><a name="labels" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2247" align="left" colspan="1"><strong id='bold2245'
+>labels</strong><em id='it2246'
+> ((name (arg ...) body) ...) body</em></td><td id="tc2248" align="right" colspan="1">bigloo syntax</td></tr>
+</tbody></table>
+The syntax is similar to the Common Lisp one [Steele90],
+where created bindings are immutable.<br/><br/><center id='center2257'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2255'
+>(<strong id='bold30320'
+>labels</strong> ((loop (f l acc)
+               (<strong id='bold30321'
+>if</strong> (null? l) 
+                   (reverse! acc) 
+                   (loop f (cdr l) (cons (f (car l)) acc)))))
+   (loop (<strong id='bold30322'
+>lambda</strong> (x) (+ 1 x)) (list 1 2 3) '()))
+   =&gt; (2 3 4)
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2261" class="mark"></a><a name="begin" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2265" align="left" colspan="1"><strong id='bold2263'
+>begin</strong><em id='it2264'
+> expression expression ...</em></td><td id="tc2266" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+<center id='center2279'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2277'
+>(<font color="#6959cf"><strong id='bold30323'
+>define</strong></font> <font color="#6959cf"><strong id='bold30325'
+>x</strong></font> 0)<br/><br/>(<strong id='bold30327'
+>begin</strong> (<strong id='bold30328'
+>set!</strong> x 5)
+       (+ x 1))                        =&gt; 6<br/><br/>(<strong id='bold30329'
+>begin</strong> (display <font color="red">&quot;4 plus 1 equals &quot;</font>)
+       (display (+ 4 1)))              =&gt; <em id='emph2271'
+>unspecified</em>
+                                       -| 4 plus 1 equals 5
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2283" class="mark"></a><a name="do" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2287" align="left" colspan="1"><strong id='bold2285'
+>do</strong><em id='it2286'
+> ((variable init step) ...) (test expression ...) body</em></td><td id="tc2288" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+<center id='center2295'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2293'
+>(do ((vec (make-vector 5))
+     (i 0 (+ i 1)))
+    ((= i 5) vec)
+  (vector-set! vec i i))               =&gt; #(0 1 2 3 4)<br/><br/>(<strong id='bold30331'
+>let</strong> ((x '(1 3 5 7 9)))
+  (do ((x x (cdr x))
+       (sum 0 (+ sum (car x))))
+      ((null? x) sum)))                =&gt; 25
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2299" class="mark"></a><a name="delay" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2303" align="left" colspan="1"><strong id='bold2301'
+>delay</strong><em id='it2302'
+> expression</em></td><td id="tc2304" align="right" colspan="1">library syntax</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2310" class="mark"></a><a name="quasiquote" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2314" align="left" colspan="1"><strong id='bold2312'
+>quasiquote</strong><em id='it2313'
+> template</em></td><td id="tc2315" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2320" align="left" colspan="1"><em id='it2319'
+><tt id='tt2318'
+>`</tt> template</em></td><td id="tc2321" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<a name="g2325" class="mark"></a><center id='center2333'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2331'
+>`(list ,(+ 1 2) 4)                     =&gt; (list 3 4)
+(<strong id='bold30332'
+>let</strong> ((name 'a)) `(list ,name ',name))           
+          =&gt; (list a (<strong id='bold30333'
+>quote</strong> a))
+`(a ,(+ 1 2) ,&#x40;(map abs '(4 -5 6)) b)           
+          =&gt; (a 3 4 5 6 b)
+`((<samp id='samp2327'
+>foo</samp> ,(- 10 3)) ,&#x40;(cdr '(c)) . ,(car '(cons)))           
+          =&gt; ((foo 7) . cons)
+`#(10 5 ,(sqrt 4) ,&#x40;(map sqrt '(16 9)) 8)           
+          =&gt; #(10 5 2 4 3 8)
+`(a `(b ,(+ 1 2) ,(foo ,(+ 1 3) d) e) f)           
+          =&gt; (a `(b ,(+ 1 2) ,(foo 4 d) e) f)
+(<strong id='bold30334'
+>let</strong> ((name1 'x)
+      (name2 'y))
+  `(a `(b ,,name1 ,',name2 d) e))           
+          =&gt; (a `(b ,x ,'y d) e)
+(quasiquote (list (unquote (+ 1 2)) 4))           
+          =&gt; (list 3 4)
+'(quasiquote (list (unquote (+ 1 2)) 4))           
+          =&gt; `(list ,(+ 1 2) 4)
+     i.e., (quasiquote (list (unquote (+ 1 2)) 4))
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+</div>
+<!-- Definitions -->
+<a name="Definitions"></a>
+<div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">4.1.3 Definitions</font>
+</h3></td></tr></table>
+</div><div class="subsection">
+<a name="Definitions" class="mark"></a><a name="g2336" class="mark"></a>
+Global bindings are introduced by the <code id='code2338'
+>define</code> form:
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g2340" class="mark"></a><a name="define" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2344" align="left" colspan="1"><strong id='bold2342'
+>define</strong><em id='it2343'
+> variable expression</em></td><td id="tc2345" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc2350" align="left" colspan="1"><strong id='bold2348'
+>define</strong><em id='it2349'
+> (variable arg ...) body</em></td><td id="tc2351" align="right" colspan="1">syntax</td></tr>
+</tbody></table>
+<center id='center2359'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2357'
+>(<font color="#6959cf"><strong id='bold30335'
+>define</strong></font> <font color="#6959cf"><strong id='bold30337'
+>add3</strong></font>
+  (<strong id='bold30339'
+>lambda</strong> (x) (+ x 3)))
+(add3 3)                               =&gt; 6
+(<font color="#6959cf"><strong id='bold30340'
+>define</strong></font> <font color="#6959cf"><strong id='bold30342'
+>first</strong></font> car)
+(first '(1 2))                         =&gt; 1
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+See <a href="./r5rs-8.html#Definitions">r5rs, Definitions</a>, for more details. The Bigloo module
+language (See <a href="bigloo-4.html#Module-Declaration" class="inbound">Module Declaration</a>) enables <em id='emph2362'
+>exports</em> and
+<em id='emph2363'
+>imports</em> of global definitions.<br/><br/><br/>
+
+</div>
+</div><br>
+</div></td>
+</tr></table><div class="skribe-ending">
+<hr> 
+<p class="ending" id='paragraph30349'
+><font size="-1">
+This <span class="sc">Html</span> page has been produced by 
+<a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
+<br/>
+Last update <em id='it30347'
+>Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+</body>
+</html>

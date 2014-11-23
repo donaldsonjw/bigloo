@@ -1,0 +1,388 @@
+<!-- 95% W3C COMPLIANT, 95% CSS FREE, RAW HTML -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<title>Bigloo</title>
+ <style type="text/css">
+  <!--
+  pre { font-family: monospace }
+  tt { font-family: monospace }
+  code { font-family: monospace }
+  p.flushright { text-align: right }
+  p.flushleft { text-align: left }
+  span.sc { font-variant: small-caps }
+  span.sf { font-family: sans-serif }
+  span.skribetitle { font-family: sans-serif; font-weight: bolder; font-size: x-large; }
+  span.refscreen { }
+  span.refprint { display: none; }
+  -->
+ </style>
+</head>
+
+<body class="chapter" bgcolor="#ffffff">
+<table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>7. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- Pattern Matching</big></big></big></strong></div><center>
+</center>
+</td></tr></tbody></table>
+<table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
+<td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
+<br/><center id='center31382'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc31372" align="center" colspan="1"><font color="#ffffff"><strong id='bold31370'
+>main page</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc31379" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc31375" align="left" valign="top" colspan="1"><strong id='bold31374'
+>top:</strong></td><td id="tc31376" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center31392'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc31386" align="center" colspan="1"><font color="#ffffff"><strong id='bold31384'
+>Pattern Matching</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc31389" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tbody>
+ <tr><td valign="top" align="left">7.1</td><td colspan="4" width="100%"><a href="bigloo-8.html#Bigloo-pattern-matching-facilities">Bigloo pattern matching facilities</a></td></tr>
+ <tr><td valign="top" align="left">7.2</td><td colspan="4" width="100%"><a href="bigloo-8.html#The-pattern-language">The pattern language</a></td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody></table>
+</center>
+<br/><br/><center id='center31402'
+><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
+<tr bgcolor="#8381de"><th id="tc31396" align="center" colspan="1"><font color="#ffffff"><strong id='bold31394'
+>Chapters</strong></font></th></tr>
+<tr bgcolor="#ffffff"><td id="tc31399" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tbody>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
+ <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
+ <tr><td valign="top" align="left">2</td><td colspan="4" width="100%"><a href="bigloo-3.html#Overview-of-Bigloo">Overview of Bigloo</a></td></tr>
+ <tr><td valign="top" align="left">3</td><td colspan="4" width="100%"><a href="bigloo-4.html#Modules">Modules</a></td></tr>
+ <tr><td valign="top" align="left">4</td><td colspan="4" width="100%"><a href="bigloo-5.html#Core-Language">Core Language</a></td></tr>
+ <tr><td valign="top" align="left">5</td><td colspan="4" width="100%"><a href="bigloo-6.html#DSSSL-support">DSSSL support</a></td></tr>
+ <tr><td valign="top" align="left">6</td><td colspan="4" width="100%"><a href="bigloo-7.html#Standard-Library">Standard Library</a></td></tr>
+ <tr><td valign="top" align="left">7</td><td colspan="4" width="100%"><a href="bigloo-8.html#Pattern-Matching">Pattern Matching</a></td></tr>
+ <tr><td valign="top" align="left">8</td><td colspan="4" width="100%"><a href="bigloo-9.html#Fast-search">Fast search</a></td></tr>
+ <tr><td valign="top" align="left">9</td><td colspan="4" width="100%"><a href="bigloo-10.html#Structures-and-Records">Structures and Records</a></td></tr>
+ <tr><td valign="top" align="left">10</td><td colspan="4" width="100%"><a href="bigloo-11.html#Object-System">Object System</a></td></tr>
+ <tr><td valign="top" align="left">11</td><td colspan="4" width="100%"><a href="bigloo-12.html#Regular-parsing">Regular parsing</a></td></tr>
+ <tr><td valign="top" align="left">12</td><td colspan="4" width="100%"><a href="bigloo-13.html#Lalr(1)-parsing">Lalr(1) parsing</a></td></tr>
+ <tr><td valign="top" align="left">13</td><td colspan="4" width="100%"><a href="bigloo-14.html#Posix-Regular-Expressions">Posix Regular Expressions</a></td></tr>
+ <tr><td valign="top" align="left">14</td><td colspan="4" width="100%"><a href="bigloo-15.html#Command-Line-Parsing">Command Line Parsing</a></td></tr>
+ <tr><td valign="top" align="left">15</td><td colspan="4" width="100%"><a href="bigloo-16.html#Cryptography">Cryptography</a></td></tr>
+ <tr><td valign="top" align="left">16</td><td colspan="4" width="100%"><a href="bigloo-17.html#Errors-Assertions-and-Traces">Errors, Assertions, and Traces</a></td></tr>
+ <tr><td valign="top" align="left">17</td><td colspan="4" width="100%"><a href="bigloo-18.html#Threads">Threads</a></td></tr>
+ <tr><td valign="top" align="left">18</td><td colspan="4" width="100%"><a href="bigloo-19.html#Database">Database</a></td></tr>
+ <tr><td valign="top" align="left">19</td><td colspan="4" width="100%"><a href="bigloo-20.html#Multimedia">Multimedia</a></td></tr>
+ <tr><td valign="top" align="left">20</td><td colspan="4" width="100%"><a href="bigloo-21.html#Mail">Mail</a></td></tr>
+ <tr><td valign="top" align="left">21</td><td colspan="4" width="100%"><a href="bigloo-22.html#Text">Text</a></td></tr>
+ <tr><td valign="top" align="left">22</td><td colspan="4" width="100%"><a href="bigloo-23.html#CSV">CSV</a></td></tr>
+ <tr><td valign="top" align="left">23</td><td colspan="4" width="100%"><a href="bigloo-24.html#Eval-and-code-interpretation">Eval and code interpretation</a></td></tr>
+ <tr><td valign="top" align="left">24</td><td colspan="4" width="100%"><a href="bigloo-25.html#Macro-expansion">Macro expansion</a></td></tr>
+ <tr><td valign="top" align="left">25</td><td colspan="4" width="100%"><a href="bigloo-26.html#Parameters">Parameters</a></td></tr>
+ <tr><td valign="top" align="left">26</td><td colspan="4" width="100%"><a href="bigloo-27.html#Explicit-typing">Explicit typing</a></td></tr>
+ <tr><td valign="top" align="left">27</td><td colspan="4" width="100%"><a href="bigloo-28.html#The-C-interface">The C interface</a></td></tr>
+ <tr><td valign="top" align="left">28</td><td colspan="4" width="100%"><a href="bigloo-29.html#The-Java-interface">The Java interface</a></td></tr>
+ <tr><td valign="top" align="left">29</td><td colspan="4" width="100%"><a href="bigloo-30.html#Bigloo-Libraries">Bigloo Libraries</a></td></tr>
+ <tr><td valign="top" align="left">30</td><td colspan="4" width="100%"><a href="bigloo-31.html#Extending-the-Runtime-System">Extending the Runtime System</a></td></tr>
+ <tr><td valign="top" align="left">31</td><td colspan="4" width="100%"><a href="bigloo-32.html#SRFIs">SRFIs</a></td></tr>
+ <tr><td valign="top" align="left">32</td><td colspan="4" width="100%"><a href="bigloo-33.html#Compiler-description">Compiler description</a></td></tr>
+ <tr><td valign="top" align="left">33</td><td colspan="4" width="100%"><a href="bigloo-34.html#Cross-Compilation">Cross Compilation</a></td></tr>
+ <tr><td valign="top" align="left">34</td><td colspan="4" width="100%"><a href="bigloo-35.html#User-Extensions">User Extensions</a></td></tr>
+ <tr><td valign="top" align="left">35</td><td colspan="4" width="100%"><a href="bigloo-36.html#Bigloo-Development-Environment">Bigloo Development Environment</a></td></tr>
+ <tr><td valign="top" align="left">36</td><td colspan="4" width="100%"><a href="bigloo-37.html#Global-Index">Global Index</a></td></tr>
+ <tr><td valign="top" align="left">37</td><td colspan="4" width="100%"><a href="bigloo-38.html#Library-Index">Library Index</a></td></tr>
+ <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-39.html#Bibliography">Bibliography</a></td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody></table>
+</center>
+</div></td>
+<td align="left" valign="top" class="skribe-body"><div class="skribe-body">
+<a name="Pattern-Matching" class="mark"></a><a name="g15555" class="mark"></a>
+Pattern matching is a key feature of most modern functional programming
+languages since it allows clean and secure code to be
+written. Internally, ``pattern-matching forms'' should be translated
+(compiled) into cascades of ``elementary tests'' where code is made as
+efficient as possible, avoiding redundant tests; Bigloo's ``pattern
+matching compiler'' provides this. The technique used is described in
+details in [QueinnecGeffroy92], and the code generated can be considered
+optimal <a href="#footnote-footnote15557"><sup><small>1</small></sup></a> due to the way this ``pattern
+compiler'' was obtained.<br/><br/>The ``pattern language'' allows the expression of a wide variety of patterns,
+including:<br/><br/><ul class="itemize" id='itemize15569'
+><li>Non-linear patterns: pattern variables can appear more than
+once, allowing comparison of subparts of the datum (through <code id='code15560'
+>eq?</code>)<br/><br/></li>
+<li>Recursive patterns on lists: for example, checking that the
+datum is a list of zero or more <code id='code15563'
+>a</code>s followed by zero or more 
+<code id='code15564'
+>b</code>s.<br/><br/></li>
+<li>Pattern matching on lists as well as on vectors and structures, 
+and record types.<br/><br/></li>
+</ul>
+<br/><br/><!-- Bigloo pattern matching facilities -->
+<a name="Bigloo-pattern-matching-facilities"></a>
+<div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">7.1 Bigloo pattern matching facilities</font>
+</h3></td></tr></table>
+</div><div class="section">
+<a name="Bigloo-Pattern-Matching-Facilities" class="mark"></a>
+Only two special forms are provided for this in Bigloo: <code id='code15571'
+>match-case</code> 
+and <code id='code15572'
+>match-lambda</code>.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g15575" class="mark"></a><a name="match-case" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15579" align="left" colspan="1"><strong id='bold15577'
+>match-case</strong><em id='it15578'
+> key clause...</em></td><td id="tc15580" align="right" colspan="1">bigloo syntax</td></tr>
+</tbody></table>
+The argument <code id='code15584'
+><em id='it15583'
+>key</em></code> may be any expression and each <code id='code15586'
+><em id='it15585'
+>clause</em></code> has the form<br/><br/><center id='center15594'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15592'
+>(<code id='code15589'
+><em id='it15588'
+>pattern</em></code> <code id='code15591'
+><em id='it15590'
+>s-expression</em></code>...)
+</pre>
+</td></tr>
+</tbody></table></center>
+
+<em id='emph15595'
+>Semantics: </em> A <code id='code15596'
+>match-case</code> expression is evaluated as
+follows. <code id='code15598'
+><em id='it15597'
+>key</em></code> is evaluated and the result is compared with each
+successive pattern. If the pattern in some <code id='code15600'
+><em id='it15599'
+>clause</em></code> yields a match, then
+the expressions in that <code id='code15602'
+><em id='it15601'
+>clause</em></code> are evaluated from left to right in an
+environment where the pattern variables are bound to the corresponding
+subparts of the datum, and the result of the last expression in that
+<code id='code15604'
+><em id='it15603'
+>clause</em></code> is returned as the result of the <code id='code15605'
+>match-case</code> expression.
+If no <code id='code15607'
+><em id='it15606'
+>pattern</em></code> in any <code id='code15609'
+><em id='it15608'
+>clause</em></code> matches the datum, then, if there is an
+<code id='code15610'
+>else</code> clause, its expressions are evaluated and the result of the last
+is the result of the whole <code id='code15611'
+>match-case</code> expression; otherwise the result
+of the <code id='code15612'
+>match-case</code> expression is unspecified.<br/><br/>The equality predicate used is <code id='code15614'
+>eq?</code>.<br/><br/><center id='center15619'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15617'
+>(<strong id='bold31403'
+>match-case</strong> '(a b a)
+   ((?x ?x) 'foo)
+   ((?x ?- ?x) 'bar))
+   =&gt; bar
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+The following syntax is also available:<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g15624" class="mark"></a><a name="match-lambda" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15628" align="left" colspan="1"><strong id='bold15626'
+>match-lambda</strong><em id='it15627'
+> clause...</em></td><td id="tc15629" align="right" colspan="1">bigloo syntax</td></tr>
+</tbody></table>
+
+It expands into a lambda-expression expecting an argument which, once
+applied to an expression, behaves exactly like a <code id='code15632'
+>match-case</code>
+expression.<br/><br/><center id='center15637'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15635'
+>((<strong id='bold31404'
+>match-lambda</strong>
+   ((?x ?x) 'foo)
+   ((?x ?- ?x) 'bar))
+ '(a b a))
+   =&gt; bar
+</pre>
+</td></tr>
+</tbody></table></center>
+</td></tr>
+</tbody></table><br/>
+</div><br>
+<!-- The pattern language -->
+<a name="The-pattern-language"></a>
+<div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">7.2 The pattern language</font>
+</h3></td></tr></table>
+</div><div class="section">
+<a name="The-Pattern-Language" class="mark"></a><a name="g15640" class="mark"></a>
+The syntax for &lt;pattern&gt; is:<br/><br/><center id='center15670'
+><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog15668'
+>&lt;pattern&gt; ==&gt;                <em id='emph15643'
+>Matches:</em><br/><br/>  &lt;atom&gt;                    the &lt;atom&gt;.
+| (<code id='code15645'
+>kwote</code> &lt;atom&gt;)            any expression <code id='code15646'
+>eq?</code> to <code id='code15647'
+>&lt;atom&gt;</code>.
+| (<code id='code15648'
+>and</code> &lt;pat1&gt; ... &lt;patn&gt;)   if all of <code id='code15651'
+>&lt;pat<code id='code15650'
+><em id='it15649'
+>i</em></code>&gt;</code> match.
+| (<code id='code15652'
+>or</code> &lt;pat1&gt; ... ...&lt;patn&gt;) if any of <code id='code15653'
+>&lt;pat1&gt;</code> through <code id='code15654'
+>&lt;patn&gt;</code> matches.
+| (<code id='code15655'
+>not</code> &lt;pat&gt;)               if <code id='code15656'
+>&lt;pat&gt;</code> doesn't match.
+| (<code id='code15657'
+>?</code> &lt;predicate&gt;)           if <code id='code15658'
+>&lt;predicate&gt;</code> is true.
+| (&lt;pat1&gt; ... &lt;patn&gt;)       a list of n elements. Here, <code id='code15659'
+>...</code> is a
+                            meta-character denoting a finite repetition
+                            of patterns.
+| &lt;pat&gt; ...                 a (possibly empty) repetition
+                            of <code id='code15660'
+>&lt;pat&gt;</code> in a list.
+| #(&lt;pat&gt; ... &lt;patn&gt;)       a vector of <code id='code15662'
+><em id='it15661'
+>n</em></code> elements.
+| #{&lt;struct&gt; &lt;pat&gt; ... }    a structure.
+| <code id='code15663'
+>?</code>&lt;id&gt;                     anything, and binds <code id='code15664'
+>id</code> as a variable.
+| <code id='code15665'
+>?-</code>                        anything.
+| <code id='code15666'
+>??-</code>                       any (possibly empty) repetition of anything
+                            in a list.
+| <code id='code15667'
+>???-</code>                      any end of list.
+</pre>
+</td></tr>
+</tbody></table></center>
+
+<em id='emph15671'
+>Remark: </em> <code id='code15672'
+>and, or, not, check</code> and <code id='code15673'
+>kwote</code> must be
+quoted in order to be treated as literals. This is the only justification
+for having the <code id='code15674'
+>kwote</code> pattern since, by convention, any atom which is
+not a keyword is quoted.<br/><br/><ul class="itemize" id='itemize15725'
+><li><code id='code15676'
+>?-</code> matches any s-expr
+
+</li>
+<li><code id='code15678'
+>a</code> matches the atom <code id='code15679'
+>'a</code>.
+
+</li>
+<li><code id='code15681'
+>?a</code> matches any expression, and binds the variable <code id='code15682'
+>a</code> to
+this expression.<br/><br/></li>
+<li><code id='code15685'
+>(? integer?)</code> matches any integer
+
+</li>
+<li><code id='code15687'
+>(a (a b))</code> matches the only list <code id='code15688'
+>'(a (a b))</code>.
+
+</li>
+<li><code id='code15690'
+>???-</code> can only appear at the end of a list, and always succeeds.
+For instance, <code id='code15691'
+>(a ???-)</code> is equivalent to <code id='code15692'
+>(a . ?-)</code>.<br/><br/></li>
+<li>when occurring in a list, <code id='code15695'
+>??-</code> matches any sequence of anything:
+<code id='code15696'
+>(a ??- b)</code> matches any list whose <code id='code15697'
+>car</code> is <code id='code15698'
+>a</code> and last
+<code id='code15699'
+>car</code> is <code id='code15700'
+>b</code>. <br/><br/></li>
+<li><code id='code15703'
+>(a ...)</code> matches any list of <code id='code15704'
+>a</code>'s, possibly empty.
+
+</li>
+<li><code id='code15706'
+>(?x ?x)</code> matches any list of length 2 whose <code id='code15707'
+>car</code> is 
+ <em id='emph15708'
+>eq</em> to its <code id='code15709'
+>cadr</code><br/><br/></li>
+<li><code id='code15712'
+>((and (not a) ?x) ?x)</code> matches any list of length 2 whose 
+<code id='code15713'
+>car</code> is not <em id='emph15714'
+>eq</em> to <code id='code15715'
+>'a</code> but is <em id='emph15716'
+>eq</em> to its <code id='code15717'
+>cadr</code><br/><br/></li>
+<li><code id='code15720'
+>#(?- ?- ???-)</code> matches any vector whose length is at least 2.
+
+</li>
+<li><code id='code15722'
+>#{foo (?- . ?-) (? integer?)}</code> matches any structure or
+record <code id='code15723'
+>foo</code> whose first and second fields are respectively a pair and an
+integer. You can provide only the fields you want to test. The order is not
+relevant.
+</li>
+</ul>
+<em id='emph15726'
+>Remark: </em> <code id='code15727'
+>??-</code> and <code id='code15728'
+>...</code> patterns can not appear
+inside a vector, where you should use <code id='code15729'
+>???-</code>: For example, 
+<code id='code15730'
+>#(a ??- b)</code> or <code id='code15731'
+>#(a...)</code> are invalid patterns, whereas 
+<code id='code15732'
+>#(a ???-)</code> is valid and matches any vector whose first element 
+is the atom <code id='code15733'
+>a</code>.
+
+
+</div><br>
+<div class="footnote"><br><br>
+<hr width='20%' size='2' align='left'>
+<a name="footnote-footnote15557"><sup><small>1</small></sup></a>: In the cases of pattern matching in lists and vectors,
+not in structures for the moment.
+<br>
+<div></div></td>
+</tr></table><div class="skribe-ending">
+<hr> 
+<p class="ending" id='paragraph31410'
+><font size="-1">
+This <span class="sc">Html</span> page has been produced by 
+<a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
+<br/>
+Last update <em id='it31408'
+>Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+./etags.scm,391
+(module __bdl_etags15,963
+(define *etags-default-keywords*24,1319
+(define *etags-meta-keywords*41,1978
+(define *keyword-key*47,2250
+(define *meta-key*48,2276
+(define (init-read-etags!53,2522
+(define (read-etags!80,3896
+(define (read-etags-file-entry119,5542
+(define (read-etags-module185,7910
+(define (parse-etags-entry-line406,13066
+(define (parse-etags-meta-entry-line601,18815
+
+./misc.scm,86
+(module __bdl_misc15,963
+(define (bdl-error22,1285
+(define (parse-string-id28,1566
+
+./prgm.scm,56
+(module __bdl_prgm15,963
+(define (read-program27,1327
+
+./types.scm,3714
+(module __bdl_types15,963
+(define (bdl-location?17,984
+(define (make-bdl-location17,984
+(define (fill-bdl-location!17,984
+   (export (class bdl-location17,984
+(define (bdl-location-file::bstring18,1015
+(define (bdl-location-line::int19,1048
+(define (bdl-program?22,1096
+(define (make-bdl-program22,1096
+(define (fill-bdl-program!22,1096
+	   (class bdl-program22,1096
+(define (bdl-program-afile23,1119
+(define (bdl-program-etags24,1144
+(define (bdl-program-files::pair-nil25,1169
+(define (bdl-program-modules27,1225
+(define (bdl-program-functions28,1279
+(define (bdl-program-generics29,1335
+(define (bdl-program-methods30,1390
+(define (bdl-program-macros31,1444
+(define (bdl-program-variables32,1497
+(define (bdl-program-types33,1553
+(define (bdl-program-classs34,1605
+(define (bdl-program-structures35,1658
+(define (bdl-program-externs36,1715
+(define (bdl-program-hashtables38,1826
+(define (bdl-module?57,2274
+(define (make-bdl-module57,2274
+(define (fill-bdl-module!57,2274
+	   (class bdl-module57,2274
+(define (bdl-module-files::pair-nil-set!59,2347
+(define (bdl-module-files::pair-nil59,2347
+(define (bdl-module-functions::pair-nil-set!61,2401
+(define (bdl-module-functions::pair-nil61,2401
+(define (bdl-module-variables::pair-nil-set!63,2476
+(define (bdl-module-variables::pair-nil63,2476
+(define (bdl-module-classes::pair-nil-set!65,2548
+(define (bdl-module-classes::pair-nil65,2548
+(define (bdl-module-methods::pair-nil-set!67,2618
+(define (bdl-module-methods::pair-nil67,2618
+(define (bdl-module-structures::pair-nil-set!69,2691
+(define (bdl-module-structures::pair-nil69,2691
+(define (bdl-module-externs::pair-nil-set!71,2764
+(define (bdl-module-externs::pair-nil71,2764
+(define (bdl-module-macros::pair-nil-set!73,2833
+(define (bdl-module-macros::pair-nil73,2833
+(define (bdl-variable?80,3013
+(define (make-bdl-variable80,3013
+(define (fill-bdl-variable!80,3013
+	   (class bdl-variable80,3013
+(define (bdl-variable-proto-set!81,3050
+(define (bdl-variable-proto81,3050
+(define (bdl-function?84,3123
+(define (make-bdl-function84,3123
+(define (fill-bdl-function!84,3123
+	   (class bdl-function84,3123
+(define (bdl-function-proto-set!85,3160
+(define (bdl-function-proto85,3160
+(define (bdl-method?88,3231
+(define (make-bdl-method88,3231
+(define (fill-bdl-method!88,3231
+	   (class bdl-method88,3231
+(define (bdl-method-generic-set!89,3267
+(define (bdl-method-generic89,3267
+(define (bdl-method-select-type-set!90,3307
+(define (bdl-method-select-type90,3307
+(define (bdl-method-return-type-set!91,3326
+(define (bdl-method-return-type91,3326
+(define (bdl-generic?94,3388
+(define (make-bdl-generic94,3388
+(define (fill-bdl-generic!94,3388
+	   (class bdl-generic94,3388
+(define (bdl-generic-methods::pair-nil-set!95,3425
+(define (bdl-generic-methods::pair-nil95,3425
+(define (bdl-macro?98,3498
+(define (make-bdl-macro98,3498
+(define (fill-bdl-macro!98,3498
+	   (class bdl-macro98,3498
+(define (bdl-macro-proto-set!99,3532
+(define (bdl-macro-proto99,3532
+(define (bdl-type?102,3601
+(define (make-bdl-type102,3601
+(define (fill-bdl-type!102,3601
+	   (class bdl-type102,3601
+(define (bdl-class?105,3666
+(define (make-bdl-class105,3666
+(define (fill-bdl-class!105,3666
+	   (class bdl-class105,3666
+(define (bdl-class-super-set!106,3697
+(define (bdl-class-super106,3697
+(define (bdl-class-kind::symbol-set!107,3735
+(define (bdl-class-kind::symbol107,3735
+(define (bdl-structure?110,3799
+(define (make-bdl-structure110,3799
+(define (fill-bdl-structure!110,3799
+	   (class bdl-structure110,3799
+(define (bdl-extern?113,3880
+(define (make-bdl-extern113,3880
+(define (fill-bdl-extern!113,3880
+	   (class bdl-extern113,3880
+
+./env.scm,204
+(module __bdl_env15,963
+(define-macro (make-new-sans-bind74,3390
+(define-macro (make-new96,4202
+(define (find-bdl-ident133,5686
+(define (find-bdl-regexp-ident144,6213
+(define (get-bdl-files157,6753

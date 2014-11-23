@@ -1,0 +1,145 @@
+-*- outline -*-
+* README.MinGW -- Author: Joseph Donaldson, Date: Jan 22, 2012 
+
+This document describes bigloo under MinGW for win32. It is divided
+into three sections. The first section is Installation and covers
+buiding and installing bigloo under MinGW. The second is Additional
+API Libraries and describes the steps needed to install sqlite,
+openssl, and PCRE. Finally, the third, Limitations And Caveats, lists
+unsupported and/or untried features.
+
+** Installation
+  
+  This section outlines the steps required to build bigloo under
+  MinGW for win32.
+
+  First, you will need to install MinGW and MSYS. At the current time
+  (January 2012), the easiest way to accomplish this is through the
+  use of mingw-get-inst. mingw-get-inst can be found at
+  http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/.
+  Please download the latest version.
+
+  Once downloaded, double click the executable to begin the
+  installation. When prompted to use the pre-packaged repository
+  catalogues or to download the latest repository catalogues, I
+  recommend downloading the latest, but either should work. Next,
+  accept the GPL licence agreement and then choose an installation
+  folder---the default works well. Moving on, you will be prompted for
+  the start menu folder. As with choosing the installation folder, the
+  default works well. Next, you will select the components to
+  install. Make sure the c compiler as well as MinGW Developer Toolkit
+  are selected. The other components are optional. Finally, select
+  Install to start the installation.
+
+  After the MinGW installation is complete, select from the Start menu
+  the MinGW shell. This will open a terminal window running bash. At
+  the prompt, issue the following command:
+
+    mingw-get gmp
+
+  This will install the gmp library used by bigloo to support bignums.
+
+  As an aside, the mingw-get command allows for the easy maintanence
+  of your MinGW installation. Periodically, running mingw-get update
+  and then mingw-get upgrade will keep your MinGW components
+  up-to-date.
+
+  Now, with MinGW ready, you can download the bigloo source code and
+  extract it to a convenient location, say c:/bigloo_srcs. In the bash
+  terminal, cd into the bigloo source code directory (e.g. cd
+  /c/bigloo_srcs/biglooX.XX) and run the command
+
+    ./configure --prefix=<directory to install bigloo in>
+
+  As an example, If the bigloo installation directory was c:/bigloo,
+  the command would be
+
+    ./configure --prefix=c:/bigloo
+
+  Please note the use of forward slashes. They are necessary and
+  cannot be replaced with the windows norm, back slashes.
+
+  Once configure finishes, execute the command
+
+    make
+
+  to start the build. When the build completes, running
+
+    make install
+
+  will install bigloo into the chosen prefix directory.
+
+  After installation, I recommend adding the bin and lib
+  subdirectories of the chosen prefix directory to the windows
+  PATH. This can be accomplished from the Advanced tab of the System
+  Properties dialog found in the Windows Control Panel. Clicking the
+  Environment Variables button will bring up the Environment Variables
+  dialog. Under System Variables, locate the PATH variable and select
+  Edit. Append the bin and lib subdirectories to the current path. It
+  will look similar to the following:
+
+    C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;c:\bigloo38a\bin;c:\bigloo38a\lib
+
+
+** Additional API Libraries
+
+  The above installation instructions will give you a basic build of
+  bigloo but will exclude a number of API libraries dependent upon
+  external libraries. The following instructions outline how to enable
+  support for sqlite, openssl, and PCRE. These steps need to be
+  performed before running configure in the installation instructions
+  above.
+
+  We will start with sqlite. The source code for sqlite can be found at
+  http://www.sqlite.org/download.html. Download the sqlite-amalgamation
+  source code archive, and extract it to a convenient location. Launch a
+  MinGW shell, and cd to the source directory. Next, run the following
+  commands:
+
+    ./configure --prefix=c:/MinGW 
+    make 
+    make install
+
+  You will need to change the prefix directory if you chose a different
+  installation directory for MinGW. Please note the use of forward
+  slashes. When the build and installation finish, bigloo's configure
+  script should detect the sqlite library and enable sqlite support.
+
+  PCRE is handled very similarly to sqlite. The source code for PCRE can
+  be found at http://sourceforge.net/projects/pcre/files/pcre/. Download
+  the latest version, and extract to a convenient location. Launch a
+  MinGW shell, and cd to the source directory. Next run the following
+  commands:
+
+    ./configure --prefix=c:/MinGW 
+    make 
+    make install
+
+  The same caveats apply to the prefix directory as they did with
+  sqlite. Modify as appropriate. Upon completion, bigloo's configure
+  script should detect the PCRE library and enable PCRE support.
+
+  Finally, we come to openssl. The source code for openssl can be found
+  at http://www.openssl.org/source/. Download the latest version and
+  extract to a convenient location. Launch a MinGW shell, cd to the
+  source directory, and run the following commands:
+
+    ./config --prefix=c:/MinGW 
+    make 
+    make install
+
+  As with sqlite and PCRE, you will need to change the prefix directory
+  if you chose a different installation directory for MinGW. Upon
+  completion, bigloo's configure script should detect the openssl
+  library and enable openssl support.
+    
+
+** Limitations and Caveats
+
+  Currently, bigloo under MinGW does not support the jvm backend or the
+  pthread and fthread libraries(the pthread and fthread libraries were
+  supported in the past, so we may be able to re-enable support in the
+  future; it needs to be investigated). Additionally, the api libraries
+  dependent upon traditionally unix based libraries (avahi, gstreamer,
+  and mpg123) may or may not work with win32 ports of these libraries; I
+  have personally not tried.

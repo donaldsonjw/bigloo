@@ -1,0 +1,43 @@
+;; -*- mode: bee -*-
+;*=====================================================================*/
+;*    serrano/prgm/project/bigloo/api/avahi/src/Misc/avahi.init.in     */
+;*    -------------------------------------------------------------    */
+;*    Author      :  Manuel Serrano                                    */
+;*    Creation    :  Wed Nov  7 05:40:36 2001                          */
+;*    Last change :  Mon Jul 28 09:17:19 2014 (serrano)                */
+;*    Copyright   :  2001-14 Manuel Serrano                            */
+;*    -------------------------------------------------------------    */
+;*    The AVAHI init file.                                             */
+;*=====================================================================*/
+ 
+;*---------------------------------------------------------------------*/
+;*    The library                                                      */
+;*---------------------------------------------------------------------*/
+(declare-library! 'avahi
+   :srfi '(avahi)
+   :basename "biglooavahi"
+   :module-init '__avahi_avahi
+   :module-eval '__avahi_makelib)
+
+;*---------------------------------------------------------------------*/
+;*    Compile and Link options                                         */
+;*---------------------------------------------------------------------*/
+(cond-expand
+   (bigloo-compile
+      ;; required pthread
+      (set! *additional-bigloo-libraries*
+          (cons* 'pthread *additional-bigloo-libraries*))
+      ;; avahi includes
+      (set! *additional-include-foreign*
+	 (cons* "avahi-client/client.h"
+	    "avahi-client/lookup.h"
+	    "avahi-client/publish.h"
+	    "avahi-common/simple-watch.h"
+	    "avahi-common/thread-watch.h"
+	    "avahi-common/error.h"
+	    *additional-include-foreign*))
+      ;; avahi libraries
+      (set! *ld-post-options* (cons "@AVAHILIBS@" *ld-post-options*))
+      ;; avahi C compilation options
+      (set! *cc-options* (cons "@AVAHICFLAGS@" *cc-options*))))
+

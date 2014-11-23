@@ -1,0 +1,37 @@
+
+-,0
+(meta-define define define0,0
+(meta-define define define-struct0,0
+(meta-define define define-parameter0,0
+(meta-define define define0,0
+(meta-define define define-inline0,0
+(meta-define define define-generic0,0
+(meta-define define define-macro0,0
+(meta-define define define-expander0,0
+(meta-define define module0,0
+
+Llib/wav.scm,762
+(module __wav_wav15,963
+(define (wavinfo?21,1050
+(define (make-wavinfo21,1050
+(define (fill-wavinfo!21,1050
+   (export (class wavinfo21,1050
+(define (wavinfo-audiofmt::symbol-set!22,1087
+(define (wavinfo-audiofmt::symbol22,1087
+(define (wavinfo-byterate::int-set!23,1132
+(define (wavinfo-byterate::int23,1132
+(define (wavinfo-blockalign::int-set!24,1168
+(define (wavinfo-blockalign::int24,1168
+(define (wavinfo-chunksize::elong-set!25,1206
+(define (wavinfo-chunksize::elong25,1206
+(define (&wav-error?27,1250
+(define (make-&wav-error27,1250
+(define (fill-&wav-error!27,1250
+	   (class &wav-error27,1250
+(define (wav-header-size35,1569
+(define (integer->audio-format40,1831
+(define (read-wav-musicinfo48,2142
+(define (wav-parse-header57,2553
+
+Llib/wav_alsadec.scm,29
+(module __wav_alsadec15,963
