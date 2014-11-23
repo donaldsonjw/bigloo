@@ -31,7 +31,7 @@
 #define DEFAULT_HEAP_SIZE 4
 
 /* The initial heap size (in mega byte) */
-BGL_RUNTIME_DEF long heap_size = DEFAULT_HEAP_SIZE;
+BGL_RUNTIME_DEF BGL_LONG_T heap_size = DEFAULT_HEAP_SIZE;
 
 /*---------------------------------------------------------------------*/
 /*    Des recuperations externes                                       */
@@ -54,7 +54,7 @@ extern char *getenv();
 /*---------------------------------------------------------------------*/
 /*    Une variable pour memoriser le bas de la pile                    */
 /*---------------------------------------------------------------------*/
-long glob_dummy;
+BGL_LONG_T glob_dummy;
 
 BGL_RUNTIME_DEF obj_t command_line = 0L;
 char *executable_name = 0L;
@@ -114,7 +114,7 @@ bigloo_exit( obj_t val ) {
 
    bgl_end_io();
    
-   n = (long)INTEGERP( val ) ? (long)CINT( val ) : 0;
+   n = (BGL_LONG_T)INTEGERP( val ) ? (BGL_LONG_T)CINT( val ) : 0;
    exit( n );
    
    BGL_MUTEX_UNLOCK( bgl_exit_mutex() );
@@ -147,11 +147,11 @@ _bigloo_main( int argc,
 	      char *env[],
 	      obj_t (*bigloo_main)(obj_t),
 	      int (*libinit)(int, char *[], char *[]),
-   	      long uheapsize ) {
-   long  mega_size;
+   	      BGL_LONG_T uheapsize ) {
+   BGL_LONG_T  mega_size;
    char *env_size;
    obj_t cons;
-   long  i;
+   BGL_LONG_T  i;
 
    /* we store the global environment */
    bgl_envp = env;

@@ -16,12 +16,12 @@
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-bgl_make_class( obj_t name, obj_t module, long num,
+bgl_make_class( obj_t name, obj_t module, BGL_LONG_T num,
 		obj_t super, obj_t sub,
-		obj_t alloc, long hash,
+		obj_t alloc, BGL_LONG_T hash,
 		obj_t fd, obj_t allfd,
 		obj_t constr, obj_t virt, obj_t new, obj_t nil, obj_t shrink,
-		long depth, 
+		BGL_LONG_T depth, 
 		obj_t evdata ) {
    obj_t klass;
 

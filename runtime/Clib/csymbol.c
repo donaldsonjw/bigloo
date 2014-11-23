@@ -14,7 +14,7 @@
 /*    Imports                                                          */
 /*---------------------------------------------------------------------*/
 extern obj_t make_vector( int, obj_t );
-extern long get_hash_power_number( char *, unsigned long );
+extern BGL_LONG_T get_hash_power_number( char *, BGL_ULONG_T );
 
 /*---------------------------------------------------------------------*/
 /*    Global C variables                                               */
@@ -77,7 +77,7 @@ make_symbol( obj_t name ) {
 /*---------------------------------------------------------------------*/
 static obj_t
 bgl_bstring_to_symbol( obj_t name ) {
-   long hash_number;
+   BGL_LONG_T hash_number;
    obj_t bucket;
    char *cname = BSTRING_TO_STRING( name );
 
@@ -134,7 +134,7 @@ bstring_to_symbol( obj_t name ) {
 /*    bgl_string_to_symbol_len ...                                     */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_string_to_symbol_len( char *cname, long len ) {
+bgl_string_to_symbol_len( char *cname, BGL_LONG_T len ) {
    return bgl_bstring_to_symbol( string_to_bstring_len( cname, len ) );
 }
    
@@ -152,7 +152,7 @@ string_to_symbol( char *cname ) {
 /*    symbol_exists_sans_lock_p ...                                    */
 /*---------------------------------------------------------------------*/
 static int
-symbol_exists_sans_lock_p( char *name, long hash_number ) {
+symbol_exists_sans_lock_p( char *name, BGL_LONG_T hash_number ) {
    obj_t bucket;
 
    bucket = VECTOR_REF( c_symtab, hash_number );
@@ -181,7 +181,7 @@ symbol_exists_sans_lock_p( char *name, long hash_number ) {
 BGL_RUNTIME_DEF int
 symbol_exists_p( char *name ) {
    int r;
-   long hn = get_hash_power_number( name, SYMBOL_HASH_TABLE_SIZE_SHIFT );
+   BGL_LONG_T hn = get_hash_power_number( name, SYMBOL_HASH_TABLE_SIZE_SHIFT );
 
    BGL_MUTEX_LOCK( symbol_mutex );
    r = symbol_exists_sans_lock_p( name, hn );
@@ -200,9 +200,9 @@ symbol_exists_p( char *name ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 bgl_symbol_genname( obj_t o, char *name ) {
-   long hn;
+   BGL_LONG_T hn;
    char gn[ 40 ];
-   static long gensym_counter = 999;
+   static BGL_LONG_T gensym_counter = 999;
    obj_t pair;
    size_t n = strlen( name );
 

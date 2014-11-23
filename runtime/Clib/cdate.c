@@ -42,13 +42,13 @@ bgl_init_date() {
 }
 
 /*---------------------------------------------------------------------*/
-/*    static long                                                      */
+/*    static BGL_LONG_T                                                      */
 /*    bgl_get_timezone ...                                             */
 /*---------------------------------------------------------------------*/
-static long
-bgl_get_timezone( long s ) {
+static BGL_LONG_T
+bgl_get_timezone( BGL_LONG_T s ) {
    struct tm *tm = localtime( &s );
-   long m1, h1, d1;
+   BGL_LONG_T m1, h1, d1;
 
    m1 = tm->tm_min;
    h1 = tm->tm_hour;
@@ -66,10 +66,10 @@ bgl_get_timezone( long s ) {
 }
    
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_timezone ...                                                 */
 /*---------------------------------------------------------------------*/
-static long
+static BGL_LONG_T
 bgl_timezone() {
    static timezone = 23;
 
@@ -118,7 +118,7 @@ tm_to_date( struct tm *tm ) {
 /*    bgl_seconds_to_date ...                                          */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_seconds_to_date( long sec ) {
+bgl_seconds_to_date( BGL_LONG_T sec ) {
    obj_t res;
 
    BGL_MUTEX_LOCK( date_mutex );
@@ -135,7 +135,7 @@ bgl_seconds_to_date( long sec ) {
 BGL_RUNTIME_DEF obj_t
 bgl_nanoseconds_to_date( BGL_LONGLONG_T nsec ) {
    obj_t res;
-   long sec = (long)(nsec / NANOBASE);
+   BGL_LONG_T sec = (BGL_LONG_T)(nsec / NANOBASE);
 
    BGL_MUTEX_LOCK( date_mutex );
    res = tm_to_date( localtime( (time_t *)&sec ) );
@@ -151,7 +151,7 @@ bgl_nanoseconds_to_date( BGL_LONGLONG_T nsec ) {
 /*    bgl_make_date ...                                                */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_make_date( BGL_LONGLONG_T ns, int s, int m, int hr, int mday, int mon, int year, long tz, bool_t istz, int isdst ) {
+bgl_make_date( BGL_LONGLONG_T ns, int s, int m, int hr, int mday, int mon, int year, BGL_LONG_T tz, bool_t istz, int isdst ) {
    struct tm tm;
    time_t t;
    obj_t date;
@@ -176,14 +176,14 @@ bgl_make_date( BGL_LONGLONG_T ns, int s, int m, int hr, int mday, int mon, int y
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_date_to_seconds ...                                          */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_date_to_seconds( obj_t date ) {
    struct tm t, *tl;
    time_t n, m;
-   long tz;
+   BGL_LONG_T tz;
 
    t.tm_sec = BGL_DATE( date ).sec;
    t.tm_min = BGL_DATE( date ).min;
@@ -208,7 +208,7 @@ bgl_date_to_seconds( obj_t date ) {
 #endif
 
    BGL_MUTEX_UNLOCK( date_mutex );
-   return (long)n + (tz - (BGL_DATE( date ).timezone));
+   return (BGL_LONG_T)n + (tz - (BGL_DATE( date ).timezone));
 }
 
 /*---------------------------------------------------------------------*/
@@ -222,12 +222,12 @@ bgl_date_to_nanoseconds( obj_t date ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_current_seconds ...                                          */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_current_seconds() {
-   return (long)( time( 0L ) );
+   return (BGL_LONG_T)( time( 0L ) );
 }
 
 /*---------------------------------------------------------------------*/
@@ -279,7 +279,7 @@ bgl_current_nanoseconds() {
 /*    bgl_seconds_to_utc_string ...                                    */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_seconds_to_utc_string( long sec ) {
+bgl_seconds_to_utc_string( BGL_LONG_T sec ) {
    struct tm *t;
    char *s;
 
@@ -294,7 +294,7 @@ bgl_seconds_to_utc_string( long sec ) {
 /*    bgl_seconds_to_string ...                                        */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_seconds_to_string( long sec ) {
+bgl_seconds_to_string( BGL_LONG_T sec ) {
    char *s;
    obj_t res;
    
@@ -311,7 +311,7 @@ bgl_seconds_to_string( long sec ) {
 /*    bgl_seconds_format ...                                           */
 /*---------------------------------------------------------------------*/
 obj_t
-bgl_seconds_format( long sec, obj_t fmt ) {
+bgl_seconds_format( BGL_LONG_T sec, obj_t fmt ) {
    char *buffer;
    struct tm *p;
    int len = (int)STRING_LENGTH( fmt ) + 256;

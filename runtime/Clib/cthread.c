@@ -28,8 +28,8 @@ static obj_t bgl_init_default( obj_t o ) { return o; }
 static void bgl_act0_default( void ) { return; }
 static int bgl_act_default( void *o ) { return 0; }
 static bool_t bgl_act2_default( obj_t o1, obj_t o2 ) { return 1; }
-static bool_t bgl_act2long_default( obj_t o1, long o2 ) { return 1; }
-static bool_t bgl_act3long_default( obj_t o1, obj_t o2, long o3 ) { return 1; }
+static bool_t bgl_act2long_default( obj_t o1, BGL_LONG_T o2 ) { return 1; }
+static bool_t bgl_act3long_default( obj_t o1, obj_t o2, BGL_LONG_T o3 ) { return 1; }
 
 static void *bgl_gc_do_blocking_default( void (*fun)(), void *o2 ) {
    fun( o2 );

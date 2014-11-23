@@ -14,7 +14,7 @@
 /*    Les recuperations externes                                       */
 /*---------------------------------------------------------------------*/
 extern void c_error();
-extern long bgl_list_length( obj_t );
+extern BGL_LONG_T bgl_list_length( obj_t );
 
 /*---------------------------------------------------------------------*/
 /*    GENERIC_VA_PROCEDURE ...                                         */
@@ -31,7 +31,7 @@ opt_apply( obj_t proc, obj_t args_list ) {
    int len = bgl_list_length( args_list );
    obj_t args;
    obj_t runner;
-   long i;
+   BGL_LONG_T i;
    int byte_size;
    
    /* Stack allocated the argument vector, see         */
@@ -64,12 +64,12 @@ opt_apply( obj_t proc, obj_t args_list ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t apply( obj_t function, obj_t args_list ) {
-   long arity = PROCEDURE_ARITY( function );
+   BGL_LONG_T arity = PROCEDURE_ARITY( function );
 
    if( arity < 0 ) {
-      long require;
+      BGL_LONG_T require;
       obj_t runner = args_list;
-      long i = 0;
+      BGL_LONG_T i = 0;
       obj_t *arg;
 
       if( GENERIC_VA_PROCEDURE( function ) ) {
@@ -637,7 +637,7 @@ obj_t apply( obj_t function, obj_t args_list ) {
       }
    } else {
       obj_t runner = args_list;
-      long i = 0;
+      BGL_LONG_T i = 0;
       obj_t *arg = alloca( sizeof( obj_t ) * arity );
       
       while( i < arity ) {

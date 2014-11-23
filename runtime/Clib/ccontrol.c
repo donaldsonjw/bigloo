@@ -205,9 +205,9 @@ bgl_procedure_entry_to_string( obj_t proc ) {
    obj_t res = make_string_sans_fill( 17 );
    
    if( VA_PROCEDUREP( proc ) ) {
-      sprintf( BSTRING_TO_STRING( res ), "%016lx", (long)PROCEDURE_VA_ENTRY( proc ) );
+      sprintf( BSTRING_TO_STRING( res ), "%016lx", (BGL_LONG_T)PROCEDURE_VA_ENTRY( proc ) );
    } else {
-      sprintf( BSTRING_TO_STRING( res ), "%016lx", (long)PROCEDURE_ENTRY( proc ) );
+      sprintf( BSTRING_TO_STRING( res ), "%016lx", (BGL_LONG_T)PROCEDURE_ENTRY( proc ) );
    }
 
    return res;
@@ -237,7 +237,7 @@ va_generic_entry( obj_t proc, ... ) {
    obj_t   arg[ 16 ];
    obj_t   optional;
    obj_t   runner;
-   long    i;
+   BGL_LONG_T    i;
 
    va_start( argl, proc );
    
@@ -339,7 +339,7 @@ opt_generic_entry( obj_t proc, ... ) {
    int len = 0;
    obj_t args;
    obj_t runner;
-   long i;
+   BGL_LONG_T i;
    int byte_size;
    
    /* compute the number of arguments */

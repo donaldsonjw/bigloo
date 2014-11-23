@@ -50,14 +50,14 @@
 /*    C imports                                                        */
 /*---------------------------------------------------------------------*/
 extern obj_t bigloo_case_sensitive;
-extern obj_t bgl_string_to_keyword_len( char *, long );
-extern obj_t bgl_string_to_symbol_len( char *, long );
+extern obj_t bgl_string_to_keyword_len( char *, BGL_LONG_T );
+extern obj_t bgl_string_to_symbol_len( char *, BGL_LONG_T );
 extern obj_t make_string_sans_fill( int );
 extern obj_t string_to_bstring_len( char *, int );
 extern int bgl_debug();
-extern obj_t bgl_escape_C_string( unsigned char *, long, long );
-extern obj_t bgl_escape_scheme_string( unsigned char *, long, long );
-extern long default_io_bufsiz;
+extern obj_t bgl_escape_C_string( unsigned char *, BGL_LONG_T, BGL_LONG_T );
+extern obj_t bgl_escape_scheme_string( unsigned char *, BGL_LONG_T, BGL_LONG_T );
+extern BGL_LONG_T default_io_bufsiz;
 
 /*---------------------------------------------------------------------*/
 /*    static void                                                      */
@@ -67,7 +67,7 @@ extern long default_io_bufsiz;
 /*---------------------------------------------------------------------*/
 static void
 rgc_double_buffer( obj_t port ) {
-   long bufsiz = BGL_INPUT_PORT_BUFSIZ( port );
+   BGL_LONG_T bufsiz = BGL_INPUT_PORT_BUFSIZ( port );
    obj_t oldbuf = BGL_INPUT_PORT_BUFFER( port );
    obj_t newbuf;
    
@@ -88,8 +88,8 @@ rgc_double_buffer( obj_t port ) {
 static void
 rgc_shift_buffer( obj_t port ) {
    obj_t buf = BGL_INPUT_PORT_BUFFER( port );
-   long bufpos = INPUT_PORT( port ).bufpos;
-   long matchstart = INPUT_PORT( port ).matchstart;
+   BGL_LONG_T bufpos = INPUT_PORT( port ).bufpos;
+   BGL_LONG_T matchstart = INPUT_PORT( port ).matchstart;
 
    /* shift the buffer left */
    INPUT_PORT( port ).lastchar = STRING_REF( buf, matchstart - 1 );
@@ -103,12 +103,12 @@ rgc_shift_buffer( obj_t port ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    static long                                                      */
+/*    static BGL_LONG_T                                                      */
 /*    sysread ...                                                      */
 /*---------------------------------------------------------------------*/
-static long
-sysread( obj_t port, char *buf, long o, size_t size ) {
-   long r = INPUT_PORT( port ).sysread( port, &buf[ o ], size );
+static BGL_LONG_T
+sysread( obj_t port, char *buf, BGL_LONG_T o, size_t size ) {
+   BGL_LONG_T r = INPUT_PORT( port ).sysread( port, &buf[ o ], size );
 
    if( r < 0 ) {
       int e = (errno == BGL_ECONNRESET ?
@@ -124,9 +124,9 @@ sysread( obj_t port, char *buf, long o, size_t size ) {
 /*    static bool_t                                                    */
 /*    rgc_fillsize_buffer ...                                          */
 /*---------------------------------------------------------------------*/
-static long
+static BGL_LONG_T
 rgc_fillsize_buffer( obj_t port, char *buf, int bufpos, int size ) {
-   long r;
+   BGL_LONG_T r;
    int fb = INPUT_PORT( port ).fillbarrier;
    
    if( fb == 0 ) {
@@ -158,7 +158,7 @@ rgc_fill_buffer( obj_t port ) {
    if( INPUT_PORT_CLOSEP( port ) ) {
       C_SYSTEM_FAILURE( BGL_IO_READ_ERROR, "read", "input-port closed", port );
    } else {
-      long bufpos = INPUT_PORT( port ).bufpos;
+      BGL_LONG_T bufpos = INPUT_PORT( port ).bufpos;
 
       /* the read reached end-of-buffer, update the forward ptr  */
       INPUT_PORT( port ).forward = bufpos;
@@ -169,7 +169,7 @@ rgc_fill_buffer( obj_t port ) {
 	 return (bool_t)0;
       } else {
 	 unsigned char *buf = &RGC_BUFFER_REF( port, 0 );
-	 long bufsize = BGL_INPUT_PORT_BUFSIZ( port );
+	 BGL_LONG_T bufsize = BGL_INPUT_PORT_BUFSIZ( port );
 
 	 if( bufpos < bufsize ) {
 	 fill:
@@ -212,12 +212,12 @@ rgc_fill_buffer( obj_t port ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_rgc_blit_string ...                                          */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
-bgl_rgc_blit_string( obj_t p, char *s, long o, long l ) {
-   long avail = RGC_BUFFER_AVAILABLE( p );
+BGL_RUNTIME_DEF BGL_LONG_T
+bgl_rgc_blit_string( obj_t p, char *s, BGL_LONG_T o, BGL_LONG_T l ) {
+   BGL_LONG_T avail = RGC_BUFFER_AVAILABLE( p );
    
    if( INPUT_PORT_CLOSEP( p ) ) {
       C_SYSTEM_FAILURE( BGL_IO_CLOSED_ERROR, "rgc-blit-string", "input-port closed", p );
@@ -243,7 +243,7 @@ bgl_rgc_blit_string( obj_t p, char *s, long o, long l ) {
 
       return l;
    } else {
-      long o0 = o;
+      BGL_LONG_T o0 = o;
 
       /* collect what we have */
       if( avail > 0 ) {
@@ -256,14 +256,14 @@ bgl_rgc_blit_string( obj_t p, char *s, long o, long l ) {
       if( l > 0 ) {
 _loop:
 	 if( !(INPUT_PORT( p ).eof) ) {
-	    long size = l < default_io_bufsiz ? l : default_io_bufsiz;
-	    long r = sysread( p, s, o, size );
+	    BGL_LONG_T size = l < default_io_bufsiz ? l : default_io_bufsiz;
+	    BGL_LONG_T r = sysread( p, s, o, size );
 
 	    o += r;
 	    l -= r;
 
 	    if( l > 0 ) {
-	       if( (long)PORT( p ).kindof != (long)KINDOF_DATAGRAM ) {
+	       if( (BGL_LONG_T)PORT( p ).kindof != (BGL_LONG_T)KINDOF_DATAGRAM ) {
 		  goto _loop;
 	       }
 	    }
@@ -310,16 +310,16 @@ rgc_buffer_unget_char( obj_t ip, int c ) {
 /*    rgc_reserve_space ...                                            */
 /*---------------------------------------------------------------------*/
 static void
-rgc_reserve_space( obj_t port, long amount ) {
-   long bufsize = BGL_INPUT_PORT_BUFSIZ( port );
-   long bufpos = INPUT_PORT( port ).bufpos;
-   long matchstop = INPUT_PORT( port ).matchstop;
+rgc_reserve_space( obj_t port, BGL_LONG_T amount ) {
+   BGL_LONG_T bufsize = BGL_INPUT_PORT_BUFSIZ( port );
+   BGL_LONG_T bufpos = INPUT_PORT( port ).bufpos;
+   BGL_LONG_T matchstop = INPUT_PORT( port ).matchstop;
    unsigned char *buffer = &RGC_BUFFER_REF( port, 0 );
 
    if( matchstop >= amount ) return;
 
    if( (matchstop + (bufsize - bufpos)) >= amount ) {
-      long diff = amount - matchstop;
+      BGL_LONG_T diff = amount - matchstop;
 
       /* we shift the buffer to the right */
       memmove( (char *)&RGC_BUFFER_REF( port, amount ),
@@ -343,9 +343,9 @@ rgc_reserve_space( obj_t port, long amount ) {
 /*    rgc_buffer_insert_substring ...                                  */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF bool_t
-rgc_buffer_insert_substring( obj_t ip, obj_t str, long from, long to ) {
-   long len = to - from;
-   long matchstop;
+rgc_buffer_insert_substring( obj_t ip, obj_t str, BGL_LONG_T from, BGL_LONG_T to ) {
+   BGL_LONG_T len = to - from;
+   BGL_LONG_T matchstop;
 
    if( INPUT_PORT_CLOSEP( ip ) ) return 0;
 
@@ -380,7 +380,7 @@ rgc_buffer_insert_substring( obj_t ip, obj_t str, long from, long to ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF bool_t
 rgc_buffer_insert_char( obj_t ip, int c ) {
-   long matchstop;
+   BGL_LONG_T matchstop;
 
    if( INPUT_PORT_CLOSEP( ip ) ) return 0;
 
@@ -427,7 +427,7 @@ rgc_buffer_bol_p( obj_t ip ) {
 /*    character?                                                       */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF bool_t
-rgc_buffer_eol_p( obj_t ip, long forward, long bufpos ) {
+rgc_buffer_eol_p( obj_t ip, BGL_LONG_T forward, BGL_LONG_T bufpos ) {
    if( forward == bufpos ) {
       if( rgc_fill_buffer( ip ) )
 	 return rgc_buffer_eol_p( ip, INPUT_PORT( ip ).forward, INPUT_PORT( ip ).bufpos );
@@ -460,10 +460,10 @@ rgc_buffer_bof_p( obj_t ip ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF bool_t
 rgc_buffer_eof_p( obj_t ip ) {
-   long m = INPUT_PORT( ip ).matchstop;
-   long p = INPUT_PORT( ip ).bufpos;
-   long e = INPUT_PORT( ip ).eof;
-   long s = BGL_INPUT_PORT_BUFSIZ( ip );
+   BGL_LONG_T m = INPUT_PORT( ip ).matchstop;
+   BGL_LONG_T p = INPUT_PORT( ip ).bufpos;
+   BGL_LONG_T e = INPUT_PORT( ip ).eof;
+   BGL_LONG_T s = BGL_INPUT_PORT_BUFSIZ( ip );
 
 /*    fprintf( stderr, "rgc_buffer_eof_p f=%d s=%d p=%d\n", f, s, p ); */
 /*    return (f == s) && (f == p);                                     */
@@ -477,7 +477,7 @@ rgc_buffer_eof_p( obj_t ip ) {
 /*    Is the input port at its end-of-file position?                   */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF bool_t
-rgc_buffer_eof2_p( obj_t ip, long forward, long bufpos ) {
+rgc_buffer_eof2_p( obj_t ip, BGL_LONG_T forward, BGL_LONG_T bufpos ) {
    if( forward < bufpos ) {
       INPUT_PORT( ip ).forward = forward;
       INPUT_PORT( ip ).bufpos = bufpos;
@@ -528,28 +528,28 @@ file_charready( FILE *f ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF bool_t
 bgl_rgc_charready( obj_t port ) {
-   switch( (long)PORT( port ).kindof ) {
-      case (long)KINDOF_CLOSED:
+   switch( (BGL_LONG_T)PORT( port ).kindof ) {
+      case (BGL_LONG_T)KINDOF_CLOSED:
 	 return 0;
 	 
-      case (long)KINDOF_STRING:
+      case (BGL_LONG_T)KINDOF_STRING:
 	 return ((INPUT_PORT( port ).matchstop) < INPUT_PORT( port ).bufpos);
 	 
-      case (long)KINDOF_FILE:
+      case (BGL_LONG_T)KINDOF_FILE:
 	 return ((INPUT_PORT( port ).matchstop) < INPUT_PORT( port ).bufpos)
 	    || (!feof( PORT_FILE( port ) )
 		&& !INPUT_PORT( port ).eof);
 	 
-      case (long)KINDOF_PROCPIPE:
-      case (long)KINDOF_PIPE:
-      case (long)KINDOF_CONSOLE:
-      case (long)KINDOF_SOCKET:
-      case (long)KINDOF_DATAGRAM:
+      case (BGL_LONG_T)KINDOF_PROCPIPE:
+      case (BGL_LONG_T)KINDOF_PIPE:
+      case (BGL_LONG_T)KINDOF_CONSOLE:
+      case (BGL_LONG_T)KINDOF_SOCKET:
+      case (BGL_LONG_T)KINDOF_DATAGRAM:
 	 return ((INPUT_PORT( port ).matchstop) < INPUT_PORT( port ).bufpos)
 	    || file_charready( PORT_FILE( port ) );
 	 
-      case (long)KINDOF_PROCEDURE:
-      case (long)KINDOF_GZIP:
+      case (BGL_LONG_T)KINDOF_PROCEDURE:
+      case (BGL_LONG_T)KINDOF_GZIP:
 	 /* to know if a char is available we only could call the procedure */
 	 /* this could block, so we just return true                        */
 	 return 1;
@@ -567,9 +567,9 @@ bgl_rgc_charready( obj_t port ) {
 /*    already been performed in the grammar.                           */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-rgc_buffer_substring( obj_t ip, long offset, long end ) {
-   long start = INPUT_PORT( ip ).matchstart;
-   long len = end - offset;
+rgc_buffer_substring( obj_t ip, BGL_LONG_T offset, BGL_LONG_T end ) {
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T len = end - offset;
    char *s = (char *)&RGC_BUFFER_REF( ip, start + offset );
 
    return string_to_bstring_len( s, len );
@@ -580,8 +580,8 @@ rgc_buffer_substring( obj_t ip, long offset, long end ) {
 /*    rgc_buffer_escape_substring ...                                  */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-rgc_buffer_escape_substring( obj_t ip, long offset, long end, bool_t strict ) {
-   long start = INPUT_PORT( ip ).matchstart;
+rgc_buffer_escape_substring( obj_t ip, BGL_LONG_T offset, BGL_LONG_T end, bool_t strict ) {
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
    char *s = (char *)&RGC_BUFFER_REF( ip, start );
    
    if( strict )
@@ -596,7 +596,7 @@ rgc_buffer_escape_substring( obj_t ip, long offset, long end, bool_t strict ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 rgc_buffer_symbol( obj_t ip ) {
-   long start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
    char *s = &RGC_BUFFER_REF( ip, start );
    
    return bgl_string_to_symbol_len( s, RGC_BUFFER_MATCH_LENGTH( ip ) );
@@ -607,9 +607,9 @@ rgc_buffer_symbol( obj_t ip ) {
 /*    rgc_buffer_subsymbol ...                                         */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-rgc_buffer_subsymbol( obj_t ip, long offset, long end ) {
-   long start = INPUT_PORT( ip ).matchstart;
-   long len = end - offset;
+rgc_buffer_subsymbol( obj_t ip, BGL_LONG_T offset, BGL_LONG_T end ) {
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T len = end - offset;
    char *s = &RGC_BUFFER_REF( ip, start + offset );
 
    return bgl_string_to_symbol_len( s, len );
@@ -620,11 +620,11 @@ rgc_buffer_subsymbol( obj_t ip, long offset, long end ) {
 /*    rgc_buffer_upcase_subsymbol ...                                  */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-rgc_buffer_upcase_subsymbol( obj_t ip, long offset, long end ) {
-   long start = INPUT_PORT( ip ).matchstart;
-   long len = end - offset;
+rgc_buffer_upcase_subsymbol( obj_t ip, BGL_LONG_T offset, BGL_LONG_T end ) {
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T len = end - offset;
    unsigned char *s = &RGC_BUFFER_REF( ip, start + offset );
-   long i = RGC_BUFFER_MATCH_LENGTH( ip );
+   BGL_LONG_T i = RGC_BUFFER_MATCH_LENGTH( ip );
 
    for( i = 0; i < len; i++ ) {
       if( isascii( s[ i ] ) ) s[ i ] = toupper( s[ i ] );
@@ -638,11 +638,11 @@ rgc_buffer_upcase_subsymbol( obj_t ip, long offset, long end ) {
 /*    rgc_buffer_downcase_subsymbol ...                                */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-rgc_buffer_downcase_subsymbol( obj_t ip, long offset, long end ) {
-   long start = INPUT_PORT( ip ).matchstart;
-   long len = end - offset;
+rgc_buffer_downcase_subsymbol( obj_t ip, BGL_LONG_T offset, BGL_LONG_T end ) {
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T len = end - offset;
    unsigned char *s = &RGC_BUFFER_REF( ip, start + offset );
-   long i = RGC_BUFFER_MATCH_LENGTH( ip );
+   BGL_LONG_T i = RGC_BUFFER_MATCH_LENGTH( ip );
 
    for( i = 0; i < len; i++ ) {
       if( isascii( s[ i ] ) ) s[ i ] = tolower( s[ i ] );
@@ -657,7 +657,7 @@ rgc_buffer_downcase_subsymbol( obj_t ip, long offset, long end ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 rgc_buffer_keyword( obj_t ip ) {
-   long start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
    unsigned char *s = &RGC_BUFFER_REF( ip, start );
    
    if( *s == ':' ) s++;
@@ -671,9 +671,9 @@ rgc_buffer_keyword( obj_t ip ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 rgc_buffer_downcase_keyword( obj_t ip ) {
-   long start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
    unsigned char *s = &RGC_BUFFER_REF( ip, start );
-   long i, len = RGC_BUFFER_MATCH_LENGTH( ip ) - 1;
+   BGL_LONG_T i, len = RGC_BUFFER_MATCH_LENGTH( ip ) - 1;
 
    if( *s == ':' ) s++;
    
@@ -690,10 +690,10 @@ rgc_buffer_downcase_keyword( obj_t ip ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 rgc_buffer_upcase_keyword( obj_t ip ) {
-   long start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
    unsigned char *s = &RGC_BUFFER_REF( ip, start );
    unsigned char *walk;
-   long i, len = RGC_BUFFER_MATCH_LENGTH( ip ) - 1;
+   BGL_LONG_T i, len = RGC_BUFFER_MATCH_LENGTH( ip ) - 1;
    
    if( *s == ':' ) s++;
    
@@ -708,7 +708,7 @@ rgc_buffer_upcase_keyword( obj_t ip ) {
 /* {*    CHEAT_BUFFER_AT                                                  *} */
 /* {*---------------------------------------------------------------------*} */
 /* #define CHEAT_BUFFER_AT( s ) \                                      */
-/*    long stop  = s; \                                                */
+/*    BGL_LONG_T stop  = s; \                                                */
 /*    char bck; \                                                      */
 /*    bck = RGC_BUFFER_REF( ip, stop ); \                              */
 /*    RGC_BUFFER_SET( ip, stop, '\0' );                                */
@@ -726,16 +726,16 @@ rgc_buffer_upcase_keyword( obj_t ip ) {
 /*    RGC_BUFFER_SET( ip, stop, bck );                                 */
 /*                                                                     */
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    rgc_buffer_fixnum ...                                            */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
+BGL_RUNTIME_DEF BGL_LONG_T
 rgc_buffer_fixnum( obj_t ip ) {
-   long res = 0;
-   long stop = INPUT_PORT( ip ).matchstop;
-   long start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T res = 0;
+   BGL_LONG_T stop = INPUT_PORT( ip ).matchstop;
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
    char *buf = &RGC_BUFFER_REF( ip, 0 );
-   long i;
+   BGL_LONG_T i;
    
    if( buf[ start ] == '-' || buf[ start ] == '+' ) {
       i = start + 1;
@@ -760,15 +760,15 @@ rgc_buffer_fixnum( obj_t ip ) {
 /*---------------------------------------------------------------------*/
 static obj_t
 rgc_buffer_bignum( obj_t ip ) {
-   long start = INPUT_PORT( ip ).matchstart;
-   long stop = INPUT_PORT( ip ).matchstop;
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T stop = INPUT_PORT( ip ).matchstop;
    char *buf = &RGC_BUFFER_REF( ip, 0 );
    obj_t res;
    
    if( (stop < INPUT_PORT( ip ).bufpos) && isspace( buf[ stop ] ) ) {
       return bgl_string_to_bignum( &RGC_BUFFER_REF( ip, start ), 10 );
    } else {
-      long sz = stop - start;
+      BGL_LONG_T sz = stop - start;
       char *tmp = alloca( sz +1 );
       memcpy( tmp, &buf[ start ], sz );
       tmp[ sz ] = 0;
@@ -793,14 +793,14 @@ rgc_buffer_bignum( obj_t ip ) {
 BGL_RUNTIME_DEF double
 rgc_buffer_flonum( obj_t ip ) {
    double res;
-   long stop = INPUT_PORT( ip ).matchstop;
-   long start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T stop = INPUT_PORT( ip ).matchstop;
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
    char *buf = &RGC_BUFFER_REF( ip, 0 );
 
    if( (stop < INPUT_PORT( ip ).bufpos) && isspace( buf[ stop ] ) ) {
       return strtod( &buf[ INPUT_PORT( ip ).matchstart ], 0 );
    } else {
-      long sz = stop - start;
+      BGL_LONG_T sz = stop - start;
       char *tmp = alloca( sz +1 );
       memcpy( tmp, &buf[ start ], sz );
       tmp[ sz ] = 0;
@@ -824,12 +824,12 @@ BGL_RUNTIME_DEF obj_t
 rgc_buffer_integer( obj_t ip ) {
    /* code relies on the fact that maxvals are <= than -minvals        */
    /* generally we have maxval = -minval - 1 (for fx, elong and llong).*/
-   long stop = INPUT_PORT( ip ).matchstop;
-   long start = INPUT_PORT( ip ).matchstart;
-   long res = 0;
+   BGL_LONG_T stop = INPUT_PORT( ip ).matchstop;
+   BGL_LONG_T start = INPUT_PORT( ip ).matchstart;
+   BGL_LONG_T res = 0;
    int sign = +1;
-   long maxvalfx = LONG_MAX >> TAG_SHIFT;
-   long maxvalelong = LONG_MAX;
+   BGL_LONG_T maxvalfx = BGL_LONG_MAX >> TAG_SHIFT;
+   BGL_LONG_T maxvalelong = LONG_MAX;
    BGL_LONGLONG_T maxvalllong = BGL_LONGLONG_MAX;
 
    /* the sign */
@@ -887,11 +887,11 @@ llong:
 /*    rgc_debug_port ...                                               */
 /*---------------------------------------------------------------------*/
 int rgc_debug_port( obj_t port, char *msg ) {
-   long matchstart = INPUT_PORT( port ).matchstart;
-   long matchstop = INPUT_PORT( port ).matchstop;
-   long forward = INPUT_PORT( port ).forward;
-   long bufsiz = BGL_INPUT_PORT_BUFSIZ( port );
-   long bufpos = INPUT_PORT( port ).bufpos;
+   BGL_LONG_T matchstart = INPUT_PORT( port ).matchstart;
+   BGL_LONG_T matchstop = INPUT_PORT( port ).matchstop;
+   BGL_LONG_T forward = INPUT_PORT( port ).forward;
+   BGL_LONG_T bufsiz = BGL_INPUT_PORT_BUFSIZ( port );
+   BGL_LONG_T bufpos = INPUT_PORT( port ).bufpos;
    int eof = INPUT_PORT( port ).eof;
    
    fprintf( stderr, "RGC_DEBUG(%s) port=%p:%s mstart=%d mstop=%d forward=%d bpos=%d bsiz=%d %s\n", msg, 

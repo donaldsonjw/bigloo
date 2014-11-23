@@ -159,7 +159,7 @@ bgl_sync_mmap( obj_t mm ) {
 BGL_RUNTIME_DEF
 obj_t
 bgl_close_mmap( obj_t mm ) {
-   long r1 = 0, r2 = 0;
+   BGL_LONG_T r1 = 0, r2 = 0;
 
    if( BGL_MMAP( mm ).fd )
       r1 = close( BGL_MMAP( mm ).fd );
@@ -188,7 +188,7 @@ bgl_close_mmap( obj_t mm ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 unsigned char
-bgl_mmap_nommap_ref( obj_t mm, long i ) {
+bgl_mmap_nommap_ref( obj_t mm, BGL_LONG_T i ) {
    if( BGL_MMAP( mm ).map ) {
       /* a C string used as an mmap */
       return BGL_MMAP( mm ).map[ i ];
@@ -219,7 +219,7 @@ bgl_mmap_nommap_ref( obj_t mm, long i ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-bgl_mmap_nommap_set( obj_t mm, long i, unsigned char c ) {
+bgl_mmap_nommap_set( obj_t mm, BGL_LONG_T i, unsigned char c ) {
    if( BGL_MMAP( mm ).map ) {
       /* a C string used as an mmap */
       return BGL_MMAP( mm ).map[ i ];

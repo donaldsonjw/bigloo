@@ -122,7 +122,7 @@
     (subtype class-field "obj_t" (obj))
 
     ;; we give now the foreign hierarchy
-    (cobj "long" C)
+    (cobj "BGL_LONG_T" C)
     
     (subtype char "unsigned char" (cobj))
     (subtype uchar "unsigned char" (cobj))
@@ -133,8 +133,8 @@
     (subtype ushort "unsigned short" (cobj))
     (subtype int "int" (cobj))
     (subtype uint "unsigned int" (cobj))
-    (subtype long "long" (cobj))
-    (subtype ulong "unsigned long" (cobj))
+    (subtype long "BGL_LONG_T" (cobj))
+    (subtype ulong "BGL_ULONG_T" (cobj))
     (subtype elong "long" (cobj))
     (subtype uelong "unsigned long" (cobj))
     (subtype llong "BGL_LONGLONG_T" (cobj))
@@ -154,7 +154,7 @@
     (subtype float "float" (cobj))
     (subtype void "void" (cobj))
     (subtype void* "void *" (cobj))
-    (subtype function "(long *)()" (cobj))
+    (subtype function "(BGL_LONG_T *)()" (cobj))
 
     ;; obj coercions
     (coerce obj magic () ())

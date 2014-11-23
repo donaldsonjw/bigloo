@@ -192,7 +192,7 @@ bgl_sigsetmask( int set ) {
 char *
 c_date() {
 #if( defined( sony_news ) )
-   long now;
+   BGL_LONG_T now;
 #else      
    time_t now;
 #endif
@@ -202,38 +202,38 @@ c_date() {
 }
       
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_last_modification_time ...                                   */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_last_modification_time( char *file ) {
    struct stat _stati;
 
    if( lstat( file, &_stati ) )
       return -1;
    else
-      return (long)(_stati.st_mtime);
+      return (BGL_LONG_T)(_stati.st_mtime);
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_file_size ...                                                */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_file_size( char *file ) {
    struct stat _stati;
 
    if( stat( file, &_stati ) )
       return -1;
    else
-      return (long)_stati.st_size;
+      return (BGL_LONG_T)_stati.st_size;
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_file_uid ...                                                 */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_file_uid( char *file ) {
    struct stat _stati;
 
@@ -244,10 +244,10 @@ bgl_file_uid( char *file ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_file_gid ...                                                 */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_file_gid( char *file ) {
    struct stat _stati;
 
@@ -258,10 +258,10 @@ bgl_file_gid( char *file ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_file_mode ...                                                */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_file_mode( char *file ) {
    struct stat _stati;
 
@@ -385,7 +385,7 @@ bgl_time( obj_t thunk ) {
 
    return PROCEDURE_ENTRY( thunk )( thunk, BEOA );
 #else   
-   static long ctick = 0;
+   static BGL_LONG_T ctick = 0;
    obj_t env = BGL_CURRENT_DYNAMIC_ENV();
    struct tms buf1, buf2;
    clock_t t1, t2;

@@ -93,26 +93,26 @@ bgl_get_hash_number_len( char *string, int start, int len ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    get_hash_power_number ...                                        */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
-get_hash_power_number( char *string, unsigned long power ) {
+BGL_RUNTIME_DEF BGL_LONG_T
+get_hash_power_number( char *string, BGL_ULONG_T power ) {
    char c;
-   unsigned long result = 0;
+   BGL_ULONG_T result = 0;
 
    while( (c = *string++) )
-      result += (result << 3) + (long)c;
+      result += (result << 3) + (BGL_LONG_T)c;
 
    return result & ((1 << power) - 1);
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    get_hash_number_from_int ...                                     */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
-get_hash_number_from_int( unsigned long i ) {
+BGL_RUNTIME_DEF BGL_LONG_T
+get_hash_number_from_int( BGL_ULONG_T i ) {
    unsigned char hash = 0;
 
    while( i > 0 )
@@ -125,24 +125,24 @@ get_hash_number_from_int( unsigned long i ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    get_hash_number_from_pointer ...                                 */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 get_hash_number_from_pointer( void * i ) {
-   return get_hash_number_from_int( (unsigned long)i );
+   return get_hash_number_from_int( (BGL_ULONG_T)i );
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    get_hash_power_number_from_int ...                               */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
-get_hash_power_number_from_int( unsigned long i, unsigned long power ) {
-   unsigned long result = 0;
+BGL_RUNTIME_DEF BGL_LONG_T
+get_hash_power_number_from_int( BGL_ULONG_T i, BGL_ULONG_T power ) {
+   BGL_ULONG_T result = 0;
 	
    while( i > 0 ) {
-      result += (result << 3) + (long)(i & 255);
+      result += (result << 3) + (BGL_LONG_T)(i & 255);
       i >>= 8;
    }
 
@@ -154,20 +154,20 @@ get_hash_power_number_from_int( unsigned long i, unsigned long power ) {
 /*    get_hash_power_number_from_pointer ...                           */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF int
-bgl_pointer_hashnumber( void * i, unsigned long power ) {
-   return get_hash_power_number_from_int( (unsigned long)i, power );
+bgl_pointer_hashnumber( void * i, BGL_ULONG_T power ) {
+   return get_hash_power_number_from_int( (BGL_ULONG_T)i, power );
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_string_hash_number ...                                       */
 /*    -------------------------------------------------------------    */
 /*    New setting has been provided by Joseph Donaldson on March 2011. */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_string_hash_number( char *string ) {
    char c;
-   long result = 5381;
+   BGL_LONG_T result = 5381;
 
    while( c = *string++ )
       result += (result << 5) + c;
@@ -176,53 +176,53 @@ bgl_string_hash_number( char *string ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_string_hash_number ...                                       */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_string_hash( char *string, int start, int len ) {
    int i;
-   long result = 5381;
+   BGL_LONG_T result = 5381;
 
    for( i = start; i < len; i++ ) {
-      result += (result << 5) + (long)string[ i ];
+      result += (result << 5) + (BGL_LONG_T)string[ i ];
    }
 
    return result & ((1 << 29) - 1);
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_symbol_hash_number ...                                       */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_symbol_hash_number( obj_t s ) {
    return 1 + bgl_string_hash_number(BSTRING_TO_STRING(SYMBOL_TO_STRING(s)));
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_keyword_hash_number ...                                      */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_keyword_hash_number( obj_t s ) {
    return 2 + bgl_string_hash_number(BSTRING_TO_STRING(KEYWORD_TO_STRING(s)));
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_obj_hash_number ...                                          */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_obj_hash_number( obj_t obj ) {
-   return ((long)((long)(CREF( obj )) >> TAG_SHIFT));
+   return ((BGL_LONG_T)((BGL_LONG_T)(CREF( obj )) >> TAG_SHIFT));
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_foreign_hash_number ...                                      */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_foreign_hash_number( obj_t obj ) {
-   return (long)FOREIGN_TO_COBJ( obj );
+   return (BGL_LONG_T)FOREIGN_TO_COBJ( obj );
 }

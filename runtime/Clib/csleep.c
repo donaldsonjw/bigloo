@@ -36,7 +36,7 @@
 #ifdef _BGL_WIN32_VER
 BGL_RUNTIME_DEF
 void
-bgl_sleep( long microsecs ) {
+bgl_sleep( BGL_LONG_T microsecs ) {
   Sleep( microsecs / 1000 );
 }
 /*---------------------------------------------------------------------*/
@@ -47,7 +47,7 @@ bgl_sleep( long microsecs ) {
 /*---------------------------------------------------------------------*/
 #elif BGL_NANOSLEEP
 void
-bgl_sleep( long microsecs ) {
+bgl_sleep( BGL_LONG_T microsecs ) {
    if( microsecs <= 0 ) {
       return;
    } else {
@@ -72,7 +72,7 @@ bgl_sleep( long microsecs ) {
 /*    Select version                                                   */
 /*---------------------------------------------------------------------*/
 void
-bgl_sleep( long microsecs ) {
+bgl_sleep( BGL_LONG_T microsecs ) {
    if( microsecs <= 0 ) {
       return;
    } else {
@@ -110,11 +110,11 @@ bgl_sleep( long microsecs ) {
 /*    Plain version                                                    */
 /*---------------------------------------------------------------------*/
 void
-bgl_sleep( long microsecs ) {
+bgl_sleep( BGL_LONG_T microsecs ) {
    if( microsecs <= 0 ) {
       return;
    } else {
-      long secs = (microsecs + 999999) / 1000000;
+      BGL_LONG_T secs = (microsecs + 999999) / 1000000;
 
       while ( secs ) {
 	 secs = sleep( secs );
@@ -131,7 +131,7 @@ bgl_sleep( long microsecs ) {
 /*    Plain version                                                    */
 /*---------------------------------------------------------------------*/
 void
-bgl_sleep( long microsecs ) {
+bgl_sleep( BGL_LONG_T microsecs ) {
    return;
 }
 #endif

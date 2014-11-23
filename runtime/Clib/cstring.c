@@ -216,10 +216,10 @@ static char letters[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 /*    integer_to_string ...                                            */
 /*---------------------------------------------------------------------*/
 obj_t
-integer_to_string( long x, long radix ) {
+integer_to_string( BGL_LONG_T x, BGL_LONG_T radix ) {
    obj_t aux;
    char *s;
-   long ax;
+   BGL_LONG_T ax;
    int bits = (x <= 0 ? 1 : 0);
 
    for( ax = x; ax != 0; ax /= radix )
@@ -241,10 +241,10 @@ integer_to_string( long x, long radix ) {
 /*    unsigned_to_string ...                                           */
 /*---------------------------------------------------------------------*/
 obj_t
-unsigned_to_string( long x, long radix ) {
+unsigned_to_string( BGL_LONG_T x, BGL_LONG_T radix ) {
    obj_t aux;
    char *s;
-   unsigned long ax;
+   BGL_ULONG_T ax;
    int bits = (x == 0 ? 1 : 0);
 
    for( ax = x; ax > 0; ax /= radix )
@@ -264,11 +264,11 @@ unsigned_to_string( long x, long radix ) {
 /*    integer_to_string_padding ...                                    */
 /*---------------------------------------------------------------------*/
 obj_t
-integer_to_string_padding( long x, long padding, long radix ) {
+integer_to_string_padding( BGL_LONG_T x, BGL_LONG_T padding, BGL_LONG_T radix ) {
    obj_t aux;
    int bits = (x <= 0 ? 1 : 0);
-   long ax = BGL_LABS( x );
-   unsigned long axx = (unsigned long)ax;
+   BGL_LONG_T ax = BGL_LABS( x );
+   BGL_ULONG_T axx = (BGL_ULONG_T)ax;
    char fmt[ 10 ];
 
    switch( radix ) {
@@ -329,7 +329,7 @@ integer_to_string_padding( long x, long padding, long radix ) {
 /*    llong_to_string ...                                              */
 /*---------------------------------------------------------------------*/
 obj_t
-llong_to_string( BGL_LONGLONG_T x, long radix ) {
+llong_to_string( BGL_LONGLONG_T x, BGL_LONG_T radix ) {
    obj_t aux;
    char *s;
    BGL_LONGLONG_T ax;
@@ -355,7 +355,7 @@ llong_to_string( BGL_LONGLONG_T x, long radix ) {
 /*    ullong_to_string ...                                             */
 /*---------------------------------------------------------------------*/
 obj_t
-ullong_to_string( BGL_LONGLONG_T x, long radix ) {
+ullong_to_string( BGL_LONGLONG_T x, BGL_LONG_T radix ) {
    obj_t aux;
    char *s;
    unsigned BGL_LONGLONG_T ax;
@@ -880,10 +880,10 @@ string_cige( obj_t bst1, obj_t bst2 ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-bgl_escape_C_string( unsigned char *src, long start, long end ) {
+bgl_escape_C_string( unsigned char *src, BGL_LONG_T start, BGL_LONG_T end ) {
    unsigned char *dst;
    obj_t string;
-   long len = (end - start);
+   BGL_LONG_T len = (end - start);
    unsigned char *stop = src + end;
 
    string = GC_MALLOC_ATOMIC( STRING_SIZE + len );
@@ -1055,10 +1055,10 @@ bgl_escape_C_string( unsigned char *src, long start, long end ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-bgl_escape_scheme_string( unsigned char *src, long start, long end ) {
+bgl_escape_scheme_string( unsigned char *src, BGL_LONG_T start, BGL_LONG_T end ) {
    char *dst;
    obj_t string;
-   long len = (end - start);
+   BGL_LONG_T len = (end - start);
    unsigned char *stop = src + end;
 
    string = GC_MALLOC_ATOMIC( STRING_SIZE + len );
@@ -1208,7 +1208,7 @@ string_for_read( obj_t bstring ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-bgl_string_shrink( obj_t s, long nlen ) {
+bgl_string_shrink( obj_t s, BGL_LONG_T nlen ) {
    if( nlen < STRING_LENGTH( s ) ) {
       STRING_LENGTH( s ) = nlen;
       BSTRING_TO_STRING( s )[ nlen ] = '\0';

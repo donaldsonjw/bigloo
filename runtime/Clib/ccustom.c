@@ -19,12 +19,12 @@ custom_default_equal( obj_t obj1, obj_t obj2 ) {
 }
    
 /*---------------------------------------------------------------------*/
-/*    static long                                                      */
+/*    static BGL_LONG_T                                                      */
 /*    custom_default_hash ...                                          */
 /*---------------------------------------------------------------------*/
-static long
+static BGL_LONG_T
 custom_default_hash( obj_t obj ) {
-   return (long)obj;
+   return (BGL_LONG_T)obj;
 }
    
 /*---------------------------------------------------------------------*/
@@ -60,7 +60,7 @@ custom_default_output( obj_t obj, FILE *file ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-create_custom( long len ) {
+create_custom( BGL_LONG_T len ) {
    obj_t custom;
 
    custom = GC_MALLOC_ATOMIC( CUSTOM_SIZE + len );

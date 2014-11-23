@@ -99,15 +99,15 @@ mpz_to_bignum( const mpz_t z ) {
 /*    bgl_long_to_bignum ...                                           */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_long_to_bignum( const long n ) {
+bgl_long_to_bignum( const BGL_LONG_T n ) {
 #if BGL_LONGLONG_LIMBS == 1
    obj_t x = make_bignum( BGL_LONG_LIMBS );
    
    if( n < 0 ) {
-      BXLIMBS( x )[ 0 ] = (mp_limb_t)(unsigned long int) -n;
+      BXLIMBS( x )[ 0 ] = (mp_limb_t)(BGL_ULONG_T) -n;
       BXSIZ( x ) = -1;
    } else {
-      BXLIMBS( x )[ 0 ] = (mp_limb_t) (unsigned long int) n;
+      BXLIMBS( x )[ 0 ] = (mp_limb_t) (BGL_ULONG_T) n;
       BXSIZ(x) = n!=0;
    }
 #else
@@ -251,12 +251,12 @@ bgl_string_to_bignum( char *str, int radix ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 bgl_string_to_integer_obj( char *str, int radix ) {
-   long x;
+   BGL_LONG_T x;
 
    errno = 0;
    x = strtol( str, NULL, radix );
    
-   if( (errno == ERANGE) && (x == LONG_MAX || x == LONG_MIN) ) {
+   if( (errno == ERANGE) && (x == BGL_LONG_MAX || x == BGL_LONG_MIN) ) {
       return bgl_string_to_bignum( str, radix );
    } else {
       obj_t n = BINT( x );
@@ -745,7 +745,7 @@ obj_t
 bgl_safe_bignum_to_fixnum( obj_t bx ) {
    size_t bs = mpz_sizeinbase( &((bx)->bignum_t.mpz), 2 );
 
-   if( bs < ((sizeof( long ) * 8) - TAG_SHIFT) )
+   if( bs < ((sizeof( BGL_LONG_T ) * 8) - TAG_SHIFT) )
       return BINT( bgl_bignum_to_long( bx ) );
    else
       return bx;
@@ -756,7 +756,7 @@ bgl_safe_bignum_to_fixnum( obj_t bx ) {
 /*    bgl_safe_plus_fx ...                                             */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_safe_plus_fx( long x, long y ) {
+bgl_safe_plus_fx( BGL_LONG_T x, BGL_LONG_T y ) {
    long z = x + y;
    if( (x & C_LONG_SIGN_BIT) == (y & C_LONG_SIGN_BIT) &&
        (z & C_LONG_SIGN_BIT) != (x & C_LONG_SIGN_BIT) )
@@ -770,8 +770,8 @@ bgl_safe_plus_fx( long x, long y ) {
 /*    bgl_safe_minus_fx ...                                            */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_safe_minus_fx( long x, long y ) {
-   long z = x - y;
+bgl_safe_minus_fx( BGL_LONG_T x, BGL_LONG_T y ) {
+   BGL_LONG_T z = x - y;
 
    if( (x & C_LONG_SIGN_BIT) != (y & C_LONG_SIGN_BIT) &&
        (z & C_LONG_SIGN_BIT) != (x & C_LONG_SIGN_BIT) )
@@ -785,11 +785,11 @@ bgl_safe_minus_fx( long x, long y ) {
 /*    bgl_safe_mul_fx ...                                              */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_safe_mul_fx( long x, long y ) {
+bgl_safe_mul_fx( BGL_LONG_T x, BGL_LONG_T y ) {
    if( !y || !x )
       return BINT( 0 );
    else {
-      long z = ((x * y) << PTR_ALIGNMENT) >> PTR_ALIGNMENT;
+      BGL_LONG_T z = ((x * y) << PTR_ALIGNMENT) >> PTR_ALIGNMENT;
 
       if( z / y == x && z % y == 0 )
 	 return BINT( z );
@@ -804,8 +804,8 @@ bgl_safe_mul_fx( long x, long y ) {
 /*    bgl_safe_quotient_fx ...                                         */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_safe_quotient_fx( long x, long y ) {
-   if( x == LONG_MIN >> TAG_SHIFT && y == -1 )
+bgl_safe_quotient_fx( BGL_LONG_T x, BGL_LONG_T y ) {
+   if( x == BGL_LONG_MIN >> TAG_SHIFT && y == -1 )
       return bgl_bignum_div( bgl_long_to_bignum( x ), bgl_long_to_bignum( y ) );
    else
       return BINT( x/y );
@@ -816,8 +816,8 @@ bgl_safe_quotient_fx( long x, long y ) {
 /*    bgl_safe_plus_elong ...                                          */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_safe_plus_elong( long x, long y ) {
-   long z = x + y;
+bgl_safe_plus_elong( BGL_LONG_T x, BGL_LONG_T y ) {
+   BGL_LONG_T z = x + y;
 
    if( (x & C_ELONG_SIGN_BIT) == (y & C_ELONG_SIGN_BIT) &&
        (z & C_ELONG_SIGN_BIT) != (x & C_ELONG_SIGN_BIT) )
@@ -831,8 +831,8 @@ bgl_safe_plus_elong( long x, long y ) {
 /*    bgl_safe_minus_elong ...                                         */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_safe_minus_elong( long x, long y ) {
-   long z = x - y;
+bgl_safe_minus_elong( BGL_LONG_T x, BGL_LONG_T y ) {
+   BGL_LONG_T z = x - y;
 
    if( (x & C_ELONG_SIGN_BIT) != (y & C_ELONG_SIGN_BIT) &&
        (z & C_ELONG_SIGN_BIT) != (x & C_ELONG_SIGN_BIT) )
@@ -846,11 +846,11 @@ bgl_safe_minus_elong( long x, long y ) {
 /*    bgl_safe_mul_elong ...                                           */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_safe_mul_elong( long x, long y ) {
+bgl_safe_mul_elong( BGL_LONG_T x, BGL_LONG_T y ) {
    if( !y )
       return bgl_belongzero;
    else {
-      long z = x * y;
+      BGL_LONG_T z = x * y;
 
       if( z / y == x )
 	 return make_belong( z );
@@ -864,8 +864,8 @@ bgl_safe_mul_elong( long x, long y ) {
 /*    bgl_safe_quotient_elong ...                                      */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_safe_quotient_elong( long x, long y ) {
-   if( x == LONG_MIN && y == -1 )
+bgl_safe_quotient_elong( BGL_LONG_T x, BGL_LONG_T y ) {
+   if( x == BGL_LONG_MIN && y == -1 )
       return bgl_bignum_div( bgl_long_to_bignum( x ), bgl_long_to_bignum( y ) );
    else
       return make_belong( x/y );
@@ -963,7 +963,7 @@ bgl_rand_bignum( obj_t n ) {
 /*    bgl_seed_rand ...                                                */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF void
-bgl_seed_rand( unsigned long int seed ) {
+bgl_seed_rand( BGL_ULONG_T seed ) {
    srand( seed );
    gmp_randseed_ui( gmp_random_state, seed );
 }
@@ -976,7 +976,7 @@ bgl_seed_rand( unsigned long int seed ) {
 /*    initialization of the Bigloo module with a fake definition...    */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-BGl_modulezd2initializa7ationz75zz__bignumz00( long BgL_checksumz00_4789, char *BgL_fromz00_4790 ) {
+BGl_modulezd2initializa7ationz75zz__bignumz00( BGL_LONG_T BgL_checksumz00_4789, char *BgL_fromz00_4790 ) {
    return BUNSPEC;
 }
 

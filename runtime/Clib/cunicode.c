@@ -14,7 +14,7 @@
 /*    Importations                                                     */
 /*---------------------------------------------------------------------*/
 extern bool_t ucs2_lower( ucs2_t );
-extern obj_t integer_to_string( long, long );
+extern obj_t integer_to_string( BGL_LONG_T, BGL_LONG_T );
 extern obj_t make_string( int, unsigned char );
 extern ucs2_t ucs2_tolower( ucs2_t );
 extern obj_t bgl_real_to_string( double );
@@ -188,7 +188,7 @@ bstring_to_ucs2_string( obj_t src ) {
 /*    integer_to_ucs2_string ...                                       */
 /*---------------------------------------------------------------------*/
 obj_t
-integer_to_ucs2_string( long x, long radix ) {
+integer_to_ucs2_string( BGL_LONG_T x, BGL_LONG_T radix ) {
    return string_to_ucs2_string( BSTRING_TO_STRING( integer_to_string( x, radix ) ) );
 }
 
@@ -628,7 +628,7 @@ utf8_string_to_ucs2_string( obj_t butf8 ) {
                        "Illegal first byte",
                        BCHAR( byte ) );
          else {
-            unsigned long ucs2 = (unsigned long)byte;
+            BGL_ULONG_T ucs2 = (BGL_ULONG_T)byte;
             int bits = 6;
 
             while( byte & 0x40 ) {
@@ -647,7 +647,7 @@ utf8_string_to_ucs2_string( obj_t butf8 ) {
             ucs2 &= (1<<bits) - 1;
 
             if( (ucs2 > 0xd7ff && ucs2 <= 0xdfff) ||
-                !(ucs2 & (~(unsigned long)0<<(bits - 5))) ) {
+                !(ucs2 & (~(BGL_ULONG_T)0<<(bits - 5))) ) {
 	       // characters fffe and ffff are accepted, see:
 	       // http://www.unicode.org/versions/Unicode5.2.0/ch16.pdf#G19635
                C_FAILURE( "utf8-string->ucs2-string",

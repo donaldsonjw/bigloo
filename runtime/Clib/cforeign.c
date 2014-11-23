@@ -48,28 +48,28 @@ void_star_to_obj( void *cobj ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    obj_to_cobj ...                                                  */
 /*---------------------------------------------------------------------*/
 BGL_EXPORTED_DEF
-long
+BGL_LONG_T
 obj_to_cobj( obj_t obj ) {
    if( INTEGERP( obj ) )
-      return (long)CINT( obj );
+      return (BGL_LONG_T)CINT( obj );
    if( BOOLEANP( obj ) )
-      return (long)((long)CBOOL( obj ));
+      return (BGL_LONG_T)((BGL_LONG_T)CBOOL( obj ));
    if( STRINGP( obj ) )
-      return (long)BSTRING_TO_STRING( obj );
+      return (BGL_LONG_T)BSTRING_TO_STRING( obj );
    if( CHARP( obj ) )
-      return (long)((long)CCHAR( obj ));
+      return (BGL_LONG_T)((BGL_LONG_T)CCHAR( obj ));
    if( FOREIGNP( obj ) )
-      return (long)FOREIGN_TO_COBJ( obj );
+      return (BGL_LONG_T)FOREIGN_TO_COBJ( obj );
    if( REALP( obj ) )
-      return (long)the_failure( string_to_bstring( "obj->cobj" ),
+      return (BGL_LONG_T)the_failure( string_to_bstring( "obj->cobj" ),
 				string_to_bstring( "Can't cast a real to foreign" ),
 				obj);
    else
-      return (long)the_failure( string_to_bstring( "obj->cobj" ),
+      return (BGL_LONG_T)the_failure( string_to_bstring( "obj->cobj" ),
 				string_to_bstring( "Illegal object type" ),
 				obj);
 }

@@ -171,10 +171,10 @@ bgl_input_string( obj_t port, int len ) {
    char *cs = BSTRING_TO_STRING( s );
    size_t sz = fread( cs, 1, (size_t)len, BINARY_PORT( port ).file );
 
-   if( (long)sz < (len / 2) )
-      return bgl_string_shrink( s, (long)sz );
+   if( (BGL_LONG_T)sz < (len / 2) )
+      return bgl_string_shrink( s, (BGL_LONG_T)sz );
    else
-      return string_to_bstring_len( cs, (long)sz );
+      return string_to_bstring_len( cs, (BGL_LONG_T)sz );
 }
 
 /*---------------------------------------------------------------------*/
@@ -198,7 +198,7 @@ output_obj( obj_t port, obj_t obj ) {
    FILE *file = BINARY_PORT( port ).file;
    obj_t string;
    unsigned char slen[ 4 ];
-   long clen;
+   BGL_LONG_T clen;
 
    /* Le calcul de la chaine a dumper */
    string = obj_to_string( obj );
@@ -230,7 +230,7 @@ BGL_RUNTIME_DEF obj_t
 input_obj( obj_t port ) {
    FILE *file = BINARY_PORT( port ).file;
    unsigned char slen[ 4 ];
-   long clen;
+   BGL_LONG_T clen;
    char magic[ 4 ];
    size_t size;
 
@@ -263,8 +263,8 @@ input_obj( obj_t port ) {
 			"corrupted file",
 			port );
 
-   clen = ((long)slen[ 0 ]) + (((long)slen[ 1 ]) << 8) +
-          (((long)slen[ 2 ]) << 16) + (((long)slen[ 3 ]) << 24);
+   clen = ((BGL_LONG_T)slen[ 0 ]) + (((BGL_LONG_T)slen[ 1 ]) << 8) +
+          (((BGL_LONG_T)slen[ 2 ]) << 16) + (((BGL_LONG_T)slen[ 3 ]) << 24);
 
    /* On fait deux cas en fonction de la taille de l'objet a lire */
    if( clen < 1024 ) {

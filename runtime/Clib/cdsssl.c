@@ -14,7 +14,7 @@
 /*    Some prototypes                                                  */
 /*---------------------------------------------------------------------*/
 extern obj_t make_vector( int, obj_t );
-extern long get_hash_power_number( char *, unsigned long );
+extern BGL_LONG_T get_hash_power_number( char *, BGL_ULONG_T );
 
 /*---------------------------------------------------------------------*/
 /*    Global Keyword table                                             */
@@ -59,7 +59,7 @@ make_keyword( obj_t name ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 bstring_to_keyword( obj_t name ) {
-   long hash_number;
+   BGL_LONG_T hash_number;
    obj_t bucket;
    char *cname = BSTRING_TO_STRING( name );
 
@@ -104,7 +104,7 @@ bstring_to_keyword( obj_t name ) {
 /*    bgl_string_to_keyword_len ...                                    */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_string_to_keyword_len( char *name, long len ) {
+bgl_string_to_keyword_len( char *name, BGL_LONG_T len ) {
    return bstring_to_keyword( string_to_bstring_len( name, len ) );
 }
 

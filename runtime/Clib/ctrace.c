@@ -30,7 +30,7 @@ bgl_init_trace() {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 get_trace_stack( int depth ) {
-   long level = 0L;
+   BGL_LONG_T level = 0L;
    struct bgl_dframe *runner = BGL_ENV_GET_TOP_OF_FRAME( BGL_CURRENT_DYNAMIC_ENV() );
    obj_t l = MAKE_PAIR( BNIL, BNIL );
    obj_t r = l;
@@ -85,7 +85,7 @@ byteshow( unsigned char *addr ) {
 #define PP_CHAR( c ) (((c) >= 33) && ((c) < 127)) ? c : '.'
 
    printf( "  %08lx  :  %02x %02x %02x %02x  :  %c%c%c%c\n",
-           (unsigned long)addr,
+           (BGL_ULONG_T)addr,
            addr[ 0 ],
            addr[ 1 ],
            addr[ 2 ],
@@ -101,7 +101,7 @@ byteshow( unsigned char *addr ) {
 /*    memshow ...                                                      */
 /*---------------------------------------------------------------------*/
 void
-memshow( char *from, char *to, long step ) {
+memshow( char *from, char *to, BGL_LONG_T step ) {
    char *i;
 
    step *= 4;

@@ -70,8 +70,8 @@ bgl_debug_typeof( obj_t obj ) {
 obj_t
 bgl_debug_header( obj_t obj ) {
    fprintf( stderr, "obj=%p\n", obj );
-   fprintf( stderr, "  TAG_MASK=%ld ", (((long)obj) & TAG_MASK) );
-   switch( (((long)obj) & TAG_MASK) ) {
+   fprintf( stderr, "  TAG_MASK=%ld ", (((BGL_LONG_T)obj) & TAG_MASK) );
+   switch( (((BGL_LONG_T)obj) & TAG_MASK) ) {
       case TAG_STRUCT: fprintf( stderr, "(TAG_STRUCT)\n" ); break;
       case TAG_INT: fprintf( stderr, "(TAG_INT)\n" ); break;
       case TAG_CNST: fprintf( stderr, "(TAG_CNST)\n" ); break;

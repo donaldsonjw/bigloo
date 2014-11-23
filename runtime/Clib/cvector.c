@@ -14,7 +14,7 @@
 /*    bgl_fill_vector ...                                              */
 /*---------------------------------------------------------------------*/
 obj_t
-bgl_fill_vector( obj_t bvector, long start, long end, obj_t init ) {
+bgl_fill_vector( obj_t bvector, BGL_LONG_T start, BGL_LONG_T end, obj_t init ) {
    obj_t *walker = (obj_t *)(&VECTOR_REF( bvector, start ));
    obj_t *stop = (obj_t *)(&VECTOR_REF( bvector, end ));
 
@@ -29,7 +29,7 @@ bgl_fill_vector( obj_t bvector, long start, long end, obj_t init ) {
 /*    bgl_fill_vector ...                                              */
 /*---------------------------------------------------------------------*/
 obj_t
-fill_vector( obj_t bvector, long len, obj_t init ) {
+fill_vector( obj_t bvector, BGL_LONG_T len, obj_t init ) {
    return bgl_fill_vector( bvector, 0, len, init );
 }
 

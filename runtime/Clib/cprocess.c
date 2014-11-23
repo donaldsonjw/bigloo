@@ -19,7 +19,6 @@
 #   include <io.h>
 #   include <process.h>
 #   include <windows.h>
-typedef int intptr_t;
 #else
 #  if !defined( _MSC_VER )
 #    include <sys/param.h>
@@ -52,9 +51,9 @@ typedef int intptr_t;
 /*    Imports                                                          */
 /*---------------------------------------------------------------------*/
 extern obj_t bgl_make_input_port( obj_t, FILE *, obj_t, obj_t );
-extern long default_io_bufsiz;
+extern BGL_LONG_T default_io_bufsiz;
 extern obj_t bgl_close_input_port( obj_t );
-extern long  bgl_list_length( obj_t );
+extern BGL_LONG_T  bgl_list_length( obj_t );
 extern char *bgl_string_to_gc_cstring( obj_t );
 extern obj_t string_to_bstring( char * );
 extern ssize_t bgl_syswrite( obj_t, char *, size_t );

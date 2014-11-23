@@ -101,7 +101,7 @@ static FILE *debug_segv_file = 0;
 debug_init() {
    struct tm *t;
    char *s;
-   long sec = time( 0 );
+   BGL_LONG_T sec = time( 0 );
    char path[ 1024 ];
    extern char *executable_name;
    extern char *rindex(const char *s, int c);
@@ -132,13 +132,13 @@ debug_socket_segv( char *fun, unsigned char *ptr, int len ) {
 /*---------------------------------------------------------------------*/
 extern obj_t bgl_make_input_port( obj_t, FILE *, obj_t, obj_t );
 extern obj_t bgl_close_input_port( obj_t );
-extern long bgl_read( obj_t, char *, long );
+extern BGL_LONG_T bgl_read( obj_t, char *, BGL_LONG_T );
 extern obj_t make_vector( int, obj_t );
 extern unsigned char get_hash_number( char * );
 extern unsigned char bgl_get_hash_number_len( char *, int, int );
 extern bool_t bigloo_strcmp( obj_t o1, obj_t o2 );
 extern bool_t bgl_dns_enable_cache();
-extern long bgl_dns_cache_validity_timeout();
+extern BGL_LONG_T bgl_dns_cache_validity_timeout();
 extern ssize_t bgl_syswrite( obj_t, char *, size_t );
 extern obj_t make_string_sans_fill( int );
 
@@ -155,7 +155,7 @@ struct bglhostent {
    int state;
    struct hostent hp;
    obj_t hostaddr;
-   long exptime;
+   BGL_LONG_T exptime;
 };
 
 #define BGLHOSTENT_STATE_OK      0
@@ -426,7 +426,7 @@ make_bglhostent( obj_t hostaddr, struct hostent *hp ) {
       bhp->hp.h_addr_list = make_inet_array( hp->h_addr_list, hp->h_length );
    } else {
       /* a failure hostent */
-      bhp->exptime = LONG_MAX;
+      bhp->exptime = BGL_LONG_MAX;
       bhp->state = BGLHOSTENT_STATE_PENDING;
    }
 
@@ -490,7 +490,7 @@ bglhostent_fill_from_hostent( obj_t hostaddr, struct bglhostent *bhp, struct hos
       bhp->hp.h_addr_list = make_inet_array( hp->h_addr_list, hp->h_length );
    } else {
       /* a failure hostent */
-      bhp->exptime = LONG_MAX;
+      bhp->exptime = BGL_LONG_MAX;
       bhp->state = BGLHOSTENT_STATE_PENDING;
    }
 }
@@ -1175,17 +1175,17 @@ bgl_sclose_rd( FILE *stream ) {
 /*    bgl_input_socket_seek ...                                        */
 /*---------------------------------------------------------------------*/
 static void
-bgl_input_socket_seek( obj_t port, long offset ) {
-   long pos = INPUT_PORT_FILEPOS( port );
+bgl_input_socket_seek( obj_t port, BGL_LONG_T offset ) {
+   BGL_LONG_T pos = INPUT_PORT_FILEPOS( port );
 
    if( offset > pos ) {
       obj_t buf = INPUT_PORT( port ).buf;
-      long buflen = STRING_LENGTH( buf );
+      BGL_LONG_T buflen = STRING_LENGTH( buf );
       
       /* ignore the chars up to the desired position */
       while( offset > 0 ) {
-	 long sz = offset - pos;
-	 long rs = sz > buflen ? buflen : sz;
+	 BGL_LONG_T sz = offset - pos;
+	 BGL_LONG_T rs = sz > buflen ? buflen : sz;
 
 	 INPUT_PORT( port ).sysread( port, (char *)&STRING_REF( buf, 0 ), rs );
 	 offset -= rs;
@@ -1717,19 +1717,19 @@ bgl_socket_accept( obj_t serv, bool_t errp, obj_t inb, obj_t outb ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    long                                                             */
+/*    BGL_LONG_T                                                             */
 /*    bgl_socket_accept_many ...                                       */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_socket_accept_many( obj_t serv, bool_t errp, obj_t inbs, obj_t outbs, obj_t vec ) {
    int fd = SOCKET( serv ).fd;
    int flags;
    fd_set set;
    int n;
-   long i;
-   long l1 = VECTOR_LENGTH( inbs ), l2 = VECTOR_LENGTH( outbs );
-   long l3 = VECTOR_LENGTH( vec );
-   long l = l1 < l2 ? l1 : l2;
+   BGL_LONG_T i;
+   BGL_LONG_T l1 = VECTOR_LENGTH( inbs ), l2 = VECTOR_LENGTH( outbs );
+   BGL_LONG_T l3 = VECTOR_LENGTH( vec );
+   BGL_LONG_T l = l1 < l2 ? l1 : l2;
 
 
    if( l1 != l2 ) {
@@ -2167,20 +2167,20 @@ bgl_getsockopt( obj_t socket, obj_t option ) {
 static void
 set_timeval( struct timeval *timeout, obj_t val ) {
    if( INTEGERP( val ) ) {
-      long timeo = CINT( val );
+      BGL_LONG_T timeo = CINT( val );
 
       timeout->tv_sec = timeo / 1000000;
       timeout->tv_usec = timeo % 1000000;
    } else if( ELONGP( val ) ) {
-      long timeo = BELONG_TO_LONG( val );
+      BGL_LONG_T timeo = BELONG_TO_LONG( val );
 
       timeout->tv_sec = timeo / 1000000;
       timeout->tv_usec = timeo % 1000000;
    } else if( LLONGP( val ) ) {
       BGL_LONGLONG_T timeo = BLLONG_TO_LLONG( val );
 
-      timeout->tv_sec = (long)(timeo / 1000000);
-      timeout->tv_usec = (long)(timeo % 1000000);
+      timeout->tv_sec = (BGL_LONG_T)(timeo / 1000000);
+      timeout->tv_usec = (BGL_LONG_T)(timeo % 1000000);
    }
 }
 
@@ -2373,7 +2373,7 @@ datagram_socket_write( obj_t port, void *buf, size_t len ) {
 			buffer,
 			sock );
    } else {
-      return (long)n;
+      return (BGL_LONG_T)n;
    }
 }
 
@@ -2687,7 +2687,7 @@ get_hostip( struct sockaddr *sa, char *s, int sz ) {
 /*    bgl_datagram_socket_receive ...                                  */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_datagram_socket_receive( obj_t sock, long sz ) {
+bgl_datagram_socket_receive( obj_t sock, BGL_LONG_T sz ) {
    struct sockaddr_storage their_addr;
    char buf[ sz ];
    socklen_t addr_len;

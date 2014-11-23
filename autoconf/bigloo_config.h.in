@@ -127,6 +127,10 @@
 #define BGL_HAVE_LABS @BGL_HAVE_LABS@
 #define BGL_LABS @BGL_LABS@
 
+#undef BGL_LONG_T
+#define BGL_LONG_T @BGL_LONG_T@
+#define BGL_ULONG_T @BGL_ULONG_T@
+
 #undef BGL_LONGLONG_T
 #define BGL_LONGLONG_T @BGL_LONGLONG_T@
 #define BGL_LONG_LIMBS @BGL_LONG_LIMBS@
@@ -617,6 +621,11 @@ typedef unsigned long uint64_t;
 #    endif
 #  endif   
 #endif
+
+
+#define BGL_LONG_MAX INTPTR_MAX
+#define BGL_LONG_MIN INTPTR_MIN
+
 
 /*---------------------------------------------------------------------*/
 /*    LONG LONG constants                                              */

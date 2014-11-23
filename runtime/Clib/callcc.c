@@ -22,7 +22,7 @@ extern int flush_regs_in_stack();
 /*---------------------------------------------------------------------*/
 /*    Common importations ...                                          */
 /*---------------------------------------------------------------------*/
-extern long glob_dummy;
+extern BGL_LONG_T glob_dummy;
 
 extern obj_t make_fx_procedure();
 extern obj_t c_constant_string_to_string( char * );
@@ -120,7 +120,7 @@ apply_continuation( obj_t kont, obj_t value ) {
 /*---------------------------------------------------------------------*/
 static obj_t  stack;
 static char  *stack_top;
-static long   stack_size;
+static BGL_LONG_T   stack_size;
 static obj_t  s_value;
 static obj_t  stamp;
 static void (*memorycpy)( void*, void*, size_t );
@@ -213,9 +213,9 @@ callcc_restore_stack( obj_t env, obj_t value, char **_dummy ) {
 
    /* on fait grandire la pile jusqu'a ce qu'elle depasse stack_top */
 #if( defined( STACK_GROWS_DOWN ) )
-   if( ((unsigned long)stack_top) <= (unsigned long)actual_stack_top)
+   if( ((BGL_ULONG_T)stack_top) <= (BGL_ULONG_T)actual_stack_top)
 #else 
-   if( ((unsigned long)stack_top) >= (unsigned long)actual_stack_top )
+   if( ((BGL_ULONG_T)stack_top) >= (BGL_ULONG_T)actual_stack_top )
 #endif
    {
       /* Je fais un appel recursif pour faire grandir la pile.        */
@@ -231,7 +231,7 @@ callcc_restore_stack( obj_t env, obj_t value, char **_dummy ) {
       /* En plus, afin, d'etre sur que dummy ne va pas etre mangee    */
       /* par un compilo trop intelligent, on la range dans une        */
       /* variable globale.                                            */
-      glob_dummy = (long)dummy;
+      glob_dummy = (BGL_LONG_T)dummy;
       callcc_restore_stack( env, value, &dummy[ 1 ] );
    } else {
       __callcc_install_stack( kont, value );
@@ -255,7 +255,7 @@ call_cc( obj_t proc ) {
       obj_t continuation;
       obj_t stack;
       char *stack_top;
-      unsigned long stack_size;
+      BGL_ULONG_T stack_size;
       obj_t aux;
       /* We push the exit taking care that it is a callcc exit. */
       PUSH_ENV_EXIT( env, (obj_t)(&jmpbuf), EXITD_CALLCC );
@@ -269,15 +269,15 @@ call_cc( obj_t proc ) {
       /* on calcule la taille de la pile, en prevoyant que le GC peut */
       /* flusher les registres dans la pile (REGISTER_SAVE_BUFFER)    */
 #if( defined( STACK_GROWS_DOWN ) )
-      stack_size = (unsigned long)BGL_ENV_STACK_BOTTOM( env )-(unsigned long)stack_top;
+      stack_size = (BGL_ULONG_T)BGL_ENV_STACK_BOTTOM( env )-(BGL_ULONG_T)stack_top;
 #else
-      stack_size = (unsigned long)stack_top-(unsigned long)BGL_ENV_STACK_BOTTOM( env );
+      stack_size = (BGL_ULONG_T)stack_top-(BGL_ULONG_T)BGL_ENV_STACK_BOTTOM( env );
 #endif
 
       /* on alloue un espace pour la sauvegarder de la pile  */
       stack = MAKE_STACK( stack_size + sizeof(char *), aux );
 
-      STACK( stack ).size       = (long)stack_size;
+      STACK( stack ).size       = (BGL_LONG_T)stack_size;
       STACK( stack ).self       = CREF( stack );
       STACK( stack ).exitd_top  = BGL_ENV_EXITD_TOP( env );
       STACK( stack ).stamp      = BGL_ENV_EXITD_TOP( env )->stamp;

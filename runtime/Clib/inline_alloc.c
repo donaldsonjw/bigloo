@@ -17,17 +17,17 @@
 #include <bigloo_static.h>
 
 /*---------------------------------------------------------------------*/
-/*    static long                                                      */
+/*    static BGL_LONG_T                                                      */
 /*    gcnum ...                                                        */
 /*---------------------------------------------------------------------*/
-static long gcnum = 0;
+static BGL_LONG_T gcnum = 0;
 
 /*---------------------------------------------------------------------*/
 /*    static void                                                      */
 /*    gcollect_verbose ...                                             */
 /*---------------------------------------------------------------------*/
 static void
-gcollect_verbose( unsigned long heapsz, unsigned long use ) {
+gcollect_verbose( BGL_ULONG_T heapsz, BGL_ULONG_T use ) {
    fprintf( stderr, "gc %2ld: %lu %lu\n", gcnum++, heapsz, use );
 }
 
@@ -65,14 +65,14 @@ bgl_gc_verbose_set( bool_t verbose ) {
    ptr_t *opp; \
    DCL_LOCK_STATE; \
    \
-   opp = (void **)&(GC_objfreelist[ (long)ALIGNED_WORDS( size ) ]); \
+   opp = (void **)&(GC_objfreelist[ (BGL_LONG_T)ALIGNED_WORDS( size ) ]); \
    FASTLOCK(); \
    if( !FASTLOCK_SUCCEEDED() || (op = *opp) == 0 ) { \
       FASTUNLOCK(); \
       return default_alloc; \
    } \
    *opp = obj_link( op ); \
-   GC_words_allocd += (long)ALIGNED_WORDS( size ); \
+   GC_words_allocd += (BGL_LONG_T)ALIGNED_WORDS( size ); \
    FASTUNLOCK(); \
    \
    res = (obj_t)op;
@@ -261,7 +261,7 @@ make_real( double d ) {
 /*    alloc_make_belong ...                                            */
 /*---------------------------------------------------------------------*/
 static obj_t
-alloc_make_belong( long l ) {
+alloc_make_belong( BGL_LONG_T l ) {
    obj_t elong;
 
    elong = (obj_t)GC_MALLOC_ATOMIC( ELONG_SIZE );
@@ -276,9 +276,9 @@ alloc_make_belong( long l ) {
 /*    make_belong ...                                                  */
 /*---------------------------------------------------------------------*/
 GC_API obj_t
-make_belong( long l ) {
+make_belong( BGL_LONG_T l ) {
    if(( BGL_ELONG_PREALLOC_MIN <= l) && (l < BGL_ELONG_PREALLOC_MAX) ) {
-      return BREF( &belong_allocated[ (long)l - BGL_ELONG_PREALLOC_MIN ] );
+      return BREF( &belong_allocated[ (BGL_LONG_T)l - BGL_ELONG_PREALLOC_MIN ] );
    } else {
       obj_t elong;
 

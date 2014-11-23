@@ -83,6 +83,11 @@ ldcomplibs=-lc
 strip=       # left blank for autoconfiguration
 longlong=    # The C type to represent long long integers
 havelonglong=
+bgl_long=intptr_t # bigloo's longs must be large enough to store a pointer
+                  # Unfortunately, long on Win64 is only 32 bits, so we define
+                  # bigloo longs to be intptr_t. intptr_t is guaranteed to be
+                  # large enough to hold a pointer
+bgl_ulong=uintptr_t
 stringsplit="0"
 
 gcconfigureopt="--disable-gcj-support --disable-java-finalization --disable-libcord"
@@ -2560,7 +2565,7 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
   long_limbs=`$autoconf limbs --type="long" --cflags="-I$bootdir/lib/$release -L$bootdir/lib/$release"` || exit 1
   longlong_limbs=`$autoconf limbs --type="$longlong" --cflags="-I$bootdir/lib/$release -L$bootdir/lib/$release"` || exit 1
 
-  long_sign_bit=`$autoconf signbit --type=long --alignment="$alignment"` || exit 1
+  long_sign_bit=`$autoconf signbit --type="$bgl_long" --alignment="$alignment"` || exit 1
   elong_sign_bit=`$autoconf signbit --type=long --alignment=0` || exit 1
   llong_sign_bit=`$autoconf signbit --type="$longlong" --alignment=0` || exit 1
   
@@ -2882,6 +2887,8 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
               -e "s|@HAVE_PIPE@|$pipe|" \
               -e "s|@HAVE_SYMLINK@|$symlink|" \
               -e "s|@BGL_LONGLONG_T@|$longlong|" \
+	      -e "s|@BGL_LONG_T@|$bgl_long|" \
+	      -e "s|@BGL_ULONG_T@|$bgl_ulong|" \
               -e "s|@BGL_HAVE_LONGLONG@|$havelonglong|" \
               -e "s|@BGL_LONG_LIMBS@|$long_limbs|" \
               -e "s|@BGL_LONGLONG_LIMBS@|$longlong_limbs|" \

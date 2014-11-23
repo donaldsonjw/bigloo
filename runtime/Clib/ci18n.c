@@ -56,7 +56,7 @@ bgl_utf8_string_locale_upcase( obj_t str ) {
 #else
    char *src = BSTRING_TO_STRING( str );
    obj_t res = make_string_sans_fill( len );
-   long i;
+   BGL_LONG_T i;
 
    for( i = 0; i < len; i++ ) {
       STRING_SET( res, i, toupper( src[ i ] ) );
@@ -89,7 +89,7 @@ bgl_utf8_string_locale_downcase( obj_t str ) {
 #else
    char *src = BSTRING_TO_STRING( str );
    obj_t res = make_string_sans_fill( len );
-   long i;
+   BGL_LONG_T i;
 
    for( i = 0; i < len; i++ ) {
       STRING_SET( res, i, tolower( src[ i ] ) );
