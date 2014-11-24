@@ -451,10 +451,6 @@
 #  include <io.h>
 #  include <string.h>
 #  define chdir _chdir
-/* !!!!! PROBABLY NOT PORTABLE !!!!! */
-#  define chmod _chmod                            
-#  define execl _execl
-#  define getcwd _getcwd
 /* SECOND ARG = UNIX MODE to make directory 0700 --> OWNER RWX GROUP --- OTHERS --- */
 #  define mkdir( a, b ) _mkdir( (a) )
 #  define rmdir _rmdir
