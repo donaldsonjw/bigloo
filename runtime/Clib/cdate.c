@@ -11,8 +11,6 @@
 #include <string.h>
 #include <bigloo.h>
 #if defined( _MSC_VER) || defined( _MINGW_VER )
-// force 32 bits time values as Bigloo requires sizeof(time_t) == sizeof(long)
-#  define _USE_32BIT_TIME_T 1
 #endif
 #include <time.h>
 #include <ctype.h>
