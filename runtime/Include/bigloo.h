@@ -1220,7 +1220,7 @@ typedef struct BgL_objectz00_bgl {
          aux = { __CNST_FILLER, len
 #   define DEFINE_STRING_STOP( name, aux ) \
         }; static obj_t name = BSTRING( &(aux.length) 
-#   define STRINGP( c ) ((c && ((((long)c)&TAG_MASK) == TAG_STRING)))
+#   define STRINGP( c ) ((c && ((((BGL_LONG_T)c)&TAG_MASK) == TAG_STRING)))
 #else
 #   define BSTRING( p ) BREF( p )
 #   define CSTRING( p ) CREF( p )
@@ -1831,9 +1831,9 @@ BGL_RUNTIME_DECL double bgl_infinity();
    const obj_t name = BGL_UINT32_TO_BUINT32( num )
    
 #  define BGL_INT32_TO_BINT32( i ) \
-   ((obj_t)(BINT32H + ((long)(i) << BGL_CNST_SHIFT_INT32))) 
+   ((obj_t)(BINT32H + ((BGL_LONG_T)(i) << BGL_CNST_SHIFT_INT32))) 
 #  define BGL_UINT32_TO_BUINT32( i ) \
-   ((obj_t)(BUINT32H + ((long)(i) << BGL_CNST_SHIFT_INT32))) 
+   ((obj_t)(BUINT32H + ((BGL_LONG_T)(i) << BGL_CNST_SHIFT_INT32))) 
 #  define BGL_BINT32_TO_INT32( o ) \
    ((int32_t)((BGL_ULONG_T)(o) >> BGL_CNST_SHIFT_INT32))
 #  define BGL_BUINT32_TO_UINT32( o ) \
