@@ -572,6 +572,13 @@ bgl_symlink( char *s1, char *s2 ) {
 #endif   
 }
 
+#if defined(_BGL_WIN32_VER)
+BGL_RUNTIME_DEF int getppid() {
+  return 0;
+}
+#endif 
+
+
 /*---------------------------------------------------------------------*/
 /*    bits conversions (see bigloo.h for GCC versions).                */
 /*---------------------------------------------------------------------*/
