@@ -41,14 +41,14 @@ fill_vector( obj_t bvector, BGL_LONG_T len, obj_t init ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-create_vector( int len ) {
+create_vector( BGL_LONG_T len ) {
    obj_t vector;
 
    if( len & ~(VECTOR_LENGTH_MASK) ) { 
       C_FAILURE( "create_vector", "vector too large", BINT( len ) );
       return BUNSPEC;
    } else {
-      int byte_size;
+      BGL_LONG_T byte_size;
 
       byte_size = VECTOR_SIZE + ( (len-1) * OBJ_SIZE );
 
@@ -70,14 +70,14 @@ create_vector( int len ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-create_vector_uncollectable( int len ) {
+create_vector_uncollectable( BGL_LONG_T len ) {
    obj_t vector;
    
    if( len & ~(VECTOR_LENGTH_MASK) ) { 
       C_FAILURE( "create_vector", "vector too large", BINT( len ) );
       return BUNSPEC;
    } else {
-      int byte_size;
+      BGL_LONG_T byte_size;
 
       byte_size = VECTOR_SIZE + ( (len-1) * OBJ_SIZE );
       
@@ -99,7 +99,7 @@ create_vector_uncollectable( int len ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-make_vector_uncollectable( int len, obj_t init ) {
+make_vector_uncollectable( BGL_LONG_T len, obj_t init ) {
    obj_t vector;
 
    vector = create_vector_uncollectable( len );
@@ -113,7 +113,7 @@ make_vector_uncollectable( int len, obj_t init ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-make_vector( int len, obj_t init ) {
+make_vector( BGL_LONG_T len, obj_t init ) {
    obj_t vector;
 
    vector = create_vector( len );
@@ -128,7 +128,7 @@ make_vector( int len, obj_t init ) {
 /*---------------------------------------------------------------------*/
 obj_t
 sort_vector( obj_t obj, obj_t proc ) {
-   int i, j, incr, n;
+   BGL_LONG_T i, j, incr, n;
    obj_t (*cb)();
 
    n = VECTOR_LENGTH( obj );

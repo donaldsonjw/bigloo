@@ -314,7 +314,7 @@ obj_t
 bgl_seconds_format( BGL_LONG_T sec, obj_t fmt ) {
    char *buffer;
    struct tm *p;
-   int len = (int)STRING_LENGTH( fmt ) + 256;
+   BGL_LONG_T len = (BGL_LONG_T)STRING_LENGTH( fmt ) + 256;
 
    buffer = (char *)GC_MALLOC_ATOMIC( len + 1 );
    
@@ -322,7 +322,7 @@ bgl_seconds_format( BGL_LONG_T sec, obj_t fmt ) {
    p = localtime( (time_t *)&sec );
    BGL_MUTEX_UNLOCK( date_mutex );
    
-   len = (int)strftime( buffer, len, BSTRING_TO_STRING( fmt ), p );
+   len = (BGL_LONG_T)strftime( buffer, len, BSTRING_TO_STRING( fmt ), p );
 
    if( len > 0 )
       return string_to_bstring_len( buffer, len );
@@ -338,11 +338,11 @@ bgl_seconds_format( BGL_LONG_T sec, obj_t fmt ) {
 /*    make_names ...                                                   */
 /*---------------------------------------------------------------------*/
 static obj_t
-make_names( int range, char *fmt ) {
+make_names( BGL_LONG_T range, char *fmt ) {
    obj_t names = (obj_t)create_vector( range );
    char buf[ 40 ];
    struct tm tm;
-   int i;
+   BGL_LONG_T i;
 
    for( i = 0; i < range; i++ ) {
       tm.tm_wday = i;

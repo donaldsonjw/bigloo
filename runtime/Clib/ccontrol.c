@@ -13,7 +13,7 @@
 /*---------------------------------------------------------------------*/
 /*    External definitions.                                            */
 /*---------------------------------------------------------------------*/
-extern obj_t make_string_sans_fill( int );
+extern obj_t make_string_sans_fill( BGL_LONG_T );
 
 /*---------------------------------------------------------------------*/
 /*    obj_t                                                            */
@@ -21,7 +21,7 @@ extern obj_t make_string_sans_fill( int );
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-bgl_make_procedure( obj_t entry, int arity, int size ) {
+bgl_make_procedure( obj_t entry, int arity, BGL_LONG_T size ) {
    if( arity >= 0 )
       return make_fx_procedure( (obj_t (*)())entry, arity, size );
    else
@@ -34,7 +34,7 @@ bgl_make_procedure( obj_t entry, int arity, int size ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-make_fx_procedure( obj_t (*entry)(), int arity, int size ) {
+make_fx_procedure( obj_t (*entry)(), int arity, BGL_LONG_T size ) {
 
    if( size > (1 << HEADER_SIZE_BIT_SIZE) ) {
       C_FAILURE( "make-fx-procedure", "Environment to large", BINT( size ) );
@@ -57,7 +57,7 @@ make_fx_procedure( obj_t (*entry)(), int arity, int size ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-make_va_procedure( obj_t (*entry)(), int arity, int size ) {
+make_va_procedure( obj_t (*entry)(), int arity, BGL_LONG_T size ) {
 
    if( size > (1 << HEADER_SIZE_BIT_SIZE) ) {
       C_FAILURE( "make-va-procedure", "Environment to large", BINT( size ) );
@@ -336,11 +336,11 @@ BGL_RUNTIME_DEF
 obj_t
 opt_generic_entry( obj_t proc, ... ) {
    va_list argl;
-   int len = 0;
+   BGL_LONG_T len = 0;
    obj_t args;
    obj_t runner;
    BGL_LONG_T i;
-   int byte_size;
+   BGL_LONG_T byte_size;
    
    /* compute the number of arguments */
    va_start( argl, proc );

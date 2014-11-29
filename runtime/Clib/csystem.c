@@ -589,14 +589,14 @@ LLONG_BITS_TO_DOUBLE( BGL_LONGLONG_T ll ) {
    return result;
 }
 
-BGL_RUNTIME_DEF int
+BGL_RUNTIME_DEF BGL_LONG_T
 FLOAT_TO_INT_BITS( float f ) {
    __FLOAT_TO_INT_BITS( f );
    return result;
 }
 
 BGL_RUNTIME_DEF float
-INT_BITS_TO_FLOAT( int i ) {
+INT_BITS_TO_FLOAT( BGL_LONG_T i ) {
    __INT_BITS_TO_FLOAT( i );
    return result;
 }

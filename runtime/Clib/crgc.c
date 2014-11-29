@@ -52,8 +52,8 @@
 extern obj_t bigloo_case_sensitive;
 extern obj_t bgl_string_to_keyword_len( char *, BGL_LONG_T );
 extern obj_t bgl_string_to_symbol_len( char *, BGL_LONG_T );
-extern obj_t make_string_sans_fill( int );
-extern obj_t string_to_bstring_len( char *, int );
+extern obj_t make_string_sans_fill( BGL_LONG_T );
+extern obj_t string_to_bstring_len( char *, BGL_LONG_T );
 extern int bgl_debug();
 extern obj_t bgl_escape_C_string( unsigned char *, BGL_LONG_T, BGL_LONG_T );
 extern obj_t bgl_escape_scheme_string( unsigned char *, BGL_LONG_T, BGL_LONG_T );
@@ -125,9 +125,9 @@ sysread( obj_t port, char *buf, BGL_LONG_T o, size_t size ) {
 /*    rgc_fillsize_buffer ...                                          */
 /*---------------------------------------------------------------------*/
 static BGL_LONG_T
-rgc_fillsize_buffer( obj_t port, char *buf, int bufpos, int size ) {
+rgc_fillsize_buffer( obj_t port, char *buf, BGL_LONG_T bufpos, BGL_LONG_T size ) {
    BGL_LONG_T r;
-   int fb = INPUT_PORT( port ).fillbarrier;
+   BGL_LONG_T fb = INPUT_PORT( port ).fillbarrier;
    
    if( fb == 0 ) {
       INPUT_PORT( port ).bufpos = bufpos;

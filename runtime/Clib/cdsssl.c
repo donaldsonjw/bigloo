@@ -13,7 +13,7 @@
 /*---------------------------------------------------------------------*/
 /*    Some prototypes                                                  */
 /*---------------------------------------------------------------------*/
-extern obj_t make_vector( int, obj_t );
+extern obj_t make_vector( BGL_LONG_T, obj_t );
 extern BGL_LONG_T get_hash_power_number( char *, BGL_ULONG_T );
 
 /*---------------------------------------------------------------------*/

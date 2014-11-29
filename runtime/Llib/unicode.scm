@@ -44,13 +44,13 @@
    
    (extern (macro c-ucs2-string?::bool (::obj)
 		  "UCS2_STRINGP")
-	   (c-make-ucs2-string::ucs2string (::int ::ucs2)
+	   (c-make-ucs2-string::ucs2string (::long ::ucs2)
 					   "make_ucs2_string")
-	   (macro c-ucs2-string-length::int (::ucs2string)
+	   (macro c-ucs2-string-length::long (::ucs2string)
 		  "UCS2_STRING_LENGTH")
-	   (macro c-ucs2-string-ref::ucs2 (::ucs2string ::int)
+	   (macro c-ucs2-string-ref::ucs2 (::ucs2string ::long)
 		  "UCS2_STRING_REF")
-	   (macro c-ucs2-string-set!::obj (::ucs2string ::int ::ucs2)
+	   (macro c-ucs2-string-set!::obj (::ucs2string ::long ::ucs2)
 		  "UCS2_STRING_SET")
 	   
 	   (c-ucs2-string=?::bool (::ucs2string ::ucs2string)

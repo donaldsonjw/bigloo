@@ -32,7 +32,7 @@ custom_default_hash( obj_t obj ) {
 /*    custom_default_to_string ...                                     */
 /*---------------------------------------------------------------------*/
 static char *
-custom_default_to_string( obj_t obj, char *buffer, int len ) {
+custom_default_to_string( obj_t obj, char *buffer, BGL_LONG_T len ) {
    if( len > 16 ) {
       sprintf( buffer, "<custom:%p>", obj );
       return buffer;

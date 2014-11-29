@@ -76,8 +76,8 @@
 					   "bgl_float_to_ieee_string")
 	    (macro %double->llong-bits::llong (::double) "DOUBLE_TO_LLONG_BITS")
 	    (macro %llong-bits->double::double (::llong) "LLONG_BITS_TO_DOUBLE")
-	    (macro %float->int-bits::int (::float) "FLOAT_TO_INT_BITS")
-	    (macro %int-bits->float::float (::int) "INT_BITS_TO_FLOAT")
+	    (macro %float->int-bits::long (::float) "FLOAT_TO_INT_BITS")
+	    (macro %int-bits->float::float (::long) "INT_BITS_TO_FLOAT")
 	    (macro $randomfl::double () "RANDOMFL"))
    
    (java    (class foreign

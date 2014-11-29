@@ -28,11 +28,11 @@ extern BGL_LONG_T bgl_list_length( obj_t );
 /*---------------------------------------------------------------------*/
 static obj_t
 opt_apply( obj_t proc, obj_t args_list ) {
-   int len = bgl_list_length( args_list );
+   BGL_LONG_T len = bgl_list_length( args_list );
    obj_t args;
    obj_t runner;
    BGL_LONG_T i;
-   int byte_size;
+   BGL_LONG_T byte_size;
    
    /* Stack allocated the argument vector, see         */
    /* cvector.c:create_vector for regular vector alloc */

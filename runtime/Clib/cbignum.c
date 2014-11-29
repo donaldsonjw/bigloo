@@ -63,7 +63,7 @@ make_bignum( size_t sz ) {
 /*---------------------------------------------------------------------*/
 static void
 bignum_set_size( obj_t x, const int size ) {
-   int count = size - 1;
+   BGL_LONG_T count = size - 1;
    
    while( count > 0 && BXLIMBS( x )[ count ] == 0 )
       count--;

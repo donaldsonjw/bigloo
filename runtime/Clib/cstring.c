@@ -19,7 +19,7 @@
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-string_to_bstring_len( char *c_string, int len ) {
+string_to_bstring_len( char *c_string, BGL_LONG_T len ) {
    /* STRING_SIZE already includes 1 byte for one char */
    obj_t string = GC_MALLOC_ATOMIC( STRING_SIZE + len );
    char *dst;
@@ -60,7 +60,7 @@ bgl_bstring_to_gc_cstring( obj_t str ) {
 BGL_RUNTIME_DEF
 obj_t
 string_to_bstring( char *c_string ) {
-   return string_to_bstring_len( c_string, c_string ? (int)strlen( c_string ) : 0 );
+   return string_to_bstring_len( c_string, c_string ? (BGL_LONG_T)strlen( c_string ) : 0 );
 }
 
 /*---------------------------------------------------------------------*/
@@ -68,7 +68,7 @@ string_to_bstring( char *c_string ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-make_string( int len, unsigned char c ) {
+make_string( BGL_LONG_T len, unsigned char c ) {
    obj_t string;
 
    if( len < 0 ) {
@@ -96,7 +96,7 @@ make_string( int len, unsigned char c ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-make_string_sans_fill( int len ) {
+make_string_sans_fill( BGL_LONG_T len ) {
    obj_t string = GC_MALLOC_ATOMIC( STRING_SIZE + len );
 
 #if( !defined( TAG_STRING ) )
@@ -123,9 +123,9 @@ c_constant_string_to_string( char *c_string ) {
 BGL_RUNTIME_DEF
 obj_t
 string_append( obj_t s1, obj_t s2 ) {
-   int l1 = STRING( s1 ).length;
-   int l2 = STRING( s2 ).length;
-   int l12 = l1 + l2;
+   BGL_LONG_T l1 = STRING( s1 ).length;
+   BGL_LONG_T l2 = STRING( s2 ).length;
+   BGL_LONG_T l12 = l1 + l2;
    obj_t string = GC_MALLOC_ATOMIC( STRING_SIZE + l12 );
 
 #if( !defined( TAG_STRING ) )
@@ -146,10 +146,10 @@ string_append( obj_t s1, obj_t s2 ) {
 BGL_RUNTIME_DEF
 obj_t
 string_append_3( obj_t s1, obj_t s2, obj_t s3 ) {
-   int l1 = STRING( s1 ).length;
-   int l2 = STRING( s2 ).length;
-   int l3 = STRING( s3 ).length;
-   int  l123 = l1 + l2 + l3;
+   BGL_LONG_T l1 = STRING( s1 ).length;
+   BGL_LONG_T l2 = STRING( s2 ).length;
+   BGL_LONG_T l3 = STRING( s3 ).length;
+   BGL_LONG_T l123 = l1 + l2 + l3;
    obj_t string = GC_MALLOC_ATOMIC( STRING_SIZE + l123 );
 
 #if( !defined( TAG_STRING ) )
@@ -170,8 +170,8 @@ string_append_3( obj_t s1, obj_t s2, obj_t s3 ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-c_substring( obj_t src_string, int min, int max ) {
-   int len = max - min;
+c_substring( obj_t src_string, BGL_LONG_T min, BGL_LONG_T max ) {
+   BGL_LONG_T len = max - min;
    obj_t dst_string = GC_MALLOC_ATOMIC( STRING_SIZE + len );
 
 #if( !defined( TAG_STRING ) )
@@ -193,7 +193,7 @@ c_substring( obj_t src_string, int min, int max ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-blit_string( obj_t s1, int offset1, obj_t s2, int offset2, int len ) {
+blit_string( obj_t s1, BGL_LONG_T offset1, obj_t s2, BGL_LONG_T offset2, BGL_LONG_T len ) {
    /* intrinsic memcpy doest not work when memory areas overlap */
    unsigned char *src = &STRING_REF( s1, offset1 );
    unsigned char *dest = &STRING_REF( s2, offset2 );
@@ -220,7 +220,7 @@ integer_to_string( BGL_LONG_T x, BGL_LONG_T radix ) {
    obj_t aux;
    char *s;
    BGL_LONG_T ax;
-   int bits = (x <= 0 ? 1 : 0);
+   BGL_LONG_T bits = (x <= 0 ? 1 : 0);
 
    for( ax = x; ax != 0; ax /= radix )
       bits++;
@@ -245,7 +245,7 @@ unsigned_to_string( BGL_LONG_T x, BGL_LONG_T radix ) {
    obj_t aux;
    char *s;
    BGL_ULONG_T ax;
-   int bits = (x == 0 ? 1 : 0);
+   BGL_LONG_T bits = (x == 0 ? 1 : 0);
 
    for( ax = x; ax > 0; ax /= radix )
       bits++;
@@ -266,7 +266,7 @@ unsigned_to_string( BGL_LONG_T x, BGL_LONG_T radix ) {
 obj_t
 integer_to_string_padding( BGL_LONG_T x, BGL_LONG_T padding, BGL_LONG_T radix ) {
    obj_t aux;
-   int bits = (x <= 0 ? 1 : 0);
+   BGL_LONG_T bits = (x <= 0 ? 1 : 0);
    BGL_LONG_T ax = BGL_LABS( x );
    BGL_ULONG_T axx = (BGL_ULONG_T)ax;
    char fmt[ 10 ];
@@ -333,7 +333,7 @@ llong_to_string( BGL_LONGLONG_T x, BGL_LONG_T radix ) {
    obj_t aux;
    char *s;
    BGL_LONGLONG_T ax;
-   int bits = (x <= 0 ? 1 : 0);
+   BGL_LONG_T bits = (x <= 0 ? 1 : 0);
    char letters[] = "0123456789abcdef";
 
    for( ax = x; ax != 0; ax /= radix )
@@ -359,7 +359,7 @@ ullong_to_string( BGL_LONGLONG_T x, BGL_LONG_T radix ) {
    obj_t aux;
    char *s;
    unsigned BGL_LONGLONG_T ax;
-   int bits = (x == 0 ? 1 : 0);
+   BGL_LONG_T bits = (x == 0 ? 1 : 0);
    char letters[] = "0123456789abcdef";
 
    for( ax = x; ax > 0; ax /= radix )
@@ -395,14 +395,14 @@ bgl_double_to_ieee_string( double o ) {
    char *tmp = (char *)(&o);
 
 #if( BGL_BIG_ENDIAN == 1 )
-   int i;
+   BGL_LONG_T i;
    
    for( i = 0; i < sizeof( double ); i++ ) {
       aux[ i ] = tmp[ i ];
    }
    aux[ i ] = 0;
 #else
-   int i, j;
+   BGL_LONG_T i, j;
    
    for( j = 0, i = (sizeof( double ) - 1); i >= 0; i--, j++ ) {
       aux[ j ] = tmp[ i ];
@@ -427,13 +427,13 @@ bgl_ieee_string_to_double( obj_t s ) {
    char *tmp = (char *)(&res);
 
 #if( BGL_BIG_ENDIAN == 1 )
-   int i;
+   BGL_LONG_T i;
    
    for( i = 0; i < sizeof( double ); i++ ) {
       tmp[ i ] = aux[ i ];
    }
 #else
-   int i, j;
+   BGL_LONG_T i, j;
    
    for( j = 0, i = sizeof( double ) - 1;  i >= 0; i--, j++ ) {
       tmp[ i ] = aux[ j ];
@@ -463,14 +463,14 @@ bgl_float_to_ieee_string( float o ) {
    char *tmp = (char *)(&o);
 
 #if( BGL_BIG_ENDIAN == 1 )
-   int i;
+   BGL_LONG_T i;
    
    for( i = 0; i < sizeof( float ); i++ ) {
       aux[ i ] = tmp[ i ];
    }
    aux[ i ] = 0;
 #else
-   int i, j;
+   BGL_LONG_T i, j;
    for( j = 0, i = (sizeof( float ) - 1); i >= 0; i--, j++ ) {
       aux[ j ] = tmp[ i ];
    }
@@ -494,13 +494,13 @@ bgl_ieee_string_to_float( obj_t s ) {
    char *tmp = (char *)(&res);
 
 #if( BGL_BIG_ENDIAN == 1 )
-   int i;
+   BGL_LONG_T i;
    
    for( i = 0; i < sizeof( float ); i++ ) {
       tmp[ i ] = aux[ i ];
    }
 #else
-   int i, j;
+   BGL_LONG_T i, j;
    
    for( j = 0, i = sizeof( float ) - 1; i >= 0; i--, j++ ) {
       tmp[ i ] = aux[ j ];
@@ -517,7 +517,7 @@ bgl_ieee_string_to_float( obj_t s ) {
 BGL_RUNTIME_DEF
 bool_t
 bigloo_strcmp( obj_t o1, obj_t o2 ) {
-   int l1 = STRING_LENGTH( o1 );
+   BGL_LONG_T l1 = STRING_LENGTH( o1 );
 
    if( l1 == STRING_LENGTH( o2 ) )
       return !memcmp( (void *)BSTRING_TO_STRING( o1 ),
@@ -532,9 +532,9 @@ bigloo_strcmp( obj_t o1, obj_t o2 ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 bool_t
-bigloo_strcmp_at( obj_t o1, obj_t o2, int d ) {
-   int l1 = STRING_LENGTH( o1 );
-   int l2 = STRING_LENGTH( o2 );
+bigloo_strcmp_at( obj_t o1, obj_t o2, BGL_LONG_T d ) {
+   BGL_LONG_T l1 = STRING_LENGTH( o1 );
+   BGL_LONG_T l2 = STRING_LENGTH( o2 );
    
    if( (d >= 0) && ((l2 + d) <= l1) ) 
       return !memcmp( (void *)(BSTRING_TO_STRING( o1 ) + d),
@@ -550,14 +550,14 @@ bigloo_strcmp_at( obj_t o1, obj_t o2, int d ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 bool_t
-bigloo_strcmp_ci_at( obj_t o1, obj_t o2, int d ) {
-   int l1 = STRING_LENGTH( o1 );
-   int l2 = STRING_LENGTH( o2 );
+bigloo_strcmp_ci_at( obj_t o1, obj_t o2, BGL_LONG_T d ) {
+   BGL_LONG_T l1 = STRING_LENGTH( o1 );
+   BGL_LONG_T l2 = STRING_LENGTH( o2 );
 
    if( (d >= 0) && ((l2 + d) <= l1) ) {
       char *st1 = ((char *)BSTRING_TO_STRING( o1 )) + d;
       char *st2 = (char *)BSTRING_TO_STRING( o2 );
-      int i = 0;
+      BGL_LONG_T i = 0;
       
       for( ;
 	   (i < l2) && (tolower( *st1 ) == tolower( *st2 ));
@@ -575,10 +575,10 @@ bigloo_strcmp_ci_at( obj_t o1, obj_t o2, int d ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 bool_t
-bigloo_strncmp_at( obj_t o1, obj_t o2, int d, int l3 ) {
-   int l1 = STRING_LENGTH( o1 );
-   int l2 = STRING_LENGTH( o2 );
-   int l = l2 < l3 ? l2 : l3;
+bigloo_strncmp_at( obj_t o1, obj_t o2,  BGL_LONG_T d,  BGL_LONG_T l3 ) {
+   BGL_LONG_T l1 = STRING_LENGTH( o1 );
+   BGL_LONG_T l2 = STRING_LENGTH( o2 );
+   BGL_LONG_T l = l2 < l3 ? l2 : l3;
 
    if( (d >= 0) && (l3 >= 0) && ((l + d) <= l1) ) 
       return !memcmp( (void *)(BSTRING_TO_STRING( o1 ) + d),
@@ -594,15 +594,15 @@ bigloo_strncmp_at( obj_t o1, obj_t o2, int d, int l3 ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 bool_t
-bigloo_strncmp_ci_at( obj_t o1, obj_t o2, int d, int l3 ) {
-   int l1 = STRING_LENGTH( o1 );
-   int l2 = STRING_LENGTH( o2 );
-   int l = l2 < l3 ? l2 : l3;
+bigloo_strncmp_ci_at( obj_t o1, obj_t o2,  BGL_LONG_T d,  BGL_LONG_T l3 ) {
+   BGL_LONG_T l1 = STRING_LENGTH( o1 );
+   BGL_LONG_T l2 = STRING_LENGTH( o2 );
+   BGL_LONG_T l = l2 < l3 ? l2 : l3;
 
    if( (d >= 0) && (l3 >= 0) && (l + d) <= l1 ) {
       char *st1 = ((char *)BSTRING_TO_STRING( o1 )) + d;
       char *st2 = (char *)BSTRING_TO_STRING( o2 );
-      int i = 0;
+       BGL_LONG_T i = 0;
       
       for( ;
 	   (i < l2) && (tolower( *st1 ) == tolower( *st2 ));
@@ -620,9 +620,9 @@ bigloo_strncmp_ci_at( obj_t o1, obj_t o2, int d, int l3 ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 bool_t
-bigloo_strncmp( obj_t o1, obj_t o2, int l ) {
-   int l1 = STRING_LENGTH( o1 );
-   int l2 = STRING_LENGTH( o2 );
+bigloo_strncmp( obj_t o1, obj_t o2,  BGL_LONG_T l ) {
+   BGL_LONG_T l1 = STRING_LENGTH( o1 );
+   BGL_LONG_T l2 = STRING_LENGTH( o2 );
 
    if( (l1 >= l) && (l2 >= l) )
       return !memcmp( (void *)BSTRING_TO_STRING( o1 ),
@@ -637,14 +637,14 @@ bigloo_strncmp( obj_t o1, obj_t o2, int l ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 bool_t
-bigloo_strncmp_ci( obj_t o1, obj_t o2, int l ) {
-   int l1 = STRING_LENGTH( o1 );
-   int l2 = STRING_LENGTH( o2 );
+bigloo_strncmp_ci( obj_t o1, obj_t o2,  BGL_LONG_T l ) {
+   BGL_LONG_T l1 = STRING_LENGTH( o1 );
+   BGL_LONG_T l2 = STRING_LENGTH( o2 );
 
    if( (l1 >= l) && (l2 >= l) ) {
       char *st1 = (char *)BSTRING_TO_STRING( o1 );
       char *st2 = (char *)BSTRING_TO_STRING( o2 );
-      int i = 0;
+       BGL_LONG_T i = 0;
       
       for( ;
 	   (i < l) && (tolower( *st1 ) == tolower( *st2 ));
@@ -662,7 +662,7 @@ bigloo_strncmp_ci( obj_t o1, obj_t o2, int l ) {
 BGL_RUNTIME_DEF
 bool_t        
 strcicmp( obj_t bst1, obj_t bst2 ) {
-   int l1 = STRING_LENGTH( bst1 );
+  BGL_LONG_T l1 = STRING_LENGTH( bst1 );
 
    if( l1 == STRING_LENGTH( bst2 ) )
    {
@@ -685,8 +685,8 @@ bool_t
 string_lt( obj_t bst1, obj_t bst2 ) {
    unsigned char *st1 = (unsigned char *)BSTRING_TO_STRING( bst1 );
    unsigned char *st2 = (unsigned char *)BSTRING_TO_STRING( bst2 );
-   int l1, l2;
-   int i, min;
+   BGL_LONG_T l1, l2;
+   BGL_LONG_T i, min;
 
    l1 = STRING_LENGTH( bst1 );
    l2 = STRING_LENGTH( bst2 );
@@ -709,11 +709,11 @@ bool_t
 string_le( obj_t bst1, obj_t bst2 ) {
    unsigned char *st1 = (unsigned char *)BSTRING_TO_STRING( bst1 );
    unsigned char *st2 = (unsigned char *)BSTRING_TO_STRING( bst2 );
-   int l1 = STRING_LENGTH( bst1 );
-   int l2 = STRING_LENGTH( bst2 );
+   BGL_LONG_T l1 = STRING_LENGTH( bst1 );
+   BGL_LONG_T l2 = STRING_LENGTH( bst2 );
 
    bool_t l1_le = (l1 <= l2);
-   int min = l1_le ? l1 : l2;
+   BGL_LONG_T min = l1_le ? l1 : l2;
 
    for(; min > 0; min--, st1++, st2++ )
       if (*st1 != *st2)
@@ -730,11 +730,11 @@ bool_t
 string_gt( obj_t bst1, obj_t bst2 ) {
    unsigned char *st1 = (unsigned char *)BSTRING_TO_STRING( bst1 );
    unsigned char *st2 = (unsigned char *)BSTRING_TO_STRING( bst2 );
-   int l1 = STRING_LENGTH( bst1 );
-   int l2 = STRING_LENGTH( bst2 );
+   BGL_LONG_T l1 = STRING_LENGTH( bst1 );
+   BGL_LONG_T l2 = STRING_LENGTH( bst2 );
 
    bool_t l1_gt = (l1 > l2);
-   int min = l1_gt ? l2 : l1;
+   BGL_LONG_T min = l1_gt ? l2 : l1;
 
    for(; min > 0; min--, st1++, st2++ )
       if (*st1 != *st2)
@@ -751,11 +751,11 @@ bool_t
 string_ge( obj_t bst1, obj_t bst2 ) {
    unsigned char *st1 = (unsigned char *)BSTRING_TO_STRING( bst1 );
    unsigned char *st2 = (unsigned char *)BSTRING_TO_STRING( bst2 );
-   int l1 = STRING_LENGTH( bst1 );
-   int l2 = STRING_LENGTH( bst2 );
+   BGL_LONG_T l1 = STRING_LENGTH( bst1 );
+   BGL_LONG_T l2 = STRING_LENGTH( bst2 );
 
    bool_t l1_ge = (l1 >= l2);
-   int min = l1_ge ? l2 : l1;
+   BGL_LONG_T min = l1_ge ? l2 : l1;
 
    for(; min > 0; min--, st1++, st2++ )
       if (*st1 != *st2)
@@ -772,11 +772,11 @@ bool_t
 string_cilt( obj_t bst1, obj_t bst2 ) {
    unsigned char *st1 = (unsigned char *)BSTRING_TO_STRING( bst1 );
    unsigned char *st2 = (unsigned char *)BSTRING_TO_STRING( bst2 );
-   int l1 = STRING_LENGTH( bst1 );
-   int l2 = STRING_LENGTH( bst2 );
+   BGL_LONG_T l1 = STRING_LENGTH( bst1 );
+   BGL_LONG_T l2 = STRING_LENGTH( bst2 );
 
    bool_t l1_lt = (l1 < l2);
-   int min = l1_lt ? l1 : l2;
+   BGL_LONG_T min = l1_lt ? l1 : l2;
    
    for(; min > 0; min--, st1++, st2++ ) {
       unsigned char c1 = tolower( *st1 );
@@ -796,11 +796,11 @@ bool_t
 string_cile( obj_t bst1, obj_t bst2 ) {
    unsigned char *st1 = (unsigned char *)BSTRING_TO_STRING( bst1 );
    unsigned char *st2 = (unsigned char *)BSTRING_TO_STRING( bst2 );
-   int l1 = STRING_LENGTH( bst1 );
-   int l2 = STRING_LENGTH( bst2 );
+   BGL_LONG_T l1 = STRING_LENGTH( bst1 );
+   BGL_LONG_T l2 = STRING_LENGTH( bst2 );
 
    bool_t l1_le = (l1 <= l2);
-   int min = l1_le ? l1 : l2;
+   BGL_LONG_T min = l1_le ? l1 : l2;
    
    for(; min > 0; min--, st1++, st2++ ) {
       unsigned char c1 = tolower( *st1 );
@@ -820,11 +820,11 @@ bool_t
 string_cigt( obj_t bst1, obj_t bst2 ) {
    unsigned char *st1 = (unsigned char *)BSTRING_TO_STRING( bst1 );
    unsigned char *st2 = (unsigned char *)BSTRING_TO_STRING( bst2 );
-   int l1 = STRING_LENGTH( bst1 );
-   int l2 = STRING_LENGTH( bst2 );
+   BGL_LONG_T l1 = STRING_LENGTH( bst1 );
+   BGL_LONG_T l2 = STRING_LENGTH( bst2 );
 
    bool_t l1_gt = (l1 > l2);
-   int min = l1_gt ? l2 : l1;
+   BGL_LONG_T min = l1_gt ? l2 : l1;
    
    for(; min > 0; min--, st1++, st2++ ) {
       unsigned char c1 = tolower( *st1 );
@@ -844,11 +844,11 @@ bool_t
 string_cige( obj_t bst1, obj_t bst2 ) {
    unsigned char *st1 = (unsigned char *)BSTRING_TO_STRING( bst1 );
    unsigned char *st2 = (unsigned char *)BSTRING_TO_STRING( bst2 );
-   int l1 = STRING_LENGTH( bst1 );
-   int l2 = STRING_LENGTH( bst2 );
+   BGL_LONG_T l1 = STRING_LENGTH( bst1 );
+   BGL_LONG_T l2 = STRING_LENGTH( bst2 );
 
    bool_t l1_ge = (l1 >= l2);
-   int min = l1_ge ? l2 : l1;
+   BGL_LONG_T min = l1_ge ? l2 : l1;
    
    for(; min > 0; min--, st1++, st2++ ) {
       unsigned char c1 = tolower( *st1 );
@@ -1092,10 +1092,10 @@ bgl_escape_scheme_string( unsigned char *src, BGL_LONG_T start, BGL_LONG_T end )
 /*    create_string_for_read ...                                       */
 /*---------------------------------------------------------------------*/
 obj_t
-create_string_for_read( obj_t bstring, int symbolp ) {
+create_string_for_read( obj_t bstring, BGL_LONG_T symbolp ) {
    unsigned char *dst;
    unsigned char *src = (unsigned char *)BSTRING_TO_STRING( bstring );
-   int  r, w, len = STRING_LENGTH( bstring );
+   BGL_LONG_T  r, w, len = STRING_LENGTH( bstring );
    obj_t res;
    char esc = 0;
    const obj_t env = BGL_CURRENT_DYNAMIC_ENV();
@@ -1224,7 +1224,7 @@ bgl_string_shrink( obj_t s, BGL_LONG_T nlen ) {
 #if !BGL_HAVE_STRTOLL
 BGL_RUNTIME_DEF
 BGL_LONGLONG_T
-bgl_strtoll( const char *ptr, char **endptr, int base ) {
+bgl_strtoll( const char *ptr, char **endptr, BGL_LONG_T base ) {
    if( base != 10 )
       C_FAILURE( "cstring", "cannot convert from base other than 10", BINT( base ) );
    return (BGL_LONGLONG_T)strtod( ptr, endptr );
@@ -1234,7 +1234,7 @@ bgl_strtoll( const char *ptr, char **endptr, int base ) {
 #if !BGL_HAVE_STRTOULL
 BGL_RUNTIME_DEF
 BGL_LONGLONG_T
-bgl_strtoull( const char *ptr, char **endptr, int base ) {
+bgl_strtoull( const char *ptr, char **endptr, BGL_LONG_T base ) {
   if( base != 10 )
     C_FAILURE( "cstring", "cannot convert from base other than 10", BINT( base ) );
   return (BGL_LONGLONG_T)strtod( ptr, endptr );

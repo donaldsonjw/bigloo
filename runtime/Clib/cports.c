@@ -158,7 +158,7 @@ static int posix_close( FILE *f ) {
 }
 
 static ssize_t posix_read( FILE *f, void *buf, size_t count ) {
-   int n = fread( buf, 1, count, f );
+   BGL_LONG_T n = fread( buf, 1, count, f );
 
    if( n != 0 )
       return n;
@@ -174,9 +174,9 @@ static ssize_t posix_read( FILE *f, void *buf, size_t count ) {
 /*    BSD compatibility kit                                            */
 /*---------------------------------------------------------------------*/
 #if( BGL_HAVE_SENDFILE && ( BGL_SENDFILE_BRAND == BGL_SENDFILE_BSD ) )
-static int bsd_sendfile(int out_fd, int in_fd, off_t *offset, size_t count) {
+static BGL_LONG_T bsd_sendfile(int out_fd, int in_fd, off_t *offset, size_t count) {
    off_t sz = count;
-   int n = sendfile( in_fd, out_fd, offset ? *offset : 0, &sz, 0, 0 );
+   BGL_LONT_T n = sendfile( in_fd, out_fd, offset ? *offset : 0, &sz, 0, 0 );
 
    return n ? n : sz;
 }
@@ -210,8 +210,8 @@ BGL_RUNTIME_DEF BGL_LONG_T default_io_bufsiz;
 /*    External definitions.                                            */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DECL obj_t bgl_make_input_port( obj_t, FILE *, obj_t, obj_t );
-extern obj_t make_string( int, unsigned char );
-extern obj_t make_string_sans_fill( int );
+extern obj_t make_string( BGL_LONG_T, unsigned char );
+extern obj_t make_string_sans_fill( BGL_LONG_T );
 
 /*---------------------------------------------------------------------*/
 /*    Prototypes                                                       */
@@ -666,8 +666,8 @@ sysread_with_timeout( obj_t port, char *ptr, BGL_LONG_T num ) {
 static BGL_LONG_T
 strseek( void *port, BGL_LONG_T offset, int whence ) {
    obj_t buf = OUTPUT_PORT( port ).buf;
-   int len = STRING_LENGTH( buf );
-   int cnt = BGL_OUTPUT_PORT_CNT( port );
+   BGL_LONG_T len = STRING_LENGTH( buf );
+   BGL_LONG_T cnt = BGL_OUTPUT_PORT_CNT( port );
 
    switch( whence ) {
       case SEEK_CUR:
@@ -757,7 +757,7 @@ output_flush( obj_t port, char *str, size_t slen, int is_read_flush, bool_t err 
       return BFALSE;
    } else {
       obj_t buf = OUTPUT_PORT( port ).buf;
-      int len = STRING_LENGTH( buf );
+      BGL_LONG_T len = STRING_LENGTH( buf );
       size_t cnt = BGL_OUTPUT_PORT_CNT( port );
       BGL_LONG_T use = len - cnt;
       obj_t fhook = BGL_OUTPUT_PORT_FHOOK( port );
@@ -1172,7 +1172,7 @@ BGL_RUNTIME_DEF obj_t
 get_output_string( obj_t port ) {
    if( PORT( port ).kindof == KINDOF_STRING ) {
       obj_t buf = OUTPUT_PORT( port ).buf;
-      int cnt = BGL_OUTPUT_PORT_CNT( port );
+      BGL_LONG_T cnt = BGL_OUTPUT_PORT_CNT( port );
 	 
       return string_to_bstring_len( BSTRING_TO_STRING( buf ),
 				    STRING_LENGTH( buf ) - cnt );
@@ -1224,7 +1224,7 @@ bgl_close_output_port( obj_t port ) {
 
       if( PORT( port ).kindof == KINDOF_STRING ) {
 	 obj_t buf = OUTPUT_PORT( port ).buf;
-         int cnt = BGL_OUTPUT_PORT_CNT( port );
+         BGL_LONG_T cnt = BGL_OUTPUT_PORT_CNT( port );
 	 res = bgl_string_shrink( buf, STRING_LENGTH( buf ) - cnt );
       } else {
 	 if( OUTPUT_PORT( port ).err == 0 ) {
@@ -2064,7 +2064,7 @@ reset_eof( obj_t port ) {
 /*---------------------------------------------------------------------*/
 static bool_t
 pipe_name_p( char *name ) {
-   int length = strlen(name);
+   BGL_LONG_T length = strlen(name);
    return ( length > 2 && (name[ 0 ] == '|') && (name[ 1 ] == ' ') ) 
           || ( length > 5 && strncmp(name, "pipe:", 5) == 0 );
 }
@@ -2078,7 +2078,7 @@ pipe_name_p( char *name ) {
 static char *
 pipe_name( char *pipe_name ) {
   /* if | is used the offset is 1, otherwise, if pipe: is used, it is 5 */ 
-   int offset = (pipe_name[0] == '|') ? 1 : 5;
+   BGL_LONG_T offset = (pipe_name[0] == '|') ? 1 : 5;
    return (pipe_name + offset);
 }
 
@@ -2155,7 +2155,7 @@ bgl_directory_to_list( char *name ) {
 /*    bgl_directory_to_path_list ...                                   */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_directory_to_path_list( char *name, int len, char sep ) {
+bgl_directory_to_path_list( char *name, BGL_LONG_T len, char sep ) {
    obj_t res = BNIL;
 #if !defined(_MSC_VER) && !defined(_MINGW_VER)
    DIR *dir;
@@ -2236,7 +2236,7 @@ bgl_file_to_string( char *path ) {
 			   string_to_bstring( path ) );
       } else {
 	 obj_t res = make_string_sans_fill( sin.st_size );
-	 int n = read( fd, BSTRING_TO_STRING( res ), sin.st_size );
+	 BGL_LONG_T n = read( fd, BSTRING_TO_STRING( res ), sin.st_size );
 
 	 close( fd );
 	 
@@ -2588,7 +2588,7 @@ obj_t
 bgl_sendfile( obj_t name, obj_t op, BGL_LONG_T sz, BGL_LONG_T offset ) {
    struct stat sin;
    int fd = PORT_FD( op );
-   int n;
+   BGL_LONG_T n;
    int in;
 
    if( PORT( op ).kindof == KINDOF_CLOSED )
@@ -2725,7 +2725,7 @@ static ssize_t
 procwrite( obj_t port, void *str, size_t sz ) {
    obj_t proc = VECTOR_REF( PORT( port ).userdata, 0 );
    obj_t buf = VECTOR_REF( PORT( port ).userdata, 1 );
-   int len = STRING_LENGTH( buf );
+   BGL_LONG_T len = STRING_LENGTH( buf );
 
    if( sz > len ) {
       buf = make_string_sans_fill( sz + 1 );
@@ -2774,9 +2774,9 @@ procclose( obj_t port ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 bgl_password( char *prompt ) {
-   int max_len = 80;
+   BGL_LONG_T max_len = 80;
    char *s = alloca( max_len + 1 );
-   int i = 0;
+   BGL_LONG_T i = 0;
    int c;
    FILE *tty = fopen( "/dev/tty", "w" );
    FILE *out = tty ? tty : stderr;

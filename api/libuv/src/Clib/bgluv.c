@@ -34,7 +34,7 @@ typedef BgL_uvworkz00_bglt bgl_uv_work_t;
 extern obj_t bgl_uv_mutex;
 extern obj_t bgl_make_input_port( obj_t, FILE *, obj_t, obj_t );
 extern obj_t bgl_uv_new_file( int, obj_t );
-extern obj_t create_vector( int );
+extern obj_t create_vector( BGL_LONG_T );
 
 /*---------------------------------------------------------------------*/
 /*    obj_t                                                            */

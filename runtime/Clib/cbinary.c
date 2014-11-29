@@ -50,7 +50,7 @@
 extern obj_t obj_to_string( obj_t );
 extern obj_t string_to_obj( obj_t, obj_t );
 extern obj_t c_constant_string_to_string( char * );
-extern obj_t make_string_sans_fill( int );
+extern obj_t make_string_sans_fill( BGL_LONG_T );
 extern obj_t bgl_string_shrink();
 
 /*---------------------------------------------------------------------*/
@@ -150,12 +150,12 @@ open_input_binary_file( obj_t name ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    int                                                              */
+/*    BGL_LONG_T                                                              */
 /*    bgl_output_string ...                                            */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF int
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_output_string( obj_t port, obj_t s ) {
-   return (int)fwrite( BSTRING_TO_STRING( s ),
+   return (BGL_LONG_T)fwrite( BSTRING_TO_STRING( s ),
 		       STRING_LENGTH( s ),
 		       1,
 		       BINARY_PORT( port ).file );
@@ -166,7 +166,7 @@ bgl_output_string( obj_t port, obj_t s ) {
 /*    bgl_input_string ...                                             */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_input_string( obj_t port, int len ) {
+bgl_input_string( obj_t port, BGL_LONG_T len ) {
    obj_t s = make_string_sans_fill( len );
    char *cs = BSTRING_TO_STRING( s );
    size_t sz = fread( cs, 1, (size_t)len, BINARY_PORT( port ).file );
@@ -181,12 +181,12 @@ bgl_input_string( obj_t port, int len ) {
 /*    obj_t                                                            */
 /*    bgl_input_fill_string ...                                        */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF int
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_input_fill_string( obj_t port, obj_t s ) {
-   int len = STRING_LENGTH( s );
+   BGL_LONG_T len = STRING_LENGTH( s );
    char *cs = BSTRING_TO_STRING( s );
 
-   return (int)fread( cs, 1, len, BINARY_PORT( port ).file );
+   return (BGL_LONG_T)fread( cs, 1, len, BINARY_PORT( port ).file );
 }
 
 /*---------------------------------------------------------------------*/

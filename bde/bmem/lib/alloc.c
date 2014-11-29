@@ -751,34 +751,34 @@ obj_t ident proto { \
 }
  
 /* string */
-WRAPPER( string_to_bstring_len, STRING_TYPE_NUM, (char *s, int l), (s ,l) )
+WRAPPER( string_to_bstring_len, STRING_TYPE_NUM, (char *s, BGL_LONG_T l), (s ,l) )
 WRAPPER( string_to_bstring, STRING_TYPE_NUM, (char *s), (s) )
-WRAPPER( make_string, STRING_TYPE_NUM, (int l, char c), (l,c)  )
-WRAPPER( make_string_sans_fill, STRING_TYPE_NUM, (int l), (l) )
+WRAPPER( make_string, STRING_TYPE_NUM, (BGL_LONG_T l, char c), (l,c)  )
+WRAPPER( make_string_sans_fill, STRING_TYPE_NUM, (BGL_LONG_T l), (l) )
 WRAPPER( string_append, STRING_TYPE_NUM, (void *s1, void *s2), (s1, s2) )
 WRAPPER( string_append_3, STRING_TYPE_NUM, (void *s1, void *s2, void *s3), (s1, s2, s3) )
-WRAPPER( c_substring, STRING_TYPE_NUM, (void *s, int l1, int l2), (s, l1, l2) )
-WRAPPER( bgl_escape_C_string, STRING_TYPE_NUM, (unsigned char *s, long l1, long l2), (s, l1, l2) )
-WRAPPER( bgl_escape_scheme_string, STRING_TYPE_NUM, (unsigned char *s, long l1, long l2), (s, l1, l2) )
-WRAPPER( create_string_for_read, STRING_TYPE_NUM, (void *o, int s), (o, s) )
+WRAPPER( c_substring, STRING_TYPE_NUM, (void *s, BGL_LONG_T l1, BGL_LONG_T l2), (s, l1, l2) )
+WRAPPER( bgl_escape_C_string, STRING_TYPE_NUM, (unsigned char *s, BGL_LONG_T l1, BGL_LONG_T l2), (s, l1, l2) )
+WRAPPER( bgl_escape_scheme_string, STRING_TYPE_NUM, (unsigned char *s, BGL_LONG_T l1, BGL_LONG_T l2), (s, l1, l2) )
+WRAPPER( create_string_for_read, STRING_TYPE_NUM, (void *o, BGL_LONG_T s), (o, s) )
 WRAPPER( string_to_keyword, KEYWORD_TYPE_NUM, (char *s), (s) )
 WRAPPER( bstring_to_keyword, KEYWORD_TYPE_NUM, (void *s), (s) )
 
 /* vector */
-WRAPPER( create_vector, VECTOR_TYPE_NUM, (int len), (len) )
-WRAPPER( make_vector, VECTOR_TYPE_NUM, (int len, void *init), (len, init) )
-WRAPPER( make_vector_uncollectable, VECTOR_TYPE_NUM, (int len, void *init), (len, init) )
+WRAPPER( create_vector, VECTOR_TYPE_NUM, (BGL_LONG_T len), (len) )
+WRAPPER( make_vector, VECTOR_TYPE_NUM, (BGL_LONG_T len, void *init), (len, init) )
+WRAPPER( make_vector_uncollectable, VECTOR_TYPE_NUM, (BGL_LONG_T len, void *init), (len, init) )
 
 /* create_vector_uncollectable is only */ 
 /* used to allocate class objects.     */
-WRAPPER( create_vector_uncollectable, CLASS_TYPE_NUM, (int len), (len) )
+WRAPPER( create_vector_uncollectable, CLASS_TYPE_NUM, (BGL_LONG_T len), (len) )
 
 /* procedure */
-WRAPPER( make_fx_procedure, PROCEDURE_TYPE_NUM, (obj_t (*e)(), int a, int s), ((void *(*)())e, a, s) )
-WRAPPER( make_va_procedure, PROCEDURE_TYPE_NUM, (obj_t (*e)(), int a, int s), ((void *(*)())e, a, s) )
+WRAPPER( make_fx_procedure, PROCEDURE_TYPE_NUM, (obj_t (*e)(), int a, BGL_LONG_T s), ((void *(*)())e, a, s) )
+WRAPPER( make_va_procedure, PROCEDURE_TYPE_NUM, (obj_t (*e)(), int a, BGL_LONG_T s), ((void *(*)())e, a, s) )
 
 /* output port */
-WRAPPER( bgl_make_output_port, OUTPUT_PORT_TYPE_NUM, (obj_t n, bgl_stream_t d, int y, obj_t t, obj_t b, ssize_t (*w)(), long (*s)(), int (*c)()), (n, d, y, t, b, w, s, c) )
+WRAPPER( bgl_make_output_port, OUTPUT_PORT_TYPE_NUM, (obj_t n, bgl_stream_t d, int y, obj_t t, obj_t b, ssize_t (*w)(), BGL_LONG_T (*s)(), int (*c)()), (n, d, y, t, b, w, s, c) )
 WRAPPER( bgl_open_output_string, OUTPUT_PORT_TYPE_NUM, (obj_t o), (o) )
 WRAPPER2( bgl_output_port_timeout_set, PORT_TIMEOUT_TYPE_NUM, -1, (void *o, long t), (o, t) )
 
@@ -795,7 +795,7 @@ WRAPPER( bgl_reopen_input_c_string, INPUT_PORT_TYPE_NUM, (void *o, char *s), (o,
 WRAPPER2( bgl_input_port_timeout_set, PORT_TIMEOUT_TYPE_NUM, -1, (void *o, long t), (o, t) )
 
 /* struct */
-WRAPPER( create_struct, STRUCT_TYPE_NUM, (obj_t k, int l), (k, l) )
+WRAPPER( create_struct, STRUCT_TYPE_NUM, (obj_t k, BGL_LONG_T l), (k, l) )
 WRAPPER( make_struct, STRUCT_TYPE_NUM, (obj_t k, int l, obj_t i), (k, l, i) )
 
 /* socket */

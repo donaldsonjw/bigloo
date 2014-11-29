@@ -847,7 +847,7 @@ typedef union scmobj {
    /* srfi4 homovectors */
    struct bgl_hvector {
       header_t header;
-      unsigned int length;
+      BGL_ULONG_T length;
    } hvector_t;
    
    /* weak pointers */
@@ -1458,12 +1458,12 @@ typedef struct BgL_objectz00_bgl {
 #define VECTOR_SIZE (sizeof( struct vector ))
 
 #define VECTOR_TAG_NB_BIT 8
-#define VECTOR_TAG_SIZE ((unsigned int)(1<<VECTOR_TAG_NB_BIT))
+#define VECTOR_TAG_SIZE ((BGL_ULONG_T)(1<<VECTOR_TAG_NB_BIT))
 
-#define VECTOR_LENGTH_SHIFT ((sizeof( int ) << 3) - VECTOR_TAG_NB_BIT)
+#define VECTOR_LENGTH_SHIFT ((sizeof( BGL_ULONG_T ) << 3) - VECTOR_TAG_NB_BIT)
 
 #define VECTOR_LENGTH_MASK \
-   (~(unsigned int)((VECTOR_TAG_SIZE -1) << VECTOR_LENGTH_SHIFT))
+   (~(BGL_ULONG_T)((VECTOR_TAG_SIZE -1) << VECTOR_LENGTH_SHIFT))
 
 #define FREE_VECTOR_UNCOLLECTABLE( v ) GC_FREE( CVECTOR( v ) )
    
@@ -1475,7 +1475,7 @@ typedef struct BgL_objectz00_bgl {
 /*---------------------------------------------------------------------*/
 #define DEFINE_TVECTOR_START( aux, len, itype ) \
    static struct { __CNST_ALIGN header_t header; \
-		   int length; \
+		   BGL_ULONG_T length; \
 		   obj_t descr; \
 		   itype items[ len ]; } \
       aux = { __CNST_FILLER, MAKE_HEADER( TVECTOR_TYPE, 0 ), len, 0L,
@@ -1530,16 +1530,16 @@ typedef struct BgL_objectz00_bgl {
      (TVECTOR_REF( it, tv, o ) = (v), BUNSPEC)
 
 #define VECTOR_LENGTH( v ) \
-   ((unsigned int)VECTOR( v ).length & VECTOR_LENGTH_MASK)
+   ((BGL_ULONG_T)VECTOR( v ).length & VECTOR_LENGTH_MASK)
 
 #define VECTOR_TAG_SET( v, tag ) \
     ( VECTOR( v ).length = \
-     ((unsigned int)VECTOR_LENGTH( v ) | \
-       (((unsigned int) tag) << VECTOR_LENGTH_SHIFT)), \
+     ((BGL_ULONG_T)VECTOR_LENGTH( v ) | \
+       (((BGL_ULONG_T) tag) << VECTOR_LENGTH_SHIFT)), \
        BUNSPEC )
 
 #define VECTOR_TAG( v ) \
-   ( ((unsigned int)(VECTOR( v ).length) & ~VECTOR_LENGTH_MASK) >> VECTOR_LENGTH_SHIFT )
+   ( ((BGL_ULONG_T)(VECTOR( v ).length) & ~VECTOR_LENGTH_MASK) >> VECTOR_LENGTH_SHIFT )
 
 /*---------------------------------------------------------------------*/
 /*    Structures                                                       */
@@ -1679,17 +1679,17 @@ typedef struct BgL_objectz00_bgl {
 /* then * we only want to set the least significant bytes of the int.  */
 #define __FLOAT_TO_INT_BITS( ff ) \
   float fff = ff; \
-  int result = 0; \
-  int offset = sizeof( int ) - sizeof( float ); \
+  BGL_LONG_T result = 0; \
+  BGL_LONG_T offset = sizeof( BGL_LONG_T ) - sizeof( float ); \
   memcpy( ((char*)&result) + offset, &fff, sizeof( float ) ); \
   result;
 
 /* If ints are bigger than floats (which can happen on 64bit machines) */
 /* then we only want to set the least significant bytes of the int.    */
 #define __INT_BITS_TO_FLOAT( ii ) \
-  int iii = ii; \
+  BGL_LONG_T iii = ii; \
   float result; \
-  int offset = sizeof( int ) - sizeof( float ); \
+  BGL_LONG_T offset = sizeof( int ) - sizeof( float ); \
   memcpy( &result, ((char*)&iii) + offset, sizeof( float ) ); \
   result;
 
@@ -1701,8 +1701,8 @@ typedef struct BgL_objectz00_bgl {
 #else
 BGL_RUNTIME_DECL BGL_LONGLONG_T DOUBLE_TO_LLONG_BITS( double );
 BGL_RUNTIME_DECL double LLONG_BITS_TO_DOUBLE( BGL_LONGLONG_T );
-BGL_RUNTIME_DECL int FLOAT_TO_INT_BITS( float );
-BGL_RUNTIME_DECL float INT_BITS_TO_FLOAT( int );
+BGL_RUNTIME_DECL BGL_LONG_T FLOAT_TO_INT_BITS( float );
+BGL_RUNTIME_DECL float INT_BITS_TO_FLOAT( BGL_LONG_T );
 #endif
 
 #define RANDOMFL() ((double)rand()/RAND_MAX)
@@ -1964,7 +1964,7 @@ extern bool_t BXNEGATIVE( obj_t );
 #define HVECTOR( o ) CREF( o )->hvector_t
    
 #define STVECTOR( o, type ) \
-   ((struct { header_t header; int length; type obj0; } *)(CREF( o )))
+   ((struct { header_t header; BGL_LONG_T length; type obj0; } *)(CREF( o )))
    
 #define BGL_HVECTOR_LENGTH( v ) (HVECTOR( v ).length)
 
@@ -2038,7 +2038,7 @@ extern bool_t BXNEGATIVE( obj_t );
 #define BGL_F64_U8VREF( v, i ) BGL_XXX_U8VREF( v, i, double )
 #define BGL_F64_U8VSET( v, i, o ) BGL_XXX_U8VSET( v, i, o, double )
    
-BGL_RUNTIME_DECL obj_t alloc_hvector( int, int, int );
+BGL_RUNTIME_DECL obj_t alloc_hvector( BGL_LONG_T, BGL_LONG_T, BGL_LONG_T );
    
 #define BGL_ALLOC_S8VECTOR( len ) \
    alloc_hvector( len, sizeof( int8_t ), S8VECTOR_TYPE )
@@ -3372,9 +3372,9 @@ BGL_RUNTIME_DECL void bgl_init_module_debug_end( char * );
 BGL_RUNTIME_DECL obj_t the_failure( obj_t, obj_t, obj_t );
 BGL_RUNTIME_DECL obj_t bgl_system_failure( int, obj_t, obj_t, obj_t );
 
-BGL_RUNTIME_DECL obj_t bgl_make_procedure( obj_t, int, int );
-BGL_RUNTIME_DECL obj_t make_fx_procedure( function_t, int, int );
-BGL_RUNTIME_DECL obj_t make_va_procedure( function_t, int, int );
+BGL_RUNTIME_DECL obj_t bgl_make_procedure( obj_t, int, BGL_LONG_T);
+BGL_RUNTIME_DECL obj_t make_fx_procedure( function_t, int, BGL_LONG_T );
+BGL_RUNTIME_DECL obj_t make_va_procedure( function_t, int, BGL_LONG_T );
 BGL_RUNTIME_DECL obj_t bgl_time( obj_t );
    
 BGL_RUNTIME_DECL obj_t bgl_procedure_entry_to_string( obj_t ); 
@@ -3415,16 +3415,16 @@ BGL_RUNTIME_DECL obj_t bgl_open_output_procedure( obj_t, obj_t, obj_t, obj_t );
 BGL_RUNTIME_DECL BGL_LONG_T bgl_output_port_filepos( obj_t );
 BGL_RUNTIME_DECL obj_t bgl_output_port_seek( obj_t, BGL_LONG_T );
    
-BGL_RUNTIME_DECL obj_t create_vector( int );
+BGL_RUNTIME_DECL obj_t create_vector( BGL_LONG_T );
 
 BGL_RUNTIME_DECL obj_t make_string_sans_fill();
 BGL_RUNTIME_DECL obj_t string_to_bstring( char * );
-BGL_RUNTIME_DECL obj_t string_to_bstring_len( char *, int );
+BGL_RUNTIME_DECL obj_t string_to_bstring_len( char *, BGL_LONG_T );
 BGL_RUNTIME_DECL obj_t close_init_string();
 BGL_RUNTIME_DECL obj_t bgl_string_shrink( obj_t, BGL_LONG_T );
 
 BGL_RUNTIME_DECL obj_t ucs2_string_to_utf8_string( obj_t );
-BGL_RUNTIME_DECL obj_t make_ucs2_string( int, ucs2_t );
+BGL_RUNTIME_DECL obj_t make_ucs2_string( BGL_LONG_T, ucs2_t );
    
 BGL_RUNTIME_DECL obj_t bgl_find_runtime_type( obj_t );
    
@@ -3495,8 +3495,8 @@ BGL_RUNTIME_DECL obj_t bgl_mmap_nommap_set( obj_t, BGL_LONG_T, unsigned char );
 #define STRTOD( x ) strtod( x, 0L )
    
 #if !BGL_HAVE_STRTOLL
-BGL_RUNTIME_DECL BGL_LONGLONG_T bgl_strtoll( const char *, char **, int );
-BGL_RUNTIME_DECL BGL_LONGLONG_T bgl_strtoull( const char *, char **, int );
+BGL_RUNTIME_DECL BGL_LONGLONG_T bgl_strtoll( const char *, char **, BGL_LONG_T );
+BGL_RUNTIME_DECL BGL_LONGLONG_T bgl_strtoull( const char *, char **, BGL_LONG_T );
 #endif
 
 #if( BGL_GC_HAVE_BLOCKING )

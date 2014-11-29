@@ -15,8 +15,8 @@
 /*    alloc_hvector ...                                                */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-alloc_hvector( int len, int isize, int type ) {
-   int byte_size = HVECTOR_SIZE + ( len * isize );
+alloc_hvector( BGL_LONG_T len, BGL_LONG_T isize, BGL_LONG_T type ) {
+   BGL_LONG_T byte_size = HVECTOR_SIZE + ( len * isize );
 #if( defined( GC_THREADS ) && defined( THREAD_LOCAL_ALLOC ) )
    obj_t vector = GC_THREAD_MALLOC_ATOMIC( byte_size );
 #else

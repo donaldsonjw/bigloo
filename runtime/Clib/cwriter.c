@@ -358,10 +358,10 @@ bgl_display_ucs2( obj_t o, obj_t op ) {
 /*---------------------------------------------------------------------*/
 obj_t
 bgl_display_ucs2string( obj_t o, obj_t op ) {
-   int len  = UCS2_STRING_LENGTH( o );
+   BGL_LONG_T len  = UCS2_STRING_LENGTH( o );
    ucs2_t *ucs2 = BUCS2_STRING_TO_UCS2_STRING( o );
    obj_t mutex = OUTPUT_PORT( op ).mutex;
-   int i;
+   BGL_LONG_T i;
    
    BGL_MUTEX_LOCK( mutex );
    

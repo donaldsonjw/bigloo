@@ -82,9 +82,9 @@ get_hash_number( char *string ) {
 /*    bgl_get_hash_number_len ...                                      */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF unsigned char
-bgl_get_hash_number_len( char *string, int start, int len ) {
+bgl_get_hash_number_len( char *string, BGL_LONG_T start, BGL_LONG_T len ) {
    unsigned char hash = 0;
-   int i;
+   BGL_LONG_T i;
 
    for( i = start; i < len; i++ )
       hash = hash_random_table[ hash ^ (unsigned char)(*string++) ];
@@ -125,7 +125,7 @@ get_hash_number_from_int( BGL_ULONG_T i ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    BGL_LONG_T                                                             */
+/*    BGL_LONG_T                                                       */
 /*    get_hash_number_from_pointer ...                                 */
 /*---------------------------------------------------------------------*/
 BGL_LONG_T
@@ -134,7 +134,7 @@ get_hash_number_from_pointer( void * i ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    BGL_LONG_T                                                             */
+/*    BGL_LONG_T                                                       */
 /*    get_hash_power_number_from_int ...                               */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF BGL_LONG_T
@@ -150,16 +150,16 @@ get_hash_power_number_from_int( BGL_ULONG_T i, BGL_ULONG_T power ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    int                                                              */
+/*    BGL_LONG_T                                                       */
 /*    get_hash_power_number_from_pointer ...                           */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF int
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_pointer_hashnumber( void * i, BGL_ULONG_T power ) {
    return get_hash_power_number_from_int( (BGL_ULONG_T)i, power );
 }
 
 /*---------------------------------------------------------------------*/
-/*    BGL_LONG_T                                                             */
+/*    BGL_LONG_T                                                       */
 /*    bgl_string_hash_number ...                                       */
 /*    -------------------------------------------------------------    */
 /*    New setting has been provided by Joseph Donaldson on March 2011. */
@@ -180,8 +180,8 @@ bgl_string_hash_number( char *string ) {
 /*    bgl_string_hash_number ...                                       */
 /*---------------------------------------------------------------------*/
 BGL_LONG_T
-bgl_string_hash( char *string, int start, int len ) {
-   int i;
+bgl_string_hash( char *string, BGL_LONG_T start, BGL_LONG_T len ) {
+   BGL_LONG_T i;
    BGL_LONG_T result = 5381;
 
    for( i = start; i < len; i++ ) {

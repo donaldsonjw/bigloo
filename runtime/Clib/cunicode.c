@@ -25,14 +25,14 @@ extern obj_t bgl_real_to_string( double );
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-make_ucs2_string( int len, ucs2_t c ) {
+make_ucs2_string( BGL_LONG_T len, ucs2_t c ) {
    obj_t   string;
    ucs2_t *cstring;
 
    if( len < 0 ) {
       C_FAILURE( "make-ucs2-string", "Illegal string size", BINT( len ) );
    } else {
-      int i;
+      BGL_LONG_T i;
       
       string  = GC_MALLOC_ATOMIC( UCS2_STRING_SIZE + (len * sizeof(ucs2_t)) );
       cstring = (&(string->ucs2_string_t.char0));
@@ -53,7 +53,7 @@ make_ucs2_string( int len, ucs2_t c ) {
 /*    ucs2cpy ...                                                      */
 /*---------------------------------------------------------------------*/
 static void
-ucs2cpy( ucs2_t *u1, ucs2_t *u2, int len ) {
+ucs2cpy( ucs2_t *u1, ucs2_t *u2, BGL_LONG_T len ) {
    for( len--; len >= 0; len-- )
       u1[ len ] = u2[ len ];
 }
@@ -63,7 +63,7 @@ ucs2cpy( ucs2_t *u1, ucs2_t *u2, int len ) {
 /*---------------------------------------------------------------------*/
 obj_t
 ucs2_string_append( obj_t s1, obj_t s2 ) {
-   int    l1, l2;
+   BGL_LONG_T    l1, l2;
    obj_t   ucs2_string;
    
    l1 = UCS2_STRING( s1 ).length;
@@ -90,8 +90,8 @@ ucs2_string_append( obj_t s1, obj_t s2 ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF
 obj_t
-c_subucs2_string( obj_t src_ucs2_string, int min, int max ) {
-   int  len;
+c_subucs2_string( obj_t src_ucs2_string, BGL_LONG_T min, BGL_LONG_T max ) {
+   BGL_LONG_T  len;
    obj_t dst_ucs2_string;
    
    len = max - min;
@@ -116,10 +116,10 @@ c_subucs2_string( obj_t src_ucs2_string, int min, int max ) {
 BGL_RUNTIME_DEF
 obj_t
 c_ucs2_string_copy( obj_t src ) {
-   int    len = UCS2_STRING_LENGTH( src );
+   BGL_LONG_T    len = UCS2_STRING_LENGTH( src );
    obj_t   string;
    ucs2_t *cstring, *cstr;
-   int    i;
+   BGL_LONG_T    i;
 
    string  = GC_MALLOC_ATOMIC( UCS2_STRING_SIZE + (len * sizeof( ucs2_t ) ) );
    cstring = (&(string->ucs2_string_t.char0));
@@ -141,10 +141,10 @@ c_ucs2_string_copy( obj_t src ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 string_to_ucs2_string( char *c ) {
-   int     len = (int)strlen( c );
+   BGL_LONG_T     len = (int)strlen( c );
    obj_t   string;
    ucs2_t *cstring;
-   int     i;
+   BGL_LONG_T     i;
 
    string  = GC_MALLOC_ATOMIC( UCS2_STRING_SIZE + (len * sizeof( ucs2_t ) ) );
    cstring = (&(string->ucs2_string_t.char0));
@@ -165,10 +165,10 @@ string_to_ucs2_string( char *c ) {
 /*---------------------------------------------------------------------*/
 obj_t
 bstring_to_ucs2_string( obj_t src ) {
-   int    len = STRING_LENGTH( src );
+   BGL_LONG_T    len = STRING_LENGTH( src );
    obj_t   string;
    ucs2_t *cstring;
-   int    i;
+   BGL_LONG_T    i;
    char   *c = (char *)(&(src->string_t.char0));
 
    string  = GC_MALLOC_ATOMIC( UCS2_STRING_SIZE + (len * sizeof( ucs2_t ) ) );
@@ -207,7 +207,7 @@ real_to_ucs2_string( double x ) {
 BGL_RUNTIME_DEF
 bool_t
 ucs2_strcmp( obj_t o1, obj_t o2 ) {
-   int l1, l2;
+   BGL_LONG_T l1, l2;
    
    l1 = UCS2_STRING_LENGTH( o1 );
    l2 = UCS2_STRING_LENGTH( o2 );
@@ -234,7 +234,7 @@ ucs2_strcmp( obj_t o1, obj_t o2 ) {
 BGL_RUNTIME_DEF
 bool_t        
 ucs2_strcicmp( obj_t bst1, obj_t bst2 ) {
-   int l1, l2;
+   BGL_LONG_T l1, l2;
 
    l1 = UCS2_STRING_LENGTH( bst1 );
    l2 = UCS2_STRING_LENGTH( bst2 );
@@ -242,7 +242,7 @@ ucs2_strcicmp( obj_t bst1, obj_t bst2 ) {
    if( l1 == l2 ) {
       ucs2_t *st1 = BUCS2_STRING_TO_UCS2_STRING( bst1 );
       ucs2_t *st2 = BUCS2_STRING_TO_UCS2_STRING( bst2 );
-      int i;
+      BGL_LONG_T i;
    
       for( i = 0;
 	   ucs2_tolower( *st1 ) == ucs2_tolower( *st2 );
@@ -263,8 +263,8 @@ ucs2_string_lt( obj_t bst1, obj_t bst2 )
 {
    ucs2_t *st1 = BUCS2_STRING_TO_UCS2_STRING( bst1 );
    ucs2_t *st2 = BUCS2_STRING_TO_UCS2_STRING( bst2 );
-   int l1, l2;
-   int i, min;
+   BGL_LONG_T l1, l2;
+   BGL_LONG_T i, min;
 
    l1 = UCS2_STRING_LENGTH( bst1 );
    l2 = UCS2_STRING_LENGTH( bst2 );
@@ -287,8 +287,8 @@ bool_t
 ucs2_string_le( obj_t bst1, obj_t bst2 ) {
    ucs2_t *st1 = BUCS2_STRING_TO_UCS2_STRING( bst1 );
    ucs2_t *st2 = BUCS2_STRING_TO_UCS2_STRING( bst2 );
-   int l1, l2;
-   int i, min;
+   BGL_LONG_T l1, l2;
+   BGL_LONG_T i, min;
 
    l1 = UCS2_STRING_LENGTH( bst1 );
    l2 = UCS2_STRING_LENGTH( bst2 );
@@ -311,8 +311,8 @@ bool_t
 ucs2_string_gt( obj_t bst1, obj_t bst2 ) {
    ucs2_t *st1 = BUCS2_STRING_TO_UCS2_STRING( bst1 );
    ucs2_t *st2 = BUCS2_STRING_TO_UCS2_STRING( bst2 );
-   int l1, l2;
-   int i, min;
+   BGL_LONG_T l1, l2;
+   BGL_LONG_T i, min;
 
    l1 = UCS2_STRING_LENGTH( bst1 );
    l2 = UCS2_STRING_LENGTH( bst2 );
@@ -335,8 +335,8 @@ bool_t
 ucs2_string_ge( obj_t bst1, obj_t bst2 ) {
    ucs2_t *st1 = BUCS2_STRING_TO_UCS2_STRING( bst1 );
    ucs2_t *st2 = BUCS2_STRING_TO_UCS2_STRING( bst2 );
-   int l1, l2;
-   int i, min;
+   BGL_LONG_T l1, l2;
+   BGL_LONG_T i, min;
 
    l1 = UCS2_STRING_LENGTH( bst1 );
    l2 = UCS2_STRING_LENGTH( bst2 );
@@ -359,8 +359,8 @@ bool_t
 ucs2_string_cilt( obj_t bst1, obj_t bst2 ) {
    ucs2_t *st1 = BUCS2_STRING_TO_UCS2_STRING( bst1 );
    ucs2_t *st2 = BUCS2_STRING_TO_UCS2_STRING( bst2 );
-   int l1, l2;
-   int i, min;
+   BGL_LONG_T l1, l2;
+   BGL_LONG_T i, min;
 
    l1 = UCS2_STRING_LENGTH( bst1 );
    l2 = UCS2_STRING_LENGTH( bst2 );
@@ -385,8 +385,8 @@ bool_t
 ucs2_string_cile( obj_t bst1, obj_t bst2 ) {
    ucs2_t *st1 = BUCS2_STRING_TO_UCS2_STRING( bst1 );
    ucs2_t *st2 = BUCS2_STRING_TO_UCS2_STRING( bst2 );
-   int l1, l2;
-   int i, min;
+   BGL_LONG_T l1, l2;
+   BGL_LONG_T i, min;
 
    l1 = UCS2_STRING_LENGTH( bst1 );
    l2 = UCS2_STRING_LENGTH( bst2 );
@@ -411,8 +411,8 @@ bool_t
 ucs2_string_cigt( obj_t bst1, obj_t bst2 ) {
    ucs2_t *st1 = BUCS2_STRING_TO_UCS2_STRING( bst1 );
    ucs2_t *st2 = BUCS2_STRING_TO_UCS2_STRING( bst2 );
-   int l1, l2;
-   int i, min;
+   BGL_LONG_T l1, l2;
+   BGL_LONG_T i, min;
 
    l1 = UCS2_STRING_LENGTH( bst1 );
    l2 = UCS2_STRING_LENGTH( bst2 );
@@ -437,8 +437,8 @@ bool_t
 ucs2_string_cige( obj_t bst1, obj_t bst2 ) {
    ucs2_t *st1 = BUCS2_STRING_TO_UCS2_STRING( bst1 );
    ucs2_t *st2 = BUCS2_STRING_TO_UCS2_STRING( bst2 );
-   int l1, l2;
-   int i, min;
+   BGL_LONG_T l1, l2;
+   BGL_LONG_T i, min;
 
    l1 = UCS2_STRING_LENGTH( bst1 );
    l2 = UCS2_STRING_LENGTH( bst2 );
@@ -456,10 +456,10 @@ ucs2_string_cige( obj_t bst1, obj_t bst2 ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    static int                                                       */
+/*    static BGL_LONG_T                                                       */
 /*    utf8_size ...                                                    */
 /*---------------------------------------------------------------------*/
-static int
+static BGL_LONG_T
 utf8_size( ucs2_t ucs2 ) {
    if( ucs2 <= 0x7f )
       return 1;
@@ -491,10 +491,10 @@ utf8_size( ucs2_t ucs2 ) {
 BGL_RUNTIME_DEF
 obj_t
 ucs2_string_to_utf8_string( obj_t bucs2 ) {
-   int len = UCS2_STRING_LENGTH( bucs2 );
-   int utf8_len = 0;
+   BGL_LONG_T len = UCS2_STRING_LENGTH( bucs2 );
+   BGL_LONG_T utf8_len = 0;
    ucs2_t *cucs2 = BUCS2_STRING_TO_UCS2_STRING( bucs2 );
-   int read, write;
+   BGL_LONG_T read, write;
    obj_t result;
    unsigned char *cresult;
    
@@ -509,7 +509,7 @@ ucs2_string_to_utf8_string( obj_t bucs2 ) {
    /* and we fill it */
    for( read = 0, write = 0; read < len; read++ ) {
       ucs2_t ucs2 = cucs2[ read ];
-      int ulen  = utf8_size( ucs2 );
+      BGL_LONG_T ulen  = utf8_size( ucs2 );
 
       switch( ulen ) {
 	 case 1:
@@ -610,10 +610,10 @@ ucs2_string_to_utf8_string( obj_t bucs2 ) {
 BGL_RUNTIME_DEF
 obj_t
 utf8_string_to_ucs2_string( obj_t butf8 ) {
-   int len = STRING_LENGTH( butf8 );
+   BGL_LONG_T len = STRING_LENGTH( butf8 );
    ucs2_t *aux = (ucs2_t *)alloca( len * sizeof( ucs2_t ) );
    char *cutf8 = BSTRING_TO_STRING( butf8 );
-   int read, write;
+   BGL_LONG_T read, write;
    obj_t string;
    ucs2_t *cstring;
    

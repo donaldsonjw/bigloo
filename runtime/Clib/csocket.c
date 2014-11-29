@@ -133,14 +133,14 @@ debug_socket_segv( char *fun, unsigned char *ptr, int len ) {
 extern obj_t bgl_make_input_port( obj_t, FILE *, obj_t, obj_t );
 extern obj_t bgl_close_input_port( obj_t );
 extern BGL_LONG_T bgl_read( obj_t, char *, BGL_LONG_T );
-extern obj_t make_vector( int, obj_t );
+extern obj_t make_vector( BGL_LONG_T, obj_t );
 extern unsigned char get_hash_number( char * );
-extern unsigned char bgl_get_hash_number_len( char *, int, int );
+extern unsigned char bgl_get_hash_number_len( char *, BGL_LONG_T, BGL_LONG_T );
 extern bool_t bigloo_strcmp( obj_t o1, obj_t o2 );
 extern bool_t bgl_dns_enable_cache();
 extern BGL_LONG_T bgl_dns_cache_validity_timeout();
 extern ssize_t bgl_syswrite( obj_t, char *, size_t );
-extern obj_t make_string_sans_fill( int );
+extern obj_t make_string_sans_fill( BGL_LONG_T );
 
 #ifndef _BGL_WIN32_VER
 extern int dup( int );
