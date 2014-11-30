@@ -30,7 +30,7 @@
 	    __r4_numbers_6_5_fixnum
 	    
 	    __evenv)
-   
+    
    (extern  (macro c-flonum?::bool (::obj) "REALP")
 	    (infix macro c-=fl::bool (::double ::double) "==")
 	    (infix macro c-<fl::bool (::double ::double) "<")
@@ -79,7 +79,7 @@
 	    (macro %float->int-bits::long (::float) "FLOAT_TO_INT_BITS")
 	    (macro %int-bits->float::float (::long) "INT_BITS_TO_FLOAT")
 	    (macro $randomfl::double () "RANDOMFL"))
-   
+    
    (java    (class foreign
 	       (method static c-flonum?::bool (::obj)
 		  "REALP")
@@ -225,8 +225,8 @@
 	    (inline float->ieee-string::bstring ::float)
 	    (inline double->llong-bits::llong ::double)
 	    (inline llong-bits->double::double ::llong)
-	    (inline float->int-bits::int ::float)
-	    (inline int-bits->float::float ::int)
+	    (inline float->int-bits::long ::float)
+	    (inline int-bits->float::float ::long)
 	    (inline randomfl::double))
    
    (pragma  (c-flonum? side-effect-free (predicate-of real) no-cfa-top nesting fail-safe)
@@ -661,13 +661,13 @@
 ;*---------------------------------------------------------------------*/
 ;*    float->int-bits ...                                              */
 ;*---------------------------------------------------------------------*/
-(define-inline (float->int-bits::int n::float)
+(define-inline (float->int-bits::long n::float)
    (%float->int-bits n))
 
 ;*---------------------------------------------------------------------*/
 ;*    int-bits->float ...                                              */
 ;*---------------------------------------------------------------------*/
-(define-inline (int-bits->float::float n::int)
+(define-inline (int-bits->float::float n::long)
    (%int-bits->float n))
 
 ;*---------------------------------------------------------------------*/

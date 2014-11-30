@@ -1689,7 +1689,7 @@ typedef struct BgL_objectz00_bgl {
 #define __INT_BITS_TO_FLOAT( ii ) \
   BGL_LONG_T iii = ii; \
   float result; \
-  BGL_LONG_T offset = sizeof( int ) - sizeof( float ); \
+  BGL_LONG_T offset = sizeof( BGL_LONG_T ) - sizeof( float ); \
   memcpy( &result, ((char*)&iii) + offset, sizeof( float ) ); \
   result;
 
