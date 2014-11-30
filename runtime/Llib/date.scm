@@ -53,7 +53,7 @@
    (extern  (macro c-date?::bool (::obj) "BGL_DATEP")
 	    ($date-new::date (::llong ::int ::int ::int ::int ::int ::int ::long ::bool ::int) "bgl_make_date")
 	    
-	    (macro $date-integer->second::elong (::long) "(long)")
+	    (macro $date-integer->second::elong (::long) "(BGL_LONG_T)")
 	    (macro $date-nanosecond::llong (::date) "BGL_DATE_NANOSECOND")
 	    (macro $date-second::int (::date) "BGL_DATE_SECOND")
 	    (macro $date-minute::int (::date) "BGL_DATE_MINUTE")

@@ -39,7 +39,7 @@
       (type $uv_close_cb void* "uv_close_cb")
       (macro $uv-handle-t::$uv_handle_t (::void*) "(uv_handle_t *)")
       
-      (macro $uv-handle->integer::long (::$uv_handle_t) "(long)")
+      (macro $uv-handle->integer::long (::$uv_handle_t) "(BGL_LONG_T)")
       (macro $uv_handle_nil::$uv_handle_t "0L")
       (macro $uv_handle_nilp::bool (::$uv_handle_t) "((uv_handle_t *)0L) == ")
       

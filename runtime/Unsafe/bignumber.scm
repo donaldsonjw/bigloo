@@ -77,7 +77,7 @@
 	    (set! *c-user-foot* '("#endif")))
    
    (extern  (macro $fixnum->flonum::double (::long) "(double)")
-	    (macro $flonum->fixnum::long (::double) "(long)")
+	    (macro $flonum->fixnum::long (::double) "(BGL_LONG_T)")
 	    (macro $srand::void (::int) "srand"))
 
    (java    (class foreign

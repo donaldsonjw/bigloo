@@ -41,10 +41,10 @@
    (include "Ieee/bignum.sch")
    
    (extern  (macro $fixnum->flonum::double (::long)   "(double)")
-	    (macro $flonum->fixnum::long (::double) "(long)")
+	    (macro $flonum->fixnum::long (::double) "(BGL_LONG_T)")
 	    
 	    (macro $elong->flonum::double (::elong)  "(double)")
-	    (macro $flonum->elong::long (::double) "(long)")
+	    (macro $flonum->elong::long (::double) "(BGL_LONG_T)")
 	    
 	    (macro $llong->flonum::double (::llong)  "(double)")
 	    (macro $flonum->llong::llong (::double) "(BGL_LONGLONG_T)")

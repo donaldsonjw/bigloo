@@ -60,8 +60,8 @@
 	    (obj-hash-number::long (::obj) "bgl_obj_hash_number")
 	    (c-pointer-hashnumber::long (::obj ::long) "bgl_pointer_hashnumber")
 	    (foreign-hash-number::long (::foreign) "bgl_foreign_hash_number")
-	    (macro elong-hash-number::long (::elong) "(long)")
-	    (macro llong-hash-number::long (::llong) "(long)"))
+	    (macro elong-hash-number::long (::elong) "(BGL_LONG_T)")
+	    (macro llong-hash-number::long (::llong) "(BGL_LONG_T)"))
    
    (java    (class foreign
 	       (method static string-hash-number::long (::string)
