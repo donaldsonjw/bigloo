@@ -130,6 +130,8 @@
 #undef BGL_LONG_T
 #define BGL_LONG_T @BGL_LONG_T@
 #define BGL_ULONG_T @BGL_ULONG_T@
+#define BGL_STRTOL(_1,_2,_3) (@BGL_STRTOL@(_1,_2,_3))
+#define BGL_STRTOUL(_1,_2,_3) (@BGL_STRTOUL@(_1,_2,_3))
 
 #undef BGL_LONGLONG_T
 #define BGL_LONGLONG_T @BGL_LONGLONG_T@
@@ -458,11 +460,6 @@
 #  define rmdir _rmdir
 #endif
 
-#if defined( _MSC_VER )
-#  define strtoll strtol
-#  define strtoull strtoul
-#  define alloca _alloca
-#endif
 
 #if defined( _MINGW_VER )
 #  include <malloc.h>

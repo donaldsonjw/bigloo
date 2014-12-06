@@ -1681,7 +1681,7 @@ typedef struct BgL_objectz00_bgl {
   float fff = ff; \
   BGL_LONG_T result = 0; \
   BGL_LONG_T offset = sizeof( BGL_LONG_T ) - sizeof( float ); \
-  memcpy( ((char*)&result) + offset, &fff, sizeof( float ) ); \
+  memcpy( (char*)&result, &fff, sizeof( float ) ); \
   result;
 
 /* If ints are bigger than floats (which can happen on 64bit machines) */
@@ -1690,7 +1690,7 @@ typedef struct BgL_objectz00_bgl {
   BGL_LONG_T iii = ii; \
   float result; \
   BGL_LONG_T offset = sizeof( BGL_LONG_T ) - sizeof( float ); \
-  memcpy( &result, ((char*)&iii) + offset, sizeof( float ) ); \
+  memcpy( &result, ((char*)&iii), sizeof( float ) ); \
   result;
 
 #if( defined( __GNUC__ ) )

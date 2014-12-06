@@ -88,6 +88,7 @@ bgl_long=intptr_t # bigloo's longs must be large enough to store a pointer
                   # bigloo longs to be intptr_t. intptr_t is guaranteed to be
                   # large enough to hold a pointer
 bgl_ulong=uintptr_t
+bgl_strtol=
 stringsplit="0"
 
 gcconfigureopt="--disable-gcj-support --disable-java-finalization --disable-libcord"
@@ -2521,6 +2522,10 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
     labs=abs
   fi
 
+  #set bgl_strtol and bgl_strtoul appropriately
+  bgl_strtol=strtoll
+  bgl_strtoul=strtoull
+  
   # Does this compiler implement longlong?
   longlong=`$autoconf longlong --longlong="$longlong"` || exit 1
 
@@ -2535,7 +2540,7 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
     llabs=abs
     have_strtoll=0
     strtoll=strtol
-    strtoull=strtoull
+    strtoull=strtoul
   else
     havelonglong=1
 
@@ -2889,6 +2894,8 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
               -e "s|@BGL_LONGLONG_T@|$longlong|" \
 	      -e "s|@BGL_LONG_T@|$bgl_long|" \
 	      -e "s|@BGL_ULONG_T@|$bgl_ulong|" \
+	      -e "s|@BGL_STRTOL@|$bgl_strtol|" \
+	      -e "s|@BGL_STRTOUL@|$bgl_strtoul|" \
               -e "s|@BGL_HAVE_LONGLONG@|$havelonglong|" \
               -e "s|@BGL_LONG_LIMBS@|$long_limbs|" \
               -e "s|@BGL_LONGLONG_LIMBS@|$longlong_limbs|" \
