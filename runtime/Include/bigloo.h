@@ -1676,22 +1676,38 @@ typedef struct BgL_objectz00_bgl {
   result;
 
 /* If ints are bigger than floats (which can happen on 64bit machines) */
-/* then * we only want to set the least significant bytes of the int.  */
-#define __FLOAT_TO_INT_BITS( ff ) \
-  float fff = ff; \
-  BGL_LONG_T result = 0; \
-  BGL_LONG_T offset = sizeof( BGL_LONG_T ) - sizeof( float ); \
-  memcpy( (char*)&result, &fff, sizeof( float ) ); \
-  result;
+/* then we only want to set the least significant bytes of the int.  */
+#if BGL_BIG_ENDIAN == 1
 
-/* If ints are bigger than floats (which can happen on 64bit machines) */
-/* then we only want to set the least significant bytes of the int.    */
-#define __INT_BITS_TO_FLOAT( ii ) \
-  BGL_LONG_T iii = ii; \
-  float result; \
-  BGL_LONG_T offset = sizeof( BGL_LONG_T ) - sizeof( float ); \
-  memcpy( &result, ((char*)&iii), sizeof( float ) ); \
-  result;
+#  define __FLOAT_TO_INT_BITS( ff ) \
+     float fff = ff;		    \
+     BGL_LONG_T result = 0; \
+     BGL_LONG_T offset = sizeof( BGL_LONG_T ) - sizeof( float ); \
+     memcpy( ((char*)&result)+offset, &fff, sizeof( float ) );		 \
+     result;
+
+#  define __INT_BITS_TO_FLOAT( ii )		\
+     BGL_LONG_T iii = ii; \
+     float result; \
+     BGL_LONG_T offset = sizeof( BGL_LONG_T ) - sizeof( float ); \
+     memcpy( &result, ((char*)&iii)+offset, sizeof( float ) ); \
+     result;
+
+#else /* LITTLE ENDIAN */
+  
+#  define __FLOAT_TO_INT_BITS( ff ) \
+     float fff = ff;		    \
+     BGL_LONG_T result = 0; \
+     memcpy( (char*)&result, &fff, sizeof( float ) ); \
+     result;
+
+#  define __INT_BITS_TO_FLOAT( ii )		\
+     BGL_LONG_T iii = ii; \
+     float result; \
+     memcpy( &result, ((char*)&iii), sizeof( float ) ); \
+     result;
+
+#endif 
 
 #if( defined( __GNUC__ ) )
 #  define DOUBLE_TO_LLONG_BITS( dd ) ( { __DOUBLE_TO_LLONG_BITS( dd ) } )

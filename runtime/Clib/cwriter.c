@@ -88,6 +88,18 @@ static unsigned char *char_name[] = {
 #  define *_new = alloca( s )
 #endif
 
+/******************************************************************************/
+/* For LLP64 platforms, such as Win64, we define BGL_LONG_T to be 64 digits,  */
+/* so we must change the format specifier from l to ll. As support for other  */
+/* LLP64 platforms are added, we will need to add them to the following ifdef */
+/******************************************************************************/
+#ifdef _WIN64
+#  define LFS "ll"
+#else
+#  define LFS "l"
+#endif
+
+
 #define PRINTF1( op, sz, fmt, arg0 )			        \
    if( BGL_OUTPUT_PORT_CNT( op ) > sz ) {	                \
       int n = sprintf( OUTPUT_PORT( op ).ptr, fmt, arg0 );      \
@@ -174,7 +186,7 @@ bgl_display_fixnum( obj_t o, obj_t op ) {
    
    BGL_MUTEX_LOCK( mutex );
    
-   PRINTF1( op, 32, "%ld", CINT( o ) );
+   PRINTF1( op, 32, "%"LFS"d", CINT( o ) );
    
    BGL_MUTEX_UNLOCK( mutex );
    
@@ -191,7 +203,7 @@ bgl_display_elong( BGL_LONG_T o, obj_t op ) {
    
    BGL_MUTEX_LOCK( mutex );
    
-   PRINTF1( op, 32, "%ld", o );
+   PRINTF1( op, 32, "%"LFS"d", o );
    
    BGL_MUTEX_UNLOCK( mutex );
    
@@ -208,7 +220,7 @@ bgl_write_elong( BGL_LONG_T o, obj_t op ) {
    
    BGL_MUTEX_LOCK( mutex );
    
-   PRINTF1( op, 32, "#e%ld", o );
+   PRINTF1( op, 32, "#e%"LFS"d", o );
    
    BGL_MUTEX_UNLOCK( mutex );
    
@@ -409,7 +421,7 @@ bgl_write_opaque( obj_t o, obj_t op ) {
    
    BGL_MUTEX_LOCK( mutex );
    
-   PRINTF2( op, 40, "#<opaque:%ld:%08lx>", TYPE( o ), (BGL_ULONG_T)o );
+   PRINTF2( op, 40, "#<opaque:%"LFS"d:%08lx>", TYPE( o ), (BGL_ULONG_T)o );
    
    BGL_MUTEX_UNLOCK( mutex );
    
@@ -444,7 +456,7 @@ bgl_write_procedure( obj_t o, obj_t op ) {
    BGL_MUTEX_LOCK( mutex );
    
    PRINTF2( op, 96,
-	    "#<procedure:%lx.%ld>",
+	    "#<procedure:%"LFS"x.%"LFS"d>",
 	    VA_PROCEDUREP( o ) ?
 	    (BGL_ULONG_T)PROCEDURE_VA_ENTRY( o ) :
 	    (BGL_ULONG_T)PROCEDURE_ENTRY( o ),
@@ -490,7 +502,7 @@ bgl_write_input_port( obj_t o, obj_t op ) {
    bgl_display_obj( PORT( o ).name, op );
    BGL_MUTEX_LOCK( mutex );
    
-   PRINTF1( op, 10, ".%ld>", (BGL_LONG_T)BGL_INPUT_PORT_BUFSIZ( o ) );
+   PRINTF1( op, 10, ".%"LFS"d>", (BGL_LONG_T)BGL_INPUT_PORT_BUFSIZ( o ) );
 
    BGL_MUTEX_UNLOCK( mutex );
    
@@ -533,7 +545,7 @@ bgl_write_foreign( obj_t o, obj_t op ) {
    bgl_display_obj( FOREIGN_ID( o ), op );
    BGL_MUTEX_LOCK( mutex );
    
-   PRINTF1( op, 16, ":%lx>", (BGL_LONG_T)FOREIGN_TO_COBJ( o ) );
+   PRINTF1( op, 16, ":%"LFS"x>", (BGL_LONG_T)FOREIGN_TO_COBJ( o ) );
 
    BGL_MUTEX_UNLOCK( mutex );
    
@@ -707,9 +719,9 @@ bgl_write_unknown( obj_t o, obj_t op ) {
    BGL_MUTEX_LOCK( mutex );
    
    if( POINTERP( o ) ) {
-      PRINTF2( op, 40, "#<???:%ld:%08lx>", TYPE( o ), (BGL_ULONG_T)o );
+      PRINTF2( op, 40, "#<???:%"LFS"d:%08lx>", TYPE( o ), (BGL_ULONG_T)o );
    } else {
-      PRINTF1( op, 40, "#<???:%08lx>", (BGL_ULONG_T)o );
+      PRINTF1( op, 40, "#<???:%08"LFS"x>", (BGL_ULONG_T)o );
    }
 
    BGL_MUTEX_UNLOCK( mutex );
