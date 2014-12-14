@@ -63,6 +63,7 @@ fi
 cat > $file.c <<EOF
 #include <stdio.h>
 #include <limits.h>
+#include <stdint.h>
 #include <gmp.h>
 EOF
 echo "#define BGL_LONGLONG_BITS (sizeof($type)*CHAR_BIT)" >> $file.c
