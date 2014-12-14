@@ -88,7 +88,7 @@ bgl_long=intptr_t # bigloo's longs must be large enough to store a pointer
                   # bigloo longs to be intptr_t. intptr_t is guaranteed to be
                   # large enough to hold a pointer
 bgl_ulong=uintptr_t
-bgl_strtol=
+
 stringsplit="0"
 
 gcconfigureopt="--disable-gcj-support --disable-java-finalization --disable-libcord"
@@ -2522,10 +2522,18 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
     labs=abs
   fi
 
-  #set bgl_strtol and bgl_strtoul appropriately
-  bgl_strtol=strtoll
-  bgl_strtoul=strtoull
-  
+  # set bgl_strtol and bgl_strtoul appropriately
+  # The long type in bigloo must be able to hold a ptr.
+  # This is not true for the native c long type in Win64, so
+  # we use a 64 bit types (i.e., intptr_t and long long)
+  if [ "$HOSTOS " = "mingw " -a "$elongsize" = "64" ]; then
+     bgl_strtol=strtoll
+     bgl_strtoul=strtoull
+  else
+     bgl_strtol=strtol
+     bgl_strtoul=strtoul
+  fi
+     
   # Does this compiler implement longlong?
   longlong=`$autoconf longlong --longlong="$longlong"` || exit 1
 
@@ -2567,7 +2575,7 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
     fi
   fi
 
-  long_limbs=`$autoconf limbs --type="long" --cflags="-I$bootdir/lib/$release -L$bootdir/lib/$release"` || exit 1
+  long_limbs=`$autoconf limbs --type="$bgl_long" --cflags="-I$bootdir/lib/$release -L$bootdir/lib/$release"` || exit 1
   longlong_limbs=`$autoconf limbs --type="$longlong" --cflags="-I$bootdir/lib/$release -L$bootdir/lib/$release"` || exit 1
 
   long_sign_bit=`$autoconf signbit --type="$bgl_long" --alignment="$alignment"` || exit 1

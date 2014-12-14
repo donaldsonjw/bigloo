@@ -206,9 +206,25 @@ bgl_flonum_to_bignum( double r ) {
 /*    BGL_RUNTIME_DEF long                                             */
 /*    bgl_bignum_to_long ...                                           */
 /*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF long
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_bignum_to_long( obj_t x ) {
-   return mpz_get_si( &(x->bignum_t.mpz) );
+  mp_size_t size = mpz_size(&(x->bignum_t.mpz));
+  int sign = mpz_sgn(&(x->bignum_t.mpz));
+  
+  mp_limb_t z1 = mpz_getlimbn(&(x->bignum_t.mpz), 0);
+
+#if GMP_NAIL_BITS != 0
+  if (BGL_LONG_MAX > GMP_NUMB_MAX && size >= 2)
+    z1 |= mpz_getlimbn(&(x->bignum_t.mpz), 1) << GMP_NUMB_BITS;
+#endif
+
+  if (size > 0)
+    return z1 & BGL_LONG_MAX;
+  else if (size < 0)
+    /* This expression is necessary to properly handle 0x80000000 */
+    return -1 - (BGL_LONG_T) ((z1 - 1) & BGL_LONG_MAX);
+  else
+    return 0; 
 }
 
 /*---------------------------------------------------------------------*/
@@ -217,7 +233,23 @@ bgl_bignum_to_long( obj_t x ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF BGL_LONGLONG_T
 bgl_bignum_to_llong( obj_t x ) {
-   return (BGL_LONGLONG_T)mpz_get_ui( &(x->bignum_t.mpz) );
+  mp_size_t size = mpz_size(&(x->bignum_t.mpz));
+  int sign = mpz_sgn(&(x->bignum_t.mpz));
+  
+  mp_limb_t z1 = mpz_getlimbn(&(x->bignum_t.mpz), 0);
+
+#if GMP_NAIL_BITS != 0
+  if (BGL_LONGLONG_MAX > GMP_NUMB_MAX && size >= 2)
+    z1 |= mpz_getlimbn(&(x->bignum_t.mpz), 1) << GMP_NUMB_BITS;
+#endif
+
+  if (size > 0)
+    return z1 & BGL_LONGLONG_MAX;
+  else if (size < 0)
+    /* This expression is necessary to properly handle 0x80000000 */
+    return -1 - (BGL_LONGLONG_T) ((z1 - 1) & BGL_LONG_MAX);
+  else
+    return 0; 
 }
 
 /*---------------------------------------------------------------------*/
