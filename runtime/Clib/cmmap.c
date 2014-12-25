@@ -15,6 +15,10 @@
 #include <fcntl.h>
 #include <string.h>
 
+#ifndef O_BINARY
+#  define O_BINARY 0
+#endif
+
 /*---------------------------------------------------------------------*/
 /*    obj_t                                                            */
 /*    mmap_fail ...                                                    */
@@ -35,7 +39,7 @@ obj_t
 bgl_open_mmap( obj_t name, bool_t r, bool_t w ) {
 #if HAVE_MMAP   
    int fd = open( BSTRING_TO_STRING( name ),
-		  ((r && w) ? O_RDWR : (r ?  O_RDONLY : O_WRONLY )) );
+		  ((r && w) ? O_RDWR : (r ?  O_RDONLY : O_WRONLY )) | O_BINARY );
    
    if( -1 == fd ) {
       return mmap_fail( "open-mmap", name );
@@ -78,8 +82,8 @@ bgl_open_mmap( obj_t name, bool_t r, bool_t w ) {
       }
    }
 #else
-   int fd = r ? open( BSTRING_TO_STRING( name ), O_RDONLY ) : 0;
-   int afd = w ? open( BSTRING_TO_STRING( name ), O_WRONLY ) : 0;
+   int fd = r ? open( BSTRING_TO_STRING( name ), O_RDONLY | O_BINARY ) : 0;
+   int afd = w ? open( BSTRING_TO_STRING( name ), O_WRONLY | O_BINARY ) : 0;
    
    if( -1 == fd ) {
       return mmap_fail( "open-mmap", name );
