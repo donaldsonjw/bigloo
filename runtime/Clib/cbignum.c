@@ -286,7 +286,7 @@ bgl_string_to_integer_obj( char *str, int radix ) {
    BGL_LONG_T x;
 
    errno = 0;
-   x = strtol( str, NULL, radix );
+   x = BGL_STRTOL( str, NULL, radix );
    
    if( (errno == ERANGE) && (x == BGL_LONG_MAX || x == BGL_LONG_MIN) ) {
       return bgl_string_to_bignum( str, radix );

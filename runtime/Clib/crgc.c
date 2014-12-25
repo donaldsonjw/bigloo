@@ -829,7 +829,7 @@ rgc_buffer_integer( obj_t ip ) {
    BGL_LONG_T res = 0;
    int sign = +1;
    BGL_LONG_T maxvalfx = BGL_LONG_MAX >> TAG_SHIFT;
-   BGL_LONG_T maxvalelong = LONG_MAX;
+   BGL_LONG_T maxvalelong = BGL_LONG_MAX;
    BGL_LONGLONG_T maxvalllong = BGL_LONGLONG_MAX;
 
    /* the sign */

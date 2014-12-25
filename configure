@@ -2526,7 +2526,7 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
   # The long type in bigloo must be able to hold a ptr.
   # This is not true for the native c long type in Win64, so
   # we use a 64 bit types (i.e., intptr_t and long long)
-  if [ "$HOSTOS " = "mingw " -a "$elongsize" = "64" ]; then
+  if [ "$hostos " = "mingw " -a "$elongsize" = "64" ]; then
      bgl_strtol=strtoll
      bgl_strtoul=strtoull
   else
