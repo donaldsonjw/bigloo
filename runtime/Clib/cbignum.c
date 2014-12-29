@@ -789,7 +789,7 @@ bgl_safe_bignum_to_fixnum( obj_t bx ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 bgl_safe_plus_fx( BGL_LONG_T x, BGL_LONG_T y ) {
-   long z = x + y;
+   BGL_LONG_T z = x + y;
    if( (x & C_LONG_SIGN_BIT) == (y & C_LONG_SIGN_BIT) &&
        (z & C_LONG_SIGN_BIT) != (x & C_LONG_SIGN_BIT) )
       return bgl_bignum_add( bgl_long_to_bignum( x ), bgl_long_to_bignum( y ) );
