@@ -45,21 +45,30 @@ bgl_init_date() {
 /*---------------------------------------------------------------------*/
 static BGL_LONG_T
 bgl_get_timezone( BGL_LONG_T s ) {
-   struct tm *tm = localtime( &s );
-   BGL_LONG_T m1, h1, d1;
+   time_t ls = s;
+   struct tm *tm = localtime( &ls );
+   BGL_LONG_T m1, h1, d1, dst_correction;
 
    m1 = tm->tm_min;
    h1 = tm->tm_hour;
    d1 = tm->tm_yday;
-
-   tm = gmtime( &s );
+   if(tm->tm_isdst){
+     dst_correction = 3600;
+   } else {
+     dst_correction = 0;
+   }
+   
+   tm = gmtime( &ls );
 
    if( tm->tm_yday == d1 ) {
-      return (h1 - tm->tm_hour) * 3600 + (m1 - tm->tm_min);
+      return (h1 - tm->tm_hour) * 3600 + (m1 - tm->tm_min) * 60
+	- dst_correction;
    } else if( tm->tm_yday > d1 ) {
-      return (h1 - (tm->tm_hour + 24)) * 3600 + (m1 - tm->tm_min);
+      return (h1 - (tm->tm_hour + 24)) * 3600 + (m1 - tm->tm_min) * 60
+	- dst_correction;
    } else {
-      return (h1 - (tm->tm_hour - 24)) * 3600 + (m1 - tm->tm_min);
+      return (h1 - (tm->tm_hour - 24)) * 3600 + (m1 - tm->tm_min) * 60
+	- dst_correction;
    }
 }
    
@@ -89,12 +98,6 @@ tm_to_date( struct tm *tm ) {
    date = GC_MALLOC_ATOMIC( BGL_DATE_SIZE );
    date->date_t.header = MAKE_HEADER( DATE_TYPE, 0 );
 
-#if( BGL_HAVE_GMTOFF )
-   date->date_t.timezone = tm->tm_gmtoff;
-#else
-   date->date_t.timezone = bgl_timezone();   
-#endif
-
    date->date_t.nsec = 0;
    date->date_t.sec = tm->tm_sec;
    date->date_t.min = tm->tm_min;
@@ -107,6 +110,14 @@ tm_to_date( struct tm *tm ) {
    date->date_t.yday = tm->tm_yday + 1;
 
    date->date_t.isdst = tm->tm_isdst;
+   
+
+#if( BGL_HAVE_GMTOFF )
+   date->date_t.timezone = tm->tm_gmtoff;
+#else
+   date->date_t.timezone = bgl_timezone();   
+#endif
+
 
    return BREF( date );
 }
@@ -202,7 +213,7 @@ bgl_date_to_seconds( obj_t date ) {
    /* mid-month to avoid day overflow */
    t.tm_mday = 15;
    m = mktime( &t );
-   tz = bgl_get_timezone( n );
+   tz = bgl_get_timezone( m );
 #endif
 
    BGL_MUTEX_UNLOCK( date_mutex );
