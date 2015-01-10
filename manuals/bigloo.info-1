@@ -113,7 +113,7 @@ mine.
 please forgive me and send a mail message to the following address:
 <bigloo@sophia.inria.fr>.
 
-  This is Bigloo documentation version 4.2a, November 2014.
+  This is Bigloo documentation version 4.2a, January 2015.
 
 
 File: bigloo.info,  Node: Overview,  Next: Modules,  Prev: Acknowledgements,  Up: Top
@@ -2714,6 +2714,11 @@ expression: '#u"([^]|\")*"'.
      error if the string is not a well formed UTF-8 string (i.e., it
      does satisfies the 'utf8-string?' predicate.
 
+ -- bigloo procedure: utf8-codepoint-length string
+     Returns the number of code points of an UTF-8 string.  The code
+     points length is the number of 16bits long values needed to encode
+     the utf8 strings in utf16.
+
  -- bigloo procedure: utf8-string-ref string i
      Returns the character (represented as an UTF-8 string) at the
      position I in STRING.
@@ -5168,7 +5173,7 @@ procedures.
           ;; open a client socket on port 80:
           (make-client-socket "www.inria.fr" 80)
           ;; open an unbufferized connection
-          (make-client-socket "www.inria.fr" 80 :buffer #f)
+          (make-client-socket "www.inria.fr" 80 :inbuf #f :outbuf #f)
 
  -- bigloo procedure: socket? obj
  -- bigloo procedure: socket-server? obj
@@ -5325,7 +5330,7 @@ client-server architecture and it uses unbufferized (see
 
      (module client)
 
-     (let* ((s (make-client-socket "localhost" 8080 #f))
+     (let* ((s (make-client-socket "localhost" 8080 :outbuf #f))
             (p (socket-output s)))
         (display "string" p)
         (newline p)

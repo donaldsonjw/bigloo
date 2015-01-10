@@ -3,7 +3,7 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Tue Jan 31 15:00:41 1995                          */
-;*    Last change :  Fri Jan 24 14:20:29 2014 (serrano)                */
+;*    Last change :  Wed Nov 19 13:20:32 2014 (serrano)                */
 ;*    -------------------------------------------------------------    */
 ;*    The `bind-exit' manipulation.                                    */
 ;*=====================================================================*/
@@ -26,6 +26,7 @@
 	    __tvector
 	    __structure
 	    __bignum
+	    __evaluate
 	    
 	    __r4_equivalence_6_2
 	    __r4_vectors_6_8
@@ -208,7 +209,9 @@
 (define (exitd-exec-protect p)
    (cond
       ((mutex? p) (mutex-unlock! p))
-      ((procedure? p) (p))))
+      ((procedure? p) (p))
+      ((integer? p) (evaluate2-restore-bp! p))
+      ((vector? p) (evaluate2-restore-state! p))))
       
 ;*---------------------------------------------------------------------*/
 ;*    exitd-exec-and-pop-protects! ...                                 */

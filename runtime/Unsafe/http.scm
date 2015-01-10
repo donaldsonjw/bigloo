@@ -3,8 +3,8 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Thu Aug  9 15:02:05 2007                          */
-;*    Last change :  Sat Oct 11 10:34:00 2014 (serrano)                */
-;*    Copyright   :  2007-14 Manuel Serrano                            */
+;*    Last change :  Tue Jan  6 09:29:48 2015 (serrano)                */
+;*    Copyright   :  2007-15 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    Dealing with HTTP requests                                       */
 ;*=====================================================================*/
@@ -170,8 +170,7 @@
 		  (content (generate-http-post-body boundary args)))
 	      (display-line "Content-Length: " (string-length content) out)
 	      (display-line "Content-Type: multipart/form-data; boundary="
-		 (substring boundary 2 (string-length boundary))
-		 out)
+		 (substring boundary 2 (string-length boundary)) out)
 	      (display-line out)
 	      (display content out)))
 	  (else
@@ -508,8 +507,6 @@
 		 (ignore))
 		((connection:)
 		 (set! connection (read/rp symbol+-grammar (the-port)))
-		 (unless (symbol? connection)
-		    (tprint "PAS GLOP: " connection " " header))
 		 (set! header (cons (cons k connection) header))
 		 (ignore))
 		((proxy-authorization:)
@@ -534,7 +531,7 @@
 			(raise
 			   (instantiate::&io-parse-error
 			      (obj (the-port))
-			      (proc 'expect-header)
+			      (proc "expect-header")
 			      (msg (format "Expectation failed (~a)" e))))))))
 		(else
 		 (let ((v (read/rp value-grammar (the-port))))
@@ -567,7 +564,7 @@
 				   port content-length
 				   transfer-encoding authorization
 				   proxy-authorization connection))
-			   (proc 'http-parse-header)
+			   (proc "http-parse-header")
 			   (msg (format "Illegal characters: ~a"
 				   (http-parse-error-msg
 				      (the-failure) (the-port)))))))))))

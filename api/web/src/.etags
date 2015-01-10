@@ -252,24 +252,26 @@ Llib/css_parser.scm,1976
 (define-method (css->list o::css-function make-klass make-elname make-decl735,25836
 (define-method (css->list o::css-hash-color make-klass make-elname make-decl745,26321
 
-Llib/cgi.scm,557
+Llib/cgi.scm,614
 (module __web_cgi15,963
 (define (unhex25,1404
-(define (decode31,1731
-(define (cgi-args->list46,2213
-(define (cgi-fetch-arg114,4382
-(define (fill-line!182,6447
-(define (flush-line200,7090
-(define (is-boundary?215,7639
-(define (last-boundary?224,8071
-(define (cgi-parse-boundary235,8596
-(define (cgi-parse-content-disposition253,9370
-(define (cgi-parse-header281,10386
-(define (cgi-read-file326,11824
-(define (cgi-read-data356,12970
-(define (cgi-parse-entry375,13729
-(define (cgi-multipart->list386,14272
-(define (cgi-post-arg-field400,14876
+(define (hex-string-ref31,1731
+(define (unhex+!44,2288
+(define (decode68,3117
+(define (cgi-args->list83,3599
+(define (cgi-fetch-arg109,4520
+(define (fill-line!177,6585
+(define (flush-line195,7228
+(define (is-boundary?210,7777
+(define (last-boundary?219,8209
+(define (cgi-parse-boundary230,8734
+(define (cgi-parse-content-disposition248,9507
+(define (cgi-parse-header276,10531
+(define (cgi-read-file321,11970
+(define (cgi-read-data351,13110
+(define (cgi-parse-entry372,13942
+(define (cgi-multipart->list383,14485
+(define (cgi-post-arg-field397,15089
 
 Llib/rss.scm,201
 (module __web_rss15,963
@@ -357,7 +359,7 @@ Llib/date.scm,176
 
 Llib/json.scm,143
 (module __web_json15,963
-(define-macro (return28,1452
-(define *json-lexer*39,1998
-(define (ucs2->utf8115,4204
-(define (json-parse160,5690
+(define-macro (return29,1487
+(define *json-lexer*40,2033
+(define (ucs2->utf8118,4418
+(define (json-parse163,5904

@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>3. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- Modules</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>3. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- Modules</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center29846'
+<br/><center id='center29859'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc29836" align="center" colspan="1"><font color="#ffffff"><strong id='bold29834'
+<tr bgcolor="#8381de"><th id="tc29849" align="center" colspan="1"><font color="#ffffff"><strong id='bold29847'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc29843" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc29839" align="left" valign="top" colspan="1"><strong id='bold29838'
->top:</strong></td><td id="tc29840" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc29856" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc29852" align="left" valign="top" colspan="1"><strong id='bold29851'
+>top:</strong></td><td id="tc29853" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center29856'
+<br/><br/><center id='center29869'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc29850" align="center" colspan="1"><font color="#ffffff"><strong id='bold29848'
+<tr bgcolor="#8381de"><th id="tc29863" align="center" colspan="1"><font color="#ffffff"><strong id='bold29861'
 >Modules</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc29853" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc29866" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">3.1</td><td colspan="4" width="100%"><a href="bigloo-4.html#Program-Structure">Program Structure</a></td></tr>
  <tr><td valign="top" align="left">3.2</td><td colspan="4" width="100%"><a href="bigloo-4.html#Module-declaration">Module declaration</a></td></tr>
@@ -56,11 +56,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center29866'
+<br/><br/><center id='center29879'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc29860" align="center" colspan="1"><font color="#ffffff"><strong id='bold29858'
+<tr bgcolor="#8381de"><th id="tc29873" align="center" colspan="1"><font color="#ffffff"><strong id='bold29871'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc29863" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc29876" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -172,8 +172,8 @@ is compiled and hence, if a user module has the same name as one of the
 library modules, an error is signaled.<br/><br/>A simple module can be:<br/><br/><center id='center1154'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1152'
->(<font color="#1919af"><strong id='bold29867'
->module</strong></font> <font color="#1919af"><strong id='bold29869'
+>(<font color="#1919af"><strong id='bold29880'
+>module</strong></font> <font color="#1919af"><strong id='bold29882'
 >foo</strong></font>)<br/><br/>(display <font color="red">&quot;this is a module&quot;</font>)
 </pre>
 </td></tr>
@@ -193,13 +193,13 @@ Some special identifiers are reserved and can't be used to name modules.
 If such an identifier is used, the compiler will produce the message:<br/><br/><center id='center1169'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1167'
->#(<font color="#1919af"><strong id='bold29872'
->module</strong></font> <font color="#1919af"><strong id='bold29874'
+>#(<font color="#1919af"><strong id='bold29885'
+>module</strong></font> <font color="#1919af"><strong id='bold29887'
 >t</strong></font>
 #^
-# *** ERROR<strong id='bold29876'
->:bigloo</strong><strong id='bold29878'
->:TOP-LEVEL</strong><strong id='bold29880'
+# *** ERROR<strong id='bold29889'
+>:bigloo</strong><strong id='bold29891'
+>:TOP-LEVEL</strong><strong id='bold29893'
 >:Parse</strong> error
 # Illegal module name -- (MODULE eval ...
 </pre>
@@ -231,11 +231,11 @@ beginning of execution providing the list, composed of the shell command
 line arguments, as its single argument.<br/><br/><center id='center1196'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1194'
->(<font color="#1919af"><strong id='bold29882'
->module</strong></font> <font color="#1919af"><strong id='bold29884'
+>(<font color="#1919af"><strong id='bold29895'
+>module</strong></font> <font color="#1919af"><strong id='bold29897'
 >foo</strong></font>
-   (main start))<br/><br/>(<font color="#6959cf"><strong id='bold29886'
->define</strong></font> (<font color="#6959cf"><strong id='bold29888'
+   (main start))<br/><br/>(<font color="#6959cf"><strong id='bold29899'
+>define</strong></font> (<font color="#6959cf"><strong id='bold29901'
 >start</strong></font> argv)
    (display argv)
    (newline))
@@ -273,10 +273,10 @@ Scheme expressions and definitions in a Bigloo module. Here is an example of
 an include file.<br/><br/><center id='center1223'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1221'
-><font color="#ffa600"><em id='it29890'
+><font color="#ffa600"><em id='it29903'
 >;; </em></font>`foo.sch'
-(<font color="#6959cf"><strong id='bold29892'
->define-struct</strong></font> <font color="#6959cf"><strong id='bold29894'
+(<font color="#6959cf"><strong id='bold29905'
+>define-struct</strong></font> <font color="#6959cf"><strong id='bold29907'
 >point</strong></font> x y)
 </pre>
 </td></tr>
@@ -285,10 +285,10 @@ an include file.<br/><br/><center id='center1223'
 and the module that includes the `foo.sch' file:<br/><br/><center id='center1231'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1229'
-><font color="#ffa600"><em id='it29896'
+><font color="#ffa600"><em id='it29909'
 >;; </em></font>`foo.scm'
-(<font color="#1919af"><strong id='bold29898'
->module</strong></font> <font color="#1919af"><strong id='bold29900'
+(<font color="#1919af"><strong id='bold29911'
+>module</strong></font> <font color="#1919af"><strong id='bold29913'
 >foo</strong></font>
    (include <font color="red">&quot;foo.sch&quot;</font>))<br/><br/>(print (point 1 2))
 </pre>
@@ -301,17 +301,17 @@ include <code id='code1232'
 example:<br/><br/><center id='center1241'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1239'
-><font color="#ffa600"><em id='it29903'
+><font color="#ffa600"><em id='it29916'
 >;; </em></font>`bar.sch'
-<font color="#ffa600"><em id='it29905'
+<font color="#ffa600"><em id='it29918'
 >;; the directives</em></font>
 (directives (include <font color="red">&quot;foobar.sch&quot;</font>)
-            (<font color="#1919af"><strong id='bold29908'
->import</strong></font>  <font color="#1919af"><strong id='bold29910'
->hux</strong></font>))<br/><br/><font color="#ffa600"><em id='it29912'
+            (<font color="#1919af"><strong id='bold29921'
+>import</strong></font>  <font color="#1919af"><strong id='bold29923'
+>hux</strong></font>))<br/><br/><font color="#ffa600"><em id='it29925'
 >;; expressions</em></font>
-(<font color="#6959cf"><strong id='bold29914'
->define</strong></font> (<font color="#6959cf"><strong id='bold29916'
+(<font color="#6959cf"><strong id='bold29927'
+>define</strong></font> (<font color="#6959cf"><strong id='bold29929'
 >gee</strong></font> x) (print x))
 </pre>
 </td></tr>
@@ -368,45 +368,45 @@ in the first and fourth alternatives in <code id='code1271'
 >iclause</em></code> above.<br/><br/>Here is an example of an import clause:<br/><br/><center id='center1293'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1291'
->(<font color="#1919af"><strong id='bold29918'
->module</strong></font> <font color="#1919af"><strong id='bold29920'
+>(<font color="#1919af"><strong id='bold29931'
+>module</strong></font> <font color="#1919af"><strong id='bold29933'
 >foo</strong></font>
-<font color="#1919af"><strong id='bold29922'
->   </strong></font>(<font color="#1919af"><strong id='bold29924'
->import</strong></font><font color="#1919af"><strong id='bold29926'
+<font color="#1919af"><strong id='bold29935'
+>   </strong></font>(<font color="#1919af"><strong id='bold29937'
+>import</strong></font><font color="#1919af"><strong id='bold29939'
 > </strong></font>
-      <font color="#ffa600"><em id='it29928'
+      <font color="#ffa600"><em id='it29941'
 >;; import all </em></font><code id='code1274'
 >bar</code> exported bindings:
       bar
-      <font color="#ffa600"><em id='it29930'
+      <font color="#ffa600"><em id='it29943'
 >;; import the </em></font><code id='code1275'
 >hux</code> binding exported by
-      <font color="#ffa600"><em id='it29932'
+      <font color="#ffa600"><em id='it29945'
 >;; the module </em></font><code id='code1276'
 >hux</code>:
       (hux hux)       
-      <font color="#ffa600"><em id='it29934'
+      <font color="#ffa600"><em id='it29947'
 >;; import the </em></font><code id='code1277'
 >fun1</code>, <code id='code1278'
 >fun2</code> and <code id='code1279'
 >fun3</code> bindings exported by
-      <font color="#ffa600"><em id='it29936'
+      <font color="#ffa600"><em id='it29949'
 >;; the module </em></font><code id='code1280'
 >mod</code>:
       (fun1 fun2 fun3 mod)       
-      <font color="#ffa600"><em id='it29938'
+      <font color="#ffa600"><em id='it29951'
 >;; import the </em></font><code id='code1281'
 >fun4</code> bindings that will be known in this module
-      <font color="#ffa600"><em id='it29940'
+      <font color="#ffa600"><em id='it29953'
 >;; under the alias name </em></font><code id='code1282'
 >f</code>
       ((f fun4) mod)
-      <font color="#ffa600"><em id='it29942'
+      <font color="#ffa600"><em id='it29955'
 >;; import all </em></font><code id='code1283'
 >gee</code> bindings. the <code id='code1284'
 >gee</code> module
-      <font color="#ffa600"><em id='it29944'
+      <font color="#ffa600"><em id='it29957'
 >;; is located in a file called </em></font>`gee.scm':
       (gee <font color="red">&quot;gee.scm&quot;</font>)))
 </pre>
@@ -514,29 +514,29 @@ or <code id='code1365'
 >foo</code> that exports bindings:<br/><br/><center id='center1380'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1378'
->(<font color="#1919af"><strong id='bold29947'
->module</strong></font> <font color="#1919af"><strong id='bold29949'
+>(<font color="#1919af"><strong id='bold29960'
+>module</strong></font> <font color="#1919af"><strong id='bold29962'
 >foo</strong></font>
-<font color="#1919af"><strong id='bold29951'
->   </strong></font>(<font color="#1919af"><strong id='bold29953'
->export</strong></font><font color="#1919af"><strong id='bold29955'
+<font color="#1919af"><strong id='bold29964'
+>   </strong></font>(<font color="#1919af"><strong id='bold29966'
+>export</strong></font><font color="#1919af"><strong id='bold29968'
 > </strong></font>
-      <font color="#ffa600"><em id='it29957'
+      <font color="#ffa600"><em id='it29970'
 >;; export the </em></font><code id='code1369'
 >bar</code> mutable variable
       bar
-      <font color="#ffa600"><em id='it29959'
+      <font color="#ffa600"><em id='it29972'
 >;; export the </em></font><code id='code1370'
 >hux</code> function. this
-      <font color="#ffa600"><em id='it29961'
+      <font color="#ffa600"><em id='it29974'
 >;; function takes exactly two arguments</em></font>
       (hux x y)       
-      <font color="#ffa600"><em id='it29963'
+      <font color="#ffa600"><em id='it29976'
 >;; export the inline function </em></font><code id='code1371'
 >gee</code>
-      <font color="#ffa600"><em id='it29965'
+      <font color="#ffa600"><em id='it29978'
 >;; that takes at least one argument.</em></font>
-      (<strong id='bold29967'
+      (<strong id='bold29980'
 >inline</strong> gee x . z)))
 </pre>
 </td></tr>
@@ -575,13 +575,13 @@ module can export any bindings imported via a <code id='code1409'
 >bar</code>:<br/><br/><center id='center1422'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1420'
->(<font color="#1919af"><strong id='bold29968'
->module</strong></font> <font color="#1919af"><strong id='bold29970'
+>(<font color="#1919af"><strong id='bold29981'
+>module</strong></font> <font color="#1919af"><strong id='bold29983'
 >bar</strong></font>
-   (<font color="#1919af"><strong id='bold29972'
->export</strong></font> (<font color="#1919af"><strong id='bold29974'
->fun</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold29976'
->define</strong></font> (<font color="#6959cf"><strong id='bold29978'
+   (<font color="#1919af"><strong id='bold29985'
+>export</strong></font> (<font color="#1919af"><strong id='bold29987'
+>fun</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold29989'
+>define</strong></font> (<font color="#6959cf"><strong id='bold29991'
 >fun</strong></font>) <font color="red">&quot;bar&quot;</font>)
 </pre>
 </td></tr>
@@ -598,8 +598,8 @@ means of a <code id='code1425'
 >bar</code>:<br/><br/><center id='center1435'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1433'
->(<font color="#1919af"><strong id='bold29981'
->module</strong></font> <font color="#1919af"><strong id='bold29983'
+>(<font color="#1919af"><strong id='bold29994'
+>module</strong></font> <font color="#1919af"><strong id='bold29996'
 >foo</strong></font>
    (from (fun bar <font color="red">&quot;bar.scm&quot;</font>)))
 </pre>
@@ -613,11 +613,11 @@ the binding for function <code id='code1438'
 >bar</code>:<br/><br/><center id='center1448'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1446'
->(<font color="#1919af"><strong id='bold29986'
->module</strong></font> <font color="#1919af"><strong id='bold29988'
+>(<font color="#1919af"><strong id='bold29999'
+>module</strong></font> <font color="#1919af"><strong id='bold30001'
 >gee</strong></font>
-   (<font color="#1919af"><strong id='bold29990'
->import</strong></font> (<font color="#1919af"><strong id='bold29992'
+   (<font color="#1919af"><strong id='bold30003'
+>import</strong></font> (<font color="#1919af"><strong id='bold30005'
 >foo</strong></font> <font color="red">&quot;foo.scm&quot;</font>)))<br/><br/>(print (fun))
 </pre>
 </td></tr>
@@ -627,12 +627,12 @@ This feature is very useful when compiling modules exporting functions
 with type annotations. In particular, one may write:<br/><br/><center id='center1457'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1455'
->(<font color="#1919af"><strong id='bold29995'
->module</strong></font> <font color="#1919af"><strong id='bold29997'
+>(<font color="#1919af"><strong id='bold30008'
+>module</strong></font> <font color="#1919af"><strong id='bold30010'
 >foo</strong></font>
-  (<font color="#1919af"><strong id='bold29999'
->export</strong></font> (<strong id='bold30001'
->class</strong> <font color="#1919af"><strong id='bold30002'
+  (<font color="#1919af"><strong id='bold30012'
+>export</strong></font> (<strong id='bold30014'
+>class</strong> <font color="#1919af"><strong id='bold30015'
 >c1</strong></font> x)))
 </pre>
 </td></tr>
@@ -642,21 +642,21 @@ Then,
 <center id='center1471'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1469'
->(<font color="#1919af"><strong id='bold30004'
->module</strong></font> <font color="#1919af"><strong id='bold30006'
+>(<font color="#1919af"><strong id='bold30017'
+>module</strong></font> <font color="#1919af"><strong id='bold30019'
 >bar</strong></font>
-  (<font color="#1919af"><strong id='bold30008'
->import</strong></font> <font color="#1919af"><strong id='bold30010'
+  (<font color="#1919af"><strong id='bold30021'
+>import</strong></font> <font color="#1919af"><strong id='bold30023'
 >foo</strong></font>)
   (from foo)
-  (<font color="#1919af"><strong id='bold30012'
->export</strong></font> (<font color="#1919af"><strong id='bold30014'
->fun</strong></font><font color="#00cf00"><strong id='bold30016'
->::c1</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30018'
->define</strong></font> (<font color="#6959cf"><strong id='bold30020'
+  (<font color="#1919af"><strong id='bold30025'
+>export</strong></font> (<font color="#1919af"><strong id='bold30027'
+>fun</strong></font><font color="#00cf00"><strong id='bold30029'
+>::c1</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30031'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30033'
 >fun</strong></font>)
-   (<strong id='bold30022'
->instantiate</strong><font color="#00cf00"><strong id='bold30023'
+   (<strong id='bold30035'
+>instantiate</strong><font color="#00cf00"><strong id='bold30036'
 >::c1</strong></font> (x 10)))
 </pre>
 </td></tr>
@@ -665,16 +665,16 @@ Then,
 And,<br/><br/><center id='center1482'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1480'
->(<font color="#1919af"><strong id='bold30025'
->module</strong></font> <font color="#1919af"><strong id='bold30027'
+>(<font color="#1919af"><strong id='bold30038'
+>module</strong></font> <font color="#1919af"><strong id='bold30040'
 >gee</strong></font>
-   (<font color="#1919af"><strong id='bold30029'
->import</strong></font> <font color="#1919af"><strong id='bold30031'
+   (<font color="#1919af"><strong id='bold30042'
+>import</strong></font> <font color="#1919af"><strong id='bold30044'
 >bar</strong></font>)
-   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold30033'
->define</strong></font> (<font color="#6959cf"><strong id='bold30035'
+   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold30046'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30048'
 >main</strong></font> x)
-   (<strong id='bold30037'
+   (<strong id='bold30050'
 >let</strong> ((o (fun)))
       (print o)
       (print (c1? o))))
@@ -714,13 +714,13 @@ but the <code id='code1503'
 >foo</code> is defined by:<br/><br/><center id='center1515'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1513'
->(<font color="#1919af"><strong id='bold30038'
->module</strong></font> <font color="#1919af"><strong id='bold30040'
+>(<font color="#1919af"><strong id='bold30051'
+>module</strong></font> <font color="#1919af"><strong id='bold30053'
 >foo</strong></font>
-   (<font color="#1919af"><strong id='bold30042'
->export</strong></font> (<font color="#1919af"><strong id='bold30044'
->foo</strong></font> x)))<br/><br/>(<font color="#6959cf"><strong id='bold30046'
->define</strong></font> (<font color="#6959cf"><strong id='bold30048'
+   (<font color="#1919af"><strong id='bold30055'
+>export</strong></font> (<font color="#1919af"><strong id='bold30057'
+>foo</strong></font> x)))<br/><br/>(<font color="#6959cf"><strong id='bold30059'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30061'
 >foo</strong></font> x)
    `(cons ,x ,x))
 </pre>
@@ -730,11 +730,11 @@ but the <code id='code1503'
 then,<br/><br/><center id='center1525'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1523'
->(<font color="#1919af"><strong id='bold30050'
->module</strong></font> <font color="#1919af"><strong id='bold30052'
+>(<font color="#1919af"><strong id='bold30063'
+>module</strong></font> <font color="#1919af"><strong id='bold30065'
 >gee</strong></font>
-   (load (foo <font color="red">&quot;foo.scm&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30055'
->define-macro</strong></font> (<font color="#6959cf"><strong id='bold30057'
+   (load (foo <font color="red">&quot;foo.scm&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30068'
+>define-macro</strong></font> (<font color="#6959cf"><strong id='bold30070'
 >gee</strong></font> x)
    `(cons ,(-fx x 1) ,(foo x)))<br/><br/>(gee 5)   ==&gt; (cons 4 (cons 5 5))
           =&gt; (4 5 . 5)
@@ -795,19 +795,19 @@ clause makes the variables and functions of a library accessible from
 the interpreter.<br/><br/><center id='center1572'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1570'
->(<font color="#1919af"><strong id='bold30059'
->module</strong></font> <font color="#1919af"><strong id='bold30061'
+>(<font color="#1919af"><strong id='bold30072'
+>module</strong></font> <font color="#1919af"><strong id='bold30074'
 >foo</strong></font>
-   (<font color="#1919af"><strong id='bold30063'
->export</strong></font> (<font color="#1919af"><strong id='bold30065'
+   (<font color="#1919af"><strong id='bold30076'
+>export</strong></font> (<font color="#1919af"><strong id='bold30078'
 >fib</strong></font> x))
-   (eval (<font color="#1919af"><strong id='bold30067'
->export</strong></font> <font color="#1919af"><strong id='bold30069'
+   (eval (<font color="#1919af"><strong id='bold30080'
+>export</strong></font> <font color="#1919af"><strong id='bold30082'
 >fib</strong></font>)
-         (<font color="#1919af"><strong id='bold30071'
->import</strong></font> <font color="#1919af"><strong id='bold30073'
->bar</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30075'
->define</strong></font> (<font color="#6959cf"><strong id='bold30077'
+         (<font color="#1919af"><strong id='bold30084'
+>import</strong></font> <font color="#1919af"><strong id='bold30086'
+>bar</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30088'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30090'
 >fib</strong></font> x) ...)
 (print bar)
 </pre>
@@ -873,12 +873,12 @@ variables, which are described when Bigloo is invoked with the <code id='code161
 option, to be set as in the following example:<br/><br/><center id='center1625'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1623'
->(<font color="#1919af"><strong id='bold30079'
->module</strong></font> <font color="#1919af"><strong id='bold30081'
+>(<font color="#1919af"><strong id='bold30092'
+>module</strong></font> <font color="#1919af"><strong id='bold30094'
 >examplar</strong></font>
-   (option (<strong id='bold30083'
+   (option (<strong id='bold30096'
 >set!</strong> *debug* 3)
-           (<strong id='bold30084'
+           (<strong id='bold30097'
 >set!</strong> *verbose* 2)))<br/><br/>(print 'dummy)
 </pre>
 </td></tr>
@@ -904,15 +904,15 @@ named <code id='code1640'
 >format</code>:<br/><br/><center id='center1651'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1649'
->(<font color="#1919af"><strong id='bold30085'
->module</strong></font> <font color="#1919af"><strong id='bold30087'
+>(<font color="#1919af"><strong id='bold30098'
+>module</strong></font> <font color="#1919af"><strong id='bold30100'
 >test</strong></font>
-   (<font color="#1919af"><strong id='bold30089'
->library</strong></font> <font color="#1919af"><strong id='bold30091'
+   (<font color="#1919af"><strong id='bold30102'
+>library</strong></font> <font color="#1919af"><strong id='bold30104'
 >format</strong></font>)
    (main    test-format)
-   (<font color="#1919af"><strong id='bold30093'
->import</strong></font>  (<font color="#1919af"><strong id='bold30095'
+   (<font color="#1919af"><strong id='bold30106'
+>import</strong></font>  (<font color="#1919af"><strong id='bold30108'
 >test2</strong></font> <font color="red">&quot;test2.scm&quot;</font>)))
 </pre>
 </td></tr>
@@ -959,16 +959,16 @@ appear in import clauses.<br/><br/>Here is a first example with two modules. Fir
 >foo</code>:<br/><br/><center id='center1691'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1689'
-><font color="#ffa600"><em id='it30098'
+><font color="#ffa600"><em id='it30111'
 >;; module foo</em></font>
-(<font color="#1919af"><strong id='bold30100'
->module</strong></font> <font color="#1919af"><strong id='bold30102'
+(<font color="#1919af"><strong id='bold30113'
+>module</strong></font> <font color="#1919af"><strong id='bold30115'
 >foo</strong></font>
    (main main)
-   (<font color="#1919af"><strong id='bold30104'
->import</strong></font> (<font color="#1919af"><strong id='bold30106'
->bar</strong></font> <font color="red">&quot;bar.scm&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30109'
->define</strong></font> (<font color="#6959cf"><strong id='bold30111'
+   (<font color="#1919af"><strong id='bold30117'
+>import</strong></font> (<font color="#1919af"><strong id='bold30119'
+>bar</strong></font> <font color="red">&quot;bar.scm&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30122'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30124'
 >main</strong></font> argv)
    (print <font color="red">&quot;argv: &quot;</font> argv))
 (print <font color="red">&quot;foo&quot;</font>)
@@ -981,10 +981,10 @@ Then the module <code id='code1692'
 <center id='center1699'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1697'
-><font color="#ffa600"><em id='it30115'
+><font color="#ffa600"><em id='it30128'
 >;; module bar</em></font>
-(<font color="#1919af"><strong id='bold30117'
->module</strong></font> <font color="#1919af"><strong id='bold30119'
+(<font color="#1919af"><strong id='bold30130'
+>module</strong></font> <font color="#1919af"><strong id='bold30132'
 >bar</strong></font>)<br/><br/>(print <font color="red">&quot;bar&quot;</font>)
 </pre>
 </td></tr>
@@ -1046,17 +1046,17 @@ Let's consider another example with 3 modules:
 <center id='center1738'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1736'
-><font color="#ffa600"><em id='it30122'
+><font color="#ffa600"><em id='it30135'
 >;; </em></font><code id='code1725'
 >module1</code>
-(<font color="#1919af"><strong id='bold30124'
->module</strong></font> <font color="#1919af"><strong id='bold30126'
+(<font color="#1919af"><strong id='bold30137'
+>module</strong></font> <font color="#1919af"><strong id='bold30139'
 >module1</strong></font>
    (main main)
-   (<font color="#1919af"><strong id='bold30128'
->import</strong></font> (<font color="#1919af"><strong id='bold30130'
->module2</strong></font> <font color="red">&quot;module2.scm&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30133'
->define</strong></font> (<font color="#6959cf"><strong id='bold30135'
+   (<font color="#1919af"><strong id='bold30141'
+>import</strong></font> (<font color="#1919af"><strong id='bold30143'
+>module2</strong></font> <font color="red">&quot;module2.scm&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold30146'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30148'
 >main</strong></font> argv)
    (print <font color="red">&quot;argv: &quot;</font> argv))<br/><br/>(print <font color="red">&quot;module1&quot;</font>)
 </pre>
@@ -1067,14 +1067,14 @@ The second module:
 <center id='center1749'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1747'
-><font color="#ffa600"><em id='it30139'
+><font color="#ffa600"><em id='it30152'
 >;; </em></font><code id='code1739'
 >module2</code>
-(<font color="#1919af"><strong id='bold30141'
->module</strong></font> <font color="#1919af"><strong id='bold30143'
+(<font color="#1919af"><strong id='bold30154'
+>module</strong></font> <font color="#1919af"><strong id='bold30156'
 >module2</strong></font>
-   (<font color="#1919af"><strong id='bold30145'
->import</strong></font> (<font color="#1919af"><strong id='bold30147'
+   (<font color="#1919af"><strong id='bold30158'
+>import</strong></font> (<font color="#1919af"><strong id='bold30160'
 >module3</strong></font> <font color="red">&quot;module3.scm&quot;</font>)))<br/><br/>(print <font color="red">&quot;module2&quot;</font>)
 </pre>
 </td></tr>
@@ -1084,14 +1084,14 @@ The third module:
 <center id='center1759'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1757'
-><font color="#ffa600"><em id='it30151'
+><font color="#ffa600"><em id='it30164'
 >;; </em></font><code id='code1750'
 >module3</code>
-(<font color="#1919af"><strong id='bold30153'
->module</strong></font> <font color="#1919af"><strong id='bold30155'
+(<font color="#1919af"><strong id='bold30166'
+>module</strong></font> <font color="#1919af"><strong id='bold30168'
 >module3</strong></font>
-   (<font color="#1919af"><strong id='bold30157'
->import</strong></font> (<font color="#1919af"><strong id='bold30159'
+   (<font color="#1919af"><strong id='bold30170'
+>import</strong></font> (<font color="#1919af"><strong id='bold30172'
 >module1</strong></font> <font color="red">&quot;module1.scm&quot;</font>)))
  
 (print <font color="red">&quot;module3&quot;</font>)
@@ -1189,16 +1189,16 @@ procedures. Here is a small example of a module which exports an inline and
 a module which imports it.<br/><br/><center id='center1810'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1808'
-><font color="#ffa600"><em id='it30163'
+><font color="#ffa600"><em id='it30176'
 >;; the exporter module</em></font>
-(<font color="#1919af"><strong id='bold30165'
->module</strong></font> <font color="#1919af"><strong id='bold30167'
+(<font color="#1919af"><strong id='bold30178'
+>module</strong></font> <font color="#1919af"><strong id='bold30180'
 >exporter</strong></font>
-        (<font color="#1919af"><strong id='bold30169'
->export</strong></font> (<strong id='bold30171'
->inline</strong> <font color="#1919af"><strong id='bold30172'
->make-list</strong></font> . objs)))<br/><br/>(<font color="#6959cf"><strong id='bold30174'
->define-inline</strong></font> (<font color="#6959cf"><strong id='bold30176'
+        (<font color="#1919af"><strong id='bold30182'
+>export</strong></font> (<strong id='bold30184'
+>inline</strong> <font color="#1919af"><strong id='bold30185'
+>make-list</strong></font> . objs)))<br/><br/>(<font color="#6959cf"><strong id='bold30187'
+>define-inline</strong></font> (<font color="#6959cf"><strong id='bold30189'
 >make-list</strong></font> . objs) objs)
 </pre>
 </td></tr>
@@ -1207,13 +1207,13 @@ a module which imports it.<br/><br/><center id='center1810'
 <center id='center1818'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1816'
-><font color="#ffa600"><em id='it30178'
+><font color="#ffa600"><em id='it30191'
 >;; the importer module</em></font>
-(<font color="#1919af"><strong id='bold30180'
->module</strong></font> <font color="#1919af"><strong id='bold30182'
+(<font color="#1919af"><strong id='bold30193'
+>module</strong></font> <font color="#1919af"><strong id='bold30195'
 >importer</strong></font>
-        (<font color="#1919af"><strong id='bold30184'
->import</strong></font> <font color="#1919af"><strong id='bold30186'
+        (<font color="#1919af"><strong id='bold30197'
+>import</strong></font> <font color="#1919af"><strong id='bold30199'
 >exporter</strong></font>))<br/><br/>(print (make-list 1 2 3 4 5))
 </pre>
 </td></tr>
@@ -1223,7 +1223,7 @@ Because of the open-coding of the exporter procedure, the above print
 statement is equivalent to:<br/><br/><center id='center1823'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1821'
->(print (<strong id='bold30188'
+>(print (<strong id='bold30201'
 >let</strong> ((objs (list 1 2 3 4 5)))
           objs))
 </pre>
@@ -1295,12 +1295,12 @@ compiler.
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph30194'
+<p class="ending" id='paragraph30207'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it30192'
->Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+Last update <em id='it30205'
+>Tue Jan  6 18:53:36 2015</em>.</font></p></div>
 </body>
 </html>

@@ -3,8 +3,8 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Bernard Serpette                                  */
 ;*    Creation    :  Tue Feb  8 16:49:34 2011                          */
-;*    Last change :  Mon Jul 22 12:07:47 2013 (serrano)                */
-;*    Copyright   :  2011-13 Manuel Serrano                            */
+;*    Last change :  Wed Nov 19 13:33:29 2014 (serrano)                */
+;*    Copyright   :  2011-14 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    Compile AST to closures                                          */
 ;*=====================================================================*/
@@ -82,11 +82,24 @@
        (begin ,@l
 	      **res** )))
 
-(define-macro (foo_unwind-protect e1 e2)
-   (if #t
-       `(unwind-protect ,e1 ,e2)
-       `(let ( (____r ,e1) )
-	   (begin ,e2 ____r) )))
+(define-macro (unwind-protect-state expr denv state)
+   `(let ( (e ($get-exitd-top)) )
+       ((@ exitd-push-protect! __bexit) e ,state)
+       (let ( (____r ,expr) )
+	   (begin
+	      ((@ exitd-pop-protect! __bexit) e)
+	      ($evmeaning-evstate-set! ,denv ,state)
+	      ____r ))))
+
+(define-macro (unwind-protect-bp expr s bp)
+   ;; see runtime __bexit
+   `(let ( (e ($get-exitd-top)) )
+      ((@ exitd-push-protect! __bexit) e ,bp)
+      (let ( (acc ,expr) )
+        (begin
+          ((@ exitd-pop-protect! __bexit) e)
+          (vector-set! ,s 0 ,bp)
+          acc ))))
 
 (define-macro (step s bp size . l)
    (if #f
@@ -204,7 +217,6 @@
 	  s )) )
 
 (define (push-state s)
-   (print "PUSHSTATE")
    (let ( (stk (make-vector **size-stack** "")) )
       (vector-set! s 1 stk)
       (vector-set! s 0 2)
@@ -737,8 +749,7 @@
 				       (vector-copy! ns 2 s start (+fx start nbargs)) )
 				    (vector-set! ns 1 s)
 				    ($evmeaning-evstate-set! !denv ns)
-				    (foo_unwind-protect (catch-trampoline run ns 2)
-				       ($evmeaning-evstate-set! !denv s) ))))))))))))
+				    (unwind-protect-state (catch-trampoline run ns 2) !denv s) )))))))))))
 
 (define-macro (comp-call-pattern pn tail? comp-call subr-call fix-expr-call notfix-expr-call);
    `(if (> (bigloo-debug) 0)
@@ -853,8 +864,7 @@
 				       (vector-copy! ns 2 s start (+fx start ,nbargs)) )
 				    (vector-set! ns 1 s)
 				    ($evmeaning-evstate-set! !denv ns)
-				    (foo_unwind-protect (catch-trampoline run ns 2)
-				       ($evmeaning-evstate-set! !denv s) ))))))))))))
+				    (unwind-protect-state (catch-trampoline run ns 2) !denv s) )))))))))))
 
 (define-macro (generate-comp-calli-body tail? args)
    `(if (> (bigloo-debug) 0)
@@ -1095,8 +1105,8 @@
 									,extra
 									loc))) )
 					       (step s bp size '(entry main cont2))
-					       (foo_unwind-protect (catch-trampoline run s bp)
-							       (vector-set! s 0 bp) ))
+					       (unwind-protect-bp (catch-trampoline run s bp)
+							       s bp))
 					    (let ( (ns (make-state)) )
 					       (vector-set! ns 1 s)
 					       ,@(map (lambda (i v) `(vector-set! ns ,(+fx 2 i) ,v))
@@ -1109,10 +1119,9 @@
 									(correct ,arity ,nbparam)
 									,extra
 									loc))) )
-					       ($evmeaning-evstate-set! (current-dynamic-env) ns)
-					       (foo_unwind-protect (catch-trampoline run ns 2)
-							       ($evmeaning-evstate-set! (current-dynamic-env) s) ))))))) )
-					       
+					       (let ( (!denv (current-dynamic-env)) )
+						  ($evmeaning-evstate-set! !denv ns)
+						  (unwind-protect-state (catch-trampoline run ns 2) !denv s) ))))))) )
 		     (procedure-attr-set! run **a-bounce**)
 		     (procedure-attr-set! main (user ,arity run size-frame where))
 		     main ))))))
