@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>34. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- User Extensions</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>34. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- User Extensions</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center35819'
+<br/><center id='center35836'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35809" align="center" colspan="1"><font color="#ffffff"><strong id='bold35807'
+<tr bgcolor="#8381de"><th id="tc35826" align="center" colspan="1"><font color="#ffffff"><strong id='bold35824'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35816" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc35812" align="left" valign="top" colspan="1"><strong id='bold35811'
->top:</strong></td><td id="tc35813" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc35833" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc35829" align="left" valign="top" colspan="1"><strong id='bold35828'
+>top:</strong></td><td id="tc35830" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center35829'
+<br/><br/><center id='center35846'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35823" align="center" colspan="1"><font color="#ffffff"><strong id='bold35821'
+<tr bgcolor="#8381de"><th id="tc35840" align="center" colspan="1"><font color="#ffffff"><strong id='bold35838'
 >User Extensions</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35826" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc35843" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">34.1</td><td colspan="4" width="100%"><a href="bigloo-35.html#User-pass">User pass</a></td></tr>
 </tbody>
@@ -50,11 +50,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center35839'
+<br/><br/><center id='center35856'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35833" align="center" colspan="1"><font color="#ffffff"><strong id='bold35831'
+<tr bgcolor="#8381de"><th id="tc35850" align="center" colspan="1"><font color="#ffffff"><strong id='bold35848'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35836" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc35853" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -102,34 +102,34 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="User-Extensions" class="mark"></a><a name="g29242" class="mark"></a>
+<a name="User-Extensions" class="mark"></a><a name="g29255" class="mark"></a>
 The extension package system allows the language compiled by Bigloo to be
-extended and this is achieved by associating an <em id='emph29244'
+extended and this is achieved by associating an <em id='emph29257'
 >extension file</em> with a
-suffix. The <em id='emph29245'
+suffix. The <em id='emph29258'
 >extension file</em> is loaded at the beginning of a compilation
 and it can do three things: call extern programs (unix programs); define
 macros; modify the values of some of the compiler's variables (for example,
 the list of the libraries to be linked with). The Bigloo's initializing
-procedure is the following:<br/><br/><ul class="itemize" id='itemize29260'
+procedure is the following:<br/><br/><ul class="itemize" id='itemize29273'
 ><li>If it exists, Bigloo loads the runtime-command file, see 
 Section <a href="bigloo-33.html#Compiler-Description" class="inbound">Compiler Description</a>.<br/><br/></li>
 <li>It then parses the command line to find the source file to compile.
 
 </li>
 <li>It extracts the source file suffix and looks it up in its
-<code id='code29250'
+<code id='code29263'
 >*auto-mode*</code> variable.
-<a name="g29251" class="mark"></a>
+<a name="g29264" class="mark"></a>
 </li>
 <li> If the suffix is found, the associated file is loaded. This
-file could contain a function named <code id='code29254'
+file could contain a function named <code id='code29267'
 >*extend-entry*</code> 
 which must accept a list as argument. It is 
 invoked with the Bigloo's unparsed arguments.
-<a name="g29255" class="mark"></a>
+<a name="g29268" class="mark"></a>
 </li>
-<li>The result of the <code id='code29258'
+<li>The result of the <code id='code29271'
 >*extend-entry*</code> application has to be a
 regular list of arguments and these are parsed by Bigloo.
 </li>
@@ -137,11 +137,11 @@ regular list of arguments and these are parsed by Bigloo.
 For now, two extension packages exist: the Meroon package which
 is a native version of the Christian Queinnec object
 language; the Camloo [SerranoWeis94] package which is a front
-end compiler for the Caml language [Caml-light]<br/><br/>Furthermore, Bigloo supports the <code id='code29262'
+end compiler for the Caml language [Caml-light]<br/><br/>Furthermore, Bigloo supports the <code id='code29275'
 >-extend</code> option which forces 
 the usage of an extension file. When Bigloo encounters this option, it
 immediately loads the extension file, invoking the function 
-<code id='code29263'
+<code id='code29276'
 >*extend-entry*</code> with the list of arguments which have not 
 been parsed yet.<br/><br/>The extension files are always sought in the directory containing the
 Bigloo's libraries.<br/><br/><!-- User pass -->
@@ -151,34 +151,34 @@ Bigloo's libraries.<br/><br/><!-- User pass -->
 </div><div class="section">
 
 Bigloo allows the user to add a special pass to the regular compilation,
-this pass taking place <em id='emph29266'
+this pass taking place <em id='emph29279'
 >before</em> macro expansion. There are
-two ways to add a user pass.<br/><br/><ul class="itemize" id='itemize29278'
-><li>Add a compiled pass: The module <code id='code29268'
+two ways to add a user pass.<br/><br/><ul class="itemize" id='itemize29291'
+><li>Add a compiled pass: The module <code id='code29281'
 >user_user</code> 
 (in the ``comptime/User/user.scm'' file) is the user entry pass point. 
 To add a compiled pass, put the code of the pass in this directory, import
-your new modules in <code id='code29269'
->user_user</code> and modify the <code id='code29270'
+your new modules in <code id='code29282'
+>user_user</code> and modify the <code id='code29283'
 >user-walk</code> function.<br/><br/></li>
-<li>Add an interpreted pass: Set the value of <code id='code29273'
+<li>Add an interpreted pass: Set the value of <code id='code29286'
 >*user-pass*</code>,
-which has to be a unary function, in your <code id='code29274'
+which has to be a unary function, in your <code id='code29287'
 >.bigloorc</code> file and 
 Bigloo will invoke it with the code as argument.
-<a name="g29275" class="mark"></a></li>
+<a name="g29288" class="mark"></a></li>
 </ul><br/><br/><br/>
 
 </div><br>
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph35845'
+<p class="ending" id='paragraph35862'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it35843'
->Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+Last update <em id='it35860'
+>Tue Jan  6 18:53:36 2015</em>.</font></p></div>
 </body>
 </html>

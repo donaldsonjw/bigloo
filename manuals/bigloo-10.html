@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>9. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- Structures and Records</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>9. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- Structures and Records</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center31495'
+<br/><center id='center31512'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31485" align="center" colspan="1"><font color="#ffffff"><strong id='bold31483'
+<tr bgcolor="#8381de"><th id="tc31502" align="center" colspan="1"><font color="#ffffff"><strong id='bold31500'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31492" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc31488" align="left" valign="top" colspan="1"><strong id='bold31487'
->top:</strong></td><td id="tc31489" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc31509" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc31505" align="left" valign="top" colspan="1"><strong id='bold31504'
+>top:</strong></td><td id="tc31506" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center31505'
+<br/><br/><center id='center31522'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31499" align="center" colspan="1"><font color="#ffffff"><strong id='bold31497'
+<tr bgcolor="#8381de"><th id="tc31516" align="center" colspan="1"><font color="#ffffff"><strong id='bold31514'
 >Structures and Records</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31502" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc31519" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">9.1</td><td colspan="4" width="100%"><a href="bigloo-10.html#Structures">Structures</a></td></tr>
  <tr><td valign="top" align="left">9.2</td><td colspan="4" width="100%"><a href="bigloo-10.html#Records-(SRFI-9)">Records (SRFI-9)</a></td></tr>
@@ -51,11 +51,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center31515'
+<br/><br/><center id='center31532'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31509" align="center" colspan="1"><font color="#ffffff"><strong id='bold31507'
+<tr bgcolor="#8381de"><th id="tc31526" align="center" colspan="1"><font color="#ffffff"><strong id='bold31524'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31512" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc31529" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -104,9 +104,9 @@
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
 <a name="Structures-and-Records" class="mark"></a>
-Bigloo supports two kinds of enumerated types: the <em id='emph15814'
+Bigloo supports two kinds of enumerated types: the <em id='emph15827'
 >structures</em> and
-the <em id='emph15815'
+the <em id='emph15828'
 >records</em>. They offer similar facilities. Structures were 
 pre-existing to records and they are maintained mainly for backward
 compatiblity. Recors are compliant with the Scheme request for 
@@ -116,71 +116,71 @@ implementation 9.<br/><br/>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">9.1 Structures</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Structures" class="mark"></a><a name="g15817" class="mark"></a>There is, in Bigloo, a new class of objects: 
-structures, which are equivalent to C <code id='code15819'
+<a name="Structures" class="mark"></a><a name="g15830" class="mark"></a>There is, in Bigloo, a new class of objects: 
+structures, which are equivalent to C <code id='code15832'
 >struct</code>.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15822" class="mark"></a><a name="define-struct" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15826" align="left" colspan="1"><strong id='bold15824'
->define-struct</strong><em id='it15825'
-> name field...</em></td><td id="tc15827" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g15835" class="mark"></a><a name="define-struct" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15839" align="left" colspan="1"><strong id='bold15837'
+>define-struct</strong><em id='it15838'
+> name field...</em></td><td id="tc15840" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
 
-This form defines a structure with name <code id='code15831'
-><em id='it15830'
+This form defines a structure with name <code id='code15844'
+><em id='it15843'
 >name</em></code>, which is a symbol,
-having fields <code id='code15833'
-><em id='it15832'
+having fields <code id='code15846'
+><em id='it15845'
 >field</em></code>... which are symbols or lists, each
 list being composed of a symbol and a default value. This form creates
 several functions: creator, predicate, accessor and assigner functions. The
 name of each function is built in the following way:
-<ul class="itemize" id='itemize15854'
-><li>Creator: <code id='code15836'
->make-<code id='code15835'
-><em id='it15834'
+<ul class="itemize" id='itemize15867'
+><li>Creator: <code id='code15849'
+>make-<code id='code15848'
+><em id='it15847'
 >name</em></code></code>
 </li>
-<li>Predicate: <code id='code15840'
-><code id='code15839'
-><em id='it15838'
+<li>Predicate: <code id='code15853'
+><code id='code15852'
+><em id='it15851'
 >name</em></code>?</code>
 </li>
-<li>Accessor: <code id='code15846'
-><code id='code15843'
-><em id='it15842'
->name</em></code>-<code id='code15845'
-><em id='it15844'
+<li>Accessor: <code id='code15859'
+><code id='code15856'
+><em id='it15855'
+>name</em></code>-<code id='code15858'
+><em id='it15857'
 >field</em></code></code>
 </li>
-<li>Assigner: <code id='code15852'
-><code id='code15849'
-><em id='it15848'
->name</em></code>-<code id='code15851'
-><em id='it15850'
+<li>Assigner: <code id='code15865'
+><code id='code15862'
+><em id='it15861'
+>name</em></code>-<code id='code15864'
+><em id='it15863'
 >field</em></code>-set!</code>
 </li>
 </ul>
-Function <code id='code15857'
->make-<code id='code15856'
-><em id='it15855'
+Function <code id='code15870'
+>make-<code id='code15869'
+><em id='it15868'
 >name</em></code></code> accepts an optional argument. If
 provided, all the slots of the created structures are filled with it. The
-creator named <code id='code15858'
+creator named <code id='code15871'
 >name</code> accepts as many arguments as the number of
 slots of the structure. This function allocates a structure and fills
-each of its slots with its corresponding argument.<br/><br/>If a structure is created using <code id='code15862'
->make-<code id='code15861'
-><em id='it15860'
+each of its slots with its corresponding argument.<br/><br/>If a structure is created using <code id='code15875'
+>make-<code id='code15874'
+><em id='it15873'
 >name</em></code></code> and no initialization
 value is provided, the slot default values (when provided) are used
-to initialize the new structure. For instance, the execution of the program:<br/><br/><center id='center15869'
+to initialize the new structure. For instance, the execution of the program:<br/><br/><center id='center15882'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15867'
->(<font color="#6959cf"><strong id='bold31516'
->define-struct</strong></font> <font color="#6959cf"><strong id='bold31518'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15880'
+>(<font color="#6959cf"><strong id='bold31533'
+>define-struct</strong></font> <font color="#6959cf"><strong id='bold31535'
 >pt1</strong></font> a b)
-(<font color="#6959cf"><strong id='bold31520'
->define-struct</strong></font> <font color="#6959cf"><strong id='bold31522'
+(<font color="#6959cf"><strong id='bold31537'
+>define-struct</strong></font> <font color="#6959cf"><strong id='bold31539'
 >pt2</strong></font> (h 4) (g 6))<br/><br/>(make-pt1)
    =&gt; #{PT1 () ()}
 (make-pt1 5)
@@ -195,14 +195,14 @@ to initialize the new structure. For instance, the execution of the program:<br/
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15873" class="mark"></a><a name="struct?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15877" align="left" colspan="1"><strong id='bold15875'
->struct?</strong><em id='it15876'
-> obj</em></td><td id="tc15878" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15886" class="mark"></a><a name="struct?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15890" align="left" colspan="1"><strong id='bold15888'
+>struct?</strong><em id='it15889'
+> obj</em></td><td id="tc15891" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns <code id='code15881'
->#t</code> if and only if <code id='code15883'
-><em id='it15882'
+Returns <code id='code15894'
+>#t</code> if and only if <code id='code15896'
+><em id='it15895'
 >obj</em></code> is a structure.
 </td></tr>
 </tbody></table><br/>
@@ -213,23 +213,23 @@ Returns <code id='code15881'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">9.2 Records (SRFI-9)</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Records-(SRFI-9)" class="mark"></a><a name="g15886" class="mark"></a><a name="g15888" class="mark"></a>
+<a name="Records-(SRFI-9)" class="mark"></a><a name="g15899" class="mark"></a><a name="g15901" class="mark"></a>
 Bigloo supports records has specified by SRFI-9. This section is a copy
 of the SRFI-9 specification by Richard Kelsey. This SRFI describes
 syntax for creating new data types, called record types.  A predicate,
 constructor, and field accessors and modifiers are defined for each
 record type.  Each new record type is distinct from all existing types,
 including other record types and Scheme's predefined types.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15892" class="mark"></a><a name="define-record-type" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15896" align="left" colspan="1"><strong id='bold15894'
->define-record-type</strong><em id='it15895'
-> expression...</em></td><td id="tc15897" align="right" colspan="1">syntax</td></tr>
+<tr><td><a name="g15905" class="mark"></a><a name="define-record-type" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15909" align="left" colspan="1"><strong id='bold15907'
+>define-record-type</strong><em id='it15908'
+> expression...</em></td><td id="tc15910" align="right" colspan="1">syntax</td></tr>
 </tbody></table>
 
-The syntax of a record-type definition is: <br/><br/><center id='center15904'
+The syntax of a record-type definition is: <br/><br/><center id='center15917'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog15902'
->&lt;record-type-definition&gt; ==&gt; (<code id='code15901'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog15915'
+>&lt;record-type-definition&gt; ==&gt; (<code id='code15914'
 >define-record-type</code> &lt;type-name&gt;
                                          (&lt;constructor-name&gt; &lt;field-tag&gt; ...)
                                          &lt;predicate-name&gt;
@@ -245,47 +245,47 @@ The syntax of a record-type definition is: <br/><br/><center id='center15904'
 </td></tr>
 </tbody></table></center>
 
-<code id='code15905'
+<code id='code15918'
 >Define-record-type</code> is generative: each use creates a new record
 type that is distinct from all existing types, including other record
 types and Scheme's predefined types. Record-type definitions may only
 occur at top-level (there are two possible semantics for `internal'
 record-type definitions, generative and nongenerative, and no consensus
-as to which is better).<br/><br/>an instance of <code id='code15907'
+as to which is better).<br/><br/>an instance of <code id='code15920'
 >define-record-type</code> is equivalent to the following
-definitions:<br/><br/><br/><ul class="itemize" id='itemize15932'
-><li><code id='code15909'
+definitions:<br/><br/><br/><ul class="itemize" id='itemize15945'
+><li><code id='code15922'
 >&lt;type-name&gt;</code>
 is bound to a representation of the record type itself. Operations on
 record types, such as defining print methods, reflection, etc. are left
 to other SRFIs.<br/><br/></li>
-<li><code id='code15912'
+<li><code id='code15925'
 >&lt;constructor-name&gt;</code>
 is bound to a procedure that takes as many arguments as the
-re are <code id='code15913'
->&lt;field-tag&gt;</code>s in the <code id='code15914'
+re are <code id='code15926'
+>&lt;field-tag&gt;</code>s in the <code id='code15927'
 >(&lt;constructor-name&gt; ...)</code> subform 
-and returns a new <code id='code15915'
+and returns a new <code id='code15928'
 >&lt;type-name&gt;</code> record. Fields whose tags are listed 
-with <code id='code15916'
+with <code id='code15929'
 >&lt;constructor-name&gt;</code> have the corresponding argument as their 
 initial value. The initial values of all other fields are unspecified. <br/><br/></li>
-<li><code id='code15919'
+<li><code id='code15932'
 >&lt;predicate-name&gt;</code>
-is a predicate that returns <code id='code15920'
+is a predicate that returns <code id='code15933'
 >#t</code> when given a value returned by
-<code id='code15921'
->&lt;constructor-name&gt;</code> and <code id='code15922'
+<code id='code15934'
+>&lt;constructor-name&gt;</code> and <code id='code15935'
 >#f</code> for everything else.<br/><br/></li>
-<li>Each <code id='code15925'
+<li>Each <code id='code15938'
 >&lt;accessor-name&gt;</code> is a procedure that takes a record of 
-type <code id='code15926'
+type <code id='code15939'
 >&lt;type-name&gt;</code> and returns the current value of the corresponding 
 field. It is an error to pass an accessor a value which is not a record 
 of the appropriate type. <br/><br/></li>
-<li>Each <code id='code15929'
+<li>Each <code id='code15942'
 >&lt;modifier-name&gt;</code> is a procedure that takes a record of 
-type <code id='code15930'
+type <code id='code15943'
 >&lt;type-name&gt;</code> and a value which becomes the new value of the 
 corresponding field; an unspecified value is returned. It is an error 
 to pass a modifier a first argument which is not a record of the appropriate 
@@ -293,9 +293,9 @@ type.
 </li>
 </ul>
 Records are disjoint from the types listed in Section 4.2 of R5RS. <br/><br/>Seting the value of any of these identifiers has no effect on the
-behavior of any of their original values.<br/><br/>The following <br/><br/><center id='center15938'
+behavior of any of their original values.<br/><br/>The following <br/><br/><center id='center15951'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15936'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15949'
 >(define-record-type pare
     (kons x y)
     pare?
@@ -305,22 +305,22 @@ behavior of any of their original values.<br/><br/>The following <br/><br/><cent
 </td></tr>
 </tbody></table></center>
 
-defines <code id='code15939'
->kons</code> to be a constructor, <code id='code15940'
->kar</code> and <code id='code15941'
+defines <code id='code15952'
+>kons</code> to be a constructor, <code id='code15953'
+>kar</code> and <code id='code15954'
 >kdr</code> to be 
-accessors, <code id='code15942'
->set-kar!</code> to be a modifier, and <code id='code15943'
+accessors, <code id='code15955'
+>set-kar!</code> to be a modifier, and <code id='code15956'
 >pare?</code> to be a 
-predicate for <code id='code15944'
->pare</code>s. <br/><br/><center id='center15949'
+predicate for <code id='code15957'
+>pare</code>s. <br/><br/><center id='center15962'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15947'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15960'
 >  (pare? (kons 1 2))        =&gt; #t
   (pare? (cons 1 2))        =&gt; #f
   (kar (kons 1 2))          =&gt; 1
   (kdr (kons 1 2))          =&gt; 2
-  (<strong id='bold31524'
+  (<strong id='bold31541'
 >let</strong> ((k (kons 1 2)))
     (set-kar! k 3)
     (kar k))                =&gt; 3
@@ -334,12 +334,12 @@ predicate for <code id='code15944'
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph31530'
+<p class="ending" id='paragraph31547'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it31528'
->Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+Last update <em id='it31545'
+>Tue Jan  6 18:53:36 2015</em>.</font></p></div>
 </body>
 </html>

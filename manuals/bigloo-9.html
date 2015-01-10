@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>8. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- Fast search</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>8. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- Fast search</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center31424'
+<br/><center id='center31441'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31414" align="center" colspan="1"><font color="#ffffff"><strong id='bold31412'
+<tr bgcolor="#8381de"><th id="tc31431" align="center" colspan="1"><font color="#ffffff"><strong id='bold31429'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31421" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc31417" align="left" valign="top" colspan="1"><strong id='bold31416'
->top:</strong></td><td id="tc31418" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc31438" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc31434" align="left" valign="top" colspan="1"><strong id='bold31433'
+>top:</strong></td><td id="tc31435" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center31434'
+<br/><br/><center id='center31451'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31428" align="center" colspan="1"><font color="#ffffff"><strong id='bold31426'
+<tr bgcolor="#8381de"><th id="tc31445" align="center" colspan="1"><font color="#ffffff"><strong id='bold31443'
 >Fast search</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31431" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc31448" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">8.1</td><td colspan="4" width="100%"><a href="bigloo-9.html#Knuth-Morris-and-Pratt">Knuth, Morris, and Pratt</a></td></tr>
 </tbody>
@@ -50,11 +50,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center31444'
+<br/><br/><center id='center31461'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31438" align="center" colspan="1"><font color="#ffffff"><strong id='bold31436'
+<tr bgcolor="#8381de"><th id="tc31455" align="center" colspan="1"><font color="#ffffff"><strong id='bold31453'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31441" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc31458" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -102,108 +102,108 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Fast-search" class="mark"></a><a name="g15734" class="mark"></a>
+<a name="Fast-search" class="mark"></a><a name="g15747" class="mark"></a>
 This chapters details the Bigloo's API for fast string search algorithms.<br/><br/><br/><br/><!-- Knuth, Morris, and Pratt -->
 <a name="Knuth-Morris-and-Pratt"></a>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">8.1 Knuth, Morris, and Pratt</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Knuth---Morris---Pratt" class="mark"></a><a name="g15738" class="mark"></a>
-Bigloo supports an implementation of the <em id='emph15740'
+<a name="Knuth---Morris---Pratt" class="mark"></a><a name="g15751" class="mark"></a>
+Bigloo supports an implementation of the <em id='emph15753'
 >Knuth, Morris, and Pratt</em>
 algorithm on strings and memory mapped area, See <a href="bigloo-7.html#Memory-mapped-area" class="inbound">Memory mapped area</a>.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15743" class="mark"></a><a name="kmp-table" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15747" align="left" colspan="1"><strong id='bold15745'
->kmp-table</strong><em id='it15746'
-> pattern</em></td><td id="tc15748" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15756" class="mark"></a><a name="kmp-table" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15760" align="left" colspan="1"><strong id='bold15758'
+>kmp-table</strong><em id='it15759'
+> pattern</em></td><td id="tc15761" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-This function creates a <em id='emph15751'
+This function creates a <em id='emph15764'
 >kmp</em>-table used for fast search.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15755" class="mark"></a><a name="kmp-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15759" align="left" colspan="1"><strong id='bold15757'
->kmp-mmap</strong><em id='it15758'
-> kmp-table mmap offset</em></td><td id="tc15760" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15768" class="mark"></a><a name="kmp-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15772" align="left" colspan="1"><strong id='bold15770'
+>kmp-mmap</strong><em id='it15771'
+> kmp-table mmap offset</em></td><td id="tc15773" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15764" class="mark"></a><a name="kmp-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15768" align="left" colspan="1"><strong id='bold15766'
->kmp-string</strong><em id='it15767'
-> kmp-table string offset</em></td><td id="tc15769" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15777" class="mark"></a><a name="kmp-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15781" align="left" colspan="1"><strong id='bold15779'
+>kmp-string</strong><em id='it15780'
+> kmp-table string offset</em></td><td id="tc15782" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-This function searches the <code id='code15773'
-><em id='it15772'
->pattern</em></code> described by <code id='code15775'
-><em id='it15774'
+This function searches the <code id='code15786'
+><em id='it15785'
+>pattern</em></code> described by <code id='code15788'
+><em id='it15787'
 >kmp-table</em></code>
-in the memory mapped area <code id='code15777'
-><em id='it15776'
->mmap</em></code> (respec. in the <code id='code15779'
-><em id='it15778'
+in the memory mapped area <code id='code15790'
+><em id='it15789'
+>mmap</em></code> (respec. in the <code id='code15792'
+><em id='it15791'
 >string</em></code>). 
-The search starts at <code id='code15781'
-><em id='it15780'
+The search starts at <code id='code15794'
+><em id='it15793'
 >offset</em></code>. If an occurrence
-is found, its position in the <code id='code15783'
-><em id='it15782'
+is found, its position in the <code id='code15796'
+><em id='it15795'
 >mmap</em></code> is returned. Otherwise
-<code id='code15784'
+<code id='code15797'
 >-1</code> is returned.<br/><br/>For the sake of the example, here is a prototypal implementation of
-the Usenix command <code id='code15786'
->grep</code>:<br/><br/><center id='center15810'
+the Usenix command <code id='code15799'
+>grep</code>:<br/><br/><center id='center15823'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15808'
->(<font color="#6959cf"><strong id='bold31445'
->define</strong></font> (<font color="#6959cf"><strong id='bold31447'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15821'
+>(<font color="#6959cf"><strong id='bold31462'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31464'
 >main</strong></font> args)
-   (<strong id='bold31449'
+   (<strong id='bold31466'
 >cond</strong>
       ((null? (cdr args))
        (fprintf (current-error-port) <font color="red">&quot;Usage: grep STRING [FILE]...&quot;</font>)
        (exit 0))
       (else
-       (<strong id='bold31451'
+       (<strong id='bold31468'
 >let</strong> ((t (kmp-table (cadr args))))
-	  (for-each (<strong id='bold31452'
->lambda</strong> (f) (grep-file t f)) (cddr args))))))<br/><br/>(<font color="#6959cf"><strong id='bold31453'
->define</strong></font> (<font color="#6959cf"><strong id='bold31455'
+	  (for-each (<strong id='bold31469'
+>lambda</strong> (f) (grep-file t f)) (cddr args))))))<br/><br/>(<font color="#6959cf"><strong id='bold31470'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31472'
 >grep-file</strong></font> t file)
-   (<strong id='bold31457'
+   (<strong id='bold31474'
 >let*</strong> ((mm (open-mmap file read: #t write: #f))
 	  (ls (mmap-length mm)))
-      (<strong id='bold31458'
+      (<strong id='bold31475'
 >let</strong> loop ((o 0))
 	 (unless (&gt;=fx o ls)
-	    (<strong id='bold31459'
+	    (<strong id='bold31476'
 >let</strong> ((n (kmp-mmap t mm o)))
 	       (when (&gt;fx n 0)
 		  (print file <font color="red">&quot;:&quot;</font> (mmap-line mm ls n))
 		  (loop (+fx n 1))))))
-      (close-mmap mm)))<br/><br/>(<font color="#6959cf"><strong id='bold31461'
->define</strong></font> (<font color="#6959cf"><strong id='bold31463'
+      (close-mmap mm)))<br/><br/>(<font color="#6959cf"><strong id='bold31478'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31480'
 >mmap-line</strong></font> mm ls n)
-   (<strong id='bold31465'
+   (<strong id='bold31482'
 >let</strong> ((b 0)
 	 (e (elong-&gt;fixnum ls)))
-      <font color="#ffa600"><em id='it31466'
+      <font color="#ffa600"><em id='it31483'
 >;; beginning</em></font>
-      (<strong id='bold31468'
+      (<strong id='bold31485'
 >let</strong> loop ((i n))
 	 (when (&gt;fx i 0)
-	    (<strong id='bold31469'
+	    (<strong id='bold31486'
 >if</strong> (char=? (mmap-ref mm i) #\Newline)
-		(<strong id='bold31470'
+		(<strong id='bold31487'
 >set!</strong> b (+fx i 1))
 		(loop (-fx i 1)))))
-      <font color="#ffa600"><em id='it31471'
+      <font color="#ffa600"><em id='it31488'
 >;; end</em></font>
-      (<strong id='bold31473'
+      (<strong id='bold31490'
 >let</strong> loop ((i n))
 	 (when (&lt;fx i ls)
-	    (<strong id='bold31474'
+	    (<strong id='bold31491'
 >if</strong> (char=? (mmap-ref mm i) #\Newline)
-		(<strong id='bold31475'
+		(<strong id='bold31492'
 >set!</strong> e i)
 		(loop (+fx i 1)))))
       (mmap-substring mm b (- e b))))
@@ -217,12 +217,12 @@ the Usenix command <code id='code15786'
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph31481'
+<p class="ending" id='paragraph31498'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it31479'
->Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+Last update <em id='it31496'
+>Tue Jan  6 18:53:36 2015</em>.</font></p></div>
 </body>
 </html>

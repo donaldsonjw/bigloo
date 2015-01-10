@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>7. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- Pattern Matching</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>7. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- Pattern Matching</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center31382'
+<br/><center id='center31399'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31372" align="center" colspan="1"><font color="#ffffff"><strong id='bold31370'
+<tr bgcolor="#8381de"><th id="tc31389" align="center" colspan="1"><font color="#ffffff"><strong id='bold31387'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31379" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc31375" align="left" valign="top" colspan="1"><strong id='bold31374'
->top:</strong></td><td id="tc31376" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc31396" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc31392" align="left" valign="top" colspan="1"><strong id='bold31391'
+>top:</strong></td><td id="tc31393" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center31392'
+<br/><br/><center id='center31409'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31386" align="center" colspan="1"><font color="#ffffff"><strong id='bold31384'
+<tr bgcolor="#8381de"><th id="tc31403" align="center" colspan="1"><font color="#ffffff"><strong id='bold31401'
 >Pattern Matching</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31389" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc31406" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">7.1</td><td colspan="4" width="100%"><a href="bigloo-8.html#Bigloo-pattern-matching-facilities">Bigloo pattern matching facilities</a></td></tr>
  <tr><td valign="top" align="left">7.2</td><td colspan="4" width="100%"><a href="bigloo-8.html#The-pattern-language">The pattern language</a></td></tr>
@@ -51,11 +51,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center31402'
+<br/><br/><center id='center31419'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31396" align="center" colspan="1"><font color="#ffffff"><strong id='bold31394'
+<tr bgcolor="#8381de"><th id="tc31413" align="center" colspan="1"><font color="#ffffff"><strong id='bold31411'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31399" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc31416" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -103,7 +103,7 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Pattern-Matching" class="mark"></a><a name="g15555" class="mark"></a>
+<a name="Pattern-Matching" class="mark"></a><a name="g15568" class="mark"></a>
 Pattern matching is a key feature of most modern functional programming
 languages since it allows clean and secure code to be
 written. Internally, ``pattern-matching forms'' should be translated
@@ -111,16 +111,16 @@ written. Internally, ``pattern-matching forms'' should be translated
 efficient as possible, avoiding redundant tests; Bigloo's ``pattern
 matching compiler'' provides this. The technique used is described in
 details in [QueinnecGeffroy92], and the code generated can be considered
-optimal <a href="#footnote-footnote15557"><sup><small>1</small></sup></a> due to the way this ``pattern
+optimal <a href="#footnote-footnote15570"><sup><small>1</small></sup></a> due to the way this ``pattern
 compiler'' was obtained.<br/><br/>The ``pattern language'' allows the expression of a wide variety of patterns,
-including:<br/><br/><ul class="itemize" id='itemize15569'
+including:<br/><br/><ul class="itemize" id='itemize15582'
 ><li>Non-linear patterns: pattern variables can appear more than
-once, allowing comparison of subparts of the datum (through <code id='code15560'
+once, allowing comparison of subparts of the datum (through <code id='code15573'
 >eq?</code>)<br/><br/></li>
 <li>Recursive patterns on lists: for example, checking that the
-datum is a list of zero or more <code id='code15563'
+datum is a list of zero or more <code id='code15576'
 >a</code>s followed by zero or more 
-<code id='code15564'
+<code id='code15577'
 >b</code>s.<br/><br/></li>
 <li>Pattern matching on lists as well as on vectors and structures, 
 and record types.<br/><br/></li>
@@ -131,64 +131,64 @@ and record types.<br/><br/></li>
 </h3></td></tr></table>
 </div><div class="section">
 <a name="Bigloo-Pattern-Matching-Facilities" class="mark"></a>
-Only two special forms are provided for this in Bigloo: <code id='code15571'
+Only two special forms are provided for this in Bigloo: <code id='code15584'
 >match-case</code> 
-and <code id='code15572'
+and <code id='code15585'
 >match-lambda</code>.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15575" class="mark"></a><a name="match-case" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15579" align="left" colspan="1"><strong id='bold15577'
->match-case</strong><em id='it15578'
-> key clause...</em></td><td id="tc15580" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g15588" class="mark"></a><a name="match-case" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15592" align="left" colspan="1"><strong id='bold15590'
+>match-case</strong><em id='it15591'
+> key clause...</em></td><td id="tc15593" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-The argument <code id='code15584'
-><em id='it15583'
->key</em></code> may be any expression and each <code id='code15586'
-><em id='it15585'
->clause</em></code> has the form<br/><br/><center id='center15594'
+The argument <code id='code15597'
+><em id='it15596'
+>key</em></code> may be any expression and each <code id='code15599'
+><em id='it15598'
+>clause</em></code> has the form<br/><br/><center id='center15607'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15592'
->(<code id='code15589'
-><em id='it15588'
->pattern</em></code> <code id='code15591'
-><em id='it15590'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15605'
+>(<code id='code15602'
+><em id='it15601'
+>pattern</em></code> <code id='code15604'
+><em id='it15603'
 >s-expression</em></code>...)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-<em id='emph15595'
->Semantics: </em> A <code id='code15596'
+<em id='emph15608'
+>Semantics: </em> A <code id='code15609'
 >match-case</code> expression is evaluated as
-follows. <code id='code15598'
-><em id='it15597'
+follows. <code id='code15611'
+><em id='it15610'
 >key</em></code> is evaluated and the result is compared with each
-successive pattern. If the pattern in some <code id='code15600'
-><em id='it15599'
+successive pattern. If the pattern in some <code id='code15613'
+><em id='it15612'
 >clause</em></code> yields a match, then
-the expressions in that <code id='code15602'
-><em id='it15601'
+the expressions in that <code id='code15615'
+><em id='it15614'
 >clause</em></code> are evaluated from left to right in an
 environment where the pattern variables are bound to the corresponding
 subparts of the datum, and the result of the last expression in that
-<code id='code15604'
-><em id='it15603'
->clause</em></code> is returned as the result of the <code id='code15605'
+<code id='code15617'
+><em id='it15616'
+>clause</em></code> is returned as the result of the <code id='code15618'
 >match-case</code> expression.
-If no <code id='code15607'
-><em id='it15606'
->pattern</em></code> in any <code id='code15609'
-><em id='it15608'
+If no <code id='code15620'
+><em id='it15619'
+>pattern</em></code> in any <code id='code15622'
+><em id='it15621'
 >clause</em></code> matches the datum, then, if there is an
-<code id='code15610'
+<code id='code15623'
 >else</code> clause, its expressions are evaluated and the result of the last
-is the result of the whole <code id='code15611'
+is the result of the whole <code id='code15624'
 >match-case</code> expression; otherwise the result
-of the <code id='code15612'
->match-case</code> expression is unspecified.<br/><br/>The equality predicate used is <code id='code15614'
->eq?</code>.<br/><br/><center id='center15619'
+of the <code id='code15625'
+>match-case</code> expression is unspecified.<br/><br/>The equality predicate used is <code id='code15627'
+>eq?</code>.<br/><br/><center id='center15632'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15617'
->(<strong id='bold31403'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15630'
+>(<strong id='bold31420'
 >match-case</strong> '(a b a)
    ((?x ?x) 'foo)
    ((?x ?- ?x) 'bar))
@@ -199,19 +199,19 @@ of the <code id='code15612'
 </td></tr>
 </tbody></table><br/>
 The following syntax is also available:<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15624" class="mark"></a><a name="match-lambda" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15628" align="left" colspan="1"><strong id='bold15626'
->match-lambda</strong><em id='it15627'
-> clause...</em></td><td id="tc15629" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g15637" class="mark"></a><a name="match-lambda" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15641" align="left" colspan="1"><strong id='bold15639'
+>match-lambda</strong><em id='it15640'
+> clause...</em></td><td id="tc15642" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
 
 It expands into a lambda-expression expecting an argument which, once
-applied to an expression, behaves exactly like a <code id='code15632'
+applied to an expression, behaves exactly like a <code id='code15645'
 >match-case</code>
-expression.<br/><br/><center id='center15637'
+expression.<br/><br/><center id='center15650'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15635'
->((<strong id='bold31404'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15648'
+>((<strong id='bold31421'
 >match-lambda</strong>
    ((?x ?x) 'foo)
    ((?x ?- ?x) 'bar))
@@ -228,161 +228,161 @@ expression.<br/><br/><center id='center15637'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">7.2 The pattern language</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="The-Pattern-Language" class="mark"></a><a name="g15640" class="mark"></a>
-The syntax for &lt;pattern&gt; is:<br/><br/><center id='center15670'
+<a name="The-Pattern-Language" class="mark"></a><a name="g15653" class="mark"></a>
+The syntax for &lt;pattern&gt; is:<br/><br/><center id='center15683'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog15668'
->&lt;pattern&gt; ==&gt;                <em id='emph15643'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog15681'
+>&lt;pattern&gt; ==&gt;                <em id='emph15656'
 >Matches:</em><br/><br/>  &lt;atom&gt;                    the &lt;atom&gt;.
-| (<code id='code15645'
->kwote</code> &lt;atom&gt;)            any expression <code id='code15646'
->eq?</code> to <code id='code15647'
+| (<code id='code15658'
+>kwote</code> &lt;atom&gt;)            any expression <code id='code15659'
+>eq?</code> to <code id='code15660'
 >&lt;atom&gt;</code>.
-| (<code id='code15648'
->and</code> &lt;pat1&gt; ... &lt;patn&gt;)   if all of <code id='code15651'
->&lt;pat<code id='code15650'
-><em id='it15649'
+| (<code id='code15661'
+>and</code> &lt;pat1&gt; ... &lt;patn&gt;)   if all of <code id='code15664'
+>&lt;pat<code id='code15663'
+><em id='it15662'
 >i</em></code>&gt;</code> match.
-| (<code id='code15652'
->or</code> &lt;pat1&gt; ... ...&lt;patn&gt;) if any of <code id='code15653'
->&lt;pat1&gt;</code> through <code id='code15654'
+| (<code id='code15665'
+>or</code> &lt;pat1&gt; ... ...&lt;patn&gt;) if any of <code id='code15666'
+>&lt;pat1&gt;</code> through <code id='code15667'
 >&lt;patn&gt;</code> matches.
-| (<code id='code15655'
->not</code> &lt;pat&gt;)               if <code id='code15656'
+| (<code id='code15668'
+>not</code> &lt;pat&gt;)               if <code id='code15669'
 >&lt;pat&gt;</code> doesn't match.
-| (<code id='code15657'
->?</code> &lt;predicate&gt;)           if <code id='code15658'
+| (<code id='code15670'
+>?</code> &lt;predicate&gt;)           if <code id='code15671'
 >&lt;predicate&gt;</code> is true.
-| (&lt;pat1&gt; ... &lt;patn&gt;)       a list of n elements. Here, <code id='code15659'
+| (&lt;pat1&gt; ... &lt;patn&gt;)       a list of n elements. Here, <code id='code15672'
 >...</code> is a
                             meta-character denoting a finite repetition
                             of patterns.
 | &lt;pat&gt; ...                 a (possibly empty) repetition
-                            of <code id='code15660'
+                            of <code id='code15673'
 >&lt;pat&gt;</code> in a list.
-| #(&lt;pat&gt; ... &lt;patn&gt;)       a vector of <code id='code15662'
-><em id='it15661'
+| #(&lt;pat&gt; ... &lt;patn&gt;)       a vector of <code id='code15675'
+><em id='it15674'
 >n</em></code> elements.
 | #{&lt;struct&gt; &lt;pat&gt; ... }    a structure.
-| <code id='code15663'
->?</code>&lt;id&gt;                     anything, and binds <code id='code15664'
+| <code id='code15676'
+>?</code>&lt;id&gt;                     anything, and binds <code id='code15677'
 >id</code> as a variable.
-| <code id='code15665'
+| <code id='code15678'
 >?-</code>                        anything.
-| <code id='code15666'
+| <code id='code15679'
 >??-</code>                       any (possibly empty) repetition of anything
                             in a list.
-| <code id='code15667'
+| <code id='code15680'
 >???-</code>                      any end of list.
 </pre>
 </td></tr>
 </tbody></table></center>
 
-<em id='emph15671'
->Remark: </em> <code id='code15672'
->and, or, not, check</code> and <code id='code15673'
+<em id='emph15684'
+>Remark: </em> <code id='code15685'
+>and, or, not, check</code> and <code id='code15686'
 >kwote</code> must be
 quoted in order to be treated as literals. This is the only justification
-for having the <code id='code15674'
+for having the <code id='code15687'
 >kwote</code> pattern since, by convention, any atom which is
-not a keyword is quoted.<br/><br/><ul class="itemize" id='itemize15725'
-><li><code id='code15676'
+not a keyword is quoted.<br/><br/><ul class="itemize" id='itemize15738'
+><li><code id='code15689'
 >?-</code> matches any s-expr
 
 </li>
-<li><code id='code15678'
->a</code> matches the atom <code id='code15679'
+<li><code id='code15691'
+>a</code> matches the atom <code id='code15692'
 >'a</code>.
 
 </li>
-<li><code id='code15681'
->?a</code> matches any expression, and binds the variable <code id='code15682'
+<li><code id='code15694'
+>?a</code> matches any expression, and binds the variable <code id='code15695'
 >a</code> to
 this expression.<br/><br/></li>
-<li><code id='code15685'
+<li><code id='code15698'
 >(? integer?)</code> matches any integer
 
 </li>
-<li><code id='code15687'
->(a (a b))</code> matches the only list <code id='code15688'
+<li><code id='code15700'
+>(a (a b))</code> matches the only list <code id='code15701'
 >'(a (a b))</code>.
 
 </li>
-<li><code id='code15690'
->???-</code> can only appear at the end of a list, and always succeeds.
-For instance, <code id='code15691'
->(a ???-)</code> is equivalent to <code id='code15692'
->(a . ?-)</code>.<br/><br/></li>
-<li>when occurring in a list, <code id='code15695'
->??-</code> matches any sequence of anything:
-<code id='code15696'
->(a ??- b)</code> matches any list whose <code id='code15697'
->car</code> is <code id='code15698'
->a</code> and last
-<code id='code15699'
->car</code> is <code id='code15700'
->b</code>. <br/><br/></li>
 <li><code id='code15703'
->(a ...)</code> matches any list of <code id='code15704'
+>???-</code> can only appear at the end of a list, and always succeeds.
+For instance, <code id='code15704'
+>(a ???-)</code> is equivalent to <code id='code15705'
+>(a . ?-)</code>.<br/><br/></li>
+<li>when occurring in a list, <code id='code15708'
+>??-</code> matches any sequence of anything:
+<code id='code15709'
+>(a ??- b)</code> matches any list whose <code id='code15710'
+>car</code> is <code id='code15711'
+>a</code> and last
+<code id='code15712'
+>car</code> is <code id='code15713'
+>b</code>. <br/><br/></li>
+<li><code id='code15716'
+>(a ...)</code> matches any list of <code id='code15717'
 >a</code>'s, possibly empty.
 
 </li>
-<li><code id='code15706'
->(?x ?x)</code> matches any list of length 2 whose <code id='code15707'
+<li><code id='code15719'
+>(?x ?x)</code> matches any list of length 2 whose <code id='code15720'
 >car</code> is 
- <em id='emph15708'
->eq</em> to its <code id='code15709'
+ <em id='emph15721'
+>eq</em> to its <code id='code15722'
 >cadr</code><br/><br/></li>
-<li><code id='code15712'
+<li><code id='code15725'
 >((and (not a) ?x) ?x)</code> matches any list of length 2 whose 
-<code id='code15713'
->car</code> is not <em id='emph15714'
->eq</em> to <code id='code15715'
->'a</code> but is <em id='emph15716'
->eq</em> to its <code id='code15717'
+<code id='code15726'
+>car</code> is not <em id='emph15727'
+>eq</em> to <code id='code15728'
+>'a</code> but is <em id='emph15729'
+>eq</em> to its <code id='code15730'
 >cadr</code><br/><br/></li>
-<li><code id='code15720'
+<li><code id='code15733'
 >#(?- ?- ???-)</code> matches any vector whose length is at least 2.
 
 </li>
-<li><code id='code15722'
+<li><code id='code15735'
 >#{foo (?- . ?-) (? integer?)}</code> matches any structure or
-record <code id='code15723'
+record <code id='code15736'
 >foo</code> whose first and second fields are respectively a pair and an
 integer. You can provide only the fields you want to test. The order is not
 relevant.
 </li>
 </ul>
-<em id='emph15726'
->Remark: </em> <code id='code15727'
->??-</code> and <code id='code15728'
+<em id='emph15739'
+>Remark: </em> <code id='code15740'
+>??-</code> and <code id='code15741'
 >...</code> patterns can not appear
-inside a vector, where you should use <code id='code15729'
+inside a vector, where you should use <code id='code15742'
 >???-</code>: For example, 
-<code id='code15730'
->#(a ??- b)</code> or <code id='code15731'
+<code id='code15743'
+>#(a ??- b)</code> or <code id='code15744'
 >#(a...)</code> are invalid patterns, whereas 
-<code id='code15732'
+<code id='code15745'
 >#(a ???-)</code> is valid and matches any vector whose first element 
-is the atom <code id='code15733'
+is the atom <code id='code15746'
 >a</code>.
 
 
 </div><br>
 <div class="footnote"><br><br>
 <hr width='20%' size='2' align='left'>
-<a name="footnote-footnote15557"><sup><small>1</small></sup></a>: In the cases of pattern matching in lists and vectors,
+<a name="footnote-footnote15570"><sup><small>1</small></sup></a>: In the cases of pattern matching in lists and vectors,
 not in structures for the moment.
 <br>
 <div></div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph31410'
+<p class="ending" id='paragraph31427'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it31408'
->Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+Last update <em id='it31425'
+>Tue Jan  6 18:53:36 2015</em>.</font></p></div>
 </body>
 </html>

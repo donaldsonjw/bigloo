@@ -3,8 +3,8 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Sun Feb 16 11:17:40 2003                          */
-;*    Last change :  Tue Mar 27 17:28:20 2007 (serrano)                */
-;*    Copyright   :  2003-07 Manuel Serrano                            */
+;*    Last change :  Tue Jan  6 09:27:18 2015 (serrano)                */
+;*    Copyright   :  2003-15 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    CGI scripts handling                                             */
 ;*=====================================================================*/
@@ -26,6 +26,43 @@
    (string (integer->char (string->integer hexadecimal-string 16))))
 
 ;*---------------------------------------------------------------------*/
+;*    hex-string-ref ...                                               */
+;*---------------------------------------------------------------------*/
+(define (hex-string-ref str i)
+   (let ((n (string-ref-ur str i)))
+      (cond
+	 ((and (char>=? n #\0) (char<=? n #\9))
+	  (-fx (char->integer n) (char->integer #\0)))
+	 ((and (char>=? n #\a) (char<=? n #\f))
+	  (+fx 10 (-fx (char->integer n) (char->integer #\a))))
+	 (else
+	  (+fx 10 (-fx (char->integer n) (char->integer #\A)))))))
+
+;*---------------------------------------------------------------------*/
+;*    unhex+! ...                                                      */
+;*---------------------------------------------------------------------*/
+(define (unhex+! hexstr)
+   (let ((len (string-length hexstr)))
+      (let loop ((i 0)
+		 (j 0))
+	 (if (=fx i len)
+	     (string-shrink! hexstr j)
+	     (let ((c (string-ref hexstr i)))
+		(cond
+		   ((char=? c #\%)
+		    (let* ((c1 (hex-string-ref hexstr (+fx i 1)))
+			   (c2 (hex-string-ref hexstr (+fx i 2)))
+			   (n (+fx (*fx c1 16) c2)))
+		       (string-set! hexstr j (integer->char n))
+		       (loop (+fx i 3) (+fx j 1))))
+		   ((char=? c #\+)
+		    (string-set! hexstr j #\space)
+		    (loop (+fx i 1) (+fx j 1)))
+		   (else
+		    (string-set! hexstr j c)
+		    (loop (+fx i 1) (+fx j 1)))))))))
+
+;*---------------------------------------------------------------------*/
 ;*    decode ...                                                       */
 ;*---------------------------------------------------------------------*/
 (define (decode str)
@@ -44,67 +81,25 @@
 ;*    cgi-args->list ...                                               */
 ;*---------------------------------------------------------------------*/
 (define (cgi-args->list query)
-   (let* ((fields-list '())
-	  (field-name "")
-	  (field-value "")
-	  (gram (regular-grammar ()
-		   ((when (not (rgc-context? 'val))
-		       (+ (or (: (? #a013) #\newline) #\&)))
-		    (ignore))
-		   ((when (not (rgc-context? 'val))
-		       (: (* (out "=%&")) "="))
-		    (set! field-name
-			  (string-append
-			   field-name
-			   (decode (the-substring 0 (-fx (the-length) 1)))))
-		    (rgc-context 'val)
-		    (ignore))
-		   ((when (not (rgc-context? 'val))
-		       (: (* (out "=%&")) "%" xdigit xdigit))
-		    (set! field-name
-			  (string-append
-			   field-name
-			   (decode (the-substring 0 (-fx (the-length) 3)))
-			   (unhex (the-substring (-fx (the-length) 2)
-						 (the-length)))))
-		    (ignore))
-		   ((when (rgc-context? 'val)
-		       (+ (or (: (? #a013) #\newline) #\&)))
-		    (set! fields-list (cons (cons field-name field-value)
-					    fields-list))
-		    (set! field-name "")
-		    (set! field-value "")
-		    (rgc-context)
-		    (ignore))
-		   ((when (rgc-context? 'val)
-		       (: (* (out "&%+")) #\% xdigit xdigit))
-		    (set! field-value
-			  (string-append
-			   field-value
-			   (the-substring 0 (-fx (the-length) 3))
-			   (unhex (the-substring (-fx (the-length) 2)
-						 (the-length)))))
-		    (ignore))
-		   ((when (rgc-context? 'val)
-		       (: (* (out "&%+")) "+"))
-		    (set! field-value (string-append
-				       field-value
-				       (the-substring 0 (-fx (the-length) 1))
-				       " "))
-		    (ignore))
-		   ((when (rgc-context? 'val)
-		       (* (out "&%+")))
-		    (set! field-value (string-append field-value
-						     (the-string)))
-		    (set! fields-list (cons (cons field-name field-value)
-					    fields-list))
-		    (set! field-name "")
-		    (set! field-value "")
-		    (rgc-context)
-		    (ignore))
-		   (else (reverse fields-list)))))
+   (let ((gram (regular-grammar (fields-list field-name)
+		  ((when (not (rgc-context? 'val))
+		      (: (* (or (out "=%&") (: "%" xdigit xdigit))) "="))
+		   (set! field-name
+		      (unhex+! (the-substring 0 (-fx (the-length) 1))))
+		   (rgc-context 'val)
+		   (ignore))
+		  ((when (rgc-context? 'val)
+		      (+ (or (out "&%") (: #\% xdigit xdigit))))
+		   (set! fields-list
+		      (cons (cons field-name (unhex+! (the-string)))
+			 fields-list))
+		   (rgc-context)
+		   (ignore))
+		  (#\&
+		   (ignore))
+		  (else (reverse! fields-list)))))
       (let ((p (open-input-string query)))
-	 (let ((res (read/rp gram p)))
+	 (let ((res (read/rp gram p '() "")))
 	    (close-input-port p)
 	    res))))
 
@@ -236,16 +231,16 @@
    (multiple-value-bind (len crlf)
       (fill-line! buffer port)
       ;; according to RFC 2046, there may be additional characters
-      ;; on the line after the boundary
+      ;; on line after the boundary
       (if (is-boundary? buffer boundary)
 	  (begin
 	     (unless crlf (flush-line port))
 	     (last-boundary? buffer boundary))
 	  (raise (instantiate::&io-parse-error
-		    (proc 'cgi-multipart->list)
+		    (proc "cgi-multipart->list")
 		    (msg "Illegal boundary")
 		    (obj (format "\n wanted:--~a\n  found:~a" boundary
-				 (substring buffer 0 len))))))))
+			    (substring buffer 0 len))))))))
 
 ;*---------------------------------------------------------------------*/
 ;*    cgi-parse-content-disposition ...                                */
@@ -261,17 +256,17 @@
 			  (pref "; filename=\""))
 		       (if (substring-at? rest pref  0)
 			   (let ((fname (substring
-					 rest
-					 (string-length pref)
-					 (-fx (string-length rest) 1))))
+					   rest
+					   (string-length pref)
+					   (-fx (string-length rest) 1))))
 			      (values s fname))
 			   (values s #f)))
 		    (raise (instantiate::&io-parse-error
-			      (proc 'cgi-multipart->list)
+			      (proc "cgi-multipart->list")
 			      (msg "Illegal name")
 			      (obj s)))))
 	     (raise (instantiate::&io-parse-error
-		       (proc 'cgi-multipart->list)
+		       (proc "cgi-multipart->list")
 		       (msg "Illegal Content-Disposition: ")
 		       (obj buf)))))))
 
@@ -307,15 +302,15 @@
 	 ((: (* (in #\space #\tab)) (? #\Return) #\Newline)
 	  header)
 	 (else
-	  ;; accumultate all the character to EOL for a better error message
+	  ;; accumultate all the characters to EOL for a better error message
 	  (let ((c (the-failure)))
 	     (let ((s (if (char? c)
 			  (string-for-read
-			   (string-append "<" (string c) ">"
-					  (read-line (the-port))))
+			     (string-append "<" (string c) ">"
+				(read-line (the-port))))
 			  c)))
 		(raise (instantiate::&io-parse-error
-			  (proc 'cgi-multipart->list)
+			  (proc "cgi-multipart->list")
 			  (msg "Illegal characters")
 			  (obj s))))))))
    (read/rp header-grammar port '()))
@@ -330,7 +325,7 @@
       (let ((op (open-output-file path)))
 	 (if (not (output-port? op))
 	     (raise (instantiate::&io-file-not-found-error
-		       (proc 'cgi-multipart->list)
+		       (proc "cgi-multipart->list")
 		       (msg "Can't open file for output")
 		       (obj path)))
 	     (unwind-protect
@@ -341,9 +336,9 @@
 			  (begin
 			     (unless crlf (flush-line port))
 			     (values (last-boundary? buffer boundary)
-				     (list name
-					   :file path
-					   :header header)))
+				(list name
+				   :file path
+				   :header header)))
 			  (begin
 			     (when ocrlf (display "\r\n" op))
 			     (display-substring buffer 0 len op)
@@ -361,10 +356,12 @@
 	 (if (is-boundary? buffer boundary)
 	     (begin
 		(unless crlf (flush-line port))
+		(tprint "cgi-read-data len="
+		   (apply + (map string-length lines)))
 		(values (last-boundary? buffer boundary)
-			(list name
-			      :data (apply string-append (reverse! lines))
-			      :header header)))
+		   (list name
+		      :data (apply string-append (reverse! lines))
+		      :header header)))
 	     (if (or first (not crlf))
 		 (loop (cons (substring buffer 0 len) lines) #f)
 		 (loop (cons* (substring buffer 0 len) "\r\n" lines) #f))))))
