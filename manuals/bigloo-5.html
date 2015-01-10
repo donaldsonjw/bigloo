@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>4. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- Core Language</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>4. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- Core Language</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center30208'
+<br/><center id='center30221'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc30198" align="center" colspan="1"><font color="#ffffff"><strong id='bold30196'
+<tr bgcolor="#8381de"><th id="tc30211" align="center" colspan="1"><font color="#ffffff"><strong id='bold30209'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc30205" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc30201" align="left" valign="top" colspan="1"><strong id='bold30200'
->top:</strong></td><td id="tc30202" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc30218" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc30214" align="left" valign="top" colspan="1"><strong id='bold30213'
+>top:</strong></td><td id="tc30215" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center30218'
+<br/><br/><center id='center30231'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc30212" align="center" colspan="1"><font color="#ffffff"><strong id='bold30210'
+<tr bgcolor="#8381de"><th id="tc30225" align="center" colspan="1"><font color="#ffffff"><strong id='bold30223'
 >Core Language</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc30215" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc30228" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">4.1</td><td colspan="4" width="100%"><a href="bigloo-5.html#Syntax">Syntax</a></td></tr>
  <tr><td></td><td valign="top" align="left">4.1.1</td><td colspan="3" width="100%"><a href="bigloo-5.html#Comments">Comments</a></td></tr>
@@ -53,11 +53,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center30228'
+<br/><br/><center id='center30241'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc30222" align="center" colspan="1"><font color="#ffffff"><strong id='bold30220'
+<tr bgcolor="#8381de"><th id="tc30235" align="center" colspan="1"><font color="#ffffff"><strong id='bold30233'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc30225" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc30238" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -155,18 +155,18 @@ Comments and whitespaces are the same as in
 <a href="./r5rs-5.html#Whitespace and comments">r5rs, Whitespace and comments</a>.<br/><br/><center id='center1899'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1897'
-><font color="#ffa600"><em id='it30229'
+><font color="#ffa600"><em id='it30242'
 >;;; The FACT procedure computes the factorial</em></font>
-<font color="#ffa600"><em id='it30231'
+<font color="#ffa600"><em id='it30244'
 >;;; of a non-negative integer.</em></font>
-(<font color="#6959cf"><strong id='bold30233'
->define</strong></font> <font color="#6959cf"><strong id='bold30235'
+(<font color="#6959cf"><strong id='bold30246'
+>define</strong></font> <font color="#6959cf"><strong id='bold30248'
 >fact</strong></font>
-  (<strong id='bold30237'
+  (<strong id='bold30250'
 >lambda</strong> (n)
-    (<strong id='bold30238'
+    (<strong id='bold30251'
 >if</strong> (= n 0)
-        1        <font color="#ffa600"><em id='it30239'
+        1        <font color="#ffa600"><em id='it30252'
 >;; Base case: return 1</em></font>
         (* n (fact (- n 1))))))
 </pre>
@@ -179,17 +179,17 @@ are introduced with the <code id='code1901'
 >#;</code> syntax:<br/><br/><center id='center1908'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1906'
-><font color="#ffa600"><em id='it30241'
+><font color="#ffa600"><em id='it30254'
 >;;; The FACT procedure computes the factorial</em></font>
-<font color="#ffa600"><em id='it30243'
+<font color="#ffa600"><em id='it30256'
 >;;; of a non-negative integer.</em></font>
-(<font color="#6959cf"><strong id='bold30245'
->define</strong></font> <font color="#6959cf"><strong id='bold30247'
+(<font color="#6959cf"><strong id='bold30258'
+>define</strong></font> <font color="#6959cf"><strong id='bold30260'
 >fact</strong></font>
-  (<strong id='bold30249'
+  (<strong id='bold30262'
 >lambda</strong> (n)
     #;(if (&lt; n 2) 1 (* #;n (fact (- n 1))))
-    (<strong id='bold30250'
+    (<strong id='bold30263'
 >if</strong> (= n 0)
         1
         (* n (fact (- n 1))))))
@@ -252,21 +252,21 @@ All other non atomic Bigloo forms are evaluated as functioncalls or macro class.
 <center id='center1953'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1951'
->(<font color="#6959cf"><strong id='bold30251'
->define</strong></font> <font color="#6959cf"><strong id='bold30253'
+>(<font color="#6959cf"><strong id='bold30264'
+>define</strong></font> <font color="#6959cf"><strong id='bold30266'
 >x</strong></font> 28)                          =&gt;
 x                                      =&gt; 28
-(<strong id='bold30255'
+(<strong id='bold30268'
 >quote</strong> a)                              =&gt; A
-(<strong id='bold30256'
+(<strong id='bold30269'
 >quote</strong> #(a b c))                       =&gt; #(A B C)
-(<strong id='bold30257'
+(<strong id='bold30270'
 >quote</strong> (+ 1 2))                        =&gt; (+ 1 2)
 'a                                     =&gt; A
 '#(a b c)                              =&gt; #(A B C)
 '()                                    =&gt; ()
 '(+ 1 2)                               =&gt; (+ 1 2)
-'(<strong id='bold30258'
+'(<strong id='bold30271'
 >quote</strong> a)                             =&gt; (QUOTE A)
 '<font color="red">&quot;abc&quot;</font>                                 =&gt; <font color="red">&quot;abc&quot;</font>
 <font color="red">&quot;abc&quot;</font>                                  =&gt; <font color="red">&quot;abc&quot;</font>
@@ -289,9 +289,9 @@ x                                      =&gt; 28
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog1973'
 >(+ 3 4)                                =&gt; 7
-((<strong id='bold30263'
+((<strong id='bold30276'
 >if</strong> #f + *) 3 4)                      =&gt; 12
-((<strong id='bold30264'
+((<strong id='bold30277'
 >lambda</strong> (x) (+ 1 x)) 5)               =&gt; 6
 </pre>
 </td></tr>
@@ -307,25 +307,25 @@ x                                      =&gt; 28
 <center id='center2002'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2000'
->(<strong id='bold30265'
+>(<strong id='bold30278'
 >lambda</strong> (x) (+ x x))                   =&gt; <em id='emph1987'
 >a procedure</em>
-((<strong id='bold30266'
->lambda</strong> (x) (+ x x)) 4)               =&gt; 8<br/><br/>(<font color="#6959cf"><strong id='bold30267'
->define</strong></font> <font color="#6959cf"><strong id='bold30269'
->reverse-subtract</strong></font>
-  (<strong id='bold30271'
->lambda</strong> (x y) (- y x)))
-(reverse-subtract 7 10)                =&gt; 3<br/><br/>(<font color="#6959cf"><strong id='bold30272'
->define</strong></font> <font color="#6959cf"><strong id='bold30274'
->add4</strong></font>
-  (<strong id='bold30276'
->let</strong> ((x 4))
-    (<strong id='bold30277'
->lambda</strong> (y) (+ x y))))
-(add4 6)                               =&gt; 10<br/><br/>((<strong id='bold30278'
->lambda</strong> x x) 3 4 5 6)                 =&gt; (3 4 5 6)
 ((<strong id='bold30279'
+>lambda</strong> (x) (+ x x)) 4)               =&gt; 8<br/><br/>(<font color="#6959cf"><strong id='bold30280'
+>define</strong></font> <font color="#6959cf"><strong id='bold30282'
+>reverse-subtract</strong></font>
+  (<strong id='bold30284'
+>lambda</strong> (x y) (- y x)))
+(reverse-subtract 7 10)                =&gt; 3<br/><br/>(<font color="#6959cf"><strong id='bold30285'
+>define</strong></font> <font color="#6959cf"><strong id='bold30287'
+>add4</strong></font>
+  (<strong id='bold30289'
+>let</strong> ((x 4))
+    (<strong id='bold30290'
+>lambda</strong> (y) (+ x y))))
+(add4 6)                               =&gt; 10<br/><br/>((<strong id='bold30291'
+>lambda</strong> x x) 3 4 5 6)                 =&gt; (3 4 5 6)
+((<strong id='bold30292'
 >lambda</strong> (x y . z) z)
  3 4 5 6)                              =&gt; (5 6)
 </pre>
@@ -342,11 +342,11 @@ x                                      =&gt; 28
 <center id='center2019'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2017'
->(<strong id='bold30280'
+>(<strong id='bold30293'
 >if</strong> (&gt; 3 2) 'yes 'no)                  =&gt; yes
-(<strong id='bold30281'
+(<strong id='bold30294'
 >if</strong> (&gt; 2 3) 'yes 'no)                  =&gt; no
-(<strong id='bold30282'
+(<strong id='bold30295'
 >if</strong> (&gt; 3 2)
     (- 3 2)
     (+ 3 2))                           =&gt; 1
@@ -364,11 +364,11 @@ x                                      =&gt; 28
 <center id='center2036'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2034'
->(<font color="#6959cf"><strong id='bold30283'
->define</strong></font> <font color="#6959cf"><strong id='bold30285'
+>(<font color="#6959cf"><strong id='bold30296'
+>define</strong></font> <font color="#6959cf"><strong id='bold30298'
 >x</strong></font> 2)
 (+ x 1)                                =&gt; 3
-(<strong id='bold30287'
+(<strong id='bold30300'
 >set!</strong> x 4)                             =&gt; <em id='emph2031'
 >unspecified</em>
 (+ x 1)                                =&gt; 5
@@ -390,12 +390,12 @@ following an <code id='code2049'
 >else</code>-clause.<br/><br/><center id='center2058'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2056'
->(<strong id='bold30288'
+>(<strong id='bold30301'
 >cond</strong> ((&gt; 3 2) 'greater)
-      ((&lt; 3 2) 'less))                 =&gt; greater<br/><br/>(<strong id='bold30289'
+      ((&lt; 3 2) 'less))                 =&gt; greater<br/><br/>(<strong id='bold30302'
 >cond</strong> ((&gt; 3 3) 'greater)
       ((&lt; 3 3) 'less)
-      (else 'equal))                   =&gt; equal<br/><br/>(<strong id='bold30290'
+      (else 'equal))                   =&gt; equal<br/><br/>(<strong id='bold30303'
 >cond</strong> ((assv 'b '((a 1) (b 2))) =&gt; cadr)
       (else #f))                       =&gt; 2
 </pre>
@@ -412,16 +412,16 @@ following an <code id='code2049'
 <center id='center2076'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2074'
->(<strong id='bold30291'
+>(<strong id='bold30304'
 >case</strong> (* 2 3)
   ((2 3 5 7) 'prime)
   ((1 4 6 8 9) 'composite))            =&gt; composite
-(<strong id='bold30292'
+(<strong id='bold30305'
 >case</strong> (car '(c d))
   ((a) 'a)
   ((b) 'b))                            =&gt; <em id='emph2070'
 >unspecified</em>
-(<strong id='bold30293'
+(<strong id='bold30306'
 >case</strong> (car '(c d))
   ((a e i o u) 'vowel)
   ((w y) 'semivowel)
@@ -461,13 +461,13 @@ following an <code id='code2049'
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2109'
 >(and-let* ((x 1) (y 2)) (cons x y))    =&gt; (1 . 2)
 (and-let* ((x 1) (z #f)) x)            =&gt; #f<br/><br/>(and-let* ((my-list (compute-list)) ((not (null? my-list))))
-          (do-something my-list))<br/><br/>(<font color="#6959cf"><strong id='bold30294'
->define</strong></font> (<font color="#6959cf"><strong id='bold30296'
+          (do-something my-list))<br/><br/>(<font color="#6959cf"><strong id='bold30307'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30309'
 >look-up</strong></font> key alist)
   (and-let* ((x (assq key alist))) (cdr x)))<br/><br/>(or (and-let* ((c (read-char))
                ((not (eof-object? c))))
               (string-set! some-str i c)  
-              (<strong id='bold30298'
+              (<strong id='bold30311'
 >set!</strong> i (+ 1 i)))
 </pre>
 </td></tr>
@@ -503,16 +503,16 @@ following an <code id='code2049'
 <center id='center2146'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2144'
->(<strong id='bold30299'
+>(<strong id='bold30312'
 >let</strong> ((x 2) (y 3))
-  (* x y))                             =&gt; 6<br/><br/>(<strong id='bold30300'
+  (* x y))                             =&gt; 6<br/><br/>(<strong id='bold30313'
 >let</strong> ((x 2) (y 3))
-  (<strong id='bold30301'
+  (<strong id='bold30314'
 >let</strong> ((x 7)
         (z (+ x y)))
-    (* z x)))                          =&gt; 35<br/><br/>(<strong id='bold30302'
+    (* z x)))                          =&gt; 35<br/><br/>(<strong id='bold30315'
 >let</strong> loop ((l '(1 2 3)))
-   (<strong id='bold30303'
+   (<strong id='bold30316'
 >if</strong> (null? l)
        '()
        (cons (+ 1 (car l)) 
@@ -528,7 +528,7 @@ to the <code id='code2149'
 >#unspecified</code> value.<br/><br/><center id='center2154'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2152'
->(<strong id='bold30304'
+>(<strong id='bold30317'
 >let</strong> (x)
    x)                                 =&gt; #unspecified
 </pre>
@@ -543,9 +543,9 @@ is bound in <code id='code2158'
 >binding</em></code>. That is,<br/><br/><center id='center2164'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2162'
->(<strong id='bold30305'
+>(<strong id='bold30318'
 >let</strong> ((l 'a-symbol))
-  (<strong id='bold30306'
+  (<strong id='bold30319'
 >let</strong> l ((x l))
      x))                               =&gt; #&lt;procedure&gt;
 </pre>
@@ -555,9 +555,9 @@ is bound in <code id='code2158'
 while R5Rs states that,<br/><br/><center id='center2170'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2168'
->(<strong id='bold30307'
+>(<strong id='bold30320'
 >let</strong> ((l 'a-symbol))
-  (<strong id='bold30308'
+  (<strong id='bold30321'
 >let</strong> l ((x l))
      x))                               =&gt; a-symbol
 </pre>
@@ -574,9 +574,9 @@ while R5Rs states that,<br/><br/><center id='center2170'
 <center id='center2186'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2184'
->(<strong id='bold30309'
+>(<strong id='bold30322'
 >let</strong> ((x 2) (y 3))
-  (<strong id='bold30310'
+  (<strong id='bold30323'
 >let*</strong> ((x 7)
          (z (+ x y)))
     (* z x)))                          =&gt; 70
@@ -594,18 +594,18 @@ while R5Rs states that,<br/><br/><center id='center2170'
 <center id='center2205'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2203'
->(<strong id='bold30311'
+>(<strong id='bold30324'
 >letrec</strong> ((even?
-          (<strong id='bold30312'
+          (<strong id='bold30325'
 >lambda</strong> (n)
-            (<strong id='bold30313'
+            (<strong id='bold30326'
 >if</strong> (zero? n)
                 #t
                 (odd? (- n 1)))))
          (odd?
-          (<strong id='bold30314'
+          (<strong id='bold30327'
 >lambda</strong> (n)
-            (<strong id='bold30315'
+            (<strong id='bold30328'
 >if</strong> (zero? n)
                 #f
                 (even? (- n 1))))))
@@ -647,16 +647,16 @@ region, making it possible to define mutually recursive procedures.<br/><br/>Exa
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2233'
 >(letrec* ((x 1)
-          (f (<strong id='bold30316'
+          (f (<strong id='bold30329'
 >lambda</strong> (y) (+ x y))))
    (f 3))
                                        =&gt; 4
-(letrec* ((p (<strong id='bold30317'
+(letrec* ((p (<strong id='bold30330'
 >lambda</strong> (x)
                 (+ 1 (q (- x 1)))))
-          (q (<strong id='bold30318'
+          (q (<strong id='bold30331'
 >lambda</strong> (y)
-                (<strong id='bold30319'
+                (<strong id='bold30332'
 >if</strong> (zero? y)
                     0
                     (+ 1 (p (- y 1))))))
@@ -687,13 +687,13 @@ The syntax is similar to the Common Lisp one [Steele90],
 where created bindings are immutable.<br/><br/><center id='center2257'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2255'
->(<strong id='bold30320'
+>(<strong id='bold30333'
 >labels</strong> ((loop (f l acc)
-               (<strong id='bold30321'
+               (<strong id='bold30334'
 >if</strong> (null? l) 
                    (reverse! acc) 
                    (loop f (cdr l) (cons (f (car l)) acc)))))
-   (loop (<strong id='bold30322'
+   (loop (<strong id='bold30335'
 >lambda</strong> (x) (+ 1 x)) (list 1 2 3) '()))
    =&gt; (2 3 4)
 </pre>
@@ -710,12 +710,12 @@ where created bindings are immutable.<br/><br/><center id='center2257'
 <center id='center2279'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2277'
->(<font color="#6959cf"><strong id='bold30323'
->define</strong></font> <font color="#6959cf"><strong id='bold30325'
->x</strong></font> 0)<br/><br/>(<strong id='bold30327'
->begin</strong> (<strong id='bold30328'
+>(<font color="#6959cf"><strong id='bold30336'
+>define</strong></font> <font color="#6959cf"><strong id='bold30338'
+>x</strong></font> 0)<br/><br/>(<strong id='bold30340'
+>begin</strong> (<strong id='bold30341'
 >set!</strong> x 5)
-       (+ x 1))                        =&gt; 6<br/><br/>(<strong id='bold30329'
+       (+ x 1))                        =&gt; 6<br/><br/>(<strong id='bold30342'
 >begin</strong> (display <font color="red">&quot;4 plus 1 equals &quot;</font>)
        (display (+ 4 1)))              =&gt; <em id='emph2271'
 >unspecified</em>
@@ -737,7 +737,7 @@ where created bindings are immutable.<br/><br/><center id='center2257'
 >(do ((vec (make-vector 5))
      (i 0 (+ i 1)))
     ((= i 5) vec)
-  (vector-set! vec i i))               =&gt; #(0 1 2 3 4)<br/><br/>(<strong id='bold30331'
+  (vector-set! vec i i))               =&gt; #(0 1 2 3 4)<br/><br/>(<strong id='bold30344'
 >let</strong> ((x '(1 3 5 7 9)))
   (do ((x x (cdr x))
        (sum 0 (+ sum (car x))))
@@ -770,9 +770,9 @@ where created bindings are immutable.<br/><br/><center id='center2257'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2331'
 >`(list ,(+ 1 2) 4)                     =&gt; (list 3 4)
-(<strong id='bold30332'
+(<strong id='bold30345'
 >let</strong> ((name 'a)) `(list ,name ',name))           
-          =&gt; (list a (<strong id='bold30333'
+          =&gt; (list a (<strong id='bold30346'
 >quote</strong> a))
 `(a ,(+ 1 2) ,&#x40;(map abs '(4 -5 6)) b)           
           =&gt; (a 3 4 5 6 b)
@@ -783,7 +783,7 @@ where created bindings are immutable.<br/><br/><center id='center2257'
           =&gt; #(10 5 2 4 3 8)
 `(a `(b ,(+ 1 2) ,(foo ,(+ 1 3) d) e) f)           
           =&gt; (a `(b ,(+ 1 2) ,(foo 4 d) e) f)
-(<strong id='bold30334'
+(<strong id='bold30347'
 >let</strong> ((name1 'x)
       (name2 'y))
   `(a `(b ,,name1 ,',name2 d) e))           
@@ -821,14 +821,14 @@ Global bindings are introduced by the <code id='code2338'
 <center id='center2359'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2357'
->(<font color="#6959cf"><strong id='bold30335'
->define</strong></font> <font color="#6959cf"><strong id='bold30337'
+>(<font color="#6959cf"><strong id='bold30348'
+>define</strong></font> <font color="#6959cf"><strong id='bold30350'
 >add3</strong></font>
-  (<strong id='bold30339'
+  (<strong id='bold30352'
 >lambda</strong> (x) (+ x 3)))
 (add3 3)                               =&gt; 6
-(<font color="#6959cf"><strong id='bold30340'
->define</strong></font> <font color="#6959cf"><strong id='bold30342'
+(<font color="#6959cf"><strong id='bold30353'
+>define</strong></font> <font color="#6959cf"><strong id='bold30355'
 >first</strong></font> car)
 (first '(1 2))                         =&gt; 1
 </pre>
@@ -847,12 +847,12 @@ language (See <a href="bigloo-4.html#Module-Declaration" class="inbound">Module 
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph30349'
+<p class="ending" id='paragraph30362'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it30347'
->Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+Last update <em id='it30360'
+>Tue Jan  6 18:53:36 2015</em>.</font></p></div>
 </body>
 </html>

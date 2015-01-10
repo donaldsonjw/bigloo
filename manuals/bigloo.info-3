@@ -1049,10 +1049,10 @@ the exhaustive list of Bigloo options and configuration variables:
           default: read
         - *inlining-kfactor* :
           Inlining growth factor
-          default: #<procedure:53e760.1>
+          default: #<procedure:53ee50.1>
         - *inlining-reduce-kfactor* :
           Inlinine growth factor reductor
-          default: #<procedure:53e6b0.1>
+          default: #<procedure:53eda0.1>
         - *inlining?* :
           Inlining optimization
           default: #t
@@ -1256,7 +1256,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: ld
         - *pre-processor* :
           An optional function that pre-processes the source file
-          default: #<procedure:539b00.1>
+          default: #<procedure:53a1f0.1>
         - *prof-table-name* :
           Bprof translation table file name
           default: "bmon.out"
@@ -2081,9 +2081,9 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * /fx:                                   Numbers.             (line 160)
 * /llong:                                Numbers.             (line 163)
 * 8bits->utf8:                           Unicode (UCS-2) Strings.
-                                                              (line 120)
+                                                              (line 125)
 * 8bits->utf8!:                          Unicode (UCS-2) Strings.
-                                                              (line 121)
+                                                              (line 126)
 * <:                                     Numbers.             (line 107)
 * <=:                                    Numbers.             (line 119)
 * <=bx:                                  Numbers.             (line 124)
@@ -2415,9 +2415,9 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * cos:                                   Numbers.             (line 205)
 * cosfl:                                 Numbers.             (line 206)
 * cp1252->utf8:                          Unicode (UCS-2) Strings.
-                                                              (line 112)
+                                                              (line 117)
 * cp1252->utf8!:                         Unicode (UCS-2) Strings.
-                                                              (line 113)
+                                                              (line 118)
 * cram-md5sum-string:                    Digest.              (line  50)
 * CRC:                                   CRC.                 (line   6)
 * crc:                                   CRC.                 (line  61)
@@ -2865,7 +2865,7 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * Interpreting:                          Interpreting.        (line   6)
 * Introspection:                         Introspection.       (line   6)
 * inverse-utf8-table:                    Unicode (UCS-2) Strings.
-                                                              (line 176)
+                                                              (line 181)
 * io-unknown-host-error:                 Socket.              (line 281)
 * iota:                                  Pairs And Lists.     (line 172)
 * IP number:                             Socket.              (line  79)
@@ -2874,9 +2874,9 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * isa?:                                  Creating and accessing objects.
                                                               (line   9)
 * iso-latin->utf8:                       Unicode (UCS-2) Strings.
-                                                              (line 101)
+                                                              (line 106)
 * iso-latin->utf8!:                      Unicode (UCS-2) Strings.
-                                                              (line 102)
+                                                              (line 107)
 * java:                                  Module Declaration.  (line 353)
 * Java interface:                        Java Interface.      (line   6)
 * jfile:                                 Compiling with the JVM back-end.
@@ -4023,21 +4023,23 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * Using C bindings within the interpreter: Using C bindings within the interpreter.
                                                               (line   6)
 * utf8->8bits:                           Unicode (UCS-2) Strings.
-                                                              (line 122)
+                                                              (line 127)
 * utf8->8bits!:                          Unicode (UCS-2) Strings.
-                                                              (line 123)
+                                                              (line 128)
 * utf8->cp1252:                          Unicode (UCS-2) Strings.
-                                                              (line 114)
+                                                              (line 119)
 * utf8->cp1252!:                         Unicode (UCS-2) Strings.
-                                                              (line 115)
+                                                              (line 120)
 * utf8->iso-latin:                       Unicode (UCS-2) Strings.
-                                                              (line 103)
+                                                              (line 108)
 * utf8->iso-latin!:                      Unicode (UCS-2) Strings.
-                                                              (line 104)
+                                                              (line 109)
 * utf8->iso-latin-15:                    Unicode (UCS-2) Strings.
-                                                              (line 105)
+                                                              (line 110)
 * utf8->iso-latin-15!:                   Unicode (UCS-2) Strings.
-                                                              (line 106)
+                                                              (line 111)
+* utf8-codepoint-length:                 Unicode (UCS-2) Strings.
+                                                              (line  79)
 * utf8-string->ucs2-string:              Unicode (UCS-2) Strings.
                                                               (line  55)
 * utf8-string-encode:                    Unicode (UCS-2) Strings.
@@ -4045,11 +4047,11 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * utf8-string-length:                    Unicode (UCS-2) Strings.
                                                               (line  74)
 * utf8-string-ref:                       Unicode (UCS-2) Strings.
-                                                              (line  79)
+                                                              (line  84)
 * utf8-string?:                          Unicode (UCS-2) Strings.
                                                               (line  58)
 * utf8-substring:                        Unicode (UCS-2) Strings.
-                                                              (line  83)
+                                                              (line  88)
 * values:                                Control Features.    (line 192)
 * VCARD:                                 RFC 2426.            (line   6)
 * vcard:                                 RFC 2426.            (line   9)

@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>24. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- Macro expansion</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>24. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- Macro expansion</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center34577'
+<br/><center id='center34594'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc34567" align="center" colspan="1"><font color="#ffffff"><strong id='bold34565'
+<tr bgcolor="#8381de"><th id="tc34584" align="center" colspan="1"><font color="#ffffff"><strong id='bold34582'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc34574" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc34570" align="left" valign="top" colspan="1"><strong id='bold34569'
->top:</strong></td><td id="tc34571" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc34591" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc34587" align="left" valign="top" colspan="1"><strong id='bold34586'
+>top:</strong></td><td id="tc34588" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center34587'
+<br/><br/><center id='center34604'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc34581" align="center" colspan="1"><font color="#ffffff"><strong id='bold34579'
+<tr bgcolor="#8381de"><th id="tc34598" align="center" colspan="1"><font color="#ffffff"><strong id='bold34596'
 >Macro expansion</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc34584" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc34601" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">24.1</td><td colspan="4" width="100%"><a href="bigloo-25.html#Expansion-passing-style-macros">Expansion passing style macros</a></td></tr>
  <tr><td valign="top" align="left">24.2</td><td colspan="4" width="100%"><a href="bigloo-25.html#Revised(5)-macro-expansion">Revised(5) macro expansion</a></td></tr>
@@ -51,11 +51,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center34597'
+<br/><br/><center id='center34614'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc34591" align="center" colspan="1"><font color="#ffffff"><strong id='bold34589'
+<tr bgcolor="#8381de"><th id="tc34608" align="center" colspan="1"><font color="#ffffff"><strong id='bold34606'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc34594" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc34611" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -103,7 +103,7 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Macro-Expansion" class="mark"></a><a name="g26137" class="mark"></a>
+<a name="Macro-Expansion" class="mark"></a><a name="g26150" class="mark"></a>
 Bigloo makes use of two macro expansion system. The one based on the
 expansion passing style [Dybvig et al. 86] and the one advocated
 by the R5RS, for which see <a href="http://www.inria.fr/indes/fp/Bigloo/doc/r5rs.html">http://www.inria.fr/indes/fp/Bigloo/doc/r5rs.html</a>.<br/><br/><!-- Expansion passing style macros -->
@@ -111,70 +111,70 @@ by the R5RS, for which see <a href="http://www.inria.fr/indes/fp/Bigloo/doc/r5rs
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">24.1 Expansion passing style macros</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g26140" class="mark"></a><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26143" class="mark"></a><a name="define-expander" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26147" align="left" colspan="1"><strong id='bold26145'
->define-expander</strong><em id='it26146'
-> name proc</em></td><td id="tc26148" align="right" colspan="1">bigloo syntax</td></tr>
+<a name="g26153" class="mark"></a><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g26156" class="mark"></a><a name="define-expander" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26160" align="left" colspan="1"><strong id='bold26158'
+>define-expander</strong><em id='it26159'
+> name proc</em></td><td id="tc26161" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-This form defines an expander, <code id='code26152'
-><em id='it26151'
->name</em></code>, where <code id='code26154'
-><em id='it26153'
+This form defines an expander, <code id='code26165'
+><em id='it26164'
+>name</em></code>, where <code id='code26167'
+><em id='it26166'
 >proc</em></code>
 is a procedure of two arguments: a form to macro-expand,
 and an expander.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26158" class="mark"></a><a name="define-macro" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26162" align="left" colspan="1"><strong id='bold26160'
->define-macro</strong><em id='it26161'
-> (name [args]...) body</em></td><td id="tc26163" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g26171" class="mark"></a><a name="define-macro" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26175" align="left" colspan="1"><strong id='bold26173'
+>define-macro</strong><em id='it26174'
+> (name [args]...) body</em></td><td id="tc26176" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-This form is itself macro-expanded into a <code id='code26166'
+This form is itself macro-expanded into a <code id='code26179'
 >define-expander</code> form.<br/><br/>Macro expanders cannot be exported or imported since there is no way
-to specify expanders in a module declaration.<br/><br/>Macros defined with <code id='code26169'
->define-expander</code> and <code id='code26170'
+to specify expanders in a module declaration.<br/><br/>Macros defined with <code id='code26182'
+>define-expander</code> and <code id='code26183'
 >define-macro</code>
 are used by both the compiler and the interpreter.
 </td></tr>
 </tbody></table><br/>
 Here is an example of an expander:
-<center id='center26186'
+<center id='center26199'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26184'
->(<font color="#6959cf"><strong id='bold34598'
->define-expander</strong></font> <font color="#6959cf"><strong id='bold34600'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26197'
+>(<font color="#6959cf"><strong id='bold34615'
+>define-expander</strong></font> <font color="#6959cf"><strong id='bold34617'
 >when</strong></font> 
-   (<strong id='bold34602'
+   (<strong id='bold34619'
 >lambda</strong> (x e)
-      (<strong id='bold34603'
+      (<strong id='bold34620'
 >match-case</strong> x
          ((?- ?test . ?exps)
-          (e `(<strong id='bold34604'
->if</strong> ,test (<strong id='bold34605'
+          (e `(<strong id='bold34621'
+>if</strong> ,test (<strong id='bold34622'
 >begin</strong> ,&#x40;exps)) e))
          (else
-           (<font color="red"><strong id='bold34606'
+           (<font color="red"><strong id='bold34623'
 >error</strong></font> <font color="red">&quot;when&quot;</font> <font color="red">&quot;illegal form&quot;</font> x)))))<br/><br/>(when (&gt; a 0) (print a) a)
-   ==&gt; (<strong id='bold34610'
->if</strong> (&gt; a 0) (<strong id='bold34611'
+   ==&gt; (<strong id='bold34627'
+>if</strong> (&gt; a 0) (<strong id='bold34628'
 >begin</strong> (print a) a))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The same example can written with a <code id='code26187'
+The same example can written with a <code id='code26200'
 >define-macro</code> form:
-<center id='center26193'
+<center id='center26206'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26191'
->(<font color="#6959cf"><strong id='bold34612'
->define-macro</strong></font> (<font color="#6959cf"><strong id='bold34614'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26204'
+>(<font color="#6959cf"><strong id='bold34629'
+>define-macro</strong></font> (<font color="#6959cf"><strong id='bold34631'
 >when</strong></font> test . exps)
-   `(<strong id='bold34616'
->if</strong> ,test (<strong id='bold34617'
+   `(<strong id='bold34633'
+>if</strong> ,test (<strong id='bold34634'
 >begin</strong> ,&#x40;exps)))
 </pre>
 </td></tr>
@@ -186,34 +186,34 @@ The same example can written with a <code id='code26187'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">24.2 Revised(5) macro expansion</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g26194" class="mark"></a>Bigloo support the Revised(5) Report on the Scheme programming language.
+<a name="g26207" class="mark"></a>Bigloo support the Revised(5) Report on the Scheme programming language.
 For a detailed documentation see See <a href="./r5rs-7.html#Expressions">r5rs, Expressions</a>.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26198" class="mark"></a><a name="let-syntax" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26202" align="left" colspan="1"><strong id='bold26200'
->let-syntax</strong><em id='it26201'
-> (binding...) body</em></td><td id="tc26203" align="right" colspan="1">syntax</td></tr>
+<tr><td><a name="g26211" class="mark"></a><a name="let-syntax" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26215" align="left" colspan="1"><strong id='bold26213'
+>let-syntax</strong><em id='it26214'
+> (binding...) body</em></td><td id="tc26216" align="right" colspan="1">syntax</td></tr>
 </tbody></table>
-<a name="g26207" class="mark"></a><a name="letrec-syntax" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26211" align="left" colspan="1"><strong id='bold26209'
->letrec-syntax</strong><em id='it26210'
-> (binding...) body</em></td><td id="tc26212" align="right" colspan="1">syntax</td></tr>
+<a name="g26220" class="mark"></a><a name="letrec-syntax" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26224" align="left" colspan="1"><strong id='bold26222'
+>letrec-syntax</strong><em id='it26223'
+> (binding...) body</em></td><td id="tc26225" align="right" colspan="1">syntax</td></tr>
 </tbody></table>
-<a name="g26216" class="mark"></a><a name="define-syntax" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26220" align="left" colspan="1"><strong id='bold26218'
->define-syntax</strong><em id='it26219'
-> keyword transformer</em></td><td id="tc26221" align="right" colspan="1">syntax</td></tr>
+<a name="g26229" class="mark"></a><a name="define-syntax" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26233" align="left" colspan="1"><strong id='bold26231'
+>define-syntax</strong><em id='it26232'
+> keyword transformer</em></td><td id="tc26234" align="right" colspan="1">syntax</td></tr>
 </tbody></table>
-<a name="g26225" class="mark"></a><a name="syntax-rules" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26229" align="left" colspan="1"><strong id='bold26227'
->syntax-rules</strong><em id='it26228'
-> literals rule...</em></td><td id="tc26230" align="right" colspan="1">syntax</td></tr>
+<a name="g26238" class="mark"></a><a name="syntax-rules" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26242" align="left" colspan="1"><strong id='bold26240'
+>syntax-rules</strong><em id='it26241'
+> literals rule...</em></td><td id="tc26243" align="right" colspan="1">syntax</td></tr>
 </tbody></table>
 These three forms are compatible with the description of the
 Revised(5) Report on the Algorithmic Language Scheme.<br/><br/>Implementation Note: Current Bigloo does not ensure hygiene for
-<code id='code26234'
->let-syntax</code> and <code id='code26235'
+<code id='code26247'
+>let-syntax</code> and <code id='code26248'
 >letrec-syntax</code>. Hygienic expansion is
-only guaranteed for <code id='code26236'
+only guaranteed for <code id='code26249'
 >define-syntax</code>.
 </td></tr>
 </tbody></table><br/><br/><br/><br/><br/><br/><br/>
@@ -222,12 +222,12 @@ only guaranteed for <code id='code26236'
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph34623'
+<p class="ending" id='paragraph34640'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it34621'
->Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+Last update <em id='it34638'
+>Tue Jan  6 18:53:36 2015</em>.</font></p></div>
 </body>
 </html>

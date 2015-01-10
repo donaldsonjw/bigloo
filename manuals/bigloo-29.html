@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>28. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014 -- The Java interface</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>28. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- The Java interface</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center35128'
+<br/><center id='center35145'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35118" align="center" colspan="1"><font color="#ffffff"><strong id='bold35116'
+<tr bgcolor="#8381de"><th id="tc35135" align="center" colspan="1"><font color="#ffffff"><strong id='bold35133'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35125" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc35121" align="left" valign="top" colspan="1"><strong id='bold35120'
->top:</strong></td><td id="tc35122" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-November-2014" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>November 2014</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc35142" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc35138" align="left" valign="top" colspan="1"><strong id='bold35137'
+>top:</strong></td><td id="tc35139" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center35138'
+<br/><br/><center id='center35155'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35132" align="center" colspan="1"><font color="#ffffff"><strong id='bold35130'
+<tr bgcolor="#8381de"><th id="tc35149" align="center" colspan="1"><font color="#ffffff"><strong id='bold35147'
 >The Java interface</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35135" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc35152" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">28.1</td><td colspan="4" width="100%"><a href="bigloo-29.html#Compiling-with-the-JVM-back-end">Compiling with the JVM back-end</a></td></tr>
  <tr><td></td><td valign="top" align="left">28.1.1</td><td colspan="3" width="100%"><a href="bigloo-29.html#Compiler-JVM-options">Compiler JVM options</a></td></tr>
@@ -63,11 +63,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center35148'
+<br/><br/><center id='center35165'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35142" align="center" colspan="1"><font color="#ffffff"><strong id='bold35140'
+<tr bgcolor="#8381de"><th id="tc35159" align="center" colspan="1"><font color="#ffffff"><strong id='bold35157'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35145" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc35162" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -115,13 +115,13 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Java-Interface" class="mark"></a><a name="g27808" class="mark"></a>
+<a name="Java-Interface" class="mark"></a><a name="g27821" class="mark"></a>
 When the Bigloo is configured for a JVM back-end support, the compiler is
 able to produce Java class file instead of C files. In order to produce 
-JVM class files, use the <code id='code27810'
->-jvm</code> compiler option. Example:<br/><br/><center id='center27814'
+JVM class files, use the <code id='code27823'
+>-jvm</code> compiler option. Example:<br/><br/><center id='center27827'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog27812'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog27825'
 >$ cat &gt; foo.scm
 (module foo (main main))
 (define (main argv)
@@ -140,47 +140,47 @@ $ a.out
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">28.1 Compiling with the JVM back-end</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Compiling-with-the-JVM-back-end" class="mark"></a><a name="g27815" class="mark"></a>
+<a name="Compiling-with-the-JVM-back-end" class="mark"></a><a name="g27828" class="mark"></a>
 <!-- Compiler JVM options -->
 <a name="Compiler-JVM-options"></a>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">28.1.1 Compiler JVM options</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="g27817" class="mark"></a>
+<a name="g27830" class="mark"></a>
 All the compiler options that control the compilation (optimization options,
-debugging options, etc.), can be used in conjunction with the <code id='code27819'
+debugging options, etc.), can be used in conjunction with the <code id='code27832'
 >-jvm</code> option.
-However, the <code id='code27820'
->-jvm</code> option <em id='emph27821'
+However, the <code id='code27833'
+>-jvm</code> option <em id='emph27834'
 >MUST</em> be the first compiler option
 on the command line.<br/><br/>In order to prevent the compiler to produce a script shell file to run
-the program, it is required to use simultaneously the <code id='code27823'
+the program, it is required to use simultaneously the <code id='code27836'
 >-jvm</code> and 
-<code id='code27824'
+<code id='code27837'
 >-c</code> options.<br/><br/></div>
 <!-- Compiling multi-modules applications -->
 <a name="Compiling-multi-modules-applications"></a>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">28.1.2 Compiling multi-modules applications</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="g27826" class="mark"></a><a name="g27828" class="mark"></a>
+<a name="g27839" class="mark"></a><a name="g27841" class="mark"></a>
 In order to compile and link multi-modules applications, it is required
 to specify the association between Scheme source modules and Java
 qualified type names. This task is generally complex because of the
 annoying mapping that exists from Java class names and the operating
 file system names. In order to get rid of this problem, the Bigloo
-standard distribution contains a tool, <code id='code27830'
+standard distribution contains a tool, <code id='code27843'
 >jfile</code>, that automatically
 produces Bigloo Module/Java classes association files. The default name
-for such a table is <code id='code27831'
+for such a table is <code id='code27844'
 >.jfile</code>. When compiling a module, Bigloo checks
-if a <code id='code27832'
+if a <code id='code27845'
 >.jfile</code> exists in the current directory, if it exists, the
-file is read. The compilation option <code id='code27833'
+file is read. The compilation option <code id='code27846'
 >-jfile</code> may be used to
-specify an alternative jfile name. Example:<br/><br/><center id='center27837'
+specify an alternative jfile name. Example:<br/><br/><center id='center27850'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog27835'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog27848'
 >$ cat &gt; foo.scm
 (module foo (export (foo))) (define (foo) 'foo)
 $ cat &gt; bar.scm
@@ -203,7 +203,7 @@ $ bigloo -jvm main.scm foo.class bar.class hux.class
 </td></tr>
 </tbody></table></center>
 
-For an explanation about the <code id='code27838'
+For an explanation about the <code id='code27851'
 >.afile</code>, see <a href="bigloo-4.html#Modules" class="inbound">Modules</a>.<br/><br/></div>
 </div><br>
 <!-- JVM back-end and SRFI-0 -->
@@ -211,16 +211,16 @@ For an explanation about the <code id='code27838'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">28.2 JVM back-end and SRFI-0</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="JVM-back-end-and-SRFI-0" class="mark"></a><a name="g27840" class="mark"></a><a name="g27842" class="mark"></a>
+<a name="JVM-back-end-and-SRFI-0" class="mark"></a><a name="g27853" class="mark"></a><a name="g27855" class="mark"></a>
 The currently running back-end may be tested by the means of the SRFI-0
-<code id='code27844'
+<code id='code27857'
 >cond-expand</code> form (see <a href="bigloo-32.html#SRFIs" class="inbound">SRFIs</a>). That is, when the JVM is ran,
-the <code id='code27845'
->bigloo-jvm</code> clause is true. Otherwise, the <code id='code27846'
+the <code id='code27858'
+>bigloo-jvm</code> clause is true. Otherwise, the <code id='code27859'
 >bigloo-c</code>
-is true. Example:<br/><br/><center id='center27850'
+is true. Example:<br/><br/><center id='center27863'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog27848'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog27861'
 >$ cat &gt; foo.scm
 (module foo (main main))
 (define (main argv)
@@ -244,44 +244,44 @@ $ a.out
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">28.3 Limitation of the JVM back-end</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Limitation-of-the-JVM-back-end" class="mark"></a><a name="g27851" class="mark"></a>
+<a name="Limitation-of-the-JVM-back-end" class="mark"></a><a name="g27864" class="mark"></a>
 The JVM back-end supports the entire Bigloo source language but the
-<code id='code27853'
+<code id='code27866'
 >call/cc</code> function. More precisely, using the JVM back-end, the
-continuation reified in a <code id='code27854'
+continuation reified in a <code id='code27867'
 >call/cc</code> form can only be invoked in the
 dynamic extent of that form. <br/><br/>The other restrictions of the C back-end apply to the JVM
-back-end. Mainly, <br/><br/><ul class="itemize" id='itemize27876'
+back-end. Mainly, <br/><br/><ul class="itemize" id='itemize27889'
 ><li>Bigloo is not able to compile all the tail recursive call
 without stack consumption (however, most of the tail recursive calls are
 optimized by Bigloo and don't use stack activation frames).<br/><br/></li>
 <li>Bigloo compiled applications do not check for arithmetic overflow.
 
 </li>
-<li>When compiling to Jvm, the <code id='code27860'
+<li>When compiling to Jvm, the <code id='code27873'
 >extern</code> module clauses are not used.
 
 </li>
-<li>Jvm runtime system does support the following function <code id='code27862'
+<li>Jvm runtime system does support the following function <code id='code27875'
 >chdir</code>.
 
 </li>
-<li>Jvm runtime system support for <code id='code27864'
+<li>Jvm runtime system support for <code id='code27877'
 >chmod</code> is restricted.
 
 </li>
 <li>In order to read a shell variable from a Bigloo compiled Jvm program,
-      you have to use the Bigloo link option <code id='code27866'
->-jvm-env</code> <em id='emph27867'
+      you have to use the Bigloo link option <code id='code27879'
+>-jvm-env</code> <em id='emph27880'
 >when</em>
       linking that program. However, some shell variables are 
-      automatically defined (<code id='code27868'
->HOME</code>, <code id='code27869'
->USER</code>, <code id='code27870'
+      automatically defined (<code id='code27881'
+>HOME</code>, <code id='code27882'
+>USER</code>, <code id='code27883'
 >CLASSPATH</code> and
-      <code id='code27871'
+      <code id='code27884'
 >TMPDIR</code>.<br/><br/></li>
-<li>JVM code generation does not support <code id='code27874'
+<li>JVM code generation does not support <code id='code27887'
 >pragma</code> forms. 
 
 </li>
@@ -292,19 +292,19 @@ optimized by Bigloo and don't use stack activation frames).<br/><br/></li>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">28.4 Connecting Scheme and Java code</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Connecting-Scheme-and-Java-code" class="mark"></a><a name="g27877" class="mark"></a>
+<a name="Connecting-Scheme-and-Java-code" class="mark"></a><a name="g27890" class="mark"></a>
 When compiling and linking with the JVM back-end, Bigloo source code may
 use the Java API. That is, Bigloo Scheme source code may use (refer or set)
 Java static variables, Bigloo source code may call static or virtual
 Java methods. In addition, Bigloo variables and functions may be exported
 to Java, that is use, set or called in Java source code. Java module clauses
 are enabled (read and parsed) only when compiling to JVM byte code.<br/><br/>Java definitions are declared in Bigloo modules by the mean of a Bigloo
-module clause: the <em id='emph27880'
->java</em> module clause. The syntax of a <em id='emph27881'
+module clause: the <em id='emph27893'
+>java</em> module clause. The syntax of a <em id='emph27894'
 >Java</em>
-clause is defined by:<br/><br/><center id='center27885'
+clause is defined by:<br/><br/><center id='center27898'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27883'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27896'
 >&lt;java&gt; ==&gt; &lt;declare-class-clause&gt;
      | &lt;declare-abstract-class-clause&gt;
      | &lt;extend-class-clause&gt;
@@ -314,16 +314,16 @@ clause is defined by:<br/><br/><center id='center27885'
 </td></tr>
 </tbody></table></center>
 
-As for the <em id='emph27886'
->extern</em> clause, <em id='emph27887'
+As for the <em id='emph27899'
+>extern</em> clause, <em id='emph27900'
 >java</em> clauses are automatically
 ``transmitted'' by the importation process.  That is, if module
-<code id='code27888'
->module1</code> imports a module <code id='code27889'
->module2</code>, <code id='code27890'
+<code id='code27901'
+>module1</code> imports a module <code id='code27902'
+>module2</code>, <code id='code27903'
 >module</code> treats the
-<code id='code27891'
->java</code> clauses of <code id='code27892'
+<code id='code27904'
+>java</code> clauses of <code id='code27905'
 >module2</code> as though they were included in
 its own module declaration. Redefinition of a variable or a function
 already defined in an java clause is an error. However, the definition of
@@ -334,11 +334,11 @@ module.<br/><br/>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">28.4.1 Automatic Java clauses generation</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Automatic-Java-clauses-generation" class="mark"></a><a name="g27894" class="mark"></a><a name="g27897" class="mark"></a>
+<a name="Automatic-Java-clauses-generation" class="mark"></a><a name="g27907" class="mark"></a><a name="g27910" class="mark"></a>
 Java clauses can be automatically generated using the Jigloo program
 which is distributed in the same package as Bigloo. Using Jigloo may be
 a good way to understand how Java classes, methods, and variables have to 
-be declared in Bigloo. Jigloo reads Java <em id='emph27899'
+be declared in Bigloo. Jigloo reads Java <em id='emph27912'
 >class</em> files and generate the 
 Bigloo java clauses for that classes.<br/><br/></div>
 <!-- Declaring Java classes -->
@@ -346,78 +346,78 @@ Bigloo java clauses for that classes.<br/><br/></div>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">28.4.2 Declaring Java classes</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Declaring-Java-classes" class="mark"></a><a name="g27901" class="mark"></a>The &lt;declare-class-clause&gt; clause denotes importation of Java classes.<br/><br/><center id='center27924'
+<a name="Declaring-Java-classes" class="mark"></a><a name="g27914" class="mark"></a>The &lt;declare-class-clause&gt; clause denotes importation of Java classes.<br/><br/><center id='center27937'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27922'
->&lt;declare-class-clause&gt; ==&gt; <code id='code27904'
->(</code>class &lt;typed-ident&gt; &lt;slot&gt;* &lt;string&gt;<code id='code27905'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27935'
+>&lt;declare-class-clause&gt; ==&gt; <code id='code27917'
+>(</code>class &lt;typed-ident&gt; &lt;slot&gt;* &lt;string&gt;<code id='code27918'
 >)</code> 
 &lt;slot&gt; ==&gt; &lt;field&gt; | &lt;method&gt; | &lt;constructor&gt;
-&lt;field&gt; ==&gt; <code id='code27906'
->(field</code> &lt;modifier&gt; &lt;typed-ident&gt; &lt;string&gt;<code id='code27907'
+&lt;field&gt; ==&gt; <code id='code27919'
+>(field</code> &lt;modifier&gt; &lt;typed-ident&gt; &lt;string&gt;<code id='code27920'
 >)</code>
-&lt;method&gt; ==&gt; <code id='code27908'
->(method</code> &lt;modifier&gt; &lt;typed-ident&gt; <code id='code27909'
->(</code>&lt;typed-ident&gt;*<code id='code27910'
->)</code> &lt;string&gt;<code id='code27911'
+&lt;method&gt; ==&gt; <code id='code27921'
+>(method</code> &lt;modifier&gt; &lt;typed-ident&gt; <code id='code27922'
+>(</code>&lt;typed-ident&gt;*<code id='code27923'
+>)</code> &lt;string&gt;<code id='code27924'
 >)</code>
-&lt;constructor&gt; ==&gt; <code id='code27912'
->(constructor</code> &lt;ident&gt; <code id='code27913'
->(</code>&lt;typed-ident&gt;*<code id='code27914'
+&lt;constructor&gt; ==&gt; <code id='code27925'
+>(constructor</code> &lt;ident&gt; <code id='code27926'
+>(</code>&lt;typed-ident&gt;*<code id='code27927'
 >))</code>
-&lt;modifier&gt; ==&gt; <code id='code27915'
->public</code> | <code id='code27916'
->private</code> | <code id='code27917'
+&lt;modifier&gt; ==&gt; <code id='code27928'
+>public</code> | <code id='code27929'
+>private</code> | <code id='code27930'
 >protected</code>
-     | <code id='code27918'
->static</code> | <code id='code27919'
->final</code> | <code id='code27920'
->synchronized</code> | <code id='code27921'
+     | <code id='code27931'
+>static</code> | <code id='code27932'
+>final</code> | <code id='code27933'
+>synchronized</code> | <code id='code27934'
 >abstract</code>
 </pre>
 </td></tr>
 </tbody></table></center>
 
 When the compiler encounters a Java class declaration, it automatically
-creates a predicate. If the class identifier is <code id='code27925'
+creates a predicate. If the class identifier is <code id='code27938'
 >id</code>, the predicate
-is named <code id='code27926'
+is named <code id='code27939'
 >id?</code>. In addition, the compiler generates functions that
-fetch and set the field values. For a field named <code id='code27927'
+fetch and set the field values. For a field named <code id='code27940'
 >f</code>, these functions
-are named <code id='code27928'
->id-f</code> and <code id='code27929'
+are named <code id='code27941'
+>id-f</code> and <code id='code27942'
 >id-f-set!</code>. Methods and constructors are
 also always prefixed the name of the class. That is, for a method named 
-<code id='code27930'
->m</code> of a class <code id='code27931'
->k</code>, the Scheme name of the method is <code id='code27932'
->k-m</code>.<br/><br/>Example:<br/><br/><center id='center27955'
+<code id='code27943'
+>m</code> of a class <code id='code27944'
+>k</code>, the Scheme name of the method is <code id='code27945'
+>k-m</code>.<br/><br/>Example:<br/><br/><center id='center27968'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27953'
->(<font color="#1919af"><strong id='bold35149'
->module</strong></font> <font color="#1919af"><strong id='bold35151'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27966'
+>(<font color="#1919af"><strong id='bold35166'
+>module</strong></font> <font color="#1919af"><strong id='bold35168'
 >java-example</strong></font>
-   (java (<strong id='bold35153'
+   (java (<strong id='bold35170'
 >class</strong> point
             (constructor new-default ())
-            (field x<font color="#00cf00"><strong id='bold35154'
+            (field x<font color="#00cf00"><strong id='bold35171'
 >::int</strong></font> <font color="red">&quot;x&quot;</font>)
-            (method show<font color="#00cf00"><strong id='bold35157'
->::void</strong></font> (<font color="#00cf00"><strong id='bold35159'
+            (method show<font color="#00cf00"><strong id='bold35174'
+>::void</strong></font> (<font color="#00cf00"><strong id='bold35176'
 >::point</strong></font>) <font color="red">&quot;show&quot;</font>)
-            (method static statistics<font color="#00cf00"><strong id='bold35162'
+            (method static statistics<font color="#00cf00"><strong id='bold35179'
 >::int</strong></font> () <font color="red">&quot;PointStatistics&quot;</font>)
             <font color="red">&quot;Point&quot;</font>)
-         (<strong id='bold35166'
->class</strong> point-3d<font color="#00cf00"><strong id='bold35167'
+         (<strong id='bold35183'
+>class</strong> point-3d<font color="#00cf00"><strong id='bold35184'
 >::point</strong></font>
-            <font color="red">&quot;Point3D&quot;</font>)))<br/><br/>(<strong id='bold35170'
+            <font color="red">&quot;Point3D&quot;</font>)))<br/><br/>(<strong id='bold35187'
 >let</strong> ((p (point-new-default)))
-   (print (point? p))   -| <code id='code27936'
+   (print (point? p))   -| <code id='code27949'
 >#t</code>
    (point-x-set! p 3)
-   (print (point-x p))) -| <code id='code27937'
+   (print (point-x p))) -| <code id='code27950'
 >3</code>
 </pre>
 </td></tr>
@@ -429,13 +429,13 @@ also always prefixed the name of the class. That is, for a method named
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">28.4.3 Declaring abstract Java classes</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Declaring-abstract-Java-classes" class="mark"></a><a name="g27956" class="mark"></a>
+<a name="Declaring-abstract-Java-classes" class="mark"></a><a name="g27969" class="mark"></a>
 A Bigloo abstract Java class declaration corresponds to a Java interface.
-It cannot be instantiate but regular classes may inherit from it.<br/><br/><center id='center27963'
+It cannot be instantiate but regular classes may inherit from it.<br/><br/><center id='center27976'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27961'
->&lt;declare-abstract-class-clause&gt; ==&gt; <code id='code27959'
->(</code>abstract-class &lt;typed-ident&gt; &lt;slot&gt;* &lt;string&gt;<code id='code27960'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27974'
+>&lt;declare-abstract-class-clause&gt; ==&gt; <code id='code27972'
+>(</code>abstract-class &lt;typed-ident&gt; &lt;slot&gt;* &lt;string&gt;<code id='code27973'
 >)</code> 
 </pre>
 </td></tr>
@@ -449,33 +449,33 @@ It cannot be instantiate but regular classes may inherit from it.<br/><br/><cent
 </div><div class="subsection">
 <a name="Extending-Java-classes" class="mark"></a>A class definition may be split into several pieces. One class declaration
 (see &lt;declare-class-clause&gt;) and several extensions. The syntax for a Java
-class extension is:<br/><br/><center id='center27969'
+class extension is:<br/><br/><center id='center27982'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27967'
->&lt;extend-class-clause&gt; ==&gt; <code id='code27965'
->(</code>class &lt;typed-ident&gt; &lt;slot&gt;*<code id='code27966'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27980'
+>&lt;extend-class-clause&gt; ==&gt; <code id='code27978'
+>(</code>class &lt;typed-ident&gt; &lt;slot&gt;*<code id='code27979'
 >)</code> 
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Example:<br/><br/><center id='center27984'
+Example:<br/><br/><center id='center27997'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27982'
->(<font color="#1919af"><strong id='bold35171'
->module</strong></font> <font color="#1919af"><strong id='bold35173'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27995'
+>(<font color="#1919af"><strong id='bold35188'
+>module</strong></font> <font color="#1919af"><strong id='bold35190'
 >java-example2</strong></font>
-   (<font color="#1919af"><strong id='bold35175'
->import</strong></font> <font color="#1919af"><strong id='bold35177'
+   (<font color="#1919af"><strong id='bold35192'
+>import</strong></font> <font color="#1919af"><strong id='bold35194'
 >java-example</strong></font>)
-   (java (<strong id='bold35179'
+   (java (<strong id='bold35196'
 >class</strong> point 
-            (field y<font color="#00cf00"><strong id='bold35180'
+            (field y<font color="#00cf00"><strong id='bold35197'
 >::int</strong></font> <font color="red">&quot;y&quot;</font>)
-            (field static num<font color="#00cf00"><strong id='bold35183'
+            (field static num<font color="#00cf00"><strong id='bold35200'
 >::int</strong></font> <font color="red">&quot;point_num&quot;</font>)
-            (constructor new (<font color="#00cf00"><strong id='bold35186'
->::int</strong></font> <font color="#00cf00"><strong id='bold35188'
+            (constructor new (<font color="#00cf00"><strong id='bold35203'
+>::int</strong></font> <font color="#00cf00"><strong id='bold35205'
 >::int</strong></font>)))))
 </pre>
 </td></tr>
@@ -487,13 +487,13 @@ Example:<br/><br/><center id='center27984'
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">28.4.5 Declaring Java arrays</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Declaring-Java-arrays" class="mark"></a><a name="g27985" class="mark"></a>
+<a name="Declaring-Java-arrays" class="mark"></a><a name="g27998" class="mark"></a>
 Java arrays may be allocated and used inside Scheme code. The syntax of
-a Java array module clause is:<br/><br/><center id='center27992'
+a Java array module clause is:<br/><br/><center id='center28005'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27990'
->&lt;array-clause&gt; ==&gt; <code id='code27988'
->(array</code> &lt;ident&gt; &lt;typed-ident&gt;<code id='code27989'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog28003'
+>&lt;array-clause&gt; ==&gt; <code id='code28001'
+>(array</code> &lt;ident&gt; &lt;typed-ident&gt;<code id='code28002'
 >)</code>
 </pre>
 </td></tr>
@@ -501,46 +501,46 @@ a Java array module clause is:<br/><br/><center id='center27992'
 
 The &lt;typed-ident&gt; must refer to the name of an existing type (i.e., a
 primitive Bigloo type, a Bigloo class, an already defined Java class or
-an already defined Java array). For an array named <code id='code27993'
+an already defined Java array). For an array named <code id='code28006'
 >ar</code>, Bigloo
-generates:<br/><br/><ul class="itemize" id='itemize28007'
-><li>a creator named <code id='code27995'
+generates:<br/><br/><ul class="itemize" id='itemize28020'
+><li>a creator named <code id='code28008'
 >make-ar</code> which is a function of one integer 
       argument.<br/><br/></li>
-<li>a predicate named <code id='code27998'
+<li>a predicate named <code id='code28011'
 >ar?</code>.
 
 </li>
-<li>a getter named <code id='code28000'
+<li>a getter named <code id='code28013'
 >ar-ref</code> which is a function of one integer argument.
 
 </li>
-<li>a setter named <code id='code28002'
+<li>a setter named <code id='code28015'
 >ar-set!</code> which is a function of two arguments, an
       integer and a value of the array item types.<br/><br/></li>
-<li>a length named <code id='code28005'
+<li>a length named <code id='code28018'
 >ar-length</code>.
 
 </li>
 </ul>
-Example:<br/><br/><center id='center28022'
+Example:<br/><br/><center id='center28035'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28020'
->(<font color="#1919af"><strong id='bold35190'
->module</strong></font> <font color="#1919af"><strong id='bold35192'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28033'
+>(<font color="#1919af"><strong id='bold35207'
+>module</strong></font> <font color="#1919af"><strong id='bold35209'
 >foo</strong></font>
-   (java (array int* <font color="#00cf00"><strong id='bold35194'
+   (java (array int* <font color="#00cf00"><strong id='bold35211'
 >::int</strong></font>)
-         (<strong id='bold35196'
+         (<strong id='bold35213'
 >class</strong> bar
-            (method static hello<font color="#00cf00"><strong id='bold35197'
->::int</strong></font> (<font color="#00cf00"><strong id='bold35199'
+            (method static hello<font color="#00cf00"><strong id='bold35214'
+>::int</strong></font> (<font color="#00cf00"><strong id='bold35216'
 >::int*</strong></font>) <font color="red">&quot;hello&quot;</font>)
             <font color="red">&quot;bar&quot;</font>))
-   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold35203'
->define</strong></font> (<font color="#6959cf"><strong id='bold35205'
+   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold35220'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35222'
 >main</strong></font> argv)
-   (<strong id='bold35207'
+   (<strong id='bold35224'
 >let</strong> ((tab (make-int* 2)))
       (int*-set! tab 0 3)
       (int*-set! tab 1 6)
@@ -555,39 +555,39 @@ Example:<br/><br/><center id='center28022'
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">28.4.6 Exporting Scheme variables</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Exporting-Scheme-variables" class="mark"></a><a name="g28023" class="mark"></a>
+<a name="Exporting-Scheme-variables" class="mark"></a><a name="g28036" class="mark"></a>
 As for the C connection, a Scheme variable (or function) can be exported
 to the Java world if and only if it is also exported using an
-<code id='code28025'
+<code id='code28038'
 >export</code> Java clause. Type information is given in the Scheme
 exportation, thus, the only requirement for a variable to be Java
 exported is to be given a Java name. The Java &lt;export-clause&gt; does
-this:<br/><br/><center id='center28031'
+this:<br/><br/><center id='center28044'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog28029'
->&lt;export-clause&gt; ==&gt; <code id='code28027'
->(export</code> &lt;ident&gt; &lt;string&gt;<code id='code28028'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog28042'
+>&lt;export-clause&gt; ==&gt; <code id='code28040'
+>(export</code> &lt;ident&gt; &lt;string&gt;<code id='code28041'
 >)</code>
 </pre>
 </td></tr>
 </tbody></table></center>
  
-Here is an example of exportation:<br/><br/><center id='center28047'
+Here is an example of exportation:<br/><br/><center id='center28060'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28045'
->(<font color="#1919af"><strong id='bold35208'
->module</strong></font> <font color="#1919af"><strong id='bold35210'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28058'
+>(<font color="#1919af"><strong id='bold35225'
+>module</strong></font> <font color="#1919af"><strong id='bold35227'
 >example</strong></font>
-   (<font color="#1919af"><strong id='bold35212'
->export</strong></font> (<font color="#1919af"><strong id='bold35214'
->fib</strong></font><font color="#00cf00"><strong id='bold35216'
->::long</strong></font> <font color="#00cf00"><strong id='bold35218'
+   (<font color="#1919af"><strong id='bold35229'
+>export</strong></font> (<font color="#1919af"><strong id='bold35231'
+>fib</strong></font><font color="#00cf00"><strong id='bold35233'
+>::long</strong></font> <font color="#00cf00"><strong id='bold35235'
 >::long</strong></font>))
-   (java (<font color="#1919af"><strong id='bold35220'
->export</strong></font> <font color="#1919af"><strong id='bold35222'
->fib</strong></font> <font color="red">&quot;scheme_fib&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold35225'
->define</strong></font> (<font color="#6959cf"><strong id='bold35227'
->fib</strong></font> x) (<strong id='bold35229'
+   (java (<font color="#1919af"><strong id='bold35237'
+>export</strong></font> <font color="#1919af"><strong id='bold35239'
+>fib</strong></font> <font color="red">&quot;scheme_fib&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold35242'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35244'
+>fib</strong></font> x) (<strong id='bold35246'
 >if</strong> (&lt; x 2) 1 ...))
 </pre>
 </td></tr>
@@ -599,12 +599,12 @@ Here is an example of exportation:<br/><br/><center id='center28047'
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">28.4.7 Bigloo module initialization</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Bigloo-module-initialization" class="mark"></a><a name="g28048" class="mark"></a>
+<a name="Bigloo-module-initialization" class="mark"></a><a name="g28061" class="mark"></a>
 By default Bigloo modules are initialized when the application starts. It might
 be convenient to initialize the module when the Java classes implementing
 the Bigloo modules are loaded. It is possible to drive the Bigloo compiler
 to introduce code inside the Java class constructors for initializing the
-modules. This is the role of the <code id='code28050'
+modules. This is the role of the <code id='code28063'
 >-jvm-cinit-module</code> compiler option.<br/><br/><br/></div>
 </div><br>
 <!-- Performance of the JVM back-end -->
@@ -612,7 +612,7 @@ modules. This is the role of the <code id='code28050'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">28.5 Performance of the JVM back-end</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Performance-of-the-JVM-back-end" class="mark"></a><a name="g28052" class="mark"></a>
+<a name="Performance-of-the-JVM-back-end" class="mark"></a><a name="g28065" class="mark"></a>
 We are currently improving and investigating about the performance of
 the JVM back-end. JVM performance is extremely sensitive to the host
 platform (for instance, very unfortunately, Linux seems to be a poor
@@ -628,12 +628,12 @@ virtual machines.
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph35235'
+<p class="ending" id='paragraph35252'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it35233'
->Fri Nov 14 08:51:36 2014</em>.</font></p></div>
+Last update <em id='it35250'
+>Tue Jan  6 18:53:36 2015</em>.</font></p></div>
 </body>
 </html>

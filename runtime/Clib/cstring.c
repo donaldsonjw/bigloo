@@ -3,7 +3,7 @@
 /*    -------------------------------------------------------------    */
 /*    Author      :  Manuel Serrano                                    */
 /*    Creation    :  Tue Sep  5 09:55:58 1995                          */
-/*    Last change :  Mon Sep 29 18:23:49 2014 (serrano)                */
+/*    Last change :  Mon Jan  5 18:47:40 2015 (serrano)                */
 /*    -------------------------------------------------------------    */
 /*    String management                                                */
 /*=====================================================================*/
@@ -105,7 +105,6 @@ make_string_sans_fill( BGL_LONG_T len ) {
    string->string_t.length = len;
 
    STRING_SET( BSTRING( string ), len, '\0' );
-		
    return BSTRING( string );
 }
 
@@ -519,11 +518,12 @@ bool_t
 bigloo_strcmp( obj_t o1, obj_t o2 ) {
    BGL_LONG_T l1 = STRING_LENGTH( o1 );
 
-   if( l1 == STRING_LENGTH( o2 ) )
+   if( l1 == STRING_LENGTH( o2 ) ) {
       return !memcmp( (void *)BSTRING_TO_STRING( o1 ),
 		      (void *)BSTRING_TO_STRING( o2 ), l1 );
-   else
+   } else {
       return 0;
+   }
 }
 
 /*---------------------------------------------------------------------*/
@@ -1108,7 +1108,7 @@ create_string_for_read( obj_t bstring, BGL_LONG_T symbolp ) {
    else
       dst = buffer;
 #undef BUFFER_SIZE
-	
+
    for( r = 0, w = 0; r < len; r++ )
       switch( src[ r ] ) {
          case '\n' :
