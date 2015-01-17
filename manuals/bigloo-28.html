@@ -27,22 +27,22 @@
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center34777'
+<br/><center id='center34795'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc34767" align="center" colspan="1"><font color="#ffffff"><strong id='bold34765'
+<tr bgcolor="#8381de"><th id="tc34785" align="center" colspan="1"><font color="#ffffff"><strong id='bold34783'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc34774" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc34770" align="left" valign="top" colspan="1"><strong id='bold34769'
->top:</strong></td><td id="tc34771" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc34792" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc34788" align="left" valign="top" colspan="1"><strong id='bold34787'
+>top:</strong></td><td id="tc34789" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center34787'
+<br/><br/><center id='center34805'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc34781" align="center" colspan="1"><font color="#ffffff"><strong id='bold34779'
+<tr bgcolor="#8381de"><th id="tc34799" align="center" colspan="1"><font color="#ffffff"><strong id='bold34797'
 >The C interface</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc34784" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc34802" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">27.1</td><td colspan="4" width="100%"><a href="bigloo-28.html#The-syntax-of-the-foreign-declarations">The syntax of the foreign declarations</a></td></tr>
  <tr><td></td><td valign="top" align="left">27.1.1</td><td colspan="3" width="100%"><a href="bigloo-28.html#Automatic-extern-clauses-generation">Automatic extern clauses generation</a></td></tr>
@@ -60,11 +60,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center34797'
+<br/><br/><center id='center34815'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc34791" align="center" colspan="1"><font color="#ffffff"><strong id='bold34789'
+<tr bgcolor="#8381de"><th id="tc34809" align="center" colspan="1"><font color="#ffffff"><strong id='bold34807'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc34794" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc34812" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -112,13 +112,13 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="C-Interface" class="mark"></a><a name="g26595" class="mark"></a>
+<a name="C-Interface" class="mark"></a><a name="g26613" class="mark"></a>
 We call all the pieces of program devoted to the interactions between Scheme
-and another language a <em id='emph26597'
+and another language a <em id='emph26615'
 >foreign interface</em>. In Bigloo, the foreign 
 interface allows Scheme's functions and variables to be exported to a 
 foreign language and foreign functions and variables to be imported into 
-the Scheme code. Using the foreign interface requires two kind of operations.<br/><br/><ul class="itemize" id='itemize26601'
+the Scheme code. Using the foreign interface requires two kind of operations.<br/><br/><ul class="itemize" id='itemize26619'
 ><li>Declarations --- type declarations, 
 import declarations or export declarations.
 </li>
@@ -129,38 +129,38 @@ Declarations take place in a special module clause, see
 <a href="bigloo-4.html#Module-Declaration" class="inbound">Module Declaration</a>, and reference to foreign variables within 
 Scheme code requires no special construction. The current release 
 of Bigloo includes a C and a Java interface. The Java connection is
-specified by the means of a <code id='code26602'
+specified by the means of a <code id='code26620'
 >java</code> clause (see <a href="bigloo-29.html#Java-Interface" class="inbound">Java Interface</a>).
-The C interface is active (that is the <code id='code26603'
+The C interface is active (that is the <code id='code26621'
 >extern</code> module clauses are
 read) only when compiling to C. So, when compiling to Jvm the binding
-declared in an <code id='code26604'
+declared in an <code id='code26622'
 >extern</code> clause are not bound.<br/><br/>Connecting Bigloo code with C is generally straightforward. To illustrate
 this simplicity, let us consider a simple example involving two source
-files. First a simple C file <code id='code26606'
->sum.c</code> containing a single declaration:<br/><br/><center id='center26610'
+files. First a simple C file <code id='code26624'
+>sum.c</code> containing a single declaration:<br/><br/><center id='center26628'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26608'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26626'
 >int sum(int x, int y) { return x + y; }
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Then, let us assume a Bigloo source code <code id='code26611'
+Then, let us assume a Bigloo source code <code id='code26629'
 >main.scm</code> that makes
-uses of that C function:<br/><br/><center id='center26624'
+uses of that C function:<br/><br/><center id='center26642'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26622'
->(<font color="#1919af"><strong id='bold34798'
->module</strong></font> <font color="#1919af"><strong id='bold34800'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26640'
+>(<font color="#1919af"><strong id='bold34816'
+>module</strong></font> <font color="#1919af"><strong id='bold34818'
 >foo</strong></font>
-   (<strong id='bold34802'
->extern</strong> (sum<font color="#00cf00"><strong id='bold34803'
->::int</strong></font> (<font color="#00cf00"><strong id='bold34805'
->::int</strong></font> <font color="#00cf00"><strong id='bold34807'
+   (<strong id='bold34820'
+>extern</strong> (sum<font color="#00cf00"><strong id='bold34821'
+>::int</strong></font> (<font color="#00cf00"><strong id='bold34823'
+>::int</strong></font> <font color="#00cf00"><strong id='bold34825'
 >::int</strong></font>) <font color="red">&quot;sum&quot;</font>))
-   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold34810'
->define</strong></font> (<font color="#6959cf"><strong id='bold34812'
+   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold34828'
+>define</strong></font> (<font color="#6959cf"><strong id='bold34830'
 >main</strong></font> x)
    (print (sum (length x) 10)))
 </pre>
@@ -168,9 +168,9 @@ uses of that C function:<br/><br/><center id='center26624'
 </tbody></table></center>
 
 With a Unix installation of Bigloo, this program can be compiled and
-executed with the following commands:<br/><br/><center id='center26628'
+executed with the following commands:<br/><br/><center id='center26646'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26626'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26644'
 >  $ gcc sum.c -c
   $ bigloo main.scm sum.o -o main
   $ ./main 1 2 3
@@ -186,10 +186,10 @@ and C values. When needed, these are automatically inserted by the compiler.<br/
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">27.1 The syntax of the foreign declarations</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="The-syntax-of-the-foreign-declarations" class="mark"></a><a name="g26630" class="mark"></a>The syntax of <em id='emph26632'
->foreign</em> clauses is defined by:<br/><br/><center id='center26636'
+<a name="The-syntax-of-the-foreign-declarations" class="mark"></a><a name="g26648" class="mark"></a>The syntax of <em id='emph26650'
+>foreign</em> clauses is defined by:<br/><br/><center id='center26654'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26634'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26652'
 >&lt;extern&gt; ==&gt; &lt;variable-clause&gt;
      | &lt;function-clause&gt;
      | &lt;include-clause&gt;
@@ -200,13 +200,13 @@ and C values. When needed, these are automatically inserted by the compiler.<br/
 </tbody></table></center>
 
 Foreign clauses are automatically ``transmitted'' by the importation
-process.  That is, if module <code id='code26637'
+process.  That is, if module <code id='code26655'
 >module1</code> imports a module
-<code id='code26638'
->module2</code>, <code id='code26639'
->module</code> treats the <code id='code26640'
+<code id='code26656'
+>module2</code>, <code id='code26657'
+>module</code> treats the <code id='code26658'
 >extern</code> clauses of
-<code id='code26641'
+<code id='code26659'
 >module2</code> as though they were included in its own module
 declaration. Redefinition of a variable or a function already defined in
 an foreign clause is an error.<br/><br/>
@@ -215,7 +215,7 @@ an foreign clause is an error.<br/><br/>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">27.1.1 Automatic extern clauses generation</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Automatic-extern-clauses-generation" class="mark"></a><a name="g26643" class="mark"></a><a name="g26646" class="mark"></a>
+<a name="Automatic-extern-clauses-generation" class="mark"></a><a name="g26661" class="mark"></a><a name="g26664" class="mark"></a>
 Extern clauses can be automatically generated using the Cigloo program
 which is distributed in the same package as Bigloo. Using Cigloo may be
 a good way to understand how C prototypes (and types) have to be
@@ -226,51 +226,51 @@ extern clauses for that files.<br/><br/></div>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">27.1.2 Importing an extern variable</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Importing-an-extern-variable" class="mark"></a><a name="g26649" class="mark"></a>
+<a name="Importing-an-extern-variable" class="mark"></a><a name="g26667" class="mark"></a>
 The &lt;variable-clause&gt; denotes importation of variables.
-<center id='center26665'
+<center id='center26683'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26663'
->&lt;variable-clause&gt; ==&gt; <code id='code26651'
->(</code> &lt;typed-ident&gt; &lt;c-name&gt;<code id='code26652'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26681'
+>&lt;variable-clause&gt; ==&gt; <code id='code26669'
+>(</code> &lt;typed-ident&gt; &lt;c-name&gt;<code id='code26670'
 >)</code>
-     | <code id='code26653'
->(macro</code> &lt;typed-ident&gt; &lt;string&gt;<code id='code26654'
+     | <code id='code26671'
+>(macro</code> &lt;typed-ident&gt; &lt;string&gt;<code id='code26672'
 >)</code>
-     | <code id='code26655'
->(macro</code> &lt;typed-ident&gt; <code id='code26656'
->(</code>&lt;typed-ident&gt;+<code id='code26657'
->)</code> &lt;string&gt;<code id='code26658'
+     | <code id='code26673'
+>(macro</code> &lt;typed-ident&gt; <code id='code26674'
+>(</code>&lt;typed-ident&gt;+<code id='code26675'
+>)</code> &lt;string&gt;<code id='code26676'
 >)</code>
-     | <code id='code26659'
->(infix macro</code> &lt;typed-ident&gt; <code id='code26660'
->(</code>&lt;typed-ident&gt;+<code id='code26661'
->)</code> &lt;string&gt;<code id='code26662'
+     | <code id='code26677'
+>(infix macro</code> &lt;typed-ident&gt; <code id='code26678'
+>(</code>&lt;typed-ident&gt;+<code id='code26679'
+>)</code> &lt;string&gt;<code id='code26680'
 >)</code>
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Only extern ``non-<code id='code26666'
+Only extern ``non-<code id='code26684'
 >macro</code>'' variables are mutable (that is
-mutable using the <code id='code26667'
+mutable using the <code id='code26685'
 >set!</code> construction). Bigloo does not emit
-``extern C prototype'' for variables introduced by a <code id='code26668'
+``extern C prototype'' for variables introduced by a <code id='code26686'
 >macro</code>
 clause. &lt;string&gt; is the C name of variable. The Scheme name
 of that variable is extracted from the &lt;typed-ident&gt;.<br/><br/>Here is an example of variable importations:
-<center id='center26684'
+<center id='center26702'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26682'
->(<font color="#1919af"><strong id='bold34814'
->module</strong></font> <font color="#1919af"><strong id='bold34816'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26700'
+>(<font color="#1919af"><strong id='bold34832'
+>module</strong></font> <font color="#1919af"><strong id='bold34834'
 >example</strong></font>
-   (<strong id='bold34818'
->extern</strong> (c-var<font color="#00cf00"><strong id='bold34819'
+   (<strong id='bold34836'
+>extern</strong> (c-var<font color="#00cf00"><strong id='bold34837'
 >::double</strong></font> <font color="red">&quot;c_var&quot;</font>)
-           (macro bufsiz<font color="#00cf00"><strong id='bold34822'
+           (macro bufsiz<font color="#00cf00"><strong id='bold34840'
 >::long</strong></font> <font color="red">&quot;BUFSIZ&quot;</font>)))<br/><br/>(print <font color="red">&quot;c-var: &quot;</font> c-var)
-(<strong id='bold34826'
+(<strong id='bold34844'
 >set!</strong> c-var (+ 1.0 c-var))
 (print <font color="red">&quot;c-var: &quot;</font> c-var)
 (print <font color="red">&quot;bufsize: &quot;</font> BUFSIZ)
@@ -284,29 +284,29 @@ of that variable is extracted from the &lt;typed-ident&gt;.<br/><br/>Here is an 
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">27.1.3 Importing an extern function</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Importing-an-extern-function" class="mark"></a><a name="g26685" class="mark"></a>
-Function are imported using the &lt;function-clause&gt;.<br/><br/><center id='center26706'
+<a name="Importing-an-extern-function" class="mark"></a><a name="g26703" class="mark"></a>
+Function are imported using the &lt;function-clause&gt;.<br/><br/><center id='center26724'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26704'
->&lt;function-clause&gt; ==&gt; <code id='code26688'
->(</code>&lt;typed-ident&gt; <code id='code26689'
->(</code>&lt;typed-ident&gt;*<code id='code26690'
->)</code> &lt;string&gt;<code id='code26691'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26722'
+>&lt;function-clause&gt; ==&gt; <code id='code26706'
+>(</code>&lt;typed-ident&gt; <code id='code26707'
+>(</code>&lt;typed-ident&gt;*<code id='code26708'
+>)</code> &lt;string&gt;<code id='code26709'
 >)</code>
-     | <code id='code26692'
->(</code>&lt;typed-ident&gt; <code id='code26693'
->(</code>&lt;typed-ident&gt;+ . &lt;typed-ident&gt;<code id='code26694'
->)</code> &lt;string&gt;<code id='code26695'
+     | <code id='code26710'
+>(</code>&lt;typed-ident&gt; <code id='code26711'
+>(</code>&lt;typed-ident&gt;+ . &lt;typed-ident&gt;<code id='code26712'
+>)</code> &lt;string&gt;<code id='code26713'
 >)</code>
-     | <code id='code26696'
->(macro</code> &lt;typed-ident&gt; <code id='code26697'
->(</code>&lt;typed-ident&gt;*<code id='code26698'
->)</code> &lt;string&gt;<code id='code26699'
+     | <code id='code26714'
+>(macro</code> &lt;typed-ident&gt; <code id='code26715'
+>(</code>&lt;typed-ident&gt;*<code id='code26716'
+>)</code> &lt;string&gt;<code id='code26717'
 >)</code>
-     | <code id='code26700'
->(macro</code> &lt;typed-ident&gt; <code id='code26701'
->(</code>&lt;typed-ident&gt;+ . &lt;typed-ident&gt;<code id='code26702'
->)</code> &lt;string&gt;<code id='code26703'
+     | <code id='code26718'
+>(macro</code> &lt;typed-ident&gt; <code id='code26719'
+>(</code>&lt;typed-ident&gt;+ . &lt;typed-ident&gt;<code id='code26720'
+>)</code> &lt;string&gt;<code id='code26721'
 >)</code>
 </pre>
 </td></tr>
@@ -316,22 +316,22 @@ The function result type and Scheme name are extracted from the
 &lt;typed-ident&gt;; the &lt;typed-ident&gt; denotes the type of the function
 arguments and &lt;string&gt; is the C name of the function. Bigloo
 does not produce ``C extern prototype'' for macro functions
-(those introduced by <code id='code26707'
+(those introduced by <code id='code26725'
 >macro</code> clauses). If the typed identifier
 of the function does not contain any type information. Bigloo will 
 emit a warning message when compiling and it will use a default C type 
-(e.g. the <code id='code26708'
->int</code> C type) as the return type of the function.<br/><br/><center id='center26722'
+(e.g. the <code id='code26726'
+>int</code> C type) as the return type of the function.<br/><br/><center id='center26740'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26720'
->(<font color="#1919af"><strong id='bold34829'
->module</strong></font> <font color="#1919af"><strong id='bold34831'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26738'
+>(<font color="#1919af"><strong id='bold34847'
+>module</strong></font> <font color="#1919af"><strong id='bold34849'
 >example</strong></font>
-   (<strong id='bold34833'
->extern</strong> (macro prn<font color="#00cf00"><strong id='bold34834'
->::int</strong></font> (<font color="#00cf00"><strong id='bold34836'
->::string</strong></font> . <font color="#00cf00"><strong id='bold34838'
->::long</strong></font>) <font color="red">&quot;printf&quot;</font>)))<br/><br/>(<strong id='bold34841'
+   (<strong id='bold34851'
+>extern</strong> (macro prn<font color="#00cf00"><strong id='bold34852'
+>::int</strong></font> (<font color="#00cf00"><strong id='bold34854'
+>::string</strong></font> . <font color="#00cf00"><strong id='bold34856'
+>::long</strong></font>) <font color="red">&quot;printf&quot;</font>)))<br/><br/>(<strong id='bold34859'
 >let</strong> ((n (read)))
    (prn <font color="red">#&quot;fib(%d): %d\n&quot;</font> n (fib n)))
 </pre>
@@ -343,13 +343,13 @@ emit a warning message when compiling and it will use a default C type
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">27.1.4 Including an extern file</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Including-an-extern-file" class="mark"></a><a name="g26724" class="mark"></a>
+<a name="Including-an-extern-file" class="mark"></a><a name="g26742" class="mark"></a>
 C files can be included in the C code produced by using
-&lt;include-clause&gt;.<br/><br/><center id='center26731'
+&lt;include-clause&gt;.<br/><br/><center id='center26749'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26729'
->&lt;include-clause&gt; ==&gt; <code id='code26727'
->(include</code> &lt;string&gt;<code id='code26728'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26747'
+>&lt;include-clause&gt; ==&gt; <code id='code26745'
+>(include</code> &lt;string&gt;<code id='code26746'
 >)</code>
 </pre>
 </td></tr>
@@ -361,40 +361,40 @@ C files can be included in the C code produced by using
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">27.1.5 Exporting a Scheme variable</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Exporting-a-Scheme-variable" class="mark"></a><a name="g26732" class="mark"></a>
+<a name="Exporting-a-Scheme-variable" class="mark"></a><a name="g26750" class="mark"></a>
 A Scheme variable (or function) can be exported to the
-foreign world if and only if it is also exported using an <code id='code26734'
+foreign world if and only if it is also exported using an <code id='code26752'
 >export</code> 
 clause. Type information is given in the Scheme
 exportation, thus, the only requirement for a variable
 to be extern exported is to be given a foreign name. The
-foreign &lt;export-clause&gt; does this:<br/><br/><center id='center26740'
+foreign &lt;export-clause&gt; does this:<br/><br/><center id='center26758'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26738'
->&lt;export-clause&gt; ==&gt; <code id='code26736'
->(export</code> &lt;ident&gt; &lt;string&gt;<code id='code26737'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26756'
+>&lt;export-clause&gt; ==&gt; <code id='code26754'
+>(export</code> &lt;ident&gt; &lt;string&gt;<code id='code26755'
 >)</code>
 </pre>
 </td></tr>
 </tbody></table></center>
  
-Here is an example of exportation:<br/><br/><center id='center26757'
+Here is an example of exportation:<br/><br/><center id='center26775'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26755'
->(<font color="#1919af"><strong id='bold34843'
->module</strong></font> <font color="#1919af"><strong id='bold34845'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26773'
+>(<font color="#1919af"><strong id='bold34861'
+>module</strong></font> <font color="#1919af"><strong id='bold34863'
 >example</strong></font>
-   (<font color="#1919af"><strong id='bold34847'
->export</strong></font> (<font color="#1919af"><strong id='bold34849'
->fib</strong></font><font color="#00cf00"><strong id='bold34851'
->::long</strong></font> <font color="#00cf00"><strong id='bold34853'
+   (<font color="#1919af"><strong id='bold34865'
+>export</strong></font> (<font color="#1919af"><strong id='bold34867'
+>fib</strong></font><font color="#00cf00"><strong id='bold34869'
+>::long</strong></font> <font color="#00cf00"><strong id='bold34871'
 >::long</strong></font>))
-   (<strong id='bold34855'
->extern</strong> (<font color="#1919af"><strong id='bold34856'
->export</strong></font> <font color="#1919af"><strong id='bold34858'
->fib</strong></font> <font color="red">&quot;scheme_fib&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold34861'
->define</strong></font> (<font color="#6959cf"><strong id='bold34863'
->fib</strong></font> x) (<strong id='bold34865'
+   (<strong id='bold34873'
+>extern</strong> (<font color="#1919af"><strong id='bold34874'
+>export</strong></font> <font color="#1919af"><strong id='bold34876'
+>fib</strong></font> <font color="red">&quot;scheme_fib&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold34879'
+>define</strong></font> (<font color="#6959cf"><strong id='bold34881'
+>fib</strong></font> x) (<strong id='bold34883'
 >if</strong> (&lt; x 2) 1 ...))
 </pre>
 </td></tr>
@@ -406,17 +406,17 @@ Here is an example of exportation:<br/><br/><center id='center26757'
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">27.1.6 Defining an extern type</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="Defining-an-extern-type" class="mark"></a><a name="g26758" class="mark"></a>
+<a name="Defining-an-extern-type" class="mark"></a><a name="g26776" class="mark"></a>
 New Bigloo types can be defined using extern
 &lt;type-clause&gt;. These newly introduced types can be used in any
-declaration (that is in any extern <em id='emph26760'
+declaration (that is in any extern <em id='emph26778'
 >or</em> Scheme module clause
 and in any Scheme variable or function definition). The syntax of
-&lt;type-clause&gt; is:<br/><br/><center id='center26766'
+&lt;type-clause&gt; is:<br/><br/><center id='center26784'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26764'
->&lt;type-clause&gt; ==&gt; <code id='code26762'
->(type</code> &lt;ident&gt; &lt;type-def&gt; &lt;string&gt;<code id='code26763'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26782'
+>&lt;type-clause&gt; ==&gt; <code id='code26780'
+>(type</code> &lt;ident&gt; &lt;type-def&gt; &lt;string&gt;<code id='code26781'
 >)</code>
 &lt;type-def&gt; ==&gt; &lt;atomic-type&gt;
      | &lt;ident&gt;
@@ -433,321 +433,321 @@ and in any Scheme variable or function definition). The syntax of
 
 The symbol &lt;ident&gt; is the Scheme name of the introduced type and
 &lt;string&gt; is the C name of the type. When Bigloo produces the definition
-of a variable v of type s, it produces the following C code: s v<code id='code26767'
+of a variable v of type s, it produces the following C code: s v<code id='code26785'
 >;</code>. 
 This rules applies unless s is a pointer or an array and then, to 
 produce a C definition, the name of the elements of the array or the elements
-pointed by the pointer type are used. Hence, if v is for instance <code id='code26768'
+pointed by the pointer type are used. Hence, if v is for instance <code id='code26786'
 >foo</code>
-and s is <code id='code26769'
->(array int)</code> the produced C code will be: <code id='code26770'
+and s is <code id='code26787'
+>(array int)</code> the produced C code will be: <code id='code26788'
 >int *foo</code>.<br/><br/>
 <!-- Atomic types -->
 <a name="Atomic-types"></a>
 <div class="subsubsection-atitle"><h4><font color="#8381de">27.1.6.1 Atomic types</font>
 </h4></div><div class="subsubsection">
-<a name="Atomic-types" class="mark"></a><a name="g26772" class="mark"></a>The atomic types are the pre-existing ones, defined in the standard Bigloo's
+<a name="Atomic-types" class="mark"></a><a name="g26790" class="mark"></a>The atomic types are the pre-existing ones, defined in the standard Bigloo's
 library. 
-<center id='center26842'
+<center id='center26860'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26840'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26858'
 >&lt;atomic-type&gt; ==&gt; &lt;bigloo-type&gt; 
      | &lt;c-type&gt;                                   
-&lt;bigloo-type&gt; ==&gt; <code id='code26774'
->obj</code> <code id='code26775'
+&lt;bigloo-type&gt; ==&gt; <code id='code26792'
+>obj</code> <code id='code26793'
 >procedure</code> 
-     | <code id='code26776'
->pair</code> | <code id='code26777'
->nil</code> | <code id='code26778'
->pair-nil</code> 
-     | <code id='code26779'
->bint</code> | <code id='code26780'
->blong</code> | <code id='code26781'
->belong</code> | <code id='code26782'
->bllong</code>
-     | <code id='code26783'
->bignum</code>  |<code id='code26784'
->real</code> | <code id='code26785'
->bbool</code> | <code id='code26786'
->cnst</code>          
-     | <code id='code26787'
->bstring</code> | <code id='code26788'
->ucs2string</code> | <code id='code26789'
->bchar</code> | <code id='code26790'
->bucs2</code>
-     | <code id='code26791'
->vector</code> | <code id='code26792'
->tvector</code> | <code id='code26793'
->struct</code>        
      | <code id='code26794'
->tstruct</code> | <code id='code26795'
->output-port</code> | <code id='code26796'
->input-port</code>    
+>pair</code> | <code id='code26795'
+>nil</code> | <code id='code26796'
+>pair-nil</code> 
      | <code id='code26797'
->binary-port</code> | <code id='code26798'
->unspecified</code> | <code id='code26799'
->symbol</code> | <code id='code26800'
->keyword</code>
+>bint</code> | <code id='code26798'
+>blong</code> | <code id='code26799'
+>belong</code> | <code id='code26800'
+>bllong</code>
      | <code id='code26801'
->cell</code> | <code id='code26802'
->date</code> | <code id='code26803'
->process</code> | <code id='code26804'
->exit</code> 
+>bignum</code>  |<code id='code26802'
+>real</code> | <code id='code26803'
+>bbool</code> | <code id='code26804'
+>cnst</code>          
      | <code id='code26805'
->mutex</code> | <code id='code26806'
->condvar</code> | <code id='code26807'
->mmap</code>
-     | <code id='code26808'
->s8vector</code> | <code id='code26809'
->u8vector</code> | <code id='code26810'
->s16vector</code> | <code id='code26811'
->u16vector</code>
+>bstring</code> | <code id='code26806'
+>ucs2string</code> | <code id='code26807'
+>bchar</code> | <code id='code26808'
+>bucs2</code>
+     | <code id='code26809'
+>vector</code> | <code id='code26810'
+>tvector</code> | <code id='code26811'
+>struct</code>        
      | <code id='code26812'
->s32vector</code> | <code id='code26813'
->u32vector</code> | <code id='code26814'
->s64vector</code> | <code id='code26815'
->u64vector</code>
-     | <code id='code26816'
->f32vector</code> | <code id='code26817'
->f64vector</code>
-     | <code id='code26818'
->dynamic-env</code> | <code id='code26819'
->opaque</code> | <code id='code26820'
->foreign</code>       
-&lt;c-type&gt; ==&gt; <code id='code26821'
->cobj</code> <code id='code26822'
->char</code> 
+>tstruct</code> | <code id='code26813'
+>output-port</code> | <code id='code26814'
+>input-port</code>    
+     | <code id='code26815'
+>binary-port</code> | <code id='code26816'
+>unspecified</code> | <code id='code26817'
+>symbol</code> | <code id='code26818'
+>keyword</code>
+     | <code id='code26819'
+>cell</code> | <code id='code26820'
+>date</code> | <code id='code26821'
+>process</code> | <code id='code26822'
+>exit</code> 
      | <code id='code26823'
->uchar</code> | <code id='code26824'
+>mutex</code> | <code id='code26824'
+>condvar</code> | <code id='code26825'
+>mmap</code>
+     | <code id='code26826'
+>s8vector</code> | <code id='code26827'
+>u8vector</code> | <code id='code26828'
+>s16vector</code> | <code id='code26829'
+>u16vector</code>
+     | <code id='code26830'
+>s32vector</code> | <code id='code26831'
+>u32vector</code> | <code id='code26832'
+>s64vector</code> | <code id='code26833'
+>u64vector</code>
+     | <code id='code26834'
+>f32vector</code> | <code id='code26835'
+>f64vector</code>
+     | <code id='code26836'
+>dynamic-env</code> | <code id='code26837'
+>opaque</code> | <code id='code26838'
+>foreign</code>       
+&lt;c-type&gt; ==&gt; <code id='code26839'
+>cobj</code> <code id='code26840'
+>char</code> 
+     | <code id='code26841'
+>uchar</code> | <code id='code26842'
 >short</code>    
-     | <code id='code26825'
->ushort</code> | <code id='code26826'
->int</code> | <code id='code26827'
->uint</code> | <code id='code26828'
+     | <code id='code26843'
+>ushort</code> | <code id='code26844'
+>int</code> | <code id='code26845'
+>uint</code> | <code id='code26846'
 >long</code>
-     | <code id='code26829'
->ulong</code> | <code id='code26830'
->slong</code> | <code id='code26831'
->elong</code> | <code id='code26832'
+     | <code id='code26847'
+>ulong</code> | <code id='code26848'
+>slong</code> | <code id='code26849'
+>elong</code> | <code id='code26850'
 >llong</code>
-     | <code id='code26833'
->bool</code> | <code id='code26834'
+     | <code id='code26851'
+>bool</code> | <code id='code26852'
 >string</code> 
-     | <code id='code26835'
->file</code> | <code id='code26836'
->double</code> | <code id='code26837'
->float</code> | <code id='code26838'
+     | <code id='code26853'
+>file</code> | <code id='code26854'
+>double</code> | <code id='code26855'
+>float</code> | <code id='code26856'
 >void</code> 
-     | <code id='code26839'
+     | <code id='code26857'
 >function</code>
 </pre>
 </td></tr>
 </tbody></table></center>
 
-<a name="g26844" class="mark"></a><a name="g26847" class="mark"></a><a name="g26850" class="mark"></a>
-The type <code id='code26852'
+<a name="g26862" class="mark"></a><a name="g26865" class="mark"></a><a name="g26868" class="mark"></a>
+The type <code id='code26870'
 >obj</code> denotes the super type of all Bigloo types (i.e.,
-all Bigloo types, such as <code id='code26853'
->procedure</code>, <code id='code26854'
+all Bigloo types, such as <code id='code26871'
+>procedure</code>, <code id='code26872'
 >pair</code>, ...) is an
-<code id='code26855'
->obj</code>.  The type <code id='code26856'
+<code id='code26873'
+>obj</code>.  The type <code id='code26874'
 >cobj</code> denotes the super of all C types
-(i.e., all preexisting C types such as <code id='code26857'
->char</code>, <code id='code26858'
+(i.e., all preexisting C types such as <code id='code26875'
+>char</code>, <code id='code26876'
 >uchar</code>,
-<code id='code26859'
->schar</code>, <code id='code26860'
->short</code>, ...). The type <code id='code26861'
+<code id='code26877'
+>schar</code>, <code id='code26878'
+>short</code>, ...). The type <code id='code26879'
 >pair-nil</code> denotes
-values that are either pairs or the <code id='code26862'
+values that are either pairs or the <code id='code26880'
 >()</code> value.<br/><br/></div>
 <!-- Struct and Union types -->
 <a name="Struct-and-Union-types"></a>
 <div class="subsubsection-atitle"><h4><font color="#8381de">27.1.6.2 Struct and Union types</font>
 </h4></div><div class="subsubsection">
-<a name="C-structures-and-unions" class="mark"></a><a name="g26864" class="mark"></a>C struct and Union types can be declared in Bigloo using
-&lt;struct-type&gt; clauses:<br/><br/><center id='center26877'
+<a name="C-structures-and-unions" class="mark"></a><a name="g26882" class="mark"></a>C struct and Union types can be declared in Bigloo using
+&lt;struct-type&gt; clauses:<br/><br/><center id='center26895'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26875'
->&lt;struct-type&gt; ==&gt; <code id='code26867'
->(struct</code> <code id='code26868'
->(</code>&lt;typed-ident&gt; &lt;string&gt;<code id='code26869'
->)^+</code><code id='code26870'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog26893'
+>&lt;struct-type&gt; ==&gt; <code id='code26885'
+>(struct</code> <code id='code26886'
+>(</code>&lt;typed-ident&gt; &lt;string&gt;<code id='code26887'
+>)^+</code><code id='code26888'
 >)</code>   
-&lt;union-type&gt; ==&gt; <code id='code26871'
->(union</code> <code id='code26872'
->(</code>&lt;typed-ident&gt; &lt;string&gt;<code id='code26873'
->)^+</code><code id='code26874'
+&lt;union-type&gt; ==&gt; <code id='code26889'
+>(union</code> <code id='code26890'
+>(</code>&lt;typed-ident&gt; &lt;string&gt;<code id='code26891'
+>)^+</code><code id='code26892'
 >)</code>
 </pre>
 </td></tr>
 </tbody></table></center>
 
-This clause declared a C struct but C structure values <em id='emph26878'
+This clause declared a C struct but C structure values <em id='emph26896'
 >cannot</em> 
 be handled by Bigloo. Instead Bigloo is able to handle
-<em id='emph26879'
+<em id='emph26897'
 >pointers to</em> C structure. Thus, in order to help the
-definition of extern types, when a struct named <code id='code26881'
-><em id='it26880'
+definition of extern types, when a struct named <code id='code26899'
+><em id='it26898'
 >struct</em></code> is
 defined, if it does not exists yet, Bigloo automatically defines
-a type <em id='emph26882'
+a type <em id='emph26900'
 >pointer to the structure</em>. This type is named 
-<code id='code26884'
-><em id='it26883'
->struct</em></code><code id='code26885'
+<code id='code26902'
+><em id='it26901'
+>struct</em></code><code id='code26903'
 >*</code>.<br/><br/>When a pointer to a structure type is defined, Bigloo
 automatically produces functions to manipulate objects of this
-type. Let us suppose the type definition of <code id='code26888'
-><em id='it26887'
->struct</em></code><code id='code26889'
->*</code>: <br/><br/><center id='center26908'
+type. Let us suppose the type definition of <code id='code26906'
+><em id='it26905'
+>struct</em></code><code id='code26907'
+>*</code>: <br/><br/><center id='center26926'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26906'
->(<strong id='bold34866'
->type</strong> <code id='code26892'
-><em id='it26891'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26924'
+>(<strong id='bold34884'
+>type</strong> <code id='code26910'
+><em id='it26909'
 >struct</em></code>
-   (struct (<code id='code26894'
-><em id='it26893'
->id1</em></code>::<code id='code26896'
-><em id='it26895'
->type1</em></code> <code id='code26898'
-><em id='it26897'
+   (struct (<code id='code26912'
+><em id='it26911'
+>id1</em></code>::<code id='code26914'
+><em id='it26913'
+>type1</em></code> <code id='code26916'
+><em id='it26915'
 >name1</em></code>)
            ...
-           (<code id='code26900'
-><em id='it26899'
->idn</em></code>::<code id='code26902'
-><em id='it26901'
->typen</em></code> <code id='code26904'
-><em id='it26903'
+           (<code id='code26918'
+><em id='it26917'
+>idn</em></code>::<code id='code26920'
+><em id='it26919'
+>typen</em></code> <code id='code26922'
+><em id='it26921'
 >namen</em></code>))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The following functions are created:<br/><br/><ul class="itemize" id='itemize27002'
+The following functions are created:<br/><br/><ul class="itemize" id='itemize27020'
 ><li>A creator: 
-<center id='center26920'
+<center id='center26938'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26918'
->(<code id='code26911'
-><em id='it26910'
->struct</em></code>*::<code id='code26913'
-><em id='it26912'
->struct</em></code>* ::<code id='code26915'
-><em id='it26914'
->type_1</em></code> ... ::<code id='code26917'
-><em id='it26916'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26936'
+>(<code id='code26929'
+><em id='it26928'
+>struct</em></code>*::<code id='code26931'
+><em id='it26930'
+>struct</em></code>* ::<code id='code26933'
+><em id='it26932'
+>type_1</em></code> ... ::<code id='code26935'
+><em id='it26934'
 >type_n</em></code>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-This function allocates a fresh <code id='code26922'
-><em id='it26921'
->struct</em></code><code id='code26923'
+This function allocates a fresh <code id='code26940'
+><em id='it26939'
+>struct</em></code><code id='code26941'
 >*</code> (in the same heap as
 any Scheme value) and fills the fields of the C structure with the proper
 values provided in the call.<br/><br/></li>
 <li>A type checker: 
-<center id='center26934'
+<center id='center26952'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26932'
->(<code id='code26927'
-><em id='it26926'
->struct</em></code>*?<font color="#00cf00"><strong id='bold34867'
->::bool</strong></font> <code id='code26929'
-><em id='it26928'
->obj</em></code><font color="#00cf00"><strong id='bold34869'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26950'
+>(<code id='code26945'
+><em id='it26944'
+>struct</em></code>*?<font color="#00cf00"><strong id='bold34885'
+>::bool</strong></font> <code id='code26947'
+><em id='it26946'
+>obj</em></code><font color="#00cf00"><strong id='bold34887'
 >::obj</strong></font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-This function returns <code id='code26935'
->#t</code> if and only if the argument <code id='code26937'
-><em id='it26936'
+This function returns <code id='code26953'
+>#t</code> if and only if the argument <code id='code26955'
+><em id='it26954'
 >obj</em></code> 
-is of type <code id='code26939'
-><em id='it26938'
->struct</em></code><code id='code26940'
+is of type <code id='code26957'
+><em id='it26956'
+>struct</em></code><code id='code26958'
 >*</code>.<br/><br/></li>
 <li>A null checker: 
-<center id='center26950'
+<center id='center26968'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26948'
->(<code id='code26944'
-><em id='it26943'
->struct</em></code>*-null?<font color="#00cf00"><strong id='bold34871'
->::bool</strong></font> ::<code id='code26946'
-><em id='it26945'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26966'
+>(<code id='code26962'
+><em id='it26961'
+>struct</em></code>*-null?<font color="#00cf00"><strong id='bold34889'
+>::bool</strong></font> ::<code id='code26964'
+><em id='it26963'
 >struct</em></code>*)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code26951'
->#t</code> if and only if its argument is <code id='code26952'
+This function returns <code id='code26969'
+>#t</code> if and only if its argument is <code id='code26970'
 >Null</code>.<br/><br/></li>
 <li>A null creator: 
-<center id='center26961'
+<center id='center26979'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26959'
->(make-null-<code id='code26956'
-><em id='it26955'
->struct</em></code>::<code id='code26958'
-><em id='it26957'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26977'
+>(make-null-<code id='code26974'
+><em id='it26973'
+>struct</em></code>::<code id='code26976'
+><em id='it26975'
 >struct</em></code>*)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function creates a <code id='code26962'
->NULL</code> value of type <code id='code26964'
-><em id='it26963'
+This function creates a <code id='code26980'
+>NULL</code> value of type <code id='code26982'
+><em id='it26981'
 >struct</em></code>*.<br/><br/></li>
 <li>An equality checker: 
-<center id='center26976'
+<center id='center26994'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26974'
->(=<code id='code26968'
-><em id='it26967'
->struct</em></code>*?<font color="#00cf00"><strong id='bold34873'
->::bool</strong></font> ::<code id='code26970'
-><em id='it26969'
->struct</em></code>* ::<code id='code26972'
-><em id='it26971'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26992'
+>(=<code id='code26986'
+><em id='it26985'
+>struct</em></code>*?<font color="#00cf00"><strong id='bold34891'
+>::bool</strong></font> ::<code id='code26988'
+><em id='it26987'
+>struct</em></code>* ::<code id='code26990'
+><em id='it26989'
 >struct</em></code>*)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-This function returns <code id='code26977'
+This function returns <code id='code26995'
 >#t</code> if and only if its arguments are equal.<br/><br/></li>
 <li>Accessors and mutators: 
-<center id='center26999'
+<center id='center27017'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26997'
->(<code id='code26981'
-><em id='it26980'
->struct</em></code>*-<code id='code26983'
-><em id='it26982'
->id_1</em></code>::<code id='code26985'
-><em id='it26984'
->type_1</em></code> ::<code id='code26987'
-><em id='it26986'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27015'
+>(<code id='code26999'
+><em id='it26998'
+>struct</em></code>*-<code id='code27001'
+><em id='it27000'
+>id_1</em></code>::<code id='code27003'
+><em id='it27002'
+>type_1</em></code> ::<code id='code27005'
+><em id='it27004'
 >struct</em></code>*)
-(<code id='code26989'
-><em id='it26988'
->struct</em></code>*-<code id='code26991'
-><em id='it26990'
->id_1</em></code>-set!<font color="#00cf00"><strong id='bold34875'
->::obj</strong></font> ::<code id='code26993'
-><em id='it26992'
->struct</em></code>* ::<code id='code26995'
-><em id='it26994'
+(<code id='code27007'
+><em id='it27006'
+>struct</em></code>*-<code id='code27009'
+><em id='it27008'
+>id_1</em></code>-set!<font color="#00cf00"><strong id='bold34893'
+>::obj</strong></font> ::<code id='code27011'
+><em id='it27010'
+>struct</em></code>* ::<code id='code27013'
+><em id='it27012'
 >type_1</em></code>)
 ...
 </pre>
@@ -755,37 +755,37 @@ This function returns <code id='code26977'
 </tbody></table></center>
 These functions read and store field values.<br/><br/></li>
 </ul>
-Here is an example of structure usage:<br/><br/><center id='center27033'
+Here is an example of structure usage:<br/><br/><center id='center27051'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27031'
->(<font color="#1919af"><strong id='bold34877'
->module</strong></font> <font color="#1919af"><strong id='bold34879'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27049'
+>(<font color="#1919af"><strong id='bold34895'
+>module</strong></font> <font color="#1919af"><strong id='bold34897'
 >foo</strong></font> 
-   (<strong id='bold34881'
+   (<strong id='bold34899'
 >extern</strong> 
      (include <font color="red">&quot;named_point_declaration.h&quot;</font>)
-     (<strong id='bold34883'
+     (<strong id='bold34901'
 >type</strong> named-point 
-           (struct (x<font color="#00cf00"><strong id='bold34884'
+           (struct (x<font color="#00cf00"><strong id='bold34902'
 >::double</strong></font> <font color="red">&quot;x&quot;</font>)
-                   (y<font color="#00cf00"><strong id='bold34887'
+                   (y<font color="#00cf00"><strong id='bold34905'
 >::double</strong></font> <font color="red">&quot;y&quot;</font>)
-                   (name<font color="#00cf00"><strong id='bold34890'
+                   (name<font color="#00cf00"><strong id='bold34908'
 >::string</strong></font> <font color="red">&quot;name&quot;</font>))
            <font color="red">&quot;struct named_point&quot;</font>)
-     (c-print-point<font color="#00cf00"><strong id='bold34894'
->::int</strong></font> (named-point*) <font color="red">&quot;ppoint&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold34897'
->define</strong></font> (<font color="#6959cf"><strong id='bold34899'
+     (c-print-point<font color="#00cf00"><strong id='bold34912'
+>::int</strong></font> (named-point*) <font color="red">&quot;ppoint&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold34915'
+>define</strong></font> (<font color="#6959cf"><strong id='bold34917'
 >scheme-print-point</strong></font> point)
    (print <font color="red">&quot;point*-name: &quot;</font> point
           <font color="red">&quot; x: &quot;</font> (named-point*-x point)
-          <font color="red">&quot; y: &quot;</font> (named-point*-y point)))<br/><br/>(<strong id='bold34904'
+          <font color="red">&quot; y: &quot;</font> (named-point*-y point)))<br/><br/>(<strong id='bold34922'
 >let</strong> ((orig (named-point* 0.0 0.0 <font color="red">&quot;orig&quot;</font>)))
-   (<strong id='bold34906'
+   (<strong id='bold34924'
 >if</strong> (named-point*-null? orig)
-       (<font color="red"><strong id='bold34907'
+       (<font color="red"><strong id='bold34925'
 >error</strong></font> <font color="red">&quot;bigloo&quot;</font> <font color="red">&quot;cannot allocate point&quot;</font> orig)
-       (<strong id='bold34911'
+       (<strong id='bold34929'
 >begin</strong>
           (c-print-point orig)
           (scheme-print-point orig))))
@@ -798,11 +798,11 @@ Here is an example of structure usage:<br/><br/><center id='center27033'
 <a name="C-pointers"></a>
 <div class="subsubsection-atitle"><h4><font color="#8381de">27.1.6.3 C pointers</font>
 </h4></div><div class="subsubsection">
-<a name="C-pointers" class="mark"></a><a name="g27034" class="mark"></a>C pointers are defined by the &lt;pointer-type&gt;<br/><br/><center id='center27041'
+<a name="C-pointers" class="mark"></a><a name="g27052" class="mark"></a>C pointers are defined by the &lt;pointer-type&gt;<br/><br/><center id='center27059'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27039'
->&lt;pointer-type&gt; ==&gt; <code id='code27037'
->(pointer</code> &lt;ident&gt;<code id='code27038'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27057'
+>&lt;pointer-type&gt; ==&gt; <code id='code27055'
+>(pointer</code> &lt;ident&gt;<code id='code27056'
 >)</code>
 </pre>
 </td></tr>
@@ -810,171 +810,171 @@ Here is an example of structure usage:<br/><br/><center id='center27033'
 
 &lt;ident&gt; is the name of a previously defined type. 
 Let us suppose the pointer type declaration:
-<center id='center27049'
+<center id='center27067'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27047'
->(<strong id='bold34912'
->type</strong> <code id='code27043'
-><em id='it27042'
->ptr</em></code> (pointer <code id='code27045'
-><em id='it27044'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27065'
+>(<strong id='bold34930'
+>type</strong> <code id='code27061'
+><em id='it27060'
+>ptr</em></code> (pointer <code id='code27063'
+><em id='it27062'
 >ident</em></code>) ...)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-If <code id='code27051'
-><em id='it27050'
+If <code id='code27069'
+><em id='it27068'
 >ident</em></code> is the name of a structure type, Bigloo automatically
 creates structure accessors (see <a href="bigloo-28.html#C-structures-and-unions" class="inbound">C structures and unions</a>). 
-Otherwise, it creates the following functions:<br/><br/><ul class="itemize" id='itemize27148'
+Otherwise, it creates the following functions:<br/><br/><ul class="itemize" id='itemize27166'
 ><li>A creator: 
-<center id='center27062'
+<center id='center27080'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27060'
->(make-<code id='code27054'
-><em id='it27053'
->ptr</em></code>::<code id='code27056'
-><em id='it27055'
->ptr</em></code> <code id='code27058'
-><em id='it27057'
->nb</em></code><font color="#00cf00"><strong id='bold34913'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27078'
+>(make-<code id='code27072'
+><em id='it27071'
+>ptr</em></code>::<code id='code27074'
+><em id='it27073'
+>ptr</em></code> <code id='code27076'
+><em id='it27075'
+>nb</em></code><font color="#00cf00"><strong id='bold34931'
 >::long</strong></font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-This function allocates memory for <code id='code27064'
-><em id='it27063'
->nb</em></code> elements of type <code id='code27066'
-><em id='it27065'
+This function allocates memory for <code id='code27082'
+><em id='it27081'
+>nb</em></code> elements of type <code id='code27084'
+><em id='it27083'
 >ident</em></code>
-and returns a <code id='code27068'
-><em id='it27067'
+and returns a <code id='code27086'
+><em id='it27085'
 >ptr</em></code> to this zone. The memory is filled with
-the C <code id='code27069'
+the C <code id='code27087'
 >Null</code> value.<br/><br/></li>
 <li>A type checker: 
-<center id='center27080'
+<center id='center27098'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27078'
->(<code id='code27073'
-><em id='it27072'
->ptr</em></code>?<font color="#00cf00"><strong id='bold34915'
->::bool</strong></font> <code id='code27075'
-><em id='it27074'
->obj</em></code><font color="#00cf00"><strong id='bold34917'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27096'
+>(<code id='code27091'
+><em id='it27090'
+>ptr</em></code>?<font color="#00cf00"><strong id='bold34933'
+>::bool</strong></font> <code id='code27093'
+><em id='it27092'
+>obj</em></code><font color="#00cf00"><strong id='bold34935'
 >::obj</strong></font>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27081'
->#t</code> the argument <code id='code27083'
-><em id='it27082'
+This function returns <code id='code27099'
+>#t</code> the argument <code id='code27101'
+><em id='it27100'
 >obj</em></code> is of type
-<code id='code27085'
-><em id='it27084'
->ptr</em></code> and <code id='code27086'
+<code id='code27103'
+><em id='it27102'
+>ptr</em></code> and <code id='code27104'
 >#f</code> otherwise.<br/><br/></li>
 <li>A null checker: 
-<center id='center27096'
+<center id='center27114'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27094'
->(<code id='code27090'
-><em id='it27089'
->ptr</em></code>-null?<font color="#00cf00"><strong id='bold34919'
->::bool</strong></font> ::<code id='code27092'
-><em id='it27091'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27112'
+>(<code id='code27108'
+><em id='it27107'
+>ptr</em></code>-null?<font color="#00cf00"><strong id='bold34937'
+>::bool</strong></font> ::<code id='code27110'
+><em id='it27109'
 >ptr</em></code>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27097'
->#t</code> if its argument is <code id='code27098'
->Null</code> and <code id='code27099'
+This function returns <code id='code27115'
+>#t</code> if its argument is <code id='code27116'
+>Null</code> and <code id='code27117'
 >#f</code>
 otherwise.<br/><br/></li>
 <li>A null creator: 
-<center id='center27108'
+<center id='center27126'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27106'
->(make-null-<code id='code27103'
-><em id='it27102'
->ptr</em></code>::<code id='code27105'
-><em id='it27104'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27124'
+>(make-null-<code id='code27121'
+><em id='it27120'
+>ptr</em></code>::<code id='code27123'
+><em id='it27122'
 >ptr</em></code>*)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function creates a <code id='code27109'
->NULL</code> value of type <code id='code27111'
-><em id='it27110'
+This function creates a <code id='code27127'
+>NULL</code> value of type <code id='code27129'
+><em id='it27128'
 >ptr</em></code>*.<br/><br/></li>
 <li>An equality checker: 
-<center id='center27123'
+<center id='center27141'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27121'
->(=<code id='code27115'
-><em id='it27114'
->ptr</em></code>*?<font color="#00cf00"><strong id='bold34921'
->::bool</strong></font> ::<code id='code27117'
-><em id='it27116'
->ptr</em></code>* ::<code id='code27119'
-><em id='it27118'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27139'
+>(=<code id='code27133'
+><em id='it27132'
+>ptr</em></code>*?<font color="#00cf00"><strong id='bold34939'
+>::bool</strong></font> ::<code id='code27135'
+><em id='it27134'
+>ptr</em></code>* ::<code id='code27137'
+><em id='it27136'
 >ptr</em></code>*)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27124'
->#t</code> if its arguments are equal and <code id='code27125'
+This function returns <code id='code27142'
+>#t</code> if its arguments are equal and <code id='code27143'
 >#f</code> otherwise.<br/><br/></li>
 <li>Accessors and mutators: 
-<center id='center27145'
+<center id='center27163'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27143'
->(<code id='code27129'
-><em id='it27128'
->ptr</em></code>-ref::<code id='code27131'
-><em id='it27130'
->ident</em></code> ::<code id='code27133'
-><em id='it27132'
->ptr</em></code> <font color="#00cf00"><strong id='bold34923'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27161'
+>(<code id='code27147'
+><em id='it27146'
+>ptr</em></code>-ref::<code id='code27149'
+><em id='it27148'
+>ident</em></code> ::<code id='code27151'
+><em id='it27150'
+>ptr</em></code> <font color="#00cf00"><strong id='bold34941'
 >::long</strong></font>)
-(<code id='code27135'
-><em id='it27134'
->ptr</em></code>-set!<font color="#00cf00"><strong id='bold34925'
->::obj</strong></font> ::<code id='code27137'
-><em id='it27136'
->ptr</em></code> <font color="#00cf00"><strong id='bold34927'
->::long</strong></font> ::<code id='code27139'
-><em id='it27138'
+(<code id='code27153'
+><em id='it27152'
+>ptr</em></code>-set!<font color="#00cf00"><strong id='bold34943'
+>::obj</strong></font> ::<code id='code27155'
+><em id='it27154'
+>ptr</em></code> <font color="#00cf00"><strong id='bold34945'
+>::long</strong></font> ::<code id='code27157'
+><em id='it27156'
 >ident</em></code>)
 </pre>
 </td></tr>
 </tbody></table></center>
 These functions read and store field values.<br/><br/></li>
 </ul>
-Here is an example of a program using pointer types:<br/><br/><center id='center27165'
+Here is an example of a program using pointer types:<br/><br/><center id='center27183'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27163'
->(<font color="#1919af"><strong id='bold34929'
->module</strong></font> <font color="#1919af"><strong id='bold34931'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27181'
+>(<font color="#1919af"><strong id='bold34947'
+>module</strong></font> <font color="#1919af"><strong id='bold34949'
 >foo</strong></font> 
-   (<strong id='bold34933'
+   (<strong id='bold34951'
 >extern</strong> 
-    (<strong id='bold34934'
->type</strong> double* (pointer double) <font color="red">&quot;double *&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold34936'
->define</strong></font> (<font color="#6959cf"><strong id='bold34938'
->make-vect</strong></font><font color="#00cf00"><strong id='bold34940'
+    (<strong id='bold34952'
+>type</strong> double* (pointer double) <font color="red">&quot;double *&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold34954'
+>define</strong></font> (<font color="#6959cf"><strong id='bold34956'
+>make-vect</strong></font><font color="#00cf00"><strong id='bold34958'
 >::double*</strong></font> x y z)
-   (<strong id='bold34942'
+   (<strong id='bold34960'
 >let</strong> ((vect (make-double* 3)))
       (double*-set! vect 0 x)
       (double*-set! vect 1 y)
       (double*-set! vect 2 z)
-      vect))<br/><br/>(<font color="#6959cf"><strong id='bold34943'
->define</strong></font> (<font color="#6959cf"><strong id='bold34945'
->vect-norm</strong></font> vect<font color="#00cf00"><strong id='bold34947'
+      vect))<br/><br/>(<font color="#6959cf"><strong id='bold34961'
+>define</strong></font> (<font color="#6959cf"><strong id='bold34963'
+>vect-norm</strong></font> vect<font color="#00cf00"><strong id='bold34965'
 >::double*</strong></font>)
    (sqrt (+ (expt (double*-ref vect 0) 2)
 	    (expt (double*-ref vect 1) 2)
@@ -988,50 +988,50 @@ Here is an example of a program using pointer types:<br/><br/><center id='center
 <a name="C-null-pointers"></a>
 <div class="subsubsection-atitle"><h4><font color="#8381de">27.1.6.4 C null pointers</font>
 </h4></div><div class="subsubsection">
-<a name="C-null-pointers" class="mark"></a><a name="g27166" class="mark"></a>
+<a name="C-null-pointers" class="mark"></a><a name="g27184" class="mark"></a>
 It may be convenient to build C null pointers. Several means can be
 used.  In particular, foreign structures and pointers are provided with
 Null creators. For other foreign types, the easiest one is likely to be
-a <code id='code27168'
+a <code id='code27186'
 >pragma</code> form. For instance, in order to create a null pointer to
-a <code id='code27169'
->double*</code> type, one may use:<br/><br/><center id='center27176'
+a <code id='code27187'
+>double*</code> type, one may use:<br/><br/><center id='center27194'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27174'
->(<strong id='bold34949'
->pragma</strong><font color="#00cf00"><strong id='bold34950'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27192'
+>(<strong id='bold34967'
+>pragma</strong><font color="#00cf00"><strong id='bold34968'
 >::double*</strong></font> <font color="red">&quot;((double *)0L)&quot;</font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27178" class="mark"></a><a name="string-ptr-null?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27182" align="left" colspan="1"><strong id='bold27180'
->string-ptr-null?</strong><em id='it27181'
-> string</em></td><td id="tc27183" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g27196" class="mark"></a><a name="string-ptr-null?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27200" align="left" colspan="1"><strong id='bold27198'
+>string-ptr-null?</strong><em id='it27199'
+> string</em></td><td id="tc27201" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g27187" class="mark"></a><a name="void*-null?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27191" align="left" colspan="1"><strong id='bold27189'
->void*-null?</strong><em id='it27190'
-> void*</em></td><td id="tc27192" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g27205" class="mark"></a><a name="void*-null?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27209" align="left" colspan="1"><strong id='bold27207'
+>void*-null?</strong><em id='it27208'
+> void*</em></td><td id="tc27210" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-These two predicates checks if there argument is the C <code id='code27195'
+These two predicates checks if there argument is the C <code id='code27213'
 >NULL</code> value.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27199" class="mark"></a><a name="make-string-ptr-null" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27203" align="left" colspan="1"><strong id='bold27201'
->make-string-ptr-null</strong><em id='it27202'
-></em></td><td id="tc27204" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g27217" class="mark"></a><a name="make-string-ptr-null" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27221" align="left" colspan="1"><strong id='bold27219'
+>make-string-ptr-null</strong><em id='it27220'
+></em></td><td id="tc27222" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g27208" class="mark"></a><a name="make-void*-null" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27212" align="left" colspan="1"><strong id='bold27210'
->make-void*-null</strong><em id='it27211'
-></em></td><td id="tc27213" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g27226" class="mark"></a><a name="make-void*-null" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27230" align="left" colspan="1"><strong id='bold27228'
+>make-void*-null</strong><em id='it27229'
+></em></td><td id="tc27231" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-These two constructors creates <em id='emph27216'
+These two constructors creates <em id='emph27234'
 >null</em> foreign values.
 </td></tr>
 </tbody></table><br/>
@@ -1040,11 +1040,11 @@ These two constructors creates <em id='emph27216'
 <a name="C-arrays"></a>
 <div class="subsubsection-atitle"><h4><font color="#8381de">27.1.6.5 C arrays</font>
 </h4></div><div class="subsubsection">
-<a name="C-arrays" class="mark"></a><a name="g27219" class="mark"></a>C arrays are defined by the &lt;array-type&gt;<br/><br/><center id='center27226'
+<a name="C-arrays" class="mark"></a><a name="g27237" class="mark"></a>C arrays are defined by the &lt;array-type&gt;<br/><br/><center id='center27244'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27224'
->&lt;array-type&gt; ==&gt; <code id='code27222'
->(array</code> &lt;ident&gt;<code id='code27223'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27242'
+>&lt;array-type&gt; ==&gt; <code id='code27240'
+>(array</code> &lt;ident&gt;<code id='code27241'
 >)</code>
 </pre>
 </td></tr>
@@ -1053,148 +1053,148 @@ These two constructors creates <em id='emph27216'
 &lt;ident&gt; is the name of a previously defined type. Array types are 
 similar to pointer types except that they include their size in their type
 definition string. Let us suppose the array type declaration: 
-<center id='center27234'
+<center id='center27252'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27232'
->(<strong id='bold34953'
->type</strong> <code id='code27228'
-><em id='it27227'
->array</em></code> (array <code id='code27230'
-><em id='it27229'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27250'
+>(<strong id='bold34971'
+>type</strong> <code id='code27246'
+><em id='it27245'
+>array</em></code> (array <code id='code27248'
+><em id='it27247'
 >ident</em></code>) ...)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-If <code id='code27236'
-><em id='it27235'
+If <code id='code27254'
+><em id='it27253'
 >ident</em></code> is the name of a structure type, Bigloo automatically
 creates structures accessors (see <a href="bigloo-28.html#C-structures-and-unions" class="inbound">C structures and unions</a>).
-Otherwise, it creates the following functions:<br/><br/><ul class="itemize" id='itemize27315'
+Otherwise, it creates the following functions:<br/><br/><ul class="itemize" id='itemize27333'
 ><li>A creator: 
-<center id='center27244'
+<center id='center27262'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27242'
->(make-<code id='code27239'
-><em id='it27238'
->array</em></code>::<code id='code27241'
-><em id='it27240'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27260'
+>(make-<code id='code27257'
+><em id='it27256'
+>array</em></code>::<code id='code27259'
+><em id='it27258'
 >array</em></code>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function allocates memory for the array <code id='code27246'
-><em id='it27245'
+This function allocates memory for the array <code id='code27264'
+><em id='it27263'
 >array</em></code>.
-The memory is filled with the C <code id='code27247'
+The memory is filled with the C <code id='code27265'
 >Null</code> value.<br/><br/></li>
 <li>A type checker: 
-<center id='center27258'
+<center id='center27276'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27256'
->(<code id='code27251'
-><em id='it27250'
->array</em></code>?<font color="#00cf00"><strong id='bold34954'
->::bool</strong></font> <code id='code27253'
-><em id='it27252'
->obj</em></code><font color="#00cf00"><strong id='bold34956'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27274'
+>(<code id='code27269'
+><em id='it27268'
+>array</em></code>?<font color="#00cf00"><strong id='bold34972'
+>::bool</strong></font> <code id='code27271'
+><em id='it27270'
+>obj</em></code><font color="#00cf00"><strong id='bold34974'
 >::obj</strong></font>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27259'
->#t</code> if the argument <code id='code27261'
-><em id='it27260'
+This function returns <code id='code27277'
+>#t</code> if the argument <code id='code27279'
+><em id='it27278'
 >obj</em></code> is of type 
-<em id='emph27262'
->array</em> and <code id='code27263'
+<em id='emph27280'
+>array</em> and <code id='code27281'
 >#f</code> otherwise.<br/><br/></li>
 <li>A null checker: 
-<center id='center27273'
+<center id='center27291'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27271'
->(null-<code id='code27267'
-><em id='it27266'
->array</em></code>?<font color="#00cf00"><strong id='bold34958'
->::bool</strong></font> ::<code id='code27269'
-><em id='it27268'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27289'
+>(null-<code id='code27285'
+><em id='it27284'
+>array</em></code>?<font color="#00cf00"><strong id='bold34976'
+>::bool</strong></font> ::<code id='code27287'
+><em id='it27286'
 >array</em></code>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27274'
->#t</code> if the argument <code id='code27276'
-><em id='it27275'
->obj</em></code> is <code id='code27277'
+This function returns <code id='code27292'
+>#t</code> if the argument <code id='code27294'
+><em id='it27293'
+>obj</em></code> is <code id='code27295'
 >Null</code>
-and <code id='code27278'
+and <code id='code27296'
 >#f</code> otherwise.<br/><br/></li>
 <li>An equality checker: 
-<center id='center27290'
+<center id='center27308'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27288'
->(=<code id='code27282'
-><em id='it27281'
->array</em></code>*?<font color="#00cf00"><strong id='bold34960'
->::bool</strong></font> ::<code id='code27284'
-><em id='it27283'
->array</em></code>* ::<code id='code27286'
-><em id='it27285'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27306'
+>(=<code id='code27300'
+><em id='it27299'
+>array</em></code>*?<font color="#00cf00"><strong id='bold34978'
+>::bool</strong></font> ::<code id='code27302'
+><em id='it27301'
+>array</em></code>* ::<code id='code27304'
+><em id='it27303'
 >array</em></code>*)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27291'
->#t</code> if its arguments are equal and <code id='code27292'
+This function returns <code id='code27309'
+>#t</code> if its arguments are equal and <code id='code27310'
 >#f</code> 
 otherwise.<br/><br/></li>
 <li>Accessors and mutators: 
-<center id='center27312'
+<center id='center27330'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27310'
->(<code id='code27296'
-><em id='it27295'
->array</em></code>-ref::<code id='code27298'
-><em id='it27297'
->ident</em></code> ::<code id='code27300'
-><em id='it27299'
->array</em></code> <font color="#00cf00"><strong id='bold34962'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27328'
+>(<code id='code27314'
+><em id='it27313'
+>array</em></code>-ref::<code id='code27316'
+><em id='it27315'
+>ident</em></code> ::<code id='code27318'
+><em id='it27317'
+>array</em></code> <font color="#00cf00"><strong id='bold34980'
 >::long</strong></font>)
-(<code id='code27302'
-><em id='it27301'
->array</em></code>-set!<font color="#00cf00"><strong id='bold34964'
->::obj</strong></font> ::<code id='code27304'
-><em id='it27303'
->array</em></code> <font color="#00cf00"><strong id='bold34966'
->::long</strong></font> ::<code id='code27306'
-><em id='it27305'
+(<code id='code27320'
+><em id='it27319'
+>array</em></code>-set!<font color="#00cf00"><strong id='bold34982'
+>::obj</strong></font> ::<code id='code27322'
+><em id='it27321'
+>array</em></code> <font color="#00cf00"><strong id='bold34984'
+>::long</strong></font> ::<code id='code27324'
+><em id='it27323'
 >ident</em></code>)
 </pre>
 </td></tr>
 </tbody></table></center>
 These functions read and store field values.<br/><br/></li>
 </ul>
-Here is an example of a program using array types:<br/><br/><center id='center27332'
+Here is an example of a program using array types:<br/><br/><center id='center27350'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27330'
->(<font color="#1919af"><strong id='bold34968'
->module</strong></font> <font color="#1919af"><strong id='bold34970'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27348'
+>(<font color="#1919af"><strong id='bold34986'
+>module</strong></font> <font color="#1919af"><strong id='bold34988'
 >foo</strong></font> 
-   (<strong id='bold34972'
+   (<strong id='bold34990'
 >extern</strong> 
-    (<strong id='bold34973'
->type</strong> double* (array double) <font color="red">&quot;double [ 10 ]&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold34975'
->define</strong></font> (<font color="#6959cf"><strong id='bold34977'
->make-vect</strong></font><font color="#00cf00"><strong id='bold34979'
+    (<strong id='bold34991'
+>type</strong> double* (array double) <font color="red">&quot;double [ 10 ]&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold34993'
+>define</strong></font> (<font color="#6959cf"><strong id='bold34995'
+>make-vect</strong></font><font color="#00cf00"><strong id='bold34997'
 >::double*</strong></font> x y z)
-   (<strong id='bold34981'
+   (<strong id='bold34999'
 >let</strong> ((vect (make-double*)))
       (double*-set! vect 0 x)
       (double*-set! vect 1 y)
       (double*-set! vect 2 z)
-      vect))<br/><br/>(<font color="#6959cf"><strong id='bold34982'
->define</strong></font> (<font color="#6959cf"><strong id='bold34984'
->vect-norm</strong></font> vect<font color="#00cf00"><strong id='bold34986'
+      vect))<br/><br/>(<font color="#6959cf"><strong id='bold35000'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35002'
+>vect-norm</strong></font> vect<font color="#00cf00"><strong id='bold35004'
 >::double*</strong></font>)
    (sqrt (+ (expt (double*-ref vect 0) 2)
 	    (expt (double*-ref vect 1) 2)
@@ -1208,123 +1208,123 @@ Here is an example of a program using array types:<br/><br/><center id='center27
 <a name="C-functions"></a>
 <div class="subsubsection-atitle"><h4><font color="#8381de">27.1.6.6 C functions</font>
 </h4></div><div class="subsubsection">
-<a name="C-functions" class="mark"></a><a name="g27333" class="mark"></a>C function types are introduced by the &lt;function-type&gt; clause:<br/><br/><center id='center27341'
+<a name="C-functions" class="mark"></a><a name="g27351" class="mark"></a>C function types are introduced by the &lt;function-type&gt; clause:<br/><br/><center id='center27359'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27339'
->&lt;function-type&gt; ==&gt; <code id='code27336'
->(function</code> &lt;ident&gt; <code id='code27337'
->(</code>&lt;ident&gt;*<code id='code27338'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27357'
+>&lt;function-type&gt; ==&gt; <code id='code27354'
+>(function</code> &lt;ident&gt; <code id='code27355'
+>(</code>&lt;ident&gt;*<code id='code27356'
 >))</code>
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Let us suppose the array type declaration: 
-<center id='center27351'
+<center id='center27369'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27349'
->(<strong id='bold34988'
->type</strong> <code id='code27343'
-><em id='it27342'
->fun</em></code> (function <code id='code27345'
-><em id='it27344'
->res</em></code> (<code id='code27347'
-><em id='it27346'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27367'
+>(<strong id='bold35006'
+>type</strong> <code id='code27361'
+><em id='it27360'
+>fun</em></code> (function <code id='code27363'
+><em id='it27362'
+>res</em></code> (<code id='code27365'
+><em id='it27364'
 >arg</em></code>*)) ...)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Bigloo creates the following functions:<br/><br/><ul class="itemize" id='itemize27406'
+Bigloo creates the following functions:<br/><br/><ul class="itemize" id='itemize27424'
 ><li>A type checker: 
-<center id='center27361'
+<center id='center27379'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27359'
->(<code id='code27354'
-><em id='it27353'
->fun</em></code>?<font color="#00cf00"><strong id='bold34989'
->::bool</strong></font> <code id='code27356'
-><em id='it27355'
->obj</em></code><font color="#00cf00"><strong id='bold34991'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27377'
+>(<code id='code27372'
+><em id='it27371'
+>fun</em></code>?<font color="#00cf00"><strong id='bold35007'
+>::bool</strong></font> <code id='code27374'
+><em id='it27373'
+>obj</em></code><font color="#00cf00"><strong id='bold35009'
 >::obj</strong></font>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27362'
->#t</code> if the argument <code id='code27364'
-><em id='it27363'
+This function returns <code id='code27380'
+>#t</code> if the argument <code id='code27382'
+><em id='it27381'
 >obj</em></code> is of type
-<code id='code27366'
-><em id='it27365'
->fun</em></code> and <code id='code27367'
+<code id='code27384'
+><em id='it27383'
+>fun</em></code> and <code id='code27385'
 >#f</code> otherwise.<br/><br/></li>
 <li>An equality checker: 
-<center id='center27379'
+<center id='center27397'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27377'
->(=<code id='code27371'
-><em id='it27370'
->fun</em></code>*?<font color="#00cf00"><strong id='bold34993'
->::bool</strong></font> ::<code id='code27373'
-><em id='it27372'
->fun</em></code>* ::<code id='code27375'
-><em id='it27374'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27395'
+>(=<code id='code27389'
+><em id='it27388'
+>fun</em></code>*?<font color="#00cf00"><strong id='bold35011'
+>::bool</strong></font> ::<code id='code27391'
+><em id='it27390'
+>fun</em></code>* ::<code id='code27393'
+><em id='it27392'
 >fun</em></code>*)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27380'
+This function returns <code id='code27398'
 >#t</code> if and only if its arguments are equal.<br/><br/></li>
 <li>Caller: 
-<center id='center27397'
+<center id='center27415'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27395'
->(<code id='code27384'
-><em id='it27383'
->fun</em></code>-call::<code id='code27386'
-><em id='it27385'
->res</em></code> <code id='code27388'
-><em id='it27387'
->f</em></code>::<code id='code27390'
-><em id='it27389'
->fun</em></code> <code id='code27392'
-><em id='it27391'
->a</em></code>::<code id='code27394'
-><em id='it27393'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27413'
+>(<code id='code27402'
+><em id='it27401'
+>fun</em></code>-call::<code id='code27404'
+><em id='it27403'
+>res</em></code> <code id='code27406'
+><em id='it27405'
+>f</em></code>::<code id='code27408'
+><em id='it27407'
+>fun</em></code> <code id='code27410'
+><em id='it27409'
+>a</em></code>::<code id='code27412'
+><em id='it27411'
 >ta</em></code> ...)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function invokes <code id='code27399'
-><em id='it27398'
->f</em></code> with the arguments <code id='code27401'
-><em id='it27400'
+This function invokes <code id='code27417'
+><em id='it27416'
+>f</em></code> with the arguments <code id='code27419'
+><em id='it27418'
 >a</em></code> ...
-<code id='code27403'
-><em id='it27402'
+<code id='code27421'
+><em id='it27420'
 >an</em></code>.<br/><br/></li>
 </ul>
-Suppose we have to use in Scheme the following C variable:<br/><br/><center id='center27410'
+Suppose we have to use in Scheme the following C variable:<br/><br/><center id='center27428'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27408'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27426'
 >double (*convert)(char *);
 </pre>
 </td></tr>
 </tbody></table></center>
 
-It can be done as in:<br/><br/><center id='center27423'
+It can be done as in:<br/><br/><center id='center27441'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27421'
->(<font color="#1919af"><strong id='bold34995'
->module</strong></font> <font color="#1919af"><strong id='bold34997'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27439'
+>(<font color="#1919af"><strong id='bold35013'
+>module</strong></font> <font color="#1919af"><strong id='bold35015'
 >foo</strong></font> 
-   (<strong id='bold34999'
+   (<strong id='bold35017'
 >extern</strong>
-    (<strong id='bold35000'
+    (<strong id='bold35018'
 >type</strong> *string-&gt;double
           (function double (string)) 
                     <font color="red">&quot;double (*)(char *)&quot;</font>)
-    (macro cv<font color="#00cf00"><strong id='bold35002'
+    (macro cv<font color="#00cf00"><strong id='bold35020'
 >::*string-&gt;double</strong></font> <font color="red">&quot;convert&quot;</font>)))<br/><br/>(print (*string-&gt;double-call cv <font color="red">&quot;3.14&quot;</font>))
 </pre>
 </td></tr>
@@ -1335,125 +1335,125 @@ It can be done as in:<br/><br/><center id='center27423'
 <a name="C-enums"></a>
 <div class="subsubsection-atitle"><h4><font color="#8381de">27.1.6.7 C enums</font>
 </h4></div><div class="subsubsection">
-<a name="C-enums" class="mark"></a><a name="g27424" class="mark"></a>This form defines <code id='code27426'
->enum</code> types.<br/><br/><center id='center27433'
+<a name="C-enums" class="mark"></a><a name="g27442" class="mark"></a>This form defines <code id='code27444'
+>enum</code> types.<br/><br/><center id='center27451'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27431'
->&lt;enum-type&gt; ==&gt; <code id='code27428'
->(enum (</code>&lt;ident&gt; &lt;string&gt;<code id='code27429'
->)...</code> ...<code id='code27430'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27449'
+>&lt;enum-type&gt; ==&gt; <code id='code27446'
+>(enum (</code>&lt;ident&gt; &lt;string&gt;<code id='code27447'
+>)...</code> ...<code id='code27448'
 >)</code>
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Let us suppose the type: 
-<center id='center27447'
+<center id='center27465'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27445'
->(<strong id='bold35006'
->type</strong> <code id='code27435'
-><em id='it27434'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27463'
+>(<strong id='bold35024'
+>type</strong> <code id='code27453'
+><em id='it27452'
 >enum</em></code>
-   (enum (<code id='code27437'
-><em id='it27436'
->id_1</em></code> <code id='code27439'
-><em id='it27438'
+   (enum (<code id='code27455'
+><em id='it27454'
+>id_1</em></code> <code id='code27457'
+><em id='it27456'
 >name_1</em></code>)
          ...
-         (<code id='code27441'
-><em id='it27440'
->id_n</em></code> <code id='code27443'
-><em id='it27442'
+         (<code id='code27459'
+><em id='it27458'
+>id_n</em></code> <code id='code27461'
+><em id='it27460'
 >name_n</em></code>)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Bigloo creates the following functions:<br/><br/><ul class="itemize" id='itemize27498'
+Bigloo creates the following functions:<br/><br/><ul class="itemize" id='itemize27516'
 ><li>Creators: 
-<center id='center27463'
+<center id='center27481'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27461'
->(<code id='code27450'
-><em id='it27449'
->enum</em></code>-<code id='code27452'
-><em id='it27451'
->id_1</em></code>::<code id='code27454'
-><em id='it27453'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27479'
+>(<code id='code27468'
+><em id='it27467'
+>enum</em></code>-<code id='code27470'
+><em id='it27469'
+>id_1</em></code>::<code id='code27472'
+><em id='it27471'
 >enum</em></code>)
 ...
-(<code id='code27456'
-><em id='it27455'
->enum</em></code>-<code id='code27458'
-><em id='it27457'
->id_n</em></code>::<code id='code27460'
-><em id='it27459'
+(<code id='code27474'
+><em id='it27473'
+>enum</em></code>-<code id='code27476'
+><em id='it27475'
+>id_n</em></code>::<code id='code27478'
+><em id='it27477'
 >enum</em></code>)
 </pre>
 </td></tr>
 </tbody></table></center>
-These functions create <code id='code27465'
-><em id='it27464'
+These functions create <code id='code27483'
+><em id='it27482'
 >enum</em></code> values.<br/><br/></li>
 <li>A type checker: 
-<center id='center27476'
+<center id='center27494'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27474'
->(<code id='code27469'
-><em id='it27468'
->enum</em></code>?<font color="#00cf00"><strong id='bold35007'
->::bool</strong></font> <code id='code27471'
-><em id='it27470'
->obj</em></code><font color="#00cf00"><strong id='bold35009'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27492'
+>(<code id='code27487'
+><em id='it27486'
+>enum</em></code>?<font color="#00cf00"><strong id='bold35025'
+>::bool</strong></font> <code id='code27489'
+><em id='it27488'
+>obj</em></code><font color="#00cf00"><strong id='bold35027'
 >::obj</strong></font>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27477'
->#t</code> if the argument <code id='code27479'
-><em id='it27478'
+This function returns <code id='code27495'
+>#t</code> if the argument <code id='code27497'
+><em id='it27496'
 >obj</em></code> is of type 
-<code id='code27481'
-><em id='it27480'
->enum</em></code> and <code id='code27482'
+<code id='code27499'
+><em id='it27498'
+>enum</em></code> and <code id='code27500'
 >#f</code> otherwise.<br/><br/></li>
 <li>An equality checker: 
-<center id='center27494'
+<center id='center27512'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27492'
->(=<code id='code27486'
-><em id='it27485'
->enum</em></code>?<font color="#00cf00"><strong id='bold35011'
->::bool</strong></font> ::<code id='code27488'
-><em id='it27487'
->enum</em></code> ::<code id='code27490'
-><em id='it27489'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27510'
+>(=<code id='code27504'
+><em id='it27503'
+>enum</em></code>?<font color="#00cf00"><strong id='bold35029'
+>::bool</strong></font> ::<code id='code27506'
+><em id='it27505'
+>enum</em></code> ::<code id='code27508'
+><em id='it27507'
 >enum</em></code>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27495'
->#t</code> if the arguments are equal and <code id='code27496'
+This function returns <code id='code27513'
+>#t</code> if the arguments are equal and <code id='code27514'
 >#f</code> otherwise.
 </li>
 </ul>
-Here is an example of Scheme code using <code id='code27500'
-><em id='it27499'
->enum</em></code> type.<br/><br/><center id='center27514'
+Here is an example of Scheme code using <code id='code27518'
+><em id='it27517'
+>enum</em></code> type.<br/><br/><center id='center27532'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27512'
->(<font color="#1919af"><strong id='bold35013'
->module</strong></font> <font color="#1919af"><strong id='bold35015'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27530'
+>(<font color="#1919af"><strong id='bold35031'
+>module</strong></font> <font color="#1919af"><strong id='bold35033'
 >foo</strong></font>
-   (<strong id='bold35017'
+   (<strong id='bold35035'
 >extern</strong>
-    (<strong id='bold35018'
+    (<strong id='bold35036'
 >type</strong> gizmo
           (enum (titi <font color="red">&quot;titi&quot;</font>)
                 (tutu <font color="red">&quot;tutu&quot;</font>)
                 (tata <font color="red">&quot;tata&quot;</font>))
-          <font color="red">&quot;enum toto&quot;</font>)))<br/><br/>(<strong id='bold35023'
+          <font color="red">&quot;enum toto&quot;</font>)))<br/><br/>(<strong id='bold35041'
 >let</strong> ((v1 (gizmo-titi))
       (v2 (gizmo-tutu)))
    (print (=gizmo? v1 v2)))
@@ -1466,123 +1466,123 @@ Here is an example of Scheme code using <code id='code27500'
 <a name="C-opaques"></a>
 <div class="subsubsection-atitle"><h4><font color="#8381de">27.1.6.8 C opaques</font>
 </h4></div><div class="subsubsection">
-<a name="C-opaques" class="mark"></a><a name="g27515" class="mark"></a>This form defines <code id='code27517'
->opaque</code> types.<br/><br/><center id='center27522'
+<a name="C-opaques" class="mark"></a><a name="g27533" class="mark"></a>This form defines <code id='code27535'
+>opaque</code> types.<br/><br/><center id='center27540'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27520'
->&lt;opaque-type&gt; ==&gt; <code id='code27519'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27538'
+>&lt;opaque-type&gt; ==&gt; <code id='code27537'
 >(opaque)</code>
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Let us suppose the type:
-<center id='center27528'
+<center id='center27546'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27526'
->(<strong id='bold35024'
->type</strong> <code id='code27524'
-><em id='it27523'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27544'
+>(<strong id='bold35042'
+>type</strong> <code id='code27542'
+><em id='it27541'
 >opa</em></code> (opaque) ...)
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Bigloo creates the following functions:
-<ul class="itemize" id='itemize27559'
+<ul class="itemize" id='itemize27577'
 ><li>A type checker: 
-<center id='center27537'
+<center id='center27555'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27535'
->(<code id='code27530'
-><em id='it27529'
->opa</em></code>?<font color="#00cf00"><strong id='bold35025'
->::bool</strong></font> <code id='code27532'
-><em id='it27531'
->obj</em></code><font color="#00cf00"><strong id='bold35027'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27553'
+>(<code id='code27548'
+><em id='it27547'
+>opa</em></code>?<font color="#00cf00"><strong id='bold35043'
+>::bool</strong></font> <code id='code27550'
+><em id='it27549'
+>obj</em></code><font color="#00cf00"><strong id='bold35045'
 >::obj</strong></font>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27538'
->#t</code> if the argument <code id='code27540'
-><em id='it27539'
+This function returns <code id='code27556'
+>#t</code> if the argument <code id='code27558'
+><em id='it27557'
 >obj</em></code> is of type 
-<code id='code27542'
-><em id='it27541'
->opa</em></code> and <code id='code27543'
+<code id='code27560'
+><em id='it27559'
+>opa</em></code> and <code id='code27561'
 >#f</code> otherwise.<br/><br/></li>
 <li>An equality checker: 
-<center id='center27555'
+<center id='center27573'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27553'
->(=<code id='code27547'
-><em id='it27546'
->opa</em></code>?<font color="#00cf00"><strong id='bold35029'
->::bool</strong></font> ::<code id='code27549'
-><em id='it27548'
->opa</em></code> ::<code id='code27551'
-><em id='it27550'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27571'
+>(=<code id='code27565'
+><em id='it27564'
+>opa</em></code>?<font color="#00cf00"><strong id='bold35047'
+>::bool</strong></font> ::<code id='code27567'
+><em id='it27566'
+>opa</em></code> ::<code id='code27569'
+><em id='it27568'
 >opa</em></code>)
 </pre>
 </td></tr>
 </tbody></table></center>
-This function returns <code id='code27556'
+This function returns <code id='code27574'
 >#t</code> if the arguments 
-are equal and <code id='code27557'
+are equal and <code id='code27575'
 >#f</code> otherwise.
 </li>
 </ul>
 Opaque types are relevant when a C value must transit via a Scheme function
 from a C function to another C function. The value can't be used in Scheme
 because no accessors are defined over that type it can only be send back
-to a C function.<br/><br/>Here is an example of Scheme code using <code id='code27562'
-><em id='it27561'
->opaque</em></code> type.<br/><br/><center id='center27594'
+to a C function.<br/><br/>Here is an example of Scheme code using <code id='code27580'
+><em id='it27579'
+>opaque</em></code> type.<br/><br/><center id='center27612'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27592'
->(<font color="#1919af"><strong id='bold35031'
->module</strong></font> <font color="#1919af"><strong id='bold35033'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27610'
+>(<font color="#1919af"><strong id='bold35049'
+>module</strong></font> <font color="#1919af"><strong id='bold35051'
 >foo</strong></font>
-   (<strong id='bold35035'
->extern</strong> (<strong id='bold35036'
+   (<strong id='bold35053'
+>extern</strong> (<strong id='bold35054'
 >type</strong> filedes (opaque) <font color="red">&quot;FILE *&quot;</font>)
-           (macro _fopen<font color="#00cf00"><strong id='bold35038'
->::filedes</strong></font> (<font color="#00cf00"><strong id='bold35040'
->::string</strong></font> <font color="#00cf00"><strong id='bold35042'
+           (macro _fopen<font color="#00cf00"><strong id='bold35056'
+>::filedes</strong></font> (<font color="#00cf00"><strong id='bold35058'
+>::string</strong></font> <font color="#00cf00"><strong id='bold35060'
 >::string</strong></font>) <font color="red">&quot;fopen&quot;</font>)
-           (_fgetc<font color="#00cf00"><strong id='bold35045'
->::int</strong></font> (<font color="#00cf00"><strong id='bold35047'
+           (_fgetc<font color="#00cf00"><strong id='bold35063'
+>::int</strong></font> (<font color="#00cf00"><strong id='bold35065'
 >::filedes</strong></font>) <font color="red">&quot;fgetc&quot;</font>)
-           (_fclose (<font color="#00cf00"><strong id='bold35050'
+           (_fclose (<font color="#00cf00"><strong id='bold35068'
 >::filedes</strong></font>) <font color="red">&quot;fclose&quot;</font>))
-   (<font color="#1919af"><strong id='bold35053'
->export</strong></font> (<font color="#1919af"><strong id='bold35055'
->fopen</strong></font><font color="#00cf00"><strong id='bold35057'
->::filedes</strong></font> <font color="#00cf00"><strong id='bold35059'
->::bstring</strong></font> <font color="#00cf00"><strong id='bold35061'
+   (<font color="#1919af"><strong id='bold35071'
+>export</strong></font> (<font color="#1919af"><strong id='bold35073'
+>fopen</strong></font><font color="#00cf00"><strong id='bold35075'
+>::filedes</strong></font> <font color="#00cf00"><strong id='bold35077'
+>::bstring</strong></font> <font color="#00cf00"><strong id='bold35079'
 >::bstring</strong></font>)
-           (fclose <font color="#00cf00"><strong id='bold35063'
+           (fclose <font color="#00cf00"><strong id='bold35081'
 >::filedes</strong></font>)
-           (fgetc<font color="#00cf00"><strong id='bold35065'
->::char</strong></font> <font color="#00cf00"><strong id='bold35067'
->::filedes</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold35069'
->define</strong></font> (<font color="#6959cf"><strong id='bold35071'
+           (fgetc<font color="#00cf00"><strong id='bold35083'
+>::char</strong></font> <font color="#00cf00"><strong id='bold35085'
+>::filedes</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold35087'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35089'
 >fopen</strong></font> fname mode)
-   (_fopen fname mode))<br/><br/>(<font color="#6959cf"><strong id='bold35073'
->define</strong></font> (<font color="#6959cf"><strong id='bold35075'
+   (_fopen fname mode))<br/><br/>(<font color="#6959cf"><strong id='bold35091'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35093'
 >fclose</strong></font> filedes)
-   (_fclose filedes))<br/><br/>(<font color="#6959cf"><strong id='bold35077'
->define</strong></font> (<font color="#6959cf"><strong id='bold35079'
+   (_fclose filedes))<br/><br/>(<font color="#6959cf"><strong id='bold35095'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35097'
 >fgetc</strong></font> filedes)
    (integer-&gt;char (_fgetc filedes)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-<em id='emph27595'
+<em id='emph27613'
 >Note: </em> To illustrate the default type compilation of extern function,
-we have voluntary introduced an incomplete declaration for the <code id='code27596'
+we have voluntary introduced an incomplete declaration for the <code id='code27614'
 >fclose</code>
 function. This will make Bigloo to produce a warning when compiling that
 module.<br/><br/></div>
@@ -1593,53 +1593,53 @@ module.<br/><br/></div>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">27.2 The very dangerous ``pragma'' Bigloo special forms</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="The-very-dangerous-pragma-Bigloo-special-forms" class="mark"></a><a name="g27598" class="mark"></a>
+<a name="The-very-dangerous-pragma-Bigloo-special-forms" class="mark"></a><a name="g27616" class="mark"></a>
 Bigloo has a special form which allows the inclusion of C text
-into the produced code. It is <em id='emph27600'
+into the produced code. It is <em id='emph27618'
 >only</em> applicable to the C back-end. 
 In particular, the JVM back-end (see Chapter <a href="bigloo-29.html#Java-Interface" class="inbound">Java Interface</a>) does
 not support it.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27603" class="mark"></a><a name="pragma::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27609" align="left" colspan="1"><strong id='bold27605'
->pragma::</strong><em id='it27608'
-><code id='code27607'
-><em id='it27606'
->ident</em></code> string [args]</em></td><td id="tc27610" align="right" colspan="1">bigloo syntax</td></tr>
-</tbody></table>
-<a name="g27614" class="mark"></a><a name="free-pragma::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27620" align="left" colspan="1"><strong id='bold27616'
->free-pragma::</strong><em id='it27619'
-><code id='code27618'
-><em id='it27617'
->ident</em></code> string [args]</em></td><td id="tc27621" align="right" colspan="1">bigloo syntax</td></tr>
-</tbody></table>
-This force Bigloo to include <code id='code27625'
+<tr><td><a name="g27621" class="mark"></a><a name="pragma::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27627" align="left" colspan="1"><strong id='bold27623'
+>pragma::</strong><em id='it27626'
+><code id='code27625'
 ><em id='it27624'
+>ident</em></code> string [args]</em></td><td id="tc27628" align="right" colspan="1">bigloo syntax</td></tr>
+</tbody></table>
+<a name="g27632" class="mark"></a><a name="free-pragma::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27638" align="left" colspan="1"><strong id='bold27634'
+>free-pragma::</strong><em id='it27637'
+><code id='code27636'
+><em id='it27635'
+>ident</em></code> string [args]</em></td><td id="tc27639" align="right" colspan="1">bigloo syntax</td></tr>
+</tbody></table>
+This force Bigloo to include <code id='code27643'
+><em id='it27642'
 >string</em></code> in the produced C code as a
 regular C fragment of code. This form must not be used without an in depth
 understanding of Bigloo C code production; with unskilled use, the
-produced C file may be unacceptable to the C compiler.<br/><br/>Values can be passed to a <code id='code27627'
+produced C file may be unacceptable to the C compiler.<br/><br/>Values can be passed to a <code id='code27645'
 >pragma</code> form, being
-referenced in <code id='code27629'
-><em id='it27628'
->string</em></code> by expressions of the form <code id='code27632'
->$<code id='code27631'
-><em id='it27630'
+referenced in <code id='code27647'
+><em id='it27646'
+>string</em></code> by expressions of the form <code id='code27650'
+>$<code id='code27649'
+><em id='it27648'
 >number</em></code></code>.
 Such expression are replaced by the corresponding
-values, the number of referenced values in <code id='code27634'
-><em id='it27633'
+values, the number of referenced values in <code id='code27652'
+><em id='it27651'
 >string</em></code>
 being exactly the number of values provided. Here is an example
-of <code id='code27635'
->pragma</code> usage:<br/><br/><center id='center27643'
+of <code id='code27653'
+>pragma</code> usage:<br/><br/><center id='center27661'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27641'
->(<font color="#6959cf"><strong id='bold35081'
->define</strong></font> (<font color="#6959cf"><strong id='bold35083'
->fibo</strong></font> x<font color="#00cf00"><strong id='bold35085'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27659'
+>(<font color="#6959cf"><strong id='bold35099'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35101'
+>fibo</strong></font> x<font color="#00cf00"><strong id='bold35103'
 >::long</strong></font>)
-   (<strong id='bold35087'
+   (<strong id='bold35105'
 >pragma</strong> <font color="red">&quot;printf( \&quot;fib(%d):%d\\n\&quot;, $1, $2 );&quot;</font> 
            x 
            (fib x)))
@@ -1649,22 +1649,22 @@ of <code id='code27635'
 
 Arguments provided to a pragma form are not converted during compilation.
 Hence, pragma arguments can be of any types, including, foreign types.<br/><br/>A pragma result type can be specified using the notation 
-<code id='code27647'
->pragma::<code id='code27646'
-><em id='it27645'
->name</em></code></code> where the default type is <code id='code27648'
+<code id='code27665'
+>pragma::<code id='code27664'
+><em id='it27663'
+>name</em></code></code> where the default type is <code id='code27666'
 >unspecified</code>. Then,
-for instance, the expression <code id='code27649'
+for instance, the expression <code id='code27667'
 >(pragma::bool &quot;$1 == 0&quot; x)</code> will
-be considered to be returning a object of type <code id='code27650'
+be considered to be returning a object of type <code id='code27668'
 >bool</code> (C boolean) while
-the expression <code id='code27651'
+the expression <code id='code27669'
 >(pragma &quot;$1 == 0&quot; x)</code> will be considered by
-Bigloo to be returning the <code id='code27652'
->unspecified</code> typed object.<br/><br/>The compiler assumes that a <code id='code27654'
+Bigloo to be returning the <code id='code27670'
+>unspecified</code> typed object.<br/><br/>The compiler assumes that a <code id='code27672'
 >pragma</code> forms operates a side effects
 and that it writes into its parameters. This assumption no long holds
-with <code id='code27655'
+with <code id='code27673'
 >free-pragma</code>. This is the only difference between the two
 forms.
 </td></tr>
@@ -1675,91 +1675,91 @@ forms.
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">27.3 Name mangling</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Name-mangling" class="mark"></a><a name="g27658" class="mark"></a>
+<a name="Name-mangling" class="mark"></a><a name="g27676" class="mark"></a>
 In order to avoid name clashes, Bigloo uses name mangling when compiling to
 C or to Jvm. The name mangling for a Scheme identifier may be overridden
-by the means of an extern <code id='code27660'
+by the means of an extern <code id='code27678'
 >export</code> clause 
 (see Section <a href="bigloo-28.html#Exporting-a-Scheme-variable" class="inbound">Exporting a Scheme variable</a>).<br/><br/>Four public functions may be used to mangle and to demangle
 Scheme identifiers:<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27664" class="mark"></a><a name="bigloo-mangle" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27668" align="left" colspan="1"><strong id='bold27666'
->bigloo-mangle</strong><em id='it27667'
-> string</em></td><td id="tc27669" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g27682" class="mark"></a><a name="bigloo-mangle" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27686" align="left" colspan="1"><strong id='bold27684'
+>bigloo-mangle</strong><em id='it27685'
+> string</em></td><td id="tc27687" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Mangle the identifier <code id='code27673'
-><em id='it27672'
+Mangle the identifier <code id='code27691'
+><em id='it27690'
 >string</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27677" class="mark"></a><a name="bigloo-module-mangle" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27681" align="left" colspan="1"><strong id='bold27679'
->bigloo-module-mangle</strong><em id='it27680'
-> string1 string2</em></td><td id="tc27682" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g27695" class="mark"></a><a name="bigloo-module-mangle" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27699" align="left" colspan="1"><strong id='bold27697'
+>bigloo-module-mangle</strong><em id='it27698'
+> string1 string2</em></td><td id="tc27700" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Mangle the identifier <code id='code27686'
-><em id='it27685'
->string1</em></code> that belongs to module <code id='code27688'
-><em id='it27687'
+Mangle the identifier <code id='code27704'
+><em id='it27703'
+>string1</em></code> that belongs to module <code id='code27706'
+><em id='it27705'
 >string2</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27692" class="mark"></a><a name="bigloo-mangled?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27696" align="left" colspan="1"><strong id='bold27694'
->bigloo-mangled?</strong><em id='it27695'
-> string</em></td><td id="tc27697" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g27710" class="mark"></a><a name="bigloo-mangled?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27714" align="left" colspan="1"><strong id='bold27712'
+>bigloo-mangled?</strong><em id='it27713'
+> string</em></td><td id="tc27715" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns <code id='code27700'
->#t</code> if <code id='code27702'
-><em id='it27701'
->string</em></code> has been computed by the <code id='code27703'
+Returns <code id='code27718'
+>#t</code> if <code id='code27720'
+><em id='it27719'
+>string</em></code> has been computed by the <code id='code27721'
 >bigloo-mangle</code>
-or <code id='code27704'
+or <code id='code27722'
 >bigloo-module-mangle</code> function.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27708" class="mark"></a><a name="bigloo-class-mangled?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27712" align="left" colspan="1"><strong id='bold27710'
->bigloo-class-mangled?</strong><em id='it27711'
-> string</em></td><td id="tc27713" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g27726" class="mark"></a><a name="bigloo-class-mangled?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27730" align="left" colspan="1"><strong id='bold27728'
+>bigloo-class-mangled?</strong><em id='it27729'
+> string</em></td><td id="tc27731" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns <code id='code27716'
->#t</code> if <code id='code27718'
-><em id='it27717'
+Returns <code id='code27734'
+>#t</code> if <code id='code27736'
+><em id='it27735'
 >string</em></code> is a mangled name of a Bigloo class.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27722" class="mark"></a><a name="bigloo-need-mangling" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27726" align="left" colspan="1"><strong id='bold27724'
->bigloo-need-mangling</strong><em id='it27725'
-> string</em></td><td id="tc27727" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g27740" class="mark"></a><a name="bigloo-need-mangling" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27744" align="left" colspan="1"><strong id='bold27742'
+>bigloo-need-mangling</strong><em id='it27743'
+> string</em></td><td id="tc27745" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns <code id='code27730'
->#t</code> if <code id='code27732'
-><em id='it27731'
+Returns <code id='code27748'
+>#t</code> if <code id='code27750'
+><em id='it27749'
 >string</em></code> requires name mangling because it
 is not a C or Jvm valid identifier.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27736" class="mark"></a><a name="bigloo-demangle" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27740" align="left" colspan="1"><strong id='bold27738'
->bigloo-demangle</strong><em id='it27739'
-> string</em></td><td id="tc27741" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g27754" class="mark"></a><a name="bigloo-demangle" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27758" align="left" colspan="1"><strong id='bold27756'
+>bigloo-demangle</strong><em id='it27757'
+> string</em></td><td id="tc27759" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Demangle previously mangled identifiers:<br/><br/><center id='center27753'
+Demangle previously mangled identifiers:<br/><br/><center id='center27771'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27751'
->(<strong id='bold35089'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27769'
+>(<strong id='bold35107'
 >let</strong> ((id <font color="red">&quot;foo!&quot;</font>)
-      (<font color="#1919af"><strong id='bold35091'
->module</strong></font> <font color="red">&quot;a-module&quot;</font><font color="#1919af"><strong id='bold35094'
+      (<font color="#1919af"><strong id='bold35109'
+>module</strong></font> <font color="red">&quot;a-module&quot;</font><font color="#1919af"><strong id='bold35112'
 >)</strong></font>)
-   (<strong id='bold35096'
+   (<strong id='bold35114'
 >let</strong> ((mangled (bigloo-module-mangle id module)))
       (multiple-value-bind (new-id new-module)
          (bigloo-demangle mangled)
@@ -1771,10 +1771,10 @@ Demangle previously mangled identifiers:<br/><br/><center id='center27753'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g27757" class="mark"></a><a name="bigloo-class-demangle" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc27761" align="left" colspan="1"><strong id='bold27759'
->bigloo-class-demangle</strong><em id='it27760'
-> string</em></td><td id="tc27762" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g27775" class="mark"></a><a name="bigloo-class-demangle" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc27779" align="left" colspan="1"><strong id='bold27777'
+>bigloo-class-demangle</strong><em id='it27778'
+> string</em></td><td id="tc27780" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Demangle previously mangled class identifier.
 </td></tr>
@@ -1785,32 +1785,32 @@ Demangle previously mangled class identifier.
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">27.4 Embedded Bigloo applications</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Embedded-Bigloo-applications" class="mark"></a><a name="g27767" class="mark"></a>
+<a name="Embedded-Bigloo-applications" class="mark"></a><a name="g27785" class="mark"></a>
 It is possible to design and realize embedded Bigloo
 applications. This facility is useful for adding a new Scheme part
 to an already existing C program. The C part of the program has only
 to enter the Bigloo initialization, hence, it can call any
-Bigloo function.<br/><br/>Normally, Bigloo creates an initialization function called <code id='code27770'
+Bigloo function.<br/><br/>Normally, Bigloo creates an initialization function called <code id='code27788'
 >
-main</code> when it reads a <code id='code27771'
+main</code> when it reads a <code id='code27789'
 >main</code> module clause. To use an
 embedded Bigloo program, such an initialization function would have to
 be created but with a different name. Changing the name can be
 be done using the following Bigloo option: 
-<code id='code27774'
->-copt &quot;-DBIGLOO_MAIN=&lt;<code id='code27773'
-><em id='it27772'
+<code id='code27792'
+>-copt &quot;-DBIGLOO_MAIN=&lt;<code id='code27791'
+><em id='it27790'
 >new-name</em></code>&gt;&quot;</code>. To prevent exit from the
-program after &lt;<code id='code27776'
-><em id='it27775'
+program after &lt;<code id='code27794'
+><em id='it27793'
 >new-name</em></code>&gt; is executed, the
 following Bigloo option must be used: 
-<code id='code27777'
+<code id='code27795'
 >-copt &quot;-DBIGLOO_EXIT='BUNSPEC,'&quot;</code>.<br/><br/>A very important part of designing embedded Bigloo programs is
 being sure that all used Bigloo modules are correctly
 initialized and the normal way to initialize them is to use 
-<code id='code27779'
->with</code> clauses in the module which contains the <code id='code27780'
+<code id='code27797'
+>with</code> clauses in the module which contains the <code id='code27798'
 >main</code>
 clause.<br/><br/>An example of an embedded program can be found in the distribution's
 examples directory.<br/><br/></div><br>
@@ -1819,60 +1819,60 @@ examples directory.<br/><br/></div><br>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">27.5 Using C bindings within the interpreter</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Using-C-bindings-within-the-interpreter" class="mark"></a><a name="g27783" class="mark"></a>
+<a name="Using-C-bindings-within-the-interpreter" class="mark"></a><a name="g27801" class="mark"></a>
 To be able to get access to foreign functions within the Bigloo
 interpreter, some extra measurements have to be taken. The foreign
 functions have to be present in the interpreter binary, which means
 you have to compile a custom interpreter. Fortunately, this is easy.
 What has to be done is to wrap the foreign functions within Scheme and
-make an interpreter module.<br/><br/>Let us consider an example where a C function <code id='code27786'
+make an interpreter module.<br/><br/>Let us consider an example where a C function <code id='code27804'
 >get_system_time</code>
-returning and <code id='code27787'
+returning and <code id='code27805'
 >int</code> is used in an interpreter. (When linking, be 
-sure to add the <code id='code27788'
->.o</code> file containing the <code id='code27789'
->get_system_time</code>.)<br/><br/>The <code id='code27791'
->ffi-interpreter.scm</code> file:<br/><br/><center id='center27802'
+sure to add the <code id='code27806'
+>.o</code> file containing the <code id='code27807'
+>get_system_time</code>.)<br/><br/>The <code id='code27809'
+>ffi-interpreter.scm</code> file:<br/><br/><center id='center27820'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27800'
->(<font color="#1919af"><strong id='bold35097'
->module</strong></font> <font color="#1919af"><strong id='bold35099'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27818'
+>(<font color="#1919af"><strong id='bold35115'
+>module</strong></font> <font color="#1919af"><strong id='bold35117'
 >ExtendendInterpreter</strong></font>
-   (<font color="#1919af"><strong id='bold35101'
->import</strong></font> (<font color="#1919af"><strong id='bold35103'
+   (<font color="#1919af"><strong id='bold35119'
+>import</strong></font> (<font color="#1919af"><strong id='bold35121'
 >wrapper</strong></font> <font color="red">&quot;wrapper.scm&quot;</font>))
-   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold35106'
->define</strong></font> (<font color="#6959cf"><strong id='bold35108'
+   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold35124'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35126'
 >main</strong></font> argv)
    (repl))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The <code id='code27803'
->wrapper.scm</code> file:<br/><br/><center id='center27816'
+The <code id='code27821'
+>wrapper.scm</code> file:<br/><br/><center id='center27834'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27814'
->(<font color="#1919af"><strong id='bold35110'
->module</strong></font> <font color="#1919af"><strong id='bold35112'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog27832'
+>(<font color="#1919af"><strong id='bold35128'
+>module</strong></font> <font color="#1919af"><strong id='bold35130'
 >wrapper</strong></font>
-   (<strong id='bold35114'
->extern</strong> (macro %get-system-time<font color="#00cf00"><strong id='bold35115'
+   (<strong id='bold35132'
+>extern</strong> (macro %get-system-time<font color="#00cf00"><strong id='bold35133'
 >::int</strong></font> () <font color="red">&quot;get_system_time&quot;</font>))
-   (<font color="#1919af"><strong id='bold35118'
->export</strong></font> (<font color="#1919af"><strong id='bold35120'
+   (<font color="#1919af"><strong id='bold35136'
+>export</strong></font> (<font color="#1919af"><strong id='bold35138'
 >get-system-time</strong></font>))
-   (eval (export-exports))<br/><br/>(<font color="#6959cf"><strong id='bold35122'
->define</strong></font> (<font color="#6959cf"><strong id='bold35124'
+   (eval (export-exports))<br/><br/>(<font color="#6959cf"><strong id='bold35140'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35142'
 >get-system-time</strong></font>)
   (%get-system-time))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Compile and link your application with something like:<br/><br/><center id='center27820'
+Compile and link your application with something like:<br/><br/><center id='center27838'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27818'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog27836'
 >cc gettime.c -c gettime.o
 bigloo wrapper.scm -c
 bigloo ffi-interpreter.scm wrapper.o gettime.o
@@ -1885,12 +1885,12 @@ bigloo ffi-interpreter.scm wrapper.o gettime.o
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph35131'
+<p class="ending" id='paragraph35149'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it35129'
->Tue Jan  6 18:53:36 2015</em>.</font></p></div>
+Last update <em id='it35147'
+>Sun Jan 11 21:09:12 2015</em>.</font></p></div>
 </body>
 </html>
