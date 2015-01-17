@@ -260,7 +260,7 @@ bgl_file_size( char *file ) {
    else
       return (BGL_LONG_T)_stati.st_size;
 }
-
+ 
 /*---------------------------------------------------------------------*/
 /*    BGL_LONG_T                                                       */
 /*    bgl_file_uid ...                                                 */
