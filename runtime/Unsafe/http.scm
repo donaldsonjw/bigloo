@@ -3,7 +3,7 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Thu Aug  9 15:02:05 2007                          */
-;*    Last change :  Tue Jan  6 09:29:48 2015 (serrano)                */
+;*    Last change :  Sat Jan 10 14:55:00 2015 (serrano)                */
 ;*    Copyright   :  2007-15 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    Dealing with HTTP requests                                       */
@@ -244,6 +244,7 @@
 			   (caar a) "\";" (cadar a) port)
 			(display-line "Content-Disposition: form-data; name=\""
 			   (car a) "\"" port))
+		    (when (pair? (cddr a)) (display-line (caddr a) port))
 		    (display-line port)
 		    (display-line (cadr a) port)
 		    (loop (cdr args))))))))
@@ -252,10 +253,10 @@
 ;*    generate-http-boundary ...                                       */
 ;*---------------------------------------------------------------------*/
 (define (generate-http-boundary)
-   (let ((s (make-string 42 #\-))
+   (let ((s (make-string 22 #\-))
 	 (chars "0123456789abcdef"))
-      (let loop ((i 30))
-	 (when (<fx i 42)
+      (let loop ((i 2))
+	 (when (<fx i 22)
 	    (let ((num (random 16)))
 	       (string-set! s i (string-ref chars num))
 	       (loop (+fx i 1)))))

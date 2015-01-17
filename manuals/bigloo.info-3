@@ -1049,10 +1049,10 @@ the exhaustive list of Bigloo options and configuration variables:
           default: read
         - *inlining-kfactor* :
           Inlining growth factor
-          default: #<procedure:53ee50.1>
+          default: #<procedure:53f040.1>
         - *inlining-reduce-kfactor* :
           Inlinine growth factor reductor
-          default: #<procedure:53eda0.1>
+          default: #<procedure:53ef90.1>
         - *inlining?* :
           Inlining optimization
           default: #t
@@ -1256,7 +1256,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: ld
         - *pre-processor* :
           An optional function that pre-processes the source file
-          default: #<procedure:53a1f0.1>
+          default: #<procedure:53a3e0.1>
         - *prof-table-name* :
           Bprof translation table file name
           default: "bmon.out"
@@ -2341,7 +2341,7 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * char?:                                 Characters.          (line  14)
 * characters:                            Characters.          (line   6)
 * chdir:                                 Files.               (line  53)
-* chmod:                                 Files.               (line 220)
+* chmod:                                 Files.               (line 223)
 * 'cigloo':                              Automatic extern clauses generation.
                                                               (line   6)
 * circular representation:               Library functions.   (line 715)
@@ -2664,10 +2664,11 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * fast string search:                    Fast search.         (line   6)
 * file handling:                         Files.               (line   6)
 * file->string:                          Library functions.   (line 582)
+* file-access-time:                      Files.               (line 183)
 * file-exists?:                          Files.               (line 129)
-* file-gid:                              Files.               (line 197)
+* file-gid:                              Files.               (line 200)
 * file-gzip?:                            Files.               (line 133)
-* file-mode:                             Files.               (line 201)
+* file-mode:                             Files.               (line 204)
 * file-modification-time:                Files.               (line 182)
 * file-musictag:                         Metadata and Playlist.
                                                               (line  14)
@@ -2678,9 +2679,10 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * file-name-unix-canonicalize!:          Files.               (line  76)
 * file-separator:                        Operating System Interface.
                                                               (line  90)
-* file-size:                             Files.               (line 187)
-* file-type:                             Files.               (line 205)
-* file-uid:                              Files.               (line 196)
+* file-size:                             Files.               (line 190)
+* file-times-set!:                       Files.               (line 184)
+* file-type:                             Files.               (line 208)
+* file-uid:                              Files.               (line 199)
 * filter:                                Control Features.    (line  14)
 * filter!:                               Control Features.    (line  15)
 * filter-map:                            Control Features.    (line  40)

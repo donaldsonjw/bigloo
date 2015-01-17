@@ -4898,9 +4898,12 @@ manipulate Unix filenames.
      dirname is STRING.
 
  -- bigloo procedure: file-modification-time string
-     The date (in second) of the last modification for file STRING.  The
-     number of seconds is represented by a value that may be converted
-     into a date by the means of 'seconds->date' (see *note Date::).
+ -- bigloo procedure: file-access-time string
+ -- bigloo procedure: file-times-set! string atime mtime
+     The date (in second) of the last modification (respec.  access) for
+     file STRING.  The number of seconds is represented by a value that
+     may be converted into a date by the means of 'seconds->date' (see
+     *note Date::).
 
  -- bigloo procedure: file-size string
      Returns the size (in bytes) for file STRING.  The return type is

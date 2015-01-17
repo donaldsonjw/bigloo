@@ -27,22 +27,22 @@
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center35266'
+<br/><center id='center35284'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35256" align="center" colspan="1"><font color="#ffffff"><strong id='bold35254'
+<tr bgcolor="#8381de"><th id="tc35274" align="center" colspan="1"><font color="#ffffff"><strong id='bold35272'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35263" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc35259" align="left" valign="top" colspan="1"><strong id='bold35258'
->top:</strong></td><td id="tc35260" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc35281" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc35277" align="left" valign="top" colspan="1"><strong id='bold35276'
+>top:</strong></td><td id="tc35278" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center35276'
+<br/><br/><center id='center35294'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35270" align="center" colspan="1"><font color="#ffffff"><strong id='bold35268'
+<tr bgcolor="#8381de"><th id="tc35288" align="center" colspan="1"><font color="#ffffff"><strong id='bold35286'
 >Bigloo Libraries</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35273" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc35291" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">29.1</td><td colspan="4" width="100%"><a href="bigloo-30.html#Compiling-and-linking-with-a-library">Compiling and linking with a library</a></td></tr>
  <tr><td valign="top" align="left">29.2</td><td colspan="4" width="100%"><a href="bigloo-30.html#Library-and-inline-functions">Library and inline functions</a></td></tr>
@@ -57,11 +57,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center35286'
+<br/><br/><center id='center35304'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35280" align="center" colspan="1"><font color="#ffffff"><strong id='bold35278'
+<tr bgcolor="#8381de"><th id="tc35298" align="center" colspan="1"><font color="#ffffff"><strong id='bold35296'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35283" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc35301" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -109,17 +109,17 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Bigloo-Libraries" class="mark"></a><a name="g28067" class="mark"></a>
+<a name="Bigloo-Libraries" class="mark"></a><a name="g28085" class="mark"></a>
 Bigloo libraries are collections of global bindings (global variables and
 global functions). Bigloo libraries are built on the top of the host
 operating system (e.g. Unix) libraries. Because Bigloo uses modules, a
 library is not only a bundle of compiled codes and memory locations. A
-Bigloo library is split into several files:<br/><br/><ul class="itemize" id='itemize28076'
-><li>one <em id='emph28070'
+Bigloo library is split into several files:<br/><br/><ul class="itemize" id='itemize28094'
+><li>one <em id='emph28088'
 >heap</em> that describes the variables and functions of the library.
 </li>
 <li>several host library files (safe and unsafe versions of the compilation
-and also <em id='emph28072'
+and also <em id='emph28090'
 >eval libraries</em> that contain the code that binds the
 variables and functions to the evaluator).
 </li>
@@ -129,43 +129,43 @@ variables and functions to the evaluator).
 </li>
 </ul>
 Let's consider, for example, a library that implements the
-<code id='code28077'
+<code id='code28095'
 >format</code> Common Lisp facility. Let's suppose we name this library
-<code id='code28078'
+<code id='code28096'
 >bformat</code> and that the library number is
-<code id='code28079'
+<code id='code28097'
 >1.0</code>. Using a Unix machine, the Bigloo library will consist of
-the following files:<br/><br/><ul class="itemize" id='itemize28103'
-><li><code id='code28081'
+the following files:<br/><br/><ul class="itemize" id='itemize28121'
+><li><code id='code28099'
 >bformat.heap</code>: the heap file.
 </li>
-<li><code id='code28083'
+<li><code id='code28101'
 >bformat.init</code>: the initialization file.
 </li>
-<li><code id='code28085'
->libbformat_s-1.0.a</code>, <code id='code28086'
+<li><code id='code28103'
+>libbformat_s-1.0.a</code>, <code id='code28104'
 >libbformat_s-1.0.so</code>, 
- <code id='code28087'
->libbformat_u-1.0.a</code>, <code id='code28088'
+ <code id='code28105'
+>libbformat_u-1.0.a</code>, <code id='code28106'
 >libbformat_u-1.0.so</code>,
- <code id='code28089'
->libbformat_eu-1.0.so</code>, and <code id='code28090'
+ <code id='code28107'
+>libbformat_eu-1.0.so</code>, and <code id='code28108'
 >libbformat_es-1.0.so</code>::
-the Unix library files. The file names with a <code id='code28091'
+the Unix library files. The file names with a <code id='code28109'
 >_u</code> are libraries compiled 
-in <em id='emph28092'
->unsafe</em> and <em id='emph28093'
+in <em id='emph28110'
+>unsafe</em> and <em id='emph28111'
 >optimized</em> mode. By convention the library using
-the <code id='code28094'
->_s</code> suffix are <em id='emph28095'
->safe</em> libraries, <code id='code28096'
+the <code id='code28112'
+>_s</code> suffix are <em id='emph28113'
+>safe</em> libraries, <code id='code28114'
 >_p</code> are profiling
-libraries, <code id='code28097'
->_d</code> debug libraries, <code id='code28098'
->_es</code> and <code id='code28099'
+libraries, <code id='code28115'
+>_d</code> debug libraries, <code id='code28116'
+>_es</code> and <code id='code28117'
 >_eu</code> eval libraries.
 </li>
-<li><code id='code28101'
+<li><code id='code28119'
 >bformat.h</code>: an include file.
 </li>
 </ul>
@@ -174,37 +174,37 @@ libraries, <code id='code28097'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">29.1 Compiling and linking with a library</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g28104" class="mark"></a>From the user standpoint, using a library can be made two ways:<br/><br/><ul class="itemize" id='itemize28130'
-><li>Using the Bigloo <code id='code28109'
->-library <code id='code28108'
-><em id='it28107'
+<a name="g28122" class="mark"></a>From the user standpoint, using a library can be made two ways:<br/><br/><ul class="itemize" id='itemize28148'
+><li>Using the Bigloo <code id='code28127'
+>-library <code id='code28126'
+><em id='it28125'
 >lib-name</em></code></code> option where 
-<code id='code28111'
-><em id='it28110'
+<code id='code28129'
+><em id='it28128'
 >lib-name</em></code> is the name of the Bigloo library (not the name of one 
 of the Unix files implementing the library). The name of the library
-must be <em id='emph28112'
->lower case</em>. For instance:<br/><br/><center id='center28116'
+must be <em id='emph28130'
+>lower case</em>. For instance:<br/><br/><center id='center28134'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28114'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28132'
 >$ bigloo foo.scm -library bformat
 </pre>
 </td></tr>
 </tbody></table></center>
 
 </li>
-<li>Using the module clause <code id='code28118'
+<li>Using the module clause <code id='code28136'
 >library</code>. This second solution avoids
 using a special compilation option. For instance, this module will
-automatically compile and link with the <code id='code28119'
->bformat</code> library:<br/><br/><center id='center28128'
+automatically compile and link with the <code id='code28137'
+>bformat</code> library:<br/><br/><center id='center28146'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28126'
->(<font color="#1919af"><strong id='bold35287'
->module</strong></font> <font color="#1919af"><strong id='bold35289'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28144'
+>(<font color="#1919af"><strong id='bold35305'
+>module</strong></font> <font color="#1919af"><strong id='bold35307'
 >foo</strong></font>
-   (<font color="#1919af"><strong id='bold35291'
->library</strong></font> <font color="#1919af"><strong id='bold35293'
+   (<font color="#1919af"><strong id='bold35309'
+>library</strong></font> <font color="#1919af"><strong id='bold35311'
 >bformat</strong></font>))<br/><br/>...
 (format ...)
 </pre>
@@ -212,29 +212,29 @@ automatically compile and link with the <code id='code28119'
 </tbody></table></center>
 </li>
 </ul>
-When a Bigloo library <code id='code28133'
-><code id='code28132'
-><em id='it28131'
+When a Bigloo library <code id='code28151'
+><code id='code28150'
+><em id='it28149'
 >lib</em></code></code> is used, Bigloo automatically
-searches for a file called <code id='code28136'
-><code id='code28135'
-><em id='it28134'
+searches for a file called <code id='code28154'
+><code id='code28153'
+><em id='it28152'
 >lib</em></code>.init</code> (the &quot;init file&quot;).
-If such a file exits, it is loaded at <em id='emph28137'
+If such a file exits, it is loaded at <em id='emph28155'
 >compile-time</em>. For instance, the init file
 may be used to specify compilation flags or to define macros used by
 the compiler. The initialization file may affect any of the global
 parameters of the Bigloo compiler.  For instance, a Bigloo library
 supporting SSL connections would likely need a native
-library. Setting the compiler variable <code id='code28138'
+library. Setting the compiler variable <code id='code28156'
 >*ld-post-options*</code> has
 this effect. For instance, one may define an initialization file such
-as:<br/><br/><center id='center28144'
+as:<br/><br/><center id='center28162'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28142'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28160'
 >(cond-expand
    (bigloo-compile
-    (<strong id='bold35295'
+    (<strong id='bold35313'
 >set!</strong> *ld-post-options* (string-append <font color="red">&quot;-lssl &quot;</font> *ld-post-options*)))
    (bigloo-eval
     #unspecified))
@@ -242,150 +242,150 @@ as:<br/><br/><center id='center28144'
 </td></tr>
 </tbody></table></center>
 
-When a Bigloo library <code id='code28145'
+When a Bigloo library <code id='code28163'
 >lib</code> is used, the Bigloo linker
 automatically looks at a library to be linked against the
 application. The name of the file containing the library depends on
 the operating system and the back-end used. For instance, under Unix,
-for a library called <em id='emph28146'
+for a library called <em id='emph28164'
 >NAME</em>, the Bigloo linker searches for a
-file called <code id='code28149'
->lib<em id='emph28147'
->NAME</em>_[s|u]-<em id='emph28148'
+file called <code id='code28167'
+>lib<em id='emph28165'
+>NAME</em>_[s|u]-<em id='emph28166'
 >VERSION</em>.a</code> or
-<code id='code28153'
->lib<em id='emph28150'
->NAME</em>_[s|u]-<em id='emph28151'
->VERSION</em>.<em id='emph28152'
+<code id='code28171'
+>lib<em id='emph28168'
+>NAME</em>_[s|u]-<em id='emph28169'
+>VERSION</em>.<em id='emph28170'
 >DYNLIB-SUFFIX</em></code> in the
 compilation linker path when using the native back-end. It searches
-for a file <code id='code28156'
-><em id='emph28154'
->NAME</em>_[s|u]-<em id='emph28155'
+for a file <code id='code28174'
+><em id='emph28172'
+>NAME</em>_[s|u]-<em id='emph28173'
 >VERSION</em>.zip</code> when the JVM
-back-end is used.<br/><br/>This default <em id='emph28158'
+back-end is used.<br/><br/>This default <em id='emph28176'
 >NAME</em> can be overridden in the initialization
-file. The function <code id='code28159'
+file. The function <code id='code28177'
 >declare-library!</code> associates a
 Bigloo library name and a system name. <br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g28162" class="mark"></a><a name="declare-library!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc28166" align="left" colspan="1"><strong id='bold28164'
->declare-library!</strong><em id='it28165'
-> ident [attributes]</em></td><td id="tc28167" align="right" colspan="1">library procedure</td></tr>
+<tr><td><a name="g28180" class="mark"></a><a name="declare-library!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc28184" align="left" colspan="1"><strong id='bold28182'
+>declare-library!</strong><em id='it28183'
+> ident [attributes]</em></td><td id="tc28185" align="right" colspan="1">library procedure</td></tr>
 </tbody></table>
-All the attributes are optional.<br/><br/><ul class="itemize" id='itemize28203'
-><li><code id='code28171'
+All the attributes are optional.<br/><br/><ul class="itemize" id='itemize28221'
+><li><code id='code28189'
 >version:</code> the version number of the library. This defaults
 to the Bigloo version number.
 </li>
-<li><code id='code28173'
+<li><code id='code28191'
 >basename:</code> the base of the filename containing the library.
 This defaults to the library name.
 </li>
-<li><code id='code28175'
+<li><code id='code28193'
 >srfi:</code> a list of symbols denoting the SRFI 0 features implemented
- by this library. Registered SRFIs may be tested by the <code id='code28176'
+ by this library. Registered SRFIs may be tested by the <code id='code28194'
 >cond-expand</code> 
  form (see <a href="bigloo-32.html#SRFIs" class="inbound">SRFIs</a>). This defaults to an empty list.
 </li>
-<li><code id='code28178'
+<li><code id='code28196'
 >dlopen-init:</code> a function to be invoked when the library is 
- dynamically loaded using the function <code id='code28179'
+ dynamically loaded using the function <code id='code28197'
 >dynamic-load</code>. This defaults
-to <code id='code28180'
->#f</code>.
-</li>
-<li><code id='code28182'
->module-init:</code> a module to be initialized when the library is
- loaded. This defaults to <code id='code28183'
->#f</code>.
-</li>
-<li><code id='code28185'
->eval-init:</code> a module to be initialized for binding the library
- exports in the interpreter. This defaults to <code id='code28186'
->#f</code>.
-</li>
-<li><code id='code28188'
->class-init:</code> the JVM or .NET class name containing the module
- to be initialized. This defaults to <code id='code28189'
->#f</code>.
-</li>
-<li><code id='code28191'
->eval-init:</code> the JVM or .NET class name containing the module
- to be initialized for eval. This defaults to <code id='code28192'
->#f</code>.
-</li>
-<li><code id='code28194'
->init:</code> a function to be invoked when a library is loaded.
- This defaults to <code id='code28195'
->#f</code>.
-</li>
-<li><code id='code28197'
->eval:</code> a function to be invoked when a library is loaded by
- the interpreter. This defaults to <code id='code28198'
+to <code id='code28198'
 >#f</code>.
 </li>
 <li><code id='code28200'
+>module-init:</code> a module to be initialized when the library is
+ loaded. This defaults to <code id='code28201'
+>#f</code>.
+</li>
+<li><code id='code28203'
+>eval-init:</code> a module to be initialized for binding the library
+ exports in the interpreter. This defaults to <code id='code28204'
+>#f</code>.
+</li>
+<li><code id='code28206'
+>class-init:</code> the JVM or .NET class name containing the module
+ to be initialized. This defaults to <code id='code28207'
+>#f</code>.
+</li>
+<li><code id='code28209'
+>eval-init:</code> the JVM or .NET class name containing the module
+ to be initialized for eval. This defaults to <code id='code28210'
+>#f</code>.
+</li>
+<li><code id='code28212'
+>init:</code> a function to be invoked when a library is loaded.
+ This defaults to <code id='code28213'
+>#f</code>.
+</li>
+<li><code id='code28215'
 >eval:</code> a function to be invoked when a library is loaded by
- the interpreter. This defaults to <code id='code28201'
+ the interpreter. This defaults to <code id='code28216'
+>#f</code>.
+</li>
+<li><code id='code28218'
+>eval:</code> a function to be invoked when a library is loaded by
+ the interpreter. This defaults to <code id='code28219'
 >#f</code>.
 </li>
 </ul>
-Examples:<br/><br/><ul class="itemize" id='itemize28241'
-><li>The following declares a library named <code id='code28205'
+Examples:<br/><br/><ul class="itemize" id='itemize28259'
+><li>The following declares a library named <code id='code28223'
 >foo</code>. When loaded,
-the Bigloo runtime system will seek file named <code id='code28206'
+the Bigloo runtime system will seek file named <code id='code28224'
 >libfoo_s-3.4a.so</code>, 
-<code id='code28207'
->libfoo_u-3.4a.so</code>, <code id='code28208'
->libfoo_es-3.4a.so</code>, and <code id='code28209'
+<code id='code28225'
+>libfoo_u-3.4a.so</code>, <code id='code28226'
+>libfoo_es-3.4a.so</code>, and <code id='code28227'
 >libfoo_eu-3.4a.so</code>.
-<center id='center28212'
+<center id='center28230'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28210'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28228'
 >(declare-library! 'foo) 
 </pre>
 </td></tr>
 </tbody></table></center>
 
 </li>
-<li>The following declares a library named <code id='code28214'
+<li>The following declares a library named <code id='code28232'
 >pthread</code>. When loaded,
 the Bigloo runtime system will seek a file named
-<code id='code28215'
->libbigloopth_s-1.1a.so</code>, <code id='code28216'
+<code id='code28233'
+>libbigloopth_s-1.1a.so</code>, <code id='code28234'
 >libbigloopth_u-1.1a.so</code>,
-<code id='code28217'
->libbigloopth_es-1.1a.so</code>, <code id='code28218'
+<code id='code28235'
+>libbigloopth_es-1.1a.so</code>, <code id='code28236'
 >libbigloopth_eu-1.1a.so</code>. Once
-the library loaded, the SRFI-0 features <code id='code28219'
+the library loaded, the SRFI-0 features <code id='code28237'
 >pthread</code> and
-<code id='code28220'
+<code id='code28238'
 >srfi-18</code> will be bound. When loading the library, the two
-modules <code id='code28221'
->__pth_thread</code> and <code id='code28222'
+modules <code id='code28239'
+>__pth_thread</code> and <code id='code28240'
 >__pth_makelib</code> will be
 initialized. In the JVM version these modules are compiled in the
-classes <code id='code28223'
+classes <code id='code28241'
 >&quot;bigloo.pthread.pthread&quot;</code> and
-<code id='code28224'
->&quot;bigloo.pthread.make_lib&quot;</code>.<br/><br/><center id='center28239'
+<code id='code28242'
+>&quot;bigloo.pthread.make_lib&quot;</code>.<br/><br/><center id='center28257'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28237'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28255'
 >(declare-library! 'pthread 
-                  <strong id='bold35297'
+                  <strong id='bold35315'
 >:basename</strong> <font color="red">&quot;bigloopth&quot;</font> 
-                  <strong id='bold35300'
+                  <strong id='bold35318'
 >:version</strong> <font color="red">&quot;1.1a&quot;</font>
-                  <strong id='bold35303'
+                  <strong id='bold35321'
 >:srfi</strong> '(pthread srfi-18)
-                  <strong id='bold35305'
+                  <strong id='bold35323'
 >:module-init</strong> '__pth_thread
-                  <strong id='bold35307'
+                  <strong id='bold35325'
 >:module-eval</strong> '__pth_makelib
-                  <strong id='bold35309'
+                  <strong id='bold35327'
 >:class-init</strong> <font color="red">&quot;bigloo.pthread.pthread&quot;</font>
-		  <strong id='bold35312'
+		  <strong id='bold35330'
 >:class-eval</strong> <font color="red">&quot;bigloo.pthread.make_lib&quot;</font>)
 </pre>
 </td></tr>
@@ -395,45 +395,45 @@ classes <code id='code28223'
 </ul>
 </td></tr>
 </tbody></table><br/><br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g28246" class="mark"></a><a name="library-translation-table-add!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc28250" align="left" colspan="1"><strong id='bold28248'
->library-translation-table-add!</strong><em id='it28249'
-> ident name</em></td><td id="tc28251" align="right" colspan="1">library procedure</td></tr>
+<tr><td><a name="g28264" class="mark"></a><a name="library-translation-table-add!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc28268" align="left" colspan="1"><strong id='bold28266'
+>library-translation-table-add!</strong><em id='it28267'
+> ident name</em></td><td id="tc28269" align="right" colspan="1">library procedure</td></tr>
 </tbody></table>
 <table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc28256" align="left" colspan="1"><strong id='bold28254'
->library-translation-table-add!</strong><em id='it28255'
-> ident name version</em></td><td id="tc28257" align="right" colspan="1">library procedure</td></tr>
+<tr><td id="tc28274" align="left" colspan="1"><strong id='bold28272'
+>library-translation-table-add!</strong><em id='it28273'
+> ident name version</em></td><td id="tc28275" align="right" colspan="1">library procedure</td></tr>
 </tbody></table>
 <table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc28262" align="left" colspan="1"><strong id='bold28260'
->library-translation-table-add!</strong><em id='it28261'
-> ident name version :dlopen-init initsym</em></td><td id="tc28263" align="right" colspan="1">library procedure</td></tr>
+<tr><td id="tc28280" align="left" colspan="1"><strong id='bold28278'
+>library-translation-table-add!</strong><em id='it28279'
+> ident name version :dlopen-init initsym</em></td><td id="tc28281" align="right" colspan="1">library procedure</td></tr>
 </tbody></table>
 
-The function <code id='code28266'
+The function <code id='code28284'
 >library-translation-table-add!</code> is obsolete. It should
 no longer be used in new code. It is totally subsumed by
-<code id='code28267'
->declare-library!</code>. The function <code id='code28268'
+<code id='code28285'
+>declare-library!</code>. The function <code id='code28286'
 >library-translation-table-add!</code>
 is still documented for enabling readers to understand old Bigloo source
-code.<br/><br/>This function registers a <code id='code28271'
-><em id='it28270'
->name</em></code> for the library <code id='code28273'
-><em id='it28272'
+code.<br/><br/>This function registers a <code id='code28289'
+><em id='it28288'
+>name</em></code> for the library <code id='code28291'
+><em id='it28290'
 >id</em></code>. An optional
-<code id='code28275'
-><em id='it28274'
->version</em></code> can be specified. The optional named argument <code id='code28276'
+<code id='code28293'
+><em id='it28292'
+>version</em></code> can be specified. The optional named argument <code id='code28294'
 >dlopen-init</code>
-gives the base name of the initialization entry point of a library.<br/><br/>Imagine that we would like to name our <code id='code28278'
+gives the base name of the initialization entry point of a library.<br/><br/>Imagine that we would like to name our <code id='code28296'
 >bformat</code> library
-<code id='code28279'
+<code id='code28297'
 >bigloobformat</code>. This can be achieved by adding the following
-expression in the initialization file.<br/><br/><center id='center28284'
+expression in the initialization file.<br/><br/><center id='center28302'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28282'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28300'
 >(library-translation-table-add! 'bformat <font color="red">&quot;bigloobformat&quot;</font>)
 </pre>
 </td></tr>
@@ -441,31 +441,31 @@ expression in the initialization file.<br/><br/><center id='center28284'
 
 Using this translation, on a Unix platform, the library used during
 the linking will be named:
-<code id='code28285'
+<code id='code28303'
 >libbigloobformat_s-&lt;BIGLOO-VERSION&gt;.a</code>. In order to change the
-<code id='code28286'
->&lt;BIGLOO-VERSION&gt;</code> to another suffix, such as <code id='code28287'
->1.0</code>, one may use:<br/><br/><center id='center28293'
+<code id='code28304'
+>&lt;BIGLOO-VERSION&gt;</code> to another suffix, such as <code id='code28305'
+>1.0</code>, one may use:<br/><br/><center id='center28311'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28291'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28309'
 >(library-translation-table-add! 'bformat <font color="red">&quot;bigloobformat&quot;</font> <font color="red">&quot;1.0&quot;</font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
 In such a case, the library searched will be named
-<code id='code28294'
->libbigloobformat_s-1.0.a</code>.<br/><br/>Specifying a <code id='code28296'
->#f</code> prevents the insertion of any suffix. Hence,<br/><br/><center id='center28301'
+<code id='code28312'
+>libbigloobformat_s-1.0.a</code>.<br/><br/>Specifying a <code id='code28314'
+>#f</code> prevents the insertion of any suffix. Hence,<br/><br/><center id='center28319'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28299'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28317'
 >(library-translation-table-add! 'bformat <font color="red">&quot;bigloobformat&quot;</font> #f)
 </pre>
 </td></tr>
 </tbody></table></center>
 
 instructs the compiler to look at a library named
-<code id='code28302'
+<code id='code28320'
 >libbigloobformat_s.a</code>.<br/><br/></td></tr>
 </tbody></table><br/>
 </div><br>
@@ -474,7 +474,7 @@ instructs the compiler to look at a library named
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">29.2 Library and inline functions</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g28306" class="mark"></a>
+<a name="g28324" class="mark"></a>
 It is illegal for libraries to include inline functions that make use of
 new foreign types. By &quot;new foreign type&quot;, we mean foreign types that are
 defined inside the library. A library may contain inline functions but
@@ -488,134 +488,134 @@ functions that make use of new foreign types.<br/><br/></div><br>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">29.3 library and eval</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g28309" class="mark"></a>
-The function <code id='code28311'
+<a name="g28327" class="mark"></a>
+The function <code id='code28329'
 >library-load</code> loads a library in the interpreter.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g28314" class="mark"></a><a name="library-exists?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc28318" align="left" colspan="1"><strong id='bold28316'
->library-exists?</strong><em id='it28317'
-> ident . path</em></td><td id="tc28319" align="right" colspan="1">library procedure</td></tr>
+<tr><td><a name="g28332" class="mark"></a><a name="library-exists?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc28336" align="left" colspan="1"><strong id='bold28334'
+>library-exists?</strong><em id='it28335'
+> ident . path</em></td><td id="tc28337" align="right" colspan="1">library procedure</td></tr>
 </tbody></table>
-Checks if the library <code id='code28323'
-><em id='it28322'
->ident</em></code> exists for the current back-end.<br/><br/>The regular Bigloo library paths are scanned unless optional <code id='code28326'
-><em id='it28325'
+Checks if the library <code id='code28341'
+><em id='it28340'
+>ident</em></code> exists for the current back-end.<br/><br/>The regular Bigloo library paths are scanned unless optional <code id='code28344'
+><em id='it28343'
 >path</em></code>s
 are sent to the function.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g28330" class="mark"></a><a name="bigloo-library-path" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc28334" align="left" colspan="1"><strong id='bold28332'
->bigloo-library-path</strong><em id='it28333'
-></em></td><td id="tc28335" align="right" colspan="1">library procedure</td></tr>
+<tr><td><a name="g28348" class="mark"></a><a name="bigloo-library-path" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc28352" align="left" colspan="1"><strong id='bold28350'
+>bigloo-library-path</strong><em id='it28351'
+></em></td><td id="tc28353" align="right" colspan="1">library procedure</td></tr>
 </tbody></table>
-<a name="g28339" class="mark"></a><a name="bigloo-library-path-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc28343" align="left" colspan="1"><strong id='bold28341'
->bigloo-library-path-set!</strong><em id='it28342'
-></em></td><td id="tc28344" align="right" colspan="1">library procedure</td></tr>
+<a name="g28357" class="mark"></a><a name="bigloo-library-path-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc28361" align="left" colspan="1"><strong id='bold28359'
+>bigloo-library-path-set!</strong><em id='it28360'
+></em></td><td id="tc28362" align="right" colspan="1">library procedure</td></tr>
 </tbody></table>
 These functions get and set the default path (a list of strings)
 for loading libraries. 
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g28350" class="mark"></a><a name="library-load" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc28354" align="left" colspan="1"><strong id='bold28352'
->library-load</strong><em id='it28353'
-> ident . path</em></td><td id="tc28355" align="right" colspan="1">library procedure</td></tr>
+<tr><td><a name="g28368" class="mark"></a><a name="library-load" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc28372" align="left" colspan="1"><strong id='bold28370'
+>library-load</strong><em id='it28371'
+> ident . path</em></td><td id="tc28373" align="right" colspan="1">library procedure</td></tr>
 </tbody></table>
 Loads a library in the interpreter. In addition to dynamically loading
-the library, this function tries to load the <code id='code28358'
+the library, this function tries to load the <code id='code28376'
 >_es</code> version of the library if it is linked
 against the safe Bigloo library version or the
-<code id='code28359'
+<code id='code28377'
 >_eu</code> version if it is linked against the unsafe
 version of the Bigloo library.<br/><br/>Searches for libraries occur in the regular Bigloo library paths
-unless optional <code id='code28362'
-><em id='it28361'
+unless optional <code id='code28380'
+><em id='it28379'
 >path</em></code>s are sent to the function.<br/><br/>This version may be used for automatically exporting bindings to the
-interpreter. In general, the <code id='code28364'
->_es</code> and <code id='code28365'
+interpreter. In general, the <code id='code28382'
+>_es</code> and <code id='code28383'
 >_eu</code> libraries are
 simple libraries that contain only one module, the module that is used
 to build the heap-file. For instance, let's consider an implementation
 of a library for SSL programming. This library is composed of a single
-implementation module <code id='code28366'
+implementation module <code id='code28384'
 >__ssl_ssl</code>. The library is build using a
-heap file:<br/><br/><center id='center28374'
+heap file:<br/><br/><center id='center28392'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28372'
->(<font color="#1919af"><strong id='bold35319'
->module</strong></font> <font color="#1919af"><strong id='bold35321'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28390'
+>(<font color="#1919af"><strong id='bold35337'
+>module</strong></font> <font color="#1919af"><strong id='bold35339'
 >__ssl_makelib</strong></font>
-   (<font color="#1919af"><strong id='bold35323'
->import</strong></font> <font color="#1919af"><strong id='bold35325'
+   (<font color="#1919af"><strong id='bold35341'
+>import</strong></font> <font color="#1919af"><strong id='bold35343'
 >__ssl_ssl</strong></font>))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Changing this file for:<br/><br/><center id='center28382'
+Changing this file for:<br/><br/><center id='center28400'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28380'
->(<font color="#1919af"><strong id='bold35327'
->module</strong></font> <font color="#1919af"><strong id='bold35329'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28398'
+>(<font color="#1919af"><strong id='bold35345'
+>module</strong></font> <font color="#1919af"><strong id='bold35347'
 >__ssl_makelib</strong></font>
-   (<font color="#1919af"><strong id='bold35331'
->import</strong></font> <font color="#1919af"><strong id='bold35333'
+   (<font color="#1919af"><strong id='bold35349'
+>import</strong></font> <font color="#1919af"><strong id='bold35351'
 >__ssl_ssl</strong></font>)
    (eval   (export-all)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-enables the construction of the <code id='code28383'
->_es</code> and <code id='code28384'
->_eu</code> libraries.<br/><br/>When the system loads a dynamic library, it <em id='emph28386'
+enables the construction of the <code id='code28401'
+>_es</code> and <code id='code28402'
+>_eu</code> libraries.<br/><br/>When the system loads a dynamic library, it <em id='emph28404'
 >initializes</em> it. 
-For that it expects to find <em id='emph28387'
+For that it expects to find <em id='emph28405'
 >initialization entry points</em> in the dynamic
 libraries that are named after the library's name. More precisely, for
-the <code id='code28388'
+the <code id='code28406'
 >LIB_s</code> library, the loader seeks the entry point named
-<code id='code28389'
->&quot;LIB_s&quot;</code> and for the <code id='code28390'
->LIB_es</code>, it seeks <code id='code28391'
+<code id='code28407'
+>&quot;LIB_s&quot;</code> and for the <code id='code28408'
+>LIB_es</code>, it seeks <code id='code28409'
 >&quot;LIB_es&quot;</code>.
 The name of the initialization entry of a library can be changed using
-the <code id='code28392'
+the <code id='code28410'
 >declare-library!</code> function. If that named is changed,
-one module of the library must contain an <code id='code28393'
+one module of the library must contain an <code id='code28411'
 >option</code> module clause
-that sets the variable <code id='code28394'
+that sets the variable <code id='code28412'
 >*dlopen-init*</code> with the name of the initialization
 entry point.<br/><br/>Since Bigloo 3.1a, the runtime system supports a better way for
-initializing libraries. <em id='emph28396'
+initializing libraries. <em id='emph28414'
 >Initialization</em> modules can be associated
 with a library. When loaded, these modules are automatically initialized.
 This new method fits harmoniously with the Bigloo initialization process
 and it relieves users from any requirement to annotate the source code of the library.
 
 For instance, if a library initialization file contains the following
-declaration:<br/><br/><center id='center28401'
+declaration:<br/><br/><center id='center28419'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28399'
->(declare-library! 'foo <strong id='bold35335'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28417'
+>(declare-library! 'foo <strong id='bold35353'
 >:module-init</strong> 'foo)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Then, the library must implement the <code id='code28402'
->foo</code> module.<br/><br/><center id='center28410'
+Then, the library must implement the <code id='code28420'
+>foo</code> module.<br/><br/><center id='center28428'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28408'
->(<font color="#1919af"><strong id='bold35337'
->module</strong></font> <font color="#1919af"><strong id='bold35339'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28426'
+>(<font color="#1919af"><strong id='bold35355'
+>module</strong></font> <font color="#1919af"><strong id='bold35357'
 >foo</strong></font>
-  (<font color="#1919af"><strong id='bold35341'
->import</strong></font> <font color="#1919af"><strong id='bold35343'
+  (<font color="#1919af"><strong id='bold35359'
+>import</strong></font> <font color="#1919af"><strong id='bold35361'
 >...</strong></font>)
   ...)
 </pre>
@@ -623,30 +623,30 @@ Then, the library must implement the <code id='code28402'
 </tbody></table></center>
 
 In addition if the library binds variables, functions, or classes in the
-interpreter then, an <code id='code28411'
+interpreter then, an <code id='code28429'
 >eval-init</code> clause must be added to the
-class declaration:<br/><br/><center id='center28417'
+class declaration:<br/><br/><center id='center28435'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28415'
->(declare-library! 'foo <strong id='bold35345'
->:module-init</strong> 'foo <strong id='bold35347'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28433'
+>(declare-library! 'foo <strong id='bold35363'
+>:module-init</strong> 'foo <strong id='bold35365'
 >:eval-init</strong> 'foo-eval)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Then, the module <code id='code28418'
+Then, the module <code id='code28436'
 >foo-eval</code> must be implemented in the 
-<code id='code28419'
->libfoo_es</code> and <code id='code28420'
->libfoo_eu</code> libraries.<br/><br/><center id='center28428'
+<code id='code28437'
+>libfoo_es</code> and <code id='code28438'
+>libfoo_eu</code> libraries.<br/><br/><center id='center28446'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28426'
->(<font color="#1919af"><strong id='bold35349'
->module</strong></font> <font color="#1919af"><strong id='bold35351'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28444'
+>(<font color="#1919af"><strong id='bold35367'
+>module</strong></font> <font color="#1919af"><strong id='bold35369'
 >foo-eval</strong></font>
-  (<font color="#1919af"><strong id='bold35353'
->import</strong></font> <font color="#1919af"><strong id='bold35355'
+  (<font color="#1919af"><strong id='bold35371'
+>import</strong></font> <font color="#1919af"><strong id='bold35373'
 >...</strong></font>)
   (eval (export-all)))
 </pre>
@@ -655,52 +655,52 @@ Then, the module <code id='code28418'
 </td></tr>
 </tbody></table><br/>
 The standard distribution contains examples of such constructions. In
-particular, the multi-threading libraries <code id='code28431'
+particular, the multi-threading libraries <code id='code28449'
 >pthread</code> and
-<code id='code28432'
+<code id='code28450'
 >fthread</code> use this facility.<br/><br/></div><br>
 <!-- library and repl -->
 <a name="library-and-repl"></a>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">29.4 library and repl</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g28434" class="mark"></a>
+<a name="g28452" class="mark"></a>
 It is possible to implement a &quot;read-eval-print-loop&quot; that is extended
 with the facilities implemented inside a library. In order to make
 the variables, functions, and classes of a library visible from the
-interpreter, the eval <code id='code28436'
+interpreter, the eval <code id='code28454'
 >library</code> module clause has to be used.
 (see <a href="bigloo-4.html#Module-Declaration" class="inbound">Module Declaration</a>) For instance, here is a module that 
-implements a &quot;repl&quot; with the <code id='code28437'
->format</code> facility available:<br/><br/><center id='center28449'
+implements a &quot;repl&quot; with the <code id='code28455'
+>format</code> facility available:<br/><br/><center id='center28467'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28447'
->(<font color="#1919af"><strong id='bold35357'
->module</strong></font> <font color="#1919af"><strong id='bold35359'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28465'
+>(<font color="#1919af"><strong id='bold35375'
+>module</strong></font> <font color="#1919af"><strong id='bold35377'
 >format-repl</strong></font>
-   (eval (<font color="#1919af"><strong id='bold35361'
->library</strong></font> <font color="#1919af"><strong id='bold35363'
+   (eval (<font color="#1919af"><strong id='bold35379'
+>library</strong></font> <font color="#1919af"><strong id='bold35381'
 >bformat</strong></font>))
-   (<font color="#1919af"><strong id='bold35365'
->library</strong></font> <font color="#1919af"><strong id='bold35367'
->bformat</strong></font>))<br/><br/><font color="#ffa600"><em id='it35369'
+   (<font color="#1919af"><strong id='bold35383'
+>library</strong></font> <font color="#1919af"><strong id='bold35385'
+>bformat</strong></font>))<br/><br/><font color="#ffa600"><em id='it35387'
 >;; a dummy reference to a facility of the format library</em></font>
-(<strong id='bold35371'
+(<strong id='bold35389'
 >let</strong> ((dummy format))
    (repl))
 </pre>
 </td></tr>
 </tbody></table></center>
 <br/><br/>Alternatively, libraries can be explicitly loaded using the 
-<code id='code28451'
->library-load</code> function such as:<br/><br/><center id='center28459'
+<code id='code28469'
+>library-load</code> function such as:<br/><br/><center id='center28477'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28457'
->(<font color="#1919af"><strong id='bold35372'
->module</strong></font> <font color="#1919af"><strong id='bold35374'
->format-repl</strong></font>)<br/><br/><font color="#ffa600"><em id='it35376'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28475'
+>(<font color="#1919af"><strong id='bold35390'
+>module</strong></font> <font color="#1919af"><strong id='bold35392'
+>format-repl</strong></font>)<br/><br/><font color="#ffa600"><em id='it35394'
 >;; a dummy reference to a facility of the format library</em></font>
-(<strong id='bold35378'
+(<strong id='bold35396'
 >let</strong> ((dummy format))
    (eval '(library-load bformat))
    (repl))
@@ -713,92 +713,92 @@ implements a &quot;repl&quot; with the <code id='code28437'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">29.5 Building a library</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g28461" class="mark"></a>
+<a name="g28479" class="mark"></a>
 Build Bigloo libraries require several steps that are explained in
-this section. This section shows how to create <em id='emph28463'
+this section. This section shows how to create <em id='emph28481'
 >static</em> and
-<em id='emph28464'
->dynamic</em> (or <em id='emph28465'
+<em id='emph28482'
+>dynamic</em> (or <em id='emph28483'
 >shared</em>) libraries. However not that creating
 a dynamic library highly dependent on the host operating system. Users
 willing to create dynamic libraries on other operating systems should
-use the <code id='code28466'
+use the <code id='code28484'
 >api</code> directory of the Bigloo source code tree as an
-example.<br/><br/><ul class="itemize" id='itemize28551'
-><li>The first step is to build a <em id='emph28468'
+example.<br/><br/><ul class="itemize" id='itemize28569'
+><li>The first step is to build a <em id='emph28486'
 >library heap</em>. This is achieved
- using a special compilation mode: <code id='code28469'
+ using a special compilation mode: <code id='code28487'
 >-mkaddheap -mkaddlib -addheap -heap-library &lt;ident&gt;</code>. 
  That is, for your library you have to create a heap associated source file 
  that imports all the binding you want in your library. The heap source file
- must be <em id='emph28470'
+ must be <em id='emph28488'
 >excluded</em> from the source files that will be used to build
- the host library.<br/><br/>Suppose we have a unique source file, <code id='code28472'
+ the host library.<br/><br/>Suppose we have a unique source file, <code id='code28490'
 >bformat.scm</code> for our
-library. The module clause of this source file is:<br/><br/><center id='center28488'
+library. The module clause of this source file is:<br/><br/><center id='center28506'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28486'
->(<font color="#1919af"><strong id='bold35379'
->module</strong></font> <font color="#1919af"><strong id='bold35381'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28504'
+>(<font color="#1919af"><strong id='bold35397'
+>module</strong></font> <font color="#1919af"><strong id='bold35399'
 >__bformat</strong></font>
-   (<font color="#1919af"><strong id='bold35383'
->export</strong></font> (<font color="#1919af"><strong id='bold35385'
->bformat</strong></font> fmt<font color="#00cf00"><strong id='bold35387'
+   (<font color="#1919af"><strong id='bold35401'
+>export</strong></font> (<font color="#1919af"><strong id='bold35403'
+>bformat</strong></font> fmt<font color="#00cf00"><strong id='bold35405'
 >::bstring</strong></font> . args)
-           bformat<strong id='bold35389'
->:version</strong>))<br/><br/>(<font color="#6959cf"><strong id='bold35391'
->define</strong></font> (<font color="#6959cf"><strong id='bold35393'
+           bformat<strong id='bold35407'
+>:version</strong>))<br/><br/>(<font color="#6959cf"><strong id='bold35409'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35411'
 >bformat</strong></font> fmt . args)
-   (<strong id='bold35395'
->apply</strong> format (string-replace fmt #\% #\~) args))<br/><br/>(<font color="#6959cf"><strong id='bold35396'
->define</strong></font> <font color="#6959cf"><strong id='bold35398'
->bformat</strong></font><strong id='bold35400'
+   (<strong id='bold35413'
+>apply</strong> format (string-replace fmt #\% #\~) args))<br/><br/>(<font color="#6959cf"><strong id='bold35414'
+>define</strong></font> <font color="#6959cf"><strong id='bold35416'
+>bformat</strong></font><strong id='bold35418'
 >:version</strong> 1.0)
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Prior to compiling the library, we have to create the heap associated file
-(let's name it <code id='code28489'
->make_lib.scm</code>). This file could be:<br/><br/><center id='center28498'
+(let's name it <code id='code28507'
+>make_lib.scm</code>). This file could be:<br/><br/><center id='center28516'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28496'
->(<font color="#1919af"><strong id='bold35402'
->module</strong></font> <font color="#1919af"><strong id='bold35404'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28514'
+>(<font color="#1919af"><strong id='bold35420'
+>module</strong></font> <font color="#1919af"><strong id='bold35422'
 >__make_lib</strong></font>
-   (<font color="#1919af"><strong id='bold35406'
->import</strong></font> (<font color="#1919af"><strong id='bold35408'
+   (<font color="#1919af"><strong id='bold35424'
+>import</strong></font> (<font color="#1919af"><strong id='bold35426'
 >__bformat</strong></font> <font color="red">&quot;bformat.scm&quot;</font>))
    (eval (export-all)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Building it is simple:<br/><br/><center id='center28502'
+Building it is simple:<br/><br/><center id='center28520'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28500'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28518'
 >bigloo -unsafe -safee -q -mkaddheap -mkaddlib -heap-library bformat \
      make_lib.scm -addheap bformat.heap
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The options <code id='code28503'
->-mkaddheap</code> and <code id='code28504'
+The options <code id='code28521'
+>-mkaddheap</code> and <code id='code28522'
 >-mkaddlib</code> tell Bigloo that it 
-is compiling an heap associated file. The option <code id='code28505'
+is compiling an heap associated file. The option <code id='code28523'
 >-addheap</code> tells 
 Bigloo the name of the heap file to be produced. The option 
-<code id='code28506'
+<code id='code28524'
 >-heap-library</code> instructs the compiler for the library name to be 
 included inside the heap file. This name is used for checking versions 
 at run-time.<br/><br/></li>
 <li>The second step is to compile all the library source file. These
-compilation must be done using the <code id='code28509'
+compilation must be done using the <code id='code28527'
 >-mkaddlib</code> compilation mode. 
-For example:<br/><br/><center id='center28513'
+For example:<br/><br/><center id='center28531'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28511'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28529'
 >bigloo -O3 -unsafe -safee -mkaddlib       \
    -cc gcc -fsharing -q -rm               \
    -unsafev bformat.scm -o bformat_u.o -c
@@ -809,14 +809,14 @@ bigloo -O3 -mkaddlib -g -cg -cc gcc       \
 </td></tr>
 </tbody></table></center>
 
-The first compilation produces the <em id='emph28514'
+The first compilation produces the <em id='emph28532'
 >unsafe</em> version the second the 
-produced the <em id='emph28515'
+produced the <em id='emph28533'
 >debugging</em> version.<br/><br/></li>
 <li>The third step is to build the host operating system libraries. There
-is no portable way to do this. This operation may looks like:<br/><br/><center id='center28521'
+is no portable way to do this. This operation may looks like:<br/><br/><center id='center28539'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28519'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28537'
 >ar qcv libbigloobformat_s-1.0.a bformat.o
 ranlib libbigloobformat_s-1.0.a
 ld -G -o libbigloobformat_s-1.0.so bformat.o -lm -lc
@@ -828,13 +828,13 @@ ld -G -o libbigloobformat_u-1.0.so bformat_u.o -lm -lc
 </tbody></table></center>
 
 </li>
-<li>The fourth step consist in creating the <code id='code28523'
+<li>The fourth step consist in creating the <code id='code28541'
 >bformat_es</code> and 
-<code id='code28524'
+<code id='code28542'
 >bformat_eu</code> libraries
-for eval. For the unsafe version we use:<br/><br/><center id='center28528'
+for eval. For the unsafe version we use:<br/><br/><center id='center28546'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28526'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28544'
 >bigloo -O3 -unsafe -safee -mkaddlib       \
    -cc gcc -fsharing -q -rm               \
    -unsafev make_lib.scm -o make_lib.o -c
@@ -845,9 +845,9 @@ ranlib libbigloobformat_eu-1.0.a
 </td></tr>
 </tbody></table></center>
 
-For the safe version we do:<br/><br/><center id='center28532'
+For the safe version we do:<br/><br/><center id='center28550'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28530'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28548'
 >bigloo -O3 -mkaddlib              \
    -cc gcc -fsharing -q -rm               \
    -unsafev make_lib.scm -o make_lib.o -c
@@ -858,26 +858,26 @@ ranlib libbigloobformat_es-1.0.a
 </td></tr>
 </tbody></table></center>
 <br/><br/></li>
-<li>The last step is to create an initialization file <code id='code28535'
+<li>The last step is to create an initialization file <code id='code28553'
 >bformat.init</code>:
 
-<center id='center28549'
+<center id='center28567'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28547'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28565'
 >(declare-library! 'bformat 
-   <strong id='bold35411'
+   <strong id='bold35429'
 >:version</strong> <font color="red">&quot;1.0&quot;</font>
-   <strong id='bold35414'
+   <strong id='bold35432'
 >:srfi</strong> '(bformat)
-   <strong id='bold35416'
+   <strong id='bold35434'
 >:basename</strong> <font color="red">&quot;bigloobformat&quot;</font>
-   <strong id='bold35419'
+   <strong id='bold35437'
 >:module-init</strong> '__bformat
-   <strong id='bold35421'
+   <strong id='bold35439'
 >:module-eval</strong> '__make_lib
-   <strong id='bold35423'
+   <strong id='bold35441'
 >:class-init</strong> <font color="red">&quot;bigloo.bformat.__bformat&quot;</font>
-   <strong id='bold35426'
+   <strong id='bold35444'
 >:class-eval</strong> <font color="red">&quot;bigloo.bformat.__make_lib&quot;</font>)
 </pre>
 </td></tr>
@@ -886,15 +886,15 @@ ranlib libbigloobformat_es-1.0.a
 </li>
 </ul>
 At this time, you are ready to use your library. For that, let's assume
-the file <code id='code28552'
->foo.scm</code>:<br/><br/><center id='center28563'
+the file <code id='code28570'
+>foo.scm</code>:<br/><br/><center id='center28581'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28561'
->(<font color="#1919af"><strong id='bold35429'
->module</strong></font> <font color="#1919af"><strong id='bold35431'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28579'
+>(<font color="#1919af"><strong id='bold35447'
+>module</strong></font> <font color="#1919af"><strong id='bold35449'
 >foo</strong></font>
-   (<font color="#1919af"><strong id='bold35433'
->library</strong></font> <font color="#1919af"><strong id='bold35435'
+   (<font color="#1919af"><strong id='bold35451'
+>library</strong></font> <font color="#1919af"><strong id='bold35453'
 >bformat</strong></font>))<br/><br/>(bigloo-library-path-set! (cons (pwd) (bigloo-library-path)))
 (print (bformat <font color="red">&quot;Library path: %a&quot;</font> (bigloo-library-path)))<br/><br/>(eval '(library-load 'bformat))
 (repl)
@@ -902,9 +902,9 @@ the file <code id='code28552'
 </td></tr>
 </tbody></table></center>
 
-It can be compiled and executed with:<br/><br/><center id='center28567'
+It can be compiled and executed with:<br/><br/><center id='center28585'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28565'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28583'
 >bigloo foo.scm -L . -copt -L.
 LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH ./a.out
 </pre>
@@ -918,44 +918,44 @@ considered as a departure point for new libraries.<br/><br/></div><br>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">29.6 Library and modules</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g28569" class="mark"></a>
+<a name="g28587" class="mark"></a>
 A Bigloo library may be composed of several Bigloo modules (even if in
 our example only one module was used). The modules composing the library
 are free to import each other. Nevertheless, someone designing a Bigloo
 library should be aware that Bigloo importation creates dependences
-between modules. A module <code id='code28571'
->mod1</code> that imports a module <code id='code28572'
+between modules. A module <code id='code28589'
+>mod1</code> that imports a module <code id='code28590'
 >mod2</code>
-depends on <code id='code28573'
->mod2</code> because <code id='code28574'
->mod1</code> requires <code id='code28575'
+depends on <code id='code28591'
+>mod2</code> because <code id='code28592'
+>mod1</code> requires <code id='code28593'
 >mod2</code> to be
-initialized (i.e. <code id='code28576'
+initialized (i.e. <code id='code28594'
 >mod1</code> calls to the initialization function of
-<code id='code28577'
->mod2</code>). The result is that using <code id='code28578'
+<code id='code28595'
+>mod2</code>). The result is that using <code id='code28596'
 >import</code> clauses inside
 modules composing a library may create a lot of dependencies between the
 object files that are used to build the associated Unix
 library. Dependencies should be avoided because they make the Unix
 linkers unable to produce small stand-alone programs. Instead of
-<code id='code28579'
->import</code> clauses, <code id='code28580'
+<code id='code28597'
+>import</code> clauses, <code id='code28598'
 >use</code> clauses should be
-preferred. <code id='code28581'
+preferred. <code id='code28599'
 >Use</code> clauses do not create dependencies because a
-module <code id='code28582'
->mod1</code> that <code id='code28583'
->use</code>s a second module <code id='code28584'
+module <code id='code28600'
+>mod1</code> that <code id='code28601'
+>use</code>s a second module <code id='code28602'
 >mod2</code> does not
-require <code id='code28585'
+require <code id='code28603'
 >mod2</code> to be initialized. Of course, it may happen
 situations where the initialization is mandatory and thus, the
-<code id='code28586'
->import</code> must not be replaced with a <code id='code28587'
+<code id='code28604'
+>import</code> must not be replaced with a <code id='code28605'
 >use</code> clause. The source
-code of the Bigloo library makes use of <code id='code28588'
->import</code> and <code id='code28589'
+code of the Bigloo library makes use of <code id='code28606'
+>import</code> and <code id='code28607'
 >use</code>
 clauses. The Bigloo standard library should be studied as an example.<br/><br/></div><br>
 <!-- Library and macros -->
@@ -963,57 +963,57 @@ clauses. The Bigloo standard library should be studied as an example.<br/><br/><
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">29.7 Library and macros</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g28591" class="mark"></a>
+<a name="g28609" class="mark"></a>
 Bigloo libraries can export macros, expanders, and syntaxes but these
 must be handled carefully. Macros (these also applies to expanders and
 syntaxes) exported by modules are not visible by client code. Exported
 macros have to be placed inside the initialization file. For instance,
-if we change the definition of <code id='code28593'
->bformat.init</code> file for:<br/><br/><center id='center28614'
+if we change the definition of <code id='code28611'
+>bformat.init</code> file for:<br/><br/><center id='center28632'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28612'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28630'
 >(declare-library! 'bformat 
-   <strong id='bold35438'
+   <strong id='bold35456'
 >:version</strong> <font color="red">&quot;1.0&quot;</font>
-   <strong id='bold35441'
+   <strong id='bold35459'
 >:srfi</strong> '(bformat)
-   <strong id='bold35443'
+   <strong id='bold35461'
 >:basename</strong> <font color="red">&quot;bigloobformat&quot;</font>
-   <strong id='bold35446'
+   <strong id='bold35464'
 >:module-init</strong> '__bformat
-   <strong id='bold35448'
+   <strong id='bold35466'
 >:module-eval</strong> '__make_lib
-   <strong id='bold35450'
+   <strong id='bold35468'
 >:class-init</strong> <font color="red">&quot;bigloo.bformat.__bformat&quot;</font>
-   <strong id='bold35453'
->:class-eval</strong> <font color="red">&quot;bigloo.bformat.__make_lib&quot;</font>)<br/><br/>(<font color="#6959cf"><strong id='bold35456'
->define-expander</strong></font> <font color="#6959cf"><strong id='bold35458'
+   <strong id='bold35471'
+>:class-eval</strong> <font color="red">&quot;bigloo.bformat.__make_lib&quot;</font>)<br/><br/>(<font color="#6959cf"><strong id='bold35474'
+>define-expander</strong></font> <font color="#6959cf"><strong id='bold35476'
 >BFORMAT</strong></font>
-   (<strong id='bold35460'
+   (<strong id='bold35478'
 >lambda</strong> (x e)
-      (<strong id='bold35461'
+      (<strong id='bold35479'
 >match-case</strong> x
-         ((?- (? (<strong id='bold35462'
+         ((?- (? (<strong id='bold35480'
 >lambda</strong> (s) (and (string? s) (not (string-index s #\%))))) . ?a
 )
           `(string-append ,&#x40;(cdr x)))
          (else
-          `(bformat ,&#x40;(map (<strong id='bold35463'
+          `(bformat ,&#x40;(map (<strong id='bold35481'
 >lambda</strong> (x) (e x e)) (cdr x)))))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 At compile time the macro BFORMAT will be declared. Hence, we can change
-the definition of <code id='code28615'
->foo.scm</code> for:<br/><br/><center id='center28626'
+the definition of <code id='code28633'
+>foo.scm</code> for:<br/><br/><center id='center28644'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28624'
->(<font color="#1919af"><strong id='bold35464'
->module</strong></font> <font color="#1919af"><strong id='bold35466'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28642'
+>(<font color="#1919af"><strong id='bold35482'
+>module</strong></font> <font color="#1919af"><strong id='bold35484'
 >foo</strong></font>
-   (<font color="#1919af"><strong id='bold35468'
->library</strong></font> <font color="#1919af"><strong id='bold35470'
+   (<font color="#1919af"><strong id='bold35486'
+>library</strong></font> <font color="#1919af"><strong id='bold35488'
 >bformat</strong></font>))<br/><br/>(bigloo-library-path-set! (cons (pwd) (bigloo-library-path)))
 (print (BFORMAT <font color="red">&quot;library path: %a&quot;</font> (bigloo-library-path)))<br/><br/>(eval '(library-load 'bformat))
 (repl)
@@ -1027,17 +1027,17 @@ the definition of <code id='code28615'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">29.8 A complete library example</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g28627" class="mark"></a>
+<a name="g28645" class="mark"></a>
 For the means of an example let's suppose we want to design a Bigloo
 library for 2d points. That library is made of three implementation
-files: two C files, <code id='code28629'
->cpoint.h</code> and <code id='code28630'
+files: two C files, <code id='code28647'
+>cpoint.h</code> and <code id='code28648'
 >cpoint.c</code> and one Scheme
-file <code id='code28631'
->spoint.scm</code>. Here are defined the three files:<br/><br/><code id='code28633'
->cpoint.h</code>:<center id='center28636'
+file <code id='code28649'
+>spoint.scm</code>. Here are defined the three files:<br/><br/><code id='code28651'
+>cpoint.h</code>:<center id='center28654'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28634'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28652'
 >struct point_2d {
    double x, y;
 };
@@ -1045,10 +1045,10 @@ file <code id='code28631'
 </td></tr>
 </tbody></table></center>
 
-<code id='code28637'
->cpoint.c</code>:<center id='center28643'
+<code id='code28655'
+>cpoint.c</code>:<center id='center28661'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28641'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28659'
 >#include &lt;stdio.h&gt;
 #include <font color="red">&quot;cpoint.h&quot;</font><br/><br/>int print_point_2d( struct point_2d *pt ) {
    printf( <font color="red">&quot;&lt;point-2d: %g, %g&gt;&quot;</font>, pt-&gt;x, pt-&gt;y );
@@ -1057,38 +1057,38 @@ file <code id='code28631'
 </td></tr>
 </tbody></table></center>
 
-<code id='code28644'
->spoint.scm</code>:<center id='center28670'
+<code id='code28662'
+>spoint.scm</code>:<center id='center28688'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28668'
->(<font color="#1919af"><strong id='bold35475'
->module</strong></font> <font color="#1919af"><strong id='bold35477'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28686'
+>(<font color="#1919af"><strong id='bold35493'
+>module</strong></font> <font color="#1919af"><strong id='bold35495'
 >__point</strong></font>
    (include <font color="red">&quot;spoint.sch&quot;</font>)
-   (<strong id='bold35480'
+   (<strong id='bold35498'
 >extern</strong>  (include <font color="red">&quot;cpoint.h&quot;</font>))
-   (<font color="#1919af"><strong id='bold35482'
->export</strong></font>  (<font color="#1919af"><strong id='bold35484'
->make-point</strong></font><font color="#00cf00"><strong id='bold35486'
->::s-point_2d*</strong></font> <font color="#00cf00"><strong id='bold35488'
->::double</strong></font> <font color="#00cf00"><strong id='bold35490'
+   (<font color="#1919af"><strong id='bold35500'
+>export</strong></font>  (<font color="#1919af"><strong id='bold35502'
+>make-point</strong></font><font color="#00cf00"><strong id='bold35504'
+>::s-point_2d*</strong></font> <font color="#00cf00"><strong id='bold35506'
+>::double</strong></font> <font color="#00cf00"><strong id='bold35508'
 >::double</strong></font>)
-            (print-point <font color="#00cf00"><strong id='bold35492'
+            (print-point <font color="#00cf00"><strong id='bold35510'
 >::s-point_2d*</strong></font>)
-            (point? <font color="#00cf00"><strong id='bold35494'
->::obj</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold35496'
->define</strong></font> (<font color="#6959cf"><strong id='bold35498'
->make-point</strong></font><font color="#00cf00"><strong id='bold35500'
->::s-point_2d*</strong></font> x<font color="#00cf00"><strong id='bold35502'
->::double</strong></font> y<font color="#00cf00"><strong id='bold35504'
+            (point? <font color="#00cf00"><strong id='bold35512'
+>::obj</strong></font>)))<br/><br/>(<font color="#6959cf"><strong id='bold35514'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35516'
+>make-point</strong></font><font color="#00cf00"><strong id='bold35518'
+>::s-point_2d*</strong></font> x<font color="#00cf00"><strong id='bold35520'
+>::double</strong></font> y<font color="#00cf00"><strong id='bold35522'
 >::double</strong></font>)
-   (s-point_2d* x y))<br/><br/>(<font color="#6959cf"><strong id='bold35506'
->define</strong></font> (<font color="#6959cf"><strong id='bold35508'
->print-point</strong></font> p<font color="#00cf00"><strong id='bold35510'
+   (s-point_2d* x y))<br/><br/>(<font color="#6959cf"><strong id='bold35524'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35526'
+>print-point</strong></font> p<font color="#00cf00"><strong id='bold35528'
 >::s-point_2d*</strong></font>)
-   (print_point_2d p))<br/><br/>(<font color="#6959cf"><strong id='bold35512'
->define</strong></font> (<font color="#6959cf"><strong id='bold35514'
->point?</strong></font> obj<font color="#00cf00"><strong id='bold35516'
+   (print_point_2d p))<br/><br/>(<font color="#6959cf"><strong id='bold35530'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35532'
+>point?</strong></font> obj<font color="#00cf00"><strong id='bold35534'
 >::obj</strong></font>)
    (s-point_2d*? obj)
    obj)
@@ -1096,87 +1096,87 @@ file <code id='code28631'
 </td></tr>
 </tbody></table></center>
 
-<code id='code28671'
+<code id='code28689'
 >makelib.scm</code>:
 We want our library to be composed of the whole exported Scheme
-functions. Thus the file to build the heap library could look like:<br/><br/><center id='center28679'
+functions. Thus the file to build the heap library could look like:<br/><br/><center id='center28697'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28677'
->(<font color="#1919af"><strong id='bold35518'
->module</strong></font> <font color="#1919af"><strong id='bold35520'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28695'
+>(<font color="#1919af"><strong id='bold35536'
+>module</strong></font> <font color="#1919af"><strong id='bold35538'
 >__point_makelib</strong></font>
-   (<font color="#1919af"><strong id='bold35522'
->import</strong></font> <font color="#1919af"><strong id='bold35524'
+   (<font color="#1919af"><strong id='bold35540'
+>import</strong></font> <font color="#1919af"><strong id='bold35542'
 >__point</strong></font>)
    (eval (export-all)))
 </pre>
 </td></tr>
 </tbody></table></center>
-<br/><br/><code id='code28681'
->point.init</code>:Let's suppose that the <code id='code28682'
->point</code> library requires the <code id='code28683'
+<br/><br/><code id='code28699'
+>point.init</code>:Let's suppose that the <code id='code28700'
+>point</code> library requires the <code id='code28701'
 >libposix</code>
-library. This means that any file linked with the <code id='code28684'
+library. This means that any file linked with the <code id='code28702'
 >point</code> library
-needs to be also linked with the <code id='code28685'
+needs to be also linked with the <code id='code28703'
 >posix</code> library. Furthermore, 
-programs making use of the <code id='code28686'
+programs making use of the <code id='code28704'
 >point</code> library needs to include the
-<code id='code28687'
+<code id='code28705'
 >point.sch</code> file. That Scheme file needs in turn the C file 
-<code id='code28688'
+<code id='code28706'
 >point.h</code> otherwise the produced C files won't compile. The need
-for the <code id='code28689'
->libposix</code> library and for the <code id='code28690'
+for the <code id='code28707'
+>libposix</code> library and for the <code id='code28708'
 >point.h</code> file may be
-specified inside the <code id='code28691'
+specified inside the <code id='code28709'
 >point.init</code> file. For our current library,
-the <code id='code28692'
->point.init</code> file could look like:<br/><br/><center id='center28710'
+the <code id='code28710'
+>point.init</code> file could look like:<br/><br/><center id='center28728'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28708'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28726'
 >(declare-library! 'point 
-                  <strong id='bold35526'
+                  <strong id='bold35544'
 >:basename</strong> <font color="red">&quot;point&quot;</font> 
-                  <strong id='bold35529'
+                  <strong id='bold35547'
 >:srfi</strong> '(point)
-                  <strong id='bold35531'
->:eval-init</strong> '__point_makelib)<br/><br/>(<strong id='bold35533'
+                  <strong id='bold35549'
+>:eval-init</strong> '__point_makelib)<br/><br/>(<strong id='bold35551'
 >set!</strong> *ld-options*
-      (string-append <font color="red">&quot;-L/usr/lib &quot;</font> *ld-options*))<br/><br/>(<strong id='bold35535'
+      (string-append <font color="red">&quot;-L/usr/lib &quot;</font> *ld-options*))<br/><br/>(<strong id='bold35553'
 >set!</strong> *bigloo-user-lib*
-      (cons <font color="red">&quot;-lm&quot;</font> *bigloo-user-lib*))<br/><br/>(<strong id='bold35537'
+      (cons <font color="red">&quot;-lm&quot;</font> *bigloo-user-lib*))<br/><br/>(<strong id='bold35555'
 >set!</strong> *additional-include-foreign*
       (cons <font color="red">&quot;cpoint.h&quot;</font> *additional-include-foreign*))
       
-(<font color="#6959cf"><strong id='bold35539'
->define-macro</strong></font> (<font color="#6959cf"><strong id='bold35541'
+(<font color="#6959cf"><strong id='bold35557'
+>define-macro</strong></font> (<font color="#6959cf"><strong id='bold35559'
 >point</strong></font> x y)
    `(make-point ,x ,y))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-This file updates some compilation variables (<code id='code28711'
+This file updates some compilation variables (<code id='code28729'
 >*ld-options*</code>,
-<code id='code28712'
->*bigloo-user-lib*</code>, <code id='code28713'
+<code id='code28730'
+>*bigloo-user-lib*</code>, <code id='code28731'
 >*additional-include-foreign*</code>) and
-defines a macro: <code id='code28714'
->point</code>. Because the <code id='code28715'
+defines a macro: <code id='code28732'
+>point</code>. Because the <code id='code28733'
 >point.init</code> file will
-be loaded each time a compilation require the <code id='code28716'
+be loaded each time a compilation require the <code id='code28734'
 >point</code> library is
-spawned, user code are allowed to use the <code id='code28717'
+spawned, user code are allowed to use the <code id='code28735'
 >point</code> macro. Here is an
-example file making use of the <code id='code28718'
->point</code> library:<br/><br/><code id='code28720'
->example.scm</code><center id='center28730'
+example file making use of the <code id='code28736'
+>point</code> library:<br/><br/><code id='code28738'
+>example.scm</code><center id='center28748'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28728'
->(<font color="#1919af"><strong id='bold35543'
->module</strong></font> <font color="#1919af"><strong id='bold35545'
->example</strong></font>)<br/><br/>(<strong id='bold35547'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog28746'
+>(<font color="#1919af"><strong id='bold35561'
+>module</strong></font> <font color="#1919af"><strong id='bold35563'
+>example</strong></font>)<br/><br/>(<strong id='bold35565'
 >let</strong> ((p (point 2.9 3.5)))
    (print <font color="red">&quot;point?: &quot;</font> (point? p))
    (print <font color="red">&quot;point?: &quot;</font> (point? 4))
@@ -1186,12 +1186,12 @@ example file making use of the <code id='code28718'
 </td></tr>
 </tbody></table></center>
 
-To conclude that example here is the <code id='code28731'
+To conclude that example here is the <code id='code28749'
 >Makefile</code> used to compile
-the <code id='code28732'
->point</code> library, heap file and one example.<br/><br/><center id='center28753'
+the <code id='code28750'
+>point</code> library, heap file and one example.<br/><br/><center id='center28771'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28751'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog28769'
 ># bigloo flags
 BIGLOO          = bigloo
 RELEASE		= `$(BIGLOO) -eval '(begin (print *bigloo-version*) (exit 0))'`
@@ -1233,12 +1233,12 @@ UNSAFE_OBJECT   = olib_u/spoint.o olib_u/cpoint.o<br/><br/>all: .afile heap lib 
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph35556'
+<p class="ending" id='paragraph35574'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it35554'
->Tue Jan  6 18:53:36 2015</em>.</font></p></div>
+Last update <em id='it35572'
+>Sun Jan 11 21:09:12 2015</em>.</font></p></div>
 </body>
 </html>
