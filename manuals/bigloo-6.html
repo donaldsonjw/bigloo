@@ -27,22 +27,22 @@
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center30376'
+<br/><center id='center30394'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc30366" align="center" colspan="1"><font color="#ffffff"><strong id='bold30364'
+<tr bgcolor="#8381de"><th id="tc30384" align="center" colspan="1"><font color="#ffffff"><strong id='bold30382'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc30373" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc30369" align="left" valign="top" colspan="1"><strong id='bold30368'
->top:</strong></td><td id="tc30370" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc30391" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc30387" align="left" valign="top" colspan="1"><strong id='bold30386'
+>top:</strong></td><td id="tc30388" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center30386'
+<br/><br/><center id='center30404'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc30380" align="center" colspan="1"><font color="#ffffff"><strong id='bold30378'
+<tr bgcolor="#8381de"><th id="tc30398" align="center" colspan="1"><font color="#ffffff"><strong id='bold30396'
 >DSSSL support</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc30383" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc30401" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">5.1</td><td colspan="4" width="100%"><a href="bigloo-6.html#DSSSL-formal-argument-lists">DSSSL formal argument lists</a></td></tr>
  <tr><td valign="top" align="left">5.2</td><td colspan="4" width="100%"><a href="bigloo-6.html#Modules-and-DSSSL-formal-argument-lists">Modules and DSSSL formal argument lists</a></td></tr>
@@ -51,11 +51,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center30396'
+<br/><br/><center id='center30414'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc30390" align="center" colspan="1"><font color="#ffffff"><strong id='bold30388'
+<tr bgcolor="#8381de"><th id="tc30408" align="center" colspan="1"><font color="#ffffff"><strong id='bold30406'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc30393" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc30411" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -225,16 +225,16 @@ in a <em id='emph2438'
 >formal-argument-list</em>.<br/><br/>Example:<br/><br/><center id='center2447'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2445'
->((<strong id='bold30397'
+>((<strong id='bold30415'
 >lambda</strong> (x y) x) 3 4 5 6)   =&gt;(3 4 5 6)
-((<strong id='bold30398'
+((<strong id='bold30416'
 >lambda</strong> (x y #!rest z) z)
  3 4 5 6)                    =&gt; (5 6)
-((<strong id='bold30399'
+((<strong id='bold30417'
 >lambda</strong> (x y #!optional z #!rest r #!key i (j 1)) 
     (list x y z i: i j: j))
  3 4 5 i: 6 i: 7)            =&gt; (3 4 5 i: 6 j: 1)
-((<strong id='bold30400'
+((<strong id='bold30418'
 >lambda</strong> (x y #!optional z #!key i (j 1) #!rest r) 
     (list x y z i: i j: j r))
  3 4 5 i: 6 i: 7 8 9)        =&gt; (3 4 5 i: 6 j: 1 (8 9))
@@ -256,8 +256,8 @@ must be duplicated in the export clause. That is, for instance, the
 exportation prototype for the function:<br/><br/><center id='center2455'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2453'
->(<font color="#6959cf"><strong id='bold30401'
->define</strong></font> (<font color="#6959cf"><strong id='bold30403'
+>(<font color="#6959cf"><strong id='bold30419'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30421'
 >foo</strong></font> x y #!optional z #!key i (j 1)) ...)
 </pre>
 </td></tr>
@@ -266,8 +266,8 @@ exportation prototype for the function:<br/><br/><center id='center2455'
 is:<br/><br/><center id='center2461'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog2459'
->(<font color="#1919af"><strong id='bold30405'
->export</strong></font> (<font color="#1919af"><strong id='bold30407'
+>(<font color="#1919af"><strong id='bold30423'
+>export</strong></font> (<font color="#1919af"><strong id='bold30425'
 >foo</strong></font> x y #!optional z #!key i (j 1)))
 </pre>
 </td></tr>
@@ -278,12 +278,12 @@ is:<br/><br/><center id='center2461'
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph30414'
+<p class="ending" id='paragraph30432'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it30412'
->Tue Jan  6 18:53:36 2015</em>.</font></p></div>
+Last update <em id='it30430'
+>Sun Jan 11 21:09:11 2015</em>.</font></p></div>
 </body>
 </html>

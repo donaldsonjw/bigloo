@@ -3,12 +3,14 @@
 /*    -------------------------------------------------------------    */
 /*    Author      :  Manuel Serrano                                    */
 /*    Creation    :  Wed Jan 20 08:45:23 1993                          */
-/*    Last change :  Sun Jan  4 09:33:36 2015 (serrano)                */
+/*    Last change :  Wed Jan  7 08:12:57 2015 (serrano)                */
 /*    Copyright   :  2002-15 Manuel Serrano                            */
 /*    -------------------------------------------------------------    */
 /*    System interface                                                 */
 /*=====================================================================*/
+#include <sys/types.h>
 #include <time.h>
+#include <utime.h>
 #include <sys/time.h>
 #include <signal.h>
 #include <string.h>
@@ -36,7 +38,6 @@
 #include <bigloo.h>
 
 #if BGL_HAVE_GETUID
-#  include <sys/types.h>
 #  include <pwd.h>
 #else
 #define uid_t int
@@ -94,7 +95,7 @@ signal_handler( int num ) {
 /*---------------------------------------------------------------------*/
 /*    bgl_signal ...                                                   */
 /*---------------------------------------------------------------------*/
-obj_t
+BGL_RUNTIME_DEF obj_t
 bgl_signal( int sig, obj_t obj ) {
    BGL_MUTEX_LOCK( signal_mutex );
 
@@ -147,7 +148,7 @@ bgl_signal( int sig, obj_t obj ) {
 /*    obj_t                                                            */
 /*    bgl_get_signal_handler ...                                       */
 /*---------------------------------------------------------------------*/
-obj_t
+BGL_RUNTIME_DEF obj_t
 bgl_get_signal_handler( int sig ) {
    return BGL_SIG_HANDLERS()[ sig ];
 }
@@ -156,7 +157,7 @@ bgl_get_signal_handler( int sig ) {
 /*    void                                                             */
 /*    bgl_restore_signal_handlers ...                                  */
 /*---------------------------------------------------------------------*/
-void
+BGL_RUNTIME_DEF void
 bgl_restore_signal_handlers() {
 #if HAVE_SIGPROCMASK
    sigset_t set;
@@ -189,7 +190,7 @@ bgl_sigsetmask( int set ) {
 /*---------------------------------------------------------------------*/
 /*    c_date ...                                                       */
 /*---------------------------------------------------------------------*/
-char *
+BGL_RUNTIME_DEF char *
 c_date() {
 #if( defined( sony_news ) )
    BGL_LONG_T now;
@@ -205,7 +206,7 @@ c_date() {
 /*    BGL_LONG_T                                                             */
 /*    bgl_last_modification_time ...                                   */
 /*---------------------------------------------------------------------*/
-BGL_LONG_T
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_last_modification_time( char *file ) {
    struct stat _stati;
 
@@ -216,7 +217,38 @@ bgl_last_modification_time( char *file ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    BGL_LONG_T                                                             */
+/*    BGL_LONG_T                                                       */
+/*    bgl_last_access_time ...                                         */
+/*---------------------------------------------------------------------*/
+BGL_RUNTIME_DEF BGL_LONG_T
+bgl_last_access_time( char *file ) {
+   struct stat _stati;
+
+   if( lstat( file, &_stati ) )
+      return -1;
+   else
+      return (BGL_LONG_T)(_stati.st_atime);
+}
+
+/*---------------------------------------------------------------------*/
+/*    int                                                              */
+/*    bgl_utime ...                                                    */
+/*---------------------------------------------------------------------*/
+BGL_RUNTIME_DEF int
+bgl_utime( char *file, BGL_LONG_T atime, BGL_LONG_T mtime ) {
+   struct utimbuf buf = { .actime = (time_t)atime, .modtime= (time_t)mtime };
+   int r = utime( file, &buf );
+   
+   if( r < 0 ) {
+      C_SYSTEM_FAILURE( BGL_ERROR, "file-times-set!",
+			strerror( errno ),
+			string_to_bstring( file ) );
+   }
+   return r;
+}
+
+/*---------------------------------------------------------------------*/
+/*    BGL_LONG_T                                                       */
 /*    bgl_file_size ...                                                */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF BGL_LONG_T
@@ -233,7 +265,7 @@ bgl_file_size( char *file ) {
 /*    BGL_LONG_T                                                             */
 /*    bgl_file_uid ...                                                 */
 /*---------------------------------------------------------------------*/
-BGL_LONG_T
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_file_uid( char *file ) {
    struct stat _stati;
 
@@ -247,7 +279,7 @@ bgl_file_uid( char *file ) {
 /*    BGL_LONG_T                                                             */
 /*    bgl_file_gid ...                                                 */
 /*---------------------------------------------------------------------*/
-BGL_LONG_T
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_file_gid( char *file ) {
    struct stat _stati;
 
@@ -261,7 +293,7 @@ bgl_file_gid( char *file ) {
 /*    BGL_LONG_T                                                             */
 /*    bgl_file_mode ...                                                */
 /*---------------------------------------------------------------------*/
-BGL_LONG_T
+BGL_RUNTIME_DEF BGL_LONG_T
 bgl_file_mode( char *file ) {
    struct stat _stati;
 
@@ -275,7 +307,7 @@ bgl_file_mode( char *file ) {
 /*    obj_t                                                            */
 /*    bgl_file_type ...                                                */
 /*---------------------------------------------------------------------*/
-obj_t
+BGL_RUNTIME_DEF obj_t
 bgl_file_type( char *file ) {
    struct stat _stati;
 
@@ -514,7 +546,7 @@ passwd2list( struct passwd *pw ) {
 /*    obj_t                                                            */
 /*    bgl_getpwnam ...                                                 */
 /*---------------------------------------------------------------------*/
-obj_t
+BGL_RUNTIME_DEF obj_t
 bgl_getpwnam( char *name ) {
 #if BGL_HAVE_GETUID
    struct passwd *pw;
@@ -535,7 +567,7 @@ bgl_getpwnam( char *name ) {
 /*    obj_t                                                            */
 /*    bgl_getpwuid ...                                                 */
 /*---------------------------------------------------------------------*/
-obj_t
+BGL_RUNTIME_DEF obj_t
 bgl_getpwuid( uid_t uid ) {
 #if BGL_HAVE_GETUID
    struct passwd *pw;
