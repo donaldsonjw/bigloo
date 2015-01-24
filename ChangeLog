@@ -1,3 +1,11 @@
+2015-01-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	intext improvement (bootstrap)
+	<4.2a> [fee84fc1779e]
+
+2015-01-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	http POST improvement (bootstrap)
+	<4.2a> [c88452953618]
+
 2015-01-07  Manuel Serrano <Manuel.Serrano@inria.fr>
 	Boehm GC 7.4.2 (bootstrap)
 	<4.2a> [da8b78ffea1e]

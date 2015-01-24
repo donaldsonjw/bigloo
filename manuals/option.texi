@@ -530,10 +530,10 @@ Bigloo Control Variables:
      default: read
    - *inlining-kfactor* : 
      Inlining growth factor
-     default: #<procedure:53f040.1>
+     default: #<procedure:53f0f0.1>
    - *inlining-reduce-kfactor* : 
      Inlinine growth factor reductor
-     default: #<procedure:53ef90.1>
+     default: #<procedure:53f040.1>
    - *inlining?* : 
      Inlining optimization
      default: #t
@@ -737,7 +737,7 @@ Bigloo Control Variables:
      default: ld
    - *pre-processor* : 
      An optional function that pre-processes the source file
-     default: #<procedure:53a3e0.1>
+     default: #<procedure:53a490.1>
    - *prof-table-name* : 
      Bprof translation table file name
      default: "bmon.out"
