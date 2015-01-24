@@ -223,34 +223,34 @@ Llib/css_lexer.scm,188
 Llib/css_parser.scm,1976
 (module __web_css-parser15,963
 (define (css-grammar31,1479
-(define css-mutex478,13868
-(define css-stamp483,14129
-(define (css-stamp-rules!490,14521
-(define (make-unary516,15179
-(define (css-parser526,15640
-(define (css->list*538,16267
-(define (css->sep-list*544,16618
-(define (css-expr->list560,17194
-(define-generic (css->list566,17537
-(define-method (css->list o::css-ext make-klass make-elname make-decl578,17980
-(define-method (css->list o::css-uri make-klass make-elname make-decl585,18323
-(define-method (css->list o::css-charset make-klass make-elname make-decl592,18685
-(define-method (css->list o::css-comment make-klass make-elname make-decl599,19063
-(define-method (css->list o::css-import make-klass make-elname make-decl606,19441
-(define-method (css->list o::css-media make-klass make-elname make-decl615,19885
-(define-method (css->list o::css-page make-klass make-elname make-decl626,20402
-(define-method (css->list o::css-fontface make-klass make-elname make-decl642,21032
-(define-method (css->list o::css-pseudopage make-klass make-elname make-decl652,21494
-(define-method (css->list o::css-ruleset make-klass make-elname make-decl659,21907
-(define-method (css->list o::css-selector make-klass make-elname make-decl669,22428
-(define-method (css->list o::css-selector-class make-klass make-elname make-decl677,22900
-(define-method (css->list o::css-selector-hash make-klass make-elname make-decl686,23352
-(define-method (css->list o::css-selector-name make-klass make-elname make-decl693,23724
-(define-method (css->list o::css-selector-attr make-klass make-elname make-decl702,24175
-(define-method (css->list o::css-selector-pseudo make-klass make-elname make-decl712,24697
-(define-method (css->list o::css-declaration make-klass make-elname make-decl725,25263
-(define-method (css->list o::css-function make-klass make-elname make-decl735,25836
-(define-method (css->list o::css-hash-color make-klass make-elname make-decl745,26321
+(define css-mutex480,13935
+(define css-stamp485,14196
+(define (css-stamp-rules!492,14588
+(define (make-unary518,15246
+(define (css-parser528,15707
+(define (css->list*540,16334
+(define (css->sep-list*546,16685
+(define (css-expr->list562,17261
+(define-generic (css->list568,17604
+(define-method (css->list o::css-ext make-klass make-elname make-decl580,18047
+(define-method (css->list o::css-uri make-klass make-elname make-decl587,18390
+(define-method (css->list o::css-charset make-klass make-elname make-decl594,18752
+(define-method (css->list o::css-comment make-klass make-elname make-decl601,19130
+(define-method (css->list o::css-import make-klass make-elname make-decl608,19508
+(define-method (css->list o::css-media make-klass make-elname make-decl617,19952
+(define-method (css->list o::css-page make-klass make-elname make-decl628,20469
+(define-method (css->list o::css-fontface make-klass make-elname make-decl644,21099
+(define-method (css->list o::css-pseudopage make-klass make-elname make-decl654,21561
+(define-method (css->list o::css-ruleset make-klass make-elname make-decl661,21974
+(define-method (css->list o::css-selector make-klass make-elname make-decl671,22495
+(define-method (css->list o::css-selector-class make-klass make-elname make-decl679,22967
+(define-method (css->list o::css-selector-hash make-klass make-elname make-decl688,23419
+(define-method (css->list o::css-selector-name make-klass make-elname make-decl695,23791
+(define-method (css->list o::css-selector-attr make-klass make-elname make-decl704,24242
+(define-method (css->list o::css-selector-pseudo make-klass make-elname make-decl714,24764
+(define-method (css->list o::css-declaration make-klass make-elname make-decl727,25330
+(define-method (css->list o::css-function make-klass make-elname make-decl737,25903
+(define-method (css->list o::css-hash-color make-klass make-elname make-decl747,26388
 
 Llib/cgi.scm,554
 (module __web_cgi15,963
