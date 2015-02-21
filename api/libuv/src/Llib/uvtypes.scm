@@ -3,7 +3,7 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Tue May  6 11:55:29 2014                          */
-;*    Last change :  Sat Jan  3 19:04:41 2015 (serrano)                */
+;*    Last change :  Fri Feb  6 10:43:27 2015 (serrano)                */
 ;*    Copyright   :  2014-15 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    LIBUV types                                                      */
@@ -68,6 +68,8 @@
 	      (path::bstring read-only))
 
 	   (class UvFsEvent::UvWatcher)
+
+	   (class UvFsPoll::UvWatcher)
 
 	   (class UvCheck::UvWatcher)
 
@@ -146,6 +148,7 @@
 	   
 	   (generic %uv-init ::%Uv)
 
+	   (uv-version::string)
 	   (uv-id::int ::UvHandle)
 
 	   (uv-new-file::UvFile ::int ::bstring)
@@ -155,6 +158,11 @@
 	   (uv-handle-type-symbol ::int)
 	   (uv-guess-handle::symbol ::int)))
 
+;*---------------------------------------------------------------------*/
+;*    uv-version ...                                                   */
+;*---------------------------------------------------------------------*/
+(define (uv-version)
+   ($uv-version))
 
 ;*---------------------------------------------------------------------*/
 ;*    uv-id ...                                                        */

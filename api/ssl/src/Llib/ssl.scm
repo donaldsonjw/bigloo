@@ -3,8 +3,8 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano & Stephane Epardaud                */
 ;*    Creation    :  Thu Mar 24 10:24:38 2005                          */
-;*    Last change :  Wed Sep 17 19:14:36 2014 (serrano)                */
-;*    Copyright   :  2005-14 Manuel Serrano                            */
+;*    Last change :  Sat Feb 14 10:04:47 2015 (serrano)                */
+;*    Copyright   :  2005-15 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    SSL Bigloo library                                               */
 ;*=====================================================================*/
@@ -34,7 +34,8 @@
 	   (macro $ssl-nil::$ssl "0L")
 	   (macro $bio-nil::$bio "0L")
 	   (macro $X509-store-nil::$X509-store "0L")
-           
+
+	   ($ssl-version::string () "bgl_ssl_version")
            ($certificate-subject::bstring (::certificate)
 	      "bgl_ssl_certificate_subject")
            ($certificate-issuer::bstring (::certificate)
@@ -45,6 +46,11 @@
 	      "bgl_ssl_load_pem")
            ($private-key-load::private-key (::bstring)
 	      "bgl_ssl_load_private_key")
+
+	   (macro $ssl-rand-status::bool () "RAND_status")
+	   (macro $ssl-rand-poll::bool () "RAND_poll")
+	   (macro $ssl-rand-bytes::bool (::string ::int) "RAND_bytes")
+	   (macro $ssl-rand-pseudo-bytes::bool (::string ::int) "RAND_pseudo_bytes")
 	   
 	   ($ssl-client-make-socket::obj (::bstring ::int ::int ::int
 					    ::obj ::obj ::pair-nil
@@ -65,7 +71,12 @@
 
 	   ($bgl-secure-context-add-ca-cert!::bool (::secure-context ::bstring ::long ::long)
 	      "bgl_ssl_ctx_add_ca_cert")
-
+	   ($bgl-secure-context-set-key!::bool (::secure-context ::bstring ::long ::long ::obj) "bgl_ssl_set_key")
+	   ($bgl-secure-context-set-cert!::bool (::secure-context ::bstring ::long ::long) "bgl_ssl_set_cert")
+	   (macro $ssl-ctx-set-cipher-list::void (::$ssl-ctx ::string)
+	      "SSL_CTX_set_cipher_list")
+	   (macro $ssl-ctx-set-options::void (::$ssl-ctx ::int)
+	      "SSL_CTX_set_options")
 	   ($bgl-ssl-connection-init!::obj (::ssl-connection)
 	      "bgl_ssl_connection_init")
 	   
@@ -141,10 +152,17 @@
 	   
 	   (class private-key
 	      ($native::$private-key read-only))
+
+	   (ssl-version::string)
 	   
 	   (read-private-key::private-key ::bstring)
 	   (read-certificate::certificate ::bstring)
 	   (read-pem-file::pair-nil ::bstring)
+
+	   (inline ssl-rand-status::bool)
+	   (inline ssl-rand-poll::bool)
+	   (ssl-rand-bytes ::int)
+	   (ssl-rand-pseudo-bytes ::int)
 	   
 	   (inline certificate-subject::bstring ::certificate)
 	   (inline certificate-issuer::bstring ::certificate)
@@ -177,6 +195,10 @@
 	   (generic secure-context-init ::secure-context)
 	   (generic secure-context-add-root-certs!::bool ::secure-context)
 	   (generic secure-context-add-ca-cert!::bool ::secure-context ::bstring ::long ::long)
+	   (generic secure-context-set-key!::bool ::secure-context ::bstring ::long ::long #!optional passphrase)
+	   (generic secure-context-set-cert!::bool ::secure-context ::bstring ::long ::long)
+	   (generic secure-context-set-ciphers!::bool ::secure-context ::bstring)
+	   (generic secure-context-set-options!::bool ::secure-context ::int)
 
 	   (generic ssl-connection-init ::ssl-connection)
 	   (generic ssl-connection-start::int ::ssl-connection)
@@ -210,7 +232,8 @@
 	      (isserver::bool read-only)
 	      (request-cert::bool read-only (default #f))
 	      (server-name::obj read-only (default #f))
-	      (reject-unauthorized::bool read-only))))
+	      (reject-unauthorized::bool read-only)
+	      (info-callback (default #f)))))
       (else
        (export
 	  (class secure-context
@@ -219,6 +242,14 @@
 	  (class ssl-connection
 	     (ctx::secure-context read-only)
 	     (issserver::bool read-only))))))
+
+;*---------------------------------------------------------------------*/
+;*    ssl-version ...                                                  */
+;*---------------------------------------------------------------------*/
+(define (ssl-version)
+   (cond-expand
+      (bigloo-c ($ssl-version))
+      (else "-1")))
 
 ;*---------------------------------------------------------------------*/
 ;*    sanity-args-checks ...                                           */
@@ -322,6 +353,56 @@
    ($certificate-load-pem file))
 
 ;*---------------------------------------------------------------------*/
+;*    ssl-rand-status ...                                              */
+;*---------------------------------------------------------------------*/
+(define-inline (ssl-rand-status)
+   (cond-expand
+      (bigloo-c ($ssl-rand-status))
+      (else #t)))
+
+;*---------------------------------------------------------------------*/
+;*    ssl-rand-poll ...                                                */
+;*---------------------------------------------------------------------*/
+(define-inline (ssl-rand-poll)
+   (cond-expand
+      (bigloo-c ($ssl-rand-poll))
+      (else #t)))
+
+;*---------------------------------------------------------------------*/
+;*    ssl-rand-bytes ...                                               */
+;*---------------------------------------------------------------------*/
+(define (ssl-rand-bytes sz::int)
+   (let ((str (make-string sz)))
+      (cond-expand
+	 (bigloo-c
+	  ($ssl-rand-bytes str sz)
+	  str)
+	 (else
+	  (let loop ((i 0))
+	     (if (=fx i sz)
+		 str
+		 (begin
+		    (string-set! str i (integer->char (random 255)))
+		    (loop (+fx i 1)))))))))
+   
+;*---------------------------------------------------------------------*/
+;*    ssl-rand-pseudo-bytes ...                                        */
+;*---------------------------------------------------------------------*/
+(define (ssl-rand-pseudo-bytes sz::int)
+   (let ((str (make-string sz)))
+      (cond-expand
+	 (bigloo-c
+	  ($ssl-rand-pseudo-bytes str sz)
+	  str)
+	 (else
+	  (let loop ((i 0))
+	     (if (=fx i sz)
+		 str
+		 (begin
+		    (string-set! str i (integer->char (random 255)))
+		    (loop (+fx i 1)))))))))
+   
+;*---------------------------------------------------------------------*/
 ;*    certificate-subject ...                                          */
 ;*---------------------------------------------------------------------*/
 (define-inline (certificate-subject::bstring cert::certificate)
@@ -388,6 +469,50 @@
    (cond-expand
       (bigloo-c
        ($bgl-secure-context-add-ca-cert! sc cert offset len))
+      (else
+       #f)))
+
+;*---------------------------------------------------------------------*/
+;*    secure-context-set-key! ::secure-context ...                     */
+;*---------------------------------------------------------------------*/
+(define-generic (secure-context-set-key! sc::secure-context cert offset len #!optional passphrase)
+   (cond-expand
+      (bigloo-c
+       ($bgl-secure-context-set-key! sc cert offset len passphrase))
+      (else
+       #f)))
+
+;*---------------------------------------------------------------------*/
+;*    secure-context-set-cert! ::secure-context ...                    */
+;*---------------------------------------------------------------------*/
+(define-generic (secure-context-set-cert! sc::secure-context cert offset len)
+   (cond-expand
+      (bigloo-c
+       ($bgl-secure-context-set-cert! sc cert offset len))
+      (else
+       #f)))
+
+;*---------------------------------------------------------------------*/
+;*    secure-context-set-ciphers! ::secure-context ...                 */
+;*---------------------------------------------------------------------*/
+(define-generic (secure-context-set-ciphers! sc::secure-context ciphers)
+   (cond-expand
+      (bigloo-c
+       (with-access::secure-context sc ($native)
+	  ($ssl-ctx-set-cipher-list $native ciphers))
+       #t)
+      (else
+       #f)))
+
+;*---------------------------------------------------------------------*/
+;*    secure-context-set-options! ::secure-context ...                 */
+;*---------------------------------------------------------------------*/
+(define-generic (secure-context-set-options! sc::secure-context options)
+   (cond-expand
+      (bigloo-c
+       (with-access::secure-context sc ($native)
+	  ($ssl-ctx-set-cipher-list $native options))
+       #t)
       (else
        #f)))
 

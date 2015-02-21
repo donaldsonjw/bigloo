@@ -3,8 +3,8 @@
 /*    -------------------------------------------------------------    */
 /*    Author      :  Manuel Serrano                                    */
 /*    Creation    :  Tue Dec  5 10:53:03 2000                          */
-/*    Last change :  Wed Feb 17 16:13:18 2010 (serrano)                */
-/*    Copyright   :  2000-10 Manuel Serrano                            */
+/*    Last change :  Tue Jan 20 19:37:59 2015 (serrano)                */
+/*    Copyright   :  2000-15 Manuel Serrano                            */
 /*    -------------------------------------------------------------    */
 /*    The Server Socket implementation for the JVM back-end.           */
 /*=====================================================================*/
@@ -78,21 +78,30 @@ public class server_socket extends socket {
       return new client_socket( accepted_socket, inbuf, outbuf );
    }
 
-   public Object shutdown( final boolean close_socket ) {
+   public int shutdown( final int how ) {
       try {
 	 if (client_socket != null)
 	    try {
-	       client_socket.shutdownOutput();
-	       client_socket.shutdownInput();
+	       switch( how ) {
+		  case 0:
+		     client_socket.shutdownOutput();
+		     client_socket.shutdownInput();
+		     break;
+		  case 1:
+		     client_socket.shutdownInput();
+		     break;
+		  default:
+		     client_socket.shutdownOutput();
+		     break;
+	       }
 	    } catch (Exception _) {
+	       return 2;
 	    }
-
-	 if( close_socket ) close();
       } catch( Throwable _ ) {
-	 ;
+	 return 1;
       }
 
-      return bigloo.foreign.BUNSPEC;
+      return 0;
    }
 
    public Object close() {

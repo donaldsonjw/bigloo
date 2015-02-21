@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>17. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- Threads</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>17. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>February 2015 -- Threads</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center33090'
+<br/><center id='center33147'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc33080" align="center" colspan="1"><font color="#ffffff"><strong id='bold33078'
+<tr bgcolor="#8381de"><th id="tc33137" align="center" colspan="1"><font color="#ffffff"><strong id='bold33135'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc33087" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc33083" align="left" valign="top" colspan="1"><strong id='bold33082'
->top:</strong></td><td id="tc33084" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc33144" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc33140" align="left" valign="top" colspan="1"><strong id='bold33139'
+>top:</strong></td><td id="tc33141" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-February-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>February 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center33100'
+<br/><br/><center id='center33157'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc33094" align="center" colspan="1"><font color="#ffffff"><strong id='bold33092'
+<tr bgcolor="#8381de"><th id="tc33151" align="center" colspan="1"><font color="#ffffff"><strong id='bold33149'
 >Threads</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc33097" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc33154" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">17.1</td><td colspan="4" width="100%"><a href="bigloo-18.html#Thread-Common-Functions">Thread Common Functions</a></td></tr>
  <tr><td></td><td valign="top" align="left">17.1.1</td><td colspan="3" width="100%"><a href="bigloo-18.html#Thread-API">Thread API</a></td></tr>
@@ -64,11 +64,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center33110'
+<br/><br/><center id='center33167'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc33104" align="center" colspan="1"><font color="#ffffff"><strong id='bold33102'
+<tr bgcolor="#8381de"><th id="tc33161" align="center" colspan="1"><font color="#ffffff"><strong id='bold33159'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc33107" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc33164" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -116,17 +116,17 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Threads" class="mark"></a><a name="g21314" class="mark"></a>
+<a name="Threads" class="mark"></a><a name="g21371" class="mark"></a>
 Bigloo supports multithreaded programming. Two different libraries
-programming are available. The first one, the <em id='emph21316'
+programming are available. The first one, the <em id='emph21373'
 >Fair Thread</em>
 (see Section <a href="bigloo-18.html#Fair-Threads" class="inbound">Fair Threads</a>), enables, simple, easy to develop and 
 to maintain code. The second one, the Posix Thread 
 (see Section <a href="bigloo-18.html#Posix-Threads" class="inbound">Posix Threads</a>) enables more
 easily to take benefit of the actual parallelism that is now available
-on stock hardware. Because it is easier to program with <code id='code21317'
+on stock hardware. Because it is easier to program with <code id='code21374'
 >fthread</code>
-than with <code id='code21318'
+than with <code id='code21375'
 >pthread</code>, we strongly recommend to use the former
 as much as possible and leave the former for specially demanding
 applications. Both libraries are described in this chapter.<br/><br/>
@@ -135,13 +135,13 @@ applications. Both libraries are described in this chapter.<br/><br/>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">17.1 Thread Common Functions</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Thread-Common-Functions" class="mark"></a><a name="g21320" class="mark"></a><a name="g21322" class="mark"></a>
+<a name="Thread-Common-Functions" class="mark"></a><a name="g21377" class="mark"></a><a name="g21379" class="mark"></a>
 <br/><br/>Bigloo implements SRFI-18 (Multithreading support). This SRFI is
 available at <a href="http://srfi.schemers.org/srfi-18/srfi-18.html">http://srfi.schemers.org/srfi-18/srfi-18.html</a>.
 As Bigloo's threads are objects (see Section <a href="bigloo-11.html#Object-System" class="inbound">Object System</a>),
 the SRFI-18's thread specific functions can be used with either the
-<code id='code21325'
->pthread</code> or the <code id='code21326'
+<code id='code21382'
+>pthread</code> or the <code id='code21383'
 >fthread</code> library.<br/><br/>This section describes the functions that are available independently
 of the multi-threading library.<br/><br/><!-- Thread API -->
 <a name="Thread-API"></a>
@@ -149,99 +149,99 @@ of the multi-threading library.<br/><br/><!-- Thread API -->
 </h3></td></tr></table>
 </div><div class="subsection">
 <a name="Thread-API" class="mark"></a>
-Bigloo uses a set of <em id='emph21329'
+Bigloo uses a set of <em id='emph21386'
 >primitive</em> functions and methods to create,
 run and handle thread. For the sake of standardization the name and
 semantic  of SRFI-18 has been used. This section presents only the
 mandatory functions to program with threads in Bigloo.<br/><br/>The most important difference with SRFI-18, is the missing of the
-function <code id='code21331'
+function <code id='code21388'
 >make-thread</code>, which is not available for all libraries,
 as it can be hard  to predict the type of thread which will be created
 if several thread libraries are used simultaneously. As threads are
 regular Bigloo objects, they can be created using the
-<code id='code21332'
+<code id='code21389'
 >instantiate</code> syntax. See the <a href="bigloo-18.html#Fair-Threads" class="inbound">Fair Threads</a> and <a href="bigloo-18.html#Posix-Threads" class="inbound">Posix Threads</a> 
 specific sections for more details about thread creation and
-examples.<br/><br/>The examples given in this section use a <em id='emph21334'
+examples.<br/><br/>The examples given in this section use a <em id='emph21391'
 >generic</em>
-syntax with <code id='code21335'
+syntax with <code id='code21392'
 >instantiate::thread</code>, to run the examples, you will
 have to put them in a function in a module (see Section <a href="bigloo-4.html#Modules" class="inbound">Modules</a>,
-and import one of the libraries using <code id='code21336'
+and import one of the libraries using <code id='code21393'
 >library</code> module
 declaration.<br/><br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21339" class="mark"></a><a name="current-thread" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21343" align="left" colspan="1"><strong id='bold21341'
->current-thread</strong><em id='it21342'
-></em></td><td id="tc21344" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td><a name="g21396" class="mark"></a><a name="current-thread" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21400" align="left" colspan="1"><strong id='bold21398'
+>current-thread</strong><em id='it21399'
+></em></td><td id="tc21401" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 Returns the current thread.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21350" class="mark"></a><a name="thread?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21356" align="left" colspan="1"><strong id='bold21352'
->thread?</strong><em id='it21355'
-> <code id='code21354'
-><em id='it21353'
->obj</em></code></em></td><td id="tc21357" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td><a name="g21407" class="mark"></a><a name="thread?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21413" align="left" colspan="1"><strong id='bold21409'
+>thread?</strong><em id='it21412'
+> <code id='code21411'
+><em id='it21410'
+>obj</em></code></em></td><td id="tc21414" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-Returns <code id='code21360'
->#t</code> if <code id='code21362'
-><em id='it21361'
->obj</em></code> is a thread, otherwise returns <code id='code21363'
+Returns <code id='code21417'
+>#t</code> if <code id='code21419'
+><em id='it21418'
+>obj</em></code> is a thread, otherwise returns <code id='code21420'
 >#f</code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21367" class="mark"></a><a name="thread-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21373" align="left" colspan="1"><strong id='bold21369'
->thread-name</strong><em id='it21372'
-> <code id='code21371'
-><em id='it21370'
->thread</em></code></em></td><td id="tc21374" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td><a name="g21424" class="mark"></a><a name="thread-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21430" align="left" colspan="1"><strong id='bold21426'
+>thread-name</strong><em id='it21429'
+> <code id='code21428'
+><em id='it21427'
+>thread</em></code></em></td><td id="tc21431" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-Returns the name of the <code id='code21378'
-><em id='it21377'
+Returns the name of the <code id='code21435'
+><em id='it21434'
 >thread</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21382" class="mark"></a><a name="thread-specific" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21388" align="left" colspan="1"><strong id='bold21384'
->thread-specific</strong><em id='it21387'
-> <code id='code21386'
-><em id='it21385'
->thread</em></code></em></td><td id="tc21389" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td><a name="g21439" class="mark"></a><a name="thread-specific" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21445" align="left" colspan="1"><strong id='bold21441'
+>thread-specific</strong><em id='it21444'
+> <code id='code21443'
+><em id='it21442'
+>thread</em></code></em></td><td id="tc21446" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-<a name="g21393" class="mark"></a><a name="thread-specific-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21401" align="left" colspan="1"><strong id='bold21395'
->thread-specific-set!</strong><em id='it21400'
-> <code id='code21397'
-><em id='it21396'
->thread</em></code> <code id='code21399'
-><em id='it21398'
->obj</em></code></em></td><td id="tc21402" align="right" colspan="1">SRFI-18 function</td></tr>
+<a name="g21450" class="mark"></a><a name="thread-specific-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21458" align="left" colspan="1"><strong id='bold21452'
+>thread-specific-set!</strong><em id='it21457'
+> <code id='code21454'
+><em id='it21453'
+>thread</em></code> <code id='code21456'
+><em id='it21455'
+>obj</em></code></em></td><td id="tc21459" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-Returns and sets value in the specific field of the <code id='code21406'
-><em id='it21405'
+Returns and sets value in the specific field of the <code id='code21463'
+><em id='it21462'
 >thread</em></code>. If no
-value has been set, <code id='code21407'
->thread-specific</code> returns an unspecified value.<br/><br/><center id='center21419'
+value has been set, <code id='code21464'
+>thread-specific</code> returns an unspecified value.<br/><br/><center id='center21476'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21417'
->(<strong id='bold33111'
->let</strong> ((t (<strong id='bold33112'
->instantiate</strong><font color="#00cf00"><strong id='bold33113'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21474'
+>(<strong id='bold33168'
+>let</strong> ((t (<strong id='bold33169'
+>instantiate</strong><font color="#00cf00"><strong id='bold33170'
 >::thread</strong></font>
-          (body (<strong id='bold33115'
+          (body (<strong id='bold33172'
 >lambda</strong> ()
-                   (print (<font color="#ad4386"><strong id='bold33116'
->thread-specific</strong></font> (<font color="#ad4386"><strong id='bold33118'
+                   (print (<font color="#ad4386"><strong id='bold33173'
+>thread-specific</strong></font> (<font color="#ad4386"><strong id='bold33175'
 >current-thread</strong></font>))))))))
-   (<font color="#ad4386"><strong id='bold33120'
+   (<font color="#ad4386"><strong id='bold33177'
 >thread-specific-set!</strong></font> t 'foo)
-   (<font color="#ad4386"><strong id='bold33122'
+   (<font color="#ad4386"><strong id='bold33179'
 >thread-start!</strong></font> t)) -| foo
 </pre>
 </td></tr>
@@ -249,40 +249,40 @@ value has been set, <code id='code21407'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21423" class="mark"></a><a name="thread-cleanup" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21429" align="left" colspan="1"><strong id='bold21425'
->thread-cleanup</strong><em id='it21428'
-> <code id='code21427'
-><em id='it21426'
->thread</em></code></em></td><td id="tc21430" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g21480" class="mark"></a><a name="thread-cleanup" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21486" align="left" colspan="1"><strong id='bold21482'
+>thread-cleanup</strong><em id='it21485'
+> <code id='code21484'
+><em id='it21483'
+>thread</em></code></em></td><td id="tc21487" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-<a name="g21434" class="mark"></a><a name="thread-cleanup-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21442" align="left" colspan="1"><strong id='bold21436'
->thread-cleanup-set!</strong><em id='it21441'
-> <code id='code21438'
-><em id='it21437'
->thread</em></code> <code id='code21440'
-><em id='it21439'
->fun</em></code></em></td><td id="tc21443" align="right" colspan="1">Bigloo function</td></tr>
+<a name="g21491" class="mark"></a><a name="thread-cleanup-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21499" align="left" colspan="1"><strong id='bold21493'
+>thread-cleanup-set!</strong><em id='it21498'
+> <code id='code21495'
+><em id='it21494'
+>thread</em></code> <code id='code21497'
+><em id='it21496'
+>fun</em></code></em></td><td id="tc21500" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
 Associates a cleanup function to a thread. The cleanup function is called
 with the thread itself. The cleanup function is executed
-in a context where <code id='code21446'
+in a context where <code id='code21503'
 >current-thread</code> is the thread owning the
-cleanup function.<br/><br/><center id='center21459'
+cleanup function.<br/><br/><center id='center21516'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21457'
->(<strong id='bold33124'
->let</strong> ((t (<strong id='bold33125'
->instantiate</strong><font color="#00cf00"><strong id='bold33126'
->::thread</strong></font> (body (<strong id='bold33128'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21514'
+>(<strong id='bold33181'
+>let</strong> ((t (<strong id='bold33182'
+>instantiate</strong><font color="#00cf00"><strong id='bold33183'
+>::thread</strong></font> (body (<strong id='bold33185'
 >lambda</strong> () 'done) 'foo))))
-   (thread-cleanup-set! t (<strong id='bold33129'
->lambda</strong> (v) (print (<font color="#ad4386"><strong id='bold33130'
->thread-name</strong></font> (<font color="#ad4386"><strong id='bold33132'
+   (thread-cleanup-set! t (<strong id='bold33186'
+>lambda</strong> (v) (print (<font color="#ad4386"><strong id='bold33187'
+>thread-name</strong></font> (<font color="#ad4386"><strong id='bold33189'
 >current-thread</strong></font>))
 					     <font color="red">&quot;, exit value: &quot;</font> v)))
-   (<font color="#ad4386"><strong id='bold33135'
+   (<font color="#ad4386"><strong id='bold33192'
 >thread-start!</strong></font> t)) -| foo, exit value: done
 </pre>
 </td></tr>
@@ -290,75 +290,75 @@ cleanup function.<br/><br/><center id='center21459'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21463" class="mark"></a><a name="thread-parameter" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21469" align="left" colspan="1"><strong id='bold21465'
->thread-parameter</strong><em id='it21468'
-> <code id='code21467'
-><em id='it21466'
->ident</em></code></em></td><td id="tc21470" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g21520" class="mark"></a><a name="thread-parameter" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21526" align="left" colspan="1"><strong id='bold21522'
+>thread-parameter</strong><em id='it21525'
+> <code id='code21524'
+><em id='it21523'
+>ident</em></code></em></td><td id="tc21527" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-<a name="g21474" class="mark"></a><a name="thread-parameter-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21482" align="left" colspan="1"><strong id='bold21476'
->thread-parameter-set!</strong><em id='it21481'
-> <code id='code21478'
-><em id='it21477'
->ident</em></code> <code id='code21480'
-><em id='it21479'
->value</em></code></em></td><td id="tc21483" align="right" colspan="1">Bigloo function</td></tr>
+<a name="g21531" class="mark"></a><a name="thread-parameter-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21539" align="left" colspan="1"><strong id='bold21533'
+>thread-parameter-set!</strong><em id='it21538'
+> <code id='code21535'
+><em id='it21534'
+>ident</em></code> <code id='code21537'
+><em id='it21536'
+>value</em></code></em></td><td id="tc21540" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Returns the value of the parameter <code id='code21487'
-><em id='it21486'
+Returns the value of the parameter <code id='code21544'
+><em id='it21543'
 >ident</em></code> in the current thread. If
-no value is bound to this parameter, <code id='code21488'
+no value is bound to this parameter, <code id='code21545'
 >#f</code> is returned.<br/><br/>A thread parameter is implemented by a chunk of memory specific to
 each thread. All threads are created with an empty set of parameters.
 </td></tr>
 </tbody></table><br/>
 The next functions have different behaviors depending in the library
 used, more details will be given in the specific sections below.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21494" class="mark"></a><a name="thread-start!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21502" align="left" colspan="1"><strong id='bold21496'
->thread-start!</strong><em id='it21501'
-> <code id='code21498'
-><em id='it21497'
->thread</em></code> [<code id='code21500'
-><em id='it21499'
->args</em></code>]</em></td><td id="tc21503" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21507" class="mark"></a><a name="thread-start-joinable!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21513" align="left" colspan="1"><strong id='bold21509'
->thread-start-joinable!</strong><em id='it21512'
-> <code id='code21511'
-><em id='it21510'
->thread</em></code></em></td><td id="tc21514" align="right" colspan="1">Bigloo function</td></tr>
-</tbody></table>
-<a name="g21518" class="mark"></a><a name="thread-join!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21526" align="left" colspan="1"><strong id='bold21520'
->thread-join!</strong><em id='it21525'
-> <code id='code21522'
-><em id='it21521'
->thread</em></code> [<code id='code21524'
-><em id='it21523'
->timeout</em></code>]</em></td><td id="tc21527" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21531" class="mark"></a><a name="thread-terminate!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21537" align="left" colspan="1"><strong id='bold21533'
->thread-terminate!</strong><em id='it21536'
-> <code id='code21535'
-><em id='it21534'
->thread</em></code></em></td><td id="tc21538" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21542" class="mark"></a><a name="thread-yield!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21546" align="left" colspan="1"><strong id='bold21544'
->thread-yield!</strong><em id='it21545'
-></em></td><td id="tc21547" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21551" class="mark"></a><a name="thread-sleep!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21557" align="left" colspan="1"><strong id='bold21553'
->thread-sleep!</strong><em id='it21556'
+<tr><td><a name="g21551" class="mark"></a><a name="thread-start!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21559" align="left" colspan="1"><strong id='bold21553'
+>thread-start!</strong><em id='it21558'
 > <code id='code21555'
 ><em id='it21554'
->timeout</em></code></em></td><td id="tc21558" align="right" colspan="1">SRFI-18 function</td></tr>
+>thread</em></code> [<code id='code21557'
+><em id='it21556'
+>args</em></code>]</em></td><td id="tc21560" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21564" class="mark"></a><a name="thread-start-joinable!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21570" align="left" colspan="1"><strong id='bold21566'
+>thread-start-joinable!</strong><em id='it21569'
+> <code id='code21568'
+><em id='it21567'
+>thread</em></code></em></td><td id="tc21571" align="right" colspan="1">Bigloo function</td></tr>
+</tbody></table>
+<a name="g21575" class="mark"></a><a name="thread-join!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21583" align="left" colspan="1"><strong id='bold21577'
+>thread-join!</strong><em id='it21582'
+> <code id='code21579'
+><em id='it21578'
+>thread</em></code> [<code id='code21581'
+><em id='it21580'
+>timeout</em></code>]</em></td><td id="tc21584" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21588" class="mark"></a><a name="thread-terminate!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21594" align="left" colspan="1"><strong id='bold21590'
+>thread-terminate!</strong><em id='it21593'
+> <code id='code21592'
+><em id='it21591'
+>thread</em></code></em></td><td id="tc21595" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21599" class="mark"></a><a name="thread-yield!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21603" align="left" colspan="1"><strong id='bold21601'
+>thread-yield!</strong><em id='it21602'
+></em></td><td id="tc21604" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21608" class="mark"></a><a name="thread-sleep!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21614" align="left" colspan="1"><strong id='bold21610'
+>thread-sleep!</strong><em id='it21613'
+> <code id='code21612'
+><em id='it21611'
+>timeout</em></code></em></td><td id="tc21615" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table><br/><br/><br/></div>
@@ -369,136 +369,136 @@ used, more details will be given in the specific sections below.<br/><br/><table
 </div><div class="subsection">
 <a name="Mutexes" class="mark"></a>
 Thread locking mechanism is common to Fair Threads and Posix Threads.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21566" class="mark"></a><a name="mutex?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21572" align="left" colspan="1"><strong id='bold21568'
->mutex?</strong><em id='it21571'
-> <code id='code21570'
-><em id='it21569'
->obj</em></code></em></td><td id="tc21573" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21577" class="mark"></a><a name="make-mutex" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21583" align="left" colspan="1"><strong id='bold21579'
->make-mutex</strong><em id='it21582'
-> [<code id='code21581'
-><em id='it21580'
->name</em></code>]</em></td><td id="tc21584" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21588" class="mark"></a><a name="mutex-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21594" align="left" colspan="1"><strong id='bold21590'
->mutex-name</strong><em id='it21593'
-> <code id='code21592'
-><em id='it21591'
->mutex</em></code></em></td><td id="tc21595" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21599" class="mark"></a><a name="mutex-specific" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21605" align="left" colspan="1"><strong id='bold21601'
->mutex-specific</strong><em id='it21604'
-> <code id='code21603'
-><em id='it21602'
->mutex</em></code></em></td><td id="tc21606" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21610" class="mark"></a><a name="mutex-specific-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21618" align="left" colspan="1"><strong id='bold21612'
->mutex-specific-set!</strong><em id='it21617'
-> <code id='code21614'
-><em id='it21613'
->mutex</em></code> <code id='code21616'
-><em id='it21615'
->obj</em></code></em></td><td id="tc21619" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21623" class="mark"></a><a name="mutex-state" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td><a name="g21623" class="mark"></a><a name="mutex?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
 <tr><td id="tc21629" align="left" colspan="1"><strong id='bold21625'
->mutex-state</strong><em id='it21628'
+>mutex?</strong><em id='it21628'
 > <code id='code21627'
 ><em id='it21626'
->mutex</em></code></em></td><td id="tc21630" align="right" colspan="1">SRFI-18 function</td></tr>
+>obj</em></code></em></td><td id="tc21630" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-<a name="g21634" class="mark"></a><a name="mutex-lock!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21644" align="left" colspan="1"><strong id='bold21636'
->mutex-lock!</strong><em id='it21643'
-> <code id='code21638'
+<a name="g21634" class="mark"></a><a name="make-mutex" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21640" align="left" colspan="1"><strong id='bold21636'
+>make-mutex</strong><em id='it21639'
+> [<code id='code21638'
 ><em id='it21637'
->mutex</em></code> [<code id='code21640'
-><em id='it21639'
->timeout</em></code> [<code id='code21642'
-><em id='it21641'
->thread</em></code>]]</em></td><td id="tc21645" align="right" colspan="1">SRFI-18 function, deprecated</td></tr>
+>name</em></code>]</em></td><td id="tc21641" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-<a name="g21649" class="mark"></a><a name="mutex-unlock!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21655" align="left" colspan="1"><strong id='bold21651'
->mutex-unlock!</strong><em id='it21654'
-> <code id='code21653'
-><em id='it21652'
->mutex</em></code></em></td><td id="tc21656" align="right" colspan="1">SRFI-18 function, deprecated</td></tr>
+<a name="g21645" class="mark"></a><a name="mutex-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21651" align="left" colspan="1"><strong id='bold21647'
+>mutex-name</strong><em id='it21650'
+> <code id='code21649'
+><em id='it21648'
+>mutex</em></code></em></td><td id="tc21652" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21656" class="mark"></a><a name="mutex-specific" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21662" align="left" colspan="1"><strong id='bold21658'
+>mutex-specific</strong><em id='it21661'
+> <code id='code21660'
+><em id='it21659'
+>mutex</em></code></em></td><td id="tc21663" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21667" class="mark"></a><a name="mutex-specific-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21675" align="left" colspan="1"><strong id='bold21669'
+>mutex-specific-set!</strong><em id='it21674'
+> <code id='code21671'
+><em id='it21670'
+>mutex</em></code> <code id='code21673'
+><em id='it21672'
+>obj</em></code></em></td><td id="tc21676" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21680" class="mark"></a><a name="mutex-state" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21686" align="left" colspan="1"><strong id='bold21682'
+>mutex-state</strong><em id='it21685'
+> <code id='code21684'
+><em id='it21683'
+>mutex</em></code></em></td><td id="tc21687" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21691" class="mark"></a><a name="mutex-lock!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21701" align="left" colspan="1"><strong id='bold21693'
+>mutex-lock!</strong><em id='it21700'
+> <code id='code21695'
+><em id='it21694'
+>mutex</em></code> [<code id='code21697'
+><em id='it21696'
+>timeout</em></code> [<code id='code21699'
+><em id='it21698'
+>thread</em></code>]]</em></td><td id="tc21702" align="right" colspan="1">SRFI-18 function, deprecated</td></tr>
+</tbody></table>
+<a name="g21706" class="mark"></a><a name="mutex-unlock!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21712" align="left" colspan="1"><strong id='bold21708'
+>mutex-unlock!</strong><em id='it21711'
+> <code id='code21710'
+><em id='it21709'
+>mutex</em></code></em></td><td id="tc21713" align="right" colspan="1">SRFI-18 function, deprecated</td></tr>
 </tbody></table>
 
-<center id='center21689'
+<center id='center21746'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21687'
->(<strong id='bold33137'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21744'
+>(<strong id='bold33194'
 >let</strong> ((m (make-mutex)))
-   (<font color="#ad4386"><strong id='bold33138'
+   (<font color="#ad4386"><strong id='bold33195'
 >thread-start!</strong></font>
-    (<strong id='bold33140'
->instantiate</strong><font color="#00cf00"><strong id='bold33141'
+    (<strong id='bold33197'
+>instantiate</strong><font color="#00cf00"><strong id='bold33198'
 >::thread</strong></font>
-       (body (<strong id='bold33143'
+       (body (<strong id='bold33200'
 >lambda</strong> ()
-                (<strong id='bold33144'
+                (<strong id='bold33201'
 >let</strong> loop ()
-                   (<strong id='bold33145'
+                   (<strong id='bold33202'
 >if</strong> (mutex-lock! m 0)
-                       (<strong id='bold33146'
+                       (<strong id='bold33203'
 >begin</strong>
                           (display <font color="red">&quot;locked&quot;</font>)
                           (mutex-unlock! m))
-                       (<strong id='bold33148'
+                       (<strong id='bold33205'
 >begin</strong>
-                          (<font color="#ad4386"><strong id='bold33149'
+                          (<font color="#ad4386"><strong id='bold33206'
 >thread-yield!</strong></font>)
                           (loop)))))))))
-  -| locked<br/><br/>(<strong id='bold33151'
+  -| locked<br/><br/>(<strong id='bold33208'
 >let</strong> ((res '()))
-   (<font color="#6959cf"><strong id='bold33152'
->define</strong></font> (<font color="#6959cf"><strong id='bold33154'
+   (<font color="#6959cf"><strong id='bold33209'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33211'
 >mutex-lock-recursively!</strong></font> mutex)
-      (<strong id='bold33156'
->if</strong> (eq? (mutex-state mutex) (<font color="#ad4386"><strong id='bold33157'
+      (<strong id='bold33213'
+>if</strong> (eq? (mutex-state mutex) (<font color="#ad4386"><strong id='bold33214'
 >current-thread</strong></font>))
-          (<strong id='bold33159'
+          (<strong id='bold33216'
 >let</strong> ((n (mutex-specific mutex)))
              (mutex-specific-set! mutex (+ n 1)))
-          (<strong id='bold33160'
+          (<strong id='bold33217'
 >begin</strong>
              (mutex-lock! mutex)
              (mutex-specific-set! mutex 0))))
-   (<font color="#6959cf"><strong id='bold33161'
->define</strong></font> (<font color="#6959cf"><strong id='bold33163'
+   (<font color="#6959cf"><strong id='bold33218'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33220'
 >mutex-unlock-recursively!</strong></font> mutex)
-      (<strong id='bold33165'
+      (<strong id='bold33222'
 >let</strong> ((n (mutex-specific mutex)))
-         (<strong id='bold33166'
+         (<strong id='bold33223'
 >if</strong> (= n 0)
              (mutex-unlock! mutex)
              (mutex-specific-set! mutex (- n 1)))))
-   (<font color="#ad4386"><strong id='bold33167'
+   (<font color="#ad4386"><strong id='bold33224'
 >thread-start!</strong></font>
-    (<strong id='bold33169'
->instantiate</strong><font color="#00cf00"><strong id='bold33170'
+    (<strong id='bold33226'
+>instantiate</strong><font color="#00cf00"><strong id='bold33227'
 >::thread</strong></font>
-       (body (<strong id='bold33172'
+       (body (<strong id='bold33229'
 >lambda</strong> ()
-                (<strong id='bold33173'
+                (<strong id='bold33230'
 >let</strong> ((m (make-mutex)))
                    (mutex-lock-recursively! m)
                    (mutex-lock-recursively! m)
                    (mutex-lock-recursively! m)
-                   (<strong id='bold33174'
+                   (<strong id='bold33231'
 >set!</strong> res (cons (mutex-specific m) res))
                    (mutex-unlock-recursively! m)
                    (mutex-unlock-recursively! m)
                    (mutex-unlock-recursively! m)
-                   (<strong id='bold33175'
+                   (<strong id='bold33232'
 >set!</strong> res (cons (mutex-specific m) res)))))))
    res)
   =&gt; (0 2)
@@ -508,31 +508,31 @@ Thread locking mechanism is common to Fair Threads and Posix Threads.<br/><br/><
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21693" class="mark"></a><a name="synchronize" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21697" align="left" colspan="1"><strong id='bold21695'
->synchronize</strong><em id='it21696'
-> mutex exp1 exp2 ...</em></td><td id="tc21698" align="right" colspan="1">Bigloo form</td></tr>
+<tr><td><a name="g21750" class="mark"></a><a name="synchronize" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21754" align="left" colspan="1"><strong id='bold21752'
+>synchronize</strong><em id='it21753'
+> mutex exp1 exp2 ...</em></td><td id="tc21755" align="right" colspan="1">Bigloo form</td></tr>
 </tbody></table>
-The function <code id='code21702'
-><em id='it21701'
->synchronize</em></code> evaluates the expressions <code id='code21704'
-><em id='it21703'
+The function <code id='code21759'
+><em id='it21758'
+>synchronize</em></code> evaluates the expressions <code id='code21761'
+><em id='it21760'
 >exp1</em></code>,
-<code id='code21706'
-><em id='it21705'
->exp2</em></code>, etc. The mutex <code id='code21708'
-><em id='it21707'
+<code id='code21763'
+><em id='it21762'
+>exp2</em></code>, etc. The mutex <code id='code21765'
+><em id='it21764'
 >mutex</em></code> is acquired and released before
-<code id='code21710'
-><em id='it21709'
+<code id='code21767'
+><em id='it21766'
 >exp1</em></code> gets evaluated.  Its value is the value of the evaluated
-expression. The form <code id='code21711'
+expression. The form <code id='code21768'
 >synchronize</code> ensures that however the form
-returns, the mutex <code id='code21713'
-><em id='it21712'
->mutex</em></code> is always unlocked.<br/><br/><center id='center21718'
+returns, the mutex <code id='code21770'
+><em id='it21769'
+>mutex</em></code> is always unlocked.<br/><br/><center id='center21775'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21716'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21773'
 >(synchronize mutex
    (print <font color="red">&quot;before read...&quot;</font>)
    (read p))
@@ -542,31 +542,31 @@ returns, the mutex <code id='code21713'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21722" class="mark"></a><a name="with-lock" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21726" align="left" colspan="1"><strong id='bold21724'
->with-lock</strong><em id='it21725'
-> mutex thunk</em></td><td id="tc21727" align="right" colspan="1">Bigloo function, deprecated</td></tr>
+<tr><td><a name="g21779" class="mark"></a><a name="with-lock" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21783" align="left" colspan="1"><strong id='bold21781'
+>with-lock</strong><em id='it21782'
+> mutex thunk</em></td><td id="tc21784" align="right" colspan="1">Bigloo function, deprecated</td></tr>
 </tbody></table>
-The form <code id='code21730'
->with-lock</code> is similar to <code id='code21731'
+The form <code id='code21787'
+>with-lock</code> is similar to <code id='code21788'
 >synchronize</code> into which it
-is expanded. <br/><br/>The function <code id='code21734'
-><em id='it21733'
->with-lock</em></code> evaluates the body of the <code id='code21736'
-><em id='it21735'
+is expanded. <br/><br/>The function <code id='code21791'
+><em id='it21790'
+>with-lock</em></code> evaluates the body of the <code id='code21793'
+><em id='it21792'
 >thunk</em></code>.
-The mutex <code id='code21738'
-><em id='it21737'
->mutex</em></code> is acquired and released before <code id='code21740'
-><em id='it21739'
+The mutex <code id='code21795'
+><em id='it21794'
+>mutex</em></code> is acquired and released before <code id='code21797'
+><em id='it21796'
 >thunk</em></code> gets invoked.
-The function <code id='code21742'
-><em id='it21741'
->with-lock</em></code> might be implemented as:<br/><br/><center id='center21747'
+The function <code id='code21799'
+><em id='it21798'
+>with-lock</em></code> might be implemented as:<br/><br/><center id='center21804'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21745'
->(<font color="#6959cf"><strong id='bold33177'
->define</strong></font> (<font color="#6959cf"><strong id='bold33179'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21802'
+>(<font color="#6959cf"><strong id='bold33234'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33236'
 >with-lock</strong></font> mutex thunk)
    (synchronize mutex
       (thunk)))
@@ -582,134 +582,134 @@ The function <code id='code21742'
 </div><div class="subsection">
 <a name="Condition-Variables" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21752" class="mark"></a><a name="condition-variable?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21758" align="left" colspan="1"><strong id='bold21754'
->condition-variable?</strong><em id='it21757'
-> <code id='code21756'
-><em id='it21755'
->obj</em></code></em></td><td id="tc21759" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21763" class="mark"></a><a name="make-condition-variable" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21769" align="left" colspan="1"><strong id='bold21765'
->make-condition-variable</strong><em id='it21768'
-> [<code id='code21767'
-><em id='it21766'
->name</em></code>]</em></td><td id="tc21770" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21774" class="mark"></a><a name="condition-variable-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21780" align="left" colspan="1"><strong id='bold21776'
->condition-variable-name</strong><em id='it21779'
-> <code id='code21778'
-><em id='it21777'
->cv</em></code></em></td><td id="tc21781" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21785" class="mark"></a><a name="condition-variable-specific" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21791" align="left" colspan="1"><strong id='bold21787'
->condition-variable-specific</strong><em id='it21790'
-> <code id='code21789'
-><em id='it21788'
->cv</em></code></em></td><td id="tc21792" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21796" class="mark"></a><a name="condition-variable-specific-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21804" align="left" colspan="1"><strong id='bold21798'
->condition-variable-specific-set!</strong><em id='it21803'
-> <code id='code21800'
-><em id='it21799'
->cv</em></code> <code id='code21802'
-><em id='it21801'
->obj</em></code></em></td><td id="tc21805" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g21809" class="mark"></a><a name="condition-variable-wait!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21817" align="left" colspan="1"><strong id='bold21811'
->condition-variable-wait!</strong><em id='it21816'
+<tr><td><a name="g21809" class="mark"></a><a name="condition-variable?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21815" align="left" colspan="1"><strong id='bold21811'
+>condition-variable?</strong><em id='it21814'
 > <code id='code21813'
 ><em id='it21812'
->cv</em></code> <code id='code21815'
-><em id='it21814'
->mutex</em></code> [timeout]</em></td><td id="tc21818" align="right" colspan="1">Bigloo function</td></tr>
+>obj</em></code></em></td><td id="tc21816" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-<a name="g21822" class="mark"></a><a name="condition-variable-signal!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21828" align="left" colspan="1"><strong id='bold21824'
->condition-variable-signal!</strong><em id='it21827'
-> <code id='code21826'
-><em id='it21825'
->cv</em></code></em></td><td id="tc21829" align="right" colspan="1">SRFI-18 function</td></tr>
+<a name="g21820" class="mark"></a><a name="make-condition-variable" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21826" align="left" colspan="1"><strong id='bold21822'
+>make-condition-variable</strong><em id='it21825'
+> [<code id='code21824'
+><em id='it21823'
+>name</em></code>]</em></td><td id="tc21827" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-<a name="g21833" class="mark"></a><a name="condition-variable-broadcast!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21839" align="left" colspan="1"><strong id='bold21835'
->condition-variable-broadcast!</strong><em id='it21838'
-> <code id='code21837'
-><em id='it21836'
->cv</em></code></em></td><td id="tc21840" align="right" colspan="1">SRFI-18 function</td></tr>
+<a name="g21831" class="mark"></a><a name="condition-variable-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21837" align="left" colspan="1"><strong id='bold21833'
+>condition-variable-name</strong><em id='it21836'
+> <code id='code21835'
+><em id='it21834'
+>cv</em></code></em></td><td id="tc21838" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-<center id='center21871'
+<a name="g21842" class="mark"></a><a name="condition-variable-specific" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21848" align="left" colspan="1"><strong id='bold21844'
+>condition-variable-specific</strong><em id='it21847'
+> <code id='code21846'
+><em id='it21845'
+>cv</em></code></em></td><td id="tc21849" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21853" class="mark"></a><a name="condition-variable-specific-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21861" align="left" colspan="1"><strong id='bold21855'
+>condition-variable-specific-set!</strong><em id='it21860'
+> <code id='code21857'
+><em id='it21856'
+>cv</em></code> <code id='code21859'
+><em id='it21858'
+>obj</em></code></em></td><td id="tc21862" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21866" class="mark"></a><a name="condition-variable-wait!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21874" align="left" colspan="1"><strong id='bold21868'
+>condition-variable-wait!</strong><em id='it21873'
+> <code id='code21870'
+><em id='it21869'
+>cv</em></code> <code id='code21872'
+><em id='it21871'
+>mutex</em></code> [timeout]</em></td><td id="tc21875" align="right" colspan="1">Bigloo function</td></tr>
+</tbody></table>
+<a name="g21879" class="mark"></a><a name="condition-variable-signal!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21885" align="left" colspan="1"><strong id='bold21881'
+>condition-variable-signal!</strong><em id='it21884'
+> <code id='code21883'
+><em id='it21882'
+>cv</em></code></em></td><td id="tc21886" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g21890" class="mark"></a><a name="condition-variable-broadcast!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21896" align="left" colspan="1"><strong id='bold21892'
+>condition-variable-broadcast!</strong><em id='it21895'
+> <code id='code21894'
+><em id='it21893'
+>cv</em></code></em></td><td id="tc21897" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<center id='center21928'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21869'
->(<strong id='bold33181'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21926'
+>(<strong id='bold33238'
 >let</strong> ((res 0))
-   (<font color="#6959cf"><strong id='bold33182'
->define</strong></font> (<font color="#6959cf"><strong id='bold33184'
+   (<font color="#6959cf"><strong id='bold33239'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33241'
 >make-semaphore</strong></font> n)
       (vector n (make-mutex) (make-condition-variable)))
-   (<font color="#6959cf"><strong id='bold33186'
->define</strong></font> (<font color="#6959cf"><strong id='bold33188'
+   (<font color="#6959cf"><strong id='bold33243'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33245'
 >semaphore-wait!</strong></font> sema)
       (mutex-lock! (vector-ref sema 1))
-      (<strong id='bold33190'
+      (<strong id='bold33247'
 >let</strong> ((n (vector-ref sema 0)))
-         (<strong id='bold33191'
+         (<strong id='bold33248'
 >if</strong> (&gt; n 0)
-             (<strong id='bold33192'
+             (<strong id='bold33249'
 >begin</strong>
                 (vector-set! sema 0 (- n 1))
                 (mutex-unlock! (vector-ref sema 1)))
-             (<strong id='bold33193'
+             (<strong id='bold33250'
 >begin</strong>
                 (condition-variable-wait! (vector-ref sema 2) (vector-ref sema 1))
                 (mutex-unlock! (vector-ref sema 1))
                 (semaphore-wait! sema)))))
-   (<font color="#6959cf"><strong id='bold33194'
->define</strong></font> (<font color="#6959cf"><strong id='bold33196'
+   (<font color="#6959cf"><strong id='bold33251'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33253'
 >semaphore-signal-by!</strong></font> sema increment)
       (mutex-lock! (vector-ref sema 1))
-      (<strong id='bold33198'
+      (<strong id='bold33255'
 >let</strong> ((n (+ (vector-ref sema 0) increment)))
          (vector-set! sema 0 n)
-         (<strong id='bold33199'
+         (<strong id='bold33256'
 >if</strong> (&gt; n 0)
              (condition-variable-broadcast! (vector-ref sema 2)))
          (mutex-unlock! (vector-ref sema 1))))
-   (<strong id='bold33200'
+   (<strong id='bold33257'
 >let</strong> ((sema (make-semaphore 10)))
-      (<strong id='bold33201'
->let</strong> ((t1 (<font color="#ad4386"><strong id='bold33202'
+      (<strong id='bold33258'
+>let</strong> ((t1 (<font color="#ad4386"><strong id='bold33259'
 >thread-start!</strong></font>
-                 (<strong id='bold33204'
->instantiate</strong><font color="#00cf00"><strong id='bold33205'
+                 (<strong id='bold33261'
+>instantiate</strong><font color="#00cf00"><strong id='bold33262'
 >::thread</strong></font>
-                    (body (<strong id='bold33207'
+                    (body (<strong id='bold33264'
 >lambda</strong> ()
                              (semaphore-wait! sema)
-                             (<strong id='bold33208'
+                             (<strong id='bold33265'
 >set!</strong> res (current-time)))))))
-            (t2 (<font color="#ad4386"><strong id='bold33209'
+            (t2 (<font color="#ad4386"><strong id='bold33266'
 >thread-start!</strong></font>
-                 (<strong id='bold33211'
->instantiate</strong><font color="#00cf00"><strong id='bold33212'
+                 (<strong id='bold33268'
+>instantiate</strong><font color="#00cf00"><strong id='bold33269'
 >::thread</strong></font>
-                    (body (<strong id='bold33214'
+                    (body (<strong id='bold33271'
 >lambda</strong> ()
-                             (<strong id='bold33215'
+                             (<strong id='bold33272'
 >let</strong> loop ((n 10))
-                                (<strong id='bold33216'
+                                (<strong id='bold33273'
 >if</strong> (&gt; n 0)
-                                    (<strong id='bold33217'
+                                    (<strong id='bold33274'
 >begin</strong>
                                        (semaphore-signal-by! sema 1)
-                                       (<font color="#ad4386"><strong id='bold33218'
+                                       (<font color="#ad4386"><strong id='bold33275'
 >thread-yield!</strong></font>)
                                        (loop (- n 1)))))))))))
-         (<font color="#ad4386"><strong id='bold33220'
+         (<font color="#ad4386"><strong id='bold33277'
 >scheduler-start!</strong></font>)
          res)))
   =&gt; 2
@@ -725,19 +725,19 @@ The function <code id='code21742'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">17.2 Threads</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Fair-Threads" class="mark"></a><a name="g21875" class="mark"></a><a name="g21877" class="mark"></a>
+<a name="Fair-Threads" class="mark"></a><a name="g21932" class="mark"></a><a name="g21934" class="mark"></a>
 Bigloo supports fair threads (see Section <a href="bigloo-18.html#Thread" class="inbound">Thread</a>), a
 specification of cooperative threads. In this framework a thread must
-explicitly or implicitly <em id='emph21879'
+explicitly or implicitly <em id='emph21936'
 >yield</em> the processor to the scheduler
 (see Section <a href="bigloo-18.html#Scheduler" class="inbound">Scheduler</a>). Explicit cooperation is achieved by
-library functions such as <code id='code21880'
+library functions such as <code id='code21937'
 >thread-yield!</code> or
-<code id='code21881'
->thread-sleep!</code>. The scheduler <strong id='bold21882'
+<code id='code21938'
+>thread-sleep!</code>. The scheduler <strong id='bold21939'
 >does not preempt a running thread</strong> to 
 allocate the processor to another waiting thread. Fair threads have two
-drawbacks over preemptive threads:<br/><br/><ul class="itemize" id='itemize21886'
+drawbacks over preemptive threads:<br/><br/><ul class="itemize" id='itemize21943'
 ><li>Cooperative threads are not skilled to benefit of multi processors
       platforms.
 </li>
@@ -746,25 +746,25 @@ drawbacks over preemptive threads:<br/><br/><ul class="itemize" id='itemize21886
 </li>
 </ul>
 On the other hand, Fair threads have advantages that make them
-suitable for a high level programming language such as Scheme:<br/><br/><ul class="itemize" id='itemize21895'
+suitable for a high level programming language such as Scheme:<br/><br/><ul class="itemize" id='itemize21952'
 ><li>Fair threads have a strong and well defined semantic. Multi threaded
-      programs using Fair threads are <em id='emph21888'
+      programs using Fair threads are <em id='emph21945'
 >deterministic</em> thus programs
-      that deploy Fair threads are <em id='emph21889'
+      that deploy Fair threads are <em id='emph21946'
 >predictable</em>.
 </li>
 <li>Fair threads are easier to program with because they hide most the
       of the concurrent programming pitfalls. In particular, since Fair
       threads enforce a strong synchronization, there
-      is no need to deploy techniques such as <em id='emph21891'
->mutex</em>, <em id='emph21892'
+      is no need to deploy techniques such as <em id='emph21948'
+>mutex</em>, <em id='emph21949'
 >semaphore</em>
-      or <em id='emph21893'
+      or <em id='emph21950'
 >condition variables</em>.
 </li>
 </ul>
 
-This whole chapter has been written in collaboration with <strong id='bold21896'
+This whole chapter has been written in collaboration with <strong id='bold21953'
 >Frédéric
 Boussinot</strong>. It uses materials on Fair threads that can be found at
 <a href="http://www-sop.inria.fr/indes/rp/FairThreads/html/FairThreads.html">http://www-sop.inria.fr/indes/rp/FairThreads/html/FairThreads.html</a>.<br/><br/><!-- Introduction to Fair Threads -->
@@ -781,7 +781,7 @@ possible allowing the programming of specific user-defined scheduling
 strategies. <br/><br/>Contrary to standard sequential programming where the processor
 executes a single program, in concurrent programming the processor is
 a shared resource which is dispatched to several programs. The term
-<em id='emph21899'
+<em id='emph21956'
 >concurrent</em> is appropriate because programs can be seen as
 concurrently competing to gain access to the processor, in order to
 execute.<br/><br/>Threads are a basic means for concurrent programming, and are widely
@@ -793,7 +793,7 @@ loose semantics, in particular depending on the underlying executing
 platform; to give them a precise semantics is a difficult task, and
 this is a clearly identified problem to get portable code.<br/><br/>Bigloo proposes a new framework with clear and simple semantics, and
 with an efficient implementation. In it, threads are called
-<em id='emph21903'
+<em id='emph21960'
 >fair</em>; basically a fair thread is a cooperative thread executed
 in a context in which all threads always have equal access to the
 processor. Fair threads have a deterministic semantics, relying on
@@ -806,11 +806,11 @@ previous work belonging to the so-called reactive approach.<br/><br/></div>
 <a name="Fair-Threads-Api" class="mark"></a>
 
 The Fair Thread library relies on the Posix Thread one, but you don't
-need to import the <code id='code21905'
+need to import the <code id='code21962'
 >pthread</code> library, as it is done automatically
-when importing the <code id='code21906'
+when importing the <code id='code21963'
 >fthread</code> one.<br/><br/>The functions listed in <a href="bigloo-18.html#Thread-Common-Functions" class="inbound">Thread Common Functions</a> can be used to
-manipulates the Fair Thread, but <code id='code21908'
+manipulates the Fair Thread, but <code id='code21965'
 >thread-start-joinable!</code>, as
 a fair thread can always join any other fair thread in the same
 scheduler.<br/><br/><!-- Thread -->
@@ -819,28 +819,28 @@ scheduler.<br/><br/><!-- Thread -->
 </h4></div><div class="subsubsection">
 <a name="Thread" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g21911" class="mark"></a><a name="instantiate::fthread" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21919" align="left" colspan="1"><strong id='bold21913'
->instantiate::fthread</strong><em id='it21918'
-> (body <code id='code21915'
-><em id='it21914'
->thunk</em></code>) [(name <code id='code21917'
-><em id='it21916'
->name</em></code>)]</em></td><td id="tc21920" align="right" colspan="1">Bigloo syntax</td></tr>
+<tr><td><a name="g21968" class="mark"></a><a name="instantiate::fthread" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc21976" align="left" colspan="1"><strong id='bold21970'
+>instantiate::fthread</strong><em id='it21975'
+> (body <code id='code21972'
+><em id='it21971'
+>thunk</em></code>) [(name <code id='code21974'
+><em id='it21973'
+>name</em></code>)]</em></td><td id="tc21977" align="right" colspan="1">Bigloo syntax</td></tr>
 </tbody></table>
 Returns a new thread which is not started yet. The body of the thread
-is the body of the procedure <code id='code21924'
-><em id='it21923'
->thunk</em></code>. The optional argument <code id='code21926'
-><em id='it21925'
+is the body of the procedure <code id='code21981'
+><em id='it21980'
+>thunk</em></code>. The optional argument <code id='code21983'
+><em id='it21982'
 >name</em></code>
-can be use to identify the thread. It can be any Bigloo value.<br/><br/><center id='center21934'
+can be use to identify the thread. It can be any Bigloo value.<br/><br/><center id='center21991'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21932'
->(<strong id='bold33222'
->instantiate</strong><font color="#00cf00"><strong id='bold33223'
->::fthread</strong></font> (body (<strong id='bold33225'
->lambda</strong> () (print 1) (<font color="#ad4386"><strong id='bold33226'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21989'
+>(<strong id='bold33279'
+>instantiate</strong><font color="#00cf00"><strong id='bold33280'
+>::fthread</strong></font> (body (<strong id='bold33282'
+>lambda</strong> () (print 1) (<font color="#ad4386"><strong id='bold33283'
 >thread-yield!</strong></font>)
 (print 2)))
                       (name 'my-thread))
@@ -848,20 +848,20 @@ can be use to identify the thread. It can be any Bigloo value.<br/><br/><center 
 </td></tr>
 </tbody></table></center>
 
-The former thread-start function can be rewritten as follow:<br/><br/><center id='center21945'
+The former thread-start function can be rewritten as follow:<br/><br/><center id='center22002'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog21943'
->(<font color="#6959cf"><strong id='bold33228'
->define</strong></font> (<font color="#ad4386"><strong id='bold33230'
->make-thread</strong></font> <font color="#6959cf"><strong id='bold33232'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22000'
+>(<font color="#6959cf"><strong id='bold33285'
+>define</strong></font> (<font color="#ad4386"><strong id='bold33287'
+>make-thread</strong></font> <font color="#6959cf"><strong id='bold33289'
 >body</strong></font> . name)
-  (<strong id='bold33234'
+  (<strong id='bold33291'
 >if</strong> (pair? name)
-      (<strong id='bold33235'
->instantiate</strong><font color="#00cf00"><strong id='bold33236'
+      (<strong id='bold33292'
+>instantiate</strong><font color="#00cf00"><strong id='bold33293'
 >::fthread</strong></font> (body body) (name (car name)))
-      (<strong id='bold33238'
->instantiate</strong><font color="#00cf00"><strong id='bold33239'
+      (<strong id='bold33295'
+>instantiate</strong><font color="#00cf00"><strong id='bold33296'
 >::fthread</strong></font> (body body))))
 </pre>
 </td></tr>
@@ -870,88 +870,88 @@ The former thread-start function can be rewritten as follow:<br/><br/><center id
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21954" align="left" colspan="1"><strong id='bold21948'
->thread-start!</strong><em id='it21953'
-> <code id='code21950'
-><em id='it21949'
->thread</em></code> [<code id='code21952'
-><em id='it21951'
->scheduler</em></code>]</em></td><td id="tc21955" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc22011" align="left" colspan="1"><strong id='bold22005'
+>thread-start!</strong><em id='it22010'
+> <code id='code22007'
+><em id='it22006'
+>thread</em></code> [<code id='code22009'
+><em id='it22008'
+>scheduler</em></code>]</em></td><td id="tc22012" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-Runs a thread created with <code id='code21958'
->make-thread</code>. If <code id='code21960'
-><em id='it21959'
+Runs a thread created with <code id='code22015'
+>make-thread</code>. If <code id='code22017'
+><em id='it22016'
 >scheduler</em></code> is
-provided, the <code id='code21962'
-><em id='it21961'
+provided, the <code id='code22019'
+><em id='it22018'
 >thread</em></code> is started in this particular scheduler. Otherwise,
 it is started in the current scheduler (see Section <a href="bigloo-18.html#Scheduler" class="inbound">Scheduler</a>).
-Threads are started at the beginning of <em id='emph21963'
+Threads are started at the beginning of <em id='emph22020'
 >reactions</em> 
 (see Section <a href="bigloo-18.html#Scheduler" class="inbound">Scheduler</a>).
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21968" align="left" colspan="1"><strong id='bold21966'
->thread-yield!</strong><em id='it21967'
-></em></td><td id="tc21969" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc22025" align="left" colspan="1"><strong id='bold22023'
+>thread-yield!</strong><em id='it22024'
+></em></td><td id="tc22026" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-The current thread <em id='emph21972'
+The current thread <em id='emph22029'
 >cooperates</em>. That is, it is suspended for the
-<em id='emph21973'
+<em id='emph22030'
 >reaction</em> and the scheduler selects a new thread to be resumed. The
 scheduler resumes the next avaliable thread. If there is only one
 thread started in the scheduler, the same thread is resumed. 
-A <em id='emph21974'
->reaction</em> corresponds to the invocation of a <code id='code21975'
+A <em id='emph22031'
+>reaction</em> corresponds to the invocation of a <code id='code22032'
 >scheduler-react!</code>
 call (see Section <a href="bigloo-18.html#Scheduler" class="inbound">Scheduler</a>).
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc21982" align="left" colspan="1"><strong id='bold21978'
->thread-sleep!</strong><em id='it21981'
-> <code id='code21980'
-><em id='it21979'
->timeout</em></code></em></td><td id="tc21983" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc22039" align="left" colspan="1"><strong id='bold22035'
+>thread-sleep!</strong><em id='it22038'
+> <code id='code22037'
+><em id='it22036'
+>timeout</em></code></em></td><td id="tc22040" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-The current thread <em id='emph21986'
->cooperates</em> during <em id='emph21987'
->exactly</em> <code id='code21989'
-><em id='it21988'
+The current thread <em id='emph22043'
+>cooperates</em> during <em id='emph22044'
+>exactly</em> <code id='code22046'
+><em id='it22045'
 >timeout</em></code>
-<em id='emph21990'
+<em id='emph22047'
 >reactions</em> (see <a href="bigloo-18.html#Scheduler" class="inbound">Scheduler</a>). It is suspended and the scheduler 
 selects a new thread to be resumed. If there is only one thread started in the
-scheduler, the same thread will be resumed.<br/><br/><center id='center22008'
+scheduler, the same thread will be resumed.<br/><br/><center id='center22065'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22006'
->(<strong id='bold33241'
->let</strong> ((t1 (<strong id='bold33242'
->instantiate</strong><font color="#00cf00"><strong id='bold33243'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22063'
+>(<strong id='bold33298'
+>let</strong> ((t1 (<strong id='bold33299'
+>instantiate</strong><font color="#00cf00"><strong id='bold33300'
 >::fthread</strong></font>
-             (body (<strong id='bold33245'
->lambda</strong> () (<font color="#ad4386"><strong id='bold33246'
+             (body (<strong id='bold33302'
+>lambda</strong> () (<font color="#ad4386"><strong id='bold33303'
 >thread-sleep!</strong></font> 2) (display 'foo)))))
-      (t2 (<strong id='bold33248'
->instantiate</strong><font color="#00cf00"><strong id='bold33249'
+      (t2 (<strong id='bold33305'
+>instantiate</strong><font color="#00cf00"><strong id='bold33306'
 >::fthread</strong></font>
-             (body (<strong id='bold33251'
->lambda</strong> () (<strong id='bold33252'
+             (body (<strong id='bold33308'
+>lambda</strong> () (<strong id='bold33309'
 >let</strong> loop ((n 1))
                                  (display n) 
-                                 (<font color="#ad4386"><strong id='bold33253'
+                                 (<font color="#ad4386"><strong id='bold33310'
 >thread-yield!</strong></font>)
-                                 (<strong id='bold33255'
+                                 (<strong id='bold33312'
 >if</strong> (&lt; n 5)
                                  (loop (+ n 1)))))))))
-   (<font color="#ad4386"><strong id='bold33256'
+   (<font color="#ad4386"><strong id='bold33313'
 >thread-start!</strong></font> t1)
-   (<font color="#ad4386"><strong id='bold33258'
+   (<font color="#ad4386"><strong id='bold33315'
 >thread-start!</strong></font> t2)
-   (<font color="#ad4386"><strong id='bold33260'
+   (<font color="#ad4386"><strong id='bold33317'
 >scheduler-start!</strong></font>)) -| 12foo34
 </pre>
 </td></tr>
@@ -960,93 +960,93 @@ scheduler, the same thread will be resumed.<br/><br/><center id='center22008'
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22015" align="left" colspan="1"><strong id='bold22011'
->thread-terminate!</strong><em id='it22014'
-> <code id='code22013'
-><em id='it22012'
->thread</em></code></em></td><td id="tc22016" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc22072" align="left" colspan="1"><strong id='bold22068'
+>thread-terminate!</strong><em id='it22071'
+> <code id='code22070'
+><em id='it22069'
+>thread</em></code></em></td><td id="tc22073" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-Terminates <code id='code22020'
-><em id='it22019'
+Terminates <code id='code22077'
+><em id='it22076'
 >thread</em></code> at the end of the current reaction.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22031" align="left" colspan="1"><strong id='bold22023'
->thread-join!</strong><em id='it22030'
-> <code id='code22025'
-><em id='it22024'
->thread</em></code> [<code id='code22027'
-><em id='it22026'
->timeout</em></code> [<code id='code22029'
-><em id='it22028'
->timeout-val</em></code>]]</em></td><td id="tc22032" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc22088" align="left" colspan="1"><strong id='bold22080'
+>thread-join!</strong><em id='it22087'
+> <code id='code22082'
+><em id='it22081'
+>thread</em></code> [<code id='code22084'
+><em id='it22083'
+>timeout</em></code> [<code id='code22086'
+><em id='it22085'
+>timeout-val</em></code>]]</em></td><td id="tc22089" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-The current thread waits until <code id='code22036'
-><em id='it22035'
+The current thread waits until <code id='code22093'
+><em id='it22092'
 >thread</em></code> terminates or until
-<code id='code22038'
-><em id='it22037'
->timeout</em></code> is reached (when supplied). If the <code id='code22040'
-><em id='it22039'
+<code id='code22095'
+><em id='it22094'
+>timeout</em></code> is reached (when supplied). If the <code id='code22097'
+><em id='it22096'
 >timeout</em></code> is
-reached, <code id='code22041'
->thread-join!</code> returns <code id='code22043'
-><em id='it22042'
->timeout-val</em></code>. If <code id='code22045'
-><em id='it22044'
+reached, <code id='code22098'
+>thread-join!</code> returns <code id='code22100'
+><em id='it22099'
+>timeout-val</em></code>. If <code id='code22102'
+><em id='it22101'
 >thread</em></code>
-terminates, <code id='code22046'
->thread-join!</code> returns the end-result of the <code id='code22048'
-><em id='it22047'
+terminates, <code id='code22103'
+>thread-join!</code> returns the end-result of the <code id='code22105'
+><em id='it22104'
 >thread</em></code>
 or the end-exception if that thread terminates abnormally.<br/><br/>If several threads wait for the termination of the same thread, they are
-all notified of the termination during the current reaction.<br/><br/><center id='center22084'
+all notified of the termination during the current reaction.<br/><br/><center id='center22141'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22082'
->(<strong id='bold33262'
->let*</strong> ((t1 (<font color="#ad4386"><strong id='bold33263'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22139'
+>(<strong id='bold33319'
+>let*</strong> ((t1 (<font color="#ad4386"><strong id='bold33320'
 >thread-start!</strong></font>
-            (<strong id='bold33265'
->instantiate</strong><font color="#00cf00"><strong id='bold33266'
+            (<strong id='bold33322'
+>instantiate</strong><font color="#00cf00"><strong id='bold33323'
 >::fthread</strong></font>
-               (body (<strong id='bold33268'
->lambda</strong> () (<font color="#ad4386"><strong id='bold33269'
+               (body (<strong id='bold33325'
+>lambda</strong> () (<font color="#ad4386"><strong id='bold33326'
 >thread-sleep!</strong></font> 3) 'foo)))))
-       (t2 (<font color="#ad4386"><strong id='bold33271'
+       (t2 (<font color="#ad4386"><strong id='bold33328'
 >thread-start!</strong></font>
-            (<strong id='bold33273'
->instantiate</strong><font color="#00cf00"><strong id='bold33274'
+            (<strong id='bold33330'
+>instantiate</strong><font color="#00cf00"><strong id='bold33331'
 >::fthread</strong></font>
-               (body (<strong id='bold33276'
->lambda</strong> () (print <font color="red">&quot;t1: &quot;</font> (<font color="#ad4386"><strong id='bold33278'
+               (body (<strong id='bold33333'
+>lambda</strong> () (print <font color="red">&quot;t1: &quot;</font> (<font color="#ad4386"><strong id='bold33335'
 >thread-join!</strong></font> t1 1)))))))
-       (t3 (<font color="#ad4386"><strong id='bold33280'
+       (t3 (<font color="#ad4386"><strong id='bold33337'
 >thread-start!</strong></font>
-            (<strong id='bold33282'
->instantiate</strong><font color="#00cf00"><strong id='bold33283'
+            (<strong id='bold33339'
+>instantiate</strong><font color="#00cf00"><strong id='bold33340'
 >::fthread</strong></font>
-               (body (<strong id='bold33285'
->lambda</strong> () (print <font color="red">&quot;t2: &quot;</font> (<font color="#ad4386"><strong id='bold33287'
+               (body (<strong id='bold33342'
+>lambda</strong> () (print <font color="red">&quot;t2: &quot;</font> (<font color="#ad4386"><strong id='bold33344'
 >thread-join!</strong></font> t1 2 'bar)))))))
-       (t3 (<font color="#ad4386"><strong id='bold33289'
+       (t3 (<font color="#ad4386"><strong id='bold33346'
 >thread-start!</strong></font>
-            (<strong id='bold33291'
->instantiate</strong><font color="#00cf00"><strong id='bold33292'
+            (<strong id='bold33348'
+>instantiate</strong><font color="#00cf00"><strong id='bold33349'
 >::fthread</strong></font>
-               (body (<strong id='bold33294'
->lambda</strong> () (print <font color="red">&quot;t3: &quot;</font> (<font color="#ad4386"><strong id='bold33296'
+               (body (<strong id='bold33351'
+>lambda</strong> () (print <font color="red">&quot;t3: &quot;</font> (<font color="#ad4386"><strong id='bold33353'
 >thread-join!</strong></font> t1)))))))
-       (t4 (<font color="#ad4386"><strong id='bold33298'
+       (t4 (<font color="#ad4386"><strong id='bold33355'
 >thread-start!</strong></font>
-            (<strong id='bold33300'
->instantiate</strong><font color="#00cf00"><strong id='bold33301'
+            (<strong id='bold33357'
+>instantiate</strong><font color="#00cf00"><strong id='bold33358'
 >::fthread</strong></font>
-               (body (<strong id='bold33303'
->lambda</strong> () (print <font color="red">&quot;t4: &quot;</font> (<font color="#ad4386"><strong id='bold33305'
+               (body (<strong id='bold33360'
+>lambda</strong> () (print <font color="red">&quot;t4: &quot;</font> (<font color="#ad4386"><strong id='bold33362'
 >thread-join!</strong></font> t1))))))))
-   (<font color="#ad4386"><strong id='bold33307'
+   (<font color="#ad4386"><strong id='bold33364'
 >scheduler-start!</strong></font>))
    -| t1: #|%uncaught-exception [reason: (exception . join-timeout)]|
       t2: bar
@@ -1056,92 +1056,92 @@ all notified of the termination during the current reaction.<br/><br/><center id
 </td></tr>
 </tbody></table></center>
 
-<code id='code22085'
+<code id='code22142'
 >thread-join!</code> can be used to wait for a Posix Thread
-termination. The <code id='code22086'
+termination. The <code id='code22143'
 >pthread</code> object must be started with
-<code id='code22087'
+<code id='code22144'
 >thread-start-joinable!</code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22091" class="mark"></a><a name="thread-suspend!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22097" align="left" colspan="1"><strong id='bold22093'
->thread-suspend!</strong><em id='it22096'
-> <code id='code22095'
-><em id='it22094'
->thread</em></code></em></td><td id="tc22098" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22148" class="mark"></a><a name="thread-suspend!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22154" align="left" colspan="1"><strong id='bold22150'
+>thread-suspend!</strong><em id='it22153'
+> <code id='code22152'
+><em id='it22151'
+>thread</em></code></em></td><td id="tc22155" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-<a name="g22102" class="mark"></a><a name="thread-resume!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22108" align="left" colspan="1"><strong id='bold22104'
->thread-resume!</strong><em id='it22107'
-> <code id='code22106'
-><em id='it22105'
->thread</em></code></em></td><td id="tc22109" align="right" colspan="1">Bigloo function</td></tr>
+<a name="g22159" class="mark"></a><a name="thread-resume!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22165" align="left" colspan="1"><strong id='bold22161'
+>thread-resume!</strong><em id='it22164'
+> <code id='code22163'
+><em id='it22162'
+>thread</em></code></em></td><td id="tc22166" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Suspends/resumes the <code id='code22113'
-><em id='it22112'
+Suspends/resumes the <code id='code22170'
+><em id='it22169'
 >thread</em></code> at the end of reaction. While suspended
 a thread is not eligible to get the processor by the scheduler. 
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22117" class="mark"></a><a name="thread-await!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22125" align="left" colspan="1"><strong id='bold22119'
->thread-await!</strong><em id='it22124'
-> <code id='code22121'
-><em id='it22120'
->signal</em></code> [<code id='code22123'
-><em id='it22122'
->timeout</em></code>]</em></td><td id="tc22126" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22174" class="mark"></a><a name="thread-await!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22182" align="left" colspan="1"><strong id='bold22176'
+>thread-await!</strong><em id='it22181'
+> <code id='code22178'
+><em id='it22177'
+>signal</em></code> [<code id='code22180'
+><em id='it22179'
+>timeout</em></code>]</em></td><td id="tc22183" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
 
-Blocks the thread until <code id='code22130'
-><em id='it22129'
+Blocks the thread until <code id='code22187'
+><em id='it22186'
 >signal</em></code> has been broadcast or until
-<code id='code22132'
-><em id='it22131'
->timeout</em></code> has elapsed. The function <code id='code22133'
+<code id='code22189'
+><em id='it22188'
+>timeout</em></code> has elapsed. The function <code id='code22190'
 >thread-await!</code> returns
 the value associated with the previous emissions of the signal that
-took place during the reaction.<br/><br/><center id='center22158'
+took place during the reaction.<br/><br/><center id='center22215'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22156'
->(<strong id='bold33309'
->let</strong> ((t1 (<font color="#ad4386"><strong id='bold33310'
->thread-start!</strong></font> (<strong id='bold33312'
->instantiate</strong><font color="#00cf00"><strong id='bold33313'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22213'
+>(<strong id='bold33366'
+>let</strong> ((t1 (<font color="#ad4386"><strong id='bold33367'
+>thread-start!</strong></font> (<strong id='bold33369'
+>instantiate</strong><font color="#00cf00"><strong id='bold33370'
 >::fthread</strong></font>
-                            (body (<strong id='bold33315'
+                            (body (<strong id='bold33372'
 >lambda</strong> ()
-                                     (display (<font color="#ad4386"><strong id='bold33316'
+                                     (display (<font color="#ad4386"><strong id='bold33373'
 >thread-await!</strong></font> 'foo))
-                                     (display (<font color="#ad4386"><strong id='bold33318'
+                                     (display (<font color="#ad4386"><strong id='bold33375'
 >thread-await!</strong></font> 'bar)))))))
-      (t2 (<font color="#ad4386"><strong id='bold33320'
->thread-start!</strong></font> (<strong id='bold33322'
->instantiate</strong><font color="#00cf00"><strong id='bold33323'
+      (t2 (<font color="#ad4386"><strong id='bold33377'
+>thread-start!</strong></font> (<strong id='bold33379'
+>instantiate</strong><font color="#00cf00"><strong id='bold33380'
 >::fthread</strong></font>
-                            (body (<strong id='bold33325'
+                            (body (<strong id='bold33382'
 >lambda</strong> ()
-                                     (<font color="#ad4386"><strong id='bold33326'
+                                     (<font color="#ad4386"><strong id='bold33383'
 >broadcast!</strong></font> 'foo 'val1-foo)
-                                     (<font color="#ad4386"><strong id='bold33328'
+                                     (<font color="#ad4386"><strong id='bold33385'
 >broadcast!</strong></font> 'foo 'val2-foo))))))
-      (t3 (<font color="#ad4386"><strong id='bold33330'
->thread-start!</strong></font> (<strong id='bold33332'
->instantiate</strong><font color="#00cf00"><strong id='bold33333'
+      (t3 (<font color="#ad4386"><strong id='bold33387'
+>thread-start!</strong></font> (<strong id='bold33389'
+>instantiate</strong><font color="#00cf00"><strong id='bold33390'
 >::fthread</strong></font>
-                            (body (<strong id='bold33335'
+                            (body (<strong id='bold33392'
 >lambda</strong> ()
-                                     (<font color="#ad4386"><strong id='bold33336'
+                                     (<font color="#ad4386"><strong id='bold33393'
 >thread-sleep!</strong></font> 2)
-                                     (<font color="#ad4386"><strong id='bold33338'
+                                     (<font color="#ad4386"><strong id='bold33395'
 >broadcast!</strong></font> 'bar 'val-bar)))))))
-   (<strong id='bold33340'
+   (<strong id='bold33397'
 >let</strong> loop ((n 1))
       (display n)
-      (<font color="#ad4386"><strong id='bold33341'
+      (<font color="#ad4386"><strong id='bold33398'
 >scheduler-react!</strong></font> (default-scheduler))
       (loop (+ n 1))))
   -| 1val2-foo23val-bar456...
@@ -1149,29 +1149,29 @@ took place during the reaction.<br/><br/><center id='center22158'
 </td></tr>
 </tbody></table></center>
 
-The function <code id='code22159'
+The function <code id='code22216'
 >thread-await!</code> cannot be used to intercept all the signals
 broadcast during a reaction. This is illustrated by the following example
-where obviously <code id='code22160'
+where obviously <code id='code22217'
 >thread-await!</code> cannot intercept the emission of the
-signal:<br/><br/><center id='center22175'
+signal:<br/><br/><center id='center22232'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22173'
->(<font color="#ad4386"><strong id='bold33343'
->thread-start!</strong></font> (<strong id='bold33345'
->instantiate</strong><font color="#00cf00"><strong id='bold33346'
->::fthread</strong></font> (body (<strong id='bold33348'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22230'
+>(<font color="#ad4386"><strong id='bold33400'
+>thread-start!</strong></font> (<strong id='bold33402'
+>instantiate</strong><font color="#00cf00"><strong id='bold33403'
+>::fthread</strong></font> (body (<strong id='bold33405'
 >lambda</strong> () 
-                                              (<font color="#ad4386"><strong id='bold33349'
+                                              (<font color="#ad4386"><strong id='bold33406'
 >thread-await!</strong></font> 'foo)
-                                              (<font color="#ad4386"><strong id='bold33351'
+                                              (<font color="#ad4386"><strong id='bold33408'
 >broadcast!</strong></font> 'foo 1)))))
-(<font color="#ad4386"><strong id='bold33353'
->thread-start!</strong></font> (<strong id='bold33355'
->instantiate</strong><font color="#00cf00"><strong id='bold33356'
->::fthread</strong></font> (body (<strong id='bold33358'
+(<font color="#ad4386"><strong id='bold33410'
+>thread-start!</strong></font> (<strong id='bold33412'
+>instantiate</strong><font color="#00cf00"><strong id='bold33413'
+>::fthread</strong></font> (body (<strong id='bold33415'
 >lambda</strong> () 
-                                              (<font color="#ad4386"><strong id='bold33359'
+                                              (<font color="#ad4386"><strong id='bold33416'
 >broadcast!</strong></font> 'foo 2)))))
 </pre>
 </td></tr>
@@ -1179,43 +1179,43 @@ signal:<br/><br/><center id='center22175'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22179" class="mark"></a><a name="thread-get-values!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22185" align="left" colspan="1"><strong id='bold22181'
->thread-get-values!</strong><em id='it22184'
-> <code id='code22183'
-><em id='it22182'
->signal</em></code></em></td><td id="tc22186" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22236" class="mark"></a><a name="thread-get-values!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22242" align="left" colspan="1"><strong id='bold22238'
+>thread-get-values!</strong><em id='it22241'
+> <code id='code22240'
+><em id='it22239'
+>signal</em></code></em></td><td id="tc22243" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
 
-Terminates the instant for the thread (as <code id='code22189'
+Terminates the instant for the thread (as <code id='code22246'
 >thread-yield!</code>) and
 returns, hence at the next instant, all the values associated with
-broadcast <code id='code22191'
-><em id='it22190'
+broadcast <code id='code22248'
+><em id='it22247'
 >signal</em></code> (see Section <a href="bigloo-18.html#Signal" class="inbound">Signal</a>) during the previous scheduler
 reaction (see Section <a href="bigloo-18.html#Scheduler" class="inbound">Scheduler</a>).<br/><br/>Example:
-<center id='center22208'
+<center id='center22265'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22206'
->(<font color="#ad4386"><strong id='bold33361'
->thread-start!</strong></font> (<strong id='bold33363'
->instantiate</strong><font color="#00cf00"><strong id='bold33364'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22263'
+>(<font color="#ad4386"><strong id='bold33418'
+>thread-start!</strong></font> (<strong id='bold33420'
+>instantiate</strong><font color="#00cf00"><strong id='bold33421'
 >::fthread</strong></font>
-                  (body (<strong id='bold33366'
+                  (body (<strong id='bold33423'
 >lambda</strong> ()
-                           (for-each print (<font color="#ad4386"><strong id='bold33367'
+                           (for-each print (<font color="#ad4386"><strong id='bold33424'
 >thread-get-values!</strong></font> 'foo))))))
-(<font color="#ad4386"><strong id='bold33369'
->thread-start!</strong></font> (<strong id='bold33371'
->instantiate</strong><font color="#00cf00"><strong id='bold33372'
+(<font color="#ad4386"><strong id='bold33426'
+>thread-start!</strong></font> (<strong id='bold33428'
+>instantiate</strong><font color="#00cf00"><strong id='bold33429'
 >::fthread</strong></font>
-                  (body (<strong id='bold33374'
+                  (body (<strong id='bold33431'
 >lambda</strong> ()
-                           (<font color="#ad4386"><strong id='bold33375'
+                           (<font color="#ad4386"><strong id='bold33432'
 >broadcast!</strong></font> 'foo 1)
-                           (<font color="#ad4386"><strong id='bold33377'
+                           (<font color="#ad4386"><strong id='bold33434'
 >broadcast!</strong></font> 'foo 'foo)
-                           (<font color="#ad4386"><strong id='bold33379'
+                           (<font color="#ad4386"><strong id='bold33436'
 >broadcast!</strong></font> 'foo <font color="red">&quot;blabla&quot;</font>)))))
    -| 1
       foo
@@ -1225,61 +1225,61 @@ reaction (see Section <a href="bigloo-18.html#Scheduler" class="inbound">Schedul
 </tbody></table></center>
 
 Example:
-<center id='center22238'
+<center id='center22295'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22236'
->(<strong id='bold33382'
->let</strong> ((t1 (<font color="#ad4386"><strong id='bold33383'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22293'
+>(<strong id='bold33439'
+>let</strong> ((t1 (<font color="#ad4386"><strong id='bold33440'
 >thread-start!</strong></font>
-           (<strong id='bold33385'
->instantiate</strong><font color="#00cf00"><strong id='bold33386'
+           (<strong id='bold33442'
+>instantiate</strong><font color="#00cf00"><strong id='bold33443'
 >::fthread</strong></font>
-              (body (<strong id='bold33388'
+              (body (<strong id='bold33445'
 >lambda</strong> ()
-                       (for-each print (<font color="#ad4386"><strong id='bold33389'
+                       (for-each print (<font color="#ad4386"><strong id='bold33446'
 >thread-get-values!</strong></font> 'foo))))
               (name 't1))))
-      (t2 (<font color="#ad4386"><strong id='bold33391'
+      (t2 (<font color="#ad4386"><strong id='bold33448'
 >thread-start!</strong></font>
-           (<strong id='bold33393'
->instantiate</strong><font color="#00cf00"><strong id='bold33394'
+           (<strong id='bold33450'
+>instantiate</strong><font color="#00cf00"><strong id='bold33451'
 >::fthread</strong></font>
-              (body (<strong id='bold33396'
+              (body (<strong id='bold33453'
 >lambda</strong> ()
-                       (<font color="#ad4386"><strong id='bold33397'
->broadcast!</strong></font> 'foo (<font color="#ad4386"><strong id='bold33399'
+                       (<font color="#ad4386"><strong id='bold33454'
+>broadcast!</strong></font> 'foo (<font color="#ad4386"><strong id='bold33456'
 >current-thread</strong></font>))
-                       (<font color="#ad4386"><strong id='bold33401'
+                       (<font color="#ad4386"><strong id='bold33458'
 >thread-yield!</strong></font>)
-                       <font color="#ffa600"><em id='it33403'
+                       <font color="#ffa600"><em id='it33460'
 >;; this second broadcast won't be intercepted </em></font>
-                       <font color="#ffa600"><em id='it33405'
+                       <font color="#ffa600"><em id='it33462'
 >;; because it occurs during the next reaction</em></font>
-                       (<font color="#ad4386"><strong id='bold33407'
->broadcast!</strong></font> 'foo (<font color="#ad4386"><strong id='bold33409'
+                       (<font color="#ad4386"><strong id='bold33464'
+>broadcast!</strong></font> 'foo (<font color="#ad4386"><strong id='bold33466'
 >current-thread</strong></font>))))
               (name 't2))))
-      (t3 (<font color="#ad4386"><strong id='bold33411'
+      (t3 (<font color="#ad4386"><strong id='bold33468'
 >thread-start!</strong></font>
-           (<strong id='bold33413'
->instantiate</strong><font color="#00cf00"><strong id='bold33414'
+           (<strong id='bold33470'
+>instantiate</strong><font color="#00cf00"><strong id='bold33471'
 >::fthread</strong></font>
-              (body (<strong id='bold33416'
+              (body (<strong id='bold33473'
 >lambda</strong> ()
-                       (<font color="#ad4386"><strong id='bold33417'
->broadcast!</strong></font> 'foo (<font color="#ad4386"><strong id='bold33419'
+                       (<font color="#ad4386"><strong id='bold33474'
+>broadcast!</strong></font> 'foo (<font color="#ad4386"><strong id='bold33476'
 >current-thread</strong></font>))
-                       (<font color="#ad4386"><strong id='bold33421'
->broadcast!</strong></font> 'foo (<font color="#ad4386"><strong id='bold33423'
+                       (<font color="#ad4386"><strong id='bold33478'
+>broadcast!</strong></font> 'foo (<font color="#ad4386"><strong id='bold33480'
 >current-thread</strong></font>))))
               (name 't3)))))
-   (<font color="#ad4386"><strong id='bold33425'
+   (<font color="#ad4386"><strong id='bold33482'
 >scheduler-start!</strong></font>))
-   -| #&lt;thread<strong id='bold33427'
+   -| #&lt;thread<strong id='bold33484'
 >:t2&gt;</strong>
-      #&lt;thread<strong id='bold33429'
+      #&lt;thread<strong id='bold33486'
 >:t3&gt;</strong>
-      #&lt;thread<strong id='bold33431'
+      #&lt;thread<strong id='bold33488'
 >:t3&gt;</strong>
 </pre>
 </td></tr>
@@ -1287,27 +1287,27 @@ Example:
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22242" class="mark"></a><a name="thread-await-values!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22250" align="left" colspan="1"><strong id='bold22244'
->thread-await-values!</strong><em id='it22249'
-> <code id='code22246'
-><em id='it22245'
->signal</em></code> [<code id='code22248'
-><em id='it22247'
->timeout</em></code>]</em></td><td id="tc22251" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22299" class="mark"></a><a name="thread-await-values!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22307" align="left" colspan="1"><strong id='bold22301'
+>thread-await-values!</strong><em id='it22306'
+> <code id='code22303'
+><em id='it22302'
+>signal</em></code> [<code id='code22305'
+><em id='it22304'
+>timeout</em></code>]</em></td><td id="tc22308" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-This blocks the current thread until <code id='code22255'
-><em id='it22254'
+This blocks the current thread until <code id='code22312'
+><em id='it22311'
 >signal</em></code> has been broadcast.
 It then returns, at the next instant, all the values associated with
 all the broadcasts that took place during the instant.
-It can be defined as:<br/><br/><center id='center22261'
+It can be defined as:<br/><br/><center id='center22318'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22259'
->(<font color="#6959cf"><strong id='bold33433'
->define</strong></font> (<font color="#6959cf"><strong id='bold33435'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22316'
+>(<font color="#6959cf"><strong id='bold33490'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33492'
 >thread-await-values!</strong></font> signal . tmt)
-   (<strong id='bold33437'
+   (<strong id='bold33494'
 >apply</strong> thread-await! signal tmt)
    (thread-get-values signal))
 </pre>
@@ -1316,87 +1316,87 @@ It can be defined as:<br/><br/><center id='center22261'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22265" class="mark"></a><a name="thread-await*!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22273" align="left" colspan="1"><strong id='bold22267'
->thread-await*!</strong><em id='it22272'
-> <code id='code22269'
-><em id='it22268'
->signals</em></code> [<code id='code22271'
-><em id='it22270'
->timeout</em></code>]</em></td><td id="tc22274" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22322" class="mark"></a><a name="thread-await*!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22330" align="left" colspan="1"><strong id='bold22324'
+>thread-await*!</strong><em id='it22329'
+> <code id='code22326'
+><em id='it22325'
+>signals</em></code> [<code id='code22328'
+><em id='it22327'
+>timeout</em></code>]</em></td><td id="tc22331" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-<a name="g22277" class="mark"></a>Wait for one of a list of signals. The function <code id='code22279'
+<a name="g22334" class="mark"></a>Wait for one of a list of signals. The function <code id='code22336'
 >thread-await*!</code>
-can be compared to the Unix <code id='code22280'
+can be compared to the Unix <code id='code22337'
 >select</code> function. The argument 
-<code id='code22282'
-><em id='it22281'
+<code id='code22339'
+><em id='it22338'
 >signals</em></code> is a list of signal identifier. The function 
-<code id='code22283'
+<code id='code22340'
 >thread-await*!</code> blocks the current thread until one of the signal in 
-the list <code id='code22285'
-><em id='it22284'
+the list <code id='code22342'
+><em id='it22341'
 >signals</em></code> is broadcast or until the optional numerical argument 
-<code id='code22287'
-><em id='it22286'
+<code id='code22344'
+><em id='it22343'
 >timeout</em></code> is elapsed. If the thread unblocks because the timeout is 
-elapsed, <code id='code22288'
->thread-await*!</code> returns <code id='code22289'
+elapsed, <code id='code22345'
+>thread-await*!</code> returns <code id='code22346'
 >#f</code>. Otherwise it returns two
-values that have to be collected with <code id='code22290'
+values that have to be collected with <code id='code22347'
 >multiple-value-bind</code> (see
 <a href="bigloo-7.html#Control-Features" class="inbound">Control Features</a>). The first one is the value of the broadcast
 signal. The second one is the broadcast signal.<br/><br/>Example:
-<center id='center22318'
+<center id='center22375'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22316'
->(<strong id='bold33438'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22373'
+>(<strong id='bold33495'
 >let</strong> ((res #f))
-   (<font color="#ad4386"><strong id='bold33439'
+   (<font color="#ad4386"><strong id='bold33496'
 >thread-start!</strong></font>
-    (<strong id='bold33441'
->instantiate</strong><font color="#00cf00"><strong id='bold33442'
+    (<strong id='bold33498'
+>instantiate</strong><font color="#00cf00"><strong id='bold33499'
 >::fthread</strong></font>
-       (body (<strong id='bold33444'
+       (body (<strong id='bold33501'
 >lambda</strong> ()
-                (<strong id='bold33445'
+                (<strong id='bold33502'
 >let</strong> ((sig* (list 'foo 'bar)))
                    (multiple-value-bind (val1 sig1)
-                      (<font color="#ad4386"><strong id='bold33446'
+                      (<font color="#ad4386"><strong id='bold33503'
 >thread-await*!</strong></font> sig*)
                       (multiple-value-bind (val2 sig2)
-                         (<font color="#ad4386"><strong id='bold33448'
+                         (<font color="#ad4386"><strong id='bold33505'
 >thread-await*!</strong></font> sig*)
-                         (<font color="#ad4386"><strong id='bold33450'
+                         (<font color="#ad4386"><strong id='bold33507'
 >thread-yield!</strong></font>)
                          (multiple-value-bind (val3 sig3)
-                            (<font color="#ad4386"><strong id='bold33452'
+                            (<font color="#ad4386"><strong id='bold33509'
 >thread-await*!</strong></font> sig*)
-                            (<strong id='bold33454'
+                            (<strong id='bold33511'
 >set!</strong> res (list sig1 sig2 sig3))))))))))
-   (<font color="#ad4386"><strong id='bold33455'
+   (<font color="#ad4386"><strong id='bold33512'
 >thread-start!</strong></font>
-    (<strong id='bold33457'
->instantiate</strong><font color="#00cf00"><strong id='bold33458'
+    (<strong id='bold33514'
+>instantiate</strong><font color="#00cf00"><strong id='bold33515'
 >::fthread</strong></font>
-       (body (<strong id='bold33460'
+       (body (<strong id='bold33517'
 >lambda</strong> ()
-                (<font color="#ad4386"><strong id='bold33461'
+                (<font color="#ad4386"><strong id='bold33518'
 >thread-sleep!</strong></font> 2)
-                (<font color="#ad4386"><strong id='bold33463'
+                (<font color="#ad4386"><strong id='bold33520'
 >broadcast!</strong></font> 'foo 1)))))
-   (<font color="#ad4386"><strong id='bold33465'
+   (<font color="#ad4386"><strong id='bold33522'
 >thread-start!</strong></font>
-    (<strong id='bold33467'
->instantiate</strong><font color="#00cf00"><strong id='bold33468'
+    (<strong id='bold33524'
+>instantiate</strong><font color="#00cf00"><strong id='bold33525'
 >::fthread</strong></font>
-       (body (<strong id='bold33470'
+       (body (<strong id='bold33527'
 >lambda</strong> ()
-                (<font color="#ad4386"><strong id='bold33471'
+                (<font color="#ad4386"><strong id='bold33528'
 >thread-sleep!</strong></font> 3)
-                (<font color="#ad4386"><strong id='bold33473'
+                (<font color="#ad4386"><strong id='bold33530'
 >broadcast!</strong></font> 'bar 2)))))
-   (<font color="#ad4386"><strong id='bold33475'
+   (<font color="#ad4386"><strong id='bold33532'
 >scheduler-start!</strong></font>)
    res)
   =&gt; '(foo foo bar)
@@ -1405,58 +1405,58 @@ signal. The second one is the broadcast signal.<br/><br/>Example:
 </tbody></table></center>
 
 A second example using timeouts:
-<center id='center22346'
+<center id='center22403'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22344'
->(<strong id='bold33477'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22401'
+>(<strong id='bold33534'
 >let</strong> ((res #f))
-   (<font color="#ad4386"><strong id='bold33478'
+   (<font color="#ad4386"><strong id='bold33535'
 >thread-start!</strong></font>
-    (<strong id='bold33480'
->instantiate</strong><font color="#00cf00"><strong id='bold33481'
+    (<strong id='bold33537'
+>instantiate</strong><font color="#00cf00"><strong id='bold33538'
 >::fthread</strong></font>
-       (body (<strong id='bold33483'
+       (body (<strong id='bold33540'
 >lambda</strong> ()
-                (<strong id='bold33484'
+                (<strong id='bold33541'
 >let</strong> ((sig* (list 'foo 'bar)))
                    (multiple-value-bind (val1 sig1)
-                      (<font color="#ad4386"><strong id='bold33485'
+                      (<font color="#ad4386"><strong id='bold33542'
 >thread-await*!</strong></font> sig* 1)
-                      (<font color="#ad4386"><strong id='bold33487'
+                      (<font color="#ad4386"><strong id='bold33544'
 >thread-yield!</strong></font>)
                       (multiple-value-bind (val2 sig2)
-                         (<font color="#ad4386"><strong id='bold33489'
+                         (<font color="#ad4386"><strong id='bold33546'
 >thread-await*!</strong></font> sig* 1)
-                         (<font color="#ad4386"><strong id='bold33491'
+                         (<font color="#ad4386"><strong id='bold33548'
 >thread-yield!</strong></font>)
                          (multiple-value-bind (val3 sig3)
-                            (<font color="#ad4386"><strong id='bold33493'
+                            (<font color="#ad4386"><strong id='bold33550'
 >thread-await*!</strong></font> sig* 2)
-                            (<strong id='bold33495'
+                            (<strong id='bold33552'
 >set!</strong> res (list sig1 sig2 sig3))))))))))
-   (<font color="#ad4386"><strong id='bold33496'
+   (<font color="#ad4386"><strong id='bold33553'
 >thread-start!</strong></font>
-    (<strong id='bold33498'
->instantiate</strong><font color="#00cf00"><strong id='bold33499'
+    (<strong id='bold33555'
+>instantiate</strong><font color="#00cf00"><strong id='bold33556'
 >::fthread</strong></font>
-       (body (<strong id='bold33501'
+       (body (<strong id='bold33558'
 >lambda</strong> ()
-                (<font color="#ad4386"><strong id='bold33502'
+                (<font color="#ad4386"><strong id='bold33559'
 >thread-sleep!</strong></font> 2)
-                (<font color="#ad4386"><strong id='bold33504'
+                (<font color="#ad4386"><strong id='bold33561'
 >broadcast!</strong></font> 'foo 1)))))
-   (<font color="#ad4386"><strong id='bold33506'
+   (<font color="#ad4386"><strong id='bold33563'
 >thread-start!</strong></font>
-    (<strong id='bold33508'
->instantiate</strong><font color="#00cf00"><strong id='bold33509'
+    (<strong id='bold33565'
+>instantiate</strong><font color="#00cf00"><strong id='bold33566'
 >::fthread</strong></font>
-       (body (<strong id='bold33511'
+       (body (<strong id='bold33568'
 >lambda</strong> ()
-                (<font color="#ad4386"><strong id='bold33512'
+                (<font color="#ad4386"><strong id='bold33569'
 >thread-sleep!</strong></font> 3)
-                (<font color="#ad4386"><strong id='bold33514'
+                (<font color="#ad4386"><strong id='bold33571'
 >broadcast!</strong></font> 'bar 2)))))
-   (<font color="#ad4386"><strong id='bold33516'
+   (<font color="#ad4386"><strong id='bold33573'
 >scheduler-start!</strong></font>)
    res)
   =&gt; '(#f foo bar)
@@ -1466,78 +1466,78 @@ A second example using timeouts:
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22350" class="mark"></a><a name="thread-get-values*!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22356" align="left" colspan="1"><strong id='bold22352'
->thread-get-values*!</strong><em id='it22355'
-> <code id='code22354'
-><em id='it22353'
->signals</em></code></em></td><td id="tc22357" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22407" class="mark"></a><a name="thread-get-values*!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22413" align="left" colspan="1"><strong id='bold22409'
+>thread-get-values*!</strong><em id='it22412'
+> <code id='code22411'
+><em id='it22410'
+>signals</em></code></em></td><td id="tc22414" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Terminates the instant for the thread (as <code id='code22360'
+Terminates the instant for the thread (as <code id='code22417'
 >thread-yield!</code>) and
 returns, hence at the next instant, all the values associated with
-all broadcast <code id='code22362'
-><em id='it22361'
+all broadcast <code id='code22419'
+><em id='it22418'
 >signals</em></code> (see Section <a href="bigloo-18.html#Signal" class="inbound">Signal</a>) during the previous 
 scheduler reaction (see Section <a href="bigloo-18.html#Scheduler" class="inbound">Scheduler</a>). The function 
-<code id='code22363'
->thread-get-values*!</code> returns an <em id='emph22364'
+<code id='code22420'
+>thread-get-values*!</code> returns an <em id='emph22421'
 >alist</em> made of the scanned signal
 and their values. That is the length of the returns list is the length
-of the list <code id='code22366'
-><em id='it22365'
->signals</em></code>. If a signal of the list <code id='code22368'
-><em id='it22367'
+of the list <code id='code22423'
+><em id='it22422'
+>signals</em></code>. If a signal of the list <code id='code22425'
+><em id='it22424'
 >signals</em></code> has not
 been broadcast, its associated entry the list returned by 
-<code id='code22369'
->thread-get-values*!</code> has an empty <code id='code22370'
+<code id='code22426'
+>thread-get-values*!</code> has an empty <code id='code22427'
 >cdr</code>.<br/><br/>Example:
-<center id='center22396'
+<center id='center22453'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22394'
->(<strong id='bold33518'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22451'
+>(<strong id='bold33575'
 >let</strong> ((s1 'foo)
       (s2 'bar)
       (s3 'gee)
       (res #f))
-   (<font color="#ad4386"><strong id='bold33519'
+   (<font color="#ad4386"><strong id='bold33576'
 >thread-start!</strong></font>
-    (<strong id='bold33521'
->instantiate</strong><font color="#00cf00"><strong id='bold33522'
+    (<strong id='bold33578'
+>instantiate</strong><font color="#00cf00"><strong id='bold33579'
 >::fthread</strong></font>
-       (body (<strong id='bold33524'
+       (body (<strong id='bold33581'
 >lambda</strong> ()
-                (<font color="#ad4386"><strong id='bold33525'
+                (<font color="#ad4386"><strong id='bold33582'
 >thread-sleep!</strong></font> 2)
-                (<font color="#ad4386"><strong id='bold33527'
+                (<font color="#ad4386"><strong id='bold33584'
 >broadcast!</strong></font> 'foo (current-time))
-                (<font color="#ad4386"><strong id='bold33529'
+                (<font color="#ad4386"><strong id='bold33586'
 >broadcast!</strong></font> 'bar 0)))))
-   (<font color="#ad4386"><strong id='bold33531'
+   (<font color="#ad4386"><strong id='bold33588'
 >thread-start!</strong></font>
-    (<strong id='bold33533'
->instantiate</strong><font color="#00cf00"><strong id='bold33534'
+    (<strong id='bold33590'
+>instantiate</strong><font color="#00cf00"><strong id='bold33591'
 >::fthread</strong></font>
-       (body (<strong id='bold33536'
+       (body (<strong id='bold33593'
 >lambda</strong> ()
-                (<font color="#ad4386"><strong id='bold33537'
+                (<font color="#ad4386"><strong id='bold33594'
 >thread-await*!</strong></font> (list s1 s2 s3))
-                (<strong id='bold33539'
->set!</strong> res (<font color="#ad4386"><strong id='bold33540'
+                (<strong id='bold33596'
+>set!</strong> res (<font color="#ad4386"><strong id='bold33597'
 >thread-get-values*!</strong></font> (list s1 s2 s3)))))))
-   (<font color="#ad4386"><strong id='bold33542'
+   (<font color="#ad4386"><strong id='bold33599'
 >thread-start!</strong></font>
-    (<strong id='bold33544'
->instantiate</strong><font color="#00cf00"><strong id='bold33545'
+    (<strong id='bold33601'
+>instantiate</strong><font color="#00cf00"><strong id='bold33602'
 >::fthread</strong></font>
-       (body (<strong id='bold33547'
+       (body (<strong id='bold33604'
 >lambda</strong> ()
-                (<font color="#ad4386"><strong id='bold33548'
+                (<font color="#ad4386"><strong id='bold33605'
 >thread-sleep!</strong></font> 2)
-                (<font color="#ad4386"><strong id='bold33550'
+                (<font color="#ad4386"><strong id='bold33607'
 >broadcast!</strong></font> 'bar (current-time))))))
-   (<font color="#ad4386"><strong id='bold33552'
+   (<font color="#ad4386"><strong id='bold33609'
 >scheduler-start!</strong></font>)
    res)
   =&gt; ((foo 3) (bar 3 0) (gee))
@@ -1545,37 +1545,37 @@ been broadcast, its associated entry the list returned by
 </td></tr>
 </tbody></table></center>
 
-Used with asynchronous signal, the functions <code id='code22397'
+Used with asynchronous signal, the functions <code id='code22454'
 >thread-await*!</code> and
-<code id='code22398'
+<code id='code22455'
 >thread-get-values*!</code> can be used to read concurrently, in a non 
 blocking way, several files. 
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22402" class="mark"></a><a name="thread-await-values*!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22410" align="left" colspan="1"><strong id='bold22404'
->thread-await-values*!</strong><em id='it22409'
-> <code id='code22406'
-><em id='it22405'
->signals</em></code> [<code id='code22408'
-><em id='it22407'
->timeout</em></code>]</em></td><td id="tc22411" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22459" class="mark"></a><a name="thread-await-values*!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22467" align="left" colspan="1"><strong id='bold22461'
+>thread-await-values*!</strong><em id='it22466'
+> <code id='code22463'
+><em id='it22462'
+>signals</em></code> [<code id='code22465'
+><em id='it22464'
+>timeout</em></code>]</em></td><td id="tc22468" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-This blocks the current thread until at least one of <code id='code22415'
-><em id='it22414'
+This blocks the current thread until at least one of <code id='code22472'
+><em id='it22471'
 >signals</em></code> has 
 been broadcast. It then returns, at the next instant, all the values associated
 with all the broadcasts that took place during the instant. It can be 
-defined as:<br/><br/><center id='center22422'
+defined as:<br/><br/><center id='center22479'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22420'
->(<font color="#6959cf"><strong id='bold33554'
->define</strong></font> (<font color="#6959cf"><strong id='bold33556'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22477'
+>(<font color="#6959cf"><strong id='bold33611'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33613'
 >thread-await-values*!</strong></font> signal . tmt)
-   (<strong id='bold33558'
+   (<strong id='bold33615'
 >apply</strong> thread-await*! signal tmt)
-   (<font color="#ad4386"><strong id='bold33559'
+   (<font color="#ad4386"><strong id='bold33616'
 >thread-get-values*!</strong></font> signal))
 </pre>
 </td></tr>
@@ -1588,39 +1588,39 @@ defined as:<br/><br/><center id='center22422'
 </h4></div><div class="subsubsection">
 <a name="Scheduler" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22427" class="mark"></a><a name="make-scheduler" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22435" align="left" colspan="1"><strong id='bold22429'
->make-scheduler</strong><em id='it22434'
-> [<code id='code22431'
-><em id='it22430'
->strict-order?</em></code>] [<code id='code22433'
-><em id='it22432'
->envs</em></code>]</em></td><td id="tc22436" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22484" class="mark"></a><a name="make-scheduler" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22492" align="left" colspan="1"><strong id='bold22486'
+>make-scheduler</strong><em id='it22491'
+> [<code id='code22488'
+><em id='it22487'
+>strict-order?</em></code>] [<code id='code22490'
+><em id='it22489'
+>envs</em></code>]</em></td><td id="tc22493" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
 Creates a new scheduler. The optional boolean argument
-<code id='code22439'
+<code id='code22496'
 >strict-order?</code> is used to ask the scheduler to always schedule
-the threads in the same order, it defaults to <code id='code22440'
+the threads in the same order, it defaults to <code id='code22497'
 >#f</code>. The optional
-arguments <code id='code22442'
-><em id='it22441'
->envs</em></code> are <em id='emph22443'
+arguments <code id='code22499'
+><em id='it22498'
+>envs</em></code> are <em id='emph22500'
 >fair thread environments</em> which will be
 defined in forthcoming Bigloo releases.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22447" class="mark"></a><a name="scheduler-strict-order?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22451" align="left" colspan="1"><strong id='bold22449'
->scheduler-strict-order?</strong><em id='it22450'
-></em></td><td id="tc22452" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22504" class="mark"></a><a name="scheduler-strict-order?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22508" align="left" colspan="1"><strong id='bold22506'
+>scheduler-strict-order?</strong><em id='it22507'
+></em></td><td id="tc22509" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-<a name="g22456" class="mark"></a><a name="scheduler-strict-order?-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22462" align="left" colspan="1"><strong id='bold22458'
->scheduler-strict-order?-set!</strong><em id='it22461'
-> <code id='code22460'
-><em id='it22459'
->bool</em></code></em></td><td id="tc22463" align="right" colspan="1">Bigloo function</td></tr>
+<a name="g22513" class="mark"></a><a name="scheduler-strict-order?-set!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22519" align="left" colspan="1"><strong id='bold22515'
+>scheduler-strict-order?-set!</strong><em id='it22518'
+> <code id='code22517'
+><em id='it22516'
+>bool</em></code></em></td><td id="tc22520" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
 Gets or sets the strict scheduling policy of the scheduler. If set,
 the threads will always be scheduled in the same order, until their
@@ -1629,179 +1629,179 @@ performances when there is a lot of thread to schedule.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22469" class="mark"></a><a name="scheduler?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22475" align="left" colspan="1"><strong id='bold22471'
->scheduler?</strong><em id='it22474'
-> <code id='code22473'
-><em id='it22472'
->obj</em></code></em></td><td id="tc22476" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22526" class="mark"></a><a name="scheduler?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22532" align="left" colspan="1"><strong id='bold22528'
+>scheduler?</strong><em id='it22531'
+> <code id='code22530'
+><em id='it22529'
+>obj</em></code></em></td><td id="tc22533" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Returns <code id='code22479'
->#t</code> if <code id='code22481'
-><em id='it22480'
->obj</em></code> is a scheduler. Otherwise returns <code id='code22482'
+Returns <code id='code22536'
+>#t</code> if <code id='code22538'
+><em id='it22537'
+>obj</em></code> is a scheduler. Otherwise returns <code id='code22539'
 >#f</code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22489" align="left" colspan="1"><strong id='bold22485'
->scheduler?</strong><em id='it22488'
-> <code id='code22487'
-><em id='it22486'
->obj</em></code></em></td><td id="tc22490" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td id="tc22546" align="left" colspan="1"><strong id='bold22542'
+>scheduler?</strong><em id='it22545'
+> <code id='code22544'
+><em id='it22543'
+>obj</em></code></em></td><td id="tc22547" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Returns <code id='code22493'
->#t</code> if <code id='code22495'
-><em id='it22494'
->obj</em></code> is a scheduler. Otherwise returns <code id='code22496'
+Returns <code id='code22550'
+>#t</code> if <code id='code22552'
+><em id='it22551'
+>obj</em></code> is a scheduler. Otherwise returns <code id='code22553'
 >#f</code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22500" class="mark"></a><a name="current-scheduler" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22504" align="left" colspan="1"><strong id='bold22502'
->current-scheduler</strong><em id='it22503'
-></em></td><td id="tc22505" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22557" class="mark"></a><a name="current-scheduler" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22561" align="left" colspan="1"><strong id='bold22559'
+>current-scheduler</strong><em id='it22560'
+></em></td><td id="tc22562" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
 Returns the current scheduler. The current scheduler is the scheduler
 which currently schedules the current thread. This value is not
-mutable, as it is set during the call to <code id='code22508'
+mutable, as it is set during the call to <code id='code22565'
 >thread-start!</code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22512" class="mark"></a><a name="default-scheduler" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22518" align="left" colspan="1"><strong id='bold22514'
->default-scheduler</strong><em id='it22517'
-> [<code id='code22516'
-><em id='it22515'
->scheduler</em></code>]</em></td><td id="tc22519" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22569" class="mark"></a><a name="default-scheduler" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22575" align="left" colspan="1"><strong id='bold22571'
+>default-scheduler</strong><em id='it22574'
+> [<code id='code22573'
+><em id='it22572'
+>scheduler</em></code>]</em></td><td id="tc22576" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
 Sets or gets the default scheduler. The default scheduler is the
-scheduler that will be used in the calls to <code id='code22522'
+scheduler that will be used in the calls to <code id='code22579'
 >scheduler-react!</code>,
-<code id='code22523'
->scheduler-start!</code> or <code id='code22524'
+<code id='code22580'
+>scheduler-start!</code> or <code id='code22581'
 >thread-start!</code> if not specified.
 It always exists a default scheduler. That is, it is optional for an
 application to create a scheduler.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22528" class="mark"></a><a name="scheduler-react!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22534" align="left" colspan="1"><strong id='bold22530'
->scheduler-react!</strong><em id='it22533'
-> [<code id='code22532'
-><em id='it22531'
->scheduler</em></code>]</em></td><td id="tc22535" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22585" class="mark"></a><a name="scheduler-react!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22591" align="left" colspan="1"><strong id='bold22587'
+>scheduler-react!</strong><em id='it22590'
+> [<code id='code22589'
+><em id='it22588'
+>scheduler</em></code>]</em></td><td id="tc22592" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Executes all the threads started (see <code id='code22538'
+Executes all the threads started (see <code id='code22595'
 >thread-start!</code>, 
 Section <a href="bigloo-18.html#Thread" class="inbound">Thread</a>) in the scheduler until all the threads are
 blocked. A thread is blocked if the has explicitly yield the processor 
-(<code id='code22539'
->thread-yield!</code> and <code id='code22540'
+(<code id='code22596'
+>thread-yield!</code> and <code id='code22597'
 >thread-sleep!</code>) or because it is waiting
-a signal (<code id='code22541'
+a signal (<code id='code22598'
 >thread-await!</code>). A thread
 can be selected several times during the same reaction.
-The function <code id='code22542'
+The function <code id='code22599'
 >scheduler-react!</code> returns a symbol denoting the
-<em id='emph22543'
->state</em> of the scheduler. The possible states are:<br/><br/><ul class="itemize" id='itemize22551'
-><li><code id='code22545'
+<em id='emph22600'
+>state</em> of the scheduler. The possible states are:<br/><br/><ul class="itemize" id='itemize22608'
+><li><code id='code22602'
 >ready</code> The Scheduler is ready to execute some threads.
 </li>
-<li><code id='code22547'
+<li><code id='code22604'
 >done</code> All the threads started in the scheduler have terminated.
 </li>
-<li><code id='code22549'
+<li><code id='code22606'
 >await</code> All the threads  started in the scheduler are waiting for
       a signal.
 </li>
 </ul>
-An invocation of <code id='code22552'
->scheduler-react!</code> is called a <em id='emph22553'
+An invocation of <code id='code22609'
+>scheduler-react!</code> is called a <em id='emph22610'
 >reaction</em>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22557" class="mark"></a><a name="scheduler-start!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22565" align="left" colspan="1"><strong id='bold22559'
->scheduler-start!</strong><em id='it22564'
-> [<code id='code22561'
-><em id='it22560'
->arg</em></code> [<code id='code22563'
-><em id='it22562'
->scheduler</em></code>]]</em></td><td id="tc22566" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22614" class="mark"></a><a name="scheduler-start!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22622" align="left" colspan="1"><strong id='bold22616'
+>scheduler-start!</strong><em id='it22621'
+> [<code id='code22618'
+><em id='it22617'
+>arg</em></code> [<code id='code22620'
+><em id='it22619'
+>scheduler</em></code>]]</em></td><td id="tc22623" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Executes <code id='code22569'
+Executes <code id='code22626'
 >scheduler-react!</code> as long as the scheduler is not done.
-If the optional argument <code id='code22571'
-><em id='it22570'
+If the optional argument <code id='code22628'
+><em id='it22627'
 >scheduler</em></code> is not provided, 
-<code id='code22572'
+<code id='code22629'
 >scheduler-start!</code> uses the current scheduler 
-(see <code id='code22573'
->current-scheduler</code>). The optional <code id='code22575'
-><em id='it22574'
+(see <code id='code22630'
+>current-scheduler</code>). The optional <code id='code22632'
+><em id='it22631'
 >arg</em></code> can either be:
-<ul class="itemize" id='itemize22588'
-><li>An integer standing for the number of times <code id='code22576'
+<ul class="itemize" id='itemize22645'
+><li>An integer standing for the number of times <code id='code22633'
 >scheduler-react!</code>
       must be called.
 </li>
-<li>A procedure <code id='code22579'
-><em id='it22578'
->f</em></code> of one argument. The procedure <code id='code22581'
-><em id='it22580'
+<li>A procedure <code id='code22636'
+><em id='it22635'
+>f</em></code> of one argument. The procedure <code id='code22638'
+><em id='it22637'
 >f</em></code>
-      is invoked after each reaction. It is passed a value <code id='code22583'
-><em id='it22582'
+      is invoked after each reaction. It is passed a value <code id='code22640'
+><em id='it22639'
 >i</em></code> which is 
       the iteration number of the scheduler. The reactions of the scheduler
-      continue while <code id='code22585'
-><em id='it22584'
->f</em></code> returns <code id='code22586'
+      continue while <code id='code22642'
+><em id='it22641'
+>f</em></code> returns <code id='code22643'
 >#f</code>.
 </li>
 </ul>
-<center id='center22609'
+<center id='center22666'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22607'
->(<strong id='bold33561'
->let*</strong> ((s (<font color="#ad4386"><strong id='bold33562'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22664'
+>(<strong id='bold33618'
+>let*</strong> ((s (<font color="#ad4386"><strong id='bold33619'
 >make-scheduler</strong></font>))
-       (t (<strong id='bold33564'
->instantiate</strong><font color="#00cf00"><strong id='bold33565'
+       (t (<strong id='bold33621'
+>instantiate</strong><font color="#00cf00"><strong id='bold33622'
 >::fthread</strong></font>
-             (body (<strong id='bold33567'
+             (body (<strong id='bold33624'
 >lambda</strong> () 
-                      (<strong id='bold33568'
+                      (<strong id='bold33625'
 >let</strong> loop ((n 0))
                          (display n)
-                         (<font color="#ad4386"><strong id='bold33569'
+                         (<font color="#ad4386"><strong id='bold33626'
 >thread-yield!</strong></font>)
                          (loop (+ 1 n))))))))
-   (<font color="#ad4386"><strong id='bold33571'
+   (<font color="#ad4386"><strong id='bold33628'
 >scheduler-start!</strong></font> 10 s))
-  -| 0123456789<br/><br/>(<strong id='bold33573'
->let*</strong> ((s (<font color="#ad4386"><strong id='bold33574'
+  -| 0123456789<br/><br/>(<strong id='bold33630'
+>let*</strong> ((s (<font color="#ad4386"><strong id='bold33631'
 >make-scheduler</strong></font>))
-       (t (<strong id='bold33576'
->instantiate</strong><font color="#00cf00"><strong id='bold33577'
+       (t (<strong id='bold33633'
+>instantiate</strong><font color="#00cf00"><strong id='bold33634'
 >::fthread</strong></font>
-             (body (<strong id='bold33579'
+             (body (<strong id='bold33636'
 >lambda</strong> () 
-                      (<strong id='bold33580'
+                      (<strong id='bold33637'
 >let</strong> loop ((n 0))
                          (display n)
-                         (<font color="#ad4386"><strong id='bold33581'
+                         (<font color="#ad4386"><strong id='bold33638'
 >thread-yield!</strong></font>)
                          (loop (+ 1 n))))))))
-   (<font color="#ad4386"><strong id='bold33583'
->scheduler-start!</strong></font> (<strong id='bold33585'
+   (<font color="#ad4386"><strong id='bold33640'
+>scheduler-start!</strong></font> (<strong id='bold33642'
 >lambda</strong> (i) (read-char)) s))
   -| 0123456789
 </pre>
@@ -1810,33 +1810,33 @@ If the optional argument <code id='code22571'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22613" class="mark"></a><a name="scheduler-terminate!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22619" align="left" colspan="1"><strong id='bold22615'
->scheduler-terminate!</strong><em id='it22618'
-> [<code id='code22617'
-><em id='it22616'
->scheduler</em></code>]</em></td><td id="tc22620" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22670" class="mark"></a><a name="scheduler-terminate!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22676" align="left" colspan="1"><strong id='bold22672'
+>scheduler-terminate!</strong><em id='it22675'
+> [<code id='code22674'
+><em id='it22673'
+>scheduler</em></code>]</em></td><td id="tc22677" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Terminates all the threads in <code id='code22624'
-><em id='it22623'
+Terminates all the threads in <code id='code22681'
+><em id='it22680'
 >scheduler</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22628" class="mark"></a><a name="scheduler-instant" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22634" align="left" colspan="1"><strong id='bold22630'
->scheduler-instant</strong><em id='it22633'
-> [<code id='code22632'
-><em id='it22631'
->scheduler</em></code>]</em></td><td id="tc22635" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22685" class="mark"></a><a name="scheduler-instant" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22691" align="left" colspan="1"><strong id='bold22687'
+>scheduler-instant</strong><em id='it22690'
+> [<code id='code22689'
+><em id='it22688'
+>scheduler</em></code>]</em></td><td id="tc22692" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Returns the current reaction number of <code id='code22639'
-><em id='it22638'
+Returns the current reaction number of <code id='code22696'
+><em id='it22695'
 >scheduler</em></code>. The reaction
-number is the number of times <code id='code22640'
+number is the number of times <code id='code22697'
 >scheduler-react!</code> has been invoked
-passing <code id='code22642'
-><em id='it22641'
+passing <code id='code22699'
+><em id='it22698'
 >scheduler</em></code> as argument.
 </td></tr>
 </tbody></table><br/>
@@ -1847,49 +1847,49 @@ passing <code id='code22642'
 </h4></div><div class="subsubsection">
 <a name="Signal" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22646" class="mark"></a><a name="broadcast!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22654" align="left" colspan="1"><strong id='bold22648'
->broadcast!</strong><em id='it22653'
-> <code id='code22650'
-><em id='it22649'
->signal</em></code> [<code id='code22652'
-><em id='it22651'
->val</em></code>]</em></td><td id="tc22655" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22703" class="mark"></a><a name="broadcast!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22711" align="left" colspan="1"><strong id='bold22705'
+>broadcast!</strong><em id='it22710'
+> <code id='code22707'
+><em id='it22706'
+>signal</em></code> [<code id='code22709'
+><em id='it22708'
+>val</em></code>]</em></td><td id="tc22712" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-Broadcasts <code id='code22659'
-><em id='it22658'
->signal</em></code> to all threads started in <code id='code22661'
-><em id='it22660'
+Broadcasts <code id='code22716'
+><em id='it22715'
+>signal</em></code> to all threads started in <code id='code22718'
+><em id='it22717'
 >scheduler</em></code> 
-<em id='emph22662'
+<em id='emph22719'
 >immediately</em>, that is during the reaction. This function can only
-be called from within a running thread. If the optional argument <code id='code22664'
-><em id='it22663'
+be called from within a running thread. If the optional argument <code id='code22721'
+><em id='it22720'
 >val</em></code>
-is omitted, the <code id='code22666'
-><em id='it22665'
->signal</em></code> is broadcast with an unspecified value.<br/><br/><center id='center22682'
+is omitted, the <code id='code22723'
+><em id='it22722'
+>signal</em></code> is broadcast with an unspecified value.<br/><br/><center id='center22739'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22680'
->(<font color="#ad4386"><strong id='bold33586'
->thread-start!</strong></font> (<strong id='bold33588'
->instantiate</strong><font color="#00cf00"><strong id='bold33589'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22737'
+>(<font color="#ad4386"><strong id='bold33643'
+>thread-start!</strong></font> (<strong id='bold33645'
+>instantiate</strong><font color="#00cf00"><strong id='bold33646'
 >::fthread</strong></font>
-                  (body (<strong id='bold33591'
+                  (body (<strong id='bold33648'
 >lambda</strong> ()
-                           (<font color="#ad4386"><strong id='bold33592'
+                           (<font color="#ad4386"><strong id='bold33649'
 >thread-await!</strong></font> 'foo)
-                           (print (scheduler-instant (<font color="#ad4386"><strong id='bold33594'
+                           (print (scheduler-instant (<font color="#ad4386"><strong id='bold33651'
 >current-scheduler</strong></font>)))))))
-(<font color="#ad4386"><strong id='bold33596'
->thread-start!</strong></font> (<strong id='bold33598'
->instantiate</strong><font color="#00cf00"><strong id='bold33599'
+(<font color="#ad4386"><strong id='bold33653'
+>thread-start!</strong></font> (<strong id='bold33655'
+>instantiate</strong><font color="#00cf00"><strong id='bold33656'
 >::fthread</strong></font>
-                  (body (<strong id='bold33601'
+                  (body (<strong id='bold33658'
 >lambda</strong> ()
-                           (<font color="#ad4386"><strong id='bold33602'
+                           (<font color="#ad4386"><strong id='bold33659'
 >broadcast!</strong></font> 'foo)))))
-(<font color="#ad4386"><strong id='bold33604'
+(<font color="#ad4386"><strong id='bold33661'
 >scheduler-start!</strong></font>)
   -| 1
 </pre>
@@ -1898,69 +1898,69 @@ is omitted, the <code id='code22666'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22686" class="mark"></a><a name="scheduler-broadcast!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22696" align="left" colspan="1"><strong id='bold22688'
->scheduler-broadcast!</strong><em id='it22695'
-> <code id='code22690'
-><em id='it22689'
->scheduler</em></code> <code id='code22692'
-><em id='it22691'
->signal</em></code> [<code id='code22694'
-><em id='it22693'
->val</em></code>]</em></td><td id="tc22697" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22743" class="mark"></a><a name="scheduler-broadcast!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22753" align="left" colspan="1"><strong id='bold22745'
+>scheduler-broadcast!</strong><em id='it22752'
+> <code id='code22747'
+><em id='it22746'
+>scheduler</em></code> <code id='code22749'
+><em id='it22748'
+>signal</em></code> [<code id='code22751'
+><em id='it22750'
+>val</em></code>]</em></td><td id="tc22754" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-At the next react broadcasts <code id='code22701'
-><em id='it22700'
+At the next react broadcasts <code id='code22758'
+><em id='it22757'
 >signal</em></code> to all threads started 
-in <code id='code22703'
-><em id='it22702'
+in <code id='code22760'
+><em id='it22759'
 >scheduler</em></code>. This is used to impact running threads from outside 
-any threads. If the optional argument <code id='code22705'
-><em id='it22704'
+any threads. If the optional argument <code id='code22762'
+><em id='it22761'
 >val</em></code>
-is omitted, the <code id='code22707'
-><em id='it22706'
+is omitted, the <code id='code22764'
+><em id='it22763'
 >signal</em></code> is broadcast with an unspecified value.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22711" class="mark"></a><a name="make-asynchronous-signal" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22717" align="left" colspan="1"><strong id='bold22713'
->make-asynchronous-signal</strong><em id='it22716'
-> <code id='code22715'
-><em id='it22714'
->proc</em></code></em></td><td id="tc22718" align="right" colspan="1">Bigloo function</td></tr>
+<tr><td><a name="g22768" class="mark"></a><a name="make-asynchronous-signal" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22774" align="left" colspan="1"><strong id='bold22770'
+>make-asynchronous-signal</strong><em id='it22773'
+> <code id='code22772'
+><em id='it22771'
+>proc</em></code></em></td><td id="tc22775" align="right" colspan="1">Bigloo function</td></tr>
 </tbody></table>
-<a name="g22721" class="mark"></a><a name="g22723" class="mark"></a>This function invokes in the background, the procedure <code id='code22726'
-><em id='it22725'
+<a name="g22778" class="mark"></a><a name="g22780" class="mark"></a>This function invokes in the background, the procedure <code id='code22783'
+><em id='it22782'
 >proc</em></code>.
 This function takes one parameter which is the signal that is broadcast
 when the invocation returns. When the host operating system supports
-parallel executions, the invocation of <code id='code22728'
-><em id='it22727'
+parallel executions, the invocation of <code id='code22785'
+><em id='it22784'
 >proc</em></code> is executed in
 parallel with the waiting thread. <br/><br/>Asynchronous signals can be used to implement non blocking system
 operations, such as input/output. Here is an example that illustrates
 how to implement concurrent programs that behaves similarly with
-Fair Threads and Posix Threads.<br/><br/><center id='center22739'
+Fair Threads and Posix Threads.<br/><br/><center id='center22796'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22737'
->(<font color="#6959cf"><strong id='bold33606'
->define-expander</strong></font> <font color="#6959cf"><strong id='bold33608'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22794'
+>(<font color="#6959cf"><strong id='bold33663'
+>define-expander</strong></font> <font color="#6959cf"><strong id='bold33665'
 >read</strong></font>
-   (<strong id='bold33610'
+   (<strong id='bold33667'
 >lambda</strong> (x e)
       (cond-expand
 	 (fthread
-	  (<font color="#ad4386"><strong id='bold33611'
+	  (<font color="#ad4386"><strong id='bold33668'
 >thread-await!</strong></font>
 	   (make-aynchronous-signal
-	    (<strong id='bold33613'
+	    (<strong id='bold33670'
 >lambda</strong> (s)
-	       (read ,&#x40;(map (<strong id='bold33614'
+	       (read ,&#x40;(map (<strong id='bold33671'
 >lambda</strong> (x) (e x e)) (cdr x)))))))
 	 (else
-	  `(read ,&#x40;(map (<strong id='bold33615'
+	  `(read ,&#x40;(map (<strong id='bold33672'
 >lambda</strong> (x) (e x e)) (cdr x)))))))
 </pre>
 </td></tr>
@@ -1973,74 +1973,74 @@ Fair Threads and Posix Threads.<br/><br/><center id='center22739'
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">17.2.3 SRFI-18</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="SRFI-18-compatibility" class="mark"></a><a name="g22743" class="mark"></a>
+<a name="SRFI-18-compatibility" class="mark"></a><a name="g22800" class="mark"></a>
 This section presents the functions that are not necessary to Bigloo
 but supported for compliance with SRFI-18, provided by the Fair Thread
 library.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22747" class="mark"></a><a name="current-time" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22753" align="left" colspan="1"><strong id='bold22749'
->current-time</strong><em id='it22752'
-> [<code id='code22751'
-><em id='it22750'
->scheduler</em></code>]</em></td><td id="tc22754" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td><a name="g22804" class="mark"></a><a name="current-time" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22810" align="left" colspan="1"><strong id='bold22806'
+>current-time</strong><em id='it22809'
+> [<code id='code22808'
+><em id='it22807'
+>scheduler</em></code>]</em></td><td id="tc22811" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-Returns the reaction number of <code id='code22758'
-><em id='it22757'
+Returns the reaction number of <code id='code22815'
+><em id='it22814'
 >scheduler</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22762" class="mark"></a><a name="time?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22768" align="left" colspan="1"><strong id='bold22764'
->time?</strong><em id='it22767'
-> <code id='code22766'
-><em id='it22765'
->obj</em></code></em></td><td id="tc22769" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g22773" class="mark"></a><a name="time->seconds" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22779" align="left" colspan="1"><strong id='bold22775'
->time-&gt;seconds</strong><em id='it22778'
-> <code id='code22777'
-><em id='it22776'
->obj</em></code></em></td><td id="tc22780" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-</td></tr>
-</tbody></table><br/>
-<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22786" class="mark"></a><a name="join-timeout-exception?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22792" align="left" colspan="1"><strong id='bold22788'
->join-timeout-exception?</strong><em id='it22791'
-> <code id='code22790'
-><em id='it22789'
->obj</em></code></em></td><td id="tc22793" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g22797" class="mark"></a><a name="abandoned-mutex-exception?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22803" align="left" colspan="1"><strong id='bold22799'
->abandoned-mutex-exception?</strong><em id='it22802'
-> <code id='code22801'
-><em id='it22800'
->obj</em></code></em></td><td id="tc22804" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g22808" class="mark"></a><a name="terminated-thread-exception?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22814" align="left" colspan="1"><strong id='bold22810'
->terminated-thread-exception?</strong><em id='it22813'
-> <code id='code22812'
-><em id='it22811'
->obj</em></code></em></td><td id="tc22815" align="right" colspan="1">SRFI-18 function</td></tr>
-</tbody></table>
-<a name="g22819" class="mark"></a><a name="uncaught-exception?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td><a name="g22819" class="mark"></a><a name="time?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
 <tr><td id="tc22825" align="left" colspan="1"><strong id='bold22821'
->uncaught-exception?</strong><em id='it22824'
+>time?</strong><em id='it22824'
 > <code id='code22823'
 ><em id='it22822'
 >obj</em></code></em></td><td id="tc22826" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-<a name="g22830" class="mark"></a><a name="uncaught-exception-reason" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<a name="g22830" class="mark"></a><a name="time->seconds" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
 <tr><td id="tc22836" align="left" colspan="1"><strong id='bold22832'
->uncaught-exception-reason</strong><em id='it22835'
+>time-&gt;seconds</strong><em id='it22835'
 > <code id='code22834'
 ><em id='it22833'
->exc</em></code></em></td><td id="tc22837" align="right" colspan="1">SRFI-18 function</td></tr>
+>obj</em></code></em></td><td id="tc22837" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g22843" class="mark"></a><a name="join-timeout-exception?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22849" align="left" colspan="1"><strong id='bold22845'
+>join-timeout-exception?</strong><em id='it22848'
+> <code id='code22847'
+><em id='it22846'
+>obj</em></code></em></td><td id="tc22850" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g22854" class="mark"></a><a name="abandoned-mutex-exception?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22860" align="left" colspan="1"><strong id='bold22856'
+>abandoned-mutex-exception?</strong><em id='it22859'
+> <code id='code22858'
+><em id='it22857'
+>obj</em></code></em></td><td id="tc22861" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g22865" class="mark"></a><a name="terminated-thread-exception?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22871" align="left" colspan="1"><strong id='bold22867'
+>terminated-thread-exception?</strong><em id='it22870'
+> <code id='code22869'
+><em id='it22868'
+>obj</em></code></em></td><td id="tc22872" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g22876" class="mark"></a><a name="uncaught-exception?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22882" align="left" colspan="1"><strong id='bold22878'
+>uncaught-exception?</strong><em id='it22881'
+> <code id='code22880'
+><em id='it22879'
+>obj</em></code></em></td><td id="tc22883" align="right" colspan="1">SRFI-18 function</td></tr>
+</tbody></table>
+<a name="g22887" class="mark"></a><a name="uncaught-exception-reason" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22893" align="left" colspan="1"><strong id='bold22889'
+>uncaught-exception-reason</strong><em id='it22892'
+> <code id='code22891'
+><em id='it22890'
+>exc</em></code></em></td><td id="tc22894" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table><br/>
@@ -2051,20 +2051,20 @@ Returns the reaction number of <code id='code22758'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">17.3 Posix Threads</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Posix-Threads" class="mark"></a><a name="g22842" class="mark"></a><a name="g22844" class="mark"></a><a name="g22846" class="mark"></a>
+<a name="Posix-Threads" class="mark"></a><a name="g22899" class="mark"></a><a name="g22901" class="mark"></a><a name="g22903" class="mark"></a>
 This section describes two Posix-Like multi-threading Bigloo libraries.
-The two libraries, <code id='code22848'
->pthread</code>, and <code id='code22849'
+The two libraries, <code id='code22905'
+>pthread</code>, and <code id='code22906'
 >srfi-18</code> are all the same
-but the <code id='code22850'
+but the <code id='code22907'
 >mutex-state</code> function that returns different results.
 Because of these differences that might seem thin at first glance,
-the <code id='code22851'
->pthread</code> library is significantly faster than the <code id='code22852'
+the <code id='code22908'
+>pthread</code> library is significantly faster than the <code id='code22909'
 >srfi-18</code>
-library. For that reason, it is recommended to use the <code id='code22853'
+library. For that reason, it is recommended to use the <code id='code22910'
 >pthread</code>
-library instead of the <code id='code22854'
+library instead of the <code id='code22911'
 >srfi-18</code> library that is mostly supported
 for backward compatibility.<br/><br/>As much as possible, the names exported by this library are compatible
 with the Fair Threads library (see Section <a href="bigloo-18.html#Fair-Threads" class="inbound">Fair Threads</a>).<br/><br/>
@@ -2087,56 +2087,56 @@ the pthread library is initialized.<br/><br/><br/></div>
 </div><div class="subsection">
 <a name="Threads-API" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g22859" class="mark"></a><a name="instantiate::pthread" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22867" align="left" colspan="1"><strong id='bold22861'
->instantiate::pthread</strong><em id='it22866'
-> (body <code id='code22863'
-><em id='it22862'
->thunk</em></code>) [(name <code id='code22865'
-><em id='it22864'
->name</em></code>)]</em></td><td id="tc22868" align="right" colspan="1">Bigloo syntax</td></tr>
+<tr><td><a name="g22916" class="mark"></a><a name="instantiate::pthread" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22924" align="left" colspan="1"><strong id='bold22918'
+>instantiate::pthread</strong><em id='it22923'
+> (body <code id='code22920'
+><em id='it22919'
+>thunk</em></code>) [(name <code id='code22922'
+><em id='it22921'
+>name</em></code>)]</em></td><td id="tc22925" align="right" colspan="1">Bigloo syntax</td></tr>
 </tbody></table>
-<a name="g22872" class="mark"></a><a name="make-thread" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22880" align="left" colspan="1"><strong id='bold22874'
->make-thread</strong><em id='it22879'
-> <code id='code22876'
-><em id='it22875'
->thunk</em></code> [<code id='code22878'
-><em id='it22877'
->name</em></code>]</em></td><td id="tc22881" align="right" colspan="1">SRFI-18 function</td></tr>
+<a name="g22929" class="mark"></a><a name="make-thread" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc22937" align="left" colspan="1"><strong id='bold22931'
+>make-thread</strong><em id='it22936'
+> <code id='code22933'
+><em id='it22932'
+>thunk</em></code> [<code id='code22935'
+><em id='it22934'
+>name</em></code>]</em></td><td id="tc22938" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 Returns a new thread which is not started yet. The body of the thread
-is the body of the procedure <code id='code22885'
-><em id='it22884'
->thunk</em></code>. The optional argument <code id='code22887'
-><em id='it22886'
+is the body of the procedure <code id='code22942'
+><em id='it22941'
+>thunk</em></code>. The optional argument <code id='code22944'
+><em id='it22943'
 >name</em></code>
-can be use to identify the thread. It can be any Bigloo value.<br/><br/><strong id='bold22889'
->Warning:</strong> the <code id='code22890'
->make-thread</code> function is <strong id='bold22891'
+can be use to identify the thread. It can be any Bigloo value.<br/><br/><strong id='bold22946'
+>Warning:</strong> the <code id='code22947'
+>make-thread</code> function is <strong id='bold22948'
 >deprecated</strong>, but
 still provided for a backward compatibility with previous release of
-Bigloo. The use of this function is <em id='emph22892'
+Bigloo. The use of this function is <em id='emph22949'
 >highly</em> discouraged, in
-favor of the <code id='code22893'
->instantiate::pthread</code> form.<br/><br/><center id='center22906'
+favor of the <code id='code22950'
+>instantiate::pthread</code> form.<br/><br/><center id='center22963'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22904'
->(<font color="#1919af"><strong id='bold33616'
->module</strong></font> <font color="#1919af"><strong id='bold33618'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog22961'
+>(<font color="#1919af"><strong id='bold33673'
+>module</strong></font> <font color="#1919af"><strong id='bold33675'
 >example</strong></font>
-   (<font color="#1919af"><strong id='bold33620'
->library</strong></font> <font color="#1919af"><strong id='bold33622'
+   (<font color="#1919af"><strong id='bold33677'
+>library</strong></font> <font color="#1919af"><strong id='bold33679'
 >pthread</strong></font>)
-   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold33624'
->define</strong></font> (<font color="#6959cf"><strong id='bold33626'
+   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold33681'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33683'
 >main</strong></font> argv)
-   (<font color="#ad4386"><strong id='bold33628'
+   (<font color="#ad4386"><strong id='bold33685'
 >make-thread</strong></font> 
-    (<strong id='bold33630'
+    (<strong id='bold33687'
 >lambda</strong> () 
        (print 1)
-       (<font color="#ad4386"><strong id='bold33631'
+       (<font color="#ad4386"><strong id='bold33688'
 >thread-yield!</strong></font>)
        (print 2)) 
     'my-thread))
@@ -2147,69 +2147,69 @@ favor of the <code id='code22893'
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22913" align="left" colspan="1"><strong id='bold22909'
->thread-start!</strong><em id='it22912'
-> <code id='code22911'
-><em id='it22910'
->thread</em></code></em></td><td id="tc22914" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc22970" align="left" colspan="1"><strong id='bold22966'
+>thread-start!</strong><em id='it22969'
+> <code id='code22968'
+><em id='it22967'
+>thread</em></code></em></td><td id="tc22971" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 <table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22921" align="left" colspan="1"><strong id='bold22917'
->thread-start-joinable!</strong><em id='it22920'
-> <code id='code22919'
-><em id='it22918'
->thread</em></code></em></td><td id="tc22922" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc22978" align="left" colspan="1"><strong id='bold22974'
+>thread-start-joinable!</strong><em id='it22977'
+> <code id='code22976'
+><em id='it22975'
+>thread</em></code></em></td><td id="tc22979" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-Runs a thread created with <code id='code22925'
+Runs a thread created with <code id='code22982'
 >instantiate::pthread</code>. By default,
 threads are detached, and thus, they cannot be joined.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22930" align="left" colspan="1"><strong id='bold22928'
->thread-yield!</strong><em id='it22929'
-></em></td><td id="tc22931" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc22987" align="left" colspan="1"><strong id='bold22985'
+>thread-yield!</strong><em id='it22986'
+></em></td><td id="tc22988" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-The current thread <em id='emph22934'
+The current thread <em id='emph22991'
 >cooperates</em>. 
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22941" align="left" colspan="1"><strong id='bold22937'
->thread-sleep!</strong><em id='it22940'
-> <code id='code22939'
-><em id='it22938'
->timeout</em></code></em></td><td id="tc22942" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc22998" align="left" colspan="1"><strong id='bold22994'
+>thread-sleep!</strong><em id='it22997'
+> <code id='code22996'
+><em id='it22995'
+>timeout</em></code></em></td><td id="tc22999" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 
-The current thread <em id='emph22945'
+The current thread <em id='emph23002'
 >sleeps</em> for a certain period. It is suspended
 and the scheduler is free to select a new thread to be resumed. If
 there is only one thread started in the scheduler, the same thread
-will be resumed.  The time of <code id='code22947'
-><em id='it22946'
+will be resumed.  The time of <code id='code23004'
+><em id='it23003'
 >timeout</em></code> is used to determine the
-time the thread must sleep.<br/><br/>Here are the possible types for <code id='code22950'
-><em id='it22949'
->timeout</em></code>.<br/><br/><ul class="itemize" id='itemize22966'
-><li><code id='code22952'
->date</code>: the thread sleeps at least until the date <code id='code22954'
-><em id='it22953'
+time the thread must sleep.<br/><br/>Here are the possible types for <code id='code23007'
+><em id='it23006'
+>timeout</em></code>.<br/><br/><ul class="itemize" id='itemize23023'
+><li><code id='code23009'
+>date</code>: the thread sleeps at least until the date <code id='code23011'
+><em id='it23010'
 >timeout</em></code>.
 </li>
-<li><code id='code22956'
->real</code>: the thread sleeps at least <code id='code22958'
-><em id='it22957'
+<li><code id='code23013'
+>real</code>: the thread sleeps at least <code id='code23015'
+><em id='it23014'
 >timeout</em></code> seconds.
 </li>
-<li><code id='code22960'
->fixum</code>, <code id='code22961'
->elong</code>, <code id='code22962'
+<li><code id='code23017'
+>fixum</code>, <code id='code23018'
+>elong</code>, <code id='code23019'
 >llong</code>: the thread sleeps at least
-<code id='code22964'
-><em id='it22963'
+<code id='code23021'
+><em id='it23020'
 >timeout</em></code> milli-seconds.
 </li>
 </ul>
@@ -2217,74 +2217,74 @@ time the thread must sleep.<br/><br/>Here are the possible types for <code id='c
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22973" align="left" colspan="1"><strong id='bold22969'
->thread-terminate!</strong><em id='it22972'
-> <code id='code22971'
-><em id='it22970'
->thread</em></code></em></td><td id="tc22974" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc23030" align="left" colspan="1"><strong id='bold23026'
+>thread-terminate!</strong><em id='it23029'
+> <code id='code23028'
+><em id='it23027'
+>thread</em></code></em></td><td id="tc23031" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-Terminates <code id='code22978'
-><em id='it22977'
+Terminates <code id='code23035'
+><em id='it23034'
 >thread</em></code> as soon as possible.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc22987" align="left" colspan="1"><strong id='bold22981'
->thread-join!</strong><em id='it22986'
-> <code id='code22983'
-><em id='it22982'
->thread</em></code> [<code id='code22985'
-><em id='it22984'
->timeout</em></code>]</em></td><td id="tc22988" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc23044" align="left" colspan="1"><strong id='bold23038'
+>thread-join!</strong><em id='it23043'
+> <code id='code23040'
+><em id='it23039'
+>thread</em></code> [<code id='code23042'
+><em id='it23041'
+>timeout</em></code>]</em></td><td id="tc23045" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-The current thread waits until the <code id='code22992'
-><em id='it22991'
->thread</em></code> terminates. If <code id='code22994'
-><em id='it22993'
+The current thread waits until the <code id='code23049'
+><em id='it23048'
+>thread</em></code> terminates. If <code id='code23051'
+><em id='it23050'
 >thread</em></code>
-terminates, <code id='code22995'
->thread-join!</code> returns the end-result of the <code id='code22997'
-><em id='it22996'
+terminates, <code id='code23052'
+>thread-join!</code> returns the end-result of the <code id='code23054'
+><em id='it23053'
 >thread</em></code>
 or the end-exception if that thread terminates abnormally.<br/><br/>It is possible to wait for the termination of the a thread if and only if
-it has been started with <code id='code22999'
+it has been started with <code id='code23056'
 >thread-start-joinable!</code>. In particular,
-threads started with <code id='code23000'
->thread-start!</code> cannot be joined.<br/><br/>The optional argument <code id='code23003'
-><em id='it23002'
+threads started with <code id='code23057'
+>thread-start!</code> cannot be joined.<br/><br/>The optional argument <code id='code23060'
+><em id='it23059'
 >timeout</em></code>, forces to wait at for
-<code id='code23005'
-><em id='it23004'
+<code id='code23062'
+><em id='it23061'
 >timeout</em></code> milli-seconds for the thread to terminate. Note that not
 all systems support this facility. When supported, the
-<code id='code23006'
->cond-expand</code> (see see <a href="bigloo-32.html#SRFIs" class="inbound">SRFIs</a>) <code id='code23007'
+<code id='code23063'
+>cond-expand</code> (see see <a href="bigloo-32.html#SRFIs" class="inbound">SRFIs</a>) <code id='code23064'
 >pthread-timedjoin</code> is
 defined. When the timeout expires some systems, raise an error. Other
 systems abort silently.<br/><br/></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc23015" align="left" colspan="1"><strong id='bold23011'
->terminated-thread-exception?</strong><em id='it23014'
-> <code id='code23013'
-><em id='it23012'
->obj</em></code></em></td><td id="tc23016" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc23072" align="left" colspan="1"><strong id='bold23068'
+>terminated-thread-exception?</strong><em id='it23071'
+> <code id='code23070'
+><em id='it23069'
+>obj</em></code></em></td><td id="tc23073" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 <table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc23023" align="left" colspan="1"><strong id='bold23019'
->uncaught-exception?</strong><em id='it23022'
-> <code id='code23021'
-><em id='it23020'
->obj</em></code></em></td><td id="tc23024" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc23080" align="left" colspan="1"><strong id='bold23076'
+>uncaught-exception?</strong><em id='it23079'
+> <code id='code23078'
+><em id='it23077'
+>obj</em></code></em></td><td id="tc23081" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 <table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc23031" align="left" colspan="1"><strong id='bold23027'
->uncaught-exception-reason</strong><em id='it23030'
-> <code id='code23029'
-><em id='it23028'
->exc</em></code></em></td><td id="tc23032" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc23088" align="left" colspan="1"><strong id='bold23084'
+>uncaught-exception-reason</strong><em id='it23087'
+> <code id='code23086'
+><em id='it23085'
+>exc</em></code></em></td><td id="tc23089" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table><br/>
@@ -2297,12 +2297,12 @@ systems abort silently.<br/><br/></td></tr>
 <a name="Mutexes-API" class="mark"></a>Thread locking mechanism is common to Fair Threads and Posix Threads
 (see <a href="bigloo-18.html#Thread-Common-Functions" class="inbound">Thread Common Functions</a>).<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc23039" align="left" colspan="1"><em id='it23038'
->mutex-state mutex</em></td><td id="tc23040" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc23096" align="left" colspan="1"><em id='it23095'
+>mutex-state mutex</em></td><td id="tc23097" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
-Returns the symbol <code id='code23043'
+Returns the symbol <code id='code23100'
 >locked</code> when the mutex is locked by a thread.
-Otherwise, it returns the symbol <code id='code23044'
+Otherwise, it returns the symbol <code id='code23101'
 >unlocked</code>.
 </td></tr>
 </tbody></table><br/>
@@ -2314,43 +2314,43 @@ Otherwise, it returns the symbol <code id='code23044'
 </div><div class="subsection">
 <a name="Condition-Variables-API" class="mark"></a>
 Posix thread condition variables follows the common thread API
-(see <a href="bigloo-18.html#Thread-Common-Functions" class="inbound">Thread Common Functions</a>).<br/><br/><center id='center23066'
+(see <a href="bigloo-18.html#Thread-Common-Functions" class="inbound">Thread Common Functions</a>).<br/><br/><center id='center23123'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog23064'
->(<font color="#1919af"><strong id='bold33633'
->module</strong></font> <font color="#1919af"><strong id='bold33635'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog23121'
+>(<font color="#1919af"><strong id='bold33690'
+>module</strong></font> <font color="#1919af"><strong id='bold33692'
 >example</strong></font>
-  (<font color="#1919af"><strong id='bold33637'
->library</strong></font> <font color="#1919af"><strong id='bold33639'
+  (<font color="#1919af"><strong id='bold33694'
+>library</strong></font> <font color="#1919af"><strong id='bold33696'
 >pthread</strong></font>)
-  (main main))<br/><br/>(<font color="#6959cf"><strong id='bold33641'
->define</strong></font> (<font color="#6959cf"><strong id='bold33643'
+  (main main))<br/><br/>(<font color="#6959cf"><strong id='bold33698'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33700'
 >main</strong></font> argv)
-   (<strong id='bold33645'
+   (<strong id='bold33702'
 >let</strong> ((res #f)
 	 (lock (make-mutex))
 	 (cv (make-condition-variable)))
-      (<font color="#ad4386"><strong id='bold33646'
+      (<font color="#ad4386"><strong id='bold33703'
 >thread-join!</strong></font>
        (thread-start-joinable!
-	(<strong id='bold33648'
->instantiate</strong><font color="#00cf00"><strong id='bold33649'
+	(<strong id='bold33705'
+>instantiate</strong><font color="#00cf00"><strong id='bold33706'
 >::pthread</strong></font>
-	   (body (<strong id='bold33651'
+	   (body (<strong id='bold33708'
 >lambda</strong> ()
 		    (mutex-lock! lock)
-		    (<font color="#ad4386"><strong id='bold33652'
+		    (<font color="#ad4386"><strong id='bold33709'
 >thread-start!</strong></font>
-		     (<strong id='bold33654'
->instantiate</strong><font color="#00cf00"><strong id='bold33655'
+		     (<strong id='bold33711'
+>instantiate</strong><font color="#00cf00"><strong id='bold33712'
 >::pthread</strong></font>
-			(body (<strong id='bold33657'
+			(body (<strong id='bold33714'
 >lambda</strong> ()
 				 (mutex-lock! lock)
 				 (condition-variable-signal! cv)
 				 (mutex-unlock! lock)))))
 		    (condition-variable-wait! cv lock)
-		    (<strong id='bold33658'
+		    (<strong id='bold33715'
 >set!</strong> res 23) 
 		    (mutex-unlock! lock))))))
       res))
@@ -2367,34 +2367,34 @@ Posix thread condition variables follows the common thread API
 <a name="SRFI-18" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc23068" align="left" colspan="1"><em id='it23067'
->mutex-state mutex</em></td><td id="tc23069" align="right" colspan="1">SRFI-18 function</td></tr>
+<tr><td id="tc23125" align="left" colspan="1"><em id='it23124'
+>mutex-state mutex</em></td><td id="tc23126" align="right" colspan="1">SRFI-18 function</td></tr>
 </tbody></table>
 
-Returns information about the state of the mutex. The possible results are:<br/><br/><ul class="itemize" id='itemize23080'
+Returns information about the state of the mutex. The possible results are:<br/><br/><ul class="itemize" id='itemize23137'
 ><li>thread T: the mutex is in the locked/owned state and thread T is the owner of the mutex
  </li>
-<li>symbol <code id='code23074'
+<li>symbol <code id='code23131'
 >not-owned</code>: the mutex is in the locked/not-owned state
  </li>
-<li>symbol <code id='code23076'
+<li>symbol <code id='code23133'
 >abandoned</code>: the mutex is in the unlocked/abandoned state
  </li>
-<li>symbol <code id='code23078'
+<li>symbol <code id='code23135'
 >not-abandoned</code>: the mutex is in the unlocked/not-abandoned state 
 </li>
 </ul>
-Examples:<br/><br/><center id='center23089'
+Examples:<br/><br/><center id='center23146'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog23087'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog23144'
 >(mutex-state (make-mutex))  
-   =&gt; not-abandoned<br/><br/>(<font color="#6959cf"><strong id='bold33659'
->define</strong></font> (<font color="#6959cf"><strong id='bold33661'
+   =&gt; not-abandoned<br/><br/>(<font color="#6959cf"><strong id='bold33716'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33718'
 >thread-alive?</strong></font> thread)
-   (<strong id='bold33663'
+   (<strong id='bold33720'
 >let</strong> ((mutex (make-mutex)))
       (mutex-lock! mutex #f thread)
-      (<strong id='bold33664'
+      (<strong id='bold33721'
 >let</strong> ((state (mutex-state mutex)))
          (mutex-unlock! mutex) ; avoid space leak
          (eq? state thread))))<br/><br/>
@@ -2410,143 +2410,143 @@ Examples:<br/><br/><center id='center23089'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">17.4 Mixing Thread APIs</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Mixing-Thread-APIs" class="mark"></a><a name="g23093" class="mark"></a><a name="g23095" class="mark"></a><a name="g23097" class="mark"></a>
+<a name="Mixing-Thread-APIs" class="mark"></a><a name="g23150" class="mark"></a><a name="g23152" class="mark"></a><a name="g23154" class="mark"></a>
 The <a href="bigloo-18.html#Fair-Threads" class="inbound">Fair Threads</a> library is ``Posix Threads'' safe, which means it
 is possible to use at the same time both libraries. In other words, it
 is possible to embed one fair scheduler into a Posix thread.<br/><br/>Here is a little example with two schedulers started into two
-different Posix threads, each schedulers running two fair threads.<br/><br/><center id='center23168'
+different Posix threads, each schedulers running two fair threads.<br/><br/><center id='center23225'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog23166'
->(<font color="#1919af"><strong id='bold33665'
->module</strong></font> <font color="#1919af"><strong id='bold33667'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog23223'
+>(<font color="#1919af"><strong id='bold33722'
+>module</strong></font> <font color="#1919af"><strong id='bold33724'
 >mix_threads</strong></font>
-   (<font color="#1919af"><strong id='bold33669'
->library</strong></font> <font color="#1919af"><strong id='bold33671'
+   (<font color="#1919af"><strong id='bold33726'
+>library</strong></font> <font color="#1919af"><strong id='bold33728'
 >fthread</strong></font> pthread)
-   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold33673'
->define</strong></font> <font color="#6959cf"><strong id='bold33675'
+   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold33730'
+>define</strong></font> <font color="#6959cf"><strong id='bold33732'
 >*f1*</strong></font> 0)
-(<font color="#6959cf"><strong id='bold33677'
->define</strong></font> <font color="#6959cf"><strong id='bold33679'
->*f2*</strong></font> 0)<br/><br/>(<font color="#6959cf"><strong id='bold33681'
->define</strong></font> (<font color="#6959cf"><strong id='bold33683'
+(<font color="#6959cf"><strong id='bold33734'
+>define</strong></font> <font color="#6959cf"><strong id='bold33736'
+>*f2*</strong></font> 0)<br/><br/>(<font color="#6959cf"><strong id='bold33738'
+>define</strong></font> (<font color="#6959cf"><strong id='bold33740'
 >main</strong></font> args)
-   (<strong id='bold33685'
->let</strong> ((s1 (<font color="#ad4386"><strong id='bold33686'
+   (<strong id='bold33742'
+>let</strong> ((s1 (<font color="#ad4386"><strong id='bold33743'
 >make-scheduler</strong></font> #t))
-	 (s2 (<font color="#ad4386"><strong id='bold33688'
+	 (s2 (<font color="#ad4386"><strong id='bold33745'
 >make-scheduler</strong></font> #t))
 	 
-	 (f1a (<strong id='bold33690'
->instantiate</strong><font color="#00cf00"><strong id='bold33691'
+	 (f1a (<strong id='bold33747'
+>instantiate</strong><font color="#00cf00"><strong id='bold33748'
 >::fthread</strong></font>
-		 (body (<strong id='bold33693'
+		 (body (<strong id='bold33750'
 >lambda</strong> ()
-			  (<strong id='bold33694'
+			  (<strong id='bold33751'
 >let</strong> loop ()
-			     (print <font color="red">&quot;f1a: &quot;</font> *f1* <font color="red">&quot; &quot;</font> (<font color="#ad4386"><strong id='bold33697'
+			     (print <font color="red">&quot;f1a: &quot;</font> *f1* <font color="red">&quot; &quot;</font> (<font color="#ad4386"><strong id='bold33754'
 >current-thread</strong></font>))
-			     (<strong id='bold33699'
+			     (<strong id='bold33756'
 >set!</strong> *f1* (+ 1 *f1*))
-			     (<font color="#ad4386"><strong id='bold33700'
+			     (<font color="#ad4386"><strong id='bold33757'
 >thread-yield!</strong></font>)
 			     (loop))))))
 	 
-	 (f1b (<strong id='bold33702'
->instantiate</strong><font color="#00cf00"><strong id='bold33703'
+	 (f1b (<strong id='bold33759'
+>instantiate</strong><font color="#00cf00"><strong id='bold33760'
 >::fthread</strong></font>
-		 (body (<strong id='bold33705'
+		 (body (<strong id='bold33762'
 >lambda</strong> ()
-			  (<strong id='bold33706'
+			  (<strong id='bold33763'
 >let</strong> loop ()
-			     (print <font color="red">&quot;f1b: &quot;</font> *f1* <font color="red">&quot; &quot;</font> (<font color="#ad4386"><strong id='bold33709'
+			     (print <font color="red">&quot;f1b: &quot;</font> *f1* <font color="red">&quot; &quot;</font> (<font color="#ad4386"><strong id='bold33766'
 >current-thread</strong></font>))
-			     (<strong id='bold33711'
+			     (<strong id='bold33768'
 >set!</strong> *f1* (+ 1 *f1*))
-			     (<font color="#ad4386"><strong id='bold33712'
+			     (<font color="#ad4386"><strong id='bold33769'
 >thread-yield!</strong></font>)
 			     (loop))))))
 	 
-	 (f2a (<strong id='bold33714'
->instantiate</strong><font color="#00cf00"><strong id='bold33715'
+	 (f2a (<strong id='bold33771'
+>instantiate</strong><font color="#00cf00"><strong id='bold33772'
 >::fthread</strong></font>
-		 (body (<strong id='bold33717'
+		 (body (<strong id='bold33774'
 >lambda</strong> ()
-			  (<strong id='bold33718'
+			  (<strong id='bold33775'
 >let</strong> loop ()
-			     (print <font color="red">&quot;f2a: &quot;</font> *f2* <font color="red">&quot; &quot;</font> (<font color="#ad4386"><strong id='bold33721'
+			     (print <font color="red">&quot;f2a: &quot;</font> *f2* <font color="red">&quot; &quot;</font> (<font color="#ad4386"><strong id='bold33778'
 >current-thread</strong></font>))
-			     (<strong id='bold33723'
+			     (<strong id='bold33780'
 >set!</strong> *f2* (+ 1 *f2*))
-			     (<font color="#ad4386"><strong id='bold33724'
+			     (<font color="#ad4386"><strong id='bold33781'
 >thread-yield!</strong></font>)
 			     (loop))))))
 	 
-	 (f2b (<strong id='bold33726'
->instantiate</strong><font color="#00cf00"><strong id='bold33727'
+	 (f2b (<strong id='bold33783'
+>instantiate</strong><font color="#00cf00"><strong id='bold33784'
 >::fthread</strong></font>
-		 (body (<strong id='bold33729'
+		 (body (<strong id='bold33786'
 >lambda</strong> ()
-			  (<strong id='bold33730'
+			  (<strong id='bold33787'
 >let</strong> loop ()
-			     (print <font color="red">&quot;f2b: &quot;</font> *f2* <font color="red">&quot; &quot;</font> (<font color="#ad4386"><strong id='bold33733'
+			     (print <font color="red">&quot;f2b: &quot;</font> *f2* <font color="red">&quot; &quot;</font> (<font color="#ad4386"><strong id='bold33790'
 >current-thread</strong></font>))
-			     (<strong id='bold33735'
+			     (<strong id='bold33792'
 >set!</strong> *f2* (+ 1 *f2*))
-			     (<font color="#ad4386"><strong id='bold33736'
+			     (<font color="#ad4386"><strong id='bold33793'
 >thread-yield!</strong></font>)
 			     (loop)))))))
       
-      (<strong id='bold33738'
->let*</strong> ((p1 (<strong id='bold33739'
->instantiate</strong><font color="#00cf00"><strong id='bold33740'
+      (<strong id='bold33795'
+>let*</strong> ((p1 (<strong id='bold33796'
+>instantiate</strong><font color="#00cf00"><strong id='bold33797'
 >::pthread</strong></font>
-		   (body (<strong id='bold33742'
+		   (body (<strong id='bold33799'
 >lambda</strong> ()
-			    <font color="#ffa600"><em id='it33743'
+			    <font color="#ffa600"><em id='it33800'
 >;; Sets the thread's specific scheduler</em></font>
 			    (default-scheduler s1)
-			    (<font color="#ad4386"><strong id='bold33745'
+			    (<font color="#ad4386"><strong id='bold33802'
 >scheduler-start!</strong></font> 5)))))
 	     
-	    (p2 (<strong id='bold33747'
->instantiate</strong><font color="#00cf00"><strong id='bold33748'
+	    (p2 (<strong id='bold33804'
+>instantiate</strong><font color="#00cf00"><strong id='bold33805'
 >::pthread</strong></font>
-		   (body (<strong id='bold33750'
+		   (body (<strong id='bold33807'
 >lambda</strong> ()
-			    <font color="#ffa600"><em id='it33751'
+			    <font color="#ffa600"><em id='it33808'
 >;; Sets the thread's specific scheduler</em></font>
 			    (default-scheduler s2)
-			    <font color="#ffa600"><em id='it33753'
+			    <font color="#ffa600"><em id='it33810'
 >;; One reaction for s2</em></font>
-			    (<font color="#ad4386"><strong id='bold33755'
+			    (<font color="#ad4386"><strong id='bold33812'
 >scheduler-react!</strong></font>)
-			    <font color="#ffa600"><em id='it33757'
+			    <font color="#ffa600"><em id='it33814'
 >;; Starts s1</em></font>
 			    (thread-start-joinable! p1)
-			    <font color="#ffa600"><em id='it33759'
+			    <font color="#ffa600"><em id='it33816'
 >;; Do three reactions</em></font>
-			    (<font color="#ad4386"><strong id='bold33761'
+			    (<font color="#ad4386"><strong id='bold33818'
 >scheduler-start!</strong></font> 3)
-			    <font color="#ffa600"><em id='it33763'
+			    <font color="#ffa600"><em id='it33820'
 >;; Waits for p1/s1 termination</em></font>
-			    (<font color="#ad4386"><strong id='bold33765'
+			    (<font color="#ad4386"><strong id='bold33822'
 >thread-join!</strong></font> p1)
-			    <font color="#ffa600"><em id='it33767'
+			    <font color="#ffa600"><em id='it33824'
 >;; The final reaction</em></font>
-			    (<font color="#ad4386"><strong id='bold33769'
+			    (<font color="#ad4386"><strong id='bold33826'
 >scheduler-react!</strong></font>))))))
 	 
-	 (<font color="#ad4386"><strong id='bold33771'
+	 (<font color="#ad4386"><strong id='bold33828'
 >thread-start!</strong></font> f1a s1)
-	 (<font color="#ad4386"><strong id='bold33773'
+	 (<font color="#ad4386"><strong id='bold33830'
 >thread-start!</strong></font> f1b s1)
-	 (<font color="#ad4386"><strong id='bold33775'
+	 (<font color="#ad4386"><strong id='bold33832'
 >thread-start!</strong></font> f2a s2)
-	 (<font color="#ad4386"><strong id='bold33777'
+	 (<font color="#ad4386"><strong id='bold33834'
 >thread-start!</strong></font> f2b s2)
 	 
-	 (<font color="#ad4386"><strong id='bold33779'
+	 (<font color="#ad4386"><strong id='bold33836'
 >thread-join!</strong></font> (thread-start-joinable! p2)))))
 </pre>
 </td></tr>
@@ -2557,12 +2557,12 @@ different Posix threads, each schedulers running two fair threads.<br/><br/><cen
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph33786'
+<p class="ending" id='paragraph33843'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it33784'
->Mon Jan 19 07:59:56 2015</em>.</font></p></div>
+Last update <em id='it33841'
+>Wed Feb 18 07:39:05 2015</em>.</font></p></div>
 </body>
 </html>

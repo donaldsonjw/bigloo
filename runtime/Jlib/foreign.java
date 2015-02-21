@@ -5807,9 +5807,9 @@ public final class foreign
 	 return s.local_addr();
       }
 
-   public static Object socket_shutdown(socket s, boolean b) {
+   public static int socket_shutdown(socket s, int how) {
 
-	 return s.shutdown(b);
+	 return s.shutdown(how);
       }
 
    public static Object socket_close(socket s) {
@@ -6229,9 +6229,19 @@ public final class foreign
 	 return p.name.getBytes();
       }
 
+   public static void INPUT_PORT_NAME_SET(input_port p, byte[] v)
+      {
+	 p.name = new String( v );
+      }
+
    public static byte[] OUTPUT_PORT_NAME(output_port p)
       {
 	 return p.name;
+      }
+
+   public static void OUTPUT_PORT_NAME_SET(output_port p, byte[] v)
+      {
+	 p.name = v;
       }
 
    public static int RGC_BUFFER_POSITION(input_port p, int forward)
