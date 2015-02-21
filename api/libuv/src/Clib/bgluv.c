@@ -3,7 +3,7 @@
 /*    -------------------------------------------------------------    */
 /*    Author      :  Manuel Serrano                                    */
 /*    Creation    :  Tue May  6 13:53:14 2014                          */
-/*    Last change :  Sun Jan  4 09:38:44 2015 (serrano)                */
+/*    Last change :  Fri Feb  6 12:16:51 2015 (serrano)                */
 /*    Copyright   :  2014-15 Manuel Serrano                            */
 /*    -------------------------------------------------------------    */
 /*    LIBUV Bigloo C binding                                           */
@@ -44,6 +44,7 @@ extern obj_t create_vector( BGL_LONG_T );
 /*    gc_marks ...                                                     */
 /*---------------------------------------------------------------------*/
 obj_t gc_marks = BNIL;
+static obj_t bgl_uv_fstat( uv_stat_t );
 
 /*---------------------------------------------------------------------*/
 /*    static void                                                      */
@@ -65,6 +66,16 @@ gc_unmark( obj_t obj ) {
    BGL_MUTEX_LOCK( bgl_uv_mutex );
    gc_marks = bgl_remq( obj, gc_marks );
    BGL_MUTEX_UNLOCK( bgl_uv_mutex );
+}
+
+/*---------------------------------------------------------------------*/
+/*    void                                                             */
+/*    bgl_uv_process_title_init ...                                    */
+/*---------------------------------------------------------------------*/
+void
+bgl_uv_process_title_init() {
+   extern char *executable_name;
+   uv_setup_args( 1, &executable_name );
 }
 
 /*---------------------------------------------------------------------*/
@@ -135,6 +146,36 @@ bgl_uv_fs_event_new( BgL_uvtimerz00_bglt o, bgl_uv_loop_t loop ) {
    new->close_cb = &bgl_uv_close_cb;
 
    uv_fs_event_init( (uv_loop_t *)loop->BgL_z42builtinz42, new );
+   return new;
+}
+
+/*---------------------------------------------------------------------*/
+/*    void                                                             */
+/*    bgl_uv_fs_poll_cb ...                                            */
+/*---------------------------------------------------------------------*/
+void
+bgl_uv_fs_poll_cb( uv_handle_t *handle, int status, const uv_stat_t* prev, const uv_stat_t* curr ) {
+   bgl_uv_watcher_t o = (bgl_uv_watcher_t)handle->data;
+   obj_t p = o->BgL_cbz00;
+
+   if( PROCEDUREP( p ) ) {
+      PROCEDURE_ENTRY( p )( p, o, BINT( status ),
+			    bgl_uv_fstat( *prev ), bgl_uv_fstat( *curr ),
+			    BEOA );
+   }
+}
+
+/*---------------------------------------------------------------------*/
+/*    uv_fs_poll_t *                                                   */
+/*    bgl_uv_fs_poll_new ...                                           */
+/*---------------------------------------------------------------------*/
+uv_fs_poll_t *
+bgl_uv_fs_poll_new( BgL_uvtimerz00_bglt o, bgl_uv_loop_t loop ) {
+   uv_fs_poll_t *new = (uv_fs_poll_t *)GC_MALLOC( sizeof( uv_fs_poll_t ) );
+   new->data = o;
+   new->close_cb = &bgl_uv_close_cb;
+
+   uv_fs_poll_init( (uv_loop_t *)loop->BgL_z42builtinz42, new );
    return new;
 }
 
@@ -250,6 +291,21 @@ bgl_uv_cpu( uv_cpu_info_t cpu ) {
    return res;
 }
 
+/*---------------------------------------------------------------------*/
+/*    long                                                             */
+/*    bgl_uv_resident_memory ...                                       */
+/*---------------------------------------------------------------------*/
+long
+bgl_uv_resident_memory() {
+   size_t rss;
+
+  if( uv_resident_set_memory( &rss ) != 0 ) {
+     return 0;
+  } else {
+     return rss;
+  }
+}
+   
 /*---------------------------------------------------------------------*/
 /*    obj_t                                                            */
 /*    bgl_uv_cpus ...                                                  */
@@ -482,8 +538,6 @@ bgl_uv_fs_open_cb( uv_fs_t* req ) {
    } else {
       obj_t name = string_to_bstring( (char *)req->path );
       obj = bgl_uv_new_file( req->result, name );
-/*       ((bgl_uv_file_t)obj)->BgL_z52readreqz52 =                     */
-/* 	 GC_MALLOC( sizeof( uv_fs_t ) );                               */
    }
    
    uv_fs_req_cleanup( req );
@@ -1151,42 +1205,42 @@ bgl_uv_getaddrinfo_cb( uv_getaddrinfo_t *req, int status, struct addrinfo *res )
    } else {
       char *addr;
       obj_t acc = BNIL;
+      struct addrinfo *tmp;
       
       char ip[ MAX_IP_LEN ];
-      
-      for( ; res; res = res->ai_next ) {
-	 switch( res->ai_family ) {
-	    case AF_INET: {
-	       // ipv4 address
-	       addr = (char *)&((struct sockaddr_in *)res->ai_addr)->sin_addr;
-	       int err = uv_inet_ntop( res->ai_family, addr,
-				       ip, INET_ADDRSTRLEN );
-	       if( err != 0 ) {
-		  continue;
-	       } else {
-		  acc = MAKE_PAIR( string_to_bstring( ip ), acc );
-	       }
-	    }
-	       break;
-	       
-	    case AF_INET6: {
-	       // ipv6 address
-	       addr = (char*)&((struct sockaddr_in6 *)res->ai_addr)->sin6_addr;
-	       int err = uv_inet_ntop( res->ai_family, addr,
+
+      // iterate over the IPv6 addresses 
+      for( tmp = res; tmp; tmp = tmp->ai_next ) {
+	 if( tmp->ai_family == AF_INET6 ) {
+	    addr = (char*)&((struct sockaddr_in6 *)tmp->ai_addr)->sin6_addr;
+	       int err = uv_inet_ntop( tmp->ai_family, addr,
 				       ip, INET6_ADDRSTRLEN );
 	       if( err != 0 ) {
 		  continue;
 	       } else {
 		  acc = MAKE_PAIR( string_to_bstring( ip ), acc );
 	       }
+	 }
+      }
+      
+      // iterate over the IPv4 addresses 
+      for( tmp = res; tmp; tmp = tmp->ai_next ) {
+	 if( tmp->ai_family == AF_INET ) {
+	    // ipv4 addtmps
+	    addr = (char *)&((struct sockaddr_in *)tmp->ai_addr)->sin_addr;
+	    int err = uv_inet_ntop( tmp->ai_family, addr,
+				    ip, INET_ADDRSTRLEN );
+	    if( err != 0 ) {
+	       continue;
+	    } else {
+	       acc = MAKE_PAIR( string_to_bstring( ip ), acc );
 	    }
-	       break;
 	 }
       }
 
       uv_freeaddrinfo( res );
 
-      PROCEDURE_ENTRY( p )( p, bgl_reverse_bang( acc ), BEOA );
+      PROCEDURE_ENTRY( p )( p, acc, BEOA );
    }
 }
 
@@ -1240,7 +1294,6 @@ bgl_uv_inet_pton( char *addr, int family ) {
       return BFALSE;
    }
 }
-
 /*---------------------------------------------------------------------*/
 /*    static void                                                      */
 /*    bgl_uv_write_cb ...                                              */
@@ -1249,7 +1302,6 @@ static void
 bgl_uv_write_cb( uv_write_t *req, int status ) {
    obj_t p = (obj_t)req->data;
 
-   gc_unmark( p );
    PROCEDURE_ENTRY( p )( p, BINT( status ), BEOA );
 
    free( req );
@@ -1273,14 +1325,10 @@ bgl_uv_write( obj_t obj, char *buffer, long offset, long length, obj_t proc, bgl
       int r;
 
       req->data = proc;
-      
-      gc_mark( proc );
 
       iov = uv_buf_init( buffer + offset, length );
       
-      r = uv_write( req, handle, &iov, 1, bgl_uv_write_cb );
-
-      return r;
+      return uv_write( req, handle, &iov, 1, bgl_uv_write_cb );
    }
 }
    
@@ -1305,13 +1353,9 @@ bgl_uv_write2( obj_t obj, char *buffer, long offset, long length, obj_t sendhand
 
       req->data = proc;
       
-      gc_mark( proc );
-
       iov = uv_buf_init( buffer + offset, length );
 
-      r = uv_write2( req, handle, &iov, 1, sendhdl, bgl_uv_write_cb );
-
-      return r;
+      return uv_write2( req, handle, &iov, 1, sendhdl, bgl_uv_write_cb );
    }
 }
 
@@ -1330,7 +1374,6 @@ bgl_uv_read_cb( uv_stream_t *stream, ssize_t nread, const uv_buf_t *buf ) {
    obj_t pendingsym = BFALSE;
 
    sobj->BgL_z52allocz52 = BUNSPEC;
-   gc_unmark( obj );
 
    if( (stream->type == UV_NAMED_PIPE) ) {
       if( uv_pipe_pending_count( (uv_pipe_t*)stream ) > 0 ) {
@@ -1395,8 +1438,6 @@ bgl_uv_read_start( obj_t obj, obj_t proca, obj_t procc, bgl_uv_loop_t bloop ) {
 	 stream->BgL_z52procaz52 = proca;
 	 stream->BgL_z52proccz52 = procc;
 	 stream->BgL_z52offsetz52 = BINT( -1 );
-
-	 gc_mark( obj );
 
 	 return uv_read_start( s, bgl_uv_alloc_cb, bgl_uv_read_cb );
       }
@@ -1496,8 +1537,6 @@ uv_listen_cb( uv_stream_t *handle, int status ) {
    obj_t data = (obj_t)handle->data;
    obj_t p, obj;
 
-   gc_unmark( data );
-
    obj = CAR( data );
    p = CDR( data );
 
@@ -1518,7 +1557,6 @@ bgl_uv_listen( obj_t obj, int backlog, obj_t proc, bgl_uv_loop_t bloop ) {
       uv_stream_t *s = (uv_stream_t *)(stream->BgL_z42builtinz42);
 
       s->data = MAKE_PAIR( obj, proc );
-      gc_mark( s->data );
 
       return uv_listen( s, backlog, uv_listen_cb );
    }
@@ -1851,11 +1889,7 @@ static void
 bgl_uv_shutdown_cb( uv_shutdown_t* req, int status ) {
    obj_t p = (obj_t)req->data;
    obj_t handle = req->handle->data;
-
-   gc_unmark( p );
-
    free( req );
-
    PROCEDURE_ENTRY( p )( p, BINT( status ), handle, BEOA );
 }
    
@@ -1873,8 +1907,6 @@ bgl_uv_shutdown( obj_t obj, obj_t proc, bgl_uv_loop_t bloop ) {
       uv_stream_t *s = (uv_stream_t *)(stream->BgL_z42builtinz42);
       uv_shutdown_t *req = malloc( sizeof( uv_shutdown_t ) );
       int r;
-
-      gc_mark( obj );
 
       req->data = proc;
 

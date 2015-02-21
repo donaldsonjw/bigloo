@@ -10,44 +10,53 @@
 (meta-define define define-expander0,0
 (meta-define define module0,0
 
-Llib/ssl.scm,1751
+Llib/ssl.scm,2153
 (module __ssl_ssl15,963
-(define (certificate?139,5828
-(define (make-certificate139,5828
-(define (fill-certificate!139,5828
-   (export (class certificate139,5828
-(define (certificate-$native::$certificate140,5858
-(define (private-key?142,5905
-(define (make-private-key142,5905
-(define (fill-private-key!142,5905
-	   (class private-key142,5905
-(define (private-key-$native::$private-key143,5928
-(define (sanity-args-checks226,9064
-(define (make-ssl-client-socket246,10093
-(define (client-socket-use-ssl!269,11004
-(define (make-ssl-server-socket283,11643
-(define (ssl-protocols->integer297,12337
-(define (read-private-key309,12917
-(define (read-certificate315,13223
-(define (read-pem-file321,13529
-(define-inline (certificate-subject327,13833
-(define-inline (certificate-issuer333,14152
-(define (%make-certificate339,14469
-(define (%make-private-key346,14777
-(define (%certificate-$native353,15085
-(define (%private-key-$native360,15404
-(define-generic (secure-context-init367,15723
-(define-generic (secure-context-add-root-certs!377,16099
-(define-generic (secure-context-add-ca-cert!387,16496
-(define-generic (ssl-connection-init397,16919
-(define-generic (ssl-connection-start407,17298
-(define-generic (ssl-connection-read417,17678
-(define-generic (ssl-connection-write427,18090
-(define-generic (ssl-connection-clear-in437,18504
-(define-generic (ssl-connection-clear-out447,18924
-(define-generic (ssl-connection-init-finished?457,19346
-(define-generic (ssl-connection-enc-pending467,19742
-(define-generic (ssl-connection-clear-pending477,20132
-(define-generic (ssl-connection-set-session487,20526
-(define-generic (ssl-connection-verify-error497,20934
-(define-generic (ssl-connection-get-peer-certificate507,21327
+(define (certificate?150,6504
+(define (make-certificate150,6504
+(define (fill-certificate!150,6504
+   (export (class certificate150,6504
+(define (certificate-$native::$certificate151,6534
+(define (private-key?153,6581
+(define (make-private-key153,6581
+(define (fill-private-key!153,6581
+	   (class private-key153,6581
+(define (private-key-$native::$private-key154,6604
+(define (ssl-version249,10272
+(define (sanity-args-checks257,10585
+(define (make-ssl-client-socket277,11614
+(define (client-socket-use-ssl!300,12525
+(define (make-ssl-server-socket314,13164
+(define (ssl-protocols->integer328,13858
+(define (read-private-key340,14438
+(define (read-certificate346,14744
+(define (read-pem-file352,15050
+(define-inline (ssl-rand-status358,15354
+(define-inline (ssl-rand-poll366,15680
+(define (ssl-rand-bytes374,16002
+(define (ssl-rand-pseudo-bytes391,16513
+(define-inline (certificate-subject408,17038
+(define-inline (certificate-issuer414,17357
+(define (%make-certificate420,17674
+(define (%make-private-key427,17982
+(define (%certificate-$native434,18290
+(define (%private-key-$native441,18609
+(define-generic (secure-context-init448,18928
+(define-generic (secure-context-add-root-certs!458,19304
+(define-generic (secure-context-add-ca-cert!468,19701
+(define-generic (secure-context-set-key!478,20124
+(define-generic (secure-context-set-cert!488,20572
+(define-generic (secure-context-set-ciphers!498,20989
+(define-generic (secure-context-set-options!510,21449
+(define-generic (ssl-connection-init522,21909
+(define-generic (ssl-connection-start532,22288
+(define-generic (ssl-connection-read542,22668
+(define-generic (ssl-connection-write552,23080
+(define-generic (ssl-connection-clear-in562,23494
+(define-generic (ssl-connection-clear-out572,23914
+(define-generic (ssl-connection-init-finished?582,24336
+(define-generic (ssl-connection-enc-pending592,24732
+(define-generic (ssl-connection-clear-pending602,25122
+(define-generic (ssl-connection-set-session612,25516
+(define-generic (ssl-connection-verify-error622,25924
+(define-generic (ssl-connection-get-peer-certificate632,26317
