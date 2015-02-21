@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>10. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- Object System</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>10. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>February 2015 -- Object System</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center31579'
+<br/><center id='center31636'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31569" align="center" colspan="1"><font color="#ffffff"><strong id='bold31567'
+<tr bgcolor="#8381de"><th id="tc31626" align="center" colspan="1"><font color="#ffffff"><strong id='bold31624'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31576" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc31572" align="left" valign="top" colspan="1"><strong id='bold31571'
->top:</strong></td><td id="tc31573" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc31633" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc31629" align="left" valign="top" colspan="1"><strong id='bold31628'
+>top:</strong></td><td id="tc31630" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-February-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>February 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center31589'
+<br/><br/><center id='center31646'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31583" align="center" colspan="1"><font color="#ffffff"><strong id='bold31581'
+<tr bgcolor="#8381de"><th id="tc31640" align="center" colspan="1"><font color="#ffffff"><strong id='bold31638'
 >Object System</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31586" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc31643" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">10.1</td><td colspan="4" width="100%"><a href="bigloo-11.html#Class-declaration">Class declaration</a></td></tr>
  <tr><td valign="top" align="left">10.2</td><td colspan="4" width="100%"><a href="bigloo-11.html#Creating-and-accessing-objects">Creating and accessing objects</a></td></tr>
@@ -59,11 +59,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center31599'
+<br/><br/><center id='center31656'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc31593" align="center" colspan="1"><font color="#ffffff"><strong id='bold31591'
+<tr bgcolor="#8381de"><th id="tc31650" align="center" colspan="1"><font color="#ffffff"><strong id='bold31648'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc31596" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc31653" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -111,13 +111,13 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Object-System" class="mark"></a><a name="g15983" class="mark"></a><a name="g15985" class="mark"></a>
+<a name="Object-System" class="mark"></a><a name="g16040" class="mark"></a><a name="g16042" class="mark"></a>
 Bigloo's object system is designed to be as simple as possible and
 belongs to the <span class="sc">Clos</span> [Bobrow et al. 88] object system family
-in that it uses <em id='emph15988'
->classes</em>, <em id='emph15989'
+in that it uses <em id='emph16045'
+>classes</em>, <em id='emph16046'
 >generic functions</em> and
-<em id='emph15990'
+<em id='emph16047'
 >methods</em>. Its design has been strongly influenced by C. Queinnec's
 <span class="sc">Meroon</span> [Queinnec93] It does not include any meta object protocol.<br/><br/><br/>
 <!-- Class declaration -->
@@ -125,180 +125,180 @@ in that it uses <em id='emph15988'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">10.1 Class declaration</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Class-declaration" class="mark"></a><a name="g15993" class="mark"></a>
+<a name="Class-declaration" class="mark"></a><a name="g16050" class="mark"></a>
 Classes are defined in a module declaration. A class declaration can
 take place in a compiled or interpreted module. If a class declaration
 takes place in a static module clause (see Section <a href="bigloo-4.html#Module-Declaration" class="inbound">Module Declaration</a>) its scope is limited to the current module but if it
 takes place in an export module clause, its scope is extended to all
 modules that import the current module. The syntax of a class
 declaration is:<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15997" class="mark"></a><a name="class" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16001" align="left" colspan="1"><strong id='bold15999'
->class</strong><em id='it16000'
-> ident field ...</em></td><td id="tc16002" align="right" colspan="1">bigloo module clause</td></tr>
+<tr><td><a name="g16054" class="mark"></a><a name="class" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16058" align="left" colspan="1"><strong id='bold16056'
+>class</strong><em id='it16057'
+> ident field ...</em></td><td id="tc16059" align="right" colspan="1">bigloo module clause</td></tr>
 </tbody></table>
 
-<center id='center16028'
+<center id='center16085'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog16026'
->&lt;class&gt; ==&gt; <code id='code16005'
->(class</code> &lt;ident&gt; &lt;constructor&gt;? &lt;field&gt;+<code id='code16006'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog16083'
+>&lt;class&gt; ==&gt; <code id='code16062'
+>(class</code> &lt;ident&gt; &lt;constructor&gt;? &lt;field&gt;+<code id='code16063'
 >)</code>
-     | <code id='code16007'
->(final-class</code> &lt;ident&gt; &lt;constructor&gt;? &lt;field&gt;+<code id='code16008'
+     | <code id='code16064'
+>(final-class</code> &lt;ident&gt; &lt;constructor&gt;? &lt;field&gt;+<code id='code16065'
 >)</code>
-     | <code id='code16009'
->(wide-class</code> &lt;ident&gt; &lt;constructor&gt;? &lt;field&gt;+<code id='code16010'
+     | <code id='code16066'
+>(wide-class</code> &lt;ident&gt; &lt;constructor&gt;? &lt;field&gt;+<code id='code16067'
 >)</code>
-     | <code id='code16011'
->(abstract-class</code> &lt;ident&gt; &lt;constructor&gt;? &lt;field&gt;+<code id='code16012'
+     | <code id='code16068'
+>(abstract-class</code> &lt;ident&gt; &lt;constructor&gt;? &lt;field&gt;+<code id='code16069'
 >)</code>
-&lt;constructor&gt; ==&gt; <code id='code16013'
->(</code> &lt;expr&gt; <code id='code16014'
+&lt;constructor&gt; ==&gt; <code id='code16070'
+>(</code> &lt;expr&gt; <code id='code16071'
 >)</code>
 &lt;field&gt; ==&gt; &lt;ident&gt;
-     | <code id='code16015'
->(</code>&lt;ident&gt; &lt;field-prop&gt;<code id='code16016'
+     | <code id='code16072'
+>(</code>&lt;ident&gt; &lt;field-prop&gt;<code id='code16073'
 >)</code>
-&lt;field-prop&gt; ==&gt; <code id='code16017'
+&lt;field-prop&gt; ==&gt; <code id='code16074'
 >read-only</code>
-     | <code id='code16018'
->(get</code> &lt;bigloo-exp&gt;<code id='code16019'
+     | <code id='code16075'
+>(get</code> &lt;bigloo-exp&gt;<code id='code16076'
 >)</code>
-     | <code id='code16020'
->(set</code> &lt;bigloo-exp&gt;<code id='code16021'
+     | <code id='code16077'
+>(set</code> &lt;bigloo-exp&gt;<code id='code16078'
 >)</code>
-     | <code id='code16022'
->(default</code> &lt;bigloo-exp&gt;<code id='code16023'
+     | <code id='code16079'
+>(default</code> &lt;bigloo-exp&gt;<code id='code16080'
 >)</code>
-     | <code id='code16024'
->(info</code> &lt;bigloo-exp&gt;<code id='code16025'
+     | <code id='code16081'
+>(info</code> &lt;bigloo-exp&gt;<code id='code16082'
 >)</code>
 </pre>
 </td></tr>
 </tbody></table></center>
-<a name="g16029" class="mark"></a><a name="g16031" class="mark"></a><a name="g16033" class="mark"></a><a name="g16035" class="mark"></a>
+<a name="g16086" class="mark"></a><a name="g16088" class="mark"></a><a name="g16090" class="mark"></a><a name="g16092" class="mark"></a>
 A class is a Bigloo type (see Section <a href="bigloo-28.html#Atomic-types" class="inbound">Atomic types</a>) and the class
 identifier is extracted from the &lt;ident&gt; of the class definition. If
 &lt;ident&gt; is also a &lt;typed-ident&gt;, the type part of this identifier
 denote the super-class of the class. If &lt;ident&gt; is a
 &lt;<span class="sc">Ieee</span>-ident&gt;, the super-class of the class is the root of the
-inheritance tree, the <code id='code16038'
->object</code> class. This <code id='code16039'
+inheritance tree, the <code id='code16095'
+>object</code> class. This <code id='code16096'
 >object</code> class is
-the only pre-existing class.<br/><br/><em id='emph16041'
->Final classes</em> can only be sub-classed by <em id='emph16042'
+the only pre-existing class.<br/><br/><em id='emph16098'
+>Final classes</em> can only be sub-classed by <em id='emph16099'
 >wide classes</em>.
-<em id='emph16043'
->Wide classes</em> (only for compiled modules) can only inherit from <em id='emph16044'
+<em id='emph16100'
+>Wide classes</em> (only for compiled modules) can only inherit from <em id='emph16101'
 >final classes</em>. 
-<em id='emph16045'
+<em id='emph16102'
 >abstract classes</em> can't be instantiated. <br/><br/>Wide-classes cannot be defined within the interpreter.<br/><br/>The optional constructor is an expression that must evaluate to a one
 argument function. This function is automatically invoked each time
 a new class instance is created. The constructor is passed the fresh
 instance. If a class has not defined a constructor the super class'
 constructors are searched. The first constructor found is invoked. 
 A constructor may be a generic function with a method specified
-for one or more classes.<br/><br/>A class field may be a <em id='emph16049'
+for one or more classes.<br/><br/>A class field may be a <em id='emph16106'
 >typed class field</em> which is achieved
 by using a &lt;typed-ident&gt; instead of a &lt;<span class="sc">Ieee</span>-ident&gt;
-for the &lt;ident&gt; value. <br/><br/>Field marked with <code id='code16052'
->read-only</code> declaration are immutables.<br/><br/><code id='code16054'
+for the &lt;ident&gt; value. <br/><br/>Field marked with <code id='code16109'
+>read-only</code> declaration are immutables.<br/><br/><code id='code16111'
 >Default</code> declarations allow default field values.<br/><br/>For the means of an example, the traditional points and colored points 
 can be defined as:
-<center id='center16068'
+<center id='center16125'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16066'
->(<font color="#1919af"><strong id='bold31600'
->module</strong></font> <font color="#1919af"><strong id='bold31602'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16123'
+>(<font color="#1919af"><strong id='bold31657'
+>module</strong></font> <font color="#1919af"><strong id='bold31659'
 >example</strong></font>
-   (<strong id='bold31604'
+   (<strong id='bold31661'
 >static</strong> (abstract-class pt)
-           (<strong id='bold31605'
->class</strong> point<font color="#00cf00"><strong id='bold31606'
+           (<strong id='bold31662'
+>class</strong> point<font color="#00cf00"><strong id='bold31663'
 >::pt</strong></font>
-              x<font color="#00cf00"><strong id='bold31608'
+              x<font color="#00cf00"><strong id='bold31665'
 >::double</strong></font> 
-              y<font color="#00cf00"><strong id='bold31610'
+              y<font color="#00cf00"><strong id='bold31667'
 >::double</strong></font>)
-           (<strong id='bold31612'
->class</strong> point-C<font color="#00cf00"><strong id='bold31613'
+           (<strong id='bold31669'
+>class</strong> point-C<font color="#00cf00"><strong id='bold31670'
 >::point</strong></font> 
-              (color<font color="#00cf00"><strong id='bold31615'
+              (color<font color="#00cf00"><strong id='bold31672'
 >::string</strong></font> read-only))))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 We illustrate final and wide classes by the example:
-<center id='center16081'
+<center id='center16138'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16079'
->(<font color="#1919af"><strong id='bold31617'
->module</strong></font> <font color="#1919af"><strong id='bold31619'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16136'
+>(<font color="#1919af"><strong id='bold31674'
+>module</strong></font> <font color="#1919af"><strong id='bold31676'
 >example</strong></font>
-   (<font color="#1919af"><strong id='bold31621'
->export</strong></font> (<font color="#1919af"><strong id='bold31623'
+   (<font color="#1919af"><strong id='bold31678'
+>export</strong></font> (<font color="#1919af"><strong id='bold31680'
 >final-class</strong></font> person 
-               (name<font color="#00cf00"><strong id='bold31625'
+               (name<font color="#00cf00"><strong id='bold31682'
 >::string</strong></font> (default <font color="red">&quot;Jones&quot;</font>))
                (sex read-only)
-               children<font color="#00cf00"><strong id='bold31628'
+               children<font color="#00cf00"><strong id='bold31685'
 >::pair-nil</strong></font>)
-           (<strong id='bold31630'
->wide-class</strong> married-person<font color="#00cf00"><strong id='bold31631'
+           (<strong id='bold31687'
+>wide-class</strong> married-person<font color="#00cf00"><strong id='bold31688'
 >::person</strong></font>
-               mate<font color="#00cf00"><strong id='bold31633'
+               mate<font color="#00cf00"><strong id='bold31690'
 >::person</strong></font>)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Fields may be virtual. A field is virtual as soon as its declaration
-contain a <code id='code16082'
+contain a <code id='code16139'
 >get</code> attribute. Virtual fields have no 
 physical implementation within the instance. When defining a virtual
-field, the class declaration implements a <em id='emph16083'
->getter</em> and a <em id='emph16084'
+field, the class declaration implements a <em id='emph16140'
+>getter</em> and a <em id='emph16141'
 >setter</em>
 if that field is not a read only field. Access to the virtual field will
-rely on invocation of the user <em id='emph16085'
->getter</em> and user <em id='emph16086'
+rely on invocation of the user <em id='emph16142'
+>getter</em> and user <em id='emph16143'
 >setter</em>. For
-instance:<br/><br/><center id='center16112'
+instance:<br/><br/><center id='center16169'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16110'
->(<font color="#1919af"><strong id='bold31635'
->module</strong></font> <font color="#1919af"><strong id='bold31637'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16167'
+>(<font color="#1919af"><strong id='bold31692'
+>module</strong></font> <font color="#1919af"><strong id='bold31694'
 >example</strong></font>
-   (<strong id='bold31639'
->static</strong> (<strong id='bold31640'
+   (<strong id='bold31696'
+>static</strong> (<strong id='bold31697'
 >class</strong> complex
-              mag<font color="#00cf00"><strong id='bold31641'
+              mag<font color="#00cf00"><strong id='bold31698'
 >::double</strong></font>
-              angle<font color="#00cf00"><strong id='bold31643'
+              angle<font color="#00cf00"><strong id='bold31700'
 >::double</strong></font>              
-              (real<font color="#00cf00"><strong id='bold31645'
->::double</strong></font> (get (<strong id='bold31647'
+              (real<font color="#00cf00"><strong id='bold31702'
+>::double</strong></font> (get (<strong id='bold31704'
 >lambda</strong> (p)
-                                    (<strong id='bold31648'
->with-access</strong><font color="#00cf00"><strong id='bold31649'
+                                    (<strong id='bold31705'
+>with-access</strong><font color="#00cf00"><strong id='bold31706'
 >::complex</strong></font> p (mag angle)
                                        (* mag (cos angle)))))
                             read-only)
-              (imag<font color="#00cf00"><strong id='bold31651'
->::double</strong></font> (get (<strong id='bold31653'
+              (imag<font color="#00cf00"><strong id='bold31708'
+>::double</strong></font> (get (<strong id='bold31710'
 >lambda</strong> (p)
-                                    (<strong id='bold31654'
->with-access</strong><font color="#00cf00"><strong id='bold31655'
+                                    (<strong id='bold31711'
+>with-access</strong><font color="#00cf00"><strong id='bold31712'
 >::complex</strong></font> p (mag angle)
                                        (* mag (sin angle)))))
-                            read-only))))<br/><br/>(<strong id='bold31657'
->let</strong> ((p (<strong id='bold31658'
->instantiate</strong><font color="#00cf00"><strong id='bold31659'
+                            read-only))))<br/><br/>(<strong id='bold31714'
+>let</strong> ((p (<strong id='bold31715'
+>instantiate</strong><font color="#00cf00"><strong id='bold31716'
 >::complex</strong></font> (mag 1.0) (angle 2.18))))
-   (<strong id='bold31661'
->with-access</strong><font color="#00cf00"><strong id='bold31662'
+   (<strong id='bold31718'
+>with-access</strong><font color="#00cf00"><strong id='bold31719'
 >::complex</strong></font> p (real imag)
       (print <font color="red">&quot;real: &quot;</font> real)
       (print <font color="red">&quot;imag: &quot;</font> imag)))
@@ -307,24 +307,24 @@ instance:<br/><br/><center id='center16112'
 </tbody></table></center>
 
 Virtual fields cannot be associated default values. If a virtual field
-is not provided with a setter it must be annotated as read only.<br/><br/><code id='code16114'
+is not provided with a setter it must be annotated as read only.<br/><br/><code id='code16171'
 >Info</code> declarations allow arbitrary user information field values.
 This value can be retrieved by introspection, by the means of the
-<code id='code16115'
+<code id='code16172'
 >class-field-info</code> introspection function.<br/><br/>For the means of an example, with add to information to the slot of
 the point class.
-<center id='center16125'
+<center id='center16182'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16123'
->(<font color="#1919af"><strong id='bold31666'
->module</strong></font> <font color="#1919af"><strong id='bold31668'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16180'
+>(<font color="#1919af"><strong id='bold31723'
+>module</strong></font> <font color="#1919af"><strong id='bold31725'
 >example</strong></font>
-   (<strong id='bold31670'
->static</strong> (<strong id='bold31671'
+   (<strong id='bold31727'
+>static</strong> (<strong id='bold31728'
 >class</strong> point 
-              (x<font color="#00cf00"><strong id='bold31672'
+              (x<font color="#00cf00"><strong id='bold31729'
 >::double</strong></font> (info '(range 0.0 10.0)))
-              (y<font color="#00cf00"><strong id='bold31674'
+              (y<font color="#00cf00"><strong id='bold31731'
 >::double</strong></font> (info '(range -1.0 1.0)))))
 </pre>
 </td></tr>
@@ -338,70 +338,70 @@ the point class.
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">10.2 Creating and accessing objects</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Creating-and-accessing-objects" class="mark"></a><a name="g16128" class="mark"></a>
+<a name="Creating-and-accessing-objects" class="mark"></a><a name="g16185" class="mark"></a>
 Objects and classes are created and manipulated via library functions
 and forms created automatically by Bigloo when a new class is defined.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16132" class="mark"></a><a name="isa?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16136" align="left" colspan="1"><strong id='bold16134'
->isa?</strong><em id='it16135'
-> obj class</em></td><td id="tc16137" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16189" class="mark"></a><a name="isa?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16193" align="left" colspan="1"><strong id='bold16191'
+>isa?</strong><em id='it16192'
+> obj class</em></td><td id="tc16194" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 
-This function returns <code id='code16140'
->#t</code> if <code id='code16142'
-><em id='it16141'
+This function returns <code id='code16197'
+>#t</code> if <code id='code16199'
+><em id='it16198'
 >obj</em></code> is an instance
-of <code id='code16144'
-><em id='it16143'
->class</em></code> or an instance of a sub-class of <code id='code16146'
-><em id='it16145'
+of <code id='code16201'
+><em id='it16200'
+>class</em></code> or an instance of a sub-class of <code id='code16203'
+><em id='it16202'
 >class</em></code>, otherwise,
-it returns <code id='code16147'
+it returns <code id='code16204'
 >#f</code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16151" class="mark"></a><a name="instantiate::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16157" align="left" colspan="1"><strong id='bold16153'
->instantiate::</strong><em id='it16156'
-><code id='code16155'
-><em id='it16154'
->class</em></code> (ident value)...</em></td><td id="tc16158" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g16208" class="mark"></a><a name="instantiate::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16214" align="left" colspan="1"><strong id='bold16210'
+>instantiate::</strong><em id='it16213'
+><code id='code16212'
+><em id='it16211'
+>class</em></code> (ident value)...</em></td><td id="tc16215" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-<a name="g16161" class="mark"></a>This forms allocates object of class <code id='code16164'
-><em id='it16163'
+<a name="g16218" class="mark"></a>This forms allocates object of class <code id='code16221'
+><em id='it16220'
 >class</em></code> and fills the fields with
 values found in the list of parameters (note that field are explicitly
 named and that there is no ordering for field naming). Field values which
 are not provided in the parameter list must have been declared with a
-<code id='code16165'
+<code id='code16222'
 >default</code> value which is used to initialize the corresponding
 field.<br/><br/>For instance:
-<center id='center16186'
+<center id='center16243'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16184'
->(<font color="#1919af"><strong id='bold31676'
->module</strong></font> <font color="#1919af"><strong id='bold31678'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16241'
+>(<font color="#1919af"><strong id='bold31733'
+>module</strong></font> <font color="#1919af"><strong id='bold31735'
 >example</strong></font>
-<font color="#1919af"><strong id='bold31680'
->   </strong></font>(<font color="#1919af"><strong id='bold31682'
->export</strong></font><font color="#1919af"><strong id='bold31684'
+<font color="#1919af"><strong id='bold31737'
+>   </strong></font>(<font color="#1919af"><strong id='bold31739'
+>export</strong></font><font color="#1919af"><strong id='bold31741'
 > </strong></font>
-      (<strong id='bold31686'
+      (<strong id='bold31743'
 >class</strong> point (x (default 0)))
-      (<strong id='bold31687'
->class</strong> point2d<font color="#00cf00"><strong id='bold31688'
->::point</strong></font> y)))<br/><br/>(<strong id='bold31690'
->instantiate</strong><font color="#00cf00"><strong id='bold31691'
+      (<strong id='bold31744'
+>class</strong> point2d<font color="#00cf00"><strong id='bold31745'
+>::point</strong></font> y)))<br/><br/>(<strong id='bold31747'
+>instantiate</strong><font color="#00cf00"><strong id='bold31748'
 >::point</strong></font> (x 0) (y 0))
-(<strong id='bold31693'
->instantiate</strong><font color="#00cf00"><strong id='bold31694'
+(<strong id='bold31750'
+>instantiate</strong><font color="#00cf00"><strong id='bold31751'
 >::point</strong></font> (y 0))
-(<strong id='bold31696'
->instantiate</strong><font color="#00cf00"><strong id='bold31697'
+(<strong id='bold31753'
+>instantiate</strong><font color="#00cf00"><strong id='bold31754'
 >::point</strong></font> (x 0))
-  =&gt; Error because <code id='code16169'
-><em id='it16168'
+  =&gt; Error because <code id='code16226'
+><em id='it16225'
 >y</em></code> has no default value
 </pre>
 </td></tr>
@@ -409,36 +409,36 @@ field.<br/><br/>For instance:
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16190" class="mark"></a><a name="class-nil" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16194" align="left" colspan="1"><strong id='bold16192'
->class-nil</strong><em id='it16193'
-> class</em></td><td id="tc16195" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16247" class="mark"></a><a name="class-nil" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16251" align="left" colspan="1"><strong id='bold16249'
+>class-nil</strong><em id='it16250'
+> class</em></td><td id="tc16252" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 
 This function returns the NIL pre-existing class instance. This instance plays 
-the role of <code id='code16198'
->void *</code> in C or <code id='code16199'
+the role of <code id='code16255'
+>void *</code> in C or <code id='code16256'
 >null</code> in Java. The value of each field
 is unspecified but correct with respect to the Bigloo type system. Each 
-call to <code id='code16202'
-><code id='code16201'
-><em id='it16200'
+call to <code id='code16259'
+><code id='code16258'
+><em id='it16257'
 >class</em></code>-nil</code> returns the same object (in the sense of 
-<code id='code16203'
->eq?</code>).<br/><br/><center id='center16216'
+<code id='code16260'
+>eq?</code>).<br/><br/><center id='center16273'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16214'
->(<font color="#1919af"><strong id='bold31699'
->module</strong></font> <font color="#1919af"><strong id='bold31701'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16271'
+>(<font color="#1919af"><strong id='bold31756'
+>module</strong></font> <font color="#1919af"><strong id='bold31758'
 >example</strong></font>
-<font color="#1919af"><strong id='bold31703'
->   </strong></font>(<font color="#1919af"><strong id='bold31705'
->export</strong></font><font color="#1919af"><strong id='bold31707'
+<font color="#1919af"><strong id='bold31760'
+>   </strong></font>(<font color="#1919af"><strong id='bold31762'
+>export</strong></font><font color="#1919af"><strong id='bold31764'
 > </strong></font>
-      (<strong id='bold31709'
+      (<strong id='bold31766'
 >class</strong> point x)
-      (<strong id='bold31710'
->class</strong> point2d<font color="#00cf00"><strong id='bold31711'
+      (<strong id='bold31767'
+>class</strong> point2d<font color="#00cf00"><strong id='bold31768'
 >::point</strong></font> y)))<br/><br/>(eq? (class-nil point) (class-nil point))
   =&gt; #t
 (eq? (class-nil point) (class-nil point2d))
@@ -449,35 +449,35 @@ call to <code id='code16202'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16220" class="mark"></a><a name="with-access::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16226" align="left" colspan="1"><strong id='bold16222'
->with-access::</strong><em id='it16225'
-><code id='code16224'
-><em id='it16223'
->class</em></code> obj (binding...) body</em></td><td id="tc16227" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g16277" class="mark"></a><a name="with-access::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16283" align="left" colspan="1"><strong id='bold16279'
+>with-access::</strong><em id='it16282'
+><code id='code16281'
+><em id='it16280'
+>class</em></code> obj (binding...) body</em></td><td id="tc16284" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-<a name="g16230" class="mark"></a>
-A reference to any of the variables defined in as a <code id='code16233'
-><em id='it16232'
+<a name="g16287" class="mark"></a>
+A reference to any of the variables defined in as a <code id='code16290'
+><em id='it16289'
 >binding</em></code> is
 replaced by the appropriate field access form. This is true for both
-reference and assignment. A <code id='code16235'
-><em id='it16234'
+reference and assignment. A <code id='code16292'
+><em id='it16291'
 >binding</em></code> is either a symbol or a list
 of two symbols. In the first place, it denotes a field. In the second
 case, it denotes an aliases field.<br/><br/>For instance:
-<center id='center16245'
+<center id='center16302'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16243'
->(<strong id='bold31713'
->with-access</strong><font color="#00cf00"><strong id='bold31714'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16300'
+>(<strong id='bold31770'
+>with-access</strong><font color="#00cf00"><strong id='bold31771'
 >::point</strong></font> p (x (y1 y))
-   (<strong id='bold31716'
->with-access</strong><font color="#00cf00"><strong id='bold31717'
+   (<strong id='bold31773'
+>with-access</strong><font color="#00cf00"><strong id='bold31774'
 >::point</strong></font> p2 (y)
-      (<strong id='bold31719'
+      (<strong id='bold31776'
 >set!</strong> x (- x))
-      (<strong id='bold31720'
+      (<strong id='bold31777'
 >set!</strong> y1 (- y1 y))))
 </pre>
 </td></tr>
@@ -485,132 +485,132 @@ case, it denotes an aliases field.<br/><br/>For instance:
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16249" class="mark"></a><a name="->" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16257" align="left" colspan="1"><strong id='bold16251'
->-&gt;</strong><em id='it16256'
-> <code id='code16253'
-><em id='it16252'
->var</em></code> <code id='code16255'
-><em id='it16254'
->field</em></code> </em></td><td id="tc16258" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g16306" class="mark"></a><a name="->" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16314" align="left" colspan="1"><strong id='bold16308'
+>-&gt;</strong><em id='it16313'
+> <code id='code16310'
+><em id='it16309'
+>var</em></code> <code id='code16312'
+><em id='it16311'
+>field</em></code> </em></td><td id="tc16315" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-<a name="g16261" class="mark"></a>Class instances can be accesses using the <code id='code16263'
+<a name="g16318" class="mark"></a>Class instances can be accesses using the <code id='code16320'
 >-&gt;</code> special form. The 
 the first argument must be the identifier of a local typed variable, otherwise
-an error is raised. The form <code id='code16264'
+an error is raised. The form <code id='code16321'
 >-&gt;</code> can be used to get or set value of
-an instance field. For instance:<br/><br/><center id='center16273'
+an instance field. For instance:<br/><br/><center id='center16330'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16271'
->(<font color="#6959cf"><strong id='bold31721'
->define</strong></font> (<font color="#6959cf"><strong id='bold31723'
->example</strong></font> p1<font color="#00cf00"><strong id='bold31725'
->::point</strong></font> p2<font color="#00cf00"><strong id='bold31727'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16328'
+>(<font color="#6959cf"><strong id='bold31778'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31780'
+>example</strong></font> p1<font color="#00cf00"><strong id='bold31782'
+>::point</strong></font> p2<font color="#00cf00"><strong id='bold31784'
 >::point</strong></font>)
-   (<strong id='bold31729'
+   (<strong id='bold31786'
 >set!</strong> (-&gt; p1 x) (- (-&gt; p1 x)))
-   (<strong id='bold31730'
+   (<strong id='bold31787'
 >set!</strong> (-&gt; p1 y) (- (-&gt; p1 y) (-&gt; p2 y))))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 This is equivalent to:
-<center id='center16285'
+<center id='center16342'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16283'
->(<font color="#6959cf"><strong id='bold31731'
->define</strong></font> (<font color="#6959cf"><strong id='bold31733'
->example</strong></font> p1<font color="#00cf00"><strong id='bold31735'
->::point</strong></font> p2<font color="#00cf00"><strong id='bold31737'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16340'
+>(<font color="#6959cf"><strong id='bold31788'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31790'
+>example</strong></font> p1<font color="#00cf00"><strong id='bold31792'
+>::point</strong></font> p2<font color="#00cf00"><strong id='bold31794'
 >::point</strong></font>)
-   (<strong id='bold31739'
->with-access</strong><font color="#00cf00"><strong id='bold31740'
+   (<strong id='bold31796'
+>with-access</strong><font color="#00cf00"><strong id='bold31797'
 >::point</strong></font> p1 (x (y1 y))
-      (<strong id='bold31742'
->with-access</strong><font color="#00cf00"><strong id='bold31743'
+      (<strong id='bold31799'
+>with-access</strong><font color="#00cf00"><strong id='bold31800'
 >::point</strong></font> p2 (y)
-         (<strong id='bold31745'
+         (<strong id='bold31802'
 >set!</strong> x (- x))
-         (<strong id='bold31746'
+         (<strong id='bold31803'
 >set!</strong> y1 (- y1 y)))))
 </pre>
 </td></tr>
 </tbody></table></center>
 </td></tr>
 </tbody></table><br/><br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16290" class="mark"></a><a name="co-instantiate" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16298" align="left" colspan="1"><strong id='bold16292'
->co-instantiate</strong><em id='it16297'
-> ((<code id='code16294'
-><em id='it16293'
->var</em></code> <code id='code16296'
-><em id='it16295'
->value</em></code>) ...) body</em></td><td id="tc16299" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g16347" class="mark"></a><a name="co-instantiate" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16355" align="left" colspan="1"><strong id='bold16349'
+>co-instantiate</strong><em id='it16354'
+> ((<code id='code16351'
+><em id='it16350'
+>var</em></code> <code id='code16353'
+><em id='it16352'
+>value</em></code>) ...) body</em></td><td id="tc16356" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
 
 This form is only available from compiled modules. In other words, it
 is not available from the interpreter. It permits the creation of
 recursive instances. It is specially useful for creating instances for
 which class declarations contain cyclic type references (for instance
-a class <code id='code16302'
->c1</code> for a which a field is declared of class <code id='code16303'
+a class <code id='code16359'
+>c1</code> for a which a field is declared of class <code id='code16360'
 >c2</code>
-and a class <code id='code16304'
+and a class <code id='code16361'
 >c2</code> for which a class is declared of type
-<code id='code16305'
->c1</code>). The syntax of a <code id='code16306'
+<code id='code16362'
+>c1</code>). The syntax of a <code id='code16363'
 >co-instantiate</code> form is similar to a
-<code id='code16307'
->let</code> form. However the only legal <code id='code16309'
-><em id='it16308'
+<code id='code16364'
+>let</code> form. However the only legal <code id='code16366'
+><em id='it16365'
 >values</em></code> are
-<code id='code16310'
+<code id='code16367'
 >instantiate</code> forms. The variables introduced in the binding of a
-<code id='code16311'
->co-instantiate</code> form are bound in <code id='code16313'
-><em id='it16312'
+<code id='code16368'
+>co-instantiate</code> form are bound in <code id='code16370'
+><em id='it16369'
 >body</em></code>. In addition, they
-are <em id='emph16314'
->partially</em> bound in the <code id='code16316'
-><em id='it16315'
+are <em id='emph16371'
+>partially</em> bound in the <code id='code16373'
+><em id='it16372'
 >values</em></code> expressions. In a
-<code id='code16318'
-><em id='it16317'
->value</em></code> position, a variable <code id='code16320'
-><em id='it16319'
+<code id='code16375'
+><em id='it16374'
+>value</em></code> position, a variable <code id='code16377'
+><em id='it16376'
 >var</em></code> can only be used to set the
 value of a field of an instantiated class. It cannot be used in any
-calculus. Example:<br/><br/><center id='center16341'
+calculus. Example:<br/><br/><center id='center16398'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16339'
->(<font color="#1919af"><strong id='bold31747'
->module</strong></font> <font color="#1919af"><strong id='bold31749'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16396'
+>(<font color="#1919af"><strong id='bold31804'
+>module</strong></font> <font color="#1919af"><strong id='bold31806'
 >obj-example</strong></font>
-   (<font color="#1919af"><strong id='bold31751'
->export</strong></font> (<strong id='bold31753'
->class</strong> <font color="#1919af"><strong id='bold31754'
->c1</strong></font> a b o2<font color="#00cf00"><strong id='bold31756'
+   (<font color="#1919af"><strong id='bold31808'
+>export</strong></font> (<strong id='bold31810'
+>class</strong> <font color="#1919af"><strong id='bold31811'
+>c1</strong></font> a b o2<font color="#00cf00"><strong id='bold31813'
 >::c2</strong></font>)
-           (<strong id='bold31758'
->class</strong> c2 x y o1<font color="#00cf00"><strong id='bold31759'
->::c1</strong></font>)))<br/><br/>(co-instantiate ((o1 (<strong id='bold31761'
->instantiate</strong><font color="#00cf00"><strong id='bold31762'
+           (<strong id='bold31815'
+>class</strong> c2 x y o1<font color="#00cf00"><strong id='bold31816'
+>::c1</strong></font>)))<br/><br/>(co-instantiate ((o1 (<strong id='bold31818'
+>instantiate</strong><font color="#00cf00"><strong id='bold31819'
 >::c1</strong></font>
                         (a 10)
                         (b 20)
                         (o2 o2)))
-                 (o2 (<strong id='bold31764'
->instantiate</strong><font color="#00cf00"><strong id='bold31765'
+                 (o2 (<strong id='bold31821'
+>instantiate</strong><font color="#00cf00"><strong id='bold31822'
 >::c2</strong></font>
                         (x 10)
                         (y 20)
                         (o1 o1))))
-   (<strong id='bold31767'
->with-access</strong><font color="#00cf00"><strong id='bold31768'
+   (<strong id='bold31824'
+>with-access</strong><font color="#00cf00"><strong id='bold31825'
 >::c1</strong></font> o1 (o2)
-      (<strong id='bold31770'
->with-access</strong><font color="#00cf00"><strong id='bold31771'
+      (<strong id='bold31827'
+>with-access</strong><font color="#00cf00"><strong id='bold31828'
 >::c2</strong></font> o2 (x y)
          (+ x y))))
    =&gt; 30
@@ -620,29 +620,29 @@ calculus. Example:<br/><br/><center id='center16341'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16345" class="mark"></a><a name="duplicate::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16351" align="left" colspan="1"><strong id='bold16347'
->duplicate::</strong><em id='it16350'
-><code id='code16349'
-><em id='it16348'
->class</em></code> obj (ident value)...</em></td><td id="tc16352" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g16402" class="mark"></a><a name="duplicate::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16408" align="left" colspan="1"><strong id='bold16404'
+>duplicate::</strong><em id='it16407'
+><code id='code16406'
+><em id='it16405'
+>class</em></code> obj (ident value)...</em></td><td id="tc16409" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-<a name="g16355" class="mark"></a>This forms allocates an instance of class <code id='code16358'
-><em id='it16357'
+<a name="g16412" class="mark"></a>This forms allocates an instance of class <code id='code16415'
+><em id='it16414'
 >class</em></code>. The field
 values of the new object are picked up from the field values of
-the <code id='code16360'
-><em id='it16359'
+the <code id='code16417'
+><em id='it16416'
 >old</em></code> object unless they are explicitly given in the parameter
 list.<br/><br/>For instance:
-<center id='center16368'
+<center id='center16425'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16366'
->(<strong id='bold31773'
->with-access</strong><font color="#00cf00"><strong id='bold31774'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16423'
+>(<strong id='bold31830'
+>with-access</strong><font color="#00cf00"><strong id='bold31831'
 >::point</strong></font> old (x)
-   (<strong id='bold31776'
->instantiate</strong><font color="#00cf00"><strong id='bold31777'
+   (<strong id='bold31833'
+>instantiate</strong><font color="#00cf00"><strong id='bold31834'
 >::point</strong></font> 
       (x x)
       (y 10)))
@@ -650,11 +650,11 @@ list.<br/><br/>For instance:
 </td></tr>
 </tbody></table></center>
 is equivalent to:
-<center id='center16373'
+<center id='center16430'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16371'
->(<strong id='bold31779'
->duplicate</strong><font color="#00cf00"><strong id='bold31780'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16428'
+>(<strong id='bold31836'
+>duplicate</strong><font color="#00cf00"><strong id='bold31837'
 >::point</strong></font> old (y 10))
 </pre>
 </td></tr>
@@ -668,18 +668,18 @@ is equivalent to:
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">10.3 Generic functions</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Generic-functions" class="mark"></a><a name="g16376" class="mark"></a>
+<a name="Generic-functions" class="mark"></a><a name="g16433" class="mark"></a>
 A generic function is a bag of specific functions known as methods. When
 invoked on a Bigloo object, a generic function determines the class of the
 discriminating variable (corresponding to the first argument of the generic
 function) and invokes the appropriate method. Generic functions implement
-single inheritance and each is defined using the <code id='code16378'
+single inheritance and each is defined using the <code id='code16435'
 >define-generic</code> 
 Bigloo syntax.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16381" class="mark"></a><a name="define-generic" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16385" align="left" colspan="1"><strong id='bold16383'
->define-generic</strong><em id='it16384'
-> (name arg...) default-body</em></td><td id="tc16386" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g16438" class="mark"></a><a name="define-generic" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16442" align="left" colspan="1"><strong id='bold16440'
+>define-generic</strong><em id='it16441'
+> (name arg...) default-body</em></td><td id="tc16443" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
 
 A generic function can be defined with a default body which will
@@ -687,17 +687,17 @@ be evaluated if no method can be found for the discriminating
 variable. The default default-body signals an error.
 </td></tr>
 </tbody></table><br/>
-As an example, here is a possible definition of the <code id='code16391'
+As an example, here is a possible definition of the <code id='code16448'
 >object-display</code> 
-generic function:<br/><br/><center id='center16401'
+generic function:<br/><br/><center id='center16458'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16399'
->(<font color="#6959cf"><strong id='bold31782'
->define-generic</strong></font> (<font color="#6959cf"><strong id='bold31784'
->object-display</strong></font> obj<font color="#00cf00"><strong id='bold31786'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16456'
+>(<font color="#6959cf"><strong id='bold31839'
+>define-generic</strong></font> (<font color="#6959cf"><strong id='bold31841'
+>object-display</strong></font> obj<font color="#00cf00"><strong id='bold31843'
 >::object</strong></font> . op)
-   (<strong id='bold31788'
->let</strong> ((port (<strong id='bold31789'
+   (<strong id='bold31845'
+>let</strong> ((port (<strong id='bold31846'
 >if</strong> (pair? op) 
                    (car op) 
                    (current-output-port))))
@@ -715,31 +715,31 @@ method must be a sub-type (i.e. belong to a sub-class) of the
 first argument of the generic function. Other formal parameters
 must be of same types. Moreover, the result type of the method
 must be a sub-type of the result of the generic function.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16404" class="mark"></a><a name="define-method" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16408" align="left" colspan="1"><strong id='bold16406'
->define-method</strong><em id='it16407'
-> (name arg...) body</em></td><td id="tc16409" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g16461" class="mark"></a><a name="define-method" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16465" align="left" colspan="1"><strong id='bold16463'
+>define-method</strong><em id='it16464'
+> (name arg...) body</em></td><td id="tc16466" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-<a name="g16413" class="mark"></a><a name="call-next-method" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16417" align="left" colspan="1"><strong id='bold16415'
->call-next-method</strong><em id='it16416'
-></em></td><td id="tc16418" align="right" colspan="1">bigloo syntax</td></tr>
+<a name="g16470" class="mark"></a><a name="call-next-method" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16474" align="left" colspan="1"><strong id='bold16472'
+>call-next-method</strong><em id='it16473'
+></em></td><td id="tc16475" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-If there is no appropriate method, an error is signaled.<br/><br/>Methods can use the form <code id='code16422'
+If there is no appropriate method, an error is signaled.<br/><br/>Methods can use the form <code id='code16479'
 >(call-next-method)</code> to invoke the method
-that would have been called if not present. The <code id='code16423'
+that would have been called if not present. The <code id='code16480'
 >(call-next-method)</code>
 cannot be used out of method definition.
 example:
-<center id='center16433'
+<center id='center16490'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16431'
->(<font color="#6959cf"><strong id='bold31792'
->define-method</strong></font> (<font color="#6959cf"><strong id='bold31794'
->object-display</strong></font> p<font color="#00cf00"><strong id='bold31796'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16488'
+>(<font color="#6959cf"><strong id='bold31849'
+>define-method</strong></font> (<font color="#6959cf"><strong id='bold31851'
+>object-display</strong></font> p<font color="#00cf00"><strong id='bold31853'
 >::person</strong></font> . op)
-   (<strong id='bold31798'
->let</strong> ((port (<strong id='bold31799'
+   (<strong id='bold31855'
+>let</strong> ((port (<strong id='bold31856'
 >if</strong> (pair? op) 
                    (car op) 
                    (current-output-port))))
@@ -758,145 +758,145 @@ example:
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">10.4 Widening and shrinking</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Widening-and-shrinking" class="mark"></a><a name="g16436" class="mark"></a>
-Bigloo introduces a new kind of inheritance: <em id='emph16438'
+<a name="Widening-and-shrinking" class="mark"></a><a name="g16493" class="mark"></a>
+Bigloo introduces a new kind of inheritance: <em id='emph16495'
 >widening</em>. This allows an
-object to be temporarily <em id='emph16439'
+object to be temporarily <em id='emph16496'
 >widened</em> (that is transformed into an object
-of another class, a <em id='emph16440'
->wide-class</em>) and then <em id='emph16441'
+of another class, a <em id='emph16497'
+>wide-class</em>) and then <em id='emph16498'
 >shrink-ed</em> (that is
 reshaped to its original class). This mechanism is very useful for
 implementing short-term data storage. For instance, Bigloo compilation
-passes are implemented using the <em id='emph16442'
+passes are implemented using the <em id='emph16499'
 >widening/shrinking</em> mechanism. On
 entry to a pass, objects are widened with the specific pass fields and, on
 exit from a pass, objects are shrunk in order to forget the information
-related to this pass.<br/><br/>Only instances of <em id='emph16444'
+related to this pass.<br/><br/>Only instances of <em id='emph16501'
 >final classes</em> can be widened and objects can
-only be widened in order to become instances of <em id='emph16445'
+only be widened in order to become instances of <em id='emph16502'
 >wide classes</em>. 
-Widening is performed by the <code id='code16446'
+Widening is performed by the <code id='code16503'
 >widen!</code> syntax:<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16449" class="mark"></a><a name="widen!::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16455" align="left" colspan="1"><strong id='bold16451'
->widen!::</strong><em id='it16454'
-><code id='code16453'
-><em id='it16452'
->wide-class</em></code> obj (id value) ...</em></td><td id="tc16456" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g16506" class="mark"></a><a name="widen!::" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16512" align="left" colspan="1"><strong id='bold16508'
+>widen!::</strong><em id='it16511'
+><code id='code16510'
+><em id='it16509'
+>wide-class</em></code> obj (id value) ...</em></td><td id="tc16513" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
-<a name="g16459" class="mark"></a>
-The object <code id='code16462'
-><em id='it16461'
+<a name="g16516" class="mark"></a>
+The object <code id='code16519'
+><em id='it16518'
 >obj</em></code> is widened to be instance of the wide class
-<code id='code16464'
-><em id='it16463'
+<code id='code16521'
+><em id='it16520'
 >wide-class</em></code>. Fields values are either picked up from the
-parameter list of the <code id='code16465'
+parameter list of the <code id='code16522'
 >widen!</code> form or
 from the default values in the declaration of the wide class.
 </td></tr>
 </tbody></table><br/>
-Objects are shrunk using the <code id='code16468'
+Objects are shrunk using the <code id='code16525'
 >shrink!</code> syntax:<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16471" class="mark"></a><a name="shrink!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16475" align="left" colspan="1"><strong id='bold16473'
->shrink!</strong><em id='it16474'
-> obj</em></td><td id="tc16476" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g16528" class="mark"></a><a name="shrink!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16532" align="left" colspan="1"><strong id='bold16530'
+>shrink!</strong><em id='it16531'
+> obj</em></td><td id="tc16533" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table><br/>
 Here is a first example:
-<center id='center16492'
+<center id='center16549'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16490'
->(<font color="#1919af"><strong id='bold31803'
->module</strong></font> <font color="#1919af"><strong id='bold31805'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16547'
+>(<font color="#1919af"><strong id='bold31860'
+>module</strong></font> <font color="#1919af"><strong id='bold31862'
 >example</strong></font>
-   (<strong id='bold31807'
+   (<strong id='bold31864'
 >static</strong> (final-class point 
               (x (default 0))
               (y (default 0)))
-           (<strong id='bold31808'
->wide-class</strong> named-point<font color="#00cf00"><strong id='bold31809'
->::point</strong></font> name)))<br/><br/>(<font color="#6959cf"><strong id='bold31811'
->define</strong></font> <font color="#6959cf"><strong id='bold31813'
->*point*</strong></font> (<strong id='bold31815'
->instantiate</strong><font color="#00cf00"><strong id='bold31816'
+           (<strong id='bold31865'
+>wide-class</strong> named-point<font color="#00cf00"><strong id='bold31866'
+>::point</strong></font> name)))<br/><br/>(<font color="#6959cf"><strong id='bold31868'
+>define</strong></font> <font color="#6959cf"><strong id='bold31870'
+>*point*</strong></font> (<strong id='bold31872'
+>instantiate</strong><font color="#00cf00"><strong id='bold31873'
 >::point</strong></font>))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Two classes have been declared and an instance <code id='code16493'
+Two classes have been declared and an instance <code id='code16550'
 >*point*</code> of
-<code id='code16494'
->point</code> has been allocated. For now, <code id='code16495'
+<code id='code16551'
+>point</code> has been allocated. For now, <code id='code16552'
 >*point*</code> is an instance
-of <code id='code16496'
->point</code> but not an instance of <code id='code16497'
+of <code id='code16553'
+>point</code> but not an instance of <code id='code16554'
 >named-point</code> and this can
 be checked by:
-<center id='center16500'
+<center id='center16557'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16498'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16555'
 >(print (isa? *point* named))           ==&gt; #t
 (print (isa? *point* named-point))     ==&gt; #f
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Now, we <em id='emph16501'
->widen</em> <code id='code16502'
+Now, we <em id='emph16558'
+>widen</em> <code id='code16559'
 >*point*</code>...
-<center id='center16509'
+<center id='center16566'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16507'
->(<strong id='bold31818'
->let</strong> ((n-point (<strong id='bold31819'
->widen!</strong><font color="#00cf00"><strong id='bold31820'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16564'
+>(<strong id='bold31875'
+>let</strong> ((n-point (<strong id='bold31876'
+>widen!</strong><font color="#00cf00"><strong id='bold31877'
 >::named-point</strong></font> *point* 
                   (name <font color="red">&quot;orig&quot;</font>))))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-And we check that now, <code id='code16510'
+And we check that now, <code id='code16567'
 >n-point</code> is an instance of
-<code id='code16511'
->named-point</code>. Since <code id='code16512'
+<code id='code16568'
+>named-point</code>. Since <code id='code16569'
 >named-point</code> is a subclass of 
-<code id='code16513'
->point</code>, <code id='code16514'
->n-point</code> still is an instance of <code id='code16515'
->point</code>.<br/><br/><center id='center16519'
+<code id='code16570'
+>point</code>, <code id='code16571'
+>n-point</code> still is an instance of <code id='code16572'
+>point</code>.<br/><br/><center id='center16576'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16517'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16574'
 >(print (isa? n-point named-point))  ==&gt; #t
 (print (isa? n-point named))        ==&gt; #t
 </pre>
 </td></tr>
 </tbody></table></center>
 <br/><br/>Widening affects the objects themselves. It does not operate any
-copy operation. Hence, <code id='code16521'
->*point*</code> and <code id='code16522'
->n-point</code> are <code id='code16523'
->eq?</code>.<br/><br/><center id='center16527'
+copy operation. Hence, <code id='code16578'
+>*point*</code> and <code id='code16579'
+>n-point</code> are <code id='code16580'
+>eq?</code>.<br/><br/><center id='center16584'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16525'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16582'
 >(print (eq? n-point *point*))   ==&gt; #t
 </pre>
 </td></tr>
 </tbody></table></center>
 
-To end this example, we <em id='emph16528'
->shrink</em> <code id='code16529'
+To end this example, we <em id='emph16585'
+>shrink</em> <code id='code16586'
 >n-point</code> and check 
 its class.
-<center id='center16533'
+<center id='center16590'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16531'
->(<strong id='bold31823'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16588'
+>(<strong id='bold31880'
 >shrink!</strong> n-point)
 (print (isa? *point* named-point))) ==&gt; #f
 </pre>
@@ -904,50 +904,50 @@ its class.
 </tbody></table></center>
 
 Here is a more complex example:<br/><br/>We illustrate widening and shrinking using our ``wedding simulator''. 
-First let us define three classes, <code id='code16535'
+First let us define three classes, <code id='code16592'
 >person</code> (for man and woman), 
-<code id='code16536'
->married-woman</code> and <code id='code16537'
+<code id='code16593'
+>married-woman</code> and <code id='code16594'
 >married-man</code>:
-<center id='center16553'
+<center id='center16610'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16551'
->(<font color="#1919af"><strong id='bold31824'
->module</strong></font> <font color="#1919af"><strong id='bold31826'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16608'
+>(<font color="#1919af"><strong id='bold31881'
+>module</strong></font> <font color="#1919af"><strong id='bold31883'
 >wedding</strong></font>
-   (<strong id='bold31828'
+   (<strong id='bold31885'
 >static</strong> (final-class person 
-               name<font color="#00cf00"><strong id='bold31829'
+               name<font color="#00cf00"><strong id='bold31886'
 >::string</strong></font>
-               fname<font color="#00cf00"><strong id='bold31831'
+               fname<font color="#00cf00"><strong id='bold31888'
 >::string</strong></font>
-               (sex<font color="#00cf00"><strong id='bold31833'
+               (sex<font color="#00cf00"><strong id='bold31890'
 >::symbol</strong></font> read-only))
-           (<strong id='bold31835'
->wide-class</strong> married-man<font color="#00cf00"><strong id='bold31836'
+           (<strong id='bold31892'
+>wide-class</strong> married-man<font color="#00cf00"><strong id='bold31893'
 >::person</strong></font>
-               mate<font color="#00cf00"><strong id='bold31838'
+               mate<font color="#00cf00"><strong id='bold31895'
 >::person</strong></font>)
-           (<strong id='bold31840'
->wide-class</strong> married-woman<font color="#00cf00"><strong id='bold31841'
+           (<strong id='bold31897'
+>wide-class</strong> married-woman<font color="#00cf00"><strong id='bold31898'
 >::person</strong></font>
-               maiden-name<font color="#00cf00"><strong id='bold31843'
+               maiden-name<font color="#00cf00"><strong id='bold31900'
 >::string</strong></font>
-               mate<font color="#00cf00"><strong id='bold31845'
+               mate<font color="#00cf00"><strong id='bold31902'
 >::person</strong></font>)))
 </pre>
 </td></tr>
 </tbody></table></center>
 As we can see people are allowed to change their name but not their sex.<br/><br/>The identity of a person can be printed as
-<center id='center16564'
+<center id='center16621'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16562'
->(<font color="#6959cf"><strong id='bold31847'
->define-method</strong></font> (<font color="#6959cf"><strong id='bold31849'
->object-display</strong></font> p<font color="#00cf00"><strong id='bold31851'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16619'
+>(<font color="#6959cf"><strong id='bold31904'
+>define-method</strong></font> (<font color="#6959cf"><strong id='bold31906'
+>object-display</strong></font> p<font color="#00cf00"><strong id='bold31908'
 >::person</strong></font> . op)
-   (<strong id='bold31853'
->with-access</strong><font color="#00cf00"><strong id='bold31854'
+   (<strong id='bold31910'
+>with-access</strong><font color="#00cf00"><strong id='bold31911'
 >::person</strong></font> p (name fname sex)
       (print <font color="red">&quot;firstname : &quot;</font> fname)
       (print <font color="red">&quot;name      : &quot;</font> name)
@@ -959,15 +959,15 @@ As we can see people are allowed to change their name but not their sex.<br/><br
 
 A married woman's identity is printed by (we suppose an equivalent method 
 definition for married-man)
-<center id='center16572'
+<center id='center16629'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16570'
->(<font color="#6959cf"><strong id='bold31859'
->define-method</strong></font> (<font color="#6959cf"><strong id='bold31861'
->object-display</strong></font> p<font color="#00cf00"><strong id='bold31863'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16627'
+>(<font color="#6959cf"><strong id='bold31916'
+>define-method</strong></font> (<font color="#6959cf"><strong id='bold31918'
+>object-display</strong></font> p<font color="#00cf00"><strong id='bold31920'
 >::married-woman</strong></font> . op)
-   (<strong id='bold31865'
->with-access</strong><font color="#00cf00"><strong id='bold31866'
+   (<strong id='bold31922'
+>with-access</strong><font color="#00cf00"><strong id='bold31923'
 >::married-woman</strong></font> p (name fname sex mate)
       (call-next-method)
       (print <font color="red">&quot;married to: &quot;</font> mate) 
@@ -976,19 +976,19 @@ definition for married-man)
 </td></tr>
 </tbody></table></center>
 
-We create a person with the <code id='code16573'
+We create a person with the <code id='code16630'
 >birth</code> function:
-<center id='center16581'
+<center id='center16638'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16579'
->(<font color="#6959cf"><strong id='bold31869'
->define</strong></font> (<font color="#6959cf"><strong id='bold31871'
->birth</strong></font> name<font color="#00cf00"><strong id='bold31873'
->::string</strong></font> fname<font color="#00cf00"><strong id='bold31875'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16636'
+>(<font color="#6959cf"><strong id='bold31926'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31928'
+>birth</strong></font> name<font color="#00cf00"><strong id='bold31930'
+>::string</strong></font> fname<font color="#00cf00"><strong id='bold31932'
 >::string</strong></font> sex)
    [assert (sex) (memq sex '(male female))]
-   (<strong id='bold31877'
->instantiate</strong><font color="#00cf00"><strong id='bold31878'
+   (<strong id='bold31934'
+>instantiate</strong><font color="#00cf00"><strong id='bold31935'
 >::person</strong></font> 
       (name name)
       (fname fname)
@@ -997,33 +997,33 @@ We create a person with the <code id='code16573'
 </td></tr>
 </tbody></table></center>
 
-We celebrate a wedding using the <code id='code16582'
+We celebrate a wedding using the <code id='code16639'
 >get-married!</code> function:
-<center id='center16597'
+<center id='center16654'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16595'
->(<font color="#6959cf"><strong id='bold31880'
->define</strong></font> (<font color="#6959cf"><strong id='bold31882'
->get-married!</strong></font> woman<font color="#00cf00"><strong id='bold31884'
->::person</strong></font> man<font color="#00cf00"><strong id='bold31886'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16652'
+>(<font color="#6959cf"><strong id='bold31937'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31939'
+>get-married!</strong></font> woman<font color="#00cf00"><strong id='bold31941'
+>::person</strong></font> man<font color="#00cf00"><strong id='bold31943'
 >::person</strong></font>)
-   (<strong id='bold31888'
+   (<strong id='bold31945'
 >if</strong> (not (and (eq? (-&gt; woman sex) 'female)
                  (eq? (-&gt; man sex) 'male)))
-       (<font color="red"><strong id='bold31889'
+       (<font color="red"><strong id='bold31946'
 >error</strong></font> <font color="red">&quot;get-married&quot;</font> 
               <font color="red">&quot;Illegal wedding&quot;</font> 
               (cons woman man))
-       (<strong id='bold31893'
+       (<strong id='bold31950'
 >let*</strong> ((mname (-&gt; woman name))
-              (wife  (<strong id='bold31894'
->widen!</strong><font color="#00cf00"><strong id='bold31895'
+              (wife  (<strong id='bold31951'
+>widen!</strong><font color="#00cf00"><strong id='bold31952'
 >::married-woman</strong></font> woman
                       (maiden-name mname)
                       (mate man))))
           (person-name-set! wife (-&gt; man name))
-          (<strong id='bold31897'
->widen!</strong><font color="#00cf00"><strong id='bold31898'
+          (<strong id='bold31954'
+>widen!</strong><font color="#00cf00"><strong id='bold31955'
 >::married-man</strong></font> man
              (mate woman)))))
 </pre>
@@ -1031,54 +1031,54 @@ We celebrate a wedding using the <code id='code16582'
 </tbody></table></center>
 
 We can check if two people are married by
-<center id='center16607'
+<center id='center16664'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16605'
->(<font color="#6959cf"><strong id='bold31900'
->define</strong></font> (<font color="#6959cf"><strong id='bold31902'
->couple?</strong></font> woman<font color="#00cf00"><strong id='bold31904'
->::person</strong></font> man<font color="#00cf00"><strong id='bold31906'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16662'
+>(<font color="#6959cf"><strong id='bold31957'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31959'
+>couple?</strong></font> woman<font color="#00cf00"><strong id='bold31961'
+>::person</strong></font> man<font color="#00cf00"><strong id='bold31963'
 >::person</strong></font>)
    (and (isa? woman married-woman)
         (isa? man married-man)
-        (eq? (<strong id='bold31908'
->with-access</strong><font color="#00cf00"><strong id='bold31909'
+        (eq? (<strong id='bold31965'
+>with-access</strong><font color="#00cf00"><strong id='bold31966'
 >::married-woman</strong></font> woman (mate) mate) man)
-        (eq? (<strong id='bold31911'
->with-access</strong><font color="#00cf00"><strong id='bold31912'
+        (eq? (<strong id='bold31968'
+>with-access</strong><font color="#00cf00"><strong id='bold31969'
 >::married-man</strong></font> man (mate) mate) woman)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Now let us study the life a <code id='code16608'
->Junior</code> <code id='code16609'
+Now let us study the life a <code id='code16665'
+>Junior</code> <code id='code16666'
 >Jones</code> and
-<code id='code16610'
->Pamela</code> <code id='code16611'
+<code id='code16667'
+>Pamela</code> <code id='code16668'
 >Smith</code>. Once upon a time...
-<center id='center16620'
+<center id='center16677'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16618'
->(<font color="#6959cf"><strong id='bold31914'
->define</strong></font> <font color="#6959cf"><strong id='bold31916'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16675'
+>(<font color="#6959cf"><strong id='bold31971'
+>define</strong></font> <font color="#6959cf"><strong id='bold31973'
 >*junior*</strong></font> (birth <font color="red">&quot;Jones&quot;</font> <font color="red">&quot;Junior&quot;</font> 'male))
-(<font color="#6959cf"><strong id='bold31920'
->define</strong></font> <font color="#6959cf"><strong id='bold31922'
+(<font color="#6959cf"><strong id='bold31977'
+>define</strong></font> <font color="#6959cf"><strong id='bold31979'
 >*pamela*</strong></font> (birth <font color="red">&quot;Smith&quot;</font> <font color="red">&quot;Pamela&quot;</font> 'female))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Later on, they met each other and ... they got married:
-<center id='center16625'
+<center id='center16682'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16623'
->(<font color="#6959cf"><strong id='bold31926'
->define</strong></font> <font color="#6959cf"><strong id='bold31928'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16680'
+>(<font color="#6959cf"><strong id='bold31983'
+>define</strong></font> <font color="#6959cf"><strong id='bold31985'
 >*old-boy-junior*</strong></font> *junior*)
-(<font color="#6959cf"><strong id='bold31930'
->define</strong></font> <font color="#6959cf"><strong id='bold31932'
+(<font color="#6959cf"><strong id='bold31987'
+>define</strong></font> <font color="#6959cf"><strong id='bold31989'
 >*old-girl-pamela*</strong></font> *pamela*)
 (get-married! *pamela* *junior*)
 </pre>
@@ -1086,20 +1086,20 @@ Later on, they met each other and ... they got married:
 </tbody></table></center>
 
 This union can be checked:
-<center id='center16628'
+<center id='center16685'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16626'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16683'
 >(couple? *pamela* *junior*)               
    =&gt; #t
 </pre>
 </td></tr>
 </tbody></table></center>
 
-We can look at the new identity of <code id='code16629'
+We can look at the new identity of <code id='code16686'
 >*pamela*</code>
-<center id='center16632'
+<center id='center16689'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16630'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16687'
 >(print *pamela*)
    -| name      : Jones
       firstname : Pamela
@@ -1109,12 +1109,12 @@ We can look at the new identity of <code id='code16629'
 </td></tr>
 </tbody></table></center>
 
-But <code id='code16633'
->*pamela*</code> and <code id='code16634'
+But <code id='code16690'
+>*pamela*</code> and <code id='code16691'
 >*junior*</code> still are the same persons:
-<center id='center16637'
+<center id='center16694'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16635'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16692'
 >(print (eq? *old-boy-junior* *junior*))   =&gt; #t
 (print (eq? *old-girl-pamela* *pamela*))  =&gt; #t
 </pre>
@@ -1122,43 +1122,43 @@ But <code id='code16633'
 </tbody></table></center>
 
 Unfortunately all days are not happy days. After having been married
-<code id='code16638'
->*pamela*</code> and <code id='code16639'
+<code id='code16695'
+>*pamela*</code> and <code id='code16696'
 >*junior*</code> have divorced:
-<center id='center16656'
+<center id='center16713'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16654'
->(<font color="#6959cf"><strong id='bold31934'
->define</strong></font> (<font color="#6959cf"><strong id='bold31936'
->divorce!</strong></font> woman<font color="#00cf00"><strong id='bold31938'
->::person</strong></font> man<font color="#00cf00"><strong id='bold31940'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16711'
+>(<font color="#6959cf"><strong id='bold31991'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31993'
+>divorce!</strong></font> woman<font color="#00cf00"><strong id='bold31995'
+>::person</strong></font> man<font color="#00cf00"><strong id='bold31997'
 >::person</strong></font>)
-   (<strong id='bold31942'
+   (<strong id='bold31999'
 >if</strong> (not (couple? woman man))
-       (<font color="red"><strong id='bold31943'
+       (<font color="red"><strong id='bold32000'
 >error</strong></font> <font color="red">&quot;divorce!&quot;</font>
               <font color="red">&quot;Illegal divorce&quot;</font>
               (cons woman man))
-       (<strong id='bold31947'
->with-access</strong><font color="#00cf00"><strong id='bold31948'
+       (<strong id='bold32004'
+>with-access</strong><font color="#00cf00"><strong id='bold32005'
 >::married-woman</strong></font> woman (maiden-name)
-          (<strong id='bold31950'
+          (<strong id='bold32007'
 >begin</strong>
-             (<strong id='bold31951'
+             (<strong id='bold32008'
 >shrink!</strong> woman)
-             (<strong id='bold31952'
+             (<strong id='bold32009'
 >set!</strong> (-&gt; woman name) maiden-name))
-          (<strong id='bold31953'
+          (<strong id='bold32010'
 >shrink!</strong> man))))<br/><br/>(divorce! *pamela* *junior*)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-We can look at the new identity of <code id='code16657'
+We can look at the new identity of <code id='code16714'
 >*pamela*</code>
-<center id='center16660'
+<center id='center16717'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16658'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16715'
 >(print *pamela*)
    -| name      : Smith
       firstname : Pamela
@@ -1167,12 +1167,12 @@ We can look at the new identity of <code id='code16657'
 </td></tr>
 </tbody></table></center>
 
-And <code id='code16661'
->*pamela*</code> and <code id='code16662'
+And <code id='code16718'
+>*pamela*</code> and <code id='code16719'
 >*junior*</code> still are the same persons:
-<center id='center16665'
+<center id='center16722'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16663'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog16720'
 >(print (eq? *old-boy-junior* *junior*))   =&gt; #t
 (print (eq? *old-girl-pamela* *pamela*))  =&gt; #t
 </pre>
@@ -1185,7 +1185,7 @@ And <code id='code16661'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">10.5 Object library</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Object-library" class="mark"></a><a name="g16666" class="mark"></a>
+<a name="Object-library" class="mark"></a><a name="g16723" class="mark"></a>
 <!-- Classes handling -->
 <a name="Classes-handling"></a>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">10.5.1 Classes handling</font>
@@ -1193,82 +1193,82 @@ And <code id='code16661'
 </div><div class="subsection">
 No type denotes Bigloo's classes. These objects are handled
 by the following library functions:<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16670" class="mark"></a><a name="find-class" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16674" align="left" colspan="1"><strong id='bold16672'
->find-class</strong><em id='it16673'
-> symbol</em></td><td id="tc16675" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16727" class="mark"></a><a name="find-class" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16731" align="left" colspan="1"><strong id='bold16729'
+>find-class</strong><em id='it16730'
+> symbol</em></td><td id="tc16732" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns, if any, the class named <code id='code16679'
-><em id='it16678'
+Returns, if any, the class named <code id='code16736'
+><em id='it16735'
 >symbol</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16683" class="mark"></a><a name="class?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16687" align="left" colspan="1"><strong id='bold16685'
->class?</strong><em id='it16686'
-> obj</em></td><td id="tc16688" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16740" class="mark"></a><a name="class?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16744" align="left" colspan="1"><strong id='bold16742'
+>class?</strong><em id='it16743'
+> obj</em></td><td id="tc16745" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns <code id='code16691'
->#t</code> if and only if <code id='code16693'
-><em id='it16692'
+Returns <code id='code16748'
+>#t</code> if and only if <code id='code16750'
+><em id='it16749'
 >obj</em></code> is a class.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16697" class="mark"></a><a name="class-super" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16701" align="left" colspan="1"><strong id='bold16699'
->class-super</strong><em id='it16700'
-> class</em></td><td id="tc16702" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16754" class="mark"></a><a name="class-super" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16758" align="left" colspan="1"><strong id='bold16756'
+>class-super</strong><em id='it16757'
+> class</em></td><td id="tc16759" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the <em id='emph16705'
->super-class</em> of <code id='code16707'
-><em id='it16706'
+Returns the <em id='emph16762'
+>super-class</em> of <code id='code16764'
+><em id='it16763'
 >class</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16711" class="mark"></a><a name="class-subclasses" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16715" align="left" colspan="1"><strong id='bold16713'
->class-subclasses</strong><em id='it16714'
-> class</em></td><td id="tc16716" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16768" class="mark"></a><a name="class-subclasses" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16772" align="left" colspan="1"><strong id='bold16770'
+>class-subclasses</strong><em id='it16771'
+> class</em></td><td id="tc16773" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the <em id='emph16719'
->subclasses</em> of <code id='code16721'
-><em id='it16720'
+Returns the <em id='emph16776'
+>subclasses</em> of <code id='code16778'
+><em id='it16777'
 >class</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16725" class="mark"></a><a name="class-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16729" align="left" colspan="1"><strong id='bold16727'
->class-name</strong><em id='it16728'
-> class</em></td><td id="tc16730" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16782" class="mark"></a><a name="class-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16786" align="left" colspan="1"><strong id='bold16784'
+>class-name</strong><em id='it16785'
+> class</em></td><td id="tc16787" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the name (a symbol) of <code id='code16734'
-><em id='it16733'
+Returns the name (a symbol) of <code id='code16791'
+><em id='it16790'
 >class</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16738" class="mark"></a><a name="object-constructor" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16742" align="left" colspan="1"><strong id='bold16740'
->object-constructor</strong><em id='it16741'
-> class</em></td><td id="tc16743" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16795" class="mark"></a><a name="object-constructor" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16799" align="left" colspan="1"><strong id='bold16797'
+>object-constructor</strong><em id='it16798'
+> class</em></td><td id="tc16800" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns <code id='code16747'
-><em id='it16746'
+Returns <code id='code16804'
+><em id='it16803'
 >class</em></code>'s constructor.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16751" class="mark"></a><a name="object-class" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16755" align="left" colspan="1"><strong id='bold16753'
->object-class</strong><em id='it16754'
-> object</em></td><td id="tc16756" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16808" class="mark"></a><a name="object-class" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16812" align="left" colspan="1"><strong id='bold16810'
+>object-class</strong><em id='it16811'
+> object</em></td><td id="tc16813" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the class that <code id='code16760'
-><em id='it16759'
+Returns the class that <code id='code16817'
+><em id='it16816'
 >object</em></code> belongs to.
 </td></tr>
 </tbody></table><br/>
@@ -1279,89 +1279,89 @@ Returns the class that <code id='code16760'
 </h3></td></tr></table>
 </div><div class="subsection">
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16764" class="mark"></a><a name="wide-object?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16768" align="left" colspan="1"><strong id='bold16766'
->wide-object?</strong><em id='it16767'
-> object</em></td><td id="tc16769" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16821" class="mark"></a><a name="wide-object?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16825" align="left" colspan="1"><strong id='bold16823'
+>wide-object?</strong><em id='it16824'
+> object</em></td><td id="tc16826" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns <code id='code16772'
->#t</code> if <code id='code16774'
-><em id='it16773'
+Returns <code id='code16829'
+>#t</code> if <code id='code16831'
+><em id='it16830'
 >object</em></code> is a wide object otherwise it returns 
-<code id='code16775'
+<code id='code16832'
 >#f</code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16779" class="mark"></a><a name="object-display" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16783" align="left" colspan="1"><strong id='bold16781'
->object-display</strong><em id='it16782'
-> object [port]</em></td><td id="tc16784" align="right" colspan="1">bigloo generic</td></tr>
+<tr><td><a name="g16836" class="mark"></a><a name="object-display" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16840" align="left" colspan="1"><strong id='bold16838'
+>object-display</strong><em id='it16839'
+> object [port]</em></td><td id="tc16841" align="right" colspan="1">bigloo generic</td></tr>
 </tbody></table>
-This generic function is invoked by <code id='code16787'
+This generic function is invoked by <code id='code16844'
 >display</code> to display objects.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16791" class="mark"></a><a name="object-write" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16795" align="left" colspan="1"><strong id='bold16793'
->object-write</strong><em id='it16794'
-> object [port]</em></td><td id="tc16796" align="right" colspan="1">bigloo generic</td></tr>
+<tr><td><a name="g16848" class="mark"></a><a name="object-write" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16852" align="left" colspan="1"><strong id='bold16850'
+>object-write</strong><em id='it16851'
+> object [port]</em></td><td id="tc16853" align="right" colspan="1">bigloo generic</td></tr>
 </tbody></table>
-This generic function is invoked by <code id='code16799'
+This generic function is invoked by <code id='code16856'
 >write</code> to write objects.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16803" class="mark"></a><a name="object->struct" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16807" align="left" colspan="1"><strong id='bold16805'
->object-&gt;struct</strong><em id='it16806'
-> object</em></td><td id="tc16808" align="right" colspan="1">bigloo generic</td></tr>
+<tr><td><a name="g16860" class="mark"></a><a name="object->struct" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16864" align="left" colspan="1"><strong id='bold16862'
+>object-&gt;struct</strong><em id='it16863'
+> object</em></td><td id="tc16865" align="right" colspan="1">bigloo generic</td></tr>
 </tbody></table>
-<a name="g16812" class="mark"></a><a name="struct->object" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16816" align="left" colspan="1"><strong id='bold16814'
->struct-&gt;object</strong><em id='it16815'
-> struct</em></td><td id="tc16817" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g16869" class="mark"></a><a name="struct->object" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16873" align="left" colspan="1"><strong id='bold16871'
+>struct-&gt;object</strong><em id='it16872'
+> struct</em></td><td id="tc16874" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 These functions converts objects into Scheme structures and vice-versa.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16823" class="mark"></a><a name="object-equal?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16827" align="left" colspan="1"><strong id='bold16825'
->object-equal?</strong><em id='it16826'
-> object obj</em></td><td id="tc16828" align="right" colspan="1">bigloo generic</td></tr>
+<tr><td><a name="g16880" class="mark"></a><a name="object-equal?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16884" align="left" colspan="1"><strong id='bold16882'
+>object-equal?</strong><em id='it16883'
+> object obj</em></td><td id="tc16885" align="right" colspan="1">bigloo generic</td></tr>
 </tbody></table>
-This generic function is invoked by <code id='code16831'
+This generic function is invoked by <code id='code16888'
 >equal?</code> when the first argument
-is an instance of <code id='code16832'
+is an instance of <code id='code16889'
 >object</code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16837" align="left" colspan="1"><strong id='bold16835'
->object-hashnumber</strong><em id='it16836'
-> object</em></td><td id="tc16838" align="right" colspan="1">bigloo generic</td></tr>
+<tr><td id="tc16894" align="left" colspan="1"><strong id='bold16892'
+>object-hashnumber</strong><em id='it16893'
+> object</em></td><td id="tc16895" align="right" colspan="1">bigloo generic</td></tr>
 </tbody></table>
-This generic function returns an hash number of <code id='code16842'
-><em id='it16841'
+This generic function returns an hash number of <code id='code16899'
+><em id='it16898'
 >object</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16846" class="mark"></a><a name="is-a?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16850" align="left" colspan="1"><strong id='bold16848'
->is-a?</strong><em id='it16849'
-> obj class</em></td><td id="tc16851" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16903" class="mark"></a><a name="is-a?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16907" align="left" colspan="1"><strong id='bold16905'
+>is-a?</strong><em id='it16906'
+> obj class</em></td><td id="tc16908" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns <code id='code16854'
->#t</code> if <code id='code16856'
-><em id='it16855'
->obj</em></code> belongs to <code id='code16858'
-><em id='it16857'
+Returns <code id='code16911'
+>#t</code> if <code id='code16913'
+><em id='it16912'
+>obj</em></code> belongs to <code id='code16915'
+><em id='it16914'
 >class</em></code> otherwise it
-returns <code id='code16859'
+returns <code id='code16916'
 >#f</code>.
 </td></tr>
 </tbody></table><br/>
@@ -1372,20 +1372,20 @@ returns <code id='code16859'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">10.6 Object serialization</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Object-serialization" class="mark"></a><a name="g16862" class="mark"></a>
-Objects can be <em id='emph16864'
->serialized</em> and <em id='emph16865'
+<a name="Object-serialization" class="mark"></a><a name="g16919" class="mark"></a>
+Objects can be <em id='emph16921'
+>serialized</em> and <em id='emph16922'
 >un-serialized</em> using
-the regular <code id='code16866'
->string-&gt;obj</code> and <code id='code16867'
+the regular <code id='code16923'
+>string-&gt;obj</code> and <code id='code16924'
 >obj-&gt;string</code>
 functions. Objects can be stored on disk and restored from disk
-by the use of the <code id='code16868'
->output-obj</code> and <code id='code16869'
+by the use of the <code id='code16925'
+>output-obj</code> and <code id='code16926'
 >input-obj</code>
 functions.<br/><br/>In addition to this standard serialization mechanism, custom object
 serializers and un-serializers can be specified by the means of the
-<code id='code16871'
+<code id='code16928'
 >register-class-serialization!</code> function (see Section
 <a href="bigloo-7.html#Serialization" class="inbound">Serialization</a>.<br/><br/></div><br>
 <!-- Equality -->
@@ -1393,8 +1393,8 @@ serializers and un-serializers can be specified by the means of the
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">10.7 Equality</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Equality" class="mark"></a><a name="g16873" class="mark"></a>
-Two objects can be compared with the <code id='code16875'
+<a name="Equality" class="mark"></a><a name="g16930" class="mark"></a>
+Two objects can be compared with the <code id='code16932'
 >equal?</code> function. Two object
 are equal if and only if they belong to a same class, all their field
 values are equal and all their super class's field values are equal.<br/><br/></div><br>
@@ -1403,7 +1403,7 @@ values are equal and all their super class's field values are equal.<br/><br/></
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">10.8 Introspection</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Introspection" class="mark"></a><a name="g16877" class="mark"></a>
+<a name="Introspection" class="mark"></a><a name="g16934" class="mark"></a>
 Bigloo provides the programmer with some object introspection facilities.
 See section see <a href="bigloo-11.html#Object-library" class="inbound">Object library</a> for information on classes and
 objects handling. Introspection facilities are, by default, available
@@ -1411,168 +1411,168 @@ for all classes. However, in order to shrink the code size generation,
 it may be useful to disable class introspection. This decision can be
 taken on a per class basis (i.e., one class may be provided with
 introspection facilities while another one is not). The compiler
-option <code id='code16879'
+option <code id='code16936'
 >-fno-reflection</code> 
 (see Chapter <a href="bigloo-33.html#Compiler-Description" class="inbound">Compiler Description</a>) prevents the
 compiler to generate the code required for introspecting the classes
 defined in the compiled module.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16882" class="mark"></a><a name="class-fields" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16886" align="left" colspan="1"><strong id='bold16884'
->class-fields</strong><em id='it16885'
-> class</em></td><td id="tc16887" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16939" class="mark"></a><a name="class-fields" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16943" align="left" colspan="1"><strong id='bold16941'
+>class-fields</strong><em id='it16942'
+> class</em></td><td id="tc16944" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the a description of the fields of <code id='code16891'
-><em id='it16890'
+Returns the a description of the fields of <code id='code16948'
+><em id='it16947'
 >class</em></code>. This description
 is a list of field descriptions where each field description can be accessed by
 the means of the following library functions. The fields are those 
-<em id='emph16892'
->directly</em> defined in <code id='code16894'
-><em id='it16893'
->class</em></code>. That is <code id='code16895'
+<em id='emph16949'
+>directly</em> defined in <code id='code16951'
+><em id='it16950'
+>class</em></code>. That is <code id='code16952'
 >class-fields</code> does not
-return fields defined in super classes of <code id='code16897'
-><em id='it16896'
+return fields defined in super classes of <code id='code16954'
+><em id='it16953'
 >class</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16901" class="mark"></a><a name="class-all-fields" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16905" align="left" colspan="1"><strong id='bold16903'
->class-all-fields</strong><em id='it16904'
-> class</em></td><td id="tc16906" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16958" class="mark"></a><a name="class-all-fields" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16962" align="left" colspan="1"><strong id='bold16960'
+>class-all-fields</strong><em id='it16961'
+> class</em></td><td id="tc16963" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the a description of the fields of <code id='code16910'
-><em id='it16909'
+Returns the a description of the fields of <code id='code16967'
+><em id='it16966'
 >class</em></code>. This description
 is a list of field descriptions where each field description can be accessed by
 the means of the following library functions. By contrast with 
-<code id='code16911'
+<code id='code16968'
 >class-fields</code>, this function returns fields that are also defined in
-the super classes of <code id='code16913'
-><em id='it16912'
+the super classes of <code id='code16970'
+><em id='it16969'
 >class</em></code>.
 in th
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16917" class="mark"></a><a name="find-class-field" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16921" align="left" colspan="1"><strong id='bold16919'
->find-class-field</strong><em id='it16920'
-> class symbol</em></td><td id="tc16922" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16974" class="mark"></a><a name="find-class-field" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16978" align="left" colspan="1"><strong id='bold16976'
+>find-class-field</strong><em id='it16977'
+> class symbol</em></td><td id="tc16979" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the field named <code id='code16926'
-><em id='it16925'
->symbol</em></code> from class <code id='code16928'
-><em id='it16927'
+Returns the field named <code id='code16983'
+><em id='it16982'
+>symbol</em></code> from class <code id='code16985'
+><em id='it16984'
 >class</em></code>. Returns 
-<code id='code16929'
+<code id='code16986'
 >#f</code> is such a field does not exist.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16933" class="mark"></a><a name="class-field?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16937" align="left" colspan="1"><strong id='bold16935'
->class-field?</strong><em id='it16936'
-> obj</em></td><td id="tc16938" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g16990" class="mark"></a><a name="class-field?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc16994" align="left" colspan="1"><strong id='bold16992'
+>class-field?</strong><em id='it16993'
+> obj</em></td><td id="tc16995" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns #t if <code id='code16942'
-><em id='it16941'
+Returns #t if <code id='code16999'
+><em id='it16998'
 >obj</em></code> is a class field descriptor. Otherwise returns #f.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16946" class="mark"></a><a name="class-field-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16950" align="left" colspan="1"><strong id='bold16948'
->class-field-name</strong><em id='it16949'
-> field</em></td><td id="tc16951" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g17003" class="mark"></a><a name="class-field-name" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc17007" align="left" colspan="1"><strong id='bold17005'
+>class-field-name</strong><em id='it17006'
+> field</em></td><td id="tc17008" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the name of the <code id='code16955'
-><em id='it16954'
+Returns the name of the <code id='code17012'
+><em id='it17011'
 >field</em></code>. The name is a symbol.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16959" class="mark"></a><a name="class-field-accessor" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16963" align="left" colspan="1"><strong id='bold16961'
->class-field-accessor</strong><em id='it16962'
-> field</em></td><td id="tc16964" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g17016" class="mark"></a><a name="class-field-accessor" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc17020" align="left" colspan="1"><strong id='bold17018'
+>class-field-accessor</strong><em id='it17019'
+> field</em></td><td id="tc17021" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Returns a procedure of one argument. Applying this function to an object
-returns the value of the field described by <code id='code16968'
-><em id='it16967'
+returns the value of the field described by <code id='code17025'
+><em id='it17024'
 >field</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16972" class="mark"></a><a name="class-field-mutable?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16976" align="left" colspan="1"><strong id='bold16974'
->class-field-mutable?</strong><em id='it16975'
-> field</em></td><td id="tc16977" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g17029" class="mark"></a><a name="class-field-mutable?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc17033" align="left" colspan="1"><strong id='bold17031'
+>class-field-mutable?</strong><em id='it17032'
+> field</em></td><td id="tc17034" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns <code id='code16980'
->#t</code> if the described field is mutable and <code id='code16981'
+Returns <code id='code17037'
+>#t</code> if the described field is mutable and <code id='code17038'
 >#f</code> otherwise.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16985" class="mark"></a><a name="class-field-mutator" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc16989" align="left" colspan="1"><strong id='bold16987'
->class-field-mutator</strong><em id='it16988'
-> field</em></td><td id="tc16990" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g17042" class="mark"></a><a name="class-field-mutator" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc17046" align="left" colspan="1"><strong id='bold17044'
+>class-field-mutator</strong><em id='it17045'
+> field</em></td><td id="tc17047" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Returns a procedure of two arguments. Applying this function to an object
-changes the value of the field described by <code id='code16994'
-><em id='it16993'
+changes the value of the field described by <code id='code17051'
+><em id='it17050'
 >field</em></code>. It is an
-error to apply <code id='code16995'
+error to apply <code id='code17052'
 >class-field-mutator</code> to an immutable field.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g16999" class="mark"></a><a name="class-field-info" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc17003" align="left" colspan="1"><strong id='bold17001'
->class-field-info</strong><em id='it17002'
-> field</em></td><td id="tc17004" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g17056" class="mark"></a><a name="class-field-info" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc17060" align="left" colspan="1"><strong id='bold17058'
+>class-field-info</strong><em id='it17059'
+> field</em></td><td id="tc17061" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the information associated to <code id='code17008'
-><em id='it17007'
+Returns the information associated to <code id='code17065'
+><em id='it17064'
 >field</em></code> (this the class declaration
-<code id='code17009'
+<code id='code17066'
 >info</code> attribute).
 </td></tr>
 </tbody></table><br/><br/><br/>For means of an example, here is a possible implementation of the
-<code id='code17013'
->equal?</code> test for objects:<br/><br/><center id='center17027'
+<code id='code17070'
+>equal?</code> test for objects:<br/><br/><center id='center17084'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17025'
->(<font color="#6959cf"><strong id='bold31954'
->define</strong></font> (<font color="#6959cf"><strong id='bold31956'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17082'
+>(<font color="#6959cf"><strong id='bold32011'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32013'
 >object-equal?</strong></font> obj1 obj2)
-   (<font color="#6959cf"><strong id='bold31958'
->define</strong></font> (<font color="#6959cf"><strong id='bold31960'
+   (<font color="#6959cf"><strong id='bold32015'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32017'
 >class-field-equal?</strong></font> fd)
-      (<strong id='bold31962'
+      (<strong id='bold32019'
 >let</strong> ((get-value (class-field-accessor fd)))
           (equal? (get-value obj1) (get-value obj2))))
-   (<strong id='bold31963'
+   (<strong id='bold32020'
 >let</strong> ((class1 (object-class obj1))
          (class2 (object-class obj2)))
-      (<strong id='bold31964'
+      (<strong id='bold32021'
 >cond</strong>
          ((not (eq? class1 class2))
           #f)
          (else
-          (<strong id='bold31965'
+          (<strong id='bold32022'
 >let</strong> loop ((fields (class-fields class1))
-                     (<strong id='bold31966'
+                     (<strong id='bold32023'
 >class</strong>  class1))
-             (<strong id='bold31967'
+             (<strong id='bold32024'
 >cond</strong>
                 ((null? fields)
-                 (<strong id='bold31968'
+                 (<strong id='bold32025'
 >let</strong> ((super (class-super class)))
-                    (<strong id='bold31969'
+                    (<strong id='bold32026'
 >if</strong> (class? super)
                         (loop (class-fields super)
                               super)
@@ -1586,49 +1586,49 @@ Returns the information associated to <code id='code17008'
 </tbody></table></center>
 
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g17029" class="mark"></a><a name="class-creator" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc17033" align="left" colspan="1"><strong id='bold17031'
->class-creator</strong><em id='it17032'
-> class</em></td><td id="tc17034" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g17086" class="mark"></a><a name="class-creator" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc17090" align="left" colspan="1"><strong id='bold17088'
+>class-creator</strong><em id='it17089'
+> class</em></td><td id="tc17091" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the creator for <code id='code17038'
-><em id='it17037'
+Returns the creator for <code id='code17095'
+><em id='it17094'
 >class</em></code>. The creator is a function for which
 the arity depends on the number of slots the class provides 
-(see Section see <a href="bigloo-11.html#Creating-and-accessing-objects" class="inbound">Creating and accessing objects</a>).<br/><br/>When an instance is allocated by the means of the <code id='code17040'
+(see Section see <a href="bigloo-11.html#Creating-and-accessing-objects" class="inbound">Creating and accessing objects</a>).<br/><br/>When an instance is allocated by the means of the <code id='code17097'
 >class-creator</code>, as
 for direct instantiation, the class constructor is 
-<em id='emph17041'
+<em id='emph17098'
 >automatically</em> invoked.
 Example:
-<center id='center17061'
+<center id='center17118'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17059'
->(<font color="#1919af"><strong id='bold31970'
->module</strong></font> <font color="#1919af"><strong id='bold31972'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17116'
+>(<font color="#1919af"><strong id='bold32027'
+>module</strong></font> <font color="#1919af"><strong id='bold32029'
 >foo</strong></font>
    (main main)
-   (<strong id='bold31974'
->static</strong> (<strong id='bold31975'
->class</strong> c1 (c1-constructor))))<br/><br/>(<font color="#6959cf"><strong id='bold31976'
->define</strong></font> <font color="#6959cf"><strong id='bold31978'
+   (<strong id='bold32031'
+>static</strong> (<strong id='bold32032'
+>class</strong> c1 (c1-constructor))))<br/><br/>(<font color="#6959cf"><strong id='bold32033'
+>define</strong></font> <font color="#6959cf"><strong id='bold32035'
 >c1-constructor</strong></font>
-   (<strong id='bold31980'
+   (<strong id='bold32037'
 >let</strong> ((count 0))
-      (<strong id='bold31981'
+      (<strong id='bold32038'
 >lambda</strong> (inst)
-	 (<strong id='bold31982'
+	 (<strong id='bold32039'
 >set!</strong> count (+ 1 count))
 	 (print <font color="red">&quot;creating instance: &quot;</font> count)
-	 inst)))<br/><br/>(<font color="#6959cf"><strong id='bold31984'
->define</strong></font> (<font color="#6959cf"><strong id='bold31986'
+	 inst)))<br/><br/>(<font color="#6959cf"><strong id='bold32041'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32043'
 >main</strong></font> argv)
-   (<strong id='bold31988'
->let</strong> ((o1 (<strong id='bold31989'
->instantiate</strong><font color="#00cf00"><strong id='bold31990'
+   (<strong id='bold32045'
+>let</strong> ((o1 (<strong id='bold32046'
+>instantiate</strong><font color="#00cf00"><strong id='bold32047'
 >::c1</strong></font>))
-	 (o2 (<strong id='bold31992'
->instantiate</strong><font color="#00cf00"><strong id='bold31993'
+	 (o2 (<strong id='bold32049'
+>instantiate</strong><font color="#00cf00"><strong id='bold32050'
 >::c1</strong></font>))
 	 (o3 ((class-creator c1))))
       'done))
@@ -1642,18 +1642,18 @@ Example:
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g17065" class="mark"></a><a name="class-predicate" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc17069" align="left" colspan="1"><strong id='bold17067'
->class-predicate</strong><em id='it17068'
-> class</em></td><td id="tc17070" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g17122" class="mark"></a><a name="class-predicate" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc17126" align="left" colspan="1"><strong id='bold17124'
+>class-predicate</strong><em id='it17125'
+> class</em></td><td id="tc17127" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the predicate for <code id='code17074'
-><em id='it17073'
->class</em></code>. This predicate returns <code id='code17075'
+Returns the predicate for <code id='code17131'
+><em id='it17130'
+>class</em></code>. This predicate returns <code id='code17132'
 >#t</code>
-when applied to object of type <code id='code17077'
-><em id='it17076'
->class</em></code>. It returns <code id='code17078'
+when applied to object of type <code id='code17134'
+><em id='it17133'
+>class</em></code>. It returns <code id='code17135'
 >#f</code> otherwise.
 </td></tr>
 </tbody></table><br/>
@@ -1662,12 +1662,12 @@ when applied to object of type <code id='code17077'
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph32000'
+<p class="ending" id='paragraph32057'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it31998'
->Mon Jan 19 07:59:56 2015</em>.</font></p></div>
+Last update <em id='it32055'
+>Wed Feb 18 07:39:05 2015</em>.</font></p></div>
 </body>
 </html>

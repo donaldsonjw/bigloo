@@ -1,4 +1,29 @@
+2015-02-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	gcc-5.0.0 accomodation (bootstrap)
+	<4.2a> [f9ea7b29c5ce]
+
+	libuv extensions (bootstrap)
+	<4.2a> [448e9f46ffe2]
+
+	new libuv facilities
+	<4.2a> [b95d13e6804f]
+
+2015-02-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	libuv (bootstrap)
+	<4.2a> [b5d991739671]
+
+2015-02-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor api extensions (bootstrap)
+	<4.2a> [bba8846380a9]
+
+2015-01-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	shutdown changes (bootstrap)
+	<4.2a> [fe1a108c8fac]
+
 2015-01-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New socket-shutdown api (bootstrap)
+	<4.2a> [8d2bb1531a8c]
+
 	intext improvement (bootstrap)
 	<4.2a> [fee84fc1779e]
 

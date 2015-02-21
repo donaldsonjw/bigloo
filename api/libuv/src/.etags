@@ -10,7 +10,7 @@
 (meta-define define define-expander0,0
 (meta-define define module0,0
 
-Llib/uvtypes.scm,4282
+Llib/uvtypes.scm,4429
 (module __libuv_types15,963
 (define (UvHandle?26,1229
 (define (make-UvHandle26,1229
@@ -89,52 +89,57 @@ Llib/uvtypes.scm,4282
 (define (make-UvFsEvent70,2320
 (define (fill-UvFsEvent!70,2320
 	   (class UvFsEvent70,2320
-(define (UvCheck?72,2354
-(define (make-UvCheck72,2354
-(define (fill-UvCheck!72,2354
-	   (class UvCheck72,2354
-(define (UvProcess?74,2386
-(define (make-UvProcess74,2386
-(define (fill-UvProcess!74,2386
-	   (class UvProcess74,2386
-(define (UvProcess-$onexit-set!75,2417
-(define (UvProcess-$onexit75,2417
-(define (UvProcess-pid::int79,2541
-(define (UvProcessOptions?82,2610
-(define (make-UvProcessOptions82,2610
-(define (fill-UvProcessOptions!82,2610
-	   (class UvProcessOptions82,2610
-(define (UvProcessOptions-$builtin::$uv_process_options_t83,2643
-(define (UvProcessOptions-file-set!88,2820
-(define (UvProcessOptions-file88,2820
-(define (UvProcessOptions-args-set!96,3107
-(define (UvProcessOptions-args96,3107
-(define (UvProcessOptions-env-set!104,3393
-(define (UvProcessOptions-env104,3393
-(define (UvProcessOptions-cwd-set!112,3677
-(define (UvProcessOptions-cwd112,3677
-(define (UvProcessOptions-flags-set!120,3963
-(define (UvProcessOptions-flags120,3963
-(define (UvProcessOptions-uid-set!128,4251
-(define (UvProcessOptions-uid128,4251
-(define (UvProcessOptions-gid-set!136,4535
-(define (UvProcessOptions-gid136,4535
-(define (UvWork?142,4735
-(define (make-UvWork142,4735
-(define (fill-UvWork!142,4735
-	   (class UvWork142,4735
-(define (UvWork-$builtin::$uv_work_t-set!143,4758
-(define (UvWork-$builtin::$uv_work_t143,4758
-(define (UvWork-%work-cb::procedure144,4811
-(define (UvWork-%after-cb::procedure145,4850
-(define (uv-id162,5360
-(define-generic (%uv-init169,5692
-(define-method (object-print obj::UvHandle port print-slot::procedure175,5950
-(define (uv-new-file210,7150
-(define (uv-strerror218,7483
-(define (uv-err-name227,7818
-(define (uv-guess-handle236,8153
-(define (uv-handle-type-symbol242,8460
+(define (UvFsPoll?72,2354
+(define (make-UvFsPoll72,2354
+(define (fill-UvFsPoll!72,2354
+	   (class UvFsPoll72,2354
+(define (UvCheck?74,2387
+(define (make-UvCheck74,2387
+(define (fill-UvCheck!74,2387
+	   (class UvCheck74,2387
+(define (UvProcess?76,2419
+(define (make-UvProcess76,2419
+(define (fill-UvProcess!76,2419
+	   (class UvProcess76,2419
+(define (UvProcess-$onexit-set!77,2450
+(define (UvProcess-$onexit77,2450
+(define (UvProcess-pid::int81,2574
+(define (UvProcessOptions?84,2643
+(define (make-UvProcessOptions84,2643
+(define (fill-UvProcessOptions!84,2643
+	   (class UvProcessOptions84,2643
+(define (UvProcessOptions-$builtin::$uv_process_options_t85,2676
+(define (UvProcessOptions-file-set!90,2853
+(define (UvProcessOptions-file90,2853
+(define (UvProcessOptions-args-set!98,3140
+(define (UvProcessOptions-args98,3140
+(define (UvProcessOptions-env-set!106,3426
+(define (UvProcessOptions-env106,3426
+(define (UvProcessOptions-cwd-set!114,3710
+(define (UvProcessOptions-cwd114,3710
+(define (UvProcessOptions-flags-set!122,3996
+(define (UvProcessOptions-flags122,3996
+(define (UvProcessOptions-uid-set!130,4284
+(define (UvProcessOptions-uid130,4284
+(define (UvProcessOptions-gid-set!138,4568
+(define (UvProcessOptions-gid138,4568
+(define (UvWork?144,4768
+(define (make-UvWork144,4768
+(define (fill-UvWork!144,4768
+	   (class UvWork144,4768
+(define (UvWork-$builtin::$uv_work_t-set!145,4791
+(define (UvWork-$builtin::$uv_work_t145,4791
+(define (UvWork-%work-cb::procedure146,4844
+(define (UvWork-%after-cb::procedure147,4883
+(define (uv-version164,5417
+(define (uv-id170,5679
+(define-generic (%uv-init177,6011
+(define-method (object-print obj::UvHandle port print-slot::procedure183,6269
+(define (uv-new-file218,7469
+(define (uv-strerror226,7802
+(define (uv-err-name235,8137
+(define (uv-guess-handle244,8472
+(define (uv-handle-type-symbol250,8779
 
 Llib/handle.scm,195
 (module __libuv_handle15,963
@@ -142,7 +147,7 @@ Llib/handle.scm,195
 (define-generic (uv-unref37,1796
 (define-generic (uv-has-ref?44,2133
 (define-generic (uv-close51,2476
-(define (uv-active?67,3228
+(define (uv-active?69,3306
 
 Llib/loop.scm,382
 (module __libuv_loop15,963
@@ -163,11 +168,11 @@ Llib/timer.scm,296
 (module __libuv_timer15,963
 (define-method (%uv-init o::UvTimer30,1397
 (define (uv-timer-start38,1774
-(define (uv-timer-stop51,2444
-(define-method (uv-ref o::UvTimer58,2800
-(define-method (uv-unref o::UvTimer66,3138
-(define-method (uv-has-ref? o::UvTimer74,3478
-(define (uv-hrtime81,3786
+(define (uv-timer-stop51,2437
+(define-method (uv-ref o::UvTimer60,2879
+(define-method (uv-unref o::UvTimer68,3217
+(define-method (uv-has-ref? o::UvTimer76,3557
+(define (uv-hrtime83,3865
 
 Llib/async.scm,104
 (module __libuv_async15,963
@@ -211,60 +216,65 @@ Llib/fs.scm,1030
 (define (uv-fs-read289,14469
 (define (uv-fs-flags297,14877
 
-Llib/os.scm,235
+Llib/os.scm,413
 (module __libuv_os15,963
-(define (uv-loadavg31,1477
-(define-inline (uv-get-free-memory38,1778
-(define-inline (uv-get-total-memory44,2063
-(define-inline (uv-cpus50,2350
-(define (uv-uptime56,2613
-(define-inline (uv-exepath64,2957
+(define (uv-loadavg35,1640
+(define-inline (uv-get-free-memory42,1941
+(define-inline (uv-get-total-memory48,2226
+(define-inline (uv-get-resident-memory54,2513
+(define-inline (uv-cpus60,2802
+(define (uv-uptime66,3065
+(define-inline (uv-exepath74,3409
+(define-inline (uv-process-title-init!80,3678
+(define-inline (uv-set-process-title!86,3971
+(define (uv-get-process-title92,4274
 
-Llib/net.scm,1612
+Llib/net.scm,1683
 (module __libuv_net15,963
 (define-method (%uv-init o::UvTcp76,3391
 (define-method (%uv-init o::UvUdp85,3807
 (define-method (%uv-init o::UvTty94,4227
-(define (uv-getaddrinfo103,4671
-(define (uv-inet-pton120,5441
-(define (uv-stream-write-queue-size126,5741
-(define (uv-stream-fd133,6114
-(define (uv-stream-write142,6519
-(define (uv-stream-write2148,6889
-(define (uv-stream-read-start154,7279
-(define (uv-stream-read-stop160,7638
-(define (uv-stream-shutdown167,7990
-(define (uv-listen173,8332
-(define (uv-accept179,8676
-(define (uv-closing?187,9116
-(define (uv-writable?194,9452
-(define (uv-readable?201,9805
-(define (uv-tcp-connect208,10158
-(define tcp-servers220,10756
-(define tcp-mutex221,10781
-(define-method (uv-close o::UvTcp #!optional callback226,11036
-(define (uv-tcp-open234,11411
-(define (uv-tcp-bind241,11754
-(define (uv-tcp-nodelay250,12218
-(define (uv-tcp-keepalive257,12580
-(define (uv-tcp-simultaneous-accepts264,12958
-(define (uv-tcp-getsockname271,13346
-(define (uv-tcp-getpeername278,13702
-(define udp-servers285,14058
-(define udp-mutex286,14083
-(define-method (uv-close o::UvUdp #!optional callback291,14338
-(define (uv-udp-bind299,14713
-(define (uv-udp-recv-start308,15177
-(define (uv-udp-recv-stop316,15615
-(define (uv-udp-getsockname324,15993
-(define (uv-udp-send331,16349
-(define (uv-udp-set-ttl341,16833
-(define (uv-udp-set-multicast-ttl348,17191
-(define (uv-udp-set-multicast-loop355,17569
-(define (uv-udp-set-broadcast362,17947
-(define (uv-udp-set-membership369,18315
-(define (uv-tty-mode-set!380,18848
-(define (uv-tty-get-window-size398,19522
+(define-method (uv-close o::UvStream #!optional callback103,4671
+(define (uv-getaddrinfo118,5284
+(define (uv-inet-pton135,6054
+(define (uv-stream-write-queue-size141,6354
+(define (uv-stream-fd148,6727
+(define (uv-stream-write157,7132
+(define (uv-stream-write2174,7865
+(define (uv-stream-read-start191,8619
+(define (uv-stream-read-stop203,9185
+(define (uv-stream-shutdown214,9688
+(define (uv-listen227,10287
+(define (uv-accept239,10852
+(define (uv-closing?247,11292
+(define (uv-writable?254,11628
+(define (uv-readable?261,11981
+(define (uv-tcp-connect268,12334
+(define tcp-servers280,12932
+(define tcp-mutex281,12957
+(define-method (uv-close o::UvTcp #!optional callback286,13212
+(define (uv-tcp-open299,13729
+(define (uv-tcp-bind306,14072
+(define (uv-tcp-nodelay315,14536
+(define (uv-tcp-keepalive322,14898
+(define (uv-tcp-simultaneous-accepts329,15276
+(define (uv-tcp-getsockname336,15664
+(define (uv-tcp-getpeername343,16020
+(define udp-servers350,16376
+(define udp-mutex351,16401
+(define-method (uv-close o::UvUdp #!optional callback356,16656
+(define (uv-udp-bind369,17173
+(define (uv-udp-recv-start378,17637
+(define (uv-udp-recv-stop386,18075
+(define (uv-udp-getsockname394,18453
+(define (uv-udp-send401,18809
+(define (uv-udp-set-ttl411,19293
+(define (uv-udp-set-multicast-ttl418,19651
+(define (uv-udp-set-multicast-loop425,20029
+(define (uv-udp-set-broadcast432,20407
+(define (uv-udp-set-membership439,20775
+(define (uv-tty-mode-set!450,21308
+(define (uv-tty-get-window-size468,21982
 
 Llib/idle.scm,132
 (module __libuv_idle15,963
@@ -280,6 +290,12 @@ Llib/fsevent.scm,233
 (define-inline (uv-fs-event-rename63,3041
 (define-inline (uv-fs-event-change69,3315
 
+Llib/fspoll.scm,143
+(module __libuv_fs-poll15,963
+(define-method (%uv-init o::UvFsPoll27,1368
+(define (uv-fs-poll-start35,1749
+(define (uv-fs-poll-stop55,2624
+
 Llib/check.scm,136
 (module __libuv_check15,963
 (define-method (%uv-init o::UvCheck27,1332
@@ -288,26 +304,26 @@ Llib/check.scm,136
 
 Llib/process.scm,952
 (module __libuv_process15,963
-(define-method (%uv-init o::UvProcess51,2184
-(define-method (%uv-init o::UvProcessOptions59,2551
-(define (uv-process-spawn65,2827
-(define (uv-process-kill71,3175
-(define (uv-kill78,3532
-(define (uv-process-options-stdio-container-set!84,3804
-(define (uv-process-options-stdio-container-stream-set!91,4212
-(define (uv-process-options-stdio-container-fd-set!100,4721
-(define (uv-process-options-stdio-container-flags-set!109,5193
-(define-inline (UV-PROCESS-SETUID116,5629
-(define-inline (UV-PROCESS-SETGID122,5910
-(define-inline (UV-PROCESS-DETACHED128,6191
-(define-inline (UV-PROCESS-WINDOWS-VERBATIM-ARGUMENTS134,6476
-(define-inline (UV-PROCESS-WINDOWS-HIDE140,6797
-(define-inline (UV-IGNORE146,7090
-(define-inline (UV-INHERIT-FD152,7355
-(define-inline (UV-INHERIT-STREAM158,7628
-(define-inline (UV-CREATE-PIPE164,7909
-(define-inline (UV-READABLE-PIPE170,8184
-(define-inline (UV-WRITABLE-PIPE176,8463
+(define-method (%uv-init o::UvProcess52,2197
+(define-method (%uv-init o::UvProcessOptions60,2564
+(define (uv-process-spawn66,2840
+(define (uv-process-kill72,3188
+(define (uv-kill79,3545
+(define (uv-process-options-stdio-container-set!85,3817
+(define (uv-process-options-stdio-container-stream-set!92,4225
+(define (uv-process-options-stdio-container-fd-set!101,4734
+(define (uv-process-options-stdio-container-flags-set!115,5433
+(define-inline (UV-PROCESS-SETUID122,5869
+(define-inline (UV-PROCESS-SETGID128,6150
+(define-inline (UV-PROCESS-DETACHED134,6431
+(define-inline (UV-PROCESS-WINDOWS-VERBATIM-ARGUMENTS140,6716
+(define-inline (UV-PROCESS-WINDOWS-HIDE146,7037
+(define-inline (UV-IGNORE152,7330
+(define-inline (UV-INHERIT-FD158,7595
+(define-inline (UV-INHERIT-STREAM164,7868
+(define-inline (UV-CREATE-PIPE170,8149
+(define-inline (UV-READABLE-PIPE176,8424
+(define-inline (UV-WRITABLE-PIPE182,8703
 
 Llib/pipe.scm,237
 (module __libuv_pipe15,963

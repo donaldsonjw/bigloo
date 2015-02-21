@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>32. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015 -- Compiler description</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>32. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>February 2015 -- Compiler description</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center35722'
+<br/><center id='center35779'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35712" align="center" colspan="1"><font color="#ffffff"><strong id='bold35710'
+<tr bgcolor="#8381de"><th id="tc35769" align="center" colspan="1"><font color="#ffffff"><strong id='bold35767'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35719" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc35715" align="left" valign="top" colspan="1"><strong id='bold35714'
->top:</strong></td><td id="tc35716" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-January-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>January 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc35776" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc35772" align="left" valign="top" colspan="1"><strong id='bold35771'
+>top:</strong></td><td id="tc35773" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-February-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>February 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center35732'
+<br/><br/><center id='center35789'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35726" align="center" colspan="1"><font color="#ffffff"><strong id='bold35724'
+<tr bgcolor="#8381de"><th id="tc35783" align="center" colspan="1"><font color="#ffffff"><strong id='bold35781'
 >Compiler description</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35729" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc35786" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">32.1</td><td colspan="4" width="100%"><a href="bigloo-33.html#C-requirement">C requirement</a></td></tr>
  <tr><td valign="top" align="left">32.2</td><td colspan="4" width="100%"><a href="bigloo-33.html#JVM-requirement">JVM requirement</a></td></tr>
@@ -60,11 +60,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center35742'
+<br/><br/><center id='center35799'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc35736" align="center" colspan="1"><font color="#ffffff"><strong id='bold35734'
+<tr bgcolor="#8381de"><th id="tc35793" align="center" colspan="1"><font color="#ffffff"><strong id='bold35791'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc35739" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc35796" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -112,28 +112,28 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Compiler-Description" class="mark"></a><a name="g29068" class="mark"></a>
+<a name="Compiler-Description" class="mark"></a><a name="g29125" class="mark"></a>
 <!-- C requirement -->
 <a name="C-requirement"></a>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">32.1 C requirement</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g29070" class="mark"></a>
+<a name="g29127" class="mark"></a>
 Instead of producing assembly code, Bigloo produces C code.
 This C code is ISO-C compliant [IsoC]. So, it is necessary
 to have an ISO-C compiler. The current version has been
-developed with <code id='code29072'
+developed with <code id='code29129'
 >gcc</code> [Stallman95].<br/><br/></div><br>
 <!-- JVM requirement -->
 <a name="JVM-requirement"></a>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">32.2 JVM requirement</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g29074" class="mark"></a>
+<a name="g29131" class="mark"></a>
 In order to compile the Bigloo JVM back-end, you have to be provided
-with a JDK 1.2 or more recent (available at <code id='code29076'
+with a JDK 1.2 or more recent (available at <code id='code29133'
 >http://www.javasoft.com</code>).
-The JVM must support for <code id='code29077'
+The JVM must support for <code id='code29134'
 >-noverify</code> option because, by default,
 Bigloo produces JVM code that is not conform to the rules enforced by
 the Java byte code verifiers.<br/><br/></div><br>
@@ -142,7 +142,7 @@ the Java byte code verifiers.<br/><br/></div><br>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">32.3 Running .NET programs on Microsoft .NET platforms</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g29079" class="mark"></a>
+<a name="g29136" class="mark"></a>
 Bigloo uses Portable.NET assembler and linker to produce .NET binaries.  As
 such, produced binaries are linked and signed against Portable.NET runtime
 libraries and are rejected by Microsoft .NET platforms.  In order to run
@@ -152,35 +152,35 @@ libraries.<br/><br/>The pnet2ms utility automates this process. Before the first
 pnet2ms, a public+private key pair must first be registered to the
 &quot;Bigloo&quot; container. You may either use the provided pair in the
 bigloo.dotnetkey file or generate your own using:
-<center id='center29084'
+<center id='center29141'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29082'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29139'
 >          sn -k bigloo.dotnetkey
 </pre>
 </td></tr>
 </tbody></table></center>
 The pair must be registered using:
-<center id='center29087'
+<center id='center29144'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29085'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29142'
 >          sn -i bigloo.dotnetkey Bigloo
 </pre>
 </td></tr>
 </tbody></table></center>
 
 The pnet2ms program can be ran with:
-<center id='center29090'
+<center id='center29147'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29088'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29145'
 >  pnet2ms myprogram.exe
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Additional command-line options are:
-<center id='center29093'
+<center id='center29150'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29091'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29148'
 >  -initlocals     force all local variables to be initialized to their
                   default value upon function entrance 
                   (for PEVerify to succeed)
@@ -199,30 +199,30 @@ Additional command-line options are:
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">32.4 Linking</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g29094" class="mark"></a>
+<a name="g29151" class="mark"></a>
 It is easier to use Bigloo for linking object files which have been
 compiled by Bigloo. An easy way to perform this operation is, after
-having compiled all the files using the <code id='code29096'
+having compiled all the files using the <code id='code29153'
 >-c</code> option, to invoke
 Bigloo with the name of the compiled files.<br/><br/>When Bigloo is only given object file name as argument, it
 searches in the current directory and the directory named in the
-<code id='code29098'
+<code id='code29155'
 >*load-path*</code> list the Scheme source file in order to
 perform a correct link. Scheme source files are supposed to be
-ended by the suffix <code id='code29099'
+ended by the suffix <code id='code29156'
 >.scm</code>. Additional suffixes can be added
-using the <code id='code29100'
+using the <code id='code29157'
 >-suffix</code> option. Hence, if source files are named
-foo1.sc and foo2.sc, a link command line could look like:<br/><br/><center id='center29104'
+foo1.sc and foo2.sc, a link command line could look like:<br/><br/><center id='center29161'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29102'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29159'
 >bigloo -suffix sc foo1.o foo2.o -o foo
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Note: In order to understand how the Bigloo linkers operates and which
-libraries it uses, it might be useful to  use the <code id='code29105'
+libraries it uses, it might be useful to  use the <code id='code29162'
 >-v2</code> option
 which unveil all the details of the compilation and the link.<br/><br/></div><br>
 <!-- The compiler environment and options -->
@@ -230,9 +230,9 @@ which unveil all the details of the compilation and the link.<br/><br/></div><br
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">32.5 The compiler environment and options</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="g29107" class="mark"></a>
+<a name="g29164" class="mark"></a>
 There are four ways to change the behaviour of Bigloo. Flags on the
-command line, the <code id='code29109'
+command line, the <code id='code29166'
 >option</code> module clause runtime-command file and
 environment variables See <a href="bigloo-4.html#Modules" class="inbound">Modules</a>. When the compiler is invoked, it
 first gets the environment variables, then it scans the
@@ -242,8 +242,8 @@ same option is set many times, Bigloo uses the last one.<br/><br/><!-- Efficienc
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">32.5.1 Efficiency</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="g29111" class="mark"></a>
-In order to get maximum speed, compile with the <code id='code29113'
+<a name="g29168" class="mark"></a>
+In order to get maximum speed, compile with the <code id='code29170'
 >-Obench</code> option.
 This will enable all compiler optimization options and disable dynamic
 type checks. To improve arithmetic performance see next section.<br/><br/></div>
@@ -252,15 +252,15 @@ type checks. To improve arithmetic performance see next section.<br/><br/></div>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">32.5.2 Stack allocation</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="g29115" class="mark"></a>
-When the <code id='code29117'
+<a name="g29172" class="mark"></a>
+When the <code id='code29174'
 >-fstack</code> flag is enabled, the compiler may automatically
 replace some heap allocations with stack allocations. This may improve
 performance because stack allocations are handled more efficiently than
-heap allocations. On some cases, <code id='code29118'
+heap allocations. On some cases, <code id='code29175'
 >-fstack</code> may also cause slow down
 or memory extra retentions. In this last case, when compile 
-using <code id='code29119'
+using <code id='code29176'
 >-fstack</code> the program will consume more memory. Unfortunately,
 this is nasty phenomenon is unpredictable (it depends on the nature of
 the source file).<br/><br/></div>
@@ -269,21 +269,21 @@ the source file).<br/><br/></div>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">32.5.3 Genericity of arithmetic procedures</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="g29121" class="mark"></a>
+<a name="g29178" class="mark"></a>
 By default, arithmetic procedures are generic. This means that it is
 allowed to use them with flonum and fixnum. This feature, of course,
 implies performances penalty. To improve performance, you may use
-specialized procedures (such as <code id='code29123'
->+fx</code>, <code id='code29124'
+specialized procedures (such as <code id='code29180'
+>+fx</code>, <code id='code29181'
 >=fx</code>, ... or
-<code id='code29125'
->+fl</code>, <code id='code29126'
+<code id='code29182'
+>+fl</code>, <code id='code29183'
 >=fl</code>, ...) but, it is possible to suppress the
-genericity and to make all generic arithmetic procedures (<code id='code29127'
+genericity and to make all generic arithmetic procedures (<code id='code29184'
 >=</code> for
 example) fixnum ones. For this you must use the compiler option
-<code id='code29128'
->-farithmetic</code>, or add the following module clause <code id='code29129'
+<code id='code29185'
+>-farithmetic</code>, or add the following module clause <code id='code29186'
 >(option
 (set! *genericity* #f))</code> in your module declaration.<br/><br/></div>
 <!-- Safety -->
@@ -291,97 +291,97 @@ example) fixnum ones. For this you must use the compiler option
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">32.5.4 Safety</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="g29131" class="mark"></a>
-It is possible to generate <em id='emph29133'
->safe</em> or <em id='emph29134'
+<a name="g29188" class="mark"></a>
+It is possible to generate <em id='emph29190'
+>safe</em> or <em id='emph29191'
 >unsafe</em> code. 
-The safety's scope is <code id='code29135'
->type</code>, <code id='code29136'
->arity</code>, <code id='code29137'
+The safety's scope is <code id='code29192'
+>type</code>, <code id='code29193'
+>arity</code>, <code id='code29194'
 >version</code> and
-<code id='code29138'
+<code id='code29195'
 >range</code>.
-Let's see an example: <br/><br/><center id='center29143'
+Let's see an example: <br/><br/><center id='center29200'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog29141'
->(<font color="#6959cf"><strong id='bold35743'
->define</strong></font> (<font color="#6959cf"><strong id='bold35745'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog29198'
+>(<font color="#6959cf"><strong id='bold35800'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35802'
 >foo</strong></font> f v indice)
    (car (f (vector-ref v indice))))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-In safe mode, the result of the compilation will be:<br/><br/><center id='center29157'
+In safe mode, the result of the compilation will be:<br/><br/><center id='center29214'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog29155'
->(<font color="#6959cf"><strong id='bold35747'
->define</strong></font> (<font color="#6959cf"><strong id='bold35749'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog29212'
+>(<font color="#6959cf"><strong id='bold35804'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35806'
 >foo</strong></font> f v indice)
-  (<strong id='bold35751'
+  (<strong id='bold35808'
 >let</strong> ((pair 
-        (<strong id='bold35752'
+        (<strong id='bold35809'
 >if</strong> (and (procedure? f)
-              <font color="#ffa600"><em id='it35753'
+              <font color="#ffa600"><em id='it35810'
 >;; type check</em></font>
               (= (procedure-arity f) 1))
-              <font color="#ffa600"><em id='it35755'
+              <font color="#ffa600"><em id='it35812'
 >;; arity check</em></font>
-           (<strong id='bold35757'
+           (<strong id='bold35814'
 >if</strong> (vector? v)
-              <font color="#ffa600"><em id='it35758'
+              <font color="#ffa600"><em id='it35815'
 >;; type check</em></font>
-              (<strong id='bold35760'
+              (<strong id='bold35817'
 >if</strong> (and (integer? k)
-                    <font color="#ffa600"><em id='it35761'
+                    <font color="#ffa600"><em id='it35818'
 >;; type check</em></font>
                     (&gt;= k 0)
-                    <font color="#ffa600"><em id='it35763'
+                    <font color="#ffa600"><em id='it35820'
 >;; range check</em></font>
                     (&lt; k (vector-length v)))
-                    <font color="#ffa600"><em id='it35765'
+                    <font color="#ffa600"><em id='it35822'
 >;; range check</em></font>
                 (f (vector-ref v indice))
-                (<font color="red"><strong id='bold35767'
+                (<font color="red"><strong id='bold35824'
 >error</strong></font> ...))
-              (<font color="red"><strong id='bold35769'
+              (<font color="red"><strong id='bold35826'
 >error</strong></font> ...))
-           (<font color="red"><strong id='bold35771'
+           (<font color="red"><strong id='bold35828'
 >error</strong></font> ...))))
-    (<strong id='bold35773'
+    (<strong id='bold35830'
 >if</strong> (pair? pair)
-       <font color="#ffa600"><em id='it35774'
+       <font color="#ffa600"><em id='it35831'
 >;; type check</em></font>
        (car pair)
-       (<font color="red"><strong id='bold35776'
+       (<font color="red"><strong id='bold35833'
 >error</strong></font> ...))))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 It is possible to remove some or all safe checks. For example, here is
-the result of the compilation where safe check on types have been removed:<br/><br/><center id='center29167'
+the result of the compilation where safe check on types have been removed:<br/><br/><center id='center29224'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog29165'
->(<font color="#6959cf"><strong id='bold35778'
->define</strong></font> (<font color="#6959cf"><strong id='bold35780'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog29222'
+>(<font color="#6959cf"><strong id='bold35835'
+>define</strong></font> (<font color="#6959cf"><strong id='bold35837'
 >foo</strong></font> f v indice)
-  (<strong id='bold35782'
->let</strong> ((pair (<strong id='bold35783'
+  (<strong id='bold35839'
+>let</strong> ((pair (<strong id='bold35840'
 >if</strong> (= (procedure-arity f) 1)
-             <font color="#ffa600"><em id='it35784'
+             <font color="#ffa600"><em id='it35841'
 >;; arity check</em></font>
-             (<strong id='bold35786'
+             (<strong id='bold35843'
 >if</strong> (and (&gt;= k 0)
-                   <font color="#ffa600"><em id='it35787'
+                   <font color="#ffa600"><em id='it35844'
 >;; range check</em></font>
                    (&lt; k (vector-length v)))
-                   <font color="#ffa600"><em id='it35789'
+                   <font color="#ffa600"><em id='it35846'
 >;; range check</em></font>
                 (f (vector-ref v indice))
-                (<font color="red"><strong id='bold35791'
+                (<font color="red"><strong id='bold35848'
 >error</strong></font> ...))
-             (<font color="red"><strong id='bold35793'
+             (<font color="red"><strong id='bold35850'
 >error</strong></font> ...))))
      (car pair)))
 </pre>
@@ -394,10 +394,10 @@ the result of the compilation where safe check on types have been removed:<br/><
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">32.5.5 The runtime-command file</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="g29168" class="mark"></a><a name="g29170" class="mark"></a>
+<a name="g29225" class="mark"></a><a name="g29227" class="mark"></a>
 Each Bigloo's user can use a special configuration file. This file must
-be named ``<code id='code29172'
->.bigloorc</code>'' or ``<code id='code29173'
+be named ``<code id='code29229'
+>.bigloorc</code>'' or ``<code id='code29230'
 >~/.bigloorc</code>''. Bigloo tries to
 load one of these in this order. This file is a Scheme file. Bigloo
 exports variables which allow the user to change the behavior of the
@@ -408,11 +408,11 @@ compiler.  All these variables can be checked using the -help2 option.<br/><br/>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">32.5.6 The Bigloo command line</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="g29175" class="mark"></a>
+<a name="g29232" class="mark"></a>
 If no input file is specified, Bigloo enters its interpreter.
-Here is the exhaustive list of Bigloo options and configuration variables:<br/><br/><center id='center29201'
+Here is the exhaustive list of Bigloo options and configuration variables:<br/><br/><center id='center29258'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29199'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog29256'
 >usage: bigloo [options] [name.suf]<br/><br/><br/>Misc:
    -                                  Read source code on current input channel
    -help,--help                       This help message
@@ -891,10 +891,10 @@ Here is the exhaustive list of Bigloo options and configuration variables:<br/><
      default: read
    - *inlining-kfactor* : 
      Inlining growth factor
-     default: #&lt;procedure:53f0f0.1&gt;
+     default: #&lt;procedure:40f6c0.1&gt;
    - *inlining-reduce-kfactor* : 
      Inlinine growth factor reductor
-     default: #&lt;procedure:53f040.1&gt;
+     default: #&lt;procedure:40f610.1&gt;
    - *inlining?* : 
      Inlining optimization
      default: #t
@@ -1098,7 +1098,7 @@ Here is the exhaustive list of Bigloo options and configuration variables:<br/><
      default: ld
    - *pre-processor* : 
      An optional function that pre-processes the source file
-     default: #&lt;procedure:53a490.1&gt;
+     default: #&lt;procedure:40aa60.1&gt;
    - *prof-table-name* : 
      Bprof translation table file name
      default: &quot;bmon.out&quot;
@@ -1242,12 +1242,12 @@ Here is the exhaustive list of Bigloo options and configuration variables:<br/><
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph35800'
+<p class="ending" id='paragraph35857'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it35798'
->Mon Jan 19 07:59:57 2015</em>.</font></p></div>
+Last update <em id='it35855'
+>Wed Feb 18 07:39:05 2015</em>.</font></p></div>
 </body>
 </html>
