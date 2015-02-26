@@ -2755,13 +2755,10 @@ bgl_make_datagram_unbound_socket( obj_t family ) {
    sock->datagram_socket_t.portnum = 0;
    sock->datagram_socket_t.hostname = BUNSPEC;
    sock->datagram_socket_t.hostip = BFALSE;
-<<<<<<< HEAD
    #ifdef _BGL_WIN32_VER
    s = _open_osfhandle( s, _O_RDWR );
    #endif
-=======
    sock->datagram_socket_t.family = AF_INET;
->>>>>>> LLP64
    sock->datagram_socket_t.fd = s;
    sock->datagram_socket_t.stype = BGL_SOCKET_SERVER;
 
