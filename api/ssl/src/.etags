@@ -10,53 +10,56 @@
 (meta-define define define-expander0,0
 (meta-define define module0,0
 
-Llib/ssl.scm,2153
+Llib/ssl.scm,2300
 (module __ssl_ssl15,963
-(define (certificate?150,6504
-(define (make-certificate150,6504
-(define (fill-certificate!150,6504
-   (export (class certificate150,6504
-(define (certificate-$native::$certificate151,6534
-(define (private-key?153,6581
-(define (make-private-key153,6581
-(define (fill-private-key!153,6581
-	   (class private-key153,6581
-(define (private-key-$native::$private-key154,6604
-(define (ssl-version249,10272
-(define (sanity-args-checks257,10585
-(define (make-ssl-client-socket277,11614
-(define (client-socket-use-ssl!300,12525
-(define (make-ssl-server-socket314,13164
-(define (ssl-protocols->integer328,13858
-(define (read-private-key340,14438
-(define (read-certificate346,14744
-(define (read-pem-file352,15050
-(define-inline (ssl-rand-status358,15354
-(define-inline (ssl-rand-poll366,15680
-(define (ssl-rand-bytes374,16002
-(define (ssl-rand-pseudo-bytes391,16513
-(define-inline (certificate-subject408,17038
-(define-inline (certificate-issuer414,17357
-(define (%make-certificate420,17674
-(define (%make-private-key427,17982
-(define (%certificate-$native434,18290
-(define (%private-key-$native441,18609
-(define-generic (secure-context-init448,18928
-(define-generic (secure-context-add-root-certs!458,19304
-(define-generic (secure-context-add-ca-cert!468,19701
-(define-generic (secure-context-set-key!478,20124
-(define-generic (secure-context-set-cert!488,20572
-(define-generic (secure-context-set-ciphers!498,20989
-(define-generic (secure-context-set-options!510,21449
-(define-generic (ssl-connection-init522,21909
-(define-generic (ssl-connection-start532,22288
-(define-generic (ssl-connection-read542,22668
-(define-generic (ssl-connection-write552,23080
-(define-generic (ssl-connection-clear-in562,23494
-(define-generic (ssl-connection-clear-out572,23914
-(define-generic (ssl-connection-init-finished?582,24336
-(define-generic (ssl-connection-enc-pending592,24732
-(define-generic (ssl-connection-clear-pending602,25122
-(define-generic (ssl-connection-set-session612,25516
-(define-generic (ssl-connection-verify-error622,25924
-(define-generic (ssl-connection-get-peer-certificate632,26317
+(define (certificate?156,6779
+(define (make-certificate156,6779
+(define (fill-certificate!156,6779
+   (export (class certificate156,6779
+(define (certificate-$native::$certificate157,6809
+(define (private-key?159,6856
+(define (make-private-key159,6856
+(define (fill-private-key!159,6856
+	   (class private-key159,6856
+(define (private-key-$native::$private-key160,6879
+(define (ssl-version258,10721
+(define (sanity-args-checks266,11034
+(define (make-ssl-client-socket286,12063
+(define (client-socket-use-ssl!309,12974
+(define (make-ssl-server-socket323,13613
+(define (ssl-protocols->integer337,14307
+(define (read-private-key349,14887
+(define (read-certificate355,15193
+(define (read-pem-file361,15499
+(define-inline (ssl-rand-status367,15803
+(define-inline (ssl-rand-poll375,16129
+(define (ssl-rand-bytes383,16451
+(define (ssl-rand-pseudo-bytes400,16962
+(define-inline (certificate-subject417,17487
+(define-inline (certificate-issuer423,17806
+(define (%make-certificate429,18123
+(define (%make-private-key436,18431
+(define (%certificate-$native443,18739
+(define (%private-key-$native450,19058
+(define-generic (secure-context-init457,19377
+(define-generic (secure-context-close467,19753
+(define-generic (secure-context-add-root-certs!477,20131
+(define-generic (secure-context-add-ca-cert!487,20528
+(define-generic (secure-context-set-key!497,20951
+(define-generic (secure-context-set-cert!507,21399
+(define-generic (secure-context-set-ciphers!517,21816
+(define-generic (secure-context-set-options!529,22276
+(define-generic (ssl-connection-init541,22736
+(define-generic (ssl-connection-start551,23115
+(define-generic (ssl-connection-close561,23495
+(define-generic (ssl-connection-shutdown571,23875
+(define-generic (ssl-connection-read581,24261
+(define-generic (ssl-connection-write591,24673
+(define-generic (ssl-connection-clear-in601,25087
+(define-generic (ssl-connection-clear-out611,25507
+(define-generic (ssl-connection-init-finished?621,25929
+(define-generic (ssl-connection-enc-pending631,26325
+(define-generic (ssl-connection-clear-pending641,26715
+(define-generic (ssl-connection-set-session651,27109
+(define-generic (ssl-connection-verify-error661,27517
+(define-generic (ssl-connection-get-peer-certificate671,27910
