@@ -217,18 +217,17 @@ bgl_last_modification_time( char *file ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    BGL_LONG_T                                                             */
-/*    long                                                             */
+/*    BGL_LONG_T                                                       */
 /*    bgl_last_access_time ...                                         */
 /*---------------------------------------------------------------------*/
-long
+BGL_LONG_T
 bgl_last_access_time( char *file ) {
    struct stat _stati;
 
    if( lstat( file, &_stati ) )
       return -1;
    else
-      return (long)(_stati.st_atime);
+      return (BGL_LONG_T)(_stati.st_atime);
 }
 
 /*---------------------------------------------------------------------*/
@@ -263,7 +262,7 @@ bgl_file_size( char *file ) {
 }
 
 /*---------------------------------------------------------------------*/
-/*    BGL_LONG_T                                                             */
+/*    BGL_LONG_T                                                       */
 /*    bgl_file_uid ...                                                 */
 /*---------------------------------------------------------------------*/
 BGL_LONG_T
