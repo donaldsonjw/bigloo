@@ -49,12 +49,22 @@ if [ "$type " = " " ]; then
   type="int"
 fi
 
+# long is not large enough on 64bit windows to store a pointer, so we
+# check explicitly here for 64 bit windows and set the suffix to LL.
+if [ "$MSYSTEM " = "MINGW64 " ]; then
+    intptr_t_suffix="LL"
+else
+    intptr_t_suffix="L"
+fi
+
+
 unit=""
 
 case $type in
   "int") unit="";;
   "long") unit="L";;
   "long long") unit="LL";;
+  "intptr_t") unit="$intptr_t_suffix";;
   *) echo "Unknown type $type assumed to be without suffix" >&2;;
 esac
 

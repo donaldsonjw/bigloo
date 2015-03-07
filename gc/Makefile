@@ -169,14 +169,18 @@ pop:
 .PHONY: clean cleanall distclean
 
 clean:
-	$(MAKE) -C $(CUSTOMGC) clean
-	$(MAKE) -C $(CUSTOMGC)_fth clean
+	$(MAKE) -C $(CUSTOMGC) clean; \
+	if [ -d "$(CUSTOMGC)_fth" ]; then \
+		$(MAKE) -C $(CUSTOMGC)_fth clean; \
+	fi;
 
 cleanall: clean
 
 distclean:
 	$(MAKE) -C $(CUSTOMGC) distclean
-	$(MAKE) -C $(CUSTOMGC)_fth distclean
+	if [ -d "$(CUSTOMGC)_fth" ]; then \
+		$(MAKE) -C $(CUSTOMGC)_fth distclean; \
+	fi;
 	$(RM) -rf gc
 
 #*---------------------------------------------------------------------*/

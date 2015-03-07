@@ -66,7 +66,7 @@ main( int argc, char *argv[] ) {
 return (int)sysconf( _SC_NPROCESSORS_ONLN );
 #else 
 #  if( defined( _SC_NPROC_ONLN) )
-return (int)sysconf( _SC_NPROCESSORS_ONLN );
+return (int)sysconf( _SC_NPROC_ONLN );
 #  else
 return 0;
 #  endif
