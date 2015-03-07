@@ -182,7 +182,8 @@ $(DOCUMENTNAME).tar.gz.uu: $(DOCUMENTNAME).tar.gz
 #*---------------------------------------------------------------------*/
 #*    distrib                                                          */
 #*---------------------------------------------------------------------*/
-distrib: option.texi version.texi bigloo.html r5rs.html bigloo.info bdb.html bdb.info bdb.sui bigloo.sui r5rs.sui
+distrib:
+#distrib: option.texi version.texi bigloo.html r5rs.html bigloo.info bdb.html bdb.info bdb.sui bigloo.sui r5rs.sui
 
 #*---------------------------------------------------------------------*/
 #*    option.texi                                                      */
