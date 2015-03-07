@@ -1,3 +1,10 @@
+2015-03-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Ssl extensions
+	<4.2a> [3c320eea66f0]
+
+	Libuv fix (bootstrap)
+	<4.2a> [45aaf9dc62eb]
+
 2015-02-17  Manuel Serrano <Manuel.Serrano@inria.fr>
 	gcc-5.0.0 accomodation (bootstrap)
 	<4.2a> [f9ea7b29c5ce]

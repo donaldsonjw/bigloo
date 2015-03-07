@@ -242,39 +242,39 @@ Llib/net.scm,1683
 (define (uv-stream-write157,7132
 (define (uv-stream-write2174,7865
 (define (uv-stream-read-start191,8619
-(define (uv-stream-read-stop203,9185
-(define (uv-stream-shutdown214,9688
-(define (uv-listen227,10287
-(define (uv-accept239,10852
-(define (uv-closing?247,11292
-(define (uv-writable?254,11628
-(define (uv-readable?261,11981
-(define (uv-tcp-connect268,12334
-(define tcp-servers280,12932
-(define tcp-mutex281,12957
-(define-method (uv-close o::UvTcp #!optional callback286,13212
-(define (uv-tcp-open299,13729
-(define (uv-tcp-bind306,14072
-(define (uv-tcp-nodelay315,14536
-(define (uv-tcp-keepalive322,14898
-(define (uv-tcp-simultaneous-accepts329,15276
-(define (uv-tcp-getsockname336,15664
-(define (uv-tcp-getpeername343,16020
-(define udp-servers350,16376
-(define udp-mutex351,16401
-(define-method (uv-close o::UvUdp #!optional callback356,16656
-(define (uv-udp-bind369,17173
-(define (uv-udp-recv-start378,17637
-(define (uv-udp-recv-stop386,18075
-(define (uv-udp-getsockname394,18453
-(define (uv-udp-send401,18809
-(define (uv-udp-set-ttl411,19293
-(define (uv-udp-set-multicast-ttl418,19651
-(define (uv-udp-set-multicast-loop425,20029
-(define (uv-udp-set-broadcast432,20407
-(define (uv-udp-set-membership439,20775
-(define (uv-tty-mode-set!450,21308
-(define (uv-tty-get-window-size468,21982
+(define (uv-stream-read-stop203,9198
+(define (uv-stream-shutdown214,9727
+(define (uv-listen227,10326
+(define (uv-accept239,10891
+(define (uv-closing?247,11331
+(define (uv-writable?254,11667
+(define (uv-readable?261,12020
+(define (uv-tcp-connect268,12373
+(define tcp-servers280,12971
+(define tcp-mutex281,12996
+(define-method (uv-close o::UvTcp #!optional callback286,13251
+(define (uv-tcp-open299,13768
+(define (uv-tcp-bind306,14111
+(define (uv-tcp-nodelay315,14575
+(define (uv-tcp-keepalive322,14937
+(define (uv-tcp-simultaneous-accepts329,15315
+(define (uv-tcp-getsockname336,15703
+(define (uv-tcp-getpeername343,16059
+(define udp-servers350,16415
+(define udp-mutex351,16440
+(define-method (uv-close o::UvUdp #!optional callback356,16695
+(define (uv-udp-bind369,17212
+(define (uv-udp-recv-start378,17676
+(define (uv-udp-recv-stop386,18114
+(define (uv-udp-getsockname394,18492
+(define (uv-udp-send401,18848
+(define (uv-udp-set-ttl411,19332
+(define (uv-udp-set-multicast-ttl418,19690
+(define (uv-udp-set-multicast-loop425,20068
+(define (uv-udp-set-broadcast432,20446
+(define (uv-udp-set-membership439,20814
+(define (uv-tty-mode-set!450,21347
+(define (uv-tty-get-window-size468,22021
 
 Llib/idle.scm,132
 (module __libuv_idle15,963
