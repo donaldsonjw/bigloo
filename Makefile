@@ -100,7 +100,7 @@ GZIP		= gzip -9
 # zip
 ZIP		= zip
 # The revision system, either prcs, or mercurial
-REVISIONSYSTEM	= mercurial
+REVISIONSYSTEM	= git
 # The message to log the revision
 LOGMSG		= ""
 # Sudo command
