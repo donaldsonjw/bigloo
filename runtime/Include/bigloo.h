@@ -57,18 +57,15 @@ extern "C" {
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#if (defined( _MSC_VER) || defined( _MINGW_VER )) && !defined(_BGL_WIN32_VER) 
-#  define _BGL_WIN32_VER
-#endif
-  
-#ifndef _BGL_WIN32_VER
-#  include <sys/socket.h>
-#  include <netinet/in.h>
-#else
+
+#if (defined( _MSC_VER) || defined( _MINGW_VER )) 
 #  include <winsock2.h>
 #  include <mswsock.h>
 #  include <ws2tcpip.h>
   typedef u_short sa_family_t;   
+#else  
+#  include <sys/socket.h>
+#  include <netinet/in.h>
 #endif
    
 /*---------------------------------------------------------------------*/

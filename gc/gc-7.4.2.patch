@@ -1,6 +1,6 @@
 diff -Naur gc-7.4.2.orig/Makefile.am gc-7.4.2/Makefile.am
---- gc-7.4.2.orig/Makefile.am	2014-06-03 08:08:01.000000000 +0200
-+++ gc-7.4.2/Makefile.am	2015-01-07 09:20:11.120046268 +0100
+--- gc-7.4.2.orig/Makefile.am	2014-06-02 23:08:01.000000000 -0700
++++ gc-7.4.2/Makefile.am	2015-03-08 09:35:19.683049843 -0700
 @@ -53,12 +53,24 @@
  libgc_la_SOURCES = extra/gc.c
  else
@@ -28,8 +28,8 @@ diff -Naur gc-7.4.2.orig/Makefile.am gc-7.4.2/Makefile.am
  # C Library: Architecture Dependent
  # ---------------------------------
 diff -Naur gc-7.4.2.orig/Makefile.direct gc-7.4.2/Makefile.direct
---- gc-7.4.2.orig/Makefile.direct	2014-06-03 08:08:01.000000000 +0200
-+++ gc-7.4.2/Makefile.direct	2015-01-07 09:26:11.360048141 +0100
+--- gc-7.4.2.orig/Makefile.direct	2014-06-02 23:08:01.000000000 -0700
++++ gc-7.4.2/Makefile.direct	2015-03-08 09:35:19.686383339 -0700
 @@ -36,7 +36,14 @@
  AO_SRC_DIR=$(srcdir)/libatomic_ops
  AO_INSTALL_DIR=$(srcdir)/libatomic_ops-install
@@ -236,8 +236,8 @@ diff -Naur gc-7.4.2.orig/Makefile.direct gc-7.4.2/Makefile.direct
  # If an optimized setjmp_test generates a segmentation fault,
  # odds are your compiler is broken.  Gctest may still work.
 diff -Naur gc-7.4.2.orig/Makefile.in gc-7.4.2/Makefile.in
---- gc-7.4.2.orig/Makefile.in	2014-06-03 22:09:25.000000000 +0200
-+++ gc-7.4.2/Makefile.in	2015-01-07 09:24:13.088047526 +0100
+--- gc-7.4.2.orig/Makefile.in	2014-06-03 13:09:25.000000000 -0700
++++ gc-7.4.2/Makefile.in	2015-03-08 09:35:19.686383339 -0700
 @@ -228,14 +228,20 @@
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libcord_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -324,8 +324,8 @@ diff -Naur gc-7.4.2.orig/Makefile.in gc-7.4.2/Makefile.in
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/blacklst.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checksums.Plo@am__quote@
 diff -Naur gc-7.4.2.orig/alloc.c gc-7.4.2/alloc.c
---- gc-7.4.2.orig/alloc.c	2014-06-03 08:08:01.000000000 +0200
-+++ gc-7.4.2/alloc.c	2015-01-07 09:20:11.120046268 +0100
+--- gc-7.4.2.orig/alloc.c	2014-06-02 23:08:01.000000000 -0700
++++ gc-7.4.2/alloc.c	2015-03-08 09:35:19.689716836 -0700
 @@ -540,6 +540,40 @@
      RESTORE_CANCEL(cancel_state);
  }
@@ -402,8 +402,26 @@ diff -Naur gc-7.4.2.orig/alloc.c gc-7.4.2/alloc.c
      GC_n_attempts = 0;
      GC_is_full_gc = FALSE;
 diff -Naur gc-7.4.2.orig/configure.ac gc-7.4.2/configure.ac
---- gc-7.4.2.orig/configure.ac	2014-06-03 08:08:01.000000000 +0200
-+++ gc-7.4.2/configure.ac	2015-01-07 09:20:11.120046268 +0100
+--- gc-7.4.2.orig/configure.ac	2014-06-02 23:08:01.000000000 -0700
++++ gc-7.4.2/configure.ac	2015-03-08 09:38:13.961070717 -0700
+@@ -145,7 +145,7 @@
+ AH_TEMPLATE([GC_OSF1_THREADS],      [Define to support Tru64 pthreads.])
+ AH_TEMPLATE([GC_SOLARIS_THREADS],   [Define to support Solaris pthreads.])
+ AH_TEMPLATE([GC_WIN32_THREADS],     [Define to support Win32 threads.])
+-AH_TEMPLATE([GC_WIN32_PTHREADS],    [Define to support win32-pthreads.])
++AH_TEMPLATE([GC_WIN32_PTHREADS],    [Define to support win32-pthreads or winpthreads.])
+ AH_TEMPLATE([GC_RTEMS_PTHREADS],    [Define to support rtems-pthreads.])
+ 
+ dnl System header feature requests.
+@@ -275,7 +275,7 @@
+         ;;
+      *-*-mingw*)
+         AC_DEFINE(GC_WIN32_PTHREADS)
+-        # Using win32-pthreads
++        # Using pthreads-win32 (or other non-Cygwin pthreads) library.
+         if test "${enable_parallel_mark}" != no; then
+           AC_DEFINE(PARALLEL_MARK)
+         fi
 @@ -650,10 +650,15 @@
  dnl ALL_INTERIOR_POINTERS and NO_EXECUTE_PERMISSION can be overridden
  dnl in the startup code.
@@ -424,3 +442,84 @@ diff -Naur gc-7.4.2.orig/configure.ac gc-7.4.2/configure.ac
  
  
  dnl Interface Selection
+diff -Naur gc-7.4.2.orig/doc/README.macros gc-7.4.2/doc/README.macros
+--- gc-7.4.2.orig/doc/README.macros	2014-06-02 23:08:01.000000000 -0700
++++ gc-7.4.2/doc/README.macros	2015-03-08 09:41:05.979797721 -0700
+@@ -149,7 +149,7 @@
+ GC_WIN32_THREADS        Enables support for Win32 threads.  That makes sense
+   for this Makefile only under Cygwin.
+ 
+-GC_WIN32_PTHREADS       Enables support for Ming32 pthreads.  This cannot be
++GC_WIN32_PTHREADS       Enables support for pthreads-win32 (or other non-Cygwin pthreads library for Windows).  This cannot be
+   enabled automatically by GC_THREADS, which would assume Win32 native
+   threads.
+ 
+diff -Naur gc-7.4.2.orig/doc/README.win32 gc-7.4.2/doc/README.win32
+--- gc-7.4.2.orig/doc/README.win32	2014-06-02 23:08:01.000000000 -0700
++++ gc-7.4.2/doc/README.win32	2015-03-08 09:43:09.529402622 -0700
+@@ -217,6 +217,6 @@
+ crash in the GC, since it makes it impossible for the collector to
+ correctly track threads.
+ 
+-To build the collector for Mingw32 Pthreads, use Makefile.direct and
++To build the collector for MingW pthreads-win32 (or other non-Cygwin pthreads implementation for Windows.), use Makefile.direct and
+ explicitly set GC_WIN32_PTHREADS.  Use -DPTW32_STATIC_LIB for the static
+ threads library.
+diff -Naur gc-7.4.2.orig/include/gc_config_macros.h gc-7.4.2/include/gc_config_macros.h
+--- gc-7.4.2.orig/include/gc_config_macros.h	2014-06-02 23:08:02.000000000 -0700
++++ gc-7.4.2/include/gc_config_macros.h	2015-03-08 09:44:23.323490532 -0700
+@@ -58,7 +58,7 @@
+ #endif
+ 
+ #if defined(GC_WIN32_PTHREADS) && !defined(GC_WIN32_THREADS)
+-  /* Using pthreads-w32 library. */
++  /* Using pthreads-win32 library (or other Win32 implementation). */
+ # define GC_WIN32_THREADS
+ #endif
+ 
+diff -Naur gc-7.4.2.orig/include/private/gc_locks.h gc-7.4.2/include/private/gc_locks.h
+--- gc-7.4.2.orig/include/private/gc_locks.h	2014-06-02 23:08:02.000000000 -0700
++++ gc-7.4.2/include/private/gc_locks.h	2015-03-08 09:46:24.061070216 -0700
+@@ -91,7 +91,14 @@
+ #      define NUMERIC_THREAD_ID(id) ((unsigned long)(id))
+ #      define THREAD_EQUAL(id1, id2) ((id1) == (id2))
+ #      define NUMERIC_THREAD_ID_UNIQUE
+-#    else
++#    elif defined(__WINPTHREADS_VERSION_MAJOR) /* winpthreads */
++#      define NUMERIC_THREAD_ID(id) ((unsigned long)(id))
++#      define THREAD_EQUAL(id1, id2) ((id1) == (id2))
++#      ifndef _WIN64
++         /* NUMERIC_THREAD_ID is 32-bit and not unique on Win64. */
++#        define NUMERIC_THREAD_ID_UNIQUE
++#      endif
++#    else /* pthreads-win32 */
+ #      define NUMERIC_THREAD_ID(id) ((unsigned long)(id.p))
+        /* Using documented internal details of win32-pthread library.   */
+        /* Faster than pthread_equal(). Should not change with           */
+diff -Naur gc-7.4.2.orig/win32_threads.c gc-7.4.2/win32_threads.c
+--- gc-7.4.2.orig/win32_threads.c	2014-06-02 23:08:02.000000000 -0700
++++ gc-7.4.2/win32_threads.c	2015-03-08 09:49:39.058944902 -0700
+@@ -616,8 +616,12 @@
+ #ifdef CYGWIN32
+ # define GC_PTHREAD_PTRVAL(pthread_id) pthread_id
+ #elif defined(GC_WIN32_PTHREADS) || defined(GC_PTHREADS_PARAMARK)
+-# define GC_PTHREAD_PTRVAL(pthread_id) pthread_id.p
+-#endif
++# include <pthread.h> /* to check for winpthreads */
++# if defined(__WINPTHREADS_VERSION_MAJOR)
++#   define GC_PTHREAD_PTRVAL(pthread_id) pthread_id
++# else
++#   define GC_PTHREAD_PTRVAL(pthread_id) pthread_id.p
++# endif
+ 
+ /* If a thread has been joined, but we have not yet             */
+ /* been notified, then there may be more than one thread        */
+@@ -2461,7 +2465,7 @@
+     result = pthread_join(pthread_id, retval);
+ 
+ #   ifdef GC_WIN32_PTHREADS
+-      /* win32_pthreads id are unique */
++      /* pthreads-win32 and winpthreads id are unique (not recycled)*/
+       t = GC_lookup_pthread(pthread_id);
+       if (NULL == t) ABORT("Thread not registered");
+ #   endif
