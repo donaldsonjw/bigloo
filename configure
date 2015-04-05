@@ -1565,9 +1565,9 @@ case $hostos in
     ldopt=-shared
     havedlopen=1
     dlopen=""
-    threadsupport=no;
-    #cflags="$cflags -mthreads -D_MINGW_VER"
-    cflags="$cflags -D_MINGW_VER"
+    threadsupport=;
+    cflags="$cflags -mthreads -D_MINGW_VER"
+    #cflags="$cflags -D_MINGW_VER"
     sharedsuffix="dll"
     sharedlibraryclosed=yes
     extralibs="$extralibs -Wl,--stack,8000000"
@@ -1765,17 +1765,6 @@ if [ "$threadsupport " = "no " ]; then
    pthreadlibs=no;
    gcthread=no;
    pthreadhastls=0
-elif [ $hostos = "mingw" ]; then
-  # MinGW pre-test
-  if [ "$threadsupport " = " " ]; then
-     pthreadlibs=no;
-     gcthread=no;
-     pthreadhastls=0
-  else
-     echo "*** ERROR: MinGW does not support threads."
-     echo" Disable multithreading and re-configure."
-     exit 1
-  fi
 else
   # Does the system support threads
   if [ "$gcthread " = " "  ]; then
