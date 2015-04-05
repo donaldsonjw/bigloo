@@ -3529,6 +3529,7 @@ BGL_RUNTIME_DECL obj_t bgl_make_class( obj_t, obj_t, BGL_LONG_T,
 				       obj_t, obj_t,
 				       obj_t, obj_t, obj_t, obj_t, obj_t,
 				       BGL_LONG_T, obj_t );
+
 BGL_RUNTIME_DECL obj_t bgl_getgroups();
    
 #if !HAVE_MMAP   

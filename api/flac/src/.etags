@@ -62,21 +62,21 @@ Llib/flac.scm,2088
 
 Llib/flac_alsadec.scm,754
 (module __flac_alsadec15,963
-(define (flac-alsa?32,1424
-(define (make-flac-alsa32,1424
-(define (fill-flac-alsa!32,1424
-   (static (class flac-alsa32,1424
-(define (flac-alsa-%alsamusic-set!33,1466
-(define (flac-alsa-%alsamusic33,1466
-(define (flac-alsa-%buffer-set!34,1499
-(define (flac-alsa-%buffer34,1499
-(define (flac-alsa-%decoder-set!35,1529
-(define (flac-alsa-%decoder35,1529
-(define (flac-alsa-%rate::int-set!36,1560
-(define (flac-alsa-%rate::int36,1560
-(define (flac-alsa-%rate-max::int-set!37,1593
-(define (flac-alsa-%rate-max::int37,1593
-(define (flac-alsa-%rate-min::int-set!38,1630
-(define (flac-alsa-%rate-min::int38,1630
-(define (flac-alsa-%last-percentage::int-set!39,1667
-(define (flac-alsa-%last-percentage::int39,1667
+(define (flac-alsa?37,1600
+(define (make-flac-alsa37,1600
+(define (fill-flac-alsa!37,1600
+   (static (class flac-alsa37,1600
+(define (flac-alsa-%alsamusic-set!38,1642
+(define (flac-alsa-%alsamusic38,1642
+(define (flac-alsa-%buffer-set!39,1675
+(define (flac-alsa-%buffer39,1675
+(define (flac-alsa-%decoder-set!40,1705
+(define (flac-alsa-%decoder40,1705
+(define (flac-alsa-%rate::int-set!41,1736
+(define (flac-alsa-%rate::int41,1736
+(define (flac-alsa-%rate-max::int-set!42,1769
+(define (flac-alsa-%rate-max::int42,1769
+(define (flac-alsa-%rate-min::int-set!43,1806
+(define (flac-alsa-%rate-min::int43,1806
+(define (flac-alsa-%last-percentage::int-set!44,1843
+(define (flac-alsa-%last-percentage::int44,1843

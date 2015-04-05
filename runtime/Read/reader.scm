@@ -3,7 +3,7 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Tue Dec 27 11:16:00 1994                          */
-;*    Last change :  Mon Sep  8 15:18:35 2014 (serrano)                */
+;*    Last change :  Mon Mar 30 15:08:43 2015 (serrano)                */
 ;*    -------------------------------------------------------------    */
 ;*    Bigloo's reader                                                  */
 ;*=====================================================================*/
@@ -195,11 +195,14 @@
    (let loop ((obj obj))
       (cond
 	 ((procedure? obj)
-	  (let* ((no   (obj))
+	  (let* ((no (obj))
 		 (cell (assq no cycles)))
 	     (if (not (pair? cell))
 		 (read-error "no target for graph reference" no port)
-		 (cdr cell))))
+                 (let ((val (cdr cell)))
+		    (if (eq? val obj)
+			(read-error "Illegal cyclic reference" no port)
+			val)))))
 	 ((pair? obj)
 	  (set-car! obj (loop (car obj)))
 	  (set-cdr! obj (loop (cdr obj)))
@@ -455,6 +458,8 @@
 		     (field       (: idsans (+ (: "." idsans))))
 		     
 		     posp cycles par-open bra-open par-poses bra-poses)
+
+      (define resolve #t)
       
       ;; newlines
       ((+ #\Newline)
@@ -720,19 +725,30 @@
       ((: #\# (+ digit) "=")
        (let* ((no (string->integer (the-substring 1 (-fx (the-length) 1))))
 	      (pos (input-port-position (the-port)))
-	      (the-object (ignore)))
-	  (if (eof-object? the-object)
-	      (read-error/loc pos "Illegal cyclic reference" no (the-port)))
-	  (set! cycles (cons (cons no the-object) cycles))
-	  (unreference! the-object (the-port) cycles)))
+	      (rsvp resolve))
+	  (set! resolve #f)
+	  (let ((the-object (ignore)))
+	     (cond
+		((eof-object? the-object)
+		 (read-error/loc pos "Illegal cyclic reference" no (the-port)))
+		((assq no cycles)
+                 (read-error "Illegal duplicate declaration" no (the-port))))
+	     (set! cycles (cons (cons no the-object) cycles))
+	     (set! resolve rsvp)
+	     (if rsvp
+		 (unreference! the-object (the-port) cycles)
+		 the-object))))
       
       ;; cyclic target reference
       ((: #\# (+ digit) "#")
        (let* ((no (string->integer (the-substring 1 (-fx (the-length) 1))))
 	      (cell (assq no cycles)))
-	  (if (not (pair? cell))
-	      (lambda () no)
-	      (cdr cell))))
+	  (cond ((not resolve)
+		 (lambda () no))
+		((pair? cell)
+		 (cdr cell))
+		(else
+		 (read-error "no target for graph reference" no (the-port))))))
       
       ;; special tokens
       ("#"

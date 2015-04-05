@@ -240,7 +240,7 @@ Llib/m3u.scm,268
 (define *m3u-song-length-grammar*103,4349
 (define *m3u-song-name-grammar*116,4843
 
-Llib/music.scm,3304
+Llib/music.scm,3392
 (module __multimedia-music15,963
 (define (music?19,1034
 (define (make-music19,1034
@@ -294,33 +294,35 @@ Llib/music.scm,3304
 (define (musicstatus-err::obj45,2008
 (define (musicstatus-buffering::int-set!46,2039
 (define (musicstatus-buffering::int46,2039
-(define-generic (music-close87,3463
-(define-generic (music-closed?94,3710
-(define-generic (music-reset!95,3752
-(define-generic (music-playlist-get97,3794
-(define-generic (music-playlist-add!99,3852
-(define-generic (music-playlist-delete!103,4004
-(define-generic (music-playlist-clear!104,4062
-(define-generic (music-status106,4113
-(define-generic (music-play110,4218
-(define-generic (music-seek111,4264
-(define-generic (music-stop112,4317
-(define-generic (music-pause113,4356
-(define-generic (music-next115,4397
-(define-generic (music-prev125,4684
-(define-generic (music-crossfade135,4989
-(define-generic (music-random-set!136,5042
-(define-generic (music-repeat-set!137,5099
-(define-generic (music-reset-error!138,5156
-(define-generic (music-volume-get140,5217
-(define-generic (music-volume-set!141,5267
-(define-generic (music-init146,5543
-(define-generic (music-song154,5913
-(define-generic (music-songpos162,6271
-(define-generic (music-meta170,6638
-(define-generic (music-can-play-type?176,6917
-(define (music-charset-convert184,7361
-(define (%multimedia-init200,7943
+(define-generic (music-close90,3557
+(define-generic (music-closed?97,3804
+(define-generic (music-reset!98,3846
+(define-generic (music-state-set!103,4110
+(define-generic (music-error-set!112,4536
+(define-generic (music-playlist-get122,4970
+(define-generic (music-playlist-add!124,5028
+(define-generic (music-playlist-delete!128,5180
+(define-generic (music-playlist-clear!129,5238
+(define-generic (music-status131,5289
+(define-generic (music-play135,5394
+(define-generic (music-seek136,5440
+(define-generic (music-stop137,5493
+(define-generic (music-pause138,5532
+(define-generic (music-next140,5573
+(define-generic (music-prev150,5860
+(define-generic (music-crossfade160,6165
+(define-generic (music-random-set!161,6218
+(define-generic (music-repeat-set!162,6275
+(define-generic (music-reset-error!163,6332
+(define-generic (music-volume-get168,6615
+(define-generic (music-volume-set!170,6666
+(define-generic (music-init179,7078
+(define-generic (music-song187,7448
+(define-generic (music-songpos195,7806
+(define-generic (music-meta203,8173
+(define-generic (music-can-play-type?209,8452
+(define (music-charset-convert217,8896
+(define (%multimedia-init233,9478
 
 Llib/mpd.scm,3989
 (module __multimedia-mpd15,963
