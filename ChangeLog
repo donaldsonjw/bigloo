@@ -1,3 +1,43 @@
+2015-04-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor flac bug fix (bootstrap)
+	<4.2a> [ae7336c49e9d]
+
+2015-03-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	flac bug fix (bootstrap)
+	<4.2a> [e09296ac8ec9]
+
+	Emacs bug fixes
+	<4.2a> [22476d505a7a]
+
+	Cyclic read, again (bootstrap)
+	<4.2a> [759cf5080b3e]
+
+	Cyclic read (bootstrap)
+	<4.2a> [dfd9c0c697f9]
+
+2015-03-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Music fixes (bootstrap)
+	<4.2a> [27a8ac5adc59]
+
+2015-03-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Circular write (bootstrap)
+	<4.2a> [2a1f721ad2d0]
+
+	Fix circular reading (bootstrap)
+	<4.2a> [f04aa00a0c84]
+
+2015-03-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa/flac improvements (bootstrap)
+	<4.2a> [6695083ce23f]
+
+2015-03-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa and Flac fixes (bootstrap)
+	<4.2a> [c73bcee091a1]
+
+2015-03-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Openssl fix (bootstrap)
+	<4.2a> [388212134c1c]
+
 2015-03-05  Manuel Serrano <Manuel.Serrano@inria.fr>
 	Ssl extensions
 	<4.2a> [3c320eea66f0]

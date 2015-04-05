@@ -3,8 +3,8 @@
 /*    -------------------------------------------------------------    */
 /*    Author      :  Manuel Serrano                                    */
 /*    Creation    :  Thu Jun 23 18:07:00 2011                          */
-/*    Last change :  Fri Feb  1 07:26:19 2013 (serrano)                */
-/*    Copyright   :  2011-13 Manuel Serrano                            */
+/*    Last change :  Sat Mar 28 07:29:48 2015 (serrano)                */
+/*    Copyright   :  2011-15 Manuel Serrano                            */
 /*    -------------------------------------------------------------    */
 /*    Bigloo ALSA specific functions                                   */
 /*=====================================================================*/
@@ -59,6 +59,20 @@
 /*---------------------------------------------------------------------*/
 int
 bgl_snd_pcm_open( obj_t o, char *name, snd_pcm_stream_t stream, int mode ) {
+   return snd_pcm_open( &(OBJ_TO_SND_PCM( o )), name, stream, mode );
+}
+
+/*---------------------------------------------------------------------*/
+/*    int                                                              */
+/*    bgl_snd_pcm_reopen ...                                           */
+/*---------------------------------------------------------------------*/
+int
+bgl_snd_pcm_reopen( obj_t o, char *name, snd_pcm_stream_t stream, int mode ) {
+   if( OBJ_TO_SND_PCM( o ) ) {
+      int res = snd_pcm_close( OBJ_TO_SND_PCM( o ) );
+
+      if( res ) return res;
+   }
    return snd_pcm_open( &(OBJ_TO_SND_PCM( o )), name, stream, mode );
 }
 
@@ -273,6 +287,51 @@ bgl_snd_pcm_hw_params_get_period_size( snd_pcm_hw_params_t *hw ) {
    int err = snd_pcm_hw_params_get_period_size( hw, &uframes, NULL );
 
    return err < 0 ? err : uframes;
+}
+
+/*---------------------------------------------------------------------*/
+/*    int                                                              */
+/*    bgl_snd_pcm_hw_params_get_rates ...                              */
+/*---------------------------------------------------------------------*/
+int
+bgl_snd_pcm_hw_params_get_rates( snd_pcm_t *pcm ) {
+   snd_pcm_hw_params_t *hw;
+   int err;
+   int rate_num, rate_den;
+
+   snd_pcm_hw_params_alloca( &hw );
+
+   err = snd_pcm_hw_params_current( pcm, hw );
+/*    snd_pcm_hw_params_get_rate_numden( hw, &rate_num, &rate_den );   */
+/*    snd_pcm_hw_params_get_sbits( hw );                               */
+/*    fprintf( stderr, "rate_num=%d rate_den=%d\n", rate_num, rate_den ); */
+/*    fprintf( stderr, "sbit=%d\n", snd_pcm_hw_params_get_sbits( hw ) ); */
+
+   if( err < 0 ) {
+      return err;
+   } else {
+      int cur, min, max;
+      err = snd_pcm_hw_params_get_rate( hw, &cur, 0 );
+
+      if( err ) return err;
+      err = snd_pcm_hw_params_get_rate_min( hw, &min, 0 );
+
+      if( err ) return err;
+      
+      err = snd_pcm_hw_params_get_rate_max( hw, &max, 0 );
+   
+      if( err ) {
+	 return err;
+      } else {
+	 obj_t env = BGL_CURRENT_DYNAMIC_ENV();
+   
+	 BGL_ENV_MVALUES_NUMBER_SET( env, 3 );
+	 BGL_ENV_MVALUES_VAL_SET( env, 1, BINT( min ) );
+	 BGL_ENV_MVALUES_VAL_SET( env, 2, BINT( max ) );
+
+	 return cur;
+      }
+   }
 }
 
 /*---------------------------------------------------------------------*/

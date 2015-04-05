@@ -3,7 +3,7 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Sun Sep 18 19:18:08 2011                          */
-;*    Last change :  Sat Jan 31 18:26:02 2015 (serrano)                */
+;*    Last change :  Mon Mar 30 20:35:09 2015 (serrano)                */
 ;*    Copyright   :  2011-15 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    FLAC Alsa decoder                                                */
@@ -13,6 +13,11 @@
 ;*    The module                                                       */
 ;*---------------------------------------------------------------------*/
 (module __flac_alsadec
+
+   (extern (macro $dump::int (::string ::string ::int ::int)  "bgl_flac_dump"))
+   (extern (macro $memcpy::void (::string ::string ::long) "memcpy"))
+
+   (library multimedia)
    
    (cond-expand
       ((library alsa)
@@ -189,18 +194,9 @@
 		  (flac-decoder-decode %flac)
 		  (with-access::alsabuffer %buffer (%eof)
 		     (alsa-snd-pcm-cleanup pcm)
-		     (onstate am (if %eof 'ended 'stop))
+		     (music-state-set! am (if %eof 'ended 'stop))
 		     (when (>=fx (flac-debug) 1)
 			(debug-stop! url)))))))))
-
-;*---------------------------------------------------------------------*/
-;*    onstate ...                                                      */
-;*---------------------------------------------------------------------*/
-(define (onstate am st)
-   (with-access::alsamusic am (onstate %status)
-      (with-access::musicstatus %status (state)
-         (set! state st)
-         (onstate am %status))))
 
 ;*---------------------------------------------------------------------*/
 ;*    flac-decoder-metadata ::flac-alsa ...                            */
@@ -213,6 +209,7 @@
 			    ((16) 's16)
 			    ((24) 's24-3le)
 			    ((32) 's32))))
+	    (alsa-snd-pcm-reopen pcm)
 	    (alsa-snd-pcm-hw-set-params! pcm
 	       :rate-resample 1
 	       :access 'rw-interleaved
@@ -246,27 +243,27 @@
    (with-access::flac-alsa o (%flacbuf %buffer (am %alsamusic) %decoder
 				%rate %rate-max %rate-min %last-percentage)
       (with-access::alsadecoder %decoder (%!dabort %!dpause %dcondv %dmutex)
-	 (with-access::alsabuffer %buffer (%bmutex %bcondv 
-					     %inbuf %inbufp %inlen
+	 (with-access::alsabuffer %buffer (%bmutex %bcondv
+					     %inbufp %inlen
 					     %tail %head %eof
 					     %empty
 					     url)
-	    
+
 	    (define inlen %inlen)
-	    
+
 	    (define flacbuf::string (custom-identifier %flacbuf))
-	    
+
 	    (define (buffer-percentage-filled)
 	       (llong->fixnum
 		  (/llong (*llong #l100
 			     (fixnum->llong (alsabuffer-available %buffer)))
 		     (fixnum->llong inlen))))
-	    
+
 	    (define (buffer-filled?)
 	       ;; filled when > 25%
 	       (and (not %empty)
 		    (>fx (*fx 4 (alsabuffer-available %buffer)) inlen)))
-	    
+
 	    (define (broadcast-not-full p)
 	       (when (>=fx (flac-debug) 2)
 		  (debug "--> FLAC_DECODER, broadcast not-full "
@@ -275,7 +272,7 @@
 		  (condition-variable-broadcast! %bcondv))
 	       (when (>=fx (flac-debug) 2)
 		  (debug (current-microseconds) "\n")))
-	    
+
 	    (define (inc-tail! size)
 	       ;; increment the tail
 	       (let ((ntail (+fx %tail size)))
@@ -307,7 +304,7 @@
 		       (i 0))
 	       (cond
 		  (%!dpause
-		   (onstate am 'pause)
+		   (music-state-set! am 'pause)
 		   ;;; the decoder is asked to pause
 		   (with-access::alsamusic am (%status)
 		      (with-access::musicstatus %status (songpos)
@@ -318,7 +315,7 @@
 			 (when %!dpause
 			    (condition-variable-wait! %dcondv %dmutex)
 			    (liip))))
-		   (onstate am 'play)
+		   (music-state-set! am 'play)
 		   (loop size i))
 		  (%!dabort
 		   ;;; the decoder is asked to abort
@@ -338,7 +335,7 @@
 			     (with-access::musicstatus %status (buffering)
 				(set! buffering
 				   (buffer-percentage-filled))))
-			  (onstate am 'buffering)
+			  (music-state-set! am 'buffering)
 			  (synchronize %bmutex
 			     ;; wait until the buffer is filled
 			     (unless (or (not %empty)
@@ -348,7 +345,7 @@
 				(condition-variable-wait! %bcondv %bmutex)))
 			  (when (>=fx (flac-debug) 1)
 			     (debug (current-microseconds) "\n"))
-			  (onstate am 'play)
+			  (music-state-set! am 'play)
 			  (loop size i))))
 		  (else
 		   (let ((s (minfx size
