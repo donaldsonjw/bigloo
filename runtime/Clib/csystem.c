@@ -110,15 +110,6 @@ bgl_signal( int sig, obj_t obj ) {
 	 sigact.sa_handler = (void (*)( int ))signal_handler;
 	 sigact.sa_flags = SA_RESTART;
 	 
-<<<<<<< HEAD
-#if HAVE_SIGPROCMASK
-	 sigset_t mask;
-	 
-	 sigemptyset( &mask );
-	 sigaddset( &mask, sig );
-	 bgl_sigprocmask( SIG_UNBLOCK, &mask, 0 );
-#endif	 
-=======
 /* #if HAVE_SIGPROCMASK                                                */
 /* 	 sigset_t mask;                                                */
 /*                                                                     */
@@ -126,7 +117,6 @@ bgl_signal( int sig, obj_t obj ) {
 /* 	 sigaddset( &mask, sig );                                      */
 /* 	 bgl_sigprocmask( SIG_UNBLOCK, &mask, 0 );                     */
 /* #endif                                                              */
->>>>>>> LLP64
 	 
 	 if( sig == SIGSEGV ) {
 	    /* create an alternate stack for SEGV */
@@ -237,11 +227,7 @@ bgl_last_modification_time( char *file ) {
 /*    BGL_LONG_T                                                       */
 /*    bgl_last_access_time ...                                         */
 /*---------------------------------------------------------------------*/
-<<<<<<< HEAD
-BGL_LONG_T
-=======
 BGL_RUNTIME_DEF BGL_LONG_T
->>>>>>> LLP64
 bgl_last_access_time( char *file ) {
    struct stat _stati;
 
@@ -255,13 +241,8 @@ bgl_last_access_time( char *file ) {
 /*    int                                                              */
 /*    bgl_utime ...                                                    */
 /*---------------------------------------------------------------------*/
-<<<<<<< HEAD
-int
-bgl_utime( char *file, long atime, long mtime ) {
-=======
 BGL_RUNTIME_DEF int
 bgl_utime( char *file, BGL_LONG_T atime, BGL_LONG_T mtime ) {
->>>>>>> LLP64
    struct utimbuf buf = { .actime = (time_t)atime, .modtime= (time_t)mtime };
    int r = utime( file, &buf );
    
@@ -636,50 +617,6 @@ BGL_RUNTIME_DEF int getppid() {
 }
 #endif 
 
-
-/*---------------------------------------------------------------------*/
-/*    BGL_RUNTIME_DEF obj_t                                            */
-/*    bgl_getgroups ...                                                */
-/*---------------------------------------------------------------------*/
-BGL_RUNTIME_DEF obj_t
-bgl_getgroups() {
-#if BGL_HAVE_GETGROUPS
-   int ngroups = getgroups( 0, 0L );
-
-  if( ngroups == -1 ) {
-     C_SYSTEM_FAILURE( BGL_IO_ERROR, "getgroups", strerror( errno ), BFALSE );
-  } else {
-     gid_t* groups = alloca( sizeof( gid_t ) * ngroups );
-
-     ngroups = getgroups( ngroups, groups );
-
-     if( ngroups == -1 ) {
-	C_SYSTEM_FAILURE( BGL_IO_ERROR, "getgroups", strerror( errno ), BFALSE );
-     } else {
-	obj_t res = create_vector( ngroups + 1 );
-	gid_t egid = getegid();
-	int seen_egid = 0;
-	int i;
-
-	for( i = 0; i < ngroups; i++ ) {
-	   VECTOR_SET( res, i, BINT( groups[ i ] ) );
-	   if( groups[ i ] == egid ) seen_egid = 1;
-	}
-	
-	if( seen_egid ) {
-	   VECTOR( res ).length--;
-	} else {
-	   VECTOR_SET( res, i, BINT( egid ) );
-	}
-
-	return res;
-     }
-  }
-#else
-      return create_vector( 0 );
-#endif
-}
-   
 /*---------------------------------------------------------------------*/
 /*    BGL_RUNTIME_DEF obj_t                                            */
 /*    bgl_getgroups ...                                                */
