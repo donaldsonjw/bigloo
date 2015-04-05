@@ -25,6 +25,10 @@
 ;*---------------------------------------------------------------------*/
 (cond-expand
    (bigloo-compile
+    (let* ((fname (find-file/path "pthread.init" *lib-dir*)))	
+       (loadq fname))
+    (set! *additional-bigloo-libraries* 
+	  (cons 'bigloopthread *additional-bigloo-libraries*))
     ;; setup
     (set! *bigloo-libraries-c-setup*
 	  (cons "srfi18_setup" *bigloo-libraries-c-setup*))))
