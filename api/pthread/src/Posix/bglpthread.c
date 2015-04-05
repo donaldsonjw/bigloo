@@ -156,7 +156,6 @@ void *
 bglpth_thread_run( void *arg ) {
    bglpthread_t self = (bglpthread_t)arg;
    obj_t thunk = self->thunk;
-   sigset_t set;
    size_t stacksize;
 
    bglpth_thread_init( self, (char *)&arg );

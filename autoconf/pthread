@@ -41,7 +41,7 @@ case $HOSTOS in
 
   mingw)
     # THIS IS the RedHat pthread implementation
-    pthreadlibs="-lpthreadGC2";;
+    pthreadlibs="-lwinpthread";;
 
   android)
     pthreadlibs="";;
