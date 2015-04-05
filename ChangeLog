@@ -1,0 +1,4207 @@
+2015-04-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor flac bug fix (bootstrap)
+	<4.2a> [ae7336c49e9d]
+
+2015-03-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	flac bug fix (bootstrap)
+	<4.2a> [e09296ac8ec9]
+
+	Emacs bug fixes
+	<4.2a> [22476d505a7a]
+
+	Cyclic read, again (bootstrap)
+	<4.2a> [759cf5080b3e]
+
+	Cyclic read (bootstrap)
+	<4.2a> [dfd9c0c697f9]
+
+2015-03-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Music fixes (bootstrap)
+	<4.2a> [27a8ac5adc59]
+
+2015-03-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Circular write (bootstrap)
+	<4.2a> [2a1f721ad2d0]
+
+	Fix circular reading (bootstrap)
+	<4.2a> [f04aa00a0c84]
+
+2015-03-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa/flac improvements (bootstrap)
+	<4.2a> [6695083ce23f]
+
+2015-03-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa and Flac fixes (bootstrap)
+	<4.2a> [c73bcee091a1]
+
+2015-03-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Openssl fix (bootstrap)
+	<4.2a> [388212134c1c]
+
+2015-03-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Ssl extensions
+	<4.2a> [3c320eea66f0]
+
+	Libuv fix (bootstrap)
+	<4.2a> [45aaf9dc62eb]
+
+2015-02-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	gcc-5.0.0 accomodation (bootstrap)
+	<4.2a> [f9ea7b29c5ce]
+
+	libuv extensions (bootstrap)
+	<4.2a> [448e9f46ffe2]
+
+	new libuv facilities
+	<4.2a> [b95d13e6804f]
+
+2015-02-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	libuv (bootstrap)
+	<4.2a> [b5d991739671]
+
+2015-02-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor api extensions (bootstrap)
+	<4.2a> [bba8846380a9]
+
+2015-01-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	shutdown changes (bootstrap)
+	<4.2a> [fe1a108c8fac]
+
+2015-01-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New socket-shutdown api (bootstrap)
+	<4.2a> [8d2bb1531a8c]
+
+	intext improvement (bootstrap)
+	<4.2a> [fee84fc1779e]
+
+2015-01-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	http POST improvement (bootstrap)
+	<4.2a> [c88452953618]
+
+2015-01-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Boehm GC 7.4.2 (bootstrap)
+	<4.2a> [da8b78ffea1e]
+
+	Boehm GC 7.4.2 (bootstrap)
+	<4.2a> [069b5641a11f]
+
+2015-01-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Enlarge thread stack size on MacOSX (bootstrap)
+	<4.2a> [23c7ab6c26c8]
+
+	CGI speed improvement (bootstrap)
+	<4.2a> [450fcf5b062f]
+
+2015-01-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Significant CGI parsing improvement (bootstrap)
+	<4.2a> [03a22d7acd53]
+
+2015-01-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	libuv enhancements and new features (bootstrap)
+	<4.2a> [a5de44205985]
+
+2014-12-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Unicode fixes (bootstrap)
+	<4.2a> [03f377fdeb96]
+
+2014-12-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Intext changes (bootstrap)
+	<4.2a> [b94ef9f74223]
+
+	Intext changes (bootstrap)
+	<4.2a> [fc5514991c1f]
+
+2014-11-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Serialization fix (bootstrap)
+	<4.2a> [e61ef72d8c9d]
+
+2014-11-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix C sockets (bootstrap)
+	<4.2a> [fffcf34e2463]
+
+	Unicode improvements (bootstrap)
+	<4.2a> [1beca253cb88]
+
+2014-11-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	socket fix (bootstrap)
+	<4.2a> [afa61f2eda25]
+
+	utf8-codepoint-length (bootstrap)
+	<4.2a> [4d9344c58abf]
+
+2014-11-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Yet another eval progress (bootstrap)
+	<4.2a> [02d1d8835d11]
+
+2014-11-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Evaluate2 unwind-protect removed (bootstrap)
+	<4.2a> [7871311484bf]
+
+2014-11-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Mail API fixes (bootstrap)
+	<4.2a> [fbc776386ba1]
+
+2014-11-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New string tagging policy for UTF8 (bootstrap)
+	<4.2a> [6fada902f9d9]
+
+2014-11-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Intext fix, debian fix
+	<4.2a> [df1d570c9abe]
+
+2014-10-31  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix socket error handling (bootstrap)
+	<4.2a> [75f827c421cb]
+
+2014-10-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	rpath improvement (bootstrap)
+	<4.2a> [05ad1c926ae7]
+
+2014-10-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Libuv progress (bootstrap)
+	<4.2a> [0124d6f634e5]
+
+2014-10-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New libuv features (bootstrap)
+	<4.2a> [27ae24f3a5cb]
+
+2014-10-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Buffer fix (bootstrap)
+	<4.2a> [b73d63b5067d]
+
+2014-10-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Configure fix (bootstrap)
+	<4.2a> [e7275d23db65]
+
+2014-10-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	RFC2822 dates (bootstrap)
+	<4.2a> [a0a50b594b62]
+
+2014-10-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix vector-copy (bootstrap)
+	<4.2a> [2e8011a551d0]
+
+2014-10-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Now what, date fix (bootstrap)
+	<4.2a> [df47aa11fdbc]
+
+	Minor date fix (again) (bootstrap)
+	<4.2a> [05d36116a59c]
+
+2014-10-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor JVM bug fix (bootstrap)
+	<4.2a> [8d23920180d4]
+
+	Minor JVM bug fix (bootstrap)
+	<4.2a> [2b0010e2f7da]
+
+2014-10-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Heap size check (bootstrap)
+	<4.2a> [267269c7784a]
+
+2014-10-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	libuv fixes (bootstrap)
+	<4.2a> [3cc7cb6832ca]
+
+	Date, again (bootstrap)
+	<4.2a> [0d1707d726fa]
+
+2014-09-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	VECTOR-FILL extension (bootstrap)
+	<4.2a> [eef38c1bee5d]
+
+2014-09-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix symbol writing (bootstrap)
+	<4.2a> [e3240981200f]
+
+2014-09-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Base64 and Unicode enhancements (bootstrap)
+	<4.2a> [31bac13b059c]
+
+2014-09-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	bglmem fix (bootstrap)
+	<4.2a> [84468bc039d4]
+
+	Nano seconds support (bootstrap)
+	<4.2a> [02742311fa1b]
+
+	New debug traces (bootstrap)
+	<4.2a> [7c1cba949844]
+
+2014-09-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	With-trace enhancement (bootstrap)
+	<4.2a> [e38ea2ba1255]
+
+	With-trace enhancement (bootstrap)
+	<4.2a> [9dfdc1e08b5c]
+
+	With-trace enhancement (bootstrap)
+	<4.2a> [71e1a797de91]
+
+2014-09-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Complete RGC migration (bootstrap)
+	<4.2a> [b62bce9afe95]
+
+2014-09-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix input-string-port seek (bootstrap)
+	<4.2a> [cdeffc5884b2]
+
+2014-09-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Rgc transition completed (bootstrap)
+	<4.2a> [3401950796f7]
+
+	Rgc transition (again) (bootstrap)
+	<4.2a> [35fefb3cb302]
+
+2014-09-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Rgc transition (bootstrap)
+	<4.2a> [b19bc63d8759]
+
+2014-09-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Rgc transition (bootstrap)
+	<4.2a> [a91588900d2d]
+
+	Rgc transition (bootstrap)
+	<4.2a> [09bb36022cb4]
+
+2014-09-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	input-string-port extensions (bootstrap)
+	<4.2a> [aa28d06c4567]
+
+	open-input-string extensions (documented) (bootstrap)
+	<4.2a> [a9b14212cfc4]
+
+2014-09-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Libuv fix (bootstrap)
+	<4.2a> [a31385996c5f]
+
+	Fix MacOS shared libs linking
+	<4.2a> [a42810fd9cd1]
+
+2014-09-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Macos X link
+	<4.2a> [dcd1c6c49111]
+
+	Fix socket hostaddr (bootstrap)
+	<4.2a> [7986495f5a33]
+
+2014-08-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Extend getenv API (bootstrap)
+	<4.2a> [3e731a60fa81]
+
+2014-08-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New SSL features (bootstrap)
+	<4.2a> [89233695fa55]
+
+2014-08-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	http header parsing (bootstrap)
+	<4.2a> [38fae916ef80]
+
+	downcase/upcase-subsymbol (bootstrap)
+	<4.2a> [31a6d81a1e51]
+
+2014-08-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	libuv additions (bootstrap)
+	<4.2a> [31d21969b2c8]
+
+2014-08-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Libuv (bootstrap)
+	<4.2a> [767408b30f65]
+
+2014-08-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Libuv additions
+	<4.2a> [734b0f26dc36]
+
+	Libuv additions
+	<4.2a> [32e0b18a3d7e]
+
+2014-07-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix clang -L option
+	<4.2a> [1f978558bcd4]
+
+	cc-options and ld-post-options types (bootstrap)
+	<4.2a> [b0230041ef34]
+
+	Revamp shared library building (bootstrap)
+	<4.2a> [bd0ffb1a3b07]
+
+2014-07-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Libuv fs (bootstrap)
+	<4.2a> [72943cb2fcd8]
+
+2014-07-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	libuv features (bootstrap)
+	<4.2a> [17afd94ee2d7]
+
+	New UV features (bootstrap)
+	<4.2a> [e8a4d485c843]
+
+2014-07-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Libuv enhancement
+	<4.2a> [de50e3b3f91e]
+
+	Fix shared link path
+	<4.2a> [b136ba9f95f6]
+
+	libuv fix
+	<4.2a> [96812de6fd0f]
+
+	libuv installation
+	<4.2a> [97941d14623a]
+
+2014-07-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	libuv link path (bootstrap)
+	<4.2a> [aaa48baf292a]
+
+	Fix mp3 length computing (bootstrap)
+	<4.2a> [1e1996ead86b]
+
+	Java backward compatibility fix (bootstrap)
+	<4.2a> [3c22240daca0]
+
+2014-07-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Custom LIBUV (bootstrap)
+	<4.2a> [a5eb0b76ca49]
+
+2014-07-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix date (bootstrap)
+	<4.2a> [12cab2d9e2e3]
+
+2014-07-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Yet another time bug fix (bootstrap)
+	<4.2a> [cb90e9e4a792]
+
+2014-07-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve error notifications (bootstrap)
+	<4.2a> [98f15ab22d3b]
+
+2014-07-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix letrec* optimization (bootstrap)
+	<4.2a> [819af2aee7ff]
+
+2014-06-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Extend untar API (bootstrap)
+	<4.2a> [44f0f870db60]
+
+2014-06-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	SRFI4 f32/u8 and f64/u8 (bootstrap)
+	<4.2a> [f5199c520be7]
+
+2014-06-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	SRFI4 vector copy (bootstrap)
+	<4.2a> [8d46d8ec208d]
+
+2014-06-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	SRFI4 revamping (bootstrap)
+	<4.2a> [cd3d09909aea]
+
+2014-06-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Complete stdint JVM literals support (bootstrap)
+	<4.2a> [cf5c09a36253]
+
+2014-06-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Extend number polymorphism to stdint (bootstrap)
+	<4.2a> [8212a8a6695a]
+
+2014-06-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix CSS parser (bootstrap)
+	<4.2a> [d14280628349]
+
+2014-05-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	file truncate (bootstrap)
+	<4.2a> [b69ad82c2d82]
+
+2014-05-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Store cc-opt in additional heaps (bootstrap)
+	<4.2a> [342c087c2d95]
+
+	Adding libuv
+	<4.2a> [8e8d8dde285e]
+
+2014-05-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Libuv binding (bootstrap)
+	<4.2a> [edf1061234ba]
+
+2014-04-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New deserializer option (bootstrap)
+	<4.2a> [9c55f297e48c]
+
+2014-04-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve timezone with gmtoff (bootstrap)
+	<4.2a> [fc9c55e1971b]
+
+2014-04-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix dst handling (bootstrap)
+	<4.2a> [1cd4936b56cc]
+
+2014-04-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix bint srfi feature (bootstrap)
+	<4.2a> [5dc40bdb252c]
+
+2014-03-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	stdint bit ops (bootstrap)
+	<4.2a> [a6b94f2847fa]
+
+2014-03-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Literal stdint (bootstrap)
+	<4.2a> [2087f19b42e5]
+
+	Read stdint (bootstrap)
+	<4.2a> [a92f73f2901d]
+
+2014-03-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	stdint (bootstrap)
+	<4.2a> [2dc9ac615809]
+
+2014-03-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Stdint for the JVM (bootstrap)
+	<4.2a> [3f38ebae2ef8]
+
+2014-03-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add elongXXX srfi property (bootstrap)
+	<4.2a> [4f5e5d3e3233]
+
+	32bit stdint + sint/int (bootstrap)
+	<4.2a> [2f3fd66e2fed]
+
+	Starting renaming sint into int
+	<4.2a> [50856e487a84]
+
+2014-03-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 4.2a for changeset fb869ad7a067
+	<4.2a> [a2d77b3336e4]
+
+	Create branch 4.2a
+	<4.2a> [ea6a66775695]
+
+	Prepare stdint (bootstrap)
+	<4.1a> [384fed31b554]
+
+2014-02-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add rpath option (bootstrap)
+	<4.1a> [43ccbbe4ff44]
+
+2014-02-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	rpath also used to build libs
+	<4.1a> [7aad6b441f87]
+
+2014-02-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Use gcc rpath option when available (bootstrap)
+	<4.1a> [266fb6557a2e]
+
+2014-02-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Unicode fix (bootstrap)
+	<4.1a> [511d63c060bb]
+
+	4.1a final (bootstrap)
+	<4.1a> [a71fc60cd7b1]
+
+	Date MinGW patch (bootstrap)
+	<4.1a> [f34d0f3c5a80]
+
+2014-02-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Start incorporating MinGW patches (bootstrap)
+	<4.1a> [aaba699a2624]
+
+2014-02-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Data flow fix, letrecstart improvement (bootstrap)
+	<4.1a> [d1316a3e39a3]
+
+2014-02-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix GC configuration (bootstrap)
+	<4.1a> [91b1737f8281]
+
+2014-02-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix inner define new compilation (bootstrap)
+	<4.1a> [820ed8d1206f]
+
+2014-02-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	extend utf8->ucs2 conversion (bootstrap)
+	<4.1a> [ea5cf7e87861]
+
+2014-02-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix pcre configuration
+	<4.1a> [d5fac0b4775c]
+
+	Improve static type check resolution (bootstrap)
+	<4.1a> [9f98f031fbd0]
+
+2014-02-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Patch csv library (bootstrap)
+	<4.1a> [6934597ab8c9]
+
+2014-02-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix minor error on symbols (bootstrap)
+	<4.1a> [afc9307a7ad6]
+
+2014-01-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix pregexp without pcre (bootstrap)
+	<4.1a> [69d3018fd36b]
+
+	Fix pregexp without pcre (bootstrap)
+	<4.1a> [88e2c1b16a5e]
+
+2014-01-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix generic+opt/key compilation (bootstrap)
+	<4.1a> [f7491dc3cbdb]
+
+2014-01-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	4.1a goes beta (bootstrap)
+	<4.1a> [27da99aea366]
+
+2014-01-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New kaptures implementation (bootstrap)
+	<4.1a> [560b12f214be]
+
+2014-01-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix non-i18n implementation (bootstrap)
+	<4.1a> [d0986a57f862]
+
+2014-01-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix minor exceptions problem (bootstrap)
+	<4.1a> [de824a7e374c]
+
+2014-01-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix exceptions (bootstrap)
+	<4.1a> [517d3b2f2e01]
+
+2014-01-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	JSON parsing in Web lib (bootstrap)
+	<4.1a> [f7b03333b987]
+
+2014-01-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New pcre facilities (bootstrap)
+	<4.1a> [bad328604c87]
+
+2013-12-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	i18n extensions (bootstrap)
+	<4.1a> [b049c74589d7]
+
+2013-12-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New letrec* compilation scheme (bootstrap)
+	<4.1a> [ef5fa489c5db]
+
+2013-12-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Cleanup compiler dead-code (bootstrap)
+	<4.1a> [aff4326dcc22]
+
+2013-12-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Remove gcc warnings (bootstrap)
+	<4.1a> [d7c928370916]
+
+	Prepare Android dynlib support (bootstrap)
+	<4.1a> [077ba26312ff]
+
+2013-12-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Change GC init for accomodating android dynloading (bootstrap)
+	<4.1a> [33bde20d6886]
+
+2013-12-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Remove useless ALSA debugging (bootstrap)
+	<4.1a> [a7d1a2a59401]
+
+2013-12-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Switch to gc-7.4.0 (bootstrap)
+	<4.1a> [beb05728ef2b]
+
+2013-12-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix srfi1 Makefile
+	<4.1a> [1f23cf41720b]
+
+2013-12-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix srf1 compilation (bootstrap)
+	<4.1a> [c10e23f6903b]
+
+	Dsssl generic completion (bootstrap)
+	<4.1a> [77e552409dc8]
+
+2013-12-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Dsssl in generics (eval) (bootstrap)
+	<4.1a> [f3232518732a]
+
+	Dsssl in generic (compiler) (bootstrap)
+	<4.1a> [94d3c747b9f4]
+
+2013-11-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Disable bglpkg by default
+	<4.1a> [b9bf9cd7cd2d]
+
+2013-11-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add closed-output-port (bootstrap)
+	<4.1a> [8891000976a9]
+
+2013-11-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New configure option for pcre (bootstrap)
+	<4.1a> [43349ccad715]
+
+2013-11-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix box types (bootstrap)
+	<4.1a> [5e13a19340d4]
+
+	Prepare box type inconsistency fix (bootstrap)
+	<4.1a> [71f8812d1206]
+
+2013-11-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Disable narrow optim by default
+	<4.1a> [b880d791a58a]
+
+	Add clang autoconfiguration
+	<4.1a> [a5784abc3f0a]
+
+	Fix flac configuration
+	<4.1a> [1b0a368cb51a]
+
+2013-11-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Flycheck patch (bootstrap)
+	<4.1a> [dc0b6a273571]
+
+	Enable the narrow optimization from -O2 (bootstrap)
+	<4.1a> [abea79dfd78a]
+
+	Fix letrec* and quote (bootstrap)
+	<4.1a> [4a775b12bfe2]
+
+2013-11-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Narrow optimization (bootstrap)
+	<4.1a> [7d8fa4afd6c9]
+
+2013-11-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Phidget autoconfiguration fix
+	<4.1a> [730d17404669]
+
+	Beginning of the narrow optimization (bootstrap)
+	<4.1a> [4f10bebc746b]
+
+2013-11-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix DSSSL error messages (bootstrap)
+	<4.1a> [56abbb45277d]
+
+	instantiate error localization improvments (bootstrap)
+	<4.1a> [7e34c4c95e91]
+
+2013-11-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix eval include directives (bootstrap)
+	<4.1a> [8b45eaa45455]
+
+2013-11-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Introduction of the new walkers (bootstrap)
+	<4.1a> [24fd70a93c0b]
+
+	dtoa initialization (bootstrap)
+	<4.1a> [5c74532ca93f]
+
+	Aes constants initialization (bootstrap)
+	<4.1a> [3dc1f104447c]
+
+	MacOSX phidgets support
+	<4.1a> [d213b3f88253]
+
+2013-11-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Complete the letrec* optim (bootstrap)
+	<4.1a> [329292f192eb]
+
+2013-11-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix packrat init
+	<4.1a> [2c4b7b5b873d]
+
+2013-10-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve letrec* handling (bootstrap)
+	<4.1a> [9e1a11d467b9]
+
+2013-10-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix signed zero display (bootstrap)
+	<4.1a> [a41c472bba9d]
+
+2013-10-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Symbol write (bootstrap)
+	<4.1a> [948a595e21ca]
+
+2013-10-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Bignum extra conversions (bootstrap)
+	<4.1a> [7a4117fb7de8]
+
+2013-10-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Pre-alloc belong values (bootstrap)
+	<4.1a> [dda1cf602268]
+
+	Fix cfa bug (bootstrap)
+	<4.1a> [dfaf45a8dd1f]
+
+2013-10-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Rollback NaN equality (bootstrap)
+	<4.1a> [cce1e4ad3ae0]
+
+2013-10-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Dont pre-alloc NAN for NAN != NAN (bootstrap)
+	<4.1a> [22f3a0bfafb5]
+
+2013-10-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Uri encoding/decoding improvements (bootstrap)
+	<4.1a> [31065e27c150]
+
+2013-10-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	URL decoding and UTF8 fixes (bootstrap)
+	<4.1a> [4c2f2fc10376]
+
+2013-10-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Unicode support improvements (bootstrap)
+	<4.1a> [72a874f81da8]
+
+2013-09-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add randomfl (bootstrap)
+	<4.1a> [daf1c1153274]
+
+2013-09-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix typed lambda expansion (bootstrap)
+	<4.1a> [3962db500241]
+
+2013-09-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor cc driver change (bootstrap)
+	<4.1a> [a853be2a79ee]
+
+2013-09-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor FLAC api bug fix (bootstrap)
+	<4.1a> [ebeea117b923]
+
+	Minor Makefile fixing (bootstrap)
+	<4.1a> [432f4ff0ec3b]
+
+2013-09-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix android configure
+	<4.1a> [6bae1c941e19]
+
+2013-09-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix missing method error detection (bootstrap)
+	<4.1a> [3af445331d4f]
+
+2013-09-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Branch 4.1a
+	<4.1a> [737eb46c1d2e]
+
+2013-09-05  Ludovic Courtès <ludovic.courtes@inria.fr>
+	phidget: `motor-control' example gracefully handles lack of
+	encoders.
+	<4.1> [9222af829e5a]
+
+	phidget: Gracefully handle exceptions in the `encoder-count' getter.
+	<4.1> [f3768ad10d2f]
+
+	phidget: Fix typos in CPhidgetEncoder bindings.
+	<4.1> [7178ad092dcb]
+
+2013-09-03  Ludovic Courtès <ludovic.courtes@inria.fr>
+	phidget: Add bindings for CPhidgetEncoder.
+	<4.1> [3c92f86e5caa]
+
+2013-09-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix array bound error reports (bootstrap)
+	<4.1.a> [72d67ee102de]
+
+2013-09-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Eval type checking (bootstrap)
+	<4.1.a> [494015e08f9f]
+
+2013-08-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve hashtable expansion (bootstrap)
+	<4.1.a> [ab177f806e7d]
+
+2013-08-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor eval stack trace improvement (bootstrap)
+	<4.1.a> [293baa0df47a]
+
+2013-08-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Eval, tail-rec expansion of multiple-value-bind
+	<4.1> [2641868913cd]
+
+	4.1 branch
+	<4.1> [8c649fc75373]
+
+	Added tag 4.1a for changeset a3bc655d922b
+	<4.0b> [39528e9809f7]
+
+	4.1 branch (bootstrap)
+	<4.0b> [a3bc655d922b]
+
+2013-08-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	backward compatibility fix (bootstrap)
+	<4.0b> [716879c68e49]
+
+2013-07-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix output-port-position (bootstrap)
+	<4.0b> [bf0bf2b278bb]
+
+	Fix output-port-position (bootstrap)
+	<4.0b> [612c43c53793]
+
+2013-07-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix btags (bootstrap)
+	<4.0b> [9261cbd89f9d]
+
+2013-07-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Bee fixes
+	<4.0b> [d2001354b029]
+
+	Remove XML-ATTRIBUTE-ENCODE (bootstrap)
+	<4.0b> [366b2a569263]
+
+2013-07-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve eval error tracing (bootstrap)
+	<4.0b> [4ea0ec274cbc]
+
+	Fix eval library init loading (bootstrap)
+	<4.0b> [836e93a10816]
+
+2013-07-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix main generation (bootstrap)
+	<4.0b> [5d1a58b66be0]
+
+2013-07-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Makefile cleanup
+	<4.0b> [a94a45f4a302]
+
+2013-07-18  Ludovic Courtès <ludovic.courtes@inria.fr>
+	Automated merge with ssh://hop/bigloo
+	<4.0b> [69a89ceb59d2]
+
+	phidget: Add bindings for CPhidgetMotorControl.
+	<4.0b> [31dc254c40c3]
+
+	Fix unwind-protect nesting (bootstrap)
+	<4.0b> [bf895dfc316a]
+
+2013-07-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix heap dump (bootstrap)
+	<4.0b> [662f56ddabe7]
+
+	Fix interpreted include directives (bootstrap)
+	<4.0b> [746ebb2973a6]
+
+	md5sum the hidden C temp file names (bootstrap)
+	<4.0b> [f90715eb9a06]
+
+2013-07-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix parallel compilation
+	<4.0b> [b5bdd37f15c0]
+
+2013-07-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add setgid/getgid (bootstrap)
+	<4.0b> [77e5543ce99e]
+
+	Add setgid/getgid (bootstrap)
+	<4.0b> [d726a73aa88e]
+
+2013-06-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Timeout Bug fix (bootstrap)
+	<4.0b> [42464b0f5310]
+
+	Bug fixes (bootstrap)
+	<4.0b> [e1f144feebd0]
+
+2013-06-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Substring improvement (bootstrap)
+	<4.0b> [66759183ad87]
+
+	MacOSX 10.5 execl workaround
+	<4.0b> [5430c055b848]
+
+	Redesign module resolvers (bootstrap)
+	<4.0b> [23f83e8ad85b]
+
+2013-05-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Various bug fixes and other corrections (bootstrap)
+	<4.0b> [a5fe66cec809]
+
+2013-05-23  Ludovic Courtès <ludovic.courtes@inria.fr>
+	srfi1: Make second argument of `delete-duplicates!' optional
+	<4.0b> [b5fa49725651]
+
+2013-05-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix copyfile mutexes (bootstrap)
+	<4.0b> [5da437a5ef45]
+
+2013-04-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix string->bstring pragma declaration (bootstrap)
+	<4.0b> [713967f61cb7]
+
+2013-04-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Upnp improvements (bootstrap)
+	<4.0b> [b022b8413da0]
+
+2013-04-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	UPNP library (bootstrap)
+	<4.0b> [85183e784b06]
+
+2013-04-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Upnp Web dependency fix.
+	<4.0b> [4bdc2b352496]
+
+2013-04-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve extern export handling (bootstrap)
+	<4.0b> [958c2af57d7e]
+
+	Fix module include parsing (bootstrap)
+	<4.0b> [bb98264e99bc]
+
+	UPNP debut
+	<4.0b> [c8839f3c7b72]
+
+2013-04-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve API Makefiles to support safe libs (bootstrap)
+	<4.0b> [e03c00a8015a]
+
+2013-04-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix datagram-socket input port (bootstrap)
+	<4.0b> [8c547830422f]
+
+2013-04-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Datagram socket input (bootstrap)
+	<4.0b> [bcac50759c58]
+
+	Datagram socket input (bootstrap)
+	<4.0b> [31a1008ee886]
+
+	Configure parallel_mark for the GC (bootstrap)
+	<4.0b> [18eb62c8ebd7]
+
+2013-04-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Saw backport (bootstrap)
+	<4.0b> [d8b714c6f9de]
+
+	Datagram timeout (bootstrap)
+	<4.0b> [051d8d9ed0d2]
+
+	Fix read timeout errors (bootstrap)
+	<4.0b> [c388d061495e]
+
+2013-03-28  Ludovic Courtès <ludovic.courtes@inria.fr>
+	Merge.
+	<4.0b> [b7504ff86db7]
+
+	Raise ?&io-timeout-error? upon read timeouts.
+	<4.0b> [e522a26d2c0a]
+
+2013-03-25  Ludovic Courtès <ludovic.courtes@inria.fr>
+	Fix typo in rule `bigboot' or `runtime/Makefile'.
+	<4.0b> [82b736718d20]
+
+2013-04-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Simplify pthread env (bootstrap)
+	<4.0b> [3d5790414a74]
+
+2013-04-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Android fix (bootstrap)
+	<4.0b> [3b2358133e75]
+
+2013-03-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	GC alpha3 20130330 (bootstrap)
+	<4.0b> [d3c9456825d0]
+
+2013-03-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Android thread stack size
+	<4.0b> [37e0d45f16da]
+
+2013-03-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Various bug fixes and Flac debugging (bootstrap)
+	<4.0b> [53f8d012e17d]
+
+2013-03-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Switch back to GC 7.2d (for raspbian) (bootstrap)
+	<4.0b> [db6814657435]
+
+2013-02-27  Ludovic Courtès <ludovic.courtes@inria.fr>
+	More /bin/rm removal.
+	<4.0b> [7f09b3fd847c]
+
+2013-03-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Debian wav Bigloo lib
+	<4.0b> [035563a1384d]
+
+2013-03-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Cross compilation fixes (bootstrap)
+	<4.0b> [2241c1cce5dc]
+
+2013-02-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix wav dependencies (bootstrap)
+	<4.0b> [19fa87851694]
+
+	Java udp send (bootstrap)
+	<4.0b> [c88928c8ecd3]
+
+2013-02-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix bigboot entry
+	<4.0b> [e28dd8efad50]
+
+2013-02-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Sqlite documentation
+	<4.0b> [b0a60004de77]
+
+	Remove uses of absolute file names in build scripts and makefiles.
+	[1e30214ff2f4]
+
+2013-02-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Wav library
+	<4.0b> [d750c4f279eb]
+
+2013-02-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	UDP extensions (bootstrap)
+	<4.0b> [705b1069bf8d]
+
+2013-02-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor DSSL error messages modification (bootstrap)
+	<4.0b> [8b682e4b2963]
+
+2013-02-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Re-implement DSSSL arguments parsing (bootstrap)
+	<4.0b> [cf1748ce3996]
+
+2013-02-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix setuid on Linux (bootstrap)
+	<4.0b> [a1d4d8c27265]
+
+2013-02-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve get-interface portability
+	<4.0b> [5c497d49b3d2]
+
+2013-01-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Maemo fix
+	<4.0b> [8af625dd1871]
+
+2013-01-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New unwind-protect implementation (bootstrap)
+	<4.0b> [db6d2a5c5efa]
+
+	Push protected blocks (bootstrap)
+	<4.0b> [22a3bc505101]
+
+2013-01-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 4.0b for changeset 07b361392eb3
+	<4.0b> [09e6f7facfdf]
+
+	4.0b (bootstrap)
+	<4.0b> [07b361392eb3]
+
+	gc 7.3alpha2 (bootstrap)
+	<4.0a> [2cf6d15d0ffe]
+
+2013-01-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor change for pop-mutex (bootstrap)
+	<4.0a> [0551789622b7]
+
+2013-01-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 4.0a for changeset 8b8146351711
+	<4.0a> [cb183f18064f]
+
+2013-01-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Branch 4.0a
+	<4.0a> [9a04c29ad72f]
+
+2013-01-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix OS-CHARSET (bootstrap)
+	<3.9b> [4349fc151119]
+
+2013-01-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix -saw mode (bootstrap)
+	<3.9b> [c662e66b1523]
+
+2013-01-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Mutex backend (bootstrap)
+	<3.9b> [8246fdd10bc5]
+
+	Fix utf8->8bits conversion (bootstrap)
+	<3.9b> [cce1ed51d4c1]
+
+2013-01-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix DNS caching, improve utf8->8bits conv (bootstrap)
+	<3.9b> [c671c4b06f0f]
+
+	Accomodate mutex backend info (bootstrap)
+	<3.9b> [adfd4b67dd52]
+
+	Accomodate mutex backend info (bootstrap)
+	<3.9b> [c6ce561ad283]
+
+2013-01-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix C class prototyping (bootstrap)
+	<3.9b> [098fb41d2278]
+
+2012-12-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix string-{index/skip}-right (bootstrap)
+	<3.9b> [9d0befbc9870]
+
+2012-12-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix IO locks (bootstrap)
+	<3.9b> [533b882323ed]
+
+2012-12-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix Bigloo ident syntax and with-access (bootstrap)
+	<3.9b> [ffc42417cb0b]
+
+2012-12-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Synchronize profiling (bootstrap)
+	<3.9b> [7ae6955d3829]
+
+	Synchronize JVM fix (bootstrap)
+	<3.9b> [f06bf9d3a11d]
+
+2012-12-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix effect analysis (bootstrap)
+	<3.9b> [85c7570364bc]
+
+	Debian fix
+	<3.9b> [4ce94004593c]
+
+2012-12-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor IO improvements (bootstrap)
+	<3.9b> [13b67bf2ec6b]
+
+2012-12-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix trace output (bootstrap)
+	<3.9b> [89fe13c369c1]
+
+2012-12-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Accomodate non-posix compliant timed wait (bootstrap)
+	<3.9b> [6ad62eb5a9e1]
+
+	Revamping C IO for getting rid of casts (bootstrap)
+	<3.9b> [59ab1562a503]
+
+2012-12-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Recursive mutex autoconfiguration
+	<3.9b> [9a306318c953]
+
+	Fix (again) spinlock autoconfiguration
+	<3.9b> [82f9880d7161]
+
+	Fix spinlock autoconfiguration
+	<3.9b> [ce8a2421e40e]
+
+	Improved (speed) mutexes (bootstrap)
+	<3.9b> [287c71cdb01d]
+
+2012-12-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	SRFI-18 separated from PTHREAD
+	<3.9b> [53e895e70cd2]
+
+2012-12-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New mutexes implementation (bootstrap)
+	<3.9b> [09a25ece3e79]
+
+2012-12-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Lock improvements (bootstrap)
+	<3.9b> [63c977ebbcd3]
+
+2012-12-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Output locking (bootstrap)
+	<3.9b> [39b4e838c206]
+
+2012-12-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix C socket name lookup (bootstrap)
+	<3.9b> [6b249a6eb200]
+
+2012-11-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Support mutexes prelocking (bootstrap)
+	<3.9b> [67447a2bbef5]
+
+2012-11-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add pre lock in mutexes (bootstrap)
+	<3.9b> [6b8db28e6d41]
+
+	Fix socket error message (bootstrap)
+	<3.9b> [9d4c3d392425]
+
+2012-11-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix bexit wrong mutexes unlock (bootstrap)
+	<3.9b> [d4f612f9eb11]
+
+	Remove useless output port specific mutex (bootstrap)
+	<3.9b> [c8d00f37ab1b]
+
+	Multithreaded output ports (bootstrap)
+	<3.9b> [3d4ecaa3063e]
+
+2012-11-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Complete import aliasing (bootstrap)
+	<3.9b> [ce07a77f5fbd]
+
+2012-11-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Mutex improvements (bootstrap)
+	<3.9b> [6bdc569465fb]
+
+	New mutex-lock genericity (bootstrap)
+	<3.9b> [ebaa6f244a9a]
+
+	Add sync.prelock field (bootstrap)
+	<3.9b> [07d25873220c]
+
+	Timed condvar fix (bootstrap)
+	<3.9b> [e78408382df5]
+
+2012-11-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix examples/Lib
+	<3.9b> [2c43e3ddfd95]
+
+2012-11-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Support module aliasing (bootstrap)
+	<3.9b> [16dbd29bd066]
+
+2012-11-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Introduce module import aliasing in Eval (bootstrap)
+	<3.9b> [b6e7d758a53d]
+
+	Add eval module import aliases (bootstrap)
+	<3.9b> [ac761383f8ab]
+
+2012-11-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix a stupid error in the fail stage (bootstrap)
+	<3.9b> [57ce56fa7ff0]
+
+	Improve failsafe optimization (bootstrap)
+	<3.9b> [2a3f828fd228]
+
+2012-11-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Enable failsafe optimization (bootstrap)
+	<3.9b> [13a53a6b3d40]
+
+	Replace api's WITH-LOCK (bootstrap)
+	<3.9b> [a574df549139]
+
+	Replace runtime's WITH-LOCK (bootstrap)
+	<3.9b> [660d77ad4070]
+
+	Start using synchronize (bootstrap)
+	<3.9b> [460edc95eeb6]
+
+	Sync failsafe optimization (bootstrap)
+	<3.9b> [94d63c3a437c]
+
+	New optimizations (bootstrap)
+	<3.9b> [77aff2fff8d6]
+
+	Compile SYNC nodes (bootstrap)
+	<3.9b> [deb6c98a7bcd]
+
+	Compile SYNC nodes (bootstrap)
+	<3.9b> [6e550827a027]
+
+2012-11-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add sync node in the compiler ast (bootstrap)
+	<3.9b> [5b43d5999f52]
+
+2012-11-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Start introducing the sync node (bootstrap)
+	<3.9b> [ee246d078dad]
+
+	Bootstrap synchronize (bootstrap)
+	<3.9b> [67e6439ffc80]
+
+2012-11-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Generalize with-lock-uw (bootstrap)
+	<3.9b> [d8f8cef740c6]
+
+2012-11-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Keep replacing mutex-(un)lock (bootstrap)
+	<3.9b> [850696c1b028]
+
+	Introduce with-lock-uw (bootstrap)
+	<3.9b> [ef7170699d1e]
+
+2012-11-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	append file API extensions (bootstrap)
+	<3.9b> [3e91f4baf9e9]
+
+2012-11-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve eval error messages (bootstrap)
+	<3.9b> [48023e4f5137]
+
+2012-11-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve socket error messages (bootstrap)
+	<3.9b> [8d35ce117023]
+
+2012-11-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix bignum conditional compilation (bootstrap)
+	<3.9b> [d15ec6bde8d5]
+
+	Restore file->input-port converter (bootstrap)
+	<3.9b> [3fca9d4e3eb0]
+
+2012-11-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix alsa player (bootstrap)
+	<3.9b> [401fa3079af1]
+
+2012-10-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New OO impl. for faster isa (bootstrap)
+	<3.9b> [e78f78740984]
+
+	Create 3.9b
+	<3.9b> [192f4ad46aa9]
+
+	Added tag 3.9b for changeset 7b5a359e3a01
+	<3.9a> [cd958c7ed9a5]
+
+	3.9b (bootstrap)
+	<3.9a> [7b5a359e3a01]
+
+2012-10-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix bglmemrun (bootstrap)
+	<3.9a> [0c480ef8ade8]
+
+2012-10-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix every? (bootstrap)
+	<3.9a> [b682c97ee63d]
+
+	Fix flac conditional compilation (bootstrap)
+	<3.9a> [0e0bacbc2cc9]
+
+2012-10-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Terminal 3.9a (bootstrap)
+	<3.9a> [a196962d4b0e]
+
+2012-10-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 3.9a for changeset de906056f793
+	<3.9a> [2c5dd2d9af94]
+
+	3.9a branch (bootstrap)
+	<3.9a> [de906056f793]
+
+2012-10-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix alsa error handling (bootstrap)
+	<3.8d> [3c380b628930]
+
+	Fix pipe output ports (bootstrap)
+	<3.8d> [c28cc36a3348]
+
+	Fix eval virtual slots (bootstrap)
+	<3.8d> [5f4611a0d832]
+
+	Remove class name collisions in comptime (bootstrap)
+	<3.8d> [ba27f47a4e89]
+
+2012-10-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Remove every? and any? (bootstrap)
+	<3.8d> [a884aa79b984]
+
+2012-10-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Generate automatically a new ChangeLog after each bootstrap.
+	<3.8d> [0eff45d2a927]
+
+	Add minor AST-based optimization (bootstrap)
+	<3.8d> [d6f4f9470b23]
+
+2012-10-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix closure uboxing (bootstrap)
+	<3.8d> [b1b7f880ad07]
+
+2012-10-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix closure uboxing (bootstrap)
+	<3.8d> [34ab5830da40]
+
+2012-10-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Phidget, general improvement and stepper support
+	<3.8d> [f74b97c3f082]
+
+2012-09-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Complete output port timeout (bootstrap)
+	<3.8d> [6a5da89fdbcc]
+
+2012-09-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix output-port timeout (bootstrap)
+	<3.8d> [e658fa12c4a0]
+
+2012-09-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Archlinux package fixe
+	<3.8d> [55ac7407a962]
+
+2012-09-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix class prototype generation error (bootstrap)
+	<3.8d> [d457cebca344]
+
+	Handle Linux socket abstract name space
+	<3.8d> [29e3e8c904a1]
+
+2012-09-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix evaluate error (bootstrap)
+	<3.8d> [d59f40ddcc52]
+
+2012-09-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Important: make isa? thread-safe
+	<3.8d> [08a8e07d0cb7]
+
+2012-09-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Optimize with-lock (bootstrap)
+	<3.8d> [6dc406cb4f76]
+
+2012-09-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Flac decoder (bootstrap)
+	<3.8d> [125ac9a8b2c0]
+
+	Alsa/flac bufferization improvements (bootstrap)
+	<3.8d> [03eefef510b5]
+
+	Alsa/flac bufferization improvements (bootstrap)
+	<3.8d> [970f793701f3]
+
+2012-09-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix timed read (bootstrap)
+	<3.8d> [60a3cc6809d9]
+
+2012-08-31  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix timeout open-input-file (bootstrap)
+	<3.8d> [9241841340b9]
+
+2012-08-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	temporary IO debugging (bootstrap)
+	<3.8d> [6a60aa9df849]
+
+2012-08-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix avahi timeout
+	<3.8d> [1f681de500cf]
+
+	Minor alsa fix (bootstrap)
+	<3.8d> [087f6e3f281e]
+
+2012-08-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix srfi-4, fix mpg123 (bootstrap)
+	<3.8d> [8d115f6d6670]
+
+	Gstreamer autoconf fix
+	<3.8d> [0364fe090f60]
+
+2012-08-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Enable closure unboxing by default (bootstrap)
+	<3.8d> [ec2886a6e9e5]
+
+	Unboxed closure arguments (bootstrap)
+	<3.8d> [33a39ed0f9df]
+
+2012-08-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Closure argument unboxing (bootstrap)
+	<3.8d> [2bcfc97ef451]
+
+2012-08-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Prepare closure unboxed arguments (3) (bootstrap)
+	<3.8d> [b1b4f0064139]
+
+	Prepare closure unboxed arguments (2) (bootstrap)
+	<3.8d> [12ce72255757]
+
+	Prepare closure unboxed arguments (bootstrap)
+	<3.8d> [43f19cf96f7c]
+
+	Fix sha2 initialization (bootstrap)
+	<3.8d> [2258ec6ed072]
+
+2012-08-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor alsa fix (bootstrap)
+	<3.8d> [b972f211b5ba]
+
+2012-08-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Input-port seek (bootstrap)
+	<3.8d> [aaa1d4977b28]
+
+2012-08-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Switch to gc-7.2d (bootstrap)
+	<3.8d> [817d858c2711]
+
+2012-08-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor comptime optimization (bootstrap)
+	<3.8d> [a949ed2fda2d]
+
+	Fix DSSSL rest arguments parsing (bootstrap)
+	<3.8d> [45186bc14816]
+
+2012-07-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Prepare new input-port seek (bootstrap)
+	<3.8d> [6ac53a337a91]
+
+2012-07-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix datagram socket (bootstrap)
+	<3.8d> [62779ffb0530]
+
+2012-07-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Avahi fix (bootstrap)
+	<3.8d> [a4f56e201f18]
+
+2012-06-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix eval class virtual slots (bootstrap)
+	<3.8d> [fbd8e2ca90fb]
+
+2012-06-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add datagram socket options (bootstrap)
+	<3.8d> [6ce98c620ad9]
+
+2012-06-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 3.8d for changeset 174a4983185f
+	<3.8d> [189c2a974352]
+
+	Start 3.8d
+	<3.8d> [174a4983185f]
+
+2012-06-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix phidget debian dependency
+	<3.8c> [5bd77895b60c]
+
+2012-05-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Debian fix
+	<3.8c> [25282d6f505a]
+
+	Debian fix
+	<3.8c> [325f2db93449]
+
+	Configure logging
+	<3.8c> [9c351ff4865f]
+
+	Avahi auto-configuration
+	<3.8c> [e0df0689f91e]
+
+2012-05-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa autoconf fix
+	<3.8c> [1a206a166c68]
+
+	Yet another Debian fix
+	<3.8c> [1098b7985c89]
+
+	Debian fix
+	<3.8c> [57326521bcc3]
+
+	Debian fix.
+	<3.8c> [d73e1e60d76e]
+
+	Phidget fix
+	<3.8c> [bacf50ab9424]
+
+	Debian fix
+	<3.8c> [5f8a1bfdf679]
+
+	Debian fix
+	<3.8c> [8b73bb4c17c6]
+
+	Debian fix
+	<3.8c> [ea4d41b280b3]
+
+	Debian fix
+	<3.8c> [18f81d7d29a6]
+
+	Debian package for sqlite binding
+	<3.8c> [ce22af0bdf1f]
+
+	Debian package fix
+	<3.8c> [c7c6374ec09e]
+
+2012-05-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Debian package fix
+	<3.8c> [d33a5e41177b]
+
+	Accomodate debian package policy (bootstrap)
+	<3.8c> [9d75f47cc31a]
+
+2012-05-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix configure script
+	<3.8c> [4b306d3df650]
+
+2012-05-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	mpg123 debug
+	<3.8c> [4a148e29a40e]
+
+	Inline class-nil constructor (bootstrap)
+	<3.8c> [28fe20b17ada]
+
+2012-05-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve mp3 and flac volume management
+	<3.8c> [9b85faf6b78d]
+
+	Improve library dependency managment (bootstrap)
+	<3.8c> [d377f27fdec0]
+
+2012-05-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Enforce DSSSL eval type ckecking with -safee (bootstrap)
+	<3.8c> [28b5ef6fdde1]
+
+	Cleanup nil instance allocation (bootstrap)
+	<3.8c> [d5d8e45fa1e5]
+
+	Remove old code in class-nil (bootstrap)
+	<3.8c> [ede0304bffaf]
+
+2012-05-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor installation fix
+	<3.8c> [f4a7e653d7a8]
+
+	Fix minor alsa error (bootstrap)
+	<3.8c> [d7cd2e488f23]
+
+	Mark 3.8c branch (that should have been done earlier).
+	<3.8c> [4d317598c566]
+
+2012-05-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix CFA specialization that an error broke (bootstrap)
+	<3.8a> [a234031ba520]
+
+	Added tag 3.8c for changeset 903d855a69ab
+	<3.8a> [142b3a37bac0]
+
+	Create 3.8c (bootstrap)
+	<3.8a> [903d855a69ab]
+
+2012-05-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix java implementation of condvars (bootstrap)
+	<3.8a> [2e7de7280a19]
+
+2012-04-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Restrict fixnum basic operators spec (bootstrap)
+	<3.8a> [260802e9db17]
+
+2012-04-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix C inputs (bootstrap)
+	<3.8a> [b151193dfd3a]
+
+2012-04-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Try to fix srfi27 (bootstrap)
+	<3.8a> [0e891f69c6ae]
+
+2012-04-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 3.8b for changeset e7b5e8a772cd
+	<3.8a> [c073c56f7e58]
+
+	3.8b (bootstrap)
+	<3.8a> [e7b5e8a772cd]
+
+2012-04-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Re-implementation of the C IO input buffers (bootstrap)
+	<3.8a> [350d7b85030d]
+
+2012-04-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Support pthread timed join, when possible (bootstrap)
+	<3.8a> [a062e3a47c95]
+
+	Inline read-fill-string (bootstrap)
+	<3.8a> [7946ca5bc6a8]
+
+2012-04-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa bufferisation (bootstrap)
+	<3.8a> [3db82d90bd79]
+
+2012-04-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add companion packages
+	<3.8a> [3aa1ea7f17dc]
+
+2012-04-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Maemo autconfiguration fix (bootstrap)
+	<3.8a> [4ec1169a4786]
+
+2012-04-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Full re-implementation of alsa bufferization (bootstrap)
+	<3.8a> [d49ae9682822]
+
+2012-04-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	id3 parsing fix
+	<3.8a> [e56297b91372]
+
+2012-04-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix alsa timeout (bootstrap)
+	<3.8a> [861fbd6263b7]
+
+	Extend phidget support (bootstrap)
+	<3.8a> [da9837e62ce5]
+
+2012-04-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix phidget lib
+	<3.8a> [24f1520e7dc2]
+
+	Fix MacOS library dependency
+	<3.8a> [dc69abba69a6]
+
+2012-04-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Phidget: add servo support.
+	<3.8a> [7367bc02ad78]
+
+2012-03-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	ID3 parsing fixes (bootstrap)
+	<3.8a> [92ab51b18b63]
+
+	ID3 improvments (bootstrap)
+	<3.8a> [834293f391e8]
+
+2012-03-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix phidget autoconfiguration
+	<3.8a> [d128e3923205]
+
+	MacOS X JVM installation fix.
+	<3.8a> [25113b392631]
+
+	Phidget config fix.
+	<3.8a> [fde8f4171c2d]
+
+	Socket timeout (bootstrap)
+	<3.8a> [62b720f46442]
+
+2012-03-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Phidget fix (bootstrap)
+	<3.8a> [e2613a2d05c6]
+
+2012-03-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Include the phidget library
+	<3.8a> [0eff17d376bf]
+
+2012-03-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix GC pthread_atfork Linux bug (bootstrap)
+	<3.8a> [308991b92cc0]
+
+	JVM SSL support fixes (bootstrap)
+	<3.8a> [a075b0b436ce]
+
+2012-03-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve MPD support (bootstrap)
+	<3.8a> [bc9a8277dd50]
+
+2012-03-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Gstreamer fix for MacOS X.
+	<3.8a> [c696ada88824]
+
+	Minor configure fix
+	<3.8a> [8fcb0d69a70d]
+
+2012-03-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix various C compilation warnings (bootstrap)
+	<3.8a> [0c2e426da144]
+
+	Fix module cond-expand compilation (bootstrap)
+	<3.8a> [3e680d76fc3d]
+
+2012-03-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Extended serialization (bootstrap)
+	<3.8a> [e0e9f9cd73ac]
+
+2012-03-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix hrtype propagation (for types occurring in libs) (bootstrap)
+	<3.8a> [688b2ea9a452]
+
+2012-03-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	GC7.3alpha1 (bootstrap)
+	<3.8a> [de124e86155b]
+
+2012-03-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Documentation texinfo fix
+	<3.8a> [99e99ac7ec90]
+
+	Documentation texinfo fix
+	<3.8a> [28ae7b841743]
+
+	Minor build fix
+	<3.8a> [7dcdbc6557bc]
+
+	Minor build fix
+	<3.8a> [a316c2e3f578]
+
+2012-03-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve dataflow type analysis (bootstrap)
+	<3.8a> [e984d13163a6]
+
+2012-02-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	CSV installation fix (bootstrap)
+	<3.8a> [b996c12734cc]
+
+	Polish CSV api
+	<3.8a> [5559bbc7321e]
+
+2012-02-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Integrate the CSV api
+	<3.8a> [a9c07096918b]
+
+2012-02-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix UTF-8->8bits conversion (bootstrap)
+	<3.8a> [74fcf843a5ac]
+
+	SRFI-4 initialization fix (bootstrap)
+	<3.8a> [6b0f4a0cd206]
+
+2012-02-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix srfi4 initialization (bootstrap)
+	<3.8a> [4d7c09923bc0]
+
+2012-02-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix MacOS configuration of regexp (bootstrap)
+	<3.8a> [c92a078ccfd4]
+
+	Add gc-7.1 patch for MacOS 10.7
+	<3.8a> [7b7edaa5c467]
+
+2012-02-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor compiler fix (bootstrap)
+	<3.8a> [0aebecf1f093]
+
+	Minor alsa fix (bootstrap)
+	<3.8a> [618aa7789751]
+
+2012-02-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Maemo gstreamer fix
+	<3.8a> [d44a4cca8d7d]
+
+	Maemo fix
+	<3.8a> [efcf783ee13e]
+
+2012-02-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix alsa dependency (bootstrap)
+	<3.8a> [b322521647ae]
+
+2012-02-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix globalize type error (bootstrap)
+	<3.8a> [d15e93345806]
+
+	Remove strict-typing variable (bootstrap)
+	<3.8a> [e58c7b74c2a6]
+
+2012-02-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor alsa improvement (bootstrap)
+	<3.8a> [6928929a4e89]
+
+2012-02-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Remove flac traces (bootstrap)
+	<3.8a> [6791b12adbce]
+
+2012-01-31  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix flac decoder (bootstrap)
+	<3.8a> [1308c57d406f]
+
+2012-01-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor alsa fix
+	<3.8a> [4cdf3e013a3a]
+
+	Improve alsa buffering (bootstrap)
+	<3.8a> [b675808bc9e2]
+
+2012-01-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix music onvolume (bootstrap)
+	<3.8a> [7d8f7d9392e4]
+
+	MinGW patch.
+	<3.8a> [a98e94693eca]
+
+2012-01-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Android fixes (bootstrap)
+	<3.8a> [3960c3b34998]
+
+	New music API (bootstrap)
+	<3.8a> [463f32311db2]
+
+2012-01-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New alsa implementation (bootstrap)
+	<3.8a> [9788412ed90d]
+
+2012-01-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	MinGW fixes (bootstrap)
+	<3.8a> [a65d0ca53b9f]
+
+2012-01-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa fix (bootstrap)
+	<3.8a> [26244e177a85]
+
+2012-01-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix C constant generation (bootstrap)
+	<3.8a> [f9cd010661a7]
+
+2012-01-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix deep class field access (bootstrap)
+	<3.8a> [97bcc1e8afe4]
+
+2012-01-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix sha1 sum (bootstrap)
+	<3.8a> [fd88f3095679]
+
+2012-01-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New object serialization (bootstrap)
+	<3.8a> [ce49400b0992]
+
+2012-01-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Object serialization improvement (bootstrap)
+	<3.8a> [3b8e688797d9]
+
+2012-01-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Cleanup object serialization (bootstrap)
+	<3.8a> [7c25196c08bb]
+
+2011-12-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix UDP broadcast (again) (bootstrap)
+	<3.8a> [774b93ffc860]
+
+	Fix -g3 traces (bootstrap)
+	<3.8a> [73a9be6199c2]
+
+2011-12-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix udp broadcast (bootstrap)
+	<3.8a> [b59eb4625eb8]
+
+2011-12-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	MinGW fixes (bootstrap)
+	<3.8a> [d364f6d30508]
+
+2011-12-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Avahi autoconf fix
+	<3.8a> [a25d705b7481]
+
+2011-12-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix eval call/cc (bootstrap)
+	<3.8a> [df5e59f52da2]
+
+2011-12-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add AVAHI binding (bootstrap)
+	<3.8a> [714365727455]
+
+2011-12-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix map type errors (bootstrap)
+	<3.8a> [6ed3ee5d2641]
+
+2011-12-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	MPG123 fix (bootstrap)
+	<3.8a> [6bc4c4ee5bdd]
+
+2011-12-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Gstreamer autoconfiguation
+	<3.8a> [75ee29a2deb1]
+
+	Fix Java regexp support (bootstrap)
+	<3.8a> [55f07e2547bb]
+
+2011-12-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Change the OO documentation
+	<3.8a> [d88f7ebb7cd6]
+
+	Add Debian PCRE dependency.
+	<3.8a> [8488cad64980]
+
+	Fix PCRE autoconf
+	<3.8a> [37d56c5ddac3]
+
+2011-12-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Use PCRE when available (bootstrap)
+	<3.8a> [8736c240551d]
+
+2011-12-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa fix (bootstrap)
+	<3.8a> [e2e0483421fc]
+
+2011-12-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Datagram socket fix (bootstrap)
+	<3.8a> [bd5526716c2e]
+
+2011-12-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix eval global module redefinitions (bootstrap)
+	<3.8a> [88899cecb9a8]
+
+	Remove .NET support (bootstrap)
+	<3.8a> [f1fd148ce4ff]
+
+	Remove .NET code generation
+	<3.8a> [e26115ccf482]
+
+2011-12-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix DSSSL keyword arguments compilation error (bootstrap)
+	<3.8a> [c2294e301aba]
+
+	Improve COND localization (bootstrap)
+	<3.8a> [0fbec626a4df]
+
+2011-11-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix eval call accessors type checks (bootstrap)
+	<3.8a> [70341135ad3a]
+
+2011-11-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix widening typing (bootstrap)
+	<3.8a> [9a3abf0edba5]
+
+2011-11-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add module name info to classes (bootstrap)
+	<3.8a> [dc6958340ca4]
+
+	Replace lists with vectors for slots (bootstrap)
+	<3.8a> [e3255d078dcf]
+
+	Class fields with vectors (bootstrap)
+	<3.8a> [ecd032845ee9]
+
+2011-11-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix class hash numbers (bootstrap)
+	<3.8a> [a5cd0e7166a2]
+
+2011-11-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve instantiate (bootstrap)
+	<3.8a> [59ed74af3a0e]
+
+2011-11-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Get rid of angle parenthesis in Bigloo src code (bootstrap)
+	<3.8a> [0e34d1620520]
+
+2011-11-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix minor C type code generation error (bootstrap)
+	<3.8a> [3154b529abe5]
+
+	Fix inlinining optimization (bootstrap)
+	<3.8a> [adaeebef9547]
+
+	Complete re-implementation of default field values (bootstrap)
+	<3.8a> [46884510c0ac]
+
+	Change class default value (bootstrap)
+	<3.8a> [364e35ad382a]
+
+	Change class default value (bootstrap)
+	<3.8a> [58abe72092fd]
+
+	Eval with-access expander use -> (bootstrap)
+	<3.8a> [12744b6db1f8]
+
+2011-11-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Error fixes (bootstrap)
+	<3.8a> [cbb89784f37c]
+
+	Type class and class-field API functions (bootstrap)
+	<3.8a> [7c31f0561eb6]
+
+	Type class holders (comptime) (bootstrap)
+	<3.8a> [144429284347]
+
+	Add class and class-field types (bootstrap)
+	<3.8a> [bca69eda454f]
+
+	Support for -> in eval (bootstrap)
+	<3.8a> [db0e093d65bc]
+
+2011-11-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Move Llib/object.scm to unsafe/object.scm (bootstrap)
+	<3.8a> [02162636797f]
+
+	Added tag 3.8a for changeset 0ed1fcff3703
+	<3.8a> [aa4d55b371ac]
+
+	Initiale bootstrap (bootstrap)
+	<3.8a> [0ed1fcff3703]
+
+	Create 3.8a branch.
+	<3.8a> [ee1ed86e3261]
+
+	Fix eval virtual field init (bootstrap)
+	<3.7b> [e03a3509f0f7]
+
+	Class generators elimination (bootstrap)
+	<3.7b> [eb841d7c8d92]
+
+	Cleanup old class accessors generators
+	<3.7b> [f296b85ed8b9]
+
+	Improve eval error messages (bootstrap)
+	<3.7b> [09744a679025]
+
+2011-11-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New eval objects (bootstrap)
+	<3.7b> [7e9162f76bfd]
+
+	Class accessorless bootstrap
+	<3.7b> [f360e73678ee]
+
+2011-11-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add optional reader dot notation (bootstrap)
+	<3.7b> [ae4f3e216756]
+
+2011-11-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Apply 1occ optim to private node (bootstrap)
+	<3.7b> [fdbffcd1461e]
+
+	Rename field-access into -> (bootstrap)
+	<3.7b> [921e71563b90]
+
+	Rename is-a in isa, add field-access form (bootstrap)
+	<3.7b> [924d908520ae]
+
+2011-11-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Operational -fno-class-accessors compilation mode (bootstrap)
+	<3.7b> [ab7d6b36ab29]
+
+	New OO implementation (bootstrap)
+	<3.7b> [fbf5f00ec9bf]
+
+2011-11-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add -classgen option (bootstrap)
+	<3.7b> [7cbf12919640]
+
+2011-11-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Change compile-time WITH-ACCESS expansion (bootstrap)
+	<3.7b> [f0806aee85e1]
+
+2011-11-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Get rid of class indexed fields (bootstrap)
+	<3.7b> [8047e1d43d6b]
+
+	Recover from wrong bootstrap (bootstrap)
+	<3.7b> [4aef833ad68a]
+
+2011-11-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Introduction of the class . notation (bootstrap)
+	<3.7b> [3019c3ae5131]
+
+2011-10-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Flac fixes (bootstrap)
+	<3.7b> [ba33e098958e]
+
+2011-10-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa fix (bootstrap)
+	<3.7b> [0c17d7858a97]
+
+2011-10-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add file-type (bootstrap)
+	<3.7b> [c95ca37fe776]
+
+	Add file-type (bootstrap)
+	<3.7b> [250b6ad9b982]
+
+2011-09-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Populate gc-7.2alpha6 files.
+	<3.7b> [5b732ae6d80f]
+
+	Create 3.7b branch.
+	<3.7b> [a1f4a7bd7f86]
+
+	Added tag 3.7b for changeset 614745e71e89
+	<3.7a> [2aa763b5de4d]
+
+	gc7.2alpha6 + bug fixes (bootstrap)
+	<3.7a> [614745e71e89]
+
+2011-09-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	flac (bootstrap)
+	<3.7a> [3bf3e6432424]
+
+	Flac (bootstrap)
+	<3.7a> [751f7114569a]
+
+	Flac fix (bootstrap)
+	<3.7a> [ef1444361f16]
+
+2011-09-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Stable 3.7a.
+	<3.7a> [12f9b2454de4]
+
+	3.7a stable (bootstrap)
+	<3.6b> [57920828eba1]
+
+2011-09-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	MacOS GMP compilation fix.
+	<3.6b> [f17343f70629]
+
+2011-09-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor mpg123 fix (bootstrap)
+	<3.6b> [2a1e0a5c27cc]
+
+2011-09-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve libmpg123 autoconfiguration (bootstrap)
+	<3.6b> [a588c6f9645d]
+
+	Alsa fix (bootstrap)
+	<3.6b> [4b0f597a9c87]
+
+	Fix alsadecode (bootstrap)
+	<3.6b> [3c4d1e71a340]
+
+	Add missing LUB in the dataflow analysis (bootstrap)
+	<3.6b> [3c4db1665142]
+
+2011-09-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa fixes (bootstrap)
+	<3.6b> [1bbae432954f]
+
+2011-09-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa/mpg123/flac improvements (bootstrap)
+	<3.6b> [6abcf722f06d]
+
+2011-09-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Re-implement alsa/mpg123 (bootstrap)
+	<3.6b> [61c08de0ea68]
+
+2011-09-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix iso-latin-15 conv (bootstrap)
+	<3.6b> [db67e113d235]
+
+2011-09-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix quoted-printable decode (bootstrap)
+	<3.6b> [baafc8a8bebe]
+
+	Add module in global trace names (bootstrap)
+	<3.6b> [95cbbed00f0e]
+
+2011-09-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Change default hashtable comparison function (bootstrap)
+	<3.6b> [bea3a97c3973]
+
+	Minor API bug fixes (bootstrap)
+	<3.6b> [1979323e16de]
+
+2011-09-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix number->string prototype (bootstrap)
+	<3.6b> [182ab7c1b72f]
+
+	Added tag 3.7a for changeset 424bdf905027
+	<3.6b> [6f916795729d]
+
+	Creating the 3.7 branch (bootstrap)
+	<3.6b> [424bdf905027]
+
+	Improve C process management (bootstrap)
+	<3.6b> [44de528fa569]
+
+	Remove pregexp dependency from the FTP module (bootstrap)
+	<3.6b> [42cda2195b74]
+
+	Fix nil ctor of recursive classes (bootstrap)
+	<3.6b> [52860d926fd8]
+
+2011-09-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	local sync (bootstrap)
+	<3.6b> [8729e10f8eca]
+
+2011-07-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve function integration (bootstrap)
+	<3.6b> [20dd218c592c]
+
+2011-07-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add error detection in evaluate goto
+	<3.6b> [342526c089db]
+
+2011-07-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix append macro-expansion in -O mode (bootstrap)
+	<3.6b> [ee5cece50c1e]
+
+	Add SRFI-10 support and set-read-syntax! (bootstrap)
+	<3.6b> [3fe0269e8166]
+
+	Add SRFI-10 support and set-read-syntax! (bootstrap)
+	<3.6b> [035289c366bb]
+
+	Fix SSL autoconfiguration (bootstrap)
+	<3.6b> [b5301872f7a1]
+
+	Fix MT define-syntax support (bootstrap)
+	<3.6b> [f0027d429578]
+
+2011-07-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	MacOS X gmp build fix.
+	<3.6b> [43f3aa4439e0]
+
+	Add flac volume support (bootstrap)
+	<3.6b> [6f795b1f70d4]
+
+	Alsa music fix. Arith overflow option (bootstrap)
+	<3.6b> [81f0824612b3]
+
+2011-07-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix binfx ops, fix JVM libraries (bootstrap)
+	<3.6b> [8ea7344ea270]
+
+	Fix JVM bignum (bootstrap)
+	<3.6b> [ff2260b09a1a]
+
+	Fix crypto library bug (bootstrap)
+	<3.6b> [80e5a19ef60f]
+
+	Alsa fix (bootstrap)
+	<3.6b> [ec5791a9caea]
+
+2011-07-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	ALSA fix
+	<3.6b> [891cf595fa07]
+
+	Alsa/flac fix (bootstrap)
+	<3.6b> [2e0ba3ea210a]
+
+2011-07-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa/flac fix
+	<3.6b> [7456d3b78c12]
+
+	Fix string->number
+	<3.6b> [f590b448c579]
+
+	Alsa fix
+	<3.6b> [43c33525b53c]
+
+	Fix bignum init in libraries (bootstrap)
+	<3.6b> [ff2937dad24c]
+
+	Add card support to ALSA (bootstrap)
+	<3.6b> [befa3ccbf44d]
+
+2011-07-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa/mpg123/flac fixes (bootstrap)
+	<3.6b> [a6b5e8051a6e]
+
+2011-07-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix RGC fill string facility (bootstrap)
+	<3.6b> [5bfd9075a953]
+
+2011-07-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	mpg123 fix.
+	<3.6b> [24411dbb0a2d]
+
+	Alsa autoconf fix
+	<3.6b> [0324f1101b5e]
+
+	JVM fix, Alsa fix (bootstrap)
+	<3.6b> [d921c692281d]
+
+2011-07-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa progress (bootstrap)
+	<3.6b> [65f10d628d3b]
+
+	First operational version of the alsa player (bootstrap)
+	<3.6b> [5b16ab74f852]
+
+	Fix bgl_rgc_blit_string (wrong barrier) (bootstrap)
+	<3.6b> [cafb1c73a2b3]
+
+2011-06-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix alsa loop (bootstrap)
+	<3.6b> [d505a30bc6c7]
+
+2011-06-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa autoconf fix (bootstrap)
+	<3.6b> [b04e5daad7d8]
+
+	Create FLAC lib (bootstrap)
+	<3.6b> [a4ba99df7cc0]
+
+	ALSA and MPG123 enhancements (bootstrap)
+	<3.6b> [b7a0dc05597f]
+
+2011-06-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	First operational version of MPG123 and ALSA libraries
+	<3.6b> [0709f1952300]
+
+2011-06-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Start adding the ALSA api (bootstrap)
+	<3.6b> [ec6446b74af3]
+
+2011-06-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve generic arithmetic (bootstrap)
+	<3.6b> [775fab1e6f74]
+
+	Improve generic arithmetic (bootstrap)
+	<3.6b> [80095eb32e02]
+
+2011-06-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix CFA type propagation (bootstrap)
+	<3.6b> [e743e1ebf8ce]
+
+2011-06-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Optimize eval fl ops (bootstrap)
+	<3.6b> [c61198dd7f0b]
+
+	Remove this stupidity about flop (bootstrap)
+	<3.6b> [7501b5f4d27a]
+
+	Optimize fl ops for eval (bootstrap)
+	<3.6b> [d2c0f5a0493a]
+
+2011-06-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Inline fl op in eval (bootstrap)
+	<3.6b> [68162b236cc6]
+
+	Check isatty for current-output-port (bootstrap)
+	<3.6b> [feac7eee996d]
+
+	Inline C bgl_display_string and _substring (bootstrap)
+	<3.6b> [583a308fd4ed]
+
+	Activate eval extract-loop optim (bootstrap)
+	<3.6b> [e65cf1c126e0]
+
+2011-06-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix eval inlined subr type checks (bootstrap)
+	<3.6b> [6cf38dac8df0]
+
+2011-06-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	SSL Configure fixes (bootstrap)
+	<3.6b> [2a1e03cdbdba]
+
+	Makefile fix
+	<3.6b> [95cfcd3a796e]
+
+2011-05-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix multimedia mp3info (bootstrap)
+	<3.6b> [c087ebe7e1c4]
+
+2011-05-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Socket minor changes (bootstrap)
+	<3.6b> [4a0afa346dc3]
+
+2011-05-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix sendfile error messages (bootstrap)
+	<3.6b> [47ac47c6ecf3]
+
+2011-05-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix assignments Dataflow analysis (bootstrap)
+	<3.6b> [22506dc67197]
+
+2011-05-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Multimedia MPD enhancement (bootstrap)
+	<3.6b> [a152a2ade9c9]
+
+	Multimedia MPD additions (bootstrap)
+	<3.6b> [cebb32d9db43]
+
+2011-05-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Extend multimedia mpd api (bootstrap)
+	<3.6b> [a84c756193b9]
+
+	Extend the multimedia mpd api (bootstrap)
+	<3.6b> [1f13130e40c2]
+
+	Rename maemo into debian.
+	<3.6b> [38abb260cc5d]
+
+	Eval bug fix (bootstrap)
+	<3.6b> [badd1371faa8]
+
+2011-05-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New mpd db function (bootstrap)
+	<3.6b> [f253c1bf6931]
+
+	Debian build fix (bootstrap)
+	<3.6b> [83579d6762ee]
+
+	Minor multimedia api fix (bootstrap)
+	<3.6b> [d8d4f745b038]
+
+	Debian package creation fix (bootstrap)
+	<3.6b> [bc3bc9836267]
+
+2011-05-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix cond-expand module imported (bootstrap)
+	<3.6b> [057eeae3fd69]
+
+2011-05-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix rare CFA bug on procedure-el (bootstrap)
+	<3.6b> [dbd3429f3ce8]
+
+	Improve type inference for classes (bootstrap)
+	<3.6b> [ebdfc7d599c6]
+
+2011-05-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Type method return value (bootstrap)
+	<3.6b> [e2a1821e2d93]
+
+	Type first method argument (bootstrap)
+	<3.6b> [2934622388c7]
+
+	Add type check warning notification (bootstrap)
+	<3.6b> [69b66a270c0d]
+
+2011-05-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Library documentation fix (Wayne Richards)
+	<3.6b> [33bc01a5fad4]
+
+	Fix vector boxing (bootstrap)
+	<3.6b> [df7142624caa]
+
+	Fix vector boxing (bootstrap)
+	<3.6b> [e06638776ab7]
+
+2011-05-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix cfa type inference (bootstrap)
+	<3.6b> [eb476d752a43]
+
+	Android autoconfigure fix for getaddrinfo
+	<3.6b> [5931c936d9e4]
+
+	Add datagram-socket (no doc yet) (bootstrap)
+	<3.6b> [4becb1ab83e9]
+
+2011-04-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	CFA improve for-each/map/... (bootstrap)
+	<3.6b> [d94b546693d4]
+
+	CFA kwote fix (bootstrap)
+	<3.6b> [36f2403d58ed]
+
+	cfa pair (bootstrap)
+	<3.6b> [05482c76c539]
+
+2011-04-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	CFA pair tracking (bootstrap)
+	<3.6b> [072a846f37e2]
+
+2011-04-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add cfa pair tracking (bootstrap)
+	<3.6b> [54b815eca2db]
+
+	Enable cfa tracking (bootstrap)
+	<3.6b> [fb30c3271329]
+
+2011-04-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	NOT OPERATIONAL (jvm breaks).
+	<3.6b> [611e063a70c0]
+
+	Add three UTF8 library functions (bootstrap)
+	<3.6b> [e40704cd7e11]
+
+2011-03-31  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve dead code elimination for tvectors (bootstrap)
+	<3.6b> [7b93349daf69]
+
+2011-03-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fully typed AST (bootstrap)
+	<3.6b> [2dd1c056d07b]
+
+2011-03-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix cfa tracking (bootstrap)
+	<3.6b> [90fde285a62a]
+
+	Fix cfa tracking (bootstrap)
+	<3.6b> [290cb0a9b10a]
+
+2011-03-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add new optim replaceing pair? with null? (bootstrap)
+	<3.6b> [ea42f1fe087c]
+
+2011-03-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve dataflow false branches (bootstrap)
+	<3.6b> [7e6fd39a2db6]
+
+2011-03-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Override append-2 with an O-macro (bootstrap)
+	<3.6b> [f95f6d66ca87]
+
+	No longer inline generics (bootstrap)
+	<3.6b> [139daaf9b5a8]
+
+	FIND-METHOD always return a method (bootstrap)
+	<3.6b> [2ba83a73150d]
+
+2011-03-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Pre-allocate empty el procedures (bootstrap)
+	<3.6b> [ee2c7e6b6cd4]
+
+2011-03-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	GC cleanup
+	<3.6b> [fc2e5cdc4ffc]
+
+	Count types before C generation (bootstrap)
+	<3.6b> [321d75947896]
+
+	Add cfa funcall tracking (bootstrap)
+	<3.6b> [15fbaf0e74cf]
+
+2011-03-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add CFA free var tracking (bootstrap)
+	<3.6b> [6f320a909ce6]
+
+2011-03-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Switch to get/setfield for the C backend (bootstrap)
+	<3.6b> [115c5a8e4986]
+
+	Improve cfa pair subtyping (bootstrap)
+	<3.6b> [f6a239caf3a4]
+
+2011-03-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix evaluate bind-exit problem (bootstrap)
+	<3.6b> [7a7f4f526dcb]
+
+2011-03-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add global constant inlining (bootstrap)
+	<3.6b> [7bc53dd8d6cc]
+
+	CFA subtyping support (bootstrap)
+	<3.6b> [85a00e536020]
+
+	Add pragma no-init-flow (bootstrap)
+	<3.6b> [4aaa156e769a]
+
+2011-03-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Prepare init flow analysis (bootstrap)
+	<3.6b> [3924dba9b9c5]
+
+2011-03-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Change the string hash function (bootstrap)
+	<3.6b> [93fb33258a84]
+
+2011-03-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve eval error tracking (bootstrap)
+	<3.6b> [f7623bf01390]
+
+2011-03-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Accomodate gc7.2alpha5 (bootstrap)
+	<3.6b> [152079161e0d]
+
+2011-03-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix unicode error (bootstrap)
+	<3.6b> [4c269ae37913]
+
+	Switch to gc-7_2alpha5 (bootstrap)
+	<3.6b> [2c11b5a65b7f]
+
+2011-03-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Library module initialization fix (bootstrap)
+	<3.6b> [e40e280f2bd3]
+
+2011-03-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor error fixes (bootstrap)
+	<3.6b> [28da23383e8a]
+
+2011-03-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	SUpport escape sequences in UCS2 strings (bootstrap)
+	<3.6b> [d1c881628d57]
+
+2011-02-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	C unaliasing for GCC 4.6 (bootstrap)
+	<3.6b> [ec3e10df6915]
+
+	C format patch (bootstrap)
+	<3.6b> [241ac08eefc1]
+
+2011-02-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor configuration fix (bootstrap)
+	<3.6b> [1a26ba3f1c0f]
+
+2011-02-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix Ubuntu SSL autoconfiguration (bootstrap)
+	<3.6b> [6eaab74b3051]
+
+	Fix Ubuntu SSL autoconfiguration (bootstrap)
+	<3.6b> [5469a88d5b96]
+
+	Use exact real->string (bootstrap)
+	<3.6b> [b14b04b57672]
+
+	Improve eval error tracking (bootstrap)
+	<3.6b> [f3841e7abe12]
+
+2011-02-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix module eval unbound variables (bootstrap)
+	<3.6b> [e6cdc202265e]
+
+2011-02-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Evaluate performance improvements (bootstrap)
+	<3.6b> [353d27cb2336]
+
+	Detect unbound eval variables (bootstrap)
+	<3.6b> [eb4f2f315458]
+
+2011-02-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Change eval global mutation (bootstrap)
+	<3.6b> [a999257963d5]
+
+2011-02-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	No longer permit mutations of read-only eval variables (bootstrap)
+	<3.6b> [323487900167]
+
+	Fix from eval module clauses (bootstrap)
+	<3.6b> [358a700e3a55]
+
+	Fix eval modules (bootstrap)
+	<3.6b> [b054f0efaea2]
+
+	Fix eval modules (bootstrap)
+	<3.6b> [fb2bd644fbb6]
+
+2011-02-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Evaluate module fix (bootstrap)
+	<3.6b> [a02a3cb73e97]
+
+2011-02-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Clean eval error messages implementation (bootstrap)
+	<3.6b> [5a192c22b09a]
+
+2011-02-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Activate the new (lambda-)interpreter (bootstrap)
+	<3.6b> [712bbb20802e]
+
+	Add evstate to the dynamic env (bootstrap)
+	<3.6b> [e8a856395805]
+
+2011-02-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix dataflow analsys for local funs (bootstrap)
+	<3.6b> [510168c5a2d7]
+
+2011-01-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Branch creation.
+	<3.6b> [1954a6b218bd]
+
+	Added tag 3.6b for changeset a22bce83c02a
+	<3.6a> [3dbf7405b095]
+
+	pre 3.6b bootstrap (bootstrap)
+	<3.6a> [a22bce83c02a]
+
+	Fix exception handling in Java (bootstrap)
+	<3.6a> [0fd0022d0fee]
+
+2011-01-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Force GC static library to be always build
+	<3.6a> [87737c7ba6cf]
+
+2011-01-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix eval define (bootstrap)
+	<3.6a> [c21b0e1095a6]
+
+2011-01-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	3.6a release.
+	<3.6a> [8c70053bb592]
+
+2011-01-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 3.6a for changeset 579f5ee91fe2
+	<3.5b> [e95d8cb05988]
+
+	Preparation of 3.6a (bootstrap)
+	<3.5b> [579f5ee91fe2]
+
+	pre-3.6a (bootstrap)
+	<3.5b> [dd860f533414]
+
+2011-01-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix bglpp
+	<3.5b> [45c78704c803]
+
+	Add STRING-DELETE.
+	<3.5b> [a2e7511e1040]
+
+	Allow bglpkg to be disabled at configure time.
+	<3.5b> [7a3c01f22ebe]
+
+	Resurect double->llong-bits et al. (bootstrap)
+	<3.5b> [4abda7a8a35b]
+
+2011-01-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Re-fix the function LIBRARY-EXISTS?
+	<3.5b> [fcb8be1753a2]
+
+2011-01-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Extend phone API (bootstrap)
+	<3.5b> [e638f6f2016c]
+
+2011-01-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add bionic/linker in the GCC path for Android.
+	<3.5b> [555ab01c9ea3]
+
+2010-12-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	id3 parsing improvements (bootstrap)
+	<3.5b> [1655036b8fb3]
+
+2010-12-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix id3 network parsing and mmap-ref/set (bootstrap)
+	<3.5b> [5b1c46c830f9]
+
+	Try to use the official GC android patch (bootstrap)
+	<3.5b> [82e12dbc91ef]
+
+2010-12-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Change time unit for millisecond (bootstrap)
+	<3.5b> [7ed00f53824a]
+
+2010-12-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix eval include directives (bootstrap)
+	<3.5b> [849cd8d40049]
+
+2010-12-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix DSSSL rest argument parsing (bootstrap)
+	<3.5b> [2a00286f8963]
+
+2010-12-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix bignum division.
+	<3.5b> [a522a01b35f8]
+
+	Accommodate android changes.
+	<3.5b> [10d130f43ba7]
+
+	EXCEPTION-NOTIFY is now a generic (bootstrap)
+	<3.5b> [6a5c9d697994]
+
+2010-12-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Support serialization for interpreted classes.
+	<3.5b> [119fee633afc]
+
+2010-12-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Change the GC init (gc >= 720) (bootstrap)
+	<3.5b> [491adefb3e95]
+
+2010-12-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Script typo fix (bootstrap)
+	<3.5b> [ade898016d94]
+
+	Change the GC compilation flags (bootstrap)
+	<3.5b> [067db1007a63]
+
+2010-12-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Move the letrec optim of the interpreter (bootstrap)
+	<3.5b> [1a4fdde10808]
+
+	New BPS interpreter (bootstrap)
+	<3.5b> [b73c49506edd]
+
+2010-12-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve trace locations
+	<3.5b> [515940dd2895]
+
+	Use full name for tracing (bootstrap)
+	<3.5b> [dde45f350be9]
+
+2010-12-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve eval tracing (bootstrap)
+	<3.5b> [c76a1d19751f]
+
+2010-12-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New trace implementation (bootstrap)
+	<3.5b> [8070f60a4f96]
+
+	No longer save/restore sig mask on bind-exit (bootstrap)
+	<3.5b> [107a0b45aaa2]
+
+2010-12-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix classes on 64bits arch (bootstrap)
+	<3.5b> [2a15ef9aa7a3]
+
+2010-12-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add phone api prototypes
+	<3.5b> [3e5a9a8d481a]
+
+2010-11-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Dataflow + type + failure (bootstrap)
+	<3.5b> [ab5af1077846]
+
+	Dataflow type refinement fixes (bootstrap)
+	<3.5b> [2e670abcce55]
+
+2010-11-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Dataflow + type reduction (bootstrap)
+	<3.5b> [5d9af4fe54af]
+
+2010-11-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	dataflow + cfa (bootstrap)
+	<3.5b> [33957b5f92de]
+
+2010-11-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add dataflow type annotation (bootstrap)
+	<3.5b> [f02c812033d9]
+
+2010-11-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Use uncollectable vectors for classes and generics (bootstrap)
+	<3.5b> [1d3ddc4ee0a9]
+
+2010-11-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Cleanup
+	<3.5b> [02ec4529143c]
+
+	Resurrect old GC ports (for perf. evaluation) (bootstrap)
+	<3.5b> [58212348ee1d]
+
+	Pthread mutex and condvar fixes (bootstrap)
+	<3.5b> [d269da55bc66]
+
+2010-11-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 3.5b for changeset 39d120697de3
+	<3.5b> [abae1d0ef40c]
+
+	Create 3.5b. Fix Eval with-access expansion. Re-engineer generic
+	functions.
+	<3.5b> [39d120697de3]
+
+2010-11-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Increase the default size of generic buckets (switch to 16).
+	<3.5a> [f7e47804f1e4]
+
+2010-11-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix gmp installation.
+	<3.5a> [ed60d4dc5c4f]
+
+	Fix library cleaning.
+	<3.5a> [dd3ba154fcc8]
+
+2010-10-27  Cyprien Nicolas <Cyprien.Nicolas@inria.fr>
+	runtime/Makefile:bigboot: the bigboot target does not create
+	runtime/objs/* directories, nor runtime/.afile, making it failing on
+	my setup.
+	<3.4b> [3c580407b06f]
+
+2010-11-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Generate ChangeLog directly from the SVN.
+	<3.4b> [d6453b7bcaf0]
+
+	Add the ChangeLog generator.
+	<3.4b> [857d0a56b929]
+
+2010-11-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 3.5a for changeset 05b7ddf0e677
+	<3.4b> [70b2701a52a0]
+
+	Switch to 3.5a (bootstrap)
+	<3.4b> [05b7ddf0e677]
+
+	bgltags improvements (bootstrap)
+	<3.4b> [41fd7a203713]
+
+2010-10-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Phone contact extension (bootstrap)
+	<3.4b> [fdc58612d0a7]
+
+2010-10-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Extend phone API (bootstrap)
+	<3.4b> [7a418d548170]
+
+2010-10-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Extend phone api (bootstrap)
+	<3.4b> [8e54dd86cfa8]
+
+2010-10-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	co-instantiate fix (bootstrap)
+	<3.4b> [3b3483cd1cdc]
+
+2010-10-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	co-instantiate fixes (bootstrap)
+	<3.4b> [5640cf9b930e]
+
+2010-10-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix co-instantiate macro expansion (bootstrap)
+	<3.4b> [3e2c68bbb83d]
+
+	Installation fix, eval improved error msg (bootstrap)
+	<3.4b> [a175ac6e55b2]
+
+	Bdl compilation/installation fix (bootstrap)
+	<3.4b> [77f3747cdbae]
+
+2010-10-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix nil for byte fields (bootstrap)
+	<3.4b> [2bf0f3bba1e2]
+
+2010-10-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Port the new lib linking to Jvm and .NET (bootstrap)
+	<3.4b> [5f867da3d607]
+
+	Complete the integrate fix (bootstrap)
+	<3.4b> [89d9f77f7dbf]
+
+	Minor debug improvement (bootstrap)
+	<3.4b> [010557552641]
+
+2010-10-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix a very old compiler bug (integate duplicated) (bootstrap)
+	<3.4b> [9fd8379aa0d0]
+
+2010-10-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Enable auto-configuration of thread local storage.
+	<3.4b> [6c04f5b63392]
+
+	Minor mail fix.
+	<3.4b> [944477575b6c]
+
+	Imap fix (bootstrap)
+	<3.4b> [bbfbb0c9abbe]
+
+	Add support for letrec* (bootstrap)
+	<3.4b> [7148436bd17b]
+
+2010-10-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Eval support for co-instantiate (bootstrap)
+	<3.4b> [93951bdfc47c]
+
+	Optimize letrec as let when legal (fix) (bootstrap)
+	<3.4b> [761c299e909b]
+
+	Optimize letrec as let when legal (bootstrap)
+	<3.4b> [bf477fafb7f4]
+
+2010-10-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Export file-gzip?.
+	<3.4b> [a61e4c15b0ee]
+
+2010-10-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Extent the phone API
+	<3.4b> [6971805740ae]
+
+2010-10-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix eval library static link (bootstrap)
+	<3.4b> [526ce2e59a1d]
+
+	Add the phone library (bootstrap)
+	<3.4b> [fbcba60b46ea]
+
+2010-10-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Remove useless string copy (bootstrap)
+	<3.4b> [18a03b2bfe00]
+
+2010-10-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Complete the new implementation of eval library (link phase).
+	<3.4b> [e10f8122ec86]
+
+	Change the C behavior of eval libraries.
+	From now on, when a library is declared as accessible from eval, the
+	_e version of that library is linked against the application and
+	initialization as a regular library. In the past, the library was
+	automatically loaded with an implicit library-load call.
+	<3.4b> [7ce96f70fbb5]
+
+2010-10-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Better Android GC customization (bootstrap)
+	<3.4b> [8771f3ffd413]
+
+2010-10-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	MacOS configure fix
+	<3.4b> [83b6488ea7b0]
+
+	Fix GC initialization error.
+	<3.4b> [4c32625e38b7]
+
+2010-09-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix MacOS configure. Change -Obench (bootstrap)
+	<3.4b> [9a3a21892469]
+
+	Fix recently introduced MacOSX configure error (bootstrap)
+	<3.4b> [ff3af5e13ff1]
+
+2010-09-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Cleanup init for the C backend (bootstrap)
+	<3.4b> [08094847c829]
+
+2010-09-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	First complete (pthread support) Android port.
+	<3.4b> [7ab0f5075026]
+
+	Android improvements.
+	<3.4b> [5738196b7de4]
+
+	Patch the GC (7.2alpha4) to accommodate Android threads.
+	<3.4b> [284d04f471a7]
+
+2010-09-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve Android port.
+	<3.4b> [31af28faec86]
+
+	Various configuration changes for Android.
+	<3.4b> [bdcae730fdb1]
+
+2010-09-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	From now on, -hgen only generates local classes (bootstrap)
+	<3.4b> [a6318e886fcc]
+
+2010-09-17  Marcos Dione <mdione@sophia.inria.fr>
+	* another change in Android's layout. how unsurprising...
+	<3.4b> [db49dfa09797]
+
+	+ include changes in the Makefile.
+	<3.4b> [8cf1c2708077]
+
+	> the patch is more general now, so, just change its name.
+	<3.4b> [aff7822a69c5]
+
+	* update patch for droid-gcc.
+	<3.4b> [889c45580031]
+
+2010-09-16  Marcos Dione <mdione@sophia.inrira.fr>
+	* more detailed instructions on how to get Android's code.
+	<3.4b> [8a7f843096d1]
+
+	* improved the instructions.
+	<3.4b> [2da83a2795c9]
+
+	^ merge from my work elsewere.
+	* Android SDK r07 ahnged the path again.
+	<3.4b> [e97259d8e3c7]
+
+2010-08-09  Marcos Dione <mdione@sophia.inrira.fr>
+	* no, it actually declares itself as 'arm-unknown-linux-gnulibc'. I
+	only trust the first and third part...
+	<3.3b-android-threads> [91c993edb98b]
+
+	^ merge from 3.4b
+	<3.3b-android-threads> [c3ccefc81a1a]
+
+	* Android's gcc reports as arm-glibc-linux.
+	<3.3b-android-threads> [c4e1b4db3778]
+
+2010-08-05  Marcos Dione <mdione@sophia.inrira.fr>
+	* try to force GC to use threads under Android.
+	<3.3b-android-threads> [053e0a949236]
+
+	^ from upstream.
+	<3.3b-android-threads> [dfdf3ca89c1d]
+
+	^ from upstream.
+	<3.3b-android-threads> [ba4b8695ee75]
+
+2010-07-12  Marcos Dione <mdione@sophia.inrira.fr>
+	+ support Android versions >=2.1.
+	* the tmp dir is handled elsewhere.
+	<3.4a> [c414cb3028dd]
+
+	* make greps quiet. + forgot to save the found tmp dir.
+	<3.4a> [c877c94a86b4]
+
+	^ upstream.
+	<3.4a> [22294874703c]
+
+2010-07-09  Marcos Dione <mdione@sophia.inrira.fr>
+	* better and more complete routine for finding a tmp dir in the
+	device.
+	<3.4a> [f43ab465c13b]
+
+	* always set -e
+	<3.4a> [a5097f59dc94]
+
+2010-09-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	XML parser fix (bootstrap)
+	<3.4b> [b267b8b154d5]
+
+	Complete maildir implementation (bootstrap)
+	<3.4b> [9fbece7b90a2]
+
+2010-09-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Remove FORTIFY bypass.
+	<3.4b> [c18f98240c05]
+
+2010-09-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	No longer emit runtime tests on the JVM.
+	We now rely on the JVM for detecting index out of bounds and illegal
+	class cast conversion. Bigloo now merely intercept the JVM raised
+	exception. On the other hand, Bigloo debug modes (-g and higher)
+	still introduce explicit runtime tests.
+	<3.4b> [11a109e8059c]
+
+2010-09-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New code generation for type tests (bootstrap)
+	<3.4b> [ef7cbd3f41e5]
+
+	Switch to the new string bound checking model (bootstrap)
+	<3.4b> [8ed5af269f4c]
+
+2010-09-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve side-effect propagation for extern nodes (bootstrap)
+	<3.4b> [9ce61ea7e059]
+
+	Array bound checking move in the compiler (bootstrap)
+	<3.4b> [ab706a280b32]
+
+2010-09-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Compile heaps with BFLAGS (bootstrap)
+	<3.4b> [dae77e5319ff]
+
+2010-09-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Split cfa-arithmetic optim (fixnum+flonum) (bootstrap)
+	<3.4b> [4e740b823aff]
+
+2010-09-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix reduce inlining optimization (bootstrap)
+	<3.4b> [2d1430881940]
+
+	Fix CSS parsing (bootstrap)
+	<3.4b> [f28ecc8c7872]
+
+2010-09-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Remove eval from SRFI1 recette.
+	<3.4b> [830071d785d5]
+
+	Use setenv instead of environ (bootstrap)
+	<3.4b> [447c92c61a69]
+
+2010-08-31  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add official support for the Text API (bootstrap)
+	<3.4b> [d16869ba019f]
+
+	Add missing environ file (bootstrap)
+	<3.4b> [ad682a528605]
+
+	fix MacOS X environ dependency (bootstrap)
+	<3.4b> [b0e963839b8e]
+
+2010-08-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix profiling library (bootstrap)
+	<3.4b> [c7b8dde1f923]
+
+	Fix ical parsing (bootstrap)
+	<3.4b> [83e12b4aa6ad]
+
+	Fix ical parsing (bootstrap)
+	<3.4b> [42c0166f81fb]
+
+	OpenPGP signature decoding fix.
+	<3.4b> [b9e7f38e195b]
+
+2010-08-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	XML parser fix. Improved C autoconfiguration (bootstrap)
+	<3.4b> [f3c5df477165]
+
+	Add CONFIG syntax in cond-expand (bootstrap)
+	<3.4b> [07545344a71b]
+
+2010-08-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix macro hygienic rewritting (bootstrap)
+	<3.4b> [788b77ee2d94]
+
+2010-08-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor sha256 fix (bootstrap)
+	<3.4b> [bd4e2a7cfc7c]
+
+	Fix sha2 on 64bits architectures.
+	<3.4b> [59753c0f43a5]
+
+2010-08-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	sha256 (bootstrap)
+	<3.4b> [734cfc9de594]
+
+2010-08-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	OpenPGP fix (bootstrap)
+	<3.4b> [e777159a7579]
+
+2010-08-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Complete ZLIB support in OpenPGP (bootstrap)
+	<3.4b> [4f1a834a8521]
+
+2010-08-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add client-ftp support (bootstrap)
+	<3.4b> [8c0b1df7516f]
+
+	Minor zlib change.
+	<3.4b> [8d05921918d8]
+
+	Add zlib inflate support (bootstrap)
+	<3.4b> [2dd0026ee36a]
+
+2010-08-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Installation fix. Disable cfa-arithmetic by default. Minor mail
+	change.
+	<3.4b> [90b9befc8956]
+
+2010-08-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Replace BMASK with MODXXX.
+	<3.4b> [caf9dac4db2d]
+
+2010-08-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Maildir fixes (bootstrap)
+	<3.4b> [30ce40cd3b8c]
+
+	Installation fix.
+	<3.4b> [f241b60aab84]
+
+	Installation fixes.
+	<3.4b> [15ff4cf3b7a5]
+
+	Installation fixes.
+	<3.4b> [3c271ff87dae]
+
+	Change CC invocation not to use -I on missing dirs (bootstrap)
+	<3.4b> [bbd0177ed74e]
+
+	OpenPGP installation, bmem fix
+	<3.4b> [62103aa339d6]
+
+	OpenPGP integration. Fix BDL installation (bootstrap)
+	<3.4b> [429a7e004553]
+
+	Fix bglmem (bootstrap)
+	<3.4b> [c0cdc8378094]
+
+2010-08-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix bee parallel compilation.
+	<3.4b> [d2e35404d194]
+
+	Pattern matching fix. Libraries doc fix. (bootstrap)
+	<3.4b> [93a68e9b6cf3]
+
+	Mix match-case optimization (bootstrap)
+	<3.4b> [fd4a830ade64]
+
+2010-08-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix the documentation.
+	<3.4b> [d99719983b17]
+
+2010-07-06  Cyprien Nicolas <Cyprien.Nicolas@sophia.inria.fr>
+	Do APIs test invocation only if the binary was built (which was not
+	the case for gstreamer's ./recette-jvm).
+	<3.4b> [56ccbd81b3f9]
+
+2010-08-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix install permissions for executables.
+	<3.4b> [cadf04b7180c]
+
+	Fix API makefiles.
+	<3.4b> [217776a64bb2]
+
+2010-08-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Prevent procedure in source sexps (bootstrap)
+	<3.4b> [8b7c6608455c]
+
+2010-08-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	RFC 2047 support fix (bootstrap)
+	<3.4b> [5f65f3894740]
+
+	Complete new hygienic macro expansion.
+	<3.4b> [2bc8dfffaa4f]
+
+2010-08-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Brand new syntax-case implementation.
+	<3.4b> [aa654dc5da2b]
+
+2010-07-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Bmacs back ports.
+	<3.4a> [33286cffe58e]
+
+	Minor .NET installation fix.
+	<3.4a> [73198ac046b0]
+
+	Minor .NET installation fix.
+	<3.4b> [32a7b0f55498]
+
+2010-07-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Emacs fix, library documentation fix.
+	<3.4b> [cacb91492c59]
+
+2010-07-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Initial preparations for the new interpreter.
+	<3.4b> [5525571dab33]
+
+	Added tag 3.4b for changeset 60692fd66141
+	<3.4a> [0d83a9b190f8]
+
+	Initial 3.4b (bootstrap)
+	<3.4a> [60692fd66141]
+
+2010-07-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Shipped bootstrap (bootstrap)
+	<3.4a> [b83da0dfe53e]
+
+	Change the default configuration for thread local storage.
+	<3.4a> [b0942112e240]
+
+2010-06-30  Marcos Dione <mdione@sophia.inrira.fr>
+	^ merge my changes.
+	<3.4a> [8c283418b55d]
+
+	* the install prefix is now not defined by the user, but set to a
+	dir inside the arch/android dir. we need to install it so hop can
+	find everything in its place and this way we don't leave stuff
+	outside the source dir, and the user could not use such a bigloo
+	anyways.
+	<3.4a> [cf15100d0a62]
+
+	* typo.
+	<3.4a> [d4882fd82f0f]
+
+2010-07-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Yet another JVM (minor) fix (bootstrap)
+	<3.4a> [af2ba9480192]
+
+	Yet another JVM fix (bootstrap)
+	<3.4a> [806aa5adf6e2]
+
+	Fix java binary resource input access (bootstrap)
+	<3.4a> [7ec10b7eb7bf]
+
+2010-06-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor JVM bug fix (bootstrap)
+	<3.4a> [a3e599f82143]
+
+	Minor JVM fix.
+	<3.4a> [71a2e4f34c16]
+
+	Fix shared library installation.
+	<3.4a> [0abff24b8d55]
+
+2010-06-29  Marcos Dione <mdione@sophia.inrira.fr>
+	+ try to detect an usable tmp file in the android device.
+	<3.4a> [3dbf2388dc14]
+
+	+ load the config of which tmp directory to use from a config file.
+	<3.4a> [7cc9a457382c]
+
+	* typo in static rules.
+	<3.4a> [05ebf520f46e]
+
+	^ I don't understand. I updated to 3.4a, merged with 3.3b and still
+	3 commits in 3.4a were left out. merge them by changeset.
+	<3.4a> [61369d868728]
+
+	^ my last work on 3.3b.
+	<3.4a> [e9c4068a5214]
+
+	* the adb tool 'eats' the commands error value, so we can't make
+	tests. blindly create the tmp directory.
+	<3.3b> [3eb5c28cf005]
+
+	^ upstream.
+	<3.3b> [e4c3cc771373]
+
+2010-06-24  Marcos Dione <mdione@sophia.inrira.fr>
+	+ hop will look for some Makefiles in lib/$version. symlink them.
+	<3.3b> [556ccc284a55]
+
+2010-06-22  Marcos Dione <mdione@sophia.inrira.fr>
+	^ cyprien's fixes.
+	<3.3b> [10af4b488496]
+
+	+ compile static/safe version of the eval lib. + make clean also
+	removes the static versions.
+	<3.3b> [e8095810c878]
+
+2010-06-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Installation fix
+	<3.4a> [c2618d022f2a]
+
+	MacOSX fix
+	<3.4a> [98df1254e879]
+
+	Added tag 3.4a for changeset 8891da48b29d
+	<3.4a> [a50af2851e98]
+
+	3.4a boot (bootstrap)
+	<3.4a> [8891da48b29d]
+
+	Switch to 3.4a nomenclature.
+	<3.4a> [6da1e838e155]
+
+	Rename 3.3b into 3.4a.
+	<3.4a> [b63fd035305e]
+
+	Temporary branch
+	<3.3.b-merge> [39aa75c9dfcc]
+
+	Minor imap bug fix (bootstrap)
+	<3.3b> [b8b6d01586fd]
+
+2010-06-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor mmap fix for MinGW.
+	<3.3b> [8a9612c26458]
+
+	rollback.
+	<3.3b> [d019699e1745]
+
+2010-06-25  Cyprien Nicolas <Cyprien.Nicolas@sophia.inria.fr>
+	Bee/bdb: Change ./bdb/bdb invocation, using mode target
+	<3.3b> [15e56b745a44]
+
+2010-06-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor imap bug fix (bootstrap)
+	<3.3b> [395050747563]
+
+2010-06-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Bmem fix.
+	<3.3b> [1cdcbe90195b]
+
+	Fix bmem.
+	<3.3b> [f7785544a324]
+
+	Minor change in the mail API (bootstrap)
+	<3.3b> [49559c0092bb]
+
+2010-06-25  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor API improvement.
+	<3.3b> [89fd61fcb2f1]
+
+2010-06-22  Cyprien Nicolas <Cyprien.Nicolas@sophia.inria.fr>
+	Bdb: Fix all_cmd and parse_args compile errors (replacing '-' by
+	'_')
+	<3.3b> [fa40db3e82b9]
+
+	Api/Sqlite: Fix Makefile displaying JVM instead of C for build-c
+	<3.3b> [8a6ec0c82a14]
+
+2010-06-21  Marcos Dione <mdione@sophia.inrira.fr>
+	* typo galore...
+	<3.3b> [2918b94760b7]
+
+	* /tmp sometimes is not present on the emulated images. use
+	/data/tmp instead. + add missing script! why was it being ignored?
+	<3.3b> [5e8b7868af0a]
+
+	* support emulator's system version (2.0), even while there should
+	be a 2.0.1 image due to bugs in 2.0.
+	<3.3b> [0dd577d8f58c]
+
+	- remove generated file.
+	<3.3b> [03ab97e361aa]
+
+2010-06-24  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor bug fixes.
+	<3.3b> [ecf98901d6db]
+
+2010-06-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	SRFI-27 improved auto-configuration (bootstrap)
+	<3.3b> [1739c32af8a4]
+
+	Fix errornous eval double function eval (bootstrap)
+	<3.3b> [e740881ea4bc]
+
+2010-06-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Replace symbols with strings in error msg. (bootstrap)
+	<3.3b> [7ace03adbc7a]
+
+	Change the overall organisation of libs for MacOS X.
+	<3.3b> [8797c8a6ea61]
+
+2010-06-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	MacOS X installation fix (first attempt that only fix ssl).
+	<3.3b> [bf3443eb889c]
+
+2010-06-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix -/_ in init files.
+	<3.3b> [659f84a4ff7e]
+
+	Fix CSS mutex (bootstrap)
+	<3.3b> [3270236ab77b]
+
+	Fix bmem compilation.
+	<3.3b> [2974327877b5]
+
+2010-06-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix alignment auto-configuration.
+	<3.3b> [80d01d1f74ff]
+
+	Improve CSS parsing.
+	<3.3b> [99a62ca0658b]
+
+2010-06-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix constants printing (bootstrap)
+	<3.3b> [05c4cd3603ba]
+
+2010-06-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix CSS parser (bootstrap)
+	<3.3b> [06e80ff62c44]
+
+2010-06-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	-/_ substitutions
+	<3.3b> [d0ecc11b48ea]
+
+2010-06-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	deleting old macosx dir.
+	<3.3b> [644f59cea66b]
+
+2010-06-03  Marcos Dione <mdione@sophia.inrira.fr>
+	* rearranging definitions.
+	<3.3b-android> [2c22f2dd06b3]
+
+	* properly load the config-local script.
+	<3.3b-android> [850af48c827a]
+
+	+ note about .apk.
+	<3.3b-android> [c6300766c0a2]
+
+	+ note about installing.
+	<3.3b-android> [404f9e39d792]
+
+	* config file we can share with Hop.
+	<3.3b-android> [0c3e7e366870]
+
+	* changed name.
+	<3.3b-android> [fdb05a245102]
+
+	+ compiling instructions. + diff for droid-wrapper.
+	<3.3b-android> [a83068cccb38]
+
+	* set the install prefix in config.sh.
+	<3.3b-android> [2286c6f4199f]
+
+	+ USB Debugging and permissions.
+	<3.3b-android> [bb850853666e]
+
+2010-06-02  Marcos Dione <mdione@sophia.inrira.fr>
+	+ small FAQ.
+	<3.3b-android> [ef42df9aa09e]
+
+	* moved config to an external file.
+	<3.3b-android> [574db9746ed0]
+
+	* moved configuration to an external file.
+	<3.3b-android-threads> [7d7dc1c24de0]
+
+	* typos in comments.
+	<3.3b-android-threads> [530984068d71]
+
+	+ disable thread canceling on Android, there's not enough support in
+	the platform.
+	<3.3b-android-threads> [e1d97e45f6e5]
+
+2010-06-01  Marcos Dione <mdione@sophia.inrira.fr>
+	- removed not-needed backup file included in the patch.
+	<3.3b-android-threads> [6b0f657f5427]
+
+	* reapplied commits e65b0c47275e and 2a1c13b0fad3 into a new branch.
+	<3.3b-android-threads> [86e1def14d58]
+
+	* megerd both backouts.
+	<3.3b-android> [9f1231c97af1]
+
+	* Backed out changeset 2a1c13b0fad3. it will be developed in a
+	seperate branch, as it most probably will break everything :)
+	<3.3b-android> [598109939833]
+
+	* Backed out changeset e65b0c47275e
+	<3.3b-android> [6244a3e5722f]
+
+2010-05-27  Marcos Dione <mdione@sophia.inrira.fr>
+	+ add -DLINUX to CFLAGS when on android so gc compiles with threads.
+	<3.3b-android> [e65b0c47275e]
+
+	* use the same config for android than for linux.
+	<3.3b-android> [2a1c13b0fad3]
+
+	* cleanup.
+	<3.3b-android> [07219c97f80d]
+
+	* better error message when an android device cannot be contacted.
+	<3.3b-android> [314eea92f0fe]
+
+	* decrease verboseness.
+	<3.3b-android> [93f0459c7468]
+
+	* use the default device. this allows use a fone too.
+	<3.3b-android> [c799a4e9beb1]
+
+2010-05-26  Marcos Dione <mdione@sophia.inrira.fr>
+	* merge from upstream.
+	<3.3b-android> [4f5d2311c78c]
+
+2010-03-31  Marcos Dione <mdione@sophia.inrira.fr>
+	* reapply 42d66a8d670a because it was accidentally rolled back
+	during the merge.
+	<3.3b> [90cd23edf6bc]
+
+2010-05-19  Marcos Dione <mdione@sophia.inrira.fr>
+	* merge from upstream.
+	<3.3b-android> [df849de08837]
+
+	* it's gcc, not gc (which might confuse to think of Boehm's GC).
+	<3.3b-android> [ee5785fec1b0]
+
+2010-05-05  Marcos Dione <mdione@sophia.inrira.fr>
+	* make install was not working in the android port because the dep
+	was pointing to a place where the lib never was (which also meant
+	that it was built all the time).
+	<3.3b-android> [01f3f5501887]
+
+	* compile and install a static version of the eval version of the
+	library. needed for the android port of hop.
+	<3.3b-android> [b2eeaeb8cbda]
+
+	* merge from upstream.
+	<3.3b-android> [a7975cb3c2d8]
+
+	* note on arch/android/buil-android.sh about defining paths as CLI
+	params.
+	<3.3b-android> [76c4b570341f]
+
+2010-05-19  Marcos Dione <mdione@sophia.inrira.fr>
+	* reverted comments that slipped in the last commit.
+	<3.3b-felix> [737a5e369038]
+
+	* merge from upstream.
+	<3.3b-felix> [4f78ada28881]
+
+2010-05-18  Marcos Dione <mdione@sophia.inrira.fr>
+	* renamed still more c files.
+	<3.3b-felix> [c01e7ee3f364]
+
+	* s/inline-alloc.c/inline_alloc.c/.
+	<3.3b-felix> [73680af7b4b6]
+
+2010-05-05  Marcos Dione <mdione@sophia.inrira.fr>
+	* s/inline-alloc/inline_alloc/.
+	<3.3b-felix> [1bc24e088c83]
+
+2010-04-15  Marcos Dione <mdione@sophia.inrira.fr>
+	* more s/make-lib/make_lib/
+	<3.3b-felix> [bba860502370]
+
+2010-05-18  Marcos Dione <mdione@sophia.inrira.fr>
+	* some references to the ClassLoader were still using java's while
+	it should the current one.
+	<3.3b-felix> [5f521cc30b5b]
+
+2010-04-15  Marcos Dione <mdione@sophia.inrira.fr>
+	* s/make-lib/make_lib/.
+	<3.3b-felix> [e60bb5dd902b]
+
+2010-03-31  Marcos Dione <mdione@sophia.inrira.fr>
+	* reapply 42d66a8d670a because it was accidentally rolled back
+	during the merge.
+	<3.3b-felix> [f66ef2fe69a9]
+
+	* use the current class loader and not java's. this makes it work
+	under osgi.
+	<3.3b-felix> [1192d0481190]
+
+	* modify the Makefiles for the filename changes.
+	<3.3b-felix> [5af3a6772d05]
+
+2010-05-18  Marcos Dione <mdione@sophia.inrira.fr>
+	* s/-/_/g in filenames.
+	<3.3b-felix> [d9e5a0f57974]
+
+	* merged my fixes upstream.
+	<3.3b> [f3b6fb965cd3]
+
+2010-03-09  Marcos Dione <mdione@sophia.inrira.fr>
+	* method gramamr rule had '(field' instead of '(method'.
+	<3.3b> [dc40e4020bff]
+
+2010-06-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor distribution Makefile fix.
+	<3.3b> [26c986df631b]
+
+2010-05-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve reader performance (bootstrap)
+	<3.3b> [1d7593813def]
+
+2010-05-27  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix (p)thread-terminate problem (bootstrap)
+	<3.3b> [fc7b769eb715]
+
+	Accomodate CSS media query (bootstrap)
+	<3.3b> [327a5a37eb6f]
+
+2010-05-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	raise max apply arity to 50 (bootstrap)
+	<3.3b> [f325bb40f536]
+
+2010-05-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Export css class from the web library (bootstrap)
+	<3.3b> [c9d1bca1e2f2]
+
+	Add thread-join to nothread (bootstrap)
+	<3.3b> [a17c46a1202c]
+
+2010-05-11  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add string-skip (bootstrap)
+	<3.3b> [04cb1839325c]
+
+	Add string-skip (bootstrap)
+	<3.3b> [4b29edf6f5cc]
+
+	Fix comptime optimizing macro for reduce.
+	<3.3b> [1059592bd420]
+
+2010-05-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix HTTP-SEND-CHUNK for HTTP proxy (bootstrap)
+	<3.3b> [6f54b1ef82c2]
+
+2010-05-05  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Merging
+	<3.3b> [639d24740f09]
+
+2010-05-04  Marcos Dione <mdione@sophia.inrira.fr>
+	* merge from -merge branch, where I worked integrating last 2 months
+	of commits in another repo.
+	<3.3b> [756f15a694b9]
+
+2010-04-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	GC patch (for bmem). Gstreamer fix (all gstreamer version). Compiler
+	traces.
+	<3.3.b-merge> [05c25831ea56]
+
+2010-04-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix gstreamer initializing bug.
+	 The regular gstreamer initialization (gst_init) allows itself to
+	change the locale of the application! This error fix restores the
+	locale in use before gstreamer initializes.
+	<3.3.b-merge> [087e91735dca]
+
+2010-04-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve Gstreamer autoconfiguration.
+	<3.3.b-merge> [23504981ac8f]
+
+	Gstreamer backward compatibility.
+	<3.3.b-merge> [e812ef8f7c03]
+
+2010-03-29  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve debug macro error messages, fix key argument passing.
+	<3.3.b-merge> [89031e61c4d7]
+
+2010-03-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve HTTP to support arbitrary POST commands.
+	<3.3.b-merge> [c7e8750c003c]
+
+2010-03-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Improve connect error messages.
+	<3.3.b-merge> [2b39ae32eb00]
+
+2010-05-04  Marcos Dione <mdione@sophia.inrira.fr>
+	* raise a more explicit exception when the host is unreachable.
+	<3.3.b-merge> [64eaebe2f865]
+
+	* runtime/comptime, c-backend. Make C BIND-EXIT thread-safe!
+	<3.3.b-merge> [38f01685c3c7]
+
+	* fixes in mpd code.
+	<3.3.b-merge> [f4692799b0e7]
+
+	* music-prev/next moved from gstreamer to multimedia.
+	* use a lock instead of a timed-lock in music-volume-set!.
+	<3.3.b-merge> [acabdb162927]
+
+	+ music-can-play-type?
+	* fixes in evobject.
+	<3.3.b-merge> [e8b6f8ada73f]
+
+	* shrink global to be sure that we do not save extra information. +
+	call-with-output-string.
+	<3.3.b-merge> [062132ad3f65]
+
+	* work on mpd and gstreamer.
+	<3.3.b-merge> [4171f97584d7]
+
+2010-02-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor gstreamer fixes.
+	<3.3.b-merge> [e184d9c1072f]
+
+2010-02-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix macosx GC configure setting.
+	<3.3.b-merge> [ddd2cfabae4d]
+
+2010-02-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Add explicit Mercurial check after each commit.
+	<3.3.b-merge> [f20f26815d20]
+
+	Fix error handler setting of mpc status.
+	<3.3.b-merge> [838fe35f5975]
+
+2010-05-04  Marcos Dione <mdione@sophia.inrira.fr>
+	* fixes in mpd's code.
+	* special configuration for gc on PPC. + integer->ucs2-ur.
+	<3.3.b-merge> [5731d60f4c56]
+
+	* add bigloo's lib dir to LD_LIBRARY_PATH.
+	<3.3b-android> [8f2ab54fec2c]
+
+	* bail out if we find an Android hostos but we can't determine which
+	one it is.
+	<3.3b-android> [682d44d90482]
+
+2010-03-02  Marcos Dione <mdione@sophia.inrira.fr>
+	* remove extra \ which made the make part not run when both
+	configure and make options were given.
+	<3.3b-android> [c549139f6a99]
+
+2010-03-01  Marcos Dione <mdione@sophia.inrira.fr>
+	* s/BGL_PTHREAD_TERM_SIG/PTHREAD_CANCEL_ASYNCHRONOUS/. the semantics
+	of that check is not clear, as right now it's a constant in the
+	configure script, and it is not linked to the exitsence of
+	PTHREAD_CANCEL_ASYNCHRONOUS in the platform's headers.
+	<3.3b-android> [66cec46d5aef]
+
+	* we were trying to link the fthread lib to itself!
+	<3.3b-android> [b9d285a1319a]
+
+	* normally we'll have only one emulator running. change the port
+	accordingly.
+	* we compile bigloo for android. make it explicit in the prefix
+	dirname.
+	* rearrange options fo configure so we can move them arround at will.
+	<3.3b-android> [637f1c5922df]
+
+	* check that we're configured before trying to compile anything.
+	<3.3b-android> [878d372f442f]
+
+2010-02-25  Marcos Dione <mdione@sophia.inrira.fr>
+	* for Android pthreads is included in the libc, so we don't need and
+	extra -l<lib> LDFLAG.
+	<3.3b-android> [0e9e83f57987]
+
+	* move __satck_base__ to inline-alloc.c, so it's included in
+	libbigloogc.so and Android can find it.
+	<3.3b-android> [47bf62831539]
+
+2010-02-19  Marcos Dione <mdione@sophia.inrira.fr>
+	* s/reconfigure/configure/.
+	* fix bug in script/source detection.
+	* cleanup.
+	<3.3b-android> [1be70a86db90]
+
+2010-02-17  Marcos Dione <mdione@sophia.inrira.fr>
+	! use eclair's (android 2.0) tools.
+	<3.3b-android> [dc09ed1359bf]
+
+2010-02-16  Marcos Dione <mdione@sophia.inrira.fr>
+	* support eclair too.
+	<3.3b-android> [fc7069f819db]
+
+2010-05-04  Marcos Dione <mdione@sophia.inrira.fr>
+	* fix bug in bcopy detection. seems like at some point I mixed
+	whether we needed stddef.h or not in andriod: it turns out we needed
+	them, and the original version was right. also, it must be included
+	before including string.h.
+	<3.3b-android> [523818fa86ff]
+
+2010-02-10  Marcos Dione <mdione@sophia.inrira.fr>
+	+ gc 7.2alpha4 source code needed for Android arch.
+	<3.3b-android> [db64ab24712f]
+
+2010-03-30  Marcos Dione <mdione@sophia.inrira.fr>
+	* make make clean work when we can't find gmp.
+	<3.3b> [42d66a8d670a]
+
+2010-02-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Get rid of PPC GC special configuration.
+	<3.3b> [5f4530cbf51e]
+
+2010-02-03  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Initial commit for 3.3b.
+	<3.3b> [2bddb5aa6734]
+
+	Android fixes.
+	<3.3a> [4d69711944c1]
+
+	Android patches.
+	<3.3a> [de831f8e4154]
+
+2010-01-04  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Change sendfile detection (use /etc/hosts instead of /etc/passwd).
+	<3.2c> [6f24c64a0e80]
+
+2009-12-14  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Maemo autoconf fix.
+	<3.2c> [5a508880d577]
+
+2009-12-07  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Touch .afile to avoid regenerating afile on boot.
+	<3.2c> [8fc4c7cb60e1]
+
+	Minor bmacs installation fix.
+	<3.2c> [acf5738ea37b]
+
+2009-12-04  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Improve GMP custom installation
+	<3.2c> [6658efadb0ed]
+
+2009-12-03  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Add automatic bignum->fixnum conversion to arith. ops. (bootstrap)
+	<3.2c> [95432e058928]
+
+2009-12-02  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Minor Makefiles fixes for .deb creation
+	<3.2c> [0a5c1664ca69]
+
+2009-12-01  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Added tag 3.3a for changeset 216b62fb5084
+	<3.2c> [a22622c826ee]
+
+	Split Makefile install entry
+	<3.2c> [82c2b0570dfb]
+
+2009-11-30  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Fix SENDFILE bug. Offset was ignored!
+	<3.2c> [f39ebdf1b2a2]
+
+2009-11-23  Manuel Serrano (Manuel.Serrano@inria.fr)
+	SQLITE configuration fix.
+	<3.2c> [104d861f27bf]
+
+	Autoconf fix.
+	<3.2c> [0f0c04ad55a0]
+
+	autoconf fixes
+	<3.2c> [288012ce7d22]
+
+	Yet another MinGW fix.
+	<3.2c> [6f01bfbecaa1]
+
+	MinGW configuration fix.
+	<3.2c> [18fcefc01023]
+
+2009-11-13  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Fix LDSHARE autoconfiguration.
+	<3.2c> [b3f2ba7c712b]
+
+	Fix SIGCHLD autoconfiguration.
+	<3.2c> [24adcaf94211]
+
+2009-11-12  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Fix bignum multiplication and SRFI-27 (bootstrap)
+	<3.2c> [47292b16f21f]
+
+	Fix JVM strings generation (MacOS X only). Fix HTTP status line
+	parsing.
+	<3.2c> [7fada995c725]
+
+2009-11-11  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Fix threads configuration
+	<3.2c> [4cd74e3a6fae]
+
+	Fix DBUS configuration
+	<3.2c> [d1baf4629c0e]
+
+	Fix user --enable-XXX option
+	<3.2c> [ab21fa790f7b]
+
+	Fix SQLITE configuration
+	<3.2c> [27232740f659]
+
+	Fix DBUS configuration
+	<3.2c> [8bb32e06fe36]
+
+	Fix JVM configuration
+	<3.2c> [48b281c994df]
+
+	Fix DBUS configuration
+	<3.2c> [ed2f8478e29a]
+
+2009-11-04  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Document the new behavior of WITH-HANDLER.
+	<3.2c> [800099f5ac18]
+
+2009-10-15  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Fix the comptime/bigloo.plain entry that prevented bootstraps.
+	<3.2c> [67d31463d5e2]
+
+2009-10-14  Florian Loitsch <florian.loitsch@sophia.inria.fr>
+	rename double->ieee-string, etc to double->octet-string. Old forms
+	still exist but are not documented.
+	<3.2c> [2d2f25bea9c8]
+
+2009-10-07  Florian Loitsch
+	fixed ieee-string->float (and inverse). added double->llong-bits,
+	float->int-bits (and inverse).
+	<3.2c> [1ed8a5d263e3]
+
+2009-10-05  Florian Loitsch
+	integer->ucs2 now allows '0'. added integer->ucs2-ur.
+	<3.2c> [10cae5604257]
+
+2009-10-02  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Fix bmacs installation.
+	<3.2c> [cbb01b342d31]
+
+2009-10-01  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Minor Makefile fix (thanks Cyprien).
+	<3.2c> [af1b285290c1]
+
+2009-09-11  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Minor GC install fix.
+	<3.2c> [840d0ee068c6]
+
+2009-09-28  Florian Loitsch
+	closing branch. changes have been merged into main tree.
+	[8d8076900e9e]
+
+2009-09-25  Florian Loitsch
+	stop compilation when the first error is encountered.
+	<3.2c> [cd605b0164dc]
+
+2009-09-22  Florian Loitsch <florian.loitsch@sophia.inria.fr>
+	small configure-bugfix.
+	<3.2c> [c7c1332d8f16]
+
+	fix. seed-random! now correctly transmits the seed (Java).
+	<3.2c> [9a6061c77632]
+
+2009-09-11  Florian Loitsch <florian.loitsch@sophia.inria.fr>
+	parallel build patches.
+	<3.2c> [bfd859dda381]
+
+	parallel build patch.
+	<3.2c> [f9fb8fc9aed7]
+
+	bugfix. (pass-parse-args).
+	<3.2c> [2baa6464719a]
+
+	last one did not work completely for mercurial checkouts.
+	<3.2c> [2e7fb97cb468]
+
+	slightly changed pass-args-parse syntax.
+	<3.2c> [7f0c3f292a52]
+
+	Fix arity checking (bootstrap)
+	<3.2c> [625e1d052cec]
+
+	Fix arity checking.
+	<3.2c> [ebfa670b4964]
+
+2009-09-10  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Rename BUILDBINDIR into BGLBUILDBINDIR (and BUILDLIBDIR).
+	<3.2c> [0ee36f656ce1]
+
+	MacOS pthread Makefile fix.
+	<3.2c> [7d7ec42f0460]
+
+	Fix autoconf/ldshare test.
+	<3.2c> [382e31a6a65b]
+
+	Bug fix.
+	<3.2c> [499a563b4dc9]
+
+2009-09-09  Florian Loitsch <florian.loitsch@sophia.inria.fr>
+	added cross-compilation documentation
+	<3.2c> [a1208a775350]
+
+	added some hostsh examples.
+	<3.2c> [f0c05d8ba7e0]
+
+	-lib-dir now handles cross-compilation. make (-> make boot) is now
+	sufficient for bootstrap from mercurial.
+	<3.2c> [9b3798e20a57]
+
+2009-09-08  Florian Loitsch <florian.loitsch@sophia.inria.fr>
+	cross-configuration seems to work again.
+	<3.2c> [b5ffec034600]
+
+	Minor autoconf changes.
+	<3.2c> [dad3012662de]
+
+	Minor autoconf fix.
+	<3.2c> [90013631e14f]
+
+2009-09-07  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Mercurial fix.
+	<3.2c> [f13d139317be]
+
+	Minor emacs(23) install fix.
+	<3.2c> [4df7b0a66e3b]
+
+	Brand new configure implementation (to prepare cross installation).
+	[a0147983b3aa]
+
+2009-07-28  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Fix pthread init process.
+	[578975e21240]
+
+2009-09-03  Florian Loitsch <florian.loitsch@sophia.inria.fr>
+	fixes segfaults when using unread-char and unread-string
+	[155e1f853655]
+
+2009-08-04  Florian Loitsch <florian.loitsch@sophia.inria.fr>
+	typo. rsa-encrypt -> rsa-sign.
+	[24409766f944]
+
+	first psuh of crypto-api. remaining issues:
+	 - the ciphers are still compiled in Unsafe mode, and
+	 - cast-128 allocates elongs like crazy. Both are not showstoppers,
+	though.
+	[899a30ac24a7]
+
+	embarrassing, but another fix in the manual (old spurious
+	documentation).
+	[db80594dcdc4]
+
+	little typo... functions are named "unread-char!.." and not "rgc-
+	buffer-unread-char!, ..."
+	[64f28e6a6446]
+
+	added unread-char! and unread-string!
+	[38147f0311bd]
+
+	added CRC to menu (otherwise the whole thing won't build...)
+	[935acbc61d69]
+
+2009-07-31  Florian Loitsch <florian.loitsch@sophia.inria.fr>
+	Added CRC (and small fix to doc from previous commit).
+	[4ac326cd0b45]
+
+	added bignum->octet-string, octet-string->bignum and the #zxHEX
+	notation.
+	[a4ad2f62679b]
+
+2009-07-24  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Add http fthread example. Fix read-chars on eof.
+	[c6459770b319]
+
+2009-07-07  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Fix bmacs Makefile.
+	[ac6ac1049f6b]
+
+	Improve mime multipart decoding.
+	[af9b35619eaf]
+
+2009-07-06  Manuel Serrano (Manuel.Serrano@inria.fr)
+	Initial mercurial version for Bigloo (3.2c alpha).
+	[785dd3a1754f]
+
