@@ -21,7 +21,7 @@ Llib/alsa.scm,293
 (define (alsa-snd-version53,2219
 (define (alsa-snd-devices-list59,2498
 
-Llib/pcm.scm,1766
+Llib/pcm.scm,1992
 (module __alsa_pcm15,963
 (define (alsa-snd-pcm?21,1033
 (define (make-alsa-snd-pcm21,1033
@@ -33,38 +33,43 @@ Llib/pcm.scm,1766
 (define (alsa-snd-pcm-device::bstring24,1177
 (define (alsa-snd-pcm-stream::symbol25,1232
 (define (alsa-snd-pcm-mode::symbol26,1286
-(define-method (object-print o::alsa-snd-pcm port print-slot62,2913
-(define (%$snd-pcm-nil73,3410
-(define (alsa-snd-pcm-open79,3676
-(define (alsa-snd-pcm-close101,4462
-(define (alsa-snd-pcm-reopen110,4909
-(define (alsa-snd-pcm-get-state127,5572
-(define (alsa-snd-pcm-avail150,6508
-(define (alsa-snd-pcm-avail-update157,6860
-(define (symbol->stream164,7226
-(define (symbol->pcm-mode176,7731
-(define (symbol->format189,8216
-(define (symbol->access247,10611
-(define (alsa-snd-pcm-set-params!262,11322
-(define (alsa-snd-pcm-writei281,12035
-(define (alsa-snd-pcm-pause294,12596
-(define (alsa-snd-pcm-wait307,13139
-(define (alsa-snd-pcm-reset320,13673
-(define (alsa-snd-pcm-recover333,14197
-(define (alsa-snd-pcm-prepare346,14752
-(define (alsa-snd-pcm-start359,15282
-(define (alsa-snd-pcm-drop372,15806
-(define (alsa-snd-pcm-drain385,16327
-(define (alsa-snd-pcm-cleanup398,16851
-(define (alsa-snd-pcm-hw-free!431,17821
-(define (alsa-snd-pcm-hw-set-params!443,18345
-(define (alsa-snd-pcm-hw-test-params?534,21415
-(define (alsa-snd-pcm-hw-params-get-buffer-size566,22594
-(define (alsa-snd-pcm-hw-params-get-buffer-time581,23209
-(define (alsa-snd-pcm-hw-params-get-rates596,23812
-(define (alsa-snd-pcm-sw-set-params!614,24476
-(define (alsa-snd-pcm-write660,26081
-(define (alsa-snd-pcm-flush666,26400
+(define (alsa-snd-pcm-hwbps::int-set!27,1337
+(define (alsa-snd-pcm-hwbps::int27,1337
+(define (alsa-snd-pcm-hwsrate::int-set!28,1370
+(define (alsa-snd-pcm-hwsrate::int28,1370
+(define-method (object-print o::alsa-snd-pcm port print-slot65,3041
+(define (%$snd-pcm-nil76,3538
+(define (alsa-snd-pcm-open82,3804
+(define (alsa-snd-pcm-close104,4590
+(define (alsa-snd-pcm-reopen113,5037
+(define (alsa-snd-pcm-get-state130,5700
+(define (alsa-snd-pcm-avail153,6636
+(define (alsa-snd-pcm-avail-update160,6988
+(define (symbol->stream167,7354
+(define (symbol->pcm-mode179,7859
+(define (symbol->format192,8344
+(define (symbol->access250,10739
+(define (alsa-snd-pcm-set-params!265,11450
+(define (alsa-snd-pcm-writei284,12163
+(define (alsa-snd-pcm-pause297,12724
+(define (alsa-snd-pcm-wait310,13267
+(define (alsa-snd-pcm-reset323,13801
+(define (alsa-snd-pcm-recover336,14325
+(define (alsa-snd-pcm-prepare349,14880
+(define (alsa-snd-pcm-start362,15410
+(define (alsa-snd-pcm-drop375,15934
+(define (alsa-snd-pcm-drain388,16455
+(define (alsa-snd-pcm-cleanup401,16979
+(define (alsa-snd-pcm-hw-card-detect!434,17949
+(define (alsa-snd-pcm-hw-free!540,21314
+(define (alsa-snd-pcm-hw-set-params!552,21838
+(define (alsa-snd-pcm-hw-test-params?643,24908
+(define (alsa-snd-pcm-hw-params-get-buffer-size675,26087
+(define (alsa-snd-pcm-hw-params-get-buffer-time690,26702
+(define (alsa-snd-pcm-hw-params-get-rates705,27305
+(define (alsa-snd-pcm-sw-set-params!723,27969
+(define (alsa-snd-pcm-write769,29574
+(define (alsa-snd-pcm-flush775,29893
 
 Llib/card.scm,344
 (module __alsa_card15,963
