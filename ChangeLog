@@ -1,3 +1,14 @@
+2015-04-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	multipart cgi parsing (bootstrap)
+	<4.2a> [bee5c81c5ea2]
+
+	multipart cgi parsing (bootstrap)
+	<4.2a> [5a0ffdda424f]
+
+2015-04-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	alsa improvement (bootstrap)
+	<4.2a> [6dbd767d74f5]
+
 2015-04-01  Manuel Serrano <Manuel.Serrano@inria.fr>
 	Minor flac bug fix (bootstrap)
 	<4.2a> [ae7336c49e9d]
