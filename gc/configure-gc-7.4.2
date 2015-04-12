@@ -18,14 +18,28 @@ else
 fi
 
 # configure the collector for single-threaded applications
-(cd gc/$gccustom && \
- export CC=$cc && \
- export CFLAGS="$cgcflags $cgcfinalflags -DBGL_GC_THREADS -I$bootdir/lib/$release" && \
- export LDFLAGS=$lflags && \
- export SHELL=$sh && \
- ./configure $gcconfiguredir $gcconfigureopt --enable-static=yes $gcconfigurethreadsopt  --with-libatomic-ops=no >> configure.log || \
- (echo "configure gc fail, see configure.log file." && exit 1)) || exit 1
 
+# Since we are not building separate threaded and non-threaded versions of all
+# the bigloo libraries for windows when threads are enabled, we need to
+# configure the "single threaded" gc to actually be thread enabled for bigloo
+# to function correctly
+if [ "$hostos " = "mingw " -a "$threadsuport " != "no " ]; then
+  (cd gc/$gccustom && \
+   export CC=$cc && \
+   export CFLAGS="$cgcflags $cgcfinalflags -DBGL_GC_THREADS -I$bootdir/lib/$release" && \
+   export LDFLAGS=$lflags && \
+   export SHELL=$sh && \
+   ./configure $gcconfiguredir $gcconfigureopt --enable-static=yes $gcconfigurethreadsopt  --with-libatomic-ops=no >> configure.log || \
+   (echo "configure gc fail, see configure.log file." && exit 1)) || exit 1
+else
+    (cd gc/$gccustom && \
+   export CC=$cc && \
+   export CFLAGS="$cgcflags $cgcfinalflags -I$bootdir/lib/$release" && \
+   export LDFLAGS=$lflags && \
+   export SHELL=$sh && \
+   ./configure $gcconfiguredir $gcconfigureopt --enable-static=yes --disable-threads --with-libatomic-ops=no >> configure.log || \
+   (echo "configure gc fail, see configure.log file." && exit 1)) || exit 1  
+fi
 # configure the collector for multi-threaded applications
 if [ "$threadsupport " != "no " ]; then
   (cd "gc/$gccustom"_fth && \
