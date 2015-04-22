@@ -46,20 +46,20 @@ Llib/flac.scm,2137
 (define-generic (flac-decoder-decode105,4868
 (define-generic (flac-decoder-decode16116,5360
 (define-generic (flac-decoder-reset!127,5856
-(define (flac-decoder-get-state136,6312
-(define-generic (flac-decoder-read143,6699
-(define-generic (flac-decoder-write149,6991
-(define-generic (flac-decoder-metadata158,7341
-(define-generic (flac-decoder-tell167,7691
-(define-generic (flac-decoder-seek173,7973
-(define-generic (flac-decoder-length179,8262
-(define-generic (flac-decoder-info185,8546
-(define (flac-decoder-state->symbol193,8969
-(define (flac-error-status221,10170
-(define-generic (flac-decoder-position237,10813
-(define-generic (flac-volume-get249,11290
-(define-generic (flac-volume-set!256,11658
-(define (flac-error265,12103
+(define (flac-decoder-get-state137,6339
+(define-generic (flac-decoder-read144,6726
+(define-generic (flac-decoder-write150,7018
+(define-generic (flac-decoder-metadata159,7368
+(define-generic (flac-decoder-tell168,7718
+(define-generic (flac-decoder-seek174,8000
+(define-generic (flac-decoder-length180,8289
+(define-generic (flac-decoder-info186,8573
+(define (flac-decoder-state->symbol194,8996
+(define (flac-error-status222,10197
+(define-generic (flac-decoder-position238,10840
+(define-generic (flac-volume-get250,11317
+(define-generic (flac-volume-set!257,11685
+(define (flac-error266,12130
 
 Llib/flac_alsadec.scm,754
 (module __flac_alsadec15,963

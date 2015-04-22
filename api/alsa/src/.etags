@@ -223,46 +223,46 @@ Llib/music.scm,6661
 (define (url-song-length221,10262
 (define (open-file235,10842
 (define-method (music-play o::alsamusic . s249,11349
-(define-method (music-stop o::alsamusic521,19850
-(define (alsamusic-wait-ready!530,20254
-(define (alsabuffer-abort!551,21052
-(define (alsadecoder-abort!561,21489
-(define-method (music-pause o::alsamusic571,21937
-(define (alsadecoder-pause580,22351
-(define-generic (alsabuffer-fill!592,22823
-(define-method (alsabuffer-fill! buffer::alsaportbuffer o::alsamusic597,23117
-(define-method (alsabuffer-fill! buffer::alsammapbuffer o::alsamusic660,24902
-(define-generic (alsadecoder-decode672,25467
-(define-method (music-volume-get o::alsamusic677,25770
-(define-method (music-volume-set! o::alsamusic vol685,26140
-(define-generic (alsadecoder-init695,26636
-(define-generic (alsadecoder-reset!701,26915
-(define-generic (alsadecoder-close711,27330
-(define-generic (alsadecoder-can-play-type?716,27608
-(define-generic (alsabuffer-stream723,27980
-(define-method (alsabuffer-stream o::alsaportbuffer729,28260
-(define-method (alsabuffer-stream o::alsammapbuffer736,28590
-(define-generic (alsabuffer-close743,28920
-(define-method (alsabuffer-close o::alsaportbuffer748,29193
-(define-method (alsabuffer-close o::alsammapbuffer755,29541
-(define-generic (alsabuffer-length762,29883
-(define-method (alsabuffer-length o::alsaportbuffer768,30173
-(define-method (alsabuffer-length o::alsammapbuffer775,30523
-(define-generic (alsabuffer-tell782,30867
-(define-method (alsabuffer-tell o::alsaportbuffer788,31145
-(define-method (alsabuffer-tell o::alsammapbuffer796,31595
-(define-generic (alsabuffer-seek803,31941
-(define-method (alsabuffer-seek buffer::alsaportbuffer offset808,32225
-(define-method (alsabuffer-seek buffer::alsammapbuffer offset826,32997
-(define-generic (alsabuffer-substring838,33485
-(define-method (alsabuffer-substring buffer::alsaportbuffer start end843,33777
-(define-method (alsabuffer-substring buffer::alsammapbuffer start end851,34191
-(define-generic (alsabuffer-blit-string!858,34603
-(define-method (alsabuffer-blit-string! buf::alsaportbuffer s0 string s1 len863,34902
-(define-method (alsabuffer-blit-string! buf::alsammapbuffer s0 string s1 len870,35295
-(define-generic (alsabuffer-available880,35773
-(define-generic (alsadecoder-position891,36244
-(define-generic (alsadecoder-info896,36536
-(define-generic (alsadecoder-seek901,36810
-(define-generic (alsadecoder-volume-set!906,37093
-(define (mime-type911,37382
+(define-method (music-stop o::alsamusic521,19847
+(define (alsamusic-wait-ready!530,20251
+(define (alsabuffer-abort!551,21049
+(define (alsadecoder-abort!561,21486
+(define-method (music-pause o::alsamusic571,21934
+(define (alsadecoder-pause580,22348
+(define-generic (alsabuffer-fill!592,22820
+(define-method (alsabuffer-fill! buffer::alsaportbuffer o::alsamusic597,23114
+(define-method (alsabuffer-fill! buffer::alsammapbuffer o::alsamusic660,24899
+(define-generic (alsadecoder-decode672,25464
+(define-method (music-volume-get o::alsamusic677,25767
+(define-method (music-volume-set! o::alsamusic vol685,26137
+(define-generic (alsadecoder-init695,26633
+(define-generic (alsadecoder-reset!701,26912
+(define-generic (alsadecoder-close711,27327
+(define-generic (alsadecoder-can-play-type?716,27605
+(define-generic (alsabuffer-stream723,27977
+(define-method (alsabuffer-stream o::alsaportbuffer729,28257
+(define-method (alsabuffer-stream o::alsammapbuffer736,28587
+(define-generic (alsabuffer-close743,28917
+(define-method (alsabuffer-close o::alsaportbuffer748,29190
+(define-method (alsabuffer-close o::alsammapbuffer755,29538
+(define-generic (alsabuffer-length762,29880
+(define-method (alsabuffer-length o::alsaportbuffer768,30170
+(define-method (alsabuffer-length o::alsammapbuffer775,30520
+(define-generic (alsabuffer-tell782,30864
+(define-method (alsabuffer-tell o::alsaportbuffer788,31142
+(define-method (alsabuffer-tell o::alsammapbuffer796,31592
+(define-generic (alsabuffer-seek803,31938
+(define-method (alsabuffer-seek buffer::alsaportbuffer offset808,32222
+(define-method (alsabuffer-seek buffer::alsammapbuffer offset826,32994
+(define-generic (alsabuffer-substring838,33482
+(define-method (alsabuffer-substring buffer::alsaportbuffer start end843,33774
+(define-method (alsabuffer-substring buffer::alsammapbuffer start end851,34188
+(define-generic (alsabuffer-blit-string!858,34600
+(define-method (alsabuffer-blit-string! buf::alsaportbuffer s0 string s1 len863,34899
+(define-method (alsabuffer-blit-string! buf::alsammapbuffer s0 string s1 len870,35292
+(define-generic (alsabuffer-available880,35770
+(define-generic (alsadecoder-position891,36241
+(define-generic (alsadecoder-info896,36533
+(define-generic (alsadecoder-seek901,36807
+(define-generic (alsadecoder-volume-set!906,37090
+(define (mime-type911,37379

@@ -1,3 +1,11 @@
+2015-04-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Socket fixes and circular IOs (bootstrap)
+	<4.2a> [80a828d3ad94]
+
+2015-04-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Alsa fix (bootstrap)
+	<4.2a> [057bf5597e0d]
+
 2015-04-08  Manuel Serrano <Manuel.Serrano@inria.fr>
 	multipart cgi parsing (bootstrap)
 	<4.2a> [bee5c81c5ea2]
