@@ -1,4 +1,4 @@
-(sui "BiglooA practical Scheme compilerUser manual for version 4.2aApril 2015"
+(sui "BiglooA practical Scheme compilerUser manual for version 4.2aMay 2015"
   :file "bigloo.html"
   (marks
     ("Acknowledgements" :file "bigloo-1.html" :mark "Acknowledgements" :class "mark")
