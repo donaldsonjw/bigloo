@@ -30,7 +30,9 @@
 #include <bigloo_config.h>
 #include <time.h>
 #ifndef _BGL_WIN32_VER
+#   define SOCKET_T int
 #   define SOCKOPTVALTYPE void*
+#   define SOCKET_CLOSE(s) (close(s))
 #   include <sys/types.h> 
 #   include <sys/socket.h>
 #   include <netinet/in.h>
@@ -48,10 +50,11 @@
 #     include <unistd.h>
 #   endif
 #else
+#   define SOCKET_T SOCKET
 #   define SOCKOPTVALTYPE char*
-
+#   define SOCKET_CLOSE(s) (closesocket(s))
+#   include <winsock2.h>
 #   include <ws2tcpip.h>
-#   include <mswsock.h>
 #   include <io.h>
 #   ifndef AI_ADDRCONFIG
 #      define AI_ADDRCONFIG 0
@@ -67,7 +70,7 @@
 #else
 #   define BAD_SOCKET(s) ((s) == INVALID_SOCKET)
 #endif
-
+ 
 #if !BGL_HAVE_SOCKLEN
 typedef int socklen_t;
 #endif
@@ -1008,7 +1011,7 @@ static obj_t
 gethwaddr( char *intf ) {
 #if( BGL_HAVE_GETHWADDRS )
     struct ifreq buffer;
-    int s;
+    SOCKET_T s;
     if( BAD_SOCKET(s = socket( PF_INET, SOCK_DGRAM, 0 ))) {
        return BFALSE;
     } else {
@@ -1019,7 +1022,7 @@ gethwaddr( char *intf ) {
 
        ioctl( s, SIOCGIFHWADDR, &buffer );
        
-       close( s );
+       SOCKET_CLOSE( s );
 
        sprintf( buf,"%.2x:%.2x:%.2x:%.2x:%.2x:%.2x",
 		(unsigned char)buffer.ifr_hwaddr.sa_data[ 0 ],
@@ -1101,7 +1104,7 @@ bgl_gethostinterfaces() {
    return res;
 #else
 #  if( BGL_HAVE_GETHWADDRS )
-   int fd;
+   SOCKET_T fd;
    struct ifconf conf;
    char data[ 4096 ];
    struct ifreq *ifr;
@@ -1143,7 +1146,7 @@ bgl_gethostinterfaces() {
       }
 
    end:    
-      close( fd );
+      SOCKET_CLOSE( fd );
    }
    
    return res;
@@ -1189,7 +1192,7 @@ socket_startup() {
 /*    socket_cleanup ...                                               */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF void
-socket_cleanup() {
+socket_cleanup() { 
 #ifdef _BGL_WIN32_VER
    WSACleanup();
 #endif
@@ -1201,9 +1204,15 @@ socket_cleanup() {
 /*---------------------------------------------------------------------*/
 static int
 bgl_sclose_rd( FILE *stream ) {
-   shutdown( fileno( stream ), SHUT_RD );
-   // ignore shutdown errors to avoid fd leaks
-   return fclose( stream ); 
+   SOCKET_T s;
+   #ifdef _BGL_WIN32_VER
+   s = _get_osfhandle(fileno( stream ));
+   #else
+   s = fileno(stream);
+   #endif
+   shutdown( s, SHUT_RD );
+   return fclose( stream );
+  
 }
 
 /*---------------------------------------------------------------------*/
@@ -1212,9 +1221,17 @@ bgl_sclose_rd( FILE *stream ) {
 /*---------------------------------------------------------------------*/
 static int
 bgl_sclose_wd( int stream ) {
-   shutdown( stream, SHUT_WR );
-   // ignore shutdown errors to avoid fd leaks
-   return close( stream );
+    SOCKET_T s;
+
+    #ifdef _BGL_WIN32_VER
+    s = _get_osfhandle(stream);
+    #else
+    s = stream;
+    #endif
+  
+    shutdown( s, SHUT_WR );
+    return close( stream );
+   
 }
 
 /*---------------------------------------------------------------------*/
@@ -1273,22 +1290,24 @@ bgl_socket_flush( obj_t port ) {
 /*    set_socket_io_ports ...                                          */
 /*---------------------------------------------------------------------*/
 static void
-set_socket_io_ports( int s, obj_t sock, const char *who, obj_t inb, obj_t outb ) {
-   int t, port;
+set_socket_io_ports( SOCKET_T s, obj_t sock, const char *who, obj_t inb, obj_t outb ) {
+   int s2, t, port;
    obj_t name;
    FILE *fs;
-
+   
    /* if on windows obtain a C run-time compatible file descriptor */
 #ifdef _BGL_WIN32_VER
-   s = _open_osfhandle( s, _O_RDWR );
+   s2 = _open_osfhandle( s, _O_RDWR | _O_BINARY );
+#else
+   s2 = s;
 #endif
 
    /* duplicate handles so that we are able to access one */
    /* socket channel via two scheme ports and thus we are */
    /* able to close each port independently.              */
-   t = dup( s );
-
-   if( (t == -1) || (s == -1) ) {
+   t = dup( s2 );
+   
+   if( (t == -1) || (s2 == -1) ) {
       char *buffer = alloca( 1024 );
       
       BGL_MUTEX_LOCK( socket_mutex );
@@ -1298,7 +1317,7 @@ set_socket_io_ports( int s, obj_t sock, const char *who, obj_t inb, obj_t outb )
       socket_error( "set_socket_io_ports", buffer, BUNSPEC );
    }
 
-   if( !(fs = fdopen( t, "r" )) ) { 
+   if( !(fs = fdopen( t, "rb" )) ) { 
       char *buffer = alloca( 1024 );
       
       BGL_MUTEX_LOCK( socket_mutex );
@@ -1317,12 +1336,12 @@ set_socket_io_ports( int s, obj_t sock, const char *who, obj_t inb, obj_t outb )
    SOCKET( sock ).input->port_t.sysclose = &bgl_sclose_rd;
 
    /* Create output port */
-   SOCKET( sock ).output = bgl_make_output_port( sock, (bgl_stream_t)s,
+   SOCKET( sock ).output = bgl_make_output_port( sock, (bgl_stream_t)s2,
 						 BGL_STREAM_TYPE_FD,
 						 KINDOF_SOCKET,
 						 outb,
 						 bgl_syswrite,
-						 lseek,
+						 0L,
 						 &bgl_sclose_wd );
    SOCKET( sock ).output->output_port_t.sysflush = &bgl_socket_flush;
       
@@ -1336,7 +1355,7 @@ set_socket_io_ports( int s, obj_t sock, const char *who, obj_t inb, obj_t outb )
 /*---------------------------------------------------------------------*/
 #if( BGL_HAVE_FCNTL )
 static void
-set_socket_blocking( int fd, int bool ) {
+set_socket_blocking( SOCKET_T fd, int bool ) {
    int val;
 
    if( (val = fcntl( fd, F_GETFL, 0)) < 0 ) {
@@ -1363,7 +1382,8 @@ BGL_RUNTIME_DEF obj_t
 bgl_make_client_socket( obj_t hostname, int port, int timeo, obj_t inb, obj_t outb ) {
    struct hostent *hp;
    struct sockaddr_in server;
-   int s, err;
+   SOCKET_T s;
+   int err;
    obj_t a_socket;
    obj_t hname;
 
@@ -1379,7 +1399,7 @@ bgl_make_client_socket( obj_t hostname, int port, int timeo, obj_t inb, obj_t ou
    }
 
    /* Get a socket */
-   if( BAD_SOCKET( s = (int)socket( AF_INET, SOCK_STREAM, 0 ) ) ) {
+   if( BAD_SOCKET( s = (SOCKET_T)socket( AF_INET, SOCK_STREAM, 0 ) ) ) {
       tcp_client_socket_error( hostname, port, "cannot create socket", errno );
    }
 
@@ -1430,7 +1450,7 @@ bgl_make_client_socket( obj_t hostname, int port, int timeo, obj_t inb, obj_t ou
                && errno == EINTR);
 
 	 if( err == 0 ) {
-	    close( s );
+	    SOCKET_CLOSE( s );
 	    socket_timeout_error( hostname, port );
 	 } else {
 	    _errno = errno;
@@ -1439,7 +1459,7 @@ bgl_make_client_socket( obj_t hostname, int port, int timeo, obj_t inb, obj_t ou
 	       /* invalidate the host name entry */
 	       invalidate_hostbyname( hostname );
 	       
-	       close( s );
+	       SOCKET_CLOSE( s );
 	       tcp_client_socket_error( hostname, port, "Connection failed", errno );
 	    } else {
 	       int len = sizeof( int );
@@ -1448,7 +1468,7 @@ bgl_make_client_socket( obj_t hostname, int port, int timeo, obj_t inb, obj_t ou
 	       if( (r < 0) || (err != 0) ) {
 		  /* we have experienced a failure so we */
 		  /* invalidate the host name entry */
-		  close( s );
+		  SOCKET_CLOSE( s );
 		  tcp_client_socket_error( hostname, port, 0, _errno );
 	       }
 	    }
@@ -1459,7 +1479,7 @@ bgl_make_client_socket( obj_t hostname, int port, int timeo, obj_t inb, obj_t ou
 	 /* invalidate the host name entry */
 	 invalidate_hostbyname( hostname );
       
-	 close( s );
+	 SOCKET_CLOSE( s );
 	 tcp_client_socket_error( hostname, port, "Connection failed", errno );
       }
 #else
@@ -1467,7 +1487,7 @@ bgl_make_client_socket( obj_t hostname, int port, int timeo, obj_t inb, obj_t ou
       /* invalidate the host name entry */
       invalidate_hostbyname( hostname );
       
-      close( s );
+      SOCKET_CLOSE( s );
       tcp_client_socket_error( hostname, port, "Connection failed", errno );
 #endif
    }
@@ -1498,7 +1518,8 @@ bgl_make_client_socket( obj_t hostname, int port, int timeo, obj_t inb, obj_t ou
 BGL_RUNTIME_DEF obj_t
 bgl_make_unix_socket( obj_t path, int timeo, obj_t inb, obj_t outb ) {
 #if( BGL_HAVE_UNIX_SOCKET )
-   int s, err;
+   SOCKET_T s;
+   int err;
    obj_t a_socket;
    struct sockaddr_un saddr;
    int namelen = STRING_LENGTH( path );
@@ -1509,7 +1530,7 @@ bgl_make_unix_socket( obj_t path, int timeo, obj_t inb, obj_t outb ) {
        : sizeof( saddr ));
 
    /* Get a socket */
-   if( BAD_SOCKET( s = (int)socket( AF_UNIX, SOCK_STREAM, 0 ) ) ) {
+   if( BAD_SOCKET( s = (SOCKET_T)socket( AF_UNIX, SOCK_STREAM, 0 ) ) ) {
       tcp_client_socket_error( path, -1, "cannot create socket", errno );
    }
 
@@ -1528,7 +1549,7 @@ bgl_make_unix_socket( obj_t path, int timeo, obj_t inb, obj_t outb ) {
           && errno == EINTR );
    
    if( err < 0 ) {
-      close( s );
+      SOCKET_CLOSE( s );
       tcp_client_socket_error( path, -1, "Connection failed", errno );
    }
 
@@ -1562,9 +1583,10 @@ bgl_make_server_socket( obj_t hostname, int portnum, int backlog ) {
    char msg[] = "make-server-socket";
    struct sockaddr_in sin;
    struct hostent *hp;
-   int s, len;
+   SOCKET_T s;
+   int len;
    obj_t a_socket;
-   int sock_opt = 1;
+   int sock_opt = 1; 
 
    /* Determine port to use */
    if( portnum < 0 )
@@ -1576,7 +1598,7 @@ bgl_make_server_socket( obj_t hostname, int portnum, int backlog ) {
    }
 
    /* Create a socket */
-   if( BAD_SOCKET(s = (int)socket( AF_INET, SOCK_STREAM, 0 )) ){
+   if( BAD_SOCKET(s = (SOCKET_T)socket( AF_INET, SOCK_STREAM, 0 )) ){
       socket_error( msg, "Cannot create socket", BUNSPEC );
    }
 
@@ -1593,12 +1615,12 @@ bgl_make_server_socket( obj_t hostname, int portnum, int backlog ) {
 
    /* set the reuse flag */
    if( setsockopt( s, SOL_SOCKET, SO_REUSEADDR,
-		   (SOCKOPTVALTYPE)&sock_opt, sizeof( sock_opt ) ) < 0 ) {
-	 system_error( msg, BINT( portnum ) );
+   		   (SOCKOPTVALTYPE)&sock_opt, sizeof( sock_opt ) ) < 0 ) {
+   	 system_error( msg, BINT( portnum ) );
    }
 
    if( bind( s, (struct sockaddr *)&sin, sizeof( sin ) ) < 0 ) {
-      close( s );
+     SOCKET_CLOSE( s );
       system_error( msg, BINT( portnum ) );
    }
 
@@ -1606,13 +1628,13 @@ bgl_make_server_socket( obj_t hostname, int portnum, int backlog ) {
    /* if 0 was given                                               */
    len = sizeof( sin );
    if( getsockname( s, (struct sockaddr *) &sin, (socklen_t *) &len ) < 0 ) {
-      close( s );
+      SOCKET_CLOSE( s );
       system_error( msg, BINT( portnum ) );
    }
 
    /* Indicate that we are ready to listen */
    if( listen( s, backlog ) < 0 ) {
-      close( s );
+      SOCKET_CLOSE( s );
       system_error( msg, BINT( portnum ) );
    }
 
@@ -1814,12 +1836,11 @@ bgl_socket_accept( obj_t serv, bool_t errp, obj_t inb, obj_t outb ) {
    char *ip;
    struct sockaddr_in sin;
    int len = sizeof( sin );
-   int new_s;
+   SOCKET_T new_s;
    obj_t a_socket;
-   int new_fd;
    obj_t hname;
 
-   while( BAD_SOCKET( new_s = (int)accept( SOCKET( serv ).fd,
+   while( BAD_SOCKET( new_s = (SOCKET_T)accept( SOCKET( serv ).fd,
 					   (struct sockaddr *)&sin,
 					   (socklen_t *)&len)) ) {
       if( errno == EINTR )
@@ -1862,7 +1883,7 @@ bgl_socket_accept( obj_t serv, bool_t errp, obj_t inb, obj_t outb ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF BGL_LONG_T
 bgl_socket_accept_many( obj_t serv, bool_t errp, obj_t inbs, obj_t outbs, obj_t vec ) {
-   int fd = SOCKET( serv ).fd;
+   SOCKET_T fd = SOCKET( serv ).fd;
    int flags;
    fd_set set;
    int n;
@@ -1962,7 +1983,7 @@ bgl_socket_accept_many( obj_t serv, bool_t errp, obj_t inbs, obj_t outbs, obj_t 
 /*    get_socket_hostname ...                                          */
 /*---------------------------------------------------------------------*/
 static obj_t
-get_socket_hostname( int fd, obj_t hostip ) {
+get_socket_hostname( SOCKET_T fd, obj_t hostip ) {
    struct hostent *host = 0;
 
    struct sockaddr_in sin;
@@ -2037,16 +2058,15 @@ bgl_socket_hostname( obj_t sock ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
 socket_close( obj_t sock ) {
-   int fd = SOCKET( sock ).fd;
+   SOCKET_T fd = SOCKET( sock ).fd;
 
-   if( fd > 0 ) {
+   if( !BAD_SOCKET(fd)) {
       obj_t chook = SOCKET_CHOOK( sock );
       
       /* MS: 19 Aug 2008, we don't have to close fd */
       /* since it will be closed automatically with */
       /* SOCKET( sock ).input                       */
-      SOCKET( sock ).fd = -1;
-
+      
       if( PROCEDUREP( chook ) ) {
 	 if( PROCEDURE_ARITY( chook ) == 1 ) {
 	    PROCEDURE_ENTRY( chook )( chook, sock, BEOA );
@@ -2067,6 +2087,13 @@ socket_close( obj_t sock ) {
       }
    }
 
+   SOCKET_CLOSE(SOCKET(sock).fd);
+   #ifdef _BGL_WIN32_VER
+      SOCKET( sock ).fd = SOCKET_ERROR;
+   #else
+      SOCKET( sock ).fd = -1;
+   #endif
+      
    return BUNSPEC;
 }
 
@@ -2076,9 +2103,9 @@ socket_close( obj_t sock ) {
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF int
 socket_shutdown( obj_t sock, int how ) {
-   int fd = SOCKET( sock ).fd;
-
-   if( fd > 0 ) {
+   SOCKET_T fd = SOCKET( sock ).fd;
+   int res = 0;
+   if( !BAD_SOCKET(fd)) {
       int h;
       switch( how ) {
 	 case 2: h = SHUT_RDWR; break;
@@ -2500,7 +2527,7 @@ static ssize_t
 datagram_socket_write( obj_t port, void *buf, size_t len ) {
    obj_t s = (obj_t)PORT_CHANNEL( port );
    obj_t sock = (obj_t)s;
-   int fd = BGL_DATAGRAM_SOCKET( sock ).fd;
+   SOCKET_T fd = BGL_DATAGRAM_SOCKET( sock ).fd;
    struct sockaddr *server = BGL_DATAGRAM_SOCKET( sock ).server;
    int n;
 
@@ -2517,16 +2544,9 @@ datagram_socket_write( obj_t port, void *buf, size_t len ) {
 			"socket closed",
 			sock );
    }
-    #ifdef _BGL_WIN32_VER
-    SOCKET s2 = _get_osfhandle(fd);
-    n = sendto( s2, buf, len, 0,
-	       (struct sockaddr *)&BGL_DATAGRAM_SOCKET( sock ).server,
-	       sizeof( struct sockaddr_in ));
-    #else
-    n = sendto( fd, buf, len, 0,
+   n = sendto( fd, buf, len, 0,
 		    (struct sockaddr *)&BGL_DATAGRAM_SOCKET( sock ).server,
 		sizeof( struct sockaddr_in ));
-    #endif		     
    if( n  == -1 ) {
      char buffer[ 512 ];
       
@@ -2550,7 +2570,8 @@ datagram_socket_write( obj_t port, void *buf, size_t len ) {
 BGL_RUNTIME_DEF obj_t
 bgl_make_datagram_client_socket( obj_t hostname, int port, bool_t broadcast ) {
    struct hostent *hp;
-   int s, err;
+   SOCKET_T s;
+   int err;
    obj_t a_socket;
    obj_t hname;
    obj_t oport;
@@ -2569,7 +2590,7 @@ bgl_make_datagram_client_socket( obj_t hostname, int port, bool_t broadcast ) {
    }
 
    /* get a socket */
-   if( BAD_SOCKET( s = (int)socket( AF_INET, SOCK_DGRAM, 0 ) ) ) {
+   if( BAD_SOCKET( s = (SOCKET_T)socket( AF_INET, SOCK_DGRAM, 0 ) ) ) {
       datagram_client_socket_error( hostname, port, "cannot create socket", errno );
    }
 
@@ -2607,9 +2628,7 @@ bgl_make_datagram_client_socket( obj_t hostname, int port, bool_t broadcast ) {
    a_socket->datagram_socket_t.address.in_addr = server->sin_addr;
    
    a_socket->datagram_socket_t.stype = BGL_SOCKET_CLIENT;
-   #ifdef _BGL_WIN32_VER
-   s = _open_osfhandle( s, _O_RDWR );
-   #endif
+
    a_socket->datagram_socket_t.fd = s;
    
    /* socket port */
@@ -2638,7 +2657,8 @@ bgl_make_datagram_server_socket( int portnum ) {
 #if( !BGL_HAVE_GETADDRINFO )
       socket_error( msg, "not supported (requires getaddrinfo)", BFALSE );
 #else
-   int s;
+   SOCKET_T s;
+   int s2;
    struct addrinfo hints, *servinfo, *p;
    int rv;
    char service[ 10 ];
@@ -2650,7 +2670,7 @@ bgl_make_datagram_server_socket( int portnum ) {
       socket_error( msg, "bad port number", BINT( portnum ) );
 
    memset( &hints, 0, sizeof( hints ) );
-#ifdef BGL_ANDROID
+#if defined(BGL_ANDROID) || defined(_BGL_WIN32_VER)
    /* set to AF_INET to force IPv4 */
    hints.ai_family = AF_INET; 
 #else   
@@ -2673,7 +2693,7 @@ bgl_make_datagram_server_socket( int portnum ) {
    for( p = servinfo; p != NULL; p = p->ai_next ) {
       int sock_opt = 1;
       
-      if( BAD_SOCKET(s = (int)socket( p->ai_family, p->ai_socktype, p->ai_protocol ))) {
+      if( BAD_SOCKET(s = (SOCKET_T)socket( p->ai_family, p->ai_socktype, p->ai_protocol ))) {
 	 socket_error( msg, "cannot create socket", BINT( portnum ) );
       }
 
@@ -2684,7 +2704,7 @@ bgl_make_datagram_server_socket( int portnum ) {
       }
 
       if( bind( s, p->ai_addr, p->ai_addrlen ) == -1 ) {
-	 close( s );
+	 SOCKET_CLOSE( s );
 	 socket_error( msg, "cannot bind socket", BINT( portnum ) );
       }
 
@@ -2699,19 +2719,23 @@ bgl_make_datagram_server_socket( int portnum ) {
    sock->datagram_socket_t.portnum = portnum;
    sock->datagram_socket_t.hostname = BUNSPEC;
    sock->datagram_socket_t.hostip = BFALSE;
-   #ifdef _BGL_WIN32_VER
-   s = _open_osfhandle( s, _O_RDWR );
-   #endif
    sock->datagram_socket_t.family = AF_INET;
    sock->datagram_socket_t.fd = s;
    sock->datagram_socket_t.stype = BGL_SOCKET_SERVER;
 
-   if ( !(fs = fdopen( s, "r" )) ) {
+   #ifdef _BGL_WIN32_VER
+   s2 = _open_osfhandle( s, _O_RDONLY);
+   #else
+   s2 = s;
+   #endif
+
+   
+   if ( !(fs = fdopen( s2, "rb" )) ) {
       char buffer[1024];
 
       BGL_MUTEX_LOCK( socket_mutex );
       sprintf( buffer, "%s: cannot create datagram server socket io port, %s (s=%d->%p)",
-	       msg, strerror( errno ), s, fs );
+	       msg, strerror( errno ), s2, fs );
       BGL_MUTEX_UNLOCK( socket_mutex );
       socket_error( "bgl_make_datagram_server_socket", buffer, sock );
    }
@@ -2738,7 +2762,8 @@ bgl_make_datagram_server_socket( int portnum ) {
 obj_t
 bgl_make_datagram_unbound_socket( obj_t family ) {
    static const char msg[] = "make-datagram-unbound-socket";
-   int fam, s;
+   SOCKET_T s;
+   int fam, s2;
    obj_t sock, buf, inb, iport;
    FILE *fs;
 
@@ -2754,7 +2779,7 @@ bgl_make_datagram_unbound_socket( obj_t family ) {
       socket_error( msg, "unsupported socket family", family );
    }
 
-   if( BAD_SOCKET(s = (int)socket( fam, SOCK_DGRAM, 0 ))) {
+   if( BAD_SOCKET(s = (SOCKET_T)socket( fam, SOCK_DGRAM, 0 ))) {
       socket_error( msg, "cannot create socket", family );
    }
 
@@ -2763,19 +2788,22 @@ bgl_make_datagram_unbound_socket( obj_t family ) {
    sock->datagram_socket_t.portnum = 0;
    sock->datagram_socket_t.hostname = BUNSPEC;
    sock->datagram_socket_t.hostip = BFALSE;
-   #ifdef _BGL_WIN32_VER
-   s = _open_osfhandle( s, _O_RDWR );
-   #endif
    sock->datagram_socket_t.family = AF_INET;
    sock->datagram_socket_t.fd = s;
    sock->datagram_socket_t.stype = BGL_SOCKET_SERVER;
 
-   if ( !(fs = fdopen( s, "r" )) ) {
+   #ifdef _BGL_WIN32_VER
+   s2 = _open_osfhandle( s, _O_RDWR );
+   #else
+   s2 = s;
+   #endif
+
+   if ( !(fs = fdopen( s2, "rb" )) ) {
       char buffer[1024];
 
       BGL_MUTEX_LOCK( socket_mutex );
       sprintf( buffer, "%s: cannot create datagram server socket io port, %s (s=%d->%p)",
-	       msg, strerror( errno ), s, fs );
+	       msg, strerror( errno ), s2, fs );
       BGL_MUTEX_UNLOCK( socket_mutex );
       socket_error( "bgl_make_datagram_server_socket", buffer, sock );
    }
@@ -2821,7 +2849,7 @@ bgl_datagram_socket_close( obj_t sock ) {
    if( fd > 0 ) {
       obj_t chook = BGL_DATAGRAM_SOCKET( sock ).chook;
       shutdown( BGL_DATAGRAM_SOCKET( sock ).fd, SHUT_RDWR );
-      close( BGL_DATAGRAM_SOCKET( sock ).fd );
+      SOCKET_CLOSE( BGL_DATAGRAM_SOCKET( sock ).fd );
       
       BGL_DATAGRAM_SOCKET( sock ).fd = -1;
 
@@ -2871,7 +2899,7 @@ bgl_datagram_socket_receive( obj_t sock, BGL_LONG_T sz ) {
    char buf[ sz ];
    socklen_t addr_len;
    int n;
-   int fd = BGL_DATAGRAM_SOCKET( sock ).fd;
+   SOCKET_T fd = BGL_DATAGRAM_SOCKET( sock ).fd;
 
    if( BGL_DATAGRAM_SOCKET( sock ).stype == BGL_SOCKET_CLIENT ) {
       C_SYSTEM_FAILURE( BGL_IO_PORT_ERROR,
@@ -2888,15 +2916,8 @@ bgl_datagram_socket_receive( obj_t sock, BGL_LONG_T sz ) {
    }
 
    addr_len = sizeof( their_addr );
-
-   #ifdef _BGL_WIN32_VER 
-   SOCKET s2 = _get_osfhandle(fd);
-   n = recvfrom( s2, buf, sz - 1 , 0,
-		 (struct sockaddr *)&their_addr, &addr_len );
-   #else
    n = recvfrom( fd, buf, sz - 1 , 0,
 		 (struct sockaddr *)&their_addr, &addr_len );
-   #endif
    if( n == -1 ) {
       socket_error( "datagram-socket-receive", "cannot receive datagram", sock );
    } else {
@@ -2921,7 +2942,7 @@ bgl_datagram_socket_send( obj_t sock, obj_t str, obj_t host, int port ) {
    struct sockaddr_storage their_addr;
    socklen_t slen;
    ssize_t sent;
-   int fd = BGL_DATAGRAM_SOCKET( sock ).fd;
+   SOCKET_T fd = BGL_DATAGRAM_SOCKET( sock ).fd;
 
    if( BGL_DATAGRAM_SOCKET( sock ).stype == BGL_SOCKET_CLIENT ) {
       C_SYSTEM_FAILURE( BGL_IO_PORT_ERROR,
@@ -2980,14 +3001,14 @@ bgl_datagram_socket_send( obj_t sock, obj_t str, obj_t host, int port ) {
        /* only use the first result */
        if(AF_INET6 == results->ai_family){
 	 
-	 ((struct sockaddr_in6 *)&their_addr)->sin6_addr = ((struct sockaddr_in6*)&(results->ai_addr))->sin6_addr;
+	 ((struct sockaddr_in6 *)&their_addr)->sin6_addr = ((struct sockaddr_in6*)(results->ai_addr))->sin6_addr;
 	 ((struct sockaddr_in6 *)&their_addr)->sin6_port = htons( port );
 	 ((struct sockaddr *)&their_addr)->sa_family = AF_INET6;
 	 slen = sizeof( struct sockaddr_in6 );
        
        } else if (AF_INET == results->ai_family){
 	 
-	 ((struct sockaddr_in *)&their_addr)->sin_addr = ((struct sockaddr_in*)&(results->ai_addr))->sin_addr;
+	 ((struct sockaddr_in *)&their_addr)->sin_addr = ((struct sockaddr_in*)(results->ai_addr))->sin_addr;
 	 ((struct sockaddr_in *)&their_addr)->sin_port = htons( port );
 	 ((struct sockaddr *)&their_addr)->sa_family = AF_INET;
 	 slen = sizeof( struct sockaddr_in );
@@ -3007,15 +3028,8 @@ bgl_datagram_socket_send( obj_t sock, obj_t str, obj_t host, int port ) {
 #endif /* BGL_HAVE_INET_PTON */
 
 
-   #ifdef _BGL_WIN32_VER
-   SOCKET s2 = _get_osfhandle(fd);
-   sent = sendto( s2, BSTRING_TO_STRING( str ), STRING_LENGTH( str ), 0,
-		  (struct sockaddr *) &their_addr, slen );
-   
-   #else
    sent = sendto( fd, BSTRING_TO_STRING( str ), STRING_LENGTH( str ), 0,
 		  (struct sockaddr *) &their_addr, slen );
-   #endif
    if( sent < 0 ) {
       socket_error( "datagram-socket-send", "cannot send datagram", sock );
    }

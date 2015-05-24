@@ -698,7 +698,7 @@ typedef union scmobj {
 	 struct in6_addr in6_addr;
       } address;
       /* OS file descriptor */
-      int fd;
+      BGL_LONG_T fd;
       /* bigloo input port (or #unspec) */
       union scmobj *input;
       /* bigloo output port (or #unspec) */
@@ -730,7 +730,7 @@ typedef union scmobj {
       /* socket adress family */
       sa_family_t family;
       /* OS file descriptor */
-      int fd;
+      BGL_LONG_T fd;
       /*  socket type (client/server) */
       int stype;
       /* the close hook */

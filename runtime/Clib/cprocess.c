@@ -14,22 +14,15 @@
 #include <signal.h>
 #include <string.h>
 #include <stdlib.h>
-#if defined( _MINGW_VER )
+#if defined( _MINGW_VER ) || defined( _MSC_VER)
 #   define _BGL_WIN32_VER
 #   include <io.h>
 #   include <process.h>
 #   include <windows.h>
 #else
-#  if !defined( _MSC_VER )
-#    include <sys/param.h>
-#    include <sys/wait.h>
-#    include <unistd.h>
-#  else
-#    define _BGL_WIN32_VER
-#    include <io.h>
-#    include <process.h>
-#    include <windows.h>
-#  endif
+#   include <sys/param.h>
+#   include <sys/wait.h>
+#   include <unistd.h>
 #endif
 #include <bigloo.h>
 
@@ -935,8 +928,8 @@ c_run_process( obj_t bhost, obj_t bfork, obj_t bwaiting,
 	      _open_osfhandle( (intptr_t)pipes[ i ][ 1 ], _O_APPEND )
 	      : _open_osfhandle( (intptr_t)pipes[ i ][ 0 ], _O_RDONLY ));
 
-        f = ((i == 0) ? fdopen( zb, "w" )
-                      : fdopen( zb, "r"));
+        f = ((i == 0) ? fdopen( zb, "wb" )
+                      : fdopen( zb, "rb"));
 
         if( f == NULL ) {
           cannot_run( pipes, bcommand, "cannot fdopen" );
