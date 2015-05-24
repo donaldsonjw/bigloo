@@ -1,3 +1,13 @@
+2015-05-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	openssl autoconf
+	<4.2a> [5b83b7022a37]
+
+	Class serialization fix (bootstrap)
+	<4.2a> [508196f52504]
+
+	libuv (bootstrap)
+	<4.2a> [1a98d39dca2f]
+
 2015-04-20  Manuel Serrano <Manuel.Serrano@inria.fr>
 	Socket fixes and circular IOs (bootstrap)
 	<4.2a> [80a828d3ad94]

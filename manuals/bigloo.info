@@ -30,263 +30,263 @@ of the Scheme programming language.
 
 Indirect:
 bigloo.info-1: 1122
-bigloo.info-2: 305380
-bigloo.info-3: 612050
+bigloo.info-2: 305378
+bigloo.info-3: 612048
 
 Tag Table:
 (Indirect)
 Node: Top1122
 Node: Acknowledgements3895
-Node: Overview5330
-Node: Modules10690
-Node: Program Structure11769
-Node: Module Declaration12709
-Node: Module Initialization27701
-Node: Qualified Notation30169
-Node: Inline Procedures31210
-Node: Module Access File33484
-Node: Reading Path34676
-Node: Core Language35074
-Node: Syntax35542
-Node: Comments36627
-Node: Expressions37421
-Node: Definitions48636
-Node: DSSSL Support49251
-Node: Standard Library53906
-Node: Scheme Library54960
-Node: Booleans55730
-Node: Equivalence Predicates56703
-Node: Pairs And Lists61091
-Node: Symbols68950
-Node: Keywords71953
-Node: Numbers72595
-Node: Characters83458
-Node: UCS-2 Characters84746
-Node: Strings86075
-Node: Unicode (UCS-2) Strings98817
-Node: Vectors106382
-Node: Homogeneous Vectors (SRFI-4)109087
-Node: Control Features112926
-Node: Input and Output122254
-Node: Library functions122619
-Node: Memory mapped area153778
-Node: Zip156739
-Node: Tar158181
-Node: Serialization161213
-Node: Bit Manipulation167466
-Node: Weak Pointers168888
-Node: Hash Tables170267
-Node: System Programming178124
-Node: Operating System Interface178376
-Node: Files184038
-Node: Process192849
-Node: Socket200186
-Node: Socket-Footnotes215240
-Ref: Socket-Footnote-1215299
-Ref: Socket-Footnote-2215434
-Node: SSL215646
-Node: SSL Sockets216041
-Node: Certificates225316
-Node: Private Keys226363
-Node: Date226830
-Node: Digest231076
-Node: CRC234384
-Node: Internet240775
-Node: URLs240991
-Node: HTTP243514
-Node: Pattern Matching248638
-Node: Pattern Matching-Footnotes249898
-Ref: Pattern Matching-Footnote-1249977
-Node: Bigloo Pattern Matching Facilities250074
-Node: The Pattern Language251831
-Node: Fast search254723
-Node: Knuth - Morris - Pratt254971
-Node: Structures and Records257108
-Node: Structures257591
-Node: Records (SRFI-9)259282
-Node: Object System263313
-Node: Class declaration264045
-Node: Creating and accessing objects269331
-Node: Generic functions274522
-Node: Widening and shrinking276869
-Node: Object library283564
-Node: Object serialization285398
-Node: Equality285997
-Node: Introspection286341
-Node: Regular Parsing291221
-Node: A New Way of Reading292133
-Node: The Syntax of The Regular Grammar293141
-Node: The Semantics Actions305380
-Node: Options and user definitions309304
-Node: Examples of Regular Grammar310324
-Node: Lalr Parsing312494
-Node: Grammar Definition313471
-Node: Precedence and Associativity316036
-Node: The Parsing Function318878
-Node: The Regular Grammar319799
-Node: Debugging Lalr Grammars321224
-Node: A Simple Example321643
-Node: Posix Regular Expressions323133
-Node: Posix Regular Expressions-Footnotes325847
-Ref: Posix Regular Expressions-Footnote-1325944
-Node: Regular Expressions Procedures326410
-Node: The Regular Expressions Pattern Language332239
-Node: Basic assertions332755
-Node: Characters and character classes333895
-Node: Characters and character classes-Footnotes338979
-Ref: Characters and character classes-Footnote-1339090
-Ref: Characters and character classes-Footnote-2339255
-Node: Quantifiers339416
-Node: Clusters341720
-Node: Clusters-Footnotes347950
-Ref: Clusters-Footnote-1348013
-Ref: Clusters-Footnote-2348185
-Node: Alternation348256
-Node: Backtracking350184
-Node: Looking ahead and behind352326
-Node: An Extended Example354545
-Node: An Extended Example-Footnotes357221
-Ref: An Extended Example-Footnote-1357306
-Node: Command Line Parsing357570
-Node: Cryptography361139
-Node: Symmetric Block Ciphers362253
-Node: String to Key373393
-Node: Public Key Cryptography376075
-Node: RSA376300
-Node: DSA385468
-Node: ElGamal386983
-Node: PEM388650
-Node: OpenPGP390208
-Node: Examples399378
-Node: Signatures399539
-Node: Email Usage403199
-Node: Encryption403705
-Node: Development407086
-Node: Errors Assertions and Traces408033
-Node: Errors and Warnings408519
-Node: Exceptions412041
-Node: Try416723
-Node: Assertions418503
-Node: Tracing421010
-Node: Threads424794
-Node: Thread Common Functions425643
-Node: Thread API426259
-Node: Mutexes429498
-Node: Condition Variables432817
-Node: Fair Threads435383
-Node: Introduction437077
-Node: Fair Threads Api438929
-Node: Thread439522
-Node: Scheduler453704
-Node: Signal458057
-Node: SRFI-18 compatibility460222
-Node: Posix Threads460923
-Node: Using Posix Threads461803
-Node: Threads API462343
-Node: Mutexes API465360
-Node: Condition Variables API465775
-Node: SRFI-18466685
-Node: Mixing Thread APIs467660
-Node: Database470129
-Node: SQLite470345
-Node: Multimedia476790
-Node: Photography477641
-Node: Music480305
-Node: Metadata and Playlist480791
-Node: Mixer482841
-Node: Playback484354
-Node: MPD493445
-Node: Color495349
-Node: Mail496230
-Node: RFC 2045496829
-Node: RFC 2047499625
-Node: RFC 2426500640
-Node: RFC 2822502624
-Node: Mail servers504041
-Node: mailbox504528
-Node: imap510272
-Node: maildir511698
-Node: Text512267
-Node: BibTeX512481
-Node: Character strings513964
-Node: Character encodings517247
-Node: CSV517513
-Node: CSV Overview517858
-Node: API Reference518307
-Node: read-csv-record518649
-Node: read-csv-records519169
-Node: csv-for-each519723
-Node: csv-map520266
-Node: make-csv-lexer520837
-Node: +csv-lexer+521132
-Node: +tsv-lexer+521377
-Node: +psv-lexer+521608
-Node: Example521820
-Node: Eval522341
-Node: Eval compliance522655
-Node: Eval standard functions523819
-Node: Eval command line options532541
-Node: Eval and the foreign interface533591
-Node: Macro Expansion534091
-Node: Parameters536187
-Node: Explicit Typing539773
-Node: C Interface542759
-Node: The syntax of the foreign declarations545049
-Node: Automatic extern clauses generation546058
-Node: Importing an extern variable546647
-Node: Importing an extern function547760
-Node: Including an extern file549003
-Node: Exporting a Scheme variable549361
-Node: Defining an extern type550153
-Node: Atomic types551667
-Node: C structures and unions553138
-Node: C pointers555999
-Node: C null pointers558052
-Node: C arrays558877
-Node: C functions560883
-Node: C enums562050
-Node: C opaques563204
-Node: The very dangerous pragma Bigloo special forms564874
-Node: Name mangling567012
-Node: Embedded Bigloo applications568687
-Node: Using C bindings within the interpreter569980
-Node: Java Interface571346
-Node: Compiling with the JVM back-end572066
-Node: JVM back-end and SRFI-0574173
-Node: Limitation of the JVM back-end574981
-Node: Connecting Scheme and Java code576327
-Node: Automatic Java clauses generation578033
-Node: Declaring Java classes578616
-Node: Declaring abstract Java classes580324
-Node: Extending Java classes580796
-Node: Declaring Java arrays581490
-Node: Exporting Scheme variables582789
-Node: Bigloo module initialization583590
-Node: Performance of the JVM back-end584170
-Node: Bigloo Libraries584946
-Node: Extending the Runtime System612050
-Node: SRFIs612449
-Node: Compiler Description622491
-Node: Cross Compilation668088
-Node: User Extensions674955
-Node: Bee677444
-Node: Installing the Bee679324
-Node: Entering the Bee680109
-Node: The Bee Root Directory680484
-Node: Building a Makefile681216
-Node: Compiling682013
-Node: Interpreting682372
-Node: Pretty Printing683153
-Node: Expansing683709
-Node: On-line documentation684465
-Node: Searching for source code685500
-Node: Importing and Exporting686213
-Node: Debugging687370
-Node: Profiling687856
-Node: Revision control688443
-Node: Literate Programming689354
-Node: Global Index691336
-Node: Library Index846185
-Node: Bibliography846315
+Node: Overview5328
+Node: Modules10688
+Node: Program Structure11767
+Node: Module Declaration12707
+Node: Module Initialization27699
+Node: Qualified Notation30167
+Node: Inline Procedures31208
+Node: Module Access File33482
+Node: Reading Path34674
+Node: Core Language35072
+Node: Syntax35540
+Node: Comments36625
+Node: Expressions37419
+Node: Definitions48634
+Node: DSSSL Support49249
+Node: Standard Library53904
+Node: Scheme Library54958
+Node: Booleans55728
+Node: Equivalence Predicates56701
+Node: Pairs And Lists61089
+Node: Symbols68948
+Node: Keywords71951
+Node: Numbers72593
+Node: Characters83456
+Node: UCS-2 Characters84744
+Node: Strings86073
+Node: Unicode (UCS-2) Strings98815
+Node: Vectors106380
+Node: Homogeneous Vectors (SRFI-4)109085
+Node: Control Features112924
+Node: Input and Output122252
+Node: Library functions122617
+Node: Memory mapped area153776
+Node: Zip156737
+Node: Tar158179
+Node: Serialization161211
+Node: Bit Manipulation167464
+Node: Weak Pointers168886
+Node: Hash Tables170265
+Node: System Programming178122
+Node: Operating System Interface178374
+Node: Files184036
+Node: Process192847
+Node: Socket200184
+Node: Socket-Footnotes215238
+Ref: Socket-Footnote-1215297
+Ref: Socket-Footnote-2215432
+Node: SSL215644
+Node: SSL Sockets216039
+Node: Certificates225314
+Node: Private Keys226361
+Node: Date226828
+Node: Digest231074
+Node: CRC234382
+Node: Internet240773
+Node: URLs240989
+Node: HTTP243512
+Node: Pattern Matching248636
+Node: Pattern Matching-Footnotes249896
+Ref: Pattern Matching-Footnote-1249975
+Node: Bigloo Pattern Matching Facilities250072
+Node: The Pattern Language251829
+Node: Fast search254721
+Node: Knuth - Morris - Pratt254969
+Node: Structures and Records257106
+Node: Structures257589
+Node: Records (SRFI-9)259280
+Node: Object System263311
+Node: Class declaration264043
+Node: Creating and accessing objects269329
+Node: Generic functions274520
+Node: Widening and shrinking276867
+Node: Object library283562
+Node: Object serialization285396
+Node: Equality285995
+Node: Introspection286339
+Node: Regular Parsing291219
+Node: A New Way of Reading292131
+Node: The Syntax of The Regular Grammar293139
+Node: The Semantics Actions305378
+Node: Options and user definitions309302
+Node: Examples of Regular Grammar310322
+Node: Lalr Parsing312492
+Node: Grammar Definition313469
+Node: Precedence and Associativity316034
+Node: The Parsing Function318876
+Node: The Regular Grammar319797
+Node: Debugging Lalr Grammars321222
+Node: A Simple Example321641
+Node: Posix Regular Expressions323131
+Node: Posix Regular Expressions-Footnotes325845
+Ref: Posix Regular Expressions-Footnote-1325942
+Node: Regular Expressions Procedures326408
+Node: The Regular Expressions Pattern Language332237
+Node: Basic assertions332753
+Node: Characters and character classes333893
+Node: Characters and character classes-Footnotes338977
+Ref: Characters and character classes-Footnote-1339088
+Ref: Characters and character classes-Footnote-2339253
+Node: Quantifiers339414
+Node: Clusters341718
+Node: Clusters-Footnotes347948
+Ref: Clusters-Footnote-1348011
+Ref: Clusters-Footnote-2348183
+Node: Alternation348254
+Node: Backtracking350182
+Node: Looking ahead and behind352324
+Node: An Extended Example354543
+Node: An Extended Example-Footnotes357219
+Ref: An Extended Example-Footnote-1357304
+Node: Command Line Parsing357568
+Node: Cryptography361137
+Node: Symmetric Block Ciphers362251
+Node: String to Key373391
+Node: Public Key Cryptography376073
+Node: RSA376298
+Node: DSA385466
+Node: ElGamal386981
+Node: PEM388648
+Node: OpenPGP390206
+Node: Examples399376
+Node: Signatures399537
+Node: Email Usage403197
+Node: Encryption403703
+Node: Development407084
+Node: Errors Assertions and Traces408031
+Node: Errors and Warnings408517
+Node: Exceptions412039
+Node: Try416721
+Node: Assertions418501
+Node: Tracing421008
+Node: Threads424792
+Node: Thread Common Functions425641
+Node: Thread API426257
+Node: Mutexes429496
+Node: Condition Variables432815
+Node: Fair Threads435381
+Node: Introduction437075
+Node: Fair Threads Api438927
+Node: Thread439520
+Node: Scheduler453702
+Node: Signal458055
+Node: SRFI-18 compatibility460220
+Node: Posix Threads460921
+Node: Using Posix Threads461801
+Node: Threads API462341
+Node: Mutexes API465358
+Node: Condition Variables API465773
+Node: SRFI-18466683
+Node: Mixing Thread APIs467658
+Node: Database470127
+Node: SQLite470343
+Node: Multimedia476788
+Node: Photography477639
+Node: Music480303
+Node: Metadata and Playlist480789
+Node: Mixer482839
+Node: Playback484352
+Node: MPD493443
+Node: Color495347
+Node: Mail496228
+Node: RFC 2045496827
+Node: RFC 2047499623
+Node: RFC 2426500638
+Node: RFC 2822502622
+Node: Mail servers504039
+Node: mailbox504526
+Node: imap510270
+Node: maildir511696
+Node: Text512265
+Node: BibTeX512479
+Node: Character strings513962
+Node: Character encodings517245
+Node: CSV517511
+Node: CSV Overview517856
+Node: API Reference518305
+Node: read-csv-record518647
+Node: read-csv-records519167
+Node: csv-for-each519721
+Node: csv-map520264
+Node: make-csv-lexer520835
+Node: +csv-lexer+521130
+Node: +tsv-lexer+521375
+Node: +psv-lexer+521606
+Node: Example521818
+Node: Eval522339
+Node: Eval compliance522653
+Node: Eval standard functions523817
+Node: Eval command line options532539
+Node: Eval and the foreign interface533589
+Node: Macro Expansion534089
+Node: Parameters536185
+Node: Explicit Typing539771
+Node: C Interface542757
+Node: The syntax of the foreign declarations545047
+Node: Automatic extern clauses generation546056
+Node: Importing an extern variable546645
+Node: Importing an extern function547758
+Node: Including an extern file549001
+Node: Exporting a Scheme variable549359
+Node: Defining an extern type550151
+Node: Atomic types551665
+Node: C structures and unions553136
+Node: C pointers555997
+Node: C null pointers558050
+Node: C arrays558875
+Node: C functions560881
+Node: C enums562048
+Node: C opaques563202
+Node: The very dangerous pragma Bigloo special forms564872
+Node: Name mangling567010
+Node: Embedded Bigloo applications568685
+Node: Using C bindings within the interpreter569978
+Node: Java Interface571344
+Node: Compiling with the JVM back-end572064
+Node: JVM back-end and SRFI-0574171
+Node: Limitation of the JVM back-end574979
+Node: Connecting Scheme and Java code576325
+Node: Automatic Java clauses generation578031
+Node: Declaring Java classes578614
+Node: Declaring abstract Java classes580322
+Node: Extending Java classes580794
+Node: Declaring Java arrays581488
+Node: Exporting Scheme variables582787
+Node: Bigloo module initialization583588
+Node: Performance of the JVM back-end584168
+Node: Bigloo Libraries584944
+Node: Extending the Runtime System612048
+Node: SRFIs612447
+Node: Compiler Description622489
+Node: Cross Compilation668086
+Node: User Extensions674953
+Node: Bee677442
+Node: Installing the Bee679322
+Node: Entering the Bee680107
+Node: The Bee Root Directory680482
+Node: Building a Makefile681214
+Node: Compiling682011
+Node: Interpreting682370
+Node: Pretty Printing683151
+Node: Expansing683707
+Node: On-line documentation684463
+Node: Searching for source code685498
+Node: Importing and Exporting686211
+Node: Debugging687368
+Node: Profiling687854
+Node: Revision control688441
+Node: Literate Programming689352
+Node: Global Index691334
+Node: Library Index846183
+Node: Bibliography846313
 
 End Tag Table
