@@ -64,6 +64,7 @@ fi
 #*    Test                                                             */
 #*---------------------------------------------------------------------*/
 cat > $file.c <<EOF
+#include <stdio.h>
 void direction( int new_addr ) {
    static int *old_addr;
    static int flag = 0;
