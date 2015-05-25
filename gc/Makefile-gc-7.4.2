@@ -10,11 +10,14 @@
 #*=====================================================================*/
 
 boot-gc:
-	$(MAKE) CFLAGS="$(CFLAGS) $(CGCFLAGS) $(CGCTHREADFLAGS)" do-boot-gc
-
+	if [ "$hostos " = "mingw " -a "$threadsuport " != "no " ]; then \
+	   $(MAKE) CFLAGS="$(CFLAGS) $(CGCFLAGS) $(CGCTHREADFLAGS)" do-boot-gc;\
+	else \
+	   $(MAKE) CFLAGS="$(CFLAGS) $(CGCFLAGS)" do-boot-gc;\
+	fi
 boot-gc_fth:
 	if [ "$(GCTHREADSUPPORT) " = "yes " ]; then \
-          $(MAKE) LIBQ=_fth  do-boot-gc; \
+          $(MAKE) LIBQ=_fth CFLAGS="$(CFLAGS) $(CGCFLAGS) $(CGCTHREADFLAGS)"  do-boot-gc; \
 	fi
 
 OUTDIR=$(CUSTOMGC)$(LIBQ)/.libs
