@@ -3,7 +3,7 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Mon Jun 29 18:45:17 1998                          */
-;*    Last change :  Mon Apr 20 14:17:32 2015 (serrano)                */
+;*    Last change :  Wed Jan 21 07:41:31 2015 (serrano)                */
 ;*    -------------------------------------------------------------    */
 ;*    Socket handling.                                                 */
 ;*=====================================================================*/
@@ -268,24 +268,42 @@
 ;*---------------------------------------------------------------------*/
 ;*    *socket-initialized* ...                                         */
 ;*---------------------------------------------------------------------*/
-(define *socket-initialized* #f)
-(define *socket-mutex* (make-mutex "socket"))
+;(define *socket-initialized* #f)
+;(define *socket-mutex* (make-mutex "socket"))
 
 ;*---------------------------------------------------------------------*/
 ;*    %socket-init! ...                                                */
 ;*---------------------------------------------------------------------*/
 (define (%socket-init!)
-   (synchronize *socket-mutex*
-      (unless *socket-initialized*
-	 (set! *socket-initialized* #t)
-	 (cond-expand (bigloo-c 
-		       (c-socket-startup)
-		       (register-exit-function! (lambda (x) 
-						   (c-socket-cleanup)
-						   x))
-		       #unspecified)
-		      (else
-		       #unspecified)))))
+  (unless (thread-parameter 'socket-initialized)
+	  (thread-parameter-set! 'socket-initialized #t)
+	  (cond-expand (bigloo-c
+			(c-socket-startup)
+			(if (current-thread)
+			    (thread-cleanup-set!
+			     (current-thread)
+			     (lambda (v)
+			       (c-socket-cleanup) v))
+			    (register-exit-function!
+			     (lambda (x) 
+			       (c-socket-cleanup)
+			       x))))
+		       (else
+			#unspecified)))
+   ;; (synchronize *socket-mutex*
+   ;;    (unless *socket-initialized*
+   ;; 	 (set! *socket-initialized* #f)
+   ;; 	 (cond-expand (bigloo-c 
+   ;; 		       (c-socket-startup)
+   ;; 		       (register-exit-function! (lambda (x) 
+   ;; 						   (c-socket-cleanup)
+   ;; 						   x))
+   ;; 		       #unspecified)
+   ;; 		      (else
+   ;; 		       #unspecified))))
+
+
+   )
 
 ;*---------------------------------------------------------------------*/
 ;*    socket? ...                                                      */
@@ -436,15 +454,15 @@
 (define (socket-shutdown socket::socket #!optional (how #t))
    (cond
       ((eq? how #t)
-       (let ((r ($socket-shutdown socket 2)))
+       (let ((r ($socket-shutdown socket 0)))
 	  (socket-close socket)
 	  r))
       ((or (eq? how #f) (eq? how 'RDWR))
-       ($socket-shutdown socket 2))
-      ((eq? how 'WR)
-       ($socket-shutdown socket 1))
-      ((eq? how 'RD)
        ($socket-shutdown socket 0))
+      ((eq? how 'RD)
+       ($socket-shutdown socket 1))
+      ((eq? how 'WR)
+       ($socket-shutdown socket 2))
       (else
        (error "socket-shutdown" "wrong optional argument" how))))
 

@@ -10,7 +10,7 @@
 #*=====================================================================*/
 
 boot-gc:
-	if [ "$hostos " = "mingw " -a "$threadsuport " != "no " ]; then \
+	if [ "$(HOSTOS) " = "mingw " -a "$(GCTHREADSUPPORT) " != "no " ]; then \
 	   $(MAKE) CFLAGS="$(CFLAGS) $(CGCFLAGS) $(CGCTHREADFLAGS)" do-boot-gc;\
 	else \
 	   $(MAKE) CFLAGS="$(CFLAGS) $(CGCFLAGS)" do-boot-gc;\
