@@ -3,7 +3,7 @@
 #*    -------------------------------------------------------------    */
 #*    Author      :  Manuel Serrano                                    */
 #*    Creation    :  Wed Apr  1 18:45:46 1998                          */
-#*    Last change :  Mon May  4 18:07:26 2015 (serrano)                */
+#*    Last change :  Sat Jun 20 06:33:47 2015 (serrano)                */
 #*    -------------------------------------------------------------    */
 #*    The makefile to build the library.                               */
 #*=====================================================================*/
@@ -35,7 +35,7 @@ JFILE		= $(BGLBUILDBINDIR)/$(JFILE_EXE)
 DEPEND		= $(BGLBUILDBINDIR)/$(BDEPEND_EXE)
 BTAGS		= $(BGLBUILDBINDIR)/$(BTAGS_EXE)
 # Bigloo compilation options
-BAPIFLAGS	= $(BFLAGS) -I Llib -lib-dir $(BOOTLIBDIR) -unsafe -safee
+BAPIFLAGS	= $(BFLAGS) -I Llib -lib-dir $(BOOTLIBDIR) #-unsafe -safee
 CAPIFLAGS       = $(OPENSSLLIBSCFLAGS) 
 # Flags to build a heap
 BHEAPFLAGS	= -unsafe -q -mkaddheap -mkaddlib -L $(BOOTLIBDIR) -I Llib \
@@ -153,6 +153,9 @@ $(BOOTLIBDIR)/$(SSL_ZIP): ../lib/$(SSL_ZIP)
 	@ echo Copying $(SSL_ZIP)
 	@ cp $< $@
 
+../lib/$(SSL_ZIP): $(JAVA_SRC_DIR)/ssl_client_socket.java \
+                   $(JAVA_SRC_DIR)/ssl_server_socket.java
+
 jvm-extra: $(JAVA_CLASSES_SRC) $(BOOTLIBDIR)/$(SSL_ZIP)
 	(cd objs/class_s && \
           $(JAVAC) $(CYGWINJVMPATH) -classpath $(JVMAPIBOOTPATH) $(JAVA_CLASSES_SRC:objs/class_s/%=%))
@@ -198,9 +201,6 @@ pop:
 $(C_SRC_DIR)/ssl.h: Llib/ssl.scm
 	$(BIGLOO) $(EFLAGS) $(BAPIFLAGS) -copt $(CPICFLAGS) -copt "-I$(C_SRC_DIR)" -copt "$(CEFLAGS)" $< -o $@ -hgen
 
-$(C_SRC_DIR)/bglssl.c: $(C_SRC_DIR)/ssl_debug.h
-$(BIGLOO_SRC_DIR)/ssl.scm: $(C_SRC_DIR)/ssl_debug.h
-
 #*---------------------------------------------------------------------*/
 #*    extra-clean                                                      */
 #*---------------------------------------------------------------------*/
@@ -222,6 +222,9 @@ include ../../Makefile.api
 #*---------------------------------------------------------------------*/
 #*    explicit depencies                                               */
 #*---------------------------------------------------------------------*/
-$(C_SRC_DIR)/bglssl.c: $(C_SRC_DIR)/bglssl.h $(C_SRC_DIR)/ssl.h \
+objs/bglssl.o: $(C_SRC_DIR)/bglssl.h $(C_SRC_DIR)/ssl.h \
   $(C_SRC_DIR)/root_certs.h
+
+objs/bglssl.o: $(C_SRC_DIR)/ssl_debug.h
+objs/ssl.o: $(C_SRC_DIR)/ssl_debug.h
 

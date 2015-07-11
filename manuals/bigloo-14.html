@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>13. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>May 2015 -- Posix Regular Expressions</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>13. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015 -- Posix Regular Expressions</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center32258'
+<br/><center id='center32278'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32248" align="center" colspan="1"><font color="#ffffff"><strong id='bold32246'
+<tr bgcolor="#8381de"><th id="tc32268" align="center" colspan="1"><font color="#ffffff"><strong id='bold32266'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32255" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc32251" align="left" valign="top" colspan="1"><strong id='bold32250'
->top:</strong></td><td id="tc32252" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-May-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>May 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc32275" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc32271" align="left" valign="top" colspan="1"><strong id='bold32270'
+>top:</strong></td><td id="tc32272" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-July-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center32268'
+<br/><br/><center id='center32288'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32262" align="center" colspan="1"><font color="#ffffff"><strong id='bold32260'
+<tr bgcolor="#8381de"><th id="tc32282" align="center" colspan="1"><font color="#ffffff"><strong id='bold32280'
 >Posix Regular Expressions</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32265" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc32285" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">13.1</td><td colspan="4" width="100%"><a href="bigloo-14.html#Regular-Expressions-Procedures">Regular Expressions Procedures</a></td></tr>
  <tr><td valign="top" align="left">13.2</td><td colspan="4" width="100%"><a href="bigloo-14.html#Regular-Expressions-Pattern-Language">Regular Expressions Pattern Language</a></td></tr>
@@ -69,11 +69,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center32278'
+<br/><br/><center id='center32298'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32272" align="center" colspan="1"><font color="#ffffff"><strong id='bold32270'
+<tr bgcolor="#8381de"><th id="tc32292" align="center" colspan="1"><font color="#ffffff"><strong id='bold32290'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32275" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc32295" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -121,10 +121,10 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Posix-Regular-Expressions" class="mark"></a><a name="g17958" class="mark"></a>
-This whole section has been written by <strong id='bold17960'
+<a name="Posix-Regular-Expressions" class="mark"></a><a name="g17978" class="mark"></a>
+This whole section has been written by <strong id='bold17980'
 >Dorai Sitaram</strong>. 
-It consists in the documentation of the <code id='code17961'
+It consists in the documentation of the <code id='code17981'
 >pregexp</code> package that may be 
 found at <a href="http://www.ccs.neu.edu/~dorai/pregexp/pregexp.html">http://www.ccs.neu.edu/~dorai/pregexp/pregexp.html</a>.<br/><br/><br/>
 The regexp notation supported is modeled on Perl's, and includes such
@@ -132,76 +132,76 @@ powerful directives as numeric and nongreedy quantifiers, capturing and
 non-capturing clustering, POSIX character classes, selective case- and
 space-insensitivity, backreferences, alternation, backtrack pruning,
 positive and negative lookahead and lookbehind, in addition to the more
-basic directives familiar to all regexp users.  A <em id='emph17964'
+basic directives familiar to all regexp users.  A <em id='emph17984'
 >regexp</em> is a
-string that describes a pattern.  A regexp matcher tries to <em id='emph17965'
+string that describes a pattern.  A regexp matcher tries to <em id='emph17985'
 >match</em>
 this pattern against (a portion of) another string, which we will call
-the <em id='emph17966'
+the <em id='emph17986'
 >text string</em>.  The text string is treated as raw text and not
 as a pattern.<br/><br/>Most of the characters in a regexp pattern are meant to match
 occurrences of themselves in the text string.  Thus, the pattern
-<code id='code17968'
->&quot;abc&quot;</code> matches a string that contains the characters <code id='code17969'
->a</code>, <code id='code17970'
+<code id='code17988'
+>&quot;abc&quot;</code> matches a string that contains the characters <code id='code17989'
+>a</code>, <code id='code17990'
 >b</code>,
-<code id='code17971'
+<code id='code17991'
 >c</code> in succession.<br/><br/>In the regexp pattern, some characters  act as 
-<em id='emph17973'
+<em id='emph17993'
 >metacharacters</em>, and some character sequences act as
-<em id='emph17974'
+<em id='emph17994'
 >metasequences</em>.  That is, they specify something
 other than their literal selves.  For example, in the
-pattern <code id='code17975'
->&quot;a.c&quot;</code>, the characters <code id='code17976'
->a</code> and <code id='code17977'
+pattern <code id='code17995'
+>&quot;a.c&quot;</code>, the characters <code id='code17996'
+>a</code> and <code id='code17997'
 >c</code> do
-stand for themselves but the <em id='emph17978'
->metacharacter</em> <code id='code17979'
+stand for themselves but the <em id='emph17998'
+>metacharacter</em> <code id='code17999'
 >.</code>
-can match <em id='emph17980'
+can match <em id='emph18000'
 >any</em> character (other than
-newline).  Therefore, the pattern <code id='code17981'
+newline).  Therefore, the pattern <code id='code18001'
 >&quot;a.c&quot;</code>
-matches an <code id='code17982'
->a</code>, followed by <em id='emph17983'
+matches an <code id='code18002'
+>a</code>, followed by <em id='emph18003'
 >any</em> character,
-followed by a <code id='code17984'
->c</code>. <br/><br/>If we needed to match the character <code id='code17986'
+followed by a <code id='code18004'
+>c</code>. <br/><br/>If we needed to match the character <code id='code18006'
 >.</code> itself,
-we <em id='emph17987'
+we <em id='emph18007'
 >escape</em> it, ie, precede it with a backslash
-(<code id='code17988'
->\</code>).  The character sequence <code id='code17989'
+(<code id='code18008'
+>\</code>).  The character sequence <code id='code18009'
 >\.</code> is thus a 
-<em id='emph17990'
+<em id='emph18010'
 >metasequence</em>, since it doesn't match itself but rather
-just <code id='code17991'
->.</code>.  So, to match <code id='code17992'
+just <code id='code18011'
+>.</code>.  So, to match <code id='code18012'
 >a</code> followed by a literal
-<code id='code17993'
->.</code> followed by <code id='code17994'
+<code id='code18013'
+>.</code> followed by <code id='code18014'
 >c</code>, we use the regexp pattern
-<code id='code17995'
->&quot;a\\.c&quot;</code>.<a href="#footnote-footnote17997"><sup><small>1</small></sup></a>
-Another example of a metasequence is <code id='code17998'
+<code id='code18015'
+>&quot;a\\.c&quot;</code>.<a href="#footnote-footnote18017"><sup><small>1</small></sup></a>
+Another example of a metasequence is <code id='code18018'
 >\t</code>, which is a
 readable way to represent the tab character.<br/><br/>We will call the string representation of a regexp the
-<em id='emph18000'
->U-regexp</em>, where <em id='emph18001'
->U</em> can be taken to mean <em id='emph18002'
+<em id='emph18020'
+>U-regexp</em>, where <em id='emph18021'
+>U</em> can be taken to mean <em id='emph18022'
 >Unix-style</em> or 
-<em id='emph18003'
+<em id='emph18023'
 >universal</em>, because this
 notation for regexps is universally familiar.  Our
 implementation uses an intermediate tree-like
-representation called the <em id='emph18004'
->S-regexp</em>, where <em id='emph18005'
+representation called the <em id='emph18024'
+>S-regexp</em>, where <em id='emph18025'
 >S</em>
-can stand for <em id='emph18006'
->Scheme</em>, <em id='emph18007'
+can stand for <em id='emph18026'
+>Scheme</em>, <em id='emph18027'
 >symbolic</em>, or 
-<em id='emph18008'
+<em id='emph18028'
 >s-expression</em>.  S-regexps are more verbose
 and less readable than U-regexps, but they are much
 easier for Scheme's recursive procedures to navigate. <br/><br/>
@@ -211,71 +211,71 @@ easier for Scheme's recursive procedures to navigate. <br/><br/>
 </h3></td></tr></table>
 </div><div class="section">
 <a name="Regular-Expressions-Procedures" class="mark"></a>
-Four procedures <code id='code18010'
->pregexp</code>, <code id='code18011'
+Four procedures <code id='code18030'
+>pregexp</code>, <code id='code18031'
 >pregexp-match-positions</code>,
-<code id='code18012'
->pregexp-match</code>, <code id='code18013'
+<code id='code18032'
+>pregexp-match</code>, <code id='code18033'
 >pregexp-replace</code>, and
-<code id='code18014'
+<code id='code18034'
 >pregexp-replace*</code> enable compilation and matching of regular
 expressions.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g18017" class="mark"></a><a name="pregexp" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc18021" align="left" colspan="1"><strong id='bold18019'
->pregexp</strong><em id='it18020'
-> U-regexp . opt-args</em></td><td id="tc18022" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g18037" class="mark"></a><a name="pregexp" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc18041" align="left" colspan="1"><strong id='bold18039'
+>pregexp</strong><em id='it18040'
+> U-regexp . opt-args</em></td><td id="tc18042" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The procedure <code id='code18025'
+The procedure <code id='code18045'
 >pregexp</code> takes a U-regexp, which is a
-string, and returns an S-regexp, which is a tree.  <br/><br/><center id='center18034'
+string, and returns an S-regexp, which is a tree.  <br/><br/><center id='center18054'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18032'
->(pregexp <font color="red">&quot;c.r&quot;</font>) =&gt; (<strong id='bold32280'
->:sub</strong> (<strong id='bold32282'
->:or</strong> (<strong id='bold32284'
->:seq</strong> #\c <strong id='bold32286'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18052'
+>(pregexp <font color="red">&quot;c.r&quot;</font>) =&gt; (<strong id='bold32300'
+>:sub</strong> (<strong id='bold32302'
+>:or</strong> (<strong id='bold32304'
+>:seq</strong> #\c <strong id='bold32306'
 >:any</strong> #\r)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-There is rarely any need to look at the S-regexps returned by <code id='code18035'
->pregexp</code>.<br/><br/>The <code id='code18038'
-><em id='it18037'
+There is rarely any need to look at the S-regexps returned by <code id='code18055'
+>pregexp</code>.<br/><br/>The <code id='code18058'
+><em id='it18057'
 >opt-args</em></code> specifies how the regular expression is to be matched.
 Until documented the argument should be the empty list.
 </td></tr>
 </tbody></table><br/><br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g18043" class="mark"></a><a name="pregexp-match-positions" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc18047" align="left" colspan="1"><strong id='bold18045'
->pregexp-match-positions</strong><em id='it18046'
-> regexp string [beg 0] [end -1]</em></td><td id="tc18048" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g18063" class="mark"></a><a name="pregexp-match-positions" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc18067" align="left" colspan="1"><strong id='bold18065'
+>pregexp-match-positions</strong><em id='it18066'
+> regexp string [beg 0] [end -1]</em></td><td id="tc18068" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 
-The procedure <code id='code18051'
+The procedure <code id='code18071'
 >pregexp-match-positions</code> takes a
-regexp pattern and a text string, and returns a <em id='emph18052'
+regexp pattern and a text string, and returns a <em id='emph18072'
 >match</em> 
-if the pattern <em id='emph18053'
+if the pattern <em id='emph18073'
 >matches</em> the text string.
 The pattern may be either a U- or an S-regexp.
-(<code id='code18054'
+(<code id='code18074'
 >pregexp-match-positions</code> will internally compile a
 U-regexp to an S-regexp before proceeding with the
 matching.  If you find yourself calling
-<code id='code18055'
+<code id='code18075'
 >pregexp-match-positions</code> repeatedly with the same
 U-regexp, it may be advisable to explicitly convert the
 latter into an S-regexp once beforehand, using
-<code id='code18056'
->pregexp</code>, to save needless recompilation.)<br/><br/><code id='code18058'
->pregexp-match-positions</code> returns <code id='code18059'
+<code id='code18076'
+>pregexp</code>, to save needless recompilation.)<br/><br/><code id='code18078'
+>pregexp-match-positions</code> returns <code id='code18079'
 >#f</code> if the pattern did not
-match the string; and a list of <em id='emph18060'
+match the string; and a list of <em id='emph18080'
 >index pairs</em> if it
-did match. Eg,<br/><br/><center id='center18068'
+did match. Eg,<br/><br/><center id='center18088'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18066'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18086'
 >(pregexp-match-positions <font color="red">&quot;brain&quot;</font> <font color="red">&quot;bird&quot;</font>)
  =&gt; #f
 (pregexp-match-positions <font color="red">&quot;needle&quot;</font> <font color="red">&quot;hay needle stack&quot;</font>)
@@ -286,29 +286,29 @@ did match. Eg,<br/><br/><center id='center18068'
 
 In the second example, the integers 4 and 10 identifythe substring that was matched. 1 is the starting
 (inclusive) index and 2 the ending (exclusive) index of
-the matching substring.<br/><br/><center id='center18074'
+the matching substring.<br/><br/><center id='center18094'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18072'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18092'
 >(substring <font color="red">&quot;hay needle stack&quot;</font> 4 10)
  =&gt; <font color="red">&quot;needle&quot;</font>
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Here, <code id='code18075'
+Here, <code id='code18095'
 >pregexp-match-positions</code>'s return list contains only 
 one index pair, and that pair represents the entire
 substring matched by the regexp.  When we discuss
-<em id='emph18076'
+<em id='emph18096'
 >subpatterns</em> later, we will see how a single match
-operation can yield a list of <em id='emph18077'
->submatches</em>.<br/><br/><code id='code18079'
+operation can yield a list of <em id='emph18097'
+>submatches</em>.<br/><br/><code id='code18099'
 >pregexp-match-positions</code> takes optional third
 and fourth arguments that specify the indices of
 the text string within which the matching should
-take place.   <br/><br/><center id='center18085'
+take place.   <br/><br/><center id='center18105'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18083'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18103'
 >(pregexp-match-positions <font color="red">&quot;needle&quot;</font> 
   <font color="red">&quot;his hay needle stack -- my hay needle stack -- her hay needle stack&quot;</font>
   24 43)
@@ -322,19 +322,19 @@ relative to the full text string.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g18089" class="mark"></a><a name="pregexp-match" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc18093" align="left" colspan="1"><strong id='bold18091'
->pregexp-match</strong><em id='it18092'
-> regexp string</em></td><td id="tc18094" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g18109" class="mark"></a><a name="pregexp-match" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc18113" align="left" colspan="1"><strong id='bold18111'
+>pregexp-match</strong><em id='it18112'
+> regexp string</em></td><td id="tc18114" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The procedure <code id='code18097'
+The procedure <code id='code18117'
 >pregexp-match</code> is called like 
-<code id='code18098'
+<code id='code18118'
 >pregexp-match-positions</code>
 but instead of returning index pairs it returns the
-matching substrings:<br/><br/><center id='center18107'
+matching substrings:<br/><br/><center id='center18127'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18105'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18125'
 >(pregexp-match <font color="red">&quot;brain&quot;</font> <font color="red">&quot;bird&quot;</font>)
  =&gt; #f
 (pregexp-match <font color="red">&quot;needle&quot;</font> <font color="red">&quot;hay needle stack&quot;</font>)
@@ -343,28 +343,28 @@ matching substrings:<br/><br/><center id='center18107'
 </td></tr>
 </tbody></table></center>
 
-<code id='code18108'
+<code id='code18128'
 >pregexp-match</code> also takes optional third and
 fourth arguments, with the same meaning as does
-<code id='code18109'
+<code id='code18129'
 >pregexp-match-positions</code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g18113" class="mark"></a><a name="pregexp-replace" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc18117" align="left" colspan="1"><strong id='bold18115'
->pregexp-replace</strong><em id='it18116'
-> regexp string1 string2</em></td><td id="tc18118" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g18133" class="mark"></a><a name="pregexp-replace" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc18137" align="left" colspan="1"><strong id='bold18135'
+>pregexp-replace</strong><em id='it18136'
+> regexp string1 string2</em></td><td id="tc18138" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The procedure <code id='code18121'
+The procedure <code id='code18141'
 >pregexp-replace</code> replaces the
 matched portion of the text string by another
 string.  The first argument is the regexp,
 the second the text string, and the third
-is the <em id='emph18122'
->insert string</em> (string to be inserted).<br/><br/><center id='center18130'
+is the <em id='emph18142'
+>insert string</em> (string to be inserted).<br/><br/><center id='center18150'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18128'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18148'
 >(pregexp-replace <font color="red">&quot;te&quot;</font> <font color="red">&quot;liberte&quot;</font> <font color="red">&quot;ty&quot;</font>) 
  =&gt; <font color="red">&quot;liberty&quot;</font>
 </pre>
@@ -372,51 +372,51 @@ is the <em id='emph18122'
 </tbody></table></center>
 
 If the pattern doesn't occur in the text string, the returned string is 
-identical (<code id='code18131'
+identical (<code id='code18151'
 >eq?</code>) to the text string.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g18135" class="mark"></a><a name="pregexp-replace*" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc18139" align="left" colspan="1"><strong id='bold18137'
->pregexp-replace*</strong><em id='it18138'
-> regexp string1 string2</em></td><td id="tc18140" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g18155" class="mark"></a><a name="pregexp-replace*" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc18159" align="left" colspan="1"><strong id='bold18157'
+>pregexp-replace*</strong><em id='it18158'
+> regexp string1 string2</em></td><td id="tc18160" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The procedure <code id='code18143'
->pregexp-replace*</code> replaces <em id='emph18144'
+The procedure <code id='code18163'
+>pregexp-replace*</code> replaces <em id='emph18164'
 >all</em> matches in the
-text <code id='code18146'
-><em id='it18145'
->string1</em></code> by the insert <code id='code18148'
-><em id='it18147'
->string2</em></code>:<br/><br/><center id='center18156'
+text <code id='code18166'
+><em id='it18165'
+>string1</em></code> by the insert <code id='code18168'
+><em id='it18167'
+>string2</em></code>:<br/><br/><center id='center18176'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18154'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18174'
 >(pregexp-replace* <font color="red">&quot;te&quot;</font> <font color="red">&quot;liberte egalite fraternite&quot;</font> <font color="red">&quot;ty&quot;</font>)
  =&gt; <font color="red">&quot;liberty egality fratyrnity&quot;</font>
 </pre>
 </td></tr>
 </tbody></table></center>
 
-As with <code id='code18157'
+As with <code id='code18177'
 >pregexp-replace</code>, if the pattern doesn't occur in the text
-string, the returned string is identical (<code id='code18158'
+string, the returned string is identical (<code id='code18178'
 >eq?</code>) to the text string.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g18162" class="mark"></a><a name="pregexp-split" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc18166" align="left" colspan="1"><strong id='bold18164'
->pregexp-split</strong><em id='it18165'
-> regexp string</em></td><td id="tc18167" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g18182" class="mark"></a><a name="pregexp-split" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc18186" align="left" colspan="1"><strong id='bold18184'
+>pregexp-split</strong><em id='it18185'
+> regexp string</em></td><td id="tc18187" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The procedure <code id='code18170'
+The procedure <code id='code18190'
 >pregexp-split</code> takes two arguments, a
 regexp pattern and a text string, and returns a list of
 substrings of the text string, where the pattern identifies the 
-delimiter separating the substrings.<br/><br/><center id='center18185'
+delimiter separating the substrings.<br/><br/><center id='center18205'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18183'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18203'
 >(pregexp-split <font color="red">&quot;:&quot;</font> <font color="red">&quot;/bin:/usr/bin:/usr/bin/X11:/usr/local/bin&quot;</font>)
  =&gt; (<font color="red">&quot;/bin&quot;</font> <font color="red">&quot;/usr/bin&quot;</font> <font color="red">&quot;/usr/bin/X11&quot;</font> <font color="red">&quot;/usr/local/bin&quot;</font>)<br/><br/>(pregexp-split <font color="red">&quot; &quot;</font> <font color="red">&quot;pea soup&quot;</font>)
  =&gt; (<font color="red">&quot;pea&quot;</font> <font color="red">&quot;soup&quot;</font>)
@@ -425,9 +425,9 @@ delimiter separating the substrings.<br/><br/><center id='center18185'
 </tbody></table></center>
 
 If the first argument can match an empty string, then
-the list of all the single-character substrings is returned.<br/><br/><center id='center18202'
+the list of all the single-character substrings is returned.<br/><br/><center id='center18222'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18200'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18220'
 >(pregexp-split <font color="red">&quot;&quot;</font> <font color="red">&quot;smithereens&quot;</font>)
  =&gt; (<font color="red">&quot;s&quot;</font> <font color="red">&quot;m&quot;</font> <font color="red">&quot;i&quot;</font> <font color="red">&quot;t&quot;</font> <font color="red">&quot;h&quot;</font> <font color="red">&quot;e&quot;</font> <font color="red">&quot;r&quot;</font> <font color="red">&quot;e&quot;</font> <font color="red">&quot;e&quot;</font> <font color="red">&quot;n&quot;</font> <font color="red">&quot;s&quot;</font>)
 </pre>
@@ -435,11 +435,11 @@ the list of all the single-character substrings is returned.<br/><br/><center id
 </tbody></table></center>
 
 To identify one-or-more spaces as the delimiter,
-take care to use the regexp <code id='code18203'
->&quot; +&quot;</code>, not <code id='code18204'
->&quot; *&quot;</code>.<br/><br/><center id='center18228'
+take care to use the regexp <code id='code18223'
+>&quot; +&quot;</code>, not <code id='code18224'
+>&quot; *&quot;</code>.<br/><br/><center id='center18248'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18226'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18246'
 >(pregexp-split <font color="red">&quot; +&quot;</font> <font color="red">&quot;split pea     soup&quot;</font>)
  =&gt; (<font color="red">&quot;split&quot;</font> <font color="red">&quot;pea&quot;</font> <font color="red">&quot;soup&quot;</font>)<br/><br/>(pregexp-split <font color="red">&quot; *&quot;</font> <font color="red">&quot;split pea     soup&quot;</font>)
  =&gt; (<font color="red">&quot;s&quot;</font> <font color="red">&quot;p&quot;</font> <font color="red">&quot;l&quot;</font> <font color="red">&quot;i&quot;</font> <font color="red">&quot;t&quot;</font> <font color="red">&quot;p&quot;</font> <font color="red">&quot;e&quot;</font> <font color="red">&quot;a&quot;</font> <font color="red">&quot;s&quot;</font> <font color="red">&quot;o&quot;</font> <font color="red">&quot;u&quot;</font> <font color="red">&quot;p&quot;</font>)
@@ -449,21 +449,21 @@ take care to use the regexp <code id='code18203'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g18232" class="mark"></a><a name="pregexp-quote" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc18236" align="left" colspan="1"><strong id='bold18234'
->pregexp-quote</strong><em id='it18235'
-> string</em></td><td id="tc18237" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g18252" class="mark"></a><a name="pregexp-quote" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc18256" align="left" colspan="1"><strong id='bold18254'
+>pregexp-quote</strong><em id='it18255'
+> string</em></td><td id="tc18257" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 
-The procedure <code id='code18240'
->pregexp-quote</code> takes an arbitrary <code id='code18242'
-><em id='it18241'
+The procedure <code id='code18260'
+>pregexp-quote</code> takes an arbitrary <code id='code18262'
+><em id='it18261'
 >string</em></code> and 
 returns a U-regexp (string) that precisely represents it. In particular, 
 characters in the input string that could serve as regexp metacharacters are 
-escaped with a backslash, so that they safely match only themselves.<br/><br/><center id='center18251'
+escaped with a backslash, so that they safely match only themselves.<br/><br/><center id='center18271'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18249'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18269'
 >(pregexp-quote <font color="red">&quot;cons&quot;</font>)
  =&gt; <font color="red">&quot;cons&quot;</font><br/><br/>(pregexp-quote <font color="red">&quot;list?&quot;</font>)
  =&gt; <font color="red">&quot;list\\?&quot;</font>
@@ -471,7 +471,7 @@ escaped with a backslash, so that they safely match only themselves.<br/><br/><c
 </td></tr>
 </tbody></table></center>
 
-<code id='code18252'
+<code id='code18272'
 >pregexp-quote</code> is useful when building a composite regexp 
 from a mix of regexp strings and verbatim strings. 
 </td></tr>
@@ -485,65 +485,65 @@ from a mix of regexp strings and verbatim strings.
 <a name="The-Regular-Expressions-Pattern-Language" class="mark"></a>
 
 Here is a complete description of the regexp pattern
-language recognized by the <code id='code18255'
+language recognized by the <code id='code18275'
 >pregexp</code> procedures.<br/><br/><!-- Basic assertions -->
 <a name="Basic-assertions"></a>
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">13.2.1 Basic assertions</font>
 </h3></td></tr></table>
 </div><div class="subsection">
 <a name="Basic-assertions" class="mark"></a>
-The <em id='emph18257'
->assertions</em> <code id='code18258'
->^</code> and <code id='code18259'
+The <em id='emph18277'
+>assertions</em> <code id='code18278'
+>^</code> and <code id='code18279'
 >$</code> identify the beginning and
 the end of the text string respectively.  They ensure that their
 adjoining regexps match at one or other end of the text string.
-Examples:<br/><br/><center id='center18265'
+Examples:<br/><br/><center id='center18285'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18263'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18283'
 >(pregexp-match-positions <font color="red">&quot;^contact&quot;</font> <font color="red">&quot;first contact&quot;</font>) =&gt; #f 
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The regexp fails to match because <code id='code18266'
->contact</code> does notoccur at the beginning of the text string.<br/><br/><center id='center18272'
+The regexp fails to match because <code id='code18286'
+>contact</code> does notoccur at the beginning of the text string.<br/><br/><center id='center18292'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18270'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18290'
 >(pregexp-match-positions <font color="red">&quot;laugh$&quot;</font> <font color="red">&quot;laugh laugh laugh laugh&quot;</font>) =&gt; ((18 . 23))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The regexp matches the <em id='emph18273'
->last</em> <code id='code18274'
+The regexp matches the <em id='emph18293'
+>last</em> <code id='code18294'
 >laugh</code>.
-The metasequence <code id='code18275'
+The metasequence <code id='code18295'
 >\b</code> asserts that
-a <em id='emph18276'
->word boundary</em> exists. <br/><br/><center id='center18282'
+a <em id='emph18296'
+>word boundary</em> exists. <br/><br/><center id='center18302'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18280'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18300'
 >(pregexp-match-positions <font color="red">&quot;yack\\b&quot;</font> <font color="red">&quot;yackety yack&quot;</font>) =&gt; ((8 . 12))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The <code id='code18283'
->yack</code> in <code id='code18284'
->yackety</code> doesn't end at a wordboundary so it isn't matched.  The second <code id='code18285'
->yack</code> does and is.<br/><br/>The metasequence <code id='code18287'
->\B</code> has the opposite effect to <code id='code18288'
+The <code id='code18303'
+>yack</code> in <code id='code18304'
+>yackety</code> doesn't end at a wordboundary so it isn't matched.  The second <code id='code18305'
+>yack</code> does and is.<br/><br/>The metasequence <code id='code18307'
+>\B</code> has the opposite effect to <code id='code18308'
 >\b</code>.  It
-asserts that a word boundary does not exist.<br/><br/><center id='center18294'
+asserts that a word boundary does not exist.<br/><br/><center id='center18314'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18292'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18312'
 >(pregexp-match-positions <font color="red">&quot;an\\B&quot;</font> <font color="red">&quot;an analysis&quot;</font>) =&gt; ((3 . 5))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The <code id='code18295'
+The <code id='code18315'
 >an</code> that doesn't end in a word boundaryis matched.<br/><br/></div>
 <!-- Characters and character classes -->
 <a name="Characters-and-character-classes"></a>
@@ -554,97 +554,97 @@ The <code id='code18295'
 Typically a character in the regexp matches the same character in the
 text string.  Sometimes it is necessary or convenient to use a regexp
 metasequence to refer to a single character.  Thus, metasequences
-<code id='code18297'
->\n</code>, <code id='code18298'
->\r</code>, <code id='code18299'
->\t</code>, and <code id='code18300'
+<code id='code18317'
+>\n</code>, <code id='code18318'
+>\r</code>, <code id='code18319'
+>\t</code>, and <code id='code18320'
 >\.</code>  match the newline,
-return, tab and period characters respectively.<br/><br/>The <em id='emph18302'
->metacharacter</em> period (<code id='code18303'
+return, tab and period characters respectively.<br/><br/>The <em id='emph18322'
+>metacharacter</em> period (<code id='code18323'
 >.</code>) matches
-<em id='emph18304'
->any</em> character other than newline.<br/><br/><center id='center18311'
+<em id='emph18324'
+>any</em> character other than newline.<br/><br/><center id='center18331'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18309'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18329'
 >(pregexp-match <font color="red">&quot;p.t&quot;</font> <font color="red">&quot;pet&quot;</font>) =&gt; (<font color="red">&quot;pet&quot;</font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-It also matches <code id='code18312'
->pat</code>, <code id='code18313'
->pit</code>, <code id='code18314'
->pot</code>, <code id='code18315'
->put</code>,and <code id='code18316'
->p8t</code> but not <code id='code18317'
->peat</code> or <code id='code18318'
->pfffft</code>.<br/><br/>A <em id='emph18320'
+It also matches <code id='code18332'
+>pat</code>, <code id='code18333'
+>pit</code>, <code id='code18334'
+>pot</code>, <code id='code18335'
+>put</code>,and <code id='code18336'
+>p8t</code> but not <code id='code18337'
+>peat</code> or <code id='code18338'
+>pfffft</code>.<br/><br/>A <em id='emph18340'
 >character class</em> matches any one character from a set of
-characters.  A typical format for this is the <em id='emph18321'
+characters.  A typical format for this is the <em id='emph18341'
 >bracketed character
-class</em> <code id='code18322'
->[</code>...<code id='code18323'
+class</em> <code id='code18342'
+>[</code>...<code id='code18343'
 >]</code>, which matches any one character from the
 non-empty sequence of characters enclosed within the
-brackets.<a href="#footnote-footnote18324"><sup><small>2</small></sup></a>  Thus <code id='code18325'
+brackets.<a href="#footnote-footnote18344"><sup><small>2</small></sup></a>  Thus <code id='code18345'
 >&quot;p[aeiou]t&quot;</code> matches
-<code id='code18326'
->pat</code>, <code id='code18327'
->pet</code>, <code id='code18328'
->pit</code>, <code id='code18329'
->pot</code>, <code id='code18330'
+<code id='code18346'
+>pat</code>, <code id='code18347'
+>pet</code>, <code id='code18348'
+>pit</code>, <code id='code18349'
+>pot</code>, <code id='code18350'
 >put</code> and nothing
-else.<br/><br/>Inside the brackets, a hyphen (<code id='code18332'
+else.<br/><br/>Inside the brackets, a hyphen (<code id='code18352'
 >-</code>) between two characters
 specifies the ascii range between the characters.  Eg,
-<code id='code18333'
->&quot;ta[b-dgn-p]&quot;</code> matches <code id='code18334'
->tab</code>, <code id='code18335'
->tac</code>, <code id='code18336'
+<code id='code18353'
+>&quot;ta[b-dgn-p]&quot;</code> matches <code id='code18354'
+>tab</code>, <code id='code18355'
+>tac</code>, <code id='code18356'
 >tad</code>,
-<em id='emph18337'
->and</em> <code id='code18338'
->tag</code>, <em id='emph18339'
->and</em> <code id='code18340'
->tan</code>, <code id='code18341'
->tao</code>, <code id='code18342'
->tap</code>.<br/><br/>An initial caret (<code id='code18344'
+<em id='emph18357'
+>and</em> <code id='code18358'
+>tag</code>, <em id='emph18359'
+>and</em> <code id='code18360'
+>tan</code>, <code id='code18361'
+>tao</code>, <code id='code18362'
+>tap</code>.<br/><br/>An initial caret (<code id='code18364'
 >^</code>) after the left bracket inverts the set
 specified by the rest of the contents, ie, it specifies the set of
-characters <em id='emph18345'
+characters <em id='emph18365'
 >other than</em> those identified in the brackets.  Eg,
-<code id='code18346'
+<code id='code18366'
 >&quot;do[^g]&quot;</code> matches all three-character sequences starting with
-<code id='code18347'
->do</code> except <code id='code18348'
->dog</code>.<br/><br/>Note that the metacharacter <code id='code18350'
+<code id='code18367'
+>do</code> except <code id='code18368'
+>dog</code>.<br/><br/>Note that the metacharacter <code id='code18370'
 >^</code> inside brackets means something
 quite different from what it means outside.  Most other metacharacters
-(<code id='code18351'
->.</code>, <code id='code18352'
->*</code>, <code id='code18353'
->+</code>, <code id='code18354'
+(<code id='code18371'
+>.</code>, <code id='code18372'
+>*</code>, <code id='code18373'
+>+</code>, <code id='code18374'
 >?</code>, etc) cease to be metacharacters
 when inside brackets, although you may still escape them for peace of
-mind.  <code id='code18355'
+mind.  <code id='code18375'
 >-</code> is a metacharacter only when it's inside brackets, and
 neither the first nor the last character.<br/><br/>Bracketed character classes cannot contain other bracketed character
 classes (although they contain certain other types of character classes
---- see below).  Thus a left bracket (<code id='code18357'
+--- see below).  Thus a left bracket (<code id='code18377'
 >[</code>) inside a bracketed
 character class doesn't have to be a metacharacter; it can stand for
-itself.  Eg, <code id='code18358'
->&quot;[a[b]&quot;</code> matches <code id='code18359'
->a</code>, <code id='code18360'
->[</code>, and <code id='code18361'
+itself.  Eg, <code id='code18378'
+>&quot;[a[b]&quot;</code> matches <code id='code18379'
+>a</code>, <code id='code18380'
+>[</code>, and <code id='code18381'
 >b</code>.<br/><br/>Furthermore, since empty bracketed character classes are disallowed, a
-right bracket (<code id='code18363'
+right bracket (<code id='code18383'
 >]</code>) immediately occurring after the opening left
-bracket also doesn't need to be a metacharacter.  Eg, <code id='code18364'
+bracket also doesn't need to be a metacharacter.  Eg, <code id='code18384'
 >&quot;[]ab]&quot;</code>
-matches <code id='code18365'
->]</code>, <code id='code18366'
->a</code>, and <code id='code18367'
+matches <code id='code18385'
+>]</code>, <code id='code18386'
+>a</code>, and <code id='code18387'
 >b</code>.<br/><br/></div>
 <!-- Some frequently used character classes -->
 <a name="Some-frequently-used-character-classes"></a>
@@ -653,23 +653,23 @@ matches <code id='code18365'
 </div><div class="subsection">
 
 Some standard character classes can be conveniently represented as
-metasequences instead of as explicit bracketed expressions.  <code id='code18369'
+metasequences instead of as explicit bracketed expressions.  <code id='code18389'
 >\d</code>
-matches a digit (<code id='code18370'
->[0-9]</code>); <code id='code18371'
+matches a digit (<code id='code18390'
+>[0-9]</code>); <code id='code18391'
 >\s</code> matches a whitespace
-character; and <code id='code18372'
+character; and <code id='code18392'
 >\w</code> matches a character that could be part of a
-``word''.<a href="#footnote-footnote18374"><sup><small>3</small></sup></a><br/><br/>The upper-case versions of these metasequences stand for the inversions
-of the corresponding character classes.  Thus <code id='code18376'
+``word''.<a href="#footnote-footnote18394"><sup><small>3</small></sup></a><br/><br/>The upper-case versions of these metasequences stand for the inversions
+of the corresponding character classes.  Thus <code id='code18396'
 >\D</code> matches a
-non-digit, <code id='code18377'
->\S</code> a non-whitespace character, and <code id='code18378'
+non-digit, <code id='code18397'
+>\S</code> a non-whitespace character, and <code id='code18398'
 >\W</code> a
 non-``word'' character.<br/><br/>Remember to include a double backslash when putting these metasequences
-in a Scheme string:<br/><br/><center id='center18386'
+in a Scheme string:<br/><br/><center id='center18406'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18384'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18404'
 >(pregexp-match <font color="red">&quot;\\d\\d&quot;</font> <font color="red">&quot;0 dear, 1 have 2 read catch 22 before 9&quot;</font>) =&gt; (<font color="red">&quot;22&quot;</font>)
 </pre>
 </td></tr>
@@ -677,7 +677,7 @@ in a Scheme string:<br/><br/><center id='center18386'
 
 These character classes can be used inside 
 a bracketed expression.  Eg,
-<code id='code18387'
+<code id='code18407'
 >&quot;[a-z\\d]&quot;</code> matches a lower-case letter
 or a digit.<br/><br/></div>
 <!-- POSIX character classes -->
@@ -686,59 +686,59 @@ or a digit.<br/><br/></div>
 </h3></td></tr></table>
 </div><div class="subsection">
 
-A <em id='emph18389'
+A <em id='emph18409'
 >POSIX character class</em> is a special metasequence
-of the form <code id='code18390'
->[:</code>...<code id='code18391'
+of the form <code id='code18410'
+>[:</code>...<code id='code18411'
 >:]</code> that can be used only
 inside a bracketed expression.  The POSIX classes
-supported are  <br/><br/><center id='center18417'
+supported are  <br/><br/><center id='center18437'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog18415'
-><code id='code18393'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog18435'
+><code id='code18413'
 >[:alnum:]</code>  letters and digits 
-<code id='code18394'
->[:alpha:]</code>  letters  
-<code id='code18395'
->[:algor:]</code>  the letters <code id='code18396'
->c</code>, <code id='code18397'
->h</code>, <code id='code18398'
->a</code> and <code id='code18399'
->d</code> 
-<code id='code18400'
->[:ascii:]</code>  7-bit ascii characters 
-<code id='code18401'
->[:blank:]</code>  widthful whitespace, ie, space and tab 
-<code id='code18402'
->[:cntrl:]</code>  ``control'' characters, viz, those with code <code id='code18403'
->&lt;</code> 32 
-<code id='code18404'
->[:digit:]</code>  digits, same as <code id='code18405'
->\d</code> 
-<code id='code18406'
->[:graph:]</code>  characters that use ink 
-<code id='code18407'
->[:lower:]</code>  lower-case letters 
-<code id='code18408'
->[:print:]</code>  ink-users plus widthful whitespace  
-<code id='code18409'
->[:space:]</code>  whitespace, same as <code id='code18410'
->\s</code> 
-<code id='code18411'
->[:upper:]</code>  upper-case letters 
-<code id='code18412'
->[:word:]</code>   letters, digits, and underscore, same as <code id='code18413'
->\w</code> 
 <code id='code18414'
+>[:alpha:]</code>  letters  
+<code id='code18415'
+>[:algor:]</code>  the letters <code id='code18416'
+>c</code>, <code id='code18417'
+>h</code>, <code id='code18418'
+>a</code> and <code id='code18419'
+>d</code> 
+<code id='code18420'
+>[:ascii:]</code>  7-bit ascii characters 
+<code id='code18421'
+>[:blank:]</code>  widthful whitespace, ie, space and tab 
+<code id='code18422'
+>[:cntrl:]</code>  ``control'' characters, viz, those with code <code id='code18423'
+>&lt;</code> 32 
+<code id='code18424'
+>[:digit:]</code>  digits, same as <code id='code18425'
+>\d</code> 
+<code id='code18426'
+>[:graph:]</code>  characters that use ink 
+<code id='code18427'
+>[:lower:]</code>  lower-case letters 
+<code id='code18428'
+>[:print:]</code>  ink-users plus widthful whitespace  
+<code id='code18429'
+>[:space:]</code>  whitespace, same as <code id='code18430'
+>\s</code> 
+<code id='code18431'
+>[:upper:]</code>  upper-case letters 
+<code id='code18432'
+>[:word:]</code>   letters, digits, and underscore, same as <code id='code18433'
+>\w</code> 
+<code id='code18434'
 >[:xdigit:]</code> hex digits 
 </pre>
 </td></tr>
 </tbody></table></center>
 
-For example, the regexp  <code id='code18418'
->&quot;[[:alpha:]_]&quot;</code>matches a letter or underscore.  <br/><br/><center id='center18430'
+For example, the regexp  <code id='code18438'
+>&quot;[[:alpha:]_]&quot;</code>matches a letter or underscore.  <br/><br/><center id='center18450'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18428'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18448'
 >(pregexp-match <font color="red">&quot;[[:alpha:]_]&quot;</font> <font color="red">&quot;--x--&quot;</font>) =&gt; (<font color="red">&quot;x&quot;</font>)
 (pregexp-match <font color="red">&quot;[[:alpha:]_]&quot;</font> <font color="red">&quot;--_--&quot;</font>) =&gt; (<font color="red">&quot;_&quot;</font>)
 (pregexp-match <font color="red">&quot;[[:alpha:]_]&quot;</font> <font color="red">&quot;--:--&quot;</font>) =&gt; #f
@@ -746,34 +746,34 @@ For example, the regexp  <code id='code18418'
 </td></tr>
 </tbody></table></center>
 
-The POSIX class notation is valid <em id='emph18431'
+The POSIX class notation is valid <em id='emph18451'
 >only</em> inside a
-bracketed expression.  For instance, <code id='code18432'
+bracketed expression.  For instance, <code id='code18452'
 >[:alpha:]</code>,
-when not inside a bracketed expression, will <em id='emph18433'
+when not inside a bracketed expression, will <em id='emph18453'
 >not</em>
 be read as the letter class.
 Rather it is (from previous principles) the character
-class containing the characters <code id='code18434'
->:</code>, <code id='code18435'
->a</code>, <code id='code18436'
+class containing the characters <code id='code18454'
+>:</code>, <code id='code18455'
+>a</code>, <code id='code18456'
 >l</code>,
-<code id='code18437'
->p</code>, <code id='code18438'
->h</code>.<br/><br/><center id='center18447'
+<code id='code18457'
+>p</code>, <code id='code18458'
+>h</code>.<br/><br/><center id='center18467'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18445'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18465'
 >(pregexp-match <font color="red">&quot;[[:alpha:]]&quot;</font> <font color="red">&quot;--a--&quot;</font>) =&gt; (<font color="red">&quot;a&quot;</font>)
 (pregexp-match <font color="red">&quot;[[:alpha:]]&quot;</font> <font color="red">&quot;--_--&quot;</font>) =&gt; #f
 </pre>
 </td></tr>
 </tbody></table></center>
 
-By placing a caret (<code id='code18448'
+By placing a caret (<code id='code18468'
 >^</code>) immediately after
-<code id='code18449'
+<code id='code18469'
 >[:</code>, you get the inversion of that POSIX
-character class.  Thus, <code id='code18450'
+character class.  Thus, <code id='code18470'
 >[:^alpha]</code> 
 is the class containing all characters 
 except the letters.<br/><br/></div>
@@ -783,15 +783,15 @@ except the letters.<br/><br/></div>
 </h3></td></tr></table>
 </div><div class="subsection">
 <a name="Quantifiers" class="mark"></a>
-The <em id='emph18452'
->quantifiers</em> <code id='code18453'
->*</code>, <code id='code18454'
->+</code>, and <code id='code18455'
+The <em id='emph18472'
+>quantifiers</em> <code id='code18473'
+>*</code>, <code id='code18474'
+>+</code>, and <code id='code18475'
 >?</code> match
 respectively: zero or more, one or more, and zero or one instances of
-the preceding subpattern.<br/><br/><center id='center18475'
+the preceding subpattern.<br/><br/><center id='center18495'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18473'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18493'
 >(pregexp-match-positions <font color="red">&quot;c[ad]*r&quot;</font> <font color="red">&quot;cadaddadddr&quot;</font>) =&gt; ((0 . 11))
 (pregexp-match-positions <font color="red">&quot;c[ad]*r&quot;</font> <font color="red">&quot;cr&quot;</font>)          =&gt; ((0 . 2))<br/><br/>(pregexp-match-positions <font color="red">&quot;c[ad]+r&quot;</font> <font color="red">&quot;cadaddadddr&quot;</font>) =&gt; ((0 . 11))
 (pregexp-match-positions <font color="red">&quot;c[ad]+r&quot;</font> <font color="red">&quot;cr&quot;</font>)          =&gt; #f<br/><br/>(pregexp-match-positions <font color="red">&quot;c[ad]?r&quot;</font> <font color="red">&quot;cadaddadddr&quot;</font>) =&gt; #f
@@ -809,39 +809,39 @@ the preceding subpattern.<br/><br/><center id='center18475'
 </div><div class="subsection">
 
 You can use braces to specify much finer-tuned quantification than is
-possible with <code id='code18476'
->*</code>, <code id='code18477'
->+</code>, <code id='code18478'
->?</code>.<br/><br/>The quantifier <code id='code18480'
->{m}</code> matches <em id='emph18481'
->exactly</em> <code id='code18482'
+possible with <code id='code18496'
+>*</code>, <code id='code18497'
+>+</code>, <code id='code18498'
+>?</code>.<br/><br/>The quantifier <code id='code18500'
+>{m}</code> matches <em id='emph18501'
+>exactly</em> <code id='code18502'
 >m</code>
-instances of the preceding <em id='emph18483'
->subpattern</em>.  <code id='code18484'
+instances of the preceding <em id='emph18503'
+>subpattern</em>.  <code id='code18504'
 >m</code>
-must be a nonnegative integer.<br/><br/>The quantifier <code id='code18486'
->{m,n}</code> matches at least <code id='code18487'
+must be a nonnegative integer.<br/><br/>The quantifier <code id='code18506'
+>{m,n}</code> matches at least <code id='code18507'
 >m</code> and at most
-<code id='code18488'
->n</code> instances.  <code id='code18489'
->m</code> and <code id='code18490'
+<code id='code18508'
+>n</code> instances.  <code id='code18509'
+>m</code> and <code id='code18510'
 >n</code> are nonnegative integers with
-<code id='code18491'
+<code id='code18511'
 >m &lt;= n</code>.  You may omit either or both numbers, in which case
-<code id='code18492'
->m</code> defaults to 0 and <code id='code18493'
->n</code> to infinity.<br/><br/>It is evident that <code id='code18495'
->+</code> and <code id='code18496'
+<code id='code18512'
+>m</code> defaults to 0 and <code id='code18513'
+>n</code> to infinity.<br/><br/>It is evident that <code id='code18515'
+>+</code> and <code id='code18516'
 >?</code> are abbreviations for
-<code id='code18497'
->{1,}</code> and <code id='code18498'
->{0,1}</code> respectively.  <code id='code18499'
+<code id='code18517'
+>{1,}</code> and <code id='code18518'
+>{0,1}</code> respectively.  <code id='code18519'
 >*</code> abbreviates
-<code id='code18500'
->{,}</code>, which is the same as <code id='code18501'
->{0,}</code>.<br/><br/><center id='center18511'
+<code id='code18520'
+>{,}</code>, which is the same as <code id='code18521'
+>{0,}</code>.<br/><br/><center id='center18531'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18509'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18529'
 >(pregexp-match &quot;[aeiou]{3}<font color="red">&quot; &quot;</font>vacuous&quot;)  =&gt; (<font color="red">&quot;uou&quot;</font>)
 (pregexp-match &quot;[aeiou]{3}<font color="red">&quot; &quot;</font>evolve&quot;)   =&gt; #f
 (pregexp-match &quot;[aeiou]{2,3}<font color="red">&quot; &quot;</font>evolve&quot;) =&gt; #f
@@ -857,38 +857,38 @@ must be a nonnegative integer.<br/><br/>The quantifier <code id='code18486'
 </h3></td></tr></table>
 </div><div class="subsection">
 
-The quantifiers described above are <em id='emph18512'
+The quantifiers described above are <em id='emph18532'
 >greedy</em>, ie, they match the
 maximal number of instances that would still lead to an overall match
-for the full pattern.<br/><br/><center id='center18519'
+for the full pattern.<br/><br/><center id='center18539'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18517'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18537'
 >(pregexp-match <font color="red">&quot;&lt;.*&gt;&quot;</font> <font color="red">&quot;&lt;tag1&gt; &lt;tag2&gt; &lt;tag3&gt;&quot;</font>)
  =&gt; (<font color="red">&quot;&lt;tag1&gt; &lt;tag2&gt; &lt;tag3&gt;&quot;</font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-To make these quantifiers <em id='emph18520'
->non-greedy</em>, append a <code id='code18521'
+To make these quantifiers <em id='emph18540'
+>non-greedy</em>, append a <code id='code18541'
 >?</code> to them.
 Non-greedy quantifiers match the minimal number of instances needed to
-ensure an overall match.<br/><br/><center id='center18528'
+ensure an overall match.<br/><br/><center id='center18548'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18526'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18546'
 >(pregexp-match <font color="red">&quot;&lt;.*?&gt;&quot;</font> <font color="red">&quot;&lt;tag1&gt; &lt;tag2&gt; &lt;tag3&gt;&quot;</font>) =&gt; (<font color="red">&quot;&lt;tag1&gt;&quot;</font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
 The non-greedy quantifiers are respectively:
-<code id='code18529'
->*?</code>, <code id='code18530'
->+?</code>, <code id='code18531'
->??</code>, <code id='code18532'
->{m}?</code>, <code id='code18533'
+<code id='code18549'
+>*?</code>, <code id='code18550'
+>+?</code>, <code id='code18551'
+>??</code>, <code id='code18552'
+>{m}?</code>, <code id='code18553'
 >{m,n}?</code>.
-Note the two uses of the metacharacter <code id='code18534'
+Note the two uses of the metacharacter <code id='code18554'
 >?</code>.<br/><br/></div>
 <!-- Clusters -->
 <a name="Clusters"></a>
@@ -896,18 +896,18 @@ Note the two uses of the metacharacter <code id='code18534'
 </h3></td></tr></table>
 </div><div class="subsection">
 <a name="Clusters" class="mark"></a>
-<em id='emph18536'
->Clustering</em>, ie, enclosure within parens <code id='code18537'
->(</code>...<code id='code18538'
+<em id='emph18556'
+>Clustering</em>, ie, enclosure within parens <code id='code18557'
+>(</code>...<code id='code18558'
 >)</code>,
-identifies the enclosed <em id='emph18539'
+identifies the enclosed <em id='emph18559'
 >subpattern</em> as a single entity.  It causes
-the matcher to <em id='emph18540'
->capture</em> the <em id='emph18541'
+the matcher to <em id='emph18560'
+>capture</em> the <em id='emph18561'
 >submatch</em>, or the portion of the
-string matching the subpattern, in addition to the overall match.<br/><br/><center id='center18551'
+string matching the subpattern, in addition to the overall match.<br/><br/><center id='center18571'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18549'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18569'
 >(pregexp-match <font color="red">&quot;([a-z]+) ([0-9]+), ([0-9]+)&quot;</font> <font color="red">&quot;jan 1, 1970&quot;</font>)
  =&gt; (<font color="red">&quot;jan 1, 1970&quot;</font> <font color="red">&quot;jan&quot;</font> <font color="red">&quot;1&quot;</font> <font color="red">&quot;1970&quot;</font>)
 </pre>
@@ -915,9 +915,9 @@ string matching the subpattern, in addition to the overall match.<br/><br/><cent
 </tbody></table></center>
 
 Clustering also causes a following quantifier to treat
-the entire enclosed subpattern as an entity.<br/><br/><center id='center18559'
+the entire enclosed subpattern as an entity.<br/><br/><center id='center18579'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18557'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18577'
 >(pregexp-match <font color="red">&quot;(poo )*&quot;</font> <font color="red">&quot;poo poo platter&quot;</font>) =&gt; (<font color="red">&quot;poo poo &quot;</font> <font color="red">&quot;poo &quot;</font>)
 </pre>
 </td></tr>
@@ -925,25 +925,25 @@ the entire enclosed subpattern as an entity.<br/><br/><center id='center18559'
 
 The number of submatches returned is always equal to the number of
 subpatterns specified in the regexp, even if a particular subpattern
-happens to match more than one substring or no substring at all.<br/><br/><center id='center18567'
+happens to match more than one substring or no substring at all.<br/><br/><center id='center18587'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18565'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18585'
 >(pregexp-match <font color="red">&quot;([a-z ]+;)*&quot;</font> <font color="red">&quot;lather; rinse; repeat;&quot;</font>)
  =&gt; (<font color="red">&quot;lather; rinse; repeat;&quot;</font> <font color="red">&quot; repeat;&quot;</font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Here the <code id='code18568'
+Here the <code id='code18588'
 >*</code>-quantified subpattern matches threetimes, but it is the last submatch that is returned.<br/><br/>It is also possible for a quantified subpattern to
 fail to match, even if the overall pattern matches. 
 In such cases, the failing submatch is represented
-by <code id='code18570'
->#f</code>.<br/><br/><center id='center18587'
+by <code id='code18590'
+>#f</code>.<br/><br/><center id='center18607'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18585'
->(<font color="#6959cf"><strong id='bold32422'
->define</strong></font> <font color="#6959cf"><strong id='bold32424'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18605'
+>(<font color="#6959cf"><strong id='bold32442'
+>define</strong></font> <font color="#6959cf"><strong id='bold32444'
 >date-re</strong></font>
   ;match `month year' or `month day, year'.
   ;subpattern matches day, if present 
@@ -962,21 +962,21 @@ by <code id='code18570'
 </div><div class="subsection">
 
 Submatches can be used in the insert string argument of the procedures
-<code id='code18588'
->pregexp-replace</code> and <code id='code18589'
+<code id='code18608'
+>pregexp-replace</code> and <code id='code18609'
 >pregexp-replace*</code>.  The insert string
-can use <code id='code18590'
->\n</code> as a <em id='emph18591'
+can use <code id='code18610'
+>\n</code> as a <em id='emph18611'
 >backreference</em> to refer back to the
-<em id='emph18592'
->n</em>th submatch, ie, the substring that matched the <em id='emph18593'
+<em id='emph18612'
+>n</em>th submatch, ie, the substring that matched the <em id='emph18613'
 >n</em>th
-subpattern.  <code id='code18594'
+subpattern.  <code id='code18614'
 >\0</code> refers to the entire match, and it can also be
-specified as <code id='code18595'
->\&amp;</code>.<br/><br/><center id='center18614'
+specified as <code id='code18615'
+>\&amp;</code>.<br/><br/><center id='center18634'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18612'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18632'
 >(pregexp-replace <font color="red">&quot;_(.+?)_&quot;</font> 
   <font color="red">&quot;the _nina_, the _pinta_, and the _santa maria_&quot;</font>
   <font color="red">&quot;*\\1*&quot;</font>)
@@ -991,20 +991,20 @@ specified as <code id='code18595'
 </td></tr>
 </tbody></table></center>
 
-Use <code id='code18615'
+Use <code id='code18635'
 >\\</code> in the insert string to specify a literal
-backslash.  Also, <code id='code18616'
+backslash.  Also, <code id='code18636'
 >\$</code> stands for an empty string,
-and is useful for separating a backreference <code id='code18617'
+and is useful for separating a backreference <code id='code18637'
 >\n</code>
 from an immediately following number.<br/><br/>Backreferences can also be used within the regexp
 pattern to refer back to an already matched subpattern
-in the pattern.  <code id='code18619'
+in the pattern.  <code id='code18639'
 >\n</code> stands for an exact repeat
-of the <em id='emph18620'
->n</em>th submatch.<a href="#footnote-footnote18622"><sup><small>4</small></sup></a> <br/><br/><center id='center18630'
+of the <em id='emph18640'
+>n</em>th submatch.<a href="#footnote-footnote18642"><sup><small>4</small></sup></a> <br/><br/><center id='center18650'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18628'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18648'
 >(pregexp-match <font color="red">&quot;([a-z]+) and \\1&quot;</font>
   <font color="red">&quot;billions and billions&quot;</font>)
  =&gt; (<font color="red">&quot;billions and billions&quot;</font> <font color="red">&quot;billions&quot;</font>)
@@ -1013,17 +1013,17 @@ of the <em id='emph18620'
 </tbody></table></center>
 
 Note that the backreference is not simply a repeatof the previous subpattern.  Rather it is a repeat of
-<em id='emph18631'
+<em id='emph18651'
 >the particular  substring already matched by the
 subpattern</em>. <br/><br/>In the above example, the backreference can only match
-<code id='code18633'
->billions</code>.  It will not match <code id='code18634'
+<code id='code18653'
+>billions</code>.  It will not match <code id='code18654'
 >millions</code>, even
-though the subpattern it harks back to --- <code id='code18635'
+though the subpattern it harks back to --- <code id='code18655'
 >([a-z]+)</code>
----  would have had no problem doing so: <br/><br/><center id='center18641'
+---  would have had no problem doing so: <br/><br/><center id='center18661'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18639'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18659'
 >(pregexp-match <font color="red">&quot;([a-z]+) and \\1&quot;</font>
   <font color="red">&quot;billions and millions&quot;</font>)
  =&gt; #f 
@@ -1031,9 +1031,9 @@ though the subpattern it harks back to --- <code id='code18635'
 </td></tr>
 </tbody></table></center>
 
-The following corrects doubled words:<br/><br/><center id='center18649'
+The following corrects doubled words:<br/><br/><center id='center18669'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18647'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18667'
 >(pregexp-replace* <font color="red">&quot;(\\S+) \\1&quot;</font>
   <font color="red">&quot;now is the the time for all good men to to come to the aid of of the party&quot;</font>
   <font color="red">&quot;\\1&quot;</font>)
@@ -1043,9 +1043,9 @@ The following corrects doubled words:<br/><br/><center id='center18649'
 </tbody></table></center>
 
 The following marks all immediately repeating patterns
-in a number string:<br/><br/><center id='center18655'
+in a number string:<br/><br/><center id='center18675'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18653'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18673'
 >(pregexp-replace* <font color="red">&quot;(\\d+)\\1&quot;</font>
   <font color="red">&quot;123340983242432420980980234&quot;</font>
   &quot;{\\1,\\1}&quot;)
@@ -1063,17 +1063,17 @@ in a number string:<br/><br/><center id='center18655'
 It is often required to specify a cluster
 (typically for quantification) but without triggering
 the capture of submatch information.  Such
-clusters are called <em id='emph18657'
+clusters are called <em id='emph18677'
 >non-capturing</em>.  In such cases,
-use <code id='code18658'
->(?:</code> instead of <code id='code18659'
+use <code id='code18678'
+>(?:</code> instead of <code id='code18679'
 >(</code> as the cluster opener.  In
 the following example, the  non-capturing cluster 
 eliminates the ``directory'' portion of a given
 pathname, and the capturing cluster  identifies the
-basename.<br/><br/><center id='center18667'
+basename.<br/><br/><center id='center18687'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18665'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18685'
 >(pregexp-match <font color="red">&quot;^(?:[a-z]*/)*([a-z]+)$&quot;</font> 
   <font color="red">&quot;/usr/local/bin/mzscheme&quot;</font>)
  =&gt; (<font color="red">&quot;/usr/local/bin/mzscheme&quot;</font> <font color="red">&quot;mzscheme&quot;</font>)
@@ -1088,38 +1088,38 @@ basename.<br/><br/><center id='center18667'
 </h3></td></tr></table>
 </div><div class="subsection">
 
-The location between the <code id='code18668'
->?</code> and the <code id='code18669'
+The location between the <code id='code18688'
+>?</code> and the <code id='code18689'
 >:</code> of a non-capturing
-cluster is called a <em id='emph18670'
->cloister</em>.<a href="#footnote-footnote18671"><sup><small>5</small></sup></a>  You can put <em id='emph18672'
+cluster is called a <em id='emph18690'
+>cloister</em>.<a href="#footnote-footnote18691"><sup><small>5</small></sup></a>  You can put <em id='emph18692'
 >modifiers</em> there
 that will cause the enclustered subpattern to be treated specially.  The
-modifier <code id='code18673'
+modifier <code id='code18693'
 >i</code> causes the subpattern to match
-<em id='emph18674'
->case-insensitively</em>:<br/><br/><center id='center18681'
+<em id='emph18694'
+>case-insensitively</em>:<br/><br/><center id='center18701'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18679'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18699'
 >(pregexp-match <font color="red">&quot;(?i:hearth)&quot;</font> <font color="red">&quot;HeartH&quot;</font>) =&gt; (<font color="red">&quot;HeartH&quot;</font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The modifier <code id='code18682'
+The modifier <code id='code18702'
 >x</code> causes the subpattern to match
-<em id='emph18683'
+<em id='emph18703'
 >space-insensitively</em>, ie, spaces and
 comments within the
 subpattern are ignored.  Comments are introduced
-as usual with a semicolon (<code id='code18684'
+as usual with a semicolon (<code id='code18704'
 >;</code>) and extend till
 the end of the line.  If you need
 to include a literal space or semicolon in
 a space-insensitized subpattern, escape it
-with a backslash.<br/><br/><center id='center18698'
+with a backslash.<br/><br/><center id='center18718'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18696'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18716'
 >(pregexp-match <font color="red">&quot;(?x: a   lot)&quot;</font> <font color="red">&quot;alot&quot;</font>)
  =&gt; (<font color="red">&quot;alot&quot;</font>)<br/><br/>(pregexp-match <font color="red">&quot;(?x: a  \\  lot)&quot;</font> <font color="red">&quot;a lot&quot;</font>)
  =&gt; (<font color="red">&quot;a lot&quot;</font>)<br/><br/>(pregexp-match &quot;(?x:
@@ -1134,9 +1134,9 @@ with a backslash.<br/><br/><center id='center18698'
 </tbody></table></center>
 
 
-You can put more than one modifier in the cloister.<br/><br/><center id='center18704'
+You can put more than one modifier in the cloister.<br/><br/><center id='center18724'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18702'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18722'
 >(pregexp-match &quot;(?ix:
    a \\ man  \\; \\   # ignore
    a \\ plan \\; \\   # me
@@ -1149,14 +1149,14 @@ You can put more than one modifier in the cloister.<br/><br/><center id='center1
 </tbody></table></center>
 
 A minus sign before a modifier inverts its meaning.
-Thus, you can use <code id='code18705'
->-i</code> and <code id='code18706'
+Thus, you can use <code id='code18725'
+>-i</code> and <code id='code18726'
 >-x</code> in a 
-<em id='emph18707'
+<em id='emph18727'
 >subcluster</em> to overturn the insensitivities caused by an
-enclosing cluster.<br/><br/><center id='center18714'
+enclosing cluster.<br/><br/><center id='center18734'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18712'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18732'
 >(pregexp-match <font color="red">&quot;(?i:the (?-i:TeX)book)&quot;</font>
   <font color="red">&quot;The TeXbook&quot;</font>)
  =&gt; (<font color="red">&quot;The TeXbook&quot;</font>)
@@ -1164,9 +1164,9 @@ enclosing cluster.<br/><br/><center id='center18714'
 </td></tr>
 </tbody></table></center>
 
-This regexp will allow any casing for <code id='code18715'
->the</code>and <code id='code18716'
->book</code> but insists that <code id='code18717'
+This regexp will allow any casing for <code id='code18735'
+>the</code>and <code id='code18736'
+>book</code> but insists that <code id='code18737'
 >TeX</code> not be 
 differently cased.<br/><br/></div>
 <!-- Alternation -->
@@ -1175,16 +1175,16 @@ differently cased.<br/><br/></div>
 </h3></td></tr></table>
 </div><div class="subsection">
 <a name="Alternation" class="mark"></a>
-You can specify a list of <em id='emph18719'
+You can specify a list of <em id='emph18739'
 >alternate</em>
-subpatterns by separating them by <code id='code18720'
->|</code>.   The <code id='code18721'
+subpatterns by separating them by <code id='code18740'
+>|</code>.   The <code id='code18741'
 >|</code>
 separates subpatterns in the nearest enclosing cluster 
 (or in the entire pattern string if there are no
-enclosing parens).  <br/><br/><center id='center18732'
+enclosing parens).  <br/><br/><center id='center18752'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18730'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18750'
 >(pregexp-match <font color="red">&quot;f(ee|i|o|um)&quot;</font> <font color="red">&quot;a small, final fee&quot;</font>)
  =&gt; (<font color="red">&quot;fi&quot;</font> <font color="red">&quot;i&quot;</font>)<br/><br/>(pregexp-replace* <font color="red">&quot;([yi])s(e[sdr]?|ing|ation)&quot;</font>
    &quot;it is energising to analyse an organisation 
@@ -1198,12 +1198,12 @@ enclosing parens).  <br/><br/><center id='center18732'
  
 Note again that if you wish
 to use clustering merely to specify a list of alternate
-subpatterns but do not want the submatch, use <code id='code18733'
+subpatterns but do not want the submatch, use <code id='code18753'
 >(?:</code>
-instead of <code id='code18734'
->(</code>. <br/><br/><center id='center18741'
+instead of <code id='code18754'
+>(</code>. <br/><br/><center id='center18761'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18739'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18759'
 >(pregexp-match <font color="red">&quot;f(?:ee|i|o|um)&quot;</font> <font color="red">&quot;fun for all&quot;</font>)
  =&gt; (<font color="red">&quot;fo&quot;</font>)
 </pre>
@@ -1214,9 +1214,9 @@ An important thing to note about alternation is that
 the leftmost matching alternate is picked regardless of
 its length.  Thus, if one of the alternates is a prefix
 of a later alternate, the latter may not have 
-a chance to match.<br/><br/><center id='center18748'
+a chance to match.<br/><br/><center id='center18768'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18746'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18766'
 >(pregexp-match <font color="red">&quot;call|call-with-current-continuation&quot;</font> 
   <font color="red">&quot;call-with-current-continuation&quot;</font>)
  =&gt; (<font color="red">&quot;call&quot;</font>)
@@ -1225,9 +1225,9 @@ a chance to match.<br/><br/><center id='center18748'
 </tbody></table></center>
 
 To allow the longer alternate to have a shot at 
-matching, place it before the shorter one:<br/><br/><center id='center18755'
+matching, place it before the shorter one:<br/><br/><center id='center18775'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18753'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18773'
 >(pregexp-match <font color="red">&quot;call-with-current-continuation|call&quot;</font>
   <font color="red">&quot;call-with-current-continuation&quot;</font>)
  =&gt; (<font color="red">&quot;call-with-current-continuation&quot;</font>)
@@ -1239,9 +1239,9 @@ In any case, an overall match for the entire regexp is
 always preferred to an overall nonmatch.  In the
 following, the longer alternate still wins, because its
 preferred shorter prefix fails to yield an overall
-match.<br/><br/><center id='center18762'
+match.<br/><br/><center id='center18782'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18760'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18780'
 >(pregexp-match <font color="red">&quot;(?:call|call-with-current-continuation) constrained&quot;</font>
   <font color="red">&quot;call-with-current-continuation constrained&quot;</font>)
  =&gt; (<font color="red">&quot;call-with-current-continuation constrained&quot;</font>)
@@ -1258,40 +1258,40 @@ match.<br/><br/><center id='center18762'
 <a name="Backtracking" class="mark"></a>
 We've already seen that greedy quantifiers match
 the maximal number of times, but the overriding priority
-is that the overall match succeed.  Consider<br/><br/><center id='center18768'
+is that the overall match succeed.  Consider<br/><br/><center id='center18788'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18766'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18786'
 >(pregexp-match <font color="red">&quot;a*a&quot;</font> <font color="red">&quot;aaaa&quot;</font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The regexp consists of two subregexps,<code id='code18769'
->a*</code> followed by <code id='code18770'
+The regexp consists of two subregexps,<code id='code18789'
+>a*</code> followed by <code id='code18790'
 >a</code>.
-The subregexp <code id='code18771'
+The subregexp <code id='code18791'
 >a*</code> cannot be allowed to match
-all four <code id='code18772'
->a</code>'s in the text string <code id='code18773'
+all four <code id='code18792'
+>a</code>'s in the text string <code id='code18793'
 >&quot;aaaa&quot;</code>, even though
-<code id='code18774'
+<code id='code18794'
 >*</code> is a greedy quantifier.  It may match only the first
 three, leaving the last one for the second subregexp.
 This ensures that the full regexp matches successfully.<br/><br/>The regexp matcher accomplishes this via a process
-called <em id='emph18776'
+called <em id='emph18796'
 >backtracking</em>.  The matcher
 tentatively allows the greedy quantifier 
-to match all four <code id='code18777'
+to match all four <code id='code18797'
 >a</code>'s, but then when it becomes
 clear that the overall match is in jeopardy, it 
-<em id='emph18778'
+<em id='emph18798'
 >backtracks</em> to a less greedy match of 
-<em id='emph18779'
->three</em> <code id='code18780'
+<em id='emph18799'
+>three</em> <code id='code18800'
 >a</code>'s.  If even this fails, as in the
-call<br/><br/><center id='center18786'
+call<br/><br/><center id='center18806'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18784'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18804'
 >(pregexp-match <font color="red">&quot;a*aa&quot;</font> <font color="red">&quot;aaaa&quot;</font>)
 </pre>
 </td></tr>
@@ -1312,28 +1312,28 @@ leftward ones fail to yield an overall match.<br/><br/></div>
 </div><div class="subsection">
 
 Sometimes it is efficient to disable backtracking.  For
-example, we may wish  to  <em id='emph18789'
+example, we may wish  to  <em id='emph18809'
 >commit</em> to a choice, or
 we know that trying alternatives is fruitless.  A
-nonbacktracking regexp is enclosed in <code id='code18790'
->(?&gt;</code>...<code id='code18791'
->)</code>.<br/><br/><center id='center18797'
+nonbacktracking regexp is enclosed in <code id='code18810'
+>(?&gt;</code>...<code id='code18811'
+>)</code>.<br/><br/><center id='center18817'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18795'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18815'
 >(pregexp-match <font color="red">&quot;(?&gt;a+).&quot;</font> <font color="red">&quot;aaaa&quot;</font>)
  =&gt; #f
 </pre>
 </td></tr>
 </tbody></table></center>
 
-In this call, the subregexp <code id='code18798'
+In this call, the subregexp <code id='code18818'
 >?&gt;a*</code> greedily matches
-all four <code id='code18799'
+all four <code id='code18819'
 >a</code>'s, and is denied the opportunity to
 backpedal.  So the overall match is denied.  The effect
-of the regexp is therefore to match one or more <code id='code18800'
+of the regexp is therefore to match one or more <code id='code18820'
 >a</code>'s
-followed by something that is definitely non-<code id='code18801'
+followed by something that is definitely non-<code id='code18821'
 >a</code>.<br/><br/></div>
 <!-- Looking ahead and behind -->
 <a name="Looking-ahead-and-behind"></a>
@@ -1342,17 +1342,17 @@ followed by something that is definitely non-<code id='code18801'
 </div><div class="subsection">
 <a name="Looking-ahead-and-behind" class="mark"></a>
 You can have assertions in your pattern that look 
-<em id='emph18803'
->ahead</em> or <em id='emph18804'
+<em id='emph18823'
+>ahead</em> or <em id='emph18824'
 >behind</em> to ensure that a subpattern does
 or does not occur.   These ``look around'' assertions are
 specified by putting the subpattern checked for in a
-cluster whose leading characters are: <code id='code18805'
+cluster whose leading characters are: <code id='code18825'
 >?=</code> (for positive
-lookahead), <code id='code18806'
->?!</code> (negative lookahead), <code id='code18807'
+lookahead), <code id='code18826'
+>?!</code> (negative lookahead), <code id='code18827'
 >?&lt;=</code>
-(positive lookbehind), <code id='code18808'
+(positive lookbehind), <code id='code18828'
 >?&lt;!</code> (negative lookbehind).
 Note that the subpattern in the assertion  does not
 generate a match in the final result.  It merely allows
@@ -1363,12 +1363,12 @@ or disallows the rest of the match.<br/><br/></div>
 </h3></td></tr></table>
 </div><div class="subsection">
 
-Positive lookahead (<code id='code18810'
+Positive lookahead (<code id='code18830'
 >?=</code>) peeks ahead to ensure that
-its subpattern <em id='emph18811'
->could</em> match.  <br/><br/><center id='center18817'
+its subpattern <em id='emph18831'
+>could</em> match.  <br/><br/><center id='center18837'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18815'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18835'
 >(pregexp-match-positions <font color="red">&quot;grey(?=hound)&quot;</font> 
   <font color="red">&quot;i left my grey socks at the greyhound&quot;</font>) 
  =&gt; ((28 . 32))
@@ -1376,17 +1376,17 @@ its subpattern <em id='emph18811'
 </td></tr>
 </tbody></table></center>
 
-The regexp <code id='code18818'
->&quot;grey(?=hound)&quot;</code> matches <code id='code18819'
->grey</code>, but<em id='emph18820'
->only</em> if it is followed by <code id='code18821'
+The regexp <code id='code18838'
+>&quot;grey(?=hound)&quot;</code> matches <code id='code18839'
+>grey</code>, but<em id='emph18840'
+>only</em> if it is followed by <code id='code18841'
 >hound</code>.  Thus, the first
-<code id='code18822'
->grey</code> in the text string is not matched. <br/><br/>Negative lookahead (<code id='code18824'
+<code id='code18842'
+>grey</code> in the text string is not matched. <br/><br/>Negative lookahead (<code id='code18844'
 >?!</code>) peeks ahead
-to ensure that its subpattern could not possibly match.  <br/><br/><center id='center18830'
+to ensure that its subpattern could not possibly match.  <br/><br/><center id='center18850'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18828'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18848'
 >(pregexp-match-positions <font color="red">&quot;grey(?!hound)&quot;</font>
   <font color="red">&quot;the gray greyhound ate the grey socks&quot;</font>) 
  =&gt; ((27 . 31))
@@ -1394,13 +1394,13 @@ to ensure that its subpattern could not possibly match.  <br/><br/><center id='c
 </td></tr>
 </tbody></table></center>
 
-The regexp <code id='code18831'
->&quot;grey(?!hound)&quot;</code> matches <code id='code18832'
->grey</code>, butonly if it is <em id='emph18833'
->not</em> followed by <code id='code18834'
+The regexp <code id='code18851'
+>&quot;grey(?!hound)&quot;</code> matches <code id='code18852'
+>grey</code>, butonly if it is <em id='emph18853'
+>not</em> followed by <code id='code18854'
 >hound</code>.  Thus 
-the <code id='code18835'
->grey</code> just before <code id='code18836'
+the <code id='code18855'
+>grey</code> just before <code id='code18856'
 >socks</code> is matched.<br/><br/></div>
 <!-- Lookbehind -->
 <a name="Lookbehind"></a>
@@ -1408,13 +1408,13 @@ the <code id='code18835'
 </h3></td></tr></table>
 </div><div class="subsection">
 
-Positive lookbehind (<code id='code18838'
->?&lt;=</code>) checks that its subpattern <em id='emph18839'
+Positive lookbehind (<code id='code18858'
+>?&lt;=</code>) checks that its subpattern <em id='emph18859'
 >could</em> match
 immediately to the left of the current position in
-the text string.  <br/><br/><center id='center18845'
+the text string.  <br/><br/><center id='center18865'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18843'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18863'
 >(pregexp-match-positions <font color="red">&quot;(?&lt;=grey)hound&quot;</font>
   <font color="red">&quot;the hound in the picture is not a greyhound&quot;</font>) 
  =&gt; ((38 . 43))
@@ -1422,15 +1422,15 @@ the text string.  <br/><br/><center id='center18845'
 </td></tr>
 </tbody></table></center>
 
-The regexp <code id='code18846'
->(?&lt;=grey)hound</code> matches <code id='code18847'
->hound</code>, but only if it is preceded by <code id='code18848'
+The regexp <code id='code18866'
+>(?&lt;=grey)hound</code> matches <code id='code18867'
+>hound</code>, but only if it is preceded by <code id='code18868'
 >grey</code>.  <br/><br/>Negative lookbehind
-(<code id='code18850'
+(<code id='code18870'
 >?&lt;!</code>) checks that its subpattern
-could not possibly match immediately to the left.  <br/><br/><center id='center18856'
+could not possibly match immediately to the left.  <br/><br/><center id='center18876'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18854'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18874'
 >(pregexp-match-positions <font color="red">&quot;(?&lt;!grey)hound&quot;</font>
   <font color="red">&quot;the greyhound in the picture is not a hound&quot;</font>)
  =&gt; ((38 . 43))
@@ -1438,11 +1438,11 @@ could not possibly match immediately to the left.  <br/><br/><center id='center1
 </td></tr>
 </tbody></table></center>
 
-The regexp <code id='code18857'
->(?&lt;!grey)hound</code> matches <code id='code18858'
+The regexp <code id='code18877'
+>(?&lt;!grey)hound</code> matches <code id='code18878'
 >hound</code>, but only if
-it is <em id='emph18859'
->not</em> preceded by <code id='code18860'
+it is <em id='emph18879'
+>not</em> preceded by <code id='code18880'
 >grey</code>.<br/><br/>Lookaheads and lookbehinds can be convenient when they
 are not confusing.  <br/><br/></div>
 </div><br>
@@ -1454,16 +1454,16 @@ are not confusing.  <br/><br/></div>
 <a name="An-Extended-Example" class="mark"></a>
 Here's an extended example from Friedl that covers many of the features
 described above.  The problem is to fashion a regexp that will match any
-and only IP addresses or <em id='emph18863'
+and only IP addresses or <em id='emph18883'
 >dotted quads</em>, ie, four numbers separated
 by three dots, with each number between 0 and 255.  We will use the
 commenting mechanism to build the final regexp with clarity.  First, a
-subregexp <code id='code18864'
->n0-255</code> that matches 0 through 255.<br/><br/><center id='center18869'
+subregexp <code id='code18884'
+>n0-255</code> that matches 0 through 255.<br/><br/><center id='center18889'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18867'
->(<font color="#6959cf"><strong id='bold32512'
->define</strong></font> <font color="#6959cf"><strong id='bold32514'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18887'
+>(<font color="#6959cf"><strong id='bold32532'
+>define</strong></font> <font color="#6959cf"><strong id='bold32534'
 >n0-255</strong></font>
   &quot;(?x:
   \\d          ;  0 through   9
@@ -1482,14 +1482,14 @@ need to match both 1 and 01.  We need to be careful
 when getting 3-digit numbers, since numbers above 255
 must be excluded.  So we fashion alternates to get 000
 through 199, then 200 through 249, and finally 250
-through 255.<a href="#footnote-footnote18871"><sup><small>6</small></sup></a><br/><br/>An IP-address is a string that consists of
-four <code id='code18873'
+through 255.<a href="#footnote-footnote18891"><sup><small>6</small></sup></a><br/><br/>An IP-address is a string that consists of
+four <code id='code18893'
 >n0-255</code>s with three dots separating
-them.<br/><br/><center id='center18883'
+them.<br/><br/><center id='center18903'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18881'
->(<font color="#6959cf"><strong id='bold32516'
->define</strong></font> <font color="#6959cf"><strong id='bold32518'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18901'
+>(<font color="#6959cf"><strong id='bold32536'
+>define</strong></font> <font color="#6959cf"><strong id='bold32538'
 >ip-re1</strong></font>
   (string-append
     <font color="red">&quot;^&quot;</font>        ;nothing before
@@ -1505,33 +1505,33 @@ them.<br/><br/><center id='center18883'
 </td></tr>
 </tbody></table></center>
 
-Let's try it out.<br/><br/><center id='center18890'
+Let's try it out.<br/><br/><center id='center18910'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18888'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18908'
 >(pregexp-match ip-re1 <font color="red">&quot;1.2.3.4&quot;</font>)        =&gt; (<font color="red">&quot;1.2.3.4&quot;</font>)
 (pregexp-match ip-re1 <font color="red">&quot;55.155.255.265&quot;</font>) =&gt; #f
 </pre>
 </td></tr>
 </tbody></table></center>
 
-which is fine, except that we also have<br/><br/><center id='center18896'
+which is fine, except that we also have<br/><br/><center id='center18916'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18894'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18914'
 >(pregexp-match ip-re1 <font color="red">&quot;0.00.000.00&quot;</font>) =&gt; (<font color="red">&quot;0.00.000.00&quot;</font>)
 </pre>
 </td></tr>
 </tbody></table></center>
 
 All-zero sequences are not valid IP addresses!  Lookahead to the rescue.
-Before starting to match <code id='code18897'
+Before starting to match <code id='code18917'
 >ip-re1</code>, we look ahead to ensure we don't
 have all zeros.  We could use positive lookahead to ensure there
-<em id='emph18898'
->is</em> a digit other than zero.<br/><br/><center id='center18904'
+<em id='emph18918'
+>is</em> a digit other than zero.<br/><br/><center id='center18924'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18902'
->(<font color="#6959cf"><strong id='bold32530'
->define</strong></font> <font color="#6959cf"><strong id='bold32532'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18922'
+>(<font color="#6959cf"><strong id='bold32550'
+>define</strong></font> <font color="#6959cf"><strong id='bold32552'
 >ip-re</strong></font>
   (string-append
     <font color="red">&quot;(?=.*[1-9])&quot;</font> ;ensure there's a non-0 digit
@@ -1541,12 +1541,12 @@ have all zeros.  We could use positive lookahead to ensure there
 </tbody></table></center>
 
 Or we could use negative lookahead to ensure that what's ahead isn't
-composed of <em id='emph18905'
->only</em> zeros and dots.<br/><br/><center id='center18911'
+composed of <em id='emph18925'
+>only</em> zeros and dots.<br/><br/><center id='center18931'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18909'
->(<font color="#6959cf"><strong id='bold32535'
->define</strong></font> <font color="#6959cf"><strong id='bold32537'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18929'
+>(<font color="#6959cf"><strong id='bold32555'
+>define</strong></font> <font color="#6959cf"><strong id='bold32557'
 >ip-re</strong></font>
   (string-append
     <font color="red">&quot;(?![0.]*$)&quot;</font> ;not just zeros and dots
@@ -1556,10 +1556,10 @@ composed of <em id='emph18905'
 </td></tr>
 </tbody></table></center>
 
-The regexp <code id='code18912'
->ip-re</code> will match all and only valid IP addresses.<br/><br/><center id='center18919'
+The regexp <code id='code18932'
+>ip-re</code> will match all and only valid IP addresses.<br/><br/><center id='center18939'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18917'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog18937'
 >(pregexp-match ip-re <font color="red">&quot;1.2.3.4&quot;</font>) =&gt; (<font color="red">&quot;1.2.3.4&quot;</font>)
 (pregexp-match ip-re <font color="red">&quot;0.0.0.0&quot;</font>) =&gt; #f
 </pre>
@@ -1570,7 +1570,7 @@ The regexp <code id='code18912'
 </div><br>
 <div class="footnote"><br><br>
 <hr width='20%' size='2' align='left'>
-<a name="footnote-footnote17997"><sup><small>1</small></sup></a>: The double backslash is an artifact of
+<a name="footnote-footnote18017"><sup><small>1</small></sup></a>: The double backslash is an artifact of
 Scheme strings, not the regexp pattern itself.  When we
 want a literal backslash inside a Scheme string, we
 must escape it so that it shows up in the string at
@@ -1578,28 +1578,28 @@ all. Scheme strings use backslash as the escape
 character, so we end up with two backslashes --- one
 Scheme-string backslash to escape the regexp backslash,
 which then escapes the dot.  Another character that
-would need escaping inside a Scheme string is <code id='code17996'
+would need escaping inside a Scheme string is <code id='code18016'
 >&quot;</code>.
 <br>
-<a name="footnote-footnote18324"><sup><small>2</small></sup></a>: Requiring a bracketed character class to be non-empty is not
+<a name="footnote-footnote18344"><sup><small>2</small></sup></a>: Requiring a bracketed character class to be non-empty is not
 a limitation, since an empty character class can be more easily
 represented by an empty string.
 <br>
-<a name="footnote-footnote18374"><sup><small>3</small></sup></a>: Following regexp custom, we identify ``word'' characters as
-<code id='code18373'
+<a name="footnote-footnote18394"><sup><small>3</small></sup></a>: Following regexp custom, we identify ``word'' characters as
+<code id='code18393'
 >[A-Za-z0-9_]</code>, although these are too restrictive for what a
 Schemer might consider a ``word''.
 <br>
-<a name="footnote-footnote18622"><sup><small>4</small></sup></a>: <code id='code18621'
+<a name="footnote-footnote18642"><sup><small>4</small></sup></a>: <code id='code18641'
 >\0</code>, which is useful in
 an insert string, makes no  sense within the regexp
 pattern, because the entire regexp has not matched yet
 that you could refer back to it.
 <br>
-<a name="footnote-footnote18671"><sup><small>5</small></sup></a>: A useful, if terminally cute,
+<a name="footnote-footnote18691"><sup><small>5</small></sup></a>: A useful, if terminally cute,
 coinage from the abbots of Perl.
 <br>
-<a name="footnote-footnote18871"><sup><small>6</small></sup></a>: Note that <code id='code18870'
+<a name="footnote-footnote18891"><sup><small>6</small></sup></a>: Note that <code id='code18890'
 >n0-255</code> lists prefixes as
 preferred alternates, something we cautioned against in
 section <a href="bigloo-14.html#Alternation" class="inbound">Alternation</a>. However, since we intend
@@ -1609,12 +1609,12 @@ match, the order of the alternates does not matter.
 <div></div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph32548'
+<p class="ending" id='paragraph32568'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it32546'
->Tue May  5 15:25:29 2015</em>.</font></p></div>
+Last update <em id='it32566'
+>Thu Jul  2 15:55:40 2015</em>.</font></p></div>
 </body>
 </html>

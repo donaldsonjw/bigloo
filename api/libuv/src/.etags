@@ -181,40 +181,40 @@ Llib/async.scm,104
 
 Llib/fs.scm,1030
 (module __libuv_fs15,963
-(define O_RDONLY83,3686
-(define O_WRONLY85,3767
-(define O_RDWR87,3848
-(define O_CREAT89,3925
-(define O_EXCL91,4007
-(define O_TRUNC93,4088
-(define O_APPEND95,4172
-(define O_SYNC97,4258
-(define (uv-fs-rename119,5606
-(define (uv-fs-ftruncate125,5942
-(define (uv-fs-truncate131,6292
-(define (uv-fs-chown156,7064
-(define (uv-fs-fchown162,7408
-(define (uv-fs-lchown168,7750
-(define (uv-fs-chmod174,8096
-(define (uv-fs-fchmod180,8434
-(define (uv-fs-link186,8770
-(define (uv-fs-symlink192,9102
-(define (uv-fs-readlink198,9440
-(define (uv-fs-unlink204,9774
-(define (uv-fs-rmdir210,10104
-(define (uv-fs-mkdir216,10432
-(define (uv-fs-fsync222,10768
-(define (uv-fs-fdatasync228,11100
-(define (uv-fs-futime234,11440
-(define (uv-fs-utime241,11818
-(define (uv-fs-open248,12199
-(define (uv-fs-close257,12723
-(define (uv-fs-fstat263,13055
-(define (uv-fs-lstat269,13387
-(define (uv-fs-stat275,13724
-(define (uv-fs-write281,14059
-(define (uv-fs-read289,14469
-(define (uv-fs-flags297,14877
+(define O_RDONLY83,3687
+(define O_WRONLY85,3768
+(define O_RDWR87,3849
+(define O_CREAT89,3926
+(define O_EXCL91,4008
+(define O_TRUNC93,4089
+(define O_APPEND95,4173
+(define O_SYNC97,4259
+(define (uv-fs-rename119,5607
+(define (uv-fs-ftruncate125,5943
+(define (uv-fs-truncate131,6293
+(define (uv-fs-chown156,7065
+(define (uv-fs-fchown162,7409
+(define (uv-fs-lchown168,7751
+(define (uv-fs-chmod174,8097
+(define (uv-fs-fchmod180,8435
+(define (uv-fs-link186,8771
+(define (uv-fs-symlink192,9103
+(define (uv-fs-readlink198,9441
+(define (uv-fs-unlink204,9775
+(define (uv-fs-rmdir210,10105
+(define (uv-fs-mkdir216,10433
+(define (uv-fs-fsync222,10769
+(define (uv-fs-fdatasync228,11101
+(define (uv-fs-futime234,11441
+(define (uv-fs-utime241,11819
+(define (uv-fs-open248,12200
+(define (uv-fs-close257,12724
+(define (uv-fs-fstat263,13056
+(define (uv-fs-lstat269,13388
+(define (uv-fs-stat275,13725
+(define (uv-fs-write281,14060
+(define (uv-fs-read289,14470
+(define (uv-fs-flags297,14878
 
 Llib/os.scm,413
 (module __libuv_os15,963
@@ -235,46 +235,46 @@ Llib/net.scm,1683
 (define-method (%uv-init o::UvUdp85,3807
 (define-method (%uv-init o::UvTty94,4227
 (define-method (uv-close o::UvStream #!optional callback103,4671
-(define (uv-getaddrinfo118,5284
-(define (uv-inet-pton135,6054
-(define (uv-stream-write-queue-size141,6354
-(define (uv-stream-fd148,6727
-(define (uv-stream-write157,7132
-(define (uv-stream-write2174,7865
-(define (uv-stream-read-start191,8619
-(define (uv-stream-read-stop203,9198
-(define (uv-stream-shutdown214,9727
-(define (uv-listen227,10326
-(define (uv-accept239,10891
-(define (uv-closing?247,11331
-(define (uv-writable?254,11667
-(define (uv-readable?261,12020
-(define (uv-tcp-connect268,12373
-(define tcp-servers280,12971
-(define tcp-mutex281,12996
-(define-method (uv-close o::UvTcp #!optional callback286,13251
-(define (uv-tcp-open299,13768
-(define (uv-tcp-bind306,14111
-(define (uv-tcp-nodelay315,14575
-(define (uv-tcp-keepalive322,14937
-(define (uv-tcp-simultaneous-accepts329,15315
-(define (uv-tcp-getsockname336,15703
-(define (uv-tcp-getpeername343,16059
-(define udp-servers350,16415
-(define udp-mutex351,16440
-(define-method (uv-close o::UvUdp #!optional callback356,16695
-(define (uv-udp-bind369,17212
-(define (uv-udp-recv-start378,17676
-(define (uv-udp-recv-stop386,18114
-(define (uv-udp-getsockname394,18492
-(define (uv-udp-send401,18848
-(define (uv-udp-set-ttl411,19332
-(define (uv-udp-set-multicast-ttl418,19690
-(define (uv-udp-set-multicast-loop425,20068
-(define (uv-udp-set-broadcast432,20446
-(define (uv-udp-set-membership439,20814
-(define (uv-tty-mode-set!450,21347
-(define (uv-tty-get-window-size468,22021
+(define (uv-getaddrinfo120,5319
+(define (uv-inet-pton137,6089
+(define (uv-stream-write-queue-size143,6389
+(define (uv-stream-fd150,6762
+(define (uv-stream-write159,7167
+(define (uv-stream-write2176,7900
+(define (uv-stream-read-start193,8654
+(define (uv-stream-read-stop205,9233
+(define (uv-stream-shutdown216,9762
+(define (uv-listen229,10361
+(define (uv-accept241,10926
+(define (uv-closing?249,11366
+(define (uv-writable?256,11702
+(define (uv-readable?263,12055
+(define (uv-tcp-connect270,12408
+(define tcp-servers282,13006
+(define tcp-mutex283,13031
+(define-method (uv-close o::UvTcp #!optional callback288,13286
+(define (uv-tcp-open303,13837
+(define (uv-tcp-bind310,14180
+(define (uv-tcp-nodelay319,14644
+(define (uv-tcp-keepalive326,15006
+(define (uv-tcp-simultaneous-accepts333,15384
+(define (uv-tcp-getsockname340,15772
+(define (uv-tcp-getpeername347,16128
+(define udp-servers354,16484
+(define udp-mutex355,16509
+(define-method (uv-close o::UvUdp #!optional callback360,16764
+(define (uv-udp-bind375,17315
+(define (uv-udp-recv-start384,17779
+(define (uv-udp-recv-stop392,18217
+(define (uv-udp-getsockname400,18595
+(define (uv-udp-send407,18951
+(define (uv-udp-set-ttl417,19435
+(define (uv-udp-set-multicast-ttl424,19793
+(define (uv-udp-set-multicast-loop431,20171
+(define (uv-udp-set-broadcast438,20549
+(define (uv-udp-set-membership445,20917
+(define (uv-tty-mode-set!457,21535
+(define (uv-tty-get-window-size475,22209
 
 Llib/idle.scm,132
 (module __libuv_idle15,963
