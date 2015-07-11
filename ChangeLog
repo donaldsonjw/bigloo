@@ -1,3 +1,39 @@
+2015-07-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	resolv autoconf
+	<4.2a> [45bae39ebc81]
+
+2015-06-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	ssl (bootstrap)
+	<4.2a> [e5369155bc4b]
+
+2015-06-22  Manuel Serrano <Manuel.Serrano@inria.fr>
+	ssl (bootstrap)
+	<4.2a> [000894943dc8]
+
+2015-06-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	iso8601 date parsing (bootstrap)
+	<4.2a> [5854eac2c16c]
+
+2015-06-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Libuv fixes
+	<4.2a> [4c31e0bba093]
+
+2015-06-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	http (bootstrap)
+	<4.2a> [94f561e7e083]
+
+2015-05-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	GMP autoconfiguration (bootstrap)
+	<4.2a> [fb5288670aa6]
+
+2015-05-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	ssl (bootstrap)
+	<4.2a> [bc77b999b5de]
+
+2015-05-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Class serialization fix (bootstrap)
+	<4.2a> [715e7d5732ff]
+
 2015-05-04  Manuel Serrano <Manuel.Serrano@inria.fr>
 	openssl autoconf
 	<4.2a> [5b83b7022a37]

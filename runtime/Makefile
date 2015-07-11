@@ -3,8 +3,8 @@
 #*    -------------------------------------------------------------    */
 #*    Author      :  Manuel Serrano                                    */
 #*    Creation    :  Tue Mar 21 08:14:18 1995                          */
-#*    Last change :  Mon Jul 28 15:35:17 2014 (serrano)                */
-#*    Copyright   :  1995-2014 Manuel Serrano, see LICENSE file        */
+#*    Last change :  Sat Jun  6 11:08:56 2015 (serrano)                */
+#*    Copyright   :  1995-2015 Manuel Serrano, see LICENSE file        */
 #*    -------------------------------------------------------------    */
 #*    The (gnu) makefile to build the Bigloo's library.                */
 #*=====================================================================*/
@@ -102,7 +102,7 @@ CLIB		= cinit_obj cmain cerror cports cstring csymbol cvector \
                   ctrace callcc cbinary cforeign cdsssl \
                   cucs2 cunicode cprocess csocket crgc ccustom cdlopen \
                   cdate csleep cthread cmmap csrfi4 cweakptr cbignum cregexp \
-                  cobject ci18n
+                  cobject ci18n cresolv
 
 C_CLIB		= $(CLIB:%=Clib/%.c)
 
@@ -323,6 +323,7 @@ POPULATION_SI	= $(SRC_FILES) \
 		  Rgc/rgc-node.sch \
 		  Eval/byte-code.sch \
 		  Llib/hash.sch \
+		  Llib/object.sch \
 		  Mlib/mach_dep.c \
                   Clib/inline_alloc.c \
                   Clib/non_inline_alloc.c \
@@ -914,3 +915,5 @@ objs/obj_s/Llib/bconfigure.o: $(BOOTLIBDIR)/bigloo_config.h
 objs/obj_u/Llib/bconfigure.o: $(BOOTLIBDIR)/bigloo_config.h
 objs/obj_s/Llib/pregexp.o: Llib/regex.sch Llib/pregexp.sch Llib/pcre.sch
 objs/obj_u/Llib/pregexp.o: Llib/regex.sch Llib/pregexp.sch Llib/pcre.sch
+objs/obj_s/Llib/evobject.o: Llib/object.sch
+objs/obj_u/Llib/evobject.o: Llib/object.sch
