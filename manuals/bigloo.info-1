@@ -113,7 +113,7 @@ mine.
 please forgive me and send a mail message to the following address:
 <bigloo@sophia.inria.fr>.
 
-  This is Bigloo documentation version 4.2a, May 2015.
+  This is Bigloo documentation version 4.2a, July 2015.
 
 
 File: bigloo.info,  Node: Overview,  Next: Modules,  Prev: Acknowledgements,  Up: Top
@@ -5851,6 +5851,11 @@ File: bigloo.info,  Node: Date,  Next: Digest,  Prev: System Programming,  Up: S
  -- bigloo procedure: date->rfc2822-date date
      Converts a Bigloo date into a string representation compliant with
      the RFC2822 format.
+
+ -- bigloo procedure: iso8601-date->date string
+ -- bigloo procedure: iso8601-parse-date input-port
+     Parses ISO8601 string representing a date.  These functions produce
+     a Bigloo date object.
 
 
 File: bigloo.info,  Node: Digest,  Next: CRC,  Prev: Date,  Up: Standard Library

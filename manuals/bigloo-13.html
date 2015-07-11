@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>12. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>May 2015 -- Lalr(1) parsing</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>12. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015 -- Lalr(1) parsing</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center32202'
+<br/><center id='center32222'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32192" align="center" colspan="1"><font color="#ffffff"><strong id='bold32190'
+<tr bgcolor="#8381de"><th id="tc32212" align="center" colspan="1"><font color="#ffffff"><strong id='bold32210'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32199" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc32195" align="left" valign="top" colspan="1"><strong id='bold32194'
->top:</strong></td><td id="tc32196" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-May-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>May 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc32219" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc32215" align="left" valign="top" colspan="1"><strong id='bold32214'
+>top:</strong></td><td id="tc32216" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-July-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center32212'
+<br/><br/><center id='center32232'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32206" align="center" colspan="1"><font color="#ffffff"><strong id='bold32204'
+<tr bgcolor="#8381de"><th id="tc32226" align="center" colspan="1"><font color="#ffffff"><strong id='bold32224'
 >Lalr(1) parsing</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32209" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc32229" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">12.1</td><td colspan="4" width="100%"><a href="bigloo-13.html#Grammar-definition">Grammar definition</a></td></tr>
  <tr><td valign="top" align="left">12.2</td><td colspan="4" width="100%"><a href="bigloo-13.html#Precedence-and-associativity">Precedence and associativity</a></td></tr>
@@ -55,11 +55,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center32222'
+<br/><br/><center id='center32242'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32216" align="center" colspan="1"><font color="#ffffff"><strong id='bold32214'
+<tr bgcolor="#8381de"><th id="tc32236" align="center" colspan="1"><font color="#ffffff"><strong id='bold32234'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32219" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc32239" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -107,7 +107,7 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Lalr-Parsing" class="mark"></a><a name="g17790" class="mark"></a>
+<a name="Lalr-Parsing" class="mark"></a><a name="g17810" class="mark"></a>
 Regular grammar generators, like Lex, are often coupled with tools,
 such as Yacc and Bison, that can generate parsers for more powerful
 languages, namely (a subset of) context-free languages. These tools
@@ -123,32 +123,32 @@ opaque way.<br/><br/>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">12.1 Grammar definition</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Grammar-Definition" class="mark"></a><a name="g17793" class="mark"></a>
+<a name="Grammar-Definition" class="mark"></a><a name="g17813" class="mark"></a>
 An lalr(1) grammar is defined by the form:<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g17797" class="mark"></a><a name="lalr-grammar" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc17801" align="left" colspan="1"><strong id='bold17799'
->lalr-grammar</strong><em id='it17800'
-> term-def non-term-def...</em></td><td id="tc17802" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g17817" class="mark"></a><a name="lalr-grammar" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc17821" align="left" colspan="1"><strong id='bold17819'
+>lalr-grammar</strong><em id='it17820'
+> term-def non-term-def...</em></td><td id="tc17822" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
 
-<code id='code17806'
-><em id='it17805'
+<code id='code17826'
+><em id='it17825'
 >term-def</em></code> is a list of terminal elements of the grammar.  Terminals can
 grouped together to form precedence groups by including the related symbols
-in a sub-lists of the <code id='code17808'
-><em id='it17807'
+in a sub-lists of the <code id='code17828'
+><em id='it17827'
 >term-def</em></code> list.  Each precedence group must start
-with one of the keywords <code id='code17809'
->left:</code>, <code id='code17810'
->right:</code> or <code id='code17811'
+with one of the keywords <code id='code17829'
+>left:</code>, <code id='code17830'
+>right:</code> or <code id='code17831'
 >none:</code>-- this
 indicates the associativity of the terminal symbol.  Here is a sample
-<code id='code17813'
-><em id='it17812'
+<code id='code17833'
+><em id='it17832'
 >term-def</em></code> which declares eight terminals:
-<center id='center17816'
+<center id='center17836'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17814'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17834'
 >(terminal-1 terminal-2
  (left: terminal-3 terminal-4)
  terminal-5
@@ -159,56 +159,56 @@ indicates the associativity of the terminal symbol.  Here is a sample
 </td></tr>
 </tbody></table></center>
 
-In this case, <code id='code17817'
->terminal-3</code> and <code id='code17818'
+In this case, <code id='code17837'
+>terminal-3</code> and <code id='code17838'
 >terminal-4</code> both have the same
 precedence, which is greater than the precedence assigned to
-<code id='code17819'
->terminal-6</code>. No precedence was assigned to symbols <code id='code17820'
+<code id='code17839'
+>terminal-6</code>. No precedence was assigned to symbols <code id='code17840'
 >terminal-1</code>,
-<code id='code17821'
->terminal-2</code>, <code id='code17822'
->terminal-5</code> or <code id='code17823'
->terminal-8</code>.<br/><br/>Each <code id='code17826'
-><em id='it17825'
+<code id='code17841'
+>terminal-2</code>, <code id='code17842'
+>terminal-5</code> or <code id='code17843'
+>terminal-8</code>.<br/><br/>Each <code id='code17846'
+><em id='it17845'
 >non-term-def</em></code> is a list whose first element is the
 non-terminal being defined, i.e. a symbol. The remaining elements are
 the production rules associated with this non-terminal. Each rule is a
 list whose first element is the rule itself (a list of symbols) and
 the other elements are the semantic actions associated with that
 particular rule.  <br/><br/>For example, consider the following grammar:
-<center id='center17848'
+<center id='center17868'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog17846'
-><code id='code17829'
-><em id='it17828'
->E</em></code> ==&gt; <code id='code17831'
-><em id='it17830'
->E1</em></code> + <code id='code17833'
-><em id='it17832'
->id</em></code> {<code id='code17835'
-><em id='it17834'
->E</em></code>.val := <code id='code17837'
-><em id='it17836'
->E1</em></code>.val + <code id='code17839'
-><em id='it17838'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog17866'
+><code id='code17849'
+><em id='it17848'
+>E</em></code> ==&gt; <code id='code17851'
+><em id='it17850'
+>E1</em></code> + <code id='code17853'
+><em id='it17852'
+>id</em></code> {<code id='code17855'
+><em id='it17854'
+>E</em></code>.val := <code id='code17857'
+><em id='it17856'
+>E1</em></code>.val + <code id='code17859'
+><em id='it17858'
 >id</em></code>.val}
-      | <code id='code17841'
-><em id='it17840'
->id</em></code> {<code id='code17843'
-><em id='it17842'
->E</em></code>.val := <code id='code17845'
-><em id='it17844'
+      | <code id='code17861'
+><em id='it17860'
+>id</em></code> {<code id='code17863'
+><em id='it17862'
+>E</em></code>.val := <code id='code17865'
+><em id='it17864'
 >id</em></code>.val}  
 </pre>
 </td></tr>
 </tbody></table></center>
 
 With Bigloo, it would be written:
-<center id='center17852'
+<center id='center17872'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17850'
->(<strong id='bold32223'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17870'
+>(<strong id='bold32243'
 >lalr-grammar</strong>
   (plus id)
   (e
@@ -223,29 +223,29 @@ using the name of the symbol in the semantic action associated with
 the rule. Because a rule can contain multiple occurrences of the same
 symbol, Bigloo provides a way to access these occurrences
 separately. To do so, the name of each occurrence must be suffixed by
-<code id='code17853'
->&#x40;</code><code id='code17855'
-><em id='it17854'
->var</em></code> where <code id='code17857'
-><em id='it17856'
+<code id='code17873'
+>&#x40;</code><code id='code17875'
+><em id='it17874'
+>var</em></code> where <code id='code17877'
+><em id='it17876'
 >var</em></code> is the name of a variable that will be
 bound to the semantic value of the occurrence. For example, if the
-rule is<br/><br/><center id='center17861'
+rule is<br/><br/><center id='center17881'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog17859'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog17879'
 >   ifstmt ==&gt; if E then Stmt else Stmt
 </pre>
 </td></tr>
 </tbody></table></center>
 
 then, in Bigloo, it would look like
-<center id='center17866'
+<center id='center17886'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17864'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17884'
 >(if-stmt
- ((<strong id='bold32224'
+ ((<strong id='bold32244'
 >if</strong> e then stmt&#x40;conseq else stmt&#x40;altern)
-  (<strong id='bold32225'
+  (<strong id='bold32245'
 >if</strong> (eval e) 
       (eval conseq) 
       (eval altern))))
@@ -260,7 +260,7 @@ then, in Bigloo, it would look like
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">12.2 Precedence and associativity</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Precedence-and-Associativity" class="mark"></a><a name="g17869" class="mark"></a>
+<a name="Precedence-and-Associativity" class="mark"></a><a name="g17889" class="mark"></a>
 The bigloo lalr(1) parser generator supports operator precedence and
 associativity.  The method for specifying the precedence for terminal symbols
 is described in <a href="bigloo-13.html#Grammar-Definition" class="inbound">Grammar Definition</a>.  Precedence is assigned to each
@@ -269,10 +269,10 @@ appearing in that production.<br/><br/>Typically, when the parser generator enco
 produces a warning message, then chooses to reduce.  When a parser generator
 has precedence and associativity information, it can make a much more
 sophisticated decision.<br/><br/>Let's use this simple calculator grammar as an example:
-<center id='center17877'
+<center id='center17897'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17875'
->(<strong id='bold32226'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17895'
+>(<strong id='bold32246'
 >lalr-grammar</strong>
  ((left: op-mult op-div)
   (left: op-add op-sub)
@@ -295,34 +295,34 @@ sophisticated decision.<br/><br/>Let's use this simple calculator grammar as an 
 </tbody></table></center>
 
 Let's start with this input:
-<center id='center17880'
+<center id='center17900'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog17878'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog17898'
 >1 + 2 * 3;
 </pre>
 </td></tr>
 </tbody></table></center>
 
-At the point where the parser has read <code id='code17881'
+At the point where the parser has read <code id='code17901'
 >1 + 2</code> and the lookahead symbol
-is <code id='code17882'
+is <code id='code17902'
 >*</code>, the parser encounters a shift/reduce conflict.  Should it first
-reduce by the <code id='code17883'
->(expr op-add expr)</code> production or shift the <code id='code17884'
+reduce by the <code id='code17903'
+>(expr op-add expr)</code> production or shift the <code id='code17904'
 >*</code> in
-the hopes of reducing the latter expression first?<br/><br/>The <code id='code17886'
+the hopes of reducing the latter expression first?<br/><br/>The <code id='code17906'
 >(expr op-add expr)</code> production has gotten its precedence from the
-<code id='code17887'
+<code id='code17907'
 >op-add</code> terminal symbol.  This is the precedence of the reduce.  The
 precedence of the shift comes from the precedence assigned to the lookahead
-terminal symbol, which is <code id='code17888'
->op-mult</code>.  Since <code id='code17889'
+terminal symbol, which is <code id='code17908'
+>op-mult</code>.  Since <code id='code17909'
 >op-mult</code> has higher
 precedence, the parser generator in this state chooses to shift and does not
 produce a warning.<br/><br/>Here's an example which we can use to demonstrate associativity:
-<center id='center17893'
+<center id='center17913'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog17891'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog17911'
 >1 + 2 - 3;
 </pre>
 </td></tr>
@@ -332,16 +332,16 @@ The parser generator encounters a similar shift/reduce conflict this time,
 except that when it tries to determine whether to shift or reduce, it finds
 that both actions have the same precedence.  In this case, the parser
 generator looks at the associativity of the precedence group containing the
-<code id='code17894'
->op-add</code> and <code id='code17895'
+<code id='code17914'
+>op-add</code> and <code id='code17915'
 >op-sub</code>.  Since these are declared to be
 left-associative, the parser generator chooses to reduce from this state,
-effectively calculating the <code id='code17896'
+effectively calculating the <code id='code17916'
 >1 + 2</code>.  Had these symbols been 
 right-associative, the parser would have chosen to shift, effectively
-calculating <code id='code17897'
+calculating <code id='code17917'
 >2 - 3</code> first.  If these symbols had been declared
-non-associative with the <code id='code17898'
+non-associative with the <code id='code17918'
 >none:</code> keyword, the parser would generate an
 error if it ever encountered this state.<br/><br/></div><br>
 <!-- The parsing function -->
@@ -349,28 +349,28 @@ error if it ever encountered this state.<br/><br/></div><br>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">12.3 The parsing function</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="The-Parsing-Function" class="mark"></a><a name="g17900" class="mark"></a>
+<a name="The-Parsing-Function" class="mark"></a><a name="g17920" class="mark"></a>
 Once a grammar has been defined, it can be used to parse some input
 using the following function:<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc17905" align="left" colspan="1"><strong id='bold17903'
->read/lalrp</strong><em id='it17904'
-> lg rg port [emptyp]</em></td><td id="tc17906" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td id="tc17925" align="left" colspan="1"><strong id='bold17923'
+>read/lalrp</strong><em id='it17924'
+> lg rg port [emptyp]</em></td><td id="tc17926" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-This function takes three, possibly four, arguments. The first, <code id='code17910'
-><em id='it17909'
+This function takes three, possibly four, arguments. The first, <code id='code17930'
+><em id='it17929'
 >lg</em></code>, is
-the Lalr(1) grammar. The second, <code id='code17912'
-><em id='it17911'
+the Lalr(1) grammar. The second, <code id='code17932'
+><em id='it17931'
 >rg</em></code>, is the lexical analyzer that feeds
-the grammar with tokens. The third argument, <code id='code17914'
-><em id='it17913'
+the grammar with tokens. The third argument, <code id='code17934'
+><em id='it17933'
 >port</em></code>, is the port that
-contains the input to be parsed. The last argument, <code id='code17916'
-><em id='it17915'
+contains the input to be parsed. The last argument, <code id='code17936'
+><em id='it17935'
 >emptyp</em></code>, if
 provided, should be a function of one argument. It is called with each new
-token read from the port and should return <code id='code17917'
+token read from the port and should return <code id='code17937'
 >#t</code> if the token denotes the
 end of input. The result of the call is the value computed by the semantic
 actions of the production rules.
@@ -382,40 +382,40 @@ actions of the production rules.
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">12.4 The regular grammar</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="The-Regular-Grammar" class="mark"></a><a name="g17920" class="mark"></a>
+<a name="The-Regular-Grammar" class="mark"></a><a name="g17940" class="mark"></a>
 In order to work properly, the regular grammar used with an
-Lalr(1) grammar should follow some conventions:<br/><br/><ul class="itemize" id='itemize17941'
+Lalr(1) grammar should follow some conventions:<br/><br/><ul class="itemize" id='itemize17961'
 ><li>If a semantic value is to be associated with the token just
-parsed, the regular grammar should return a pair whose <code id='code17923'
+parsed, the regular grammar should return a pair whose <code id='code17943'
 >car</code> is the
-token name (a symbol) and the <code id='code17924'
+token name (a symbol) and the <code id='code17944'
 >cdr</code> is the semantic value. 
 </li>
 <li>If there is no value associated with the token, the regular
 grammar can return just the token name. When used in conjunction with
-an Lalr grammar, regular grammar should never return <code id='code17926'
+an Lalr grammar, regular grammar should never return <code id='code17946'
 >#f</code> as a token
 value. This is specially true when the regular grammar detects the end of
-parsing. In that case, the regular grammar <em id='emph17927'
+parsing. In that case, the regular grammar <em id='emph17947'
 >must not</em> return the 
-<code id='code17928'
+<code id='code17948'
 >#f</code> value. A good way to handle end-of-file is illustrated in the 
-following example:<br/><br/><center id='center17939'
+following example:<br/><br/><center id='center17959'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17937'
->(<strong id='bold32227'
->let</strong> ((g (<strong id='bold32228'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17957'
+>(<strong id='bold32247'
+>let</strong> ((g (<strong id='bold32248'
 >regular-grammar</strong> ()
              ...
              (else 
-              (<strong id='bold32229'
+              (<strong id='bold32249'
 >let</strong> ((c (the-failure)))
-                 (<strong id='bold32230'
+                 (<strong id='bold32250'
 >if</strong> (eof-object? c)
                      c
-                     (<font color="red"><strong id='bold32231'
+                     (<font color="red"><strong id='bold32251'
 >error</strong></font> 'rgc <font color="red">&quot;Illegal character&quot;</font> c))))))
-      (l (<strong id='bold32234'
+      (l (<strong id='bold32254'
 >lalr-grammar</strong> ...)))
    (read/lalrp l g (current-input-port)))
 </pre>
@@ -431,9 +431,9 @@ This way, the Lalr grammar will automatically handles the end-of-file.
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">12.5 Debugging Lalr Grammars</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Debugging-Lalr-Grammars" class="mark"></a><a name="g17942" class="mark"></a>
+<a name="Debugging-Lalr-Grammars" class="mark"></a><a name="g17962" class="mark"></a>
 Currently the debugging facility for debugging Lalr grammars is very
-limited. When the parameter <code id='code17944'
+limited. When the parameter <code id='code17964'
 >bigloo-debug</code> is set to a value
 greater or equal to 100, the Lalr engine outputs all of the state
 changes the parser is going through.<br/><br/></div><br>
@@ -442,14 +442,14 @@ changes the parser is going through.<br/><br/></div><br>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">12.6 A simple example</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="A-Simple-Example" class="mark"></a><a name="g17946" class="mark"></a>Here is the code for a simple calculator implemented by an Lalr(1)
-grammar:<br/><br/><center id='center17957'
+<a name="A-Simple-Example" class="mark"></a><a name="g17966" class="mark"></a>Here is the code for a simple calculator implemented by an Lalr(1)
+grammar:<br/><br/><center id='center17977'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17955'
->(<strong id='bold32235'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog17975'
+>(<strong id='bold32255'
 >begin</strong>
   (read/lalrp
-   (<strong id='bold32236'
+   (<strong id='bold32256'
 >lalr-grammar</strong>
     (nl plus mult minus div const lpar rpar)
     (lines
@@ -468,7 +468,7 @@ grammar:<br/><br/><center id='center17957'
      ((factor)                 factor))
     (factor
      ((lpar expression rpar)   expression)
-     ((const)                  const)))<br/><br/>   (<strong id='bold32238'
+     ((const)                  const)))<br/><br/>   (<strong id='bold32258'
 >regular-grammar</strong> ()
     ((+ (or #\tab #\space)) (ignore))
     (#\newline              'nl)
@@ -490,12 +490,12 @@ grammar:<br/><br/><center id='center17957'
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph32244'
+<p class="ending" id='paragraph32264'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it32242'
->Tue May  5 15:25:29 2015</em>.</font></p></div>
+Last update <em id='it32262'
+>Thu Jul  2 15:55:40 2015</em>.</font></p></div>
 </body>
 </html>

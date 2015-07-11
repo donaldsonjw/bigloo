@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>6. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>May 2015 -- Standard Library</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>6. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015 -- Standard Library</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center30503'
+<br/><center id='center30523'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc30493" align="center" colspan="1"><font color="#ffffff"><strong id='bold30491'
+<tr bgcolor="#8381de"><th id="tc30513" align="center" colspan="1"><font color="#ffffff"><strong id='bold30511'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc30500" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc30496" align="left" valign="top" colspan="1"><strong id='bold30495'
->top:</strong></td><td id="tc30497" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-May-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>May 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc30520" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc30516" align="left" valign="top" colspan="1"><strong id='bold30515'
+>top:</strong></td><td id="tc30517" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-July-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center30513'
+<br/><br/><center id='center30533'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc30507" align="center" colspan="1"><font color="#ffffff"><strong id='bold30505'
+<tr bgcolor="#8381de"><th id="tc30527" align="center" colspan="1"><font color="#ffffff"><strong id='bold30525'
 >Standard Library</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc30510" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc30530" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">6.1</td><td colspan="4" width="100%"><a href="bigloo-7.html#Scheme-Library">Scheme Library</a></td></tr>
  <tr><td></td><td valign="top" align="left">6.1.1</td><td colspan="3" width="100%"><a href="bigloo-7.html#Booleans">Booleans</a></td></tr>
@@ -84,11 +84,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center30523'
+<br/><br/><center id='center30543'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc30517" align="center" colspan="1"><font color="#ffffff"><strong id='bold30515'
+<tr bgcolor="#8381de"><th id="tc30537" align="center" colspan="1"><font color="#ffffff"><strong id='bold30535'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc30520" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc30540" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -254,18 +254,18 @@ Note: the empty list is true.<br/><br/><table cellspacing="0" class="frame" cell
 (eq? #\A #\A)                          =&gt;  <em id='emph2541'
 >unspecified</em>
 (eq? car car)                          =&gt;  #t
-(<strong id='bold30528'
+(<strong id='bold30548'
 >let</strong> ((n (+ 2 3)))
   (eq? n n))                           =&gt;  <em id='emph2542'
 >unspecified</em>
-(<strong id='bold30529'
+(<strong id='bold30549'
 >let</strong> ((x '(a)))
   (eq? x x))                           =&gt;  #t
-(<strong id='bold30530'
+(<strong id='bold30550'
 >let</strong> ((x '#()))
   (eq? x x))                           =&gt;  #t
-(<strong id='bold30531'
->let</strong> ((p (<strong id='bold30532'
+(<strong id='bold30551'
+>let</strong> ((p (<strong id='bold30552'
 >lambda</strong> (x) x)))
   (eq? p p))                           =&gt;  #t
 </pre>
@@ -285,13 +285,13 @@ always conforming to R5RS.
 (eqv? '() '())                         =&gt;  #t
 (eqv? 100000000 100000000)             =&gt;  #t
 (eqv? (cons 1 2) (cons 1 2))           =&gt;  #f
-(eqv? (<strong id='bold30533'
+(eqv? (<strong id='bold30553'
 >lambda</strong> () 1)
-      (<strong id='bold30534'
+      (<strong id='bold30554'
 >lambda</strong> () 2))                   =&gt;  #f
 (eqv? #f 'nil)                         =&gt;  #f
-(<strong id='bold30535'
->let</strong> ((p (<strong id='bold30536'
+(<strong id='bold30555'
+>let</strong> ((p (<strong id='bold30556'
 >lambda</strong> (x) x)))
   (eqv? p p))                          =&gt;  <em id='emph2557'
 >unspecified</em>
@@ -310,60 +310,60 @@ boolean.<br/><br/><center id='center2614'
 >unspecified</em>
 (eqv? '#() '#())                       =&gt;  <em id='emph2570'
 >unspecified</em>
-(eqv? (<strong id='bold30539'
+(eqv? (<strong id='bold30559'
 >lambda</strong> (x) x)
-      (<strong id='bold30540'
+      (<strong id='bold30560'
 >lambda</strong> (x) x))                  =&gt;  <em id='emph2571'
 >unspecified</em>
-(eqv? (<strong id='bold30541'
+(eqv? (<strong id='bold30561'
 >lambda</strong> (x) x)
-      (<strong id='bold30542'
+      (<strong id='bold30562'
 >lambda</strong> (y) y))                  =&gt;  <em id='emph2572'
->unspecified</em><br/><br/>(<font color="#6959cf"><strong id='bold30543'
->define</strong></font> <font color="#6959cf"><strong id='bold30545'
+>unspecified</em><br/><br/>(<font color="#6959cf"><strong id='bold30563'
+>define</strong></font> <font color="#6959cf"><strong id='bold30565'
 >gen-counter</strong></font>
-  (<strong id='bold30547'
+  (<strong id='bold30567'
 >lambda</strong> ()
-    (<strong id='bold30548'
+    (<strong id='bold30568'
 >let</strong> ((n 0))
-      (<strong id='bold30549'
->lambda</strong> () (<strong id='bold30550'
+      (<strong id='bold30569'
+>lambda</strong> () (<strong id='bold30570'
 >set!</strong> n (+ n 1)) n))))
-(<strong id='bold30551'
+(<strong id='bold30571'
 >let</strong> ((g (gen-counter)))
   (eqv? g g))                          =&gt;  #t
 (eqv? (gen-counter) (gen-counter))
                                        =&gt;  #f
-(<font color="#6959cf"><strong id='bold30552'
->define</strong></font> <font color="#6959cf"><strong id='bold30554'
+(<font color="#6959cf"><strong id='bold30572'
+>define</strong></font> <font color="#6959cf"><strong id='bold30574'
 >gen-loser</strong></font>
-  (<strong id='bold30556'
+  (<strong id='bold30576'
 >lambda</strong> ()
-    (<strong id='bold30557'
+    (<strong id='bold30577'
 >let</strong> ((n 0))
-      (<strong id='bold30558'
->lambda</strong> () (<strong id='bold30559'
+      (<strong id='bold30578'
+>lambda</strong> () (<strong id='bold30579'
 >set!</strong> n (+ n 1)) 27))))
-(<strong id='bold30560'
+(<strong id='bold30580'
 >let</strong> ((g (gen-loser)))
   (eqv? g g))                          =&gt;  #t
 (eqv? (gen-loser) (gen-loser))
                                        =&gt;  <em id='emph2574'
->unspecified</em><br/><br/>(<strong id='bold30561'
->letrec</strong> ((f (<strong id='bold30562'
->lambda</strong> () (<strong id='bold30563'
+>unspecified</em><br/><br/>(<strong id='bold30581'
+>letrec</strong> ((f (<strong id='bold30582'
+>lambda</strong> () (<strong id='bold30583'
 >if</strong> (eqv? f g) 'both 'f)))
-         (g (<strong id='bold30564'
->lambda</strong> () (<strong id='bold30565'
+         (g (<strong id='bold30584'
+>lambda</strong> () (<strong id='bold30585'
 >if</strong> (eqv? f g) 'both 'g))))
   (eqv? f g))
                                        =&gt;  <em id='emph2576'
->unspecified</em><br/><br/>(<strong id='bold30566'
->letrec</strong> ((f (<strong id='bold30567'
->lambda</strong> () (<strong id='bold30568'
+>unspecified</em><br/><br/>(<strong id='bold30586'
+>letrec</strong> ((f (<strong id='bold30587'
+>lambda</strong> () (<strong id='bold30588'
 >if</strong> (eqv? f g) 'f 'both)))
-         (g (<strong id='bold30569'
->lambda</strong> () (<strong id='bold30570'
+         (g (<strong id='bold30589'
+>lambda</strong> () (<strong id='bold30590'
 >if</strong> (eqv? f g) 'g 'both))))
   (eqv? f g))
                                        =&gt;  #f
@@ -373,7 +373,7 @@ boolean.<br/><br/><center id='center2614'
 >unspecified</em>
 (eqv? '(b) (cdr '(a b)))               =&gt;  <em id='emph2580'
 >unspecified</em>
-(<strong id='bold30573'
+(<strong id='bold30593'
 >let</strong> ((x '(a)))
   (eqv? x x))                          =&gt;  #t
 </pre>
@@ -399,9 +399,9 @@ boolean.<br/><br/><center id='center2614'
 (equal? 2 2)                           =&gt;  #t
 (equal? (make-vector 5 'a)
         (make-vector 5 'a))            =&gt;  #t
-(equal? (<strong id='bold30576'
+(equal? (<strong id='bold30596'
 >lambda</strong> (x) x)
-        (<strong id='bold30577'
+        (<strong id='bold30597'
 >lambda</strong> (y) y))                =&gt;  <em id='emph2626'
 >unspecified</em>
 </pre>
@@ -794,8 +794,8 @@ pred. However, in cases where this ambiguity can arise, you should use
 find-tail instead of find -- find-tail has no such ambiguity:<br/><br/><center id='center3142'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog3140'
->    (<strong id='bold30578'
->cond</strong> ((find-tail pred lis) =&gt; (<strong id='bold30579'
+>    (<strong id='bold30598'
+>cond</strong> ((find-tail pred lis) =&gt; (<strong id='bold30599'
 >lambda</strong> (pair) ...)) ; Handle (CAR PAIR)
           (else ...)) ; Search failed.
 </pre>
@@ -821,9 +821,9 @@ member function.<br/><br/>Examples:<br/><br/><center id='center3170'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog3168'
 >    (find-tail even? '(3 1 37 -8 -5 0 0)) =&gt; (-8 -5 0 0)
-    (find-tail even? '(3 1 37 -5)) =&gt; #f<br/><br/>    <font color="#ffa600"><em id='it30580'
+    (find-tail even? '(3 1 37 -5)) =&gt; #f<br/><br/>    <font color="#ffa600"><em id='it30600'
 >;; MEMBER X LIS:</em></font>
-    (find-tail (<strong id='bold30582'
+    (find-tail (<strong id='bold30602'
 >lambda</strong> (elt) (equal? x elt)) lis)<br/><br/>    In the circular-list case, this procedure <font color="red">&quot;rotates&quot;</font> the list.
 </pre>
 </td></tr>
@@ -854,7 +854,7 @@ the first element of the <code id='code3193'
 the list.<br/><br/>Examples:<br/><br/><center id='center3200'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog3198'
->    (reduce max 0 l) &lt;=&gt; (<strong id='bold30584'
+>    (reduce max 0 l) &lt;=&gt; (<strong id='bold30604'
 >apply</strong> max l)
 </pre>
 </td></tr>
@@ -1250,7 +1250,7 @@ The colon character (<code id='code3545'
 <center id='center3549'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog3547'
->(eq? toto: <strong id='bold30587'
+>(eq? toto: <strong id='bold30607'
 >:toto</strong>) =&gt; #t
 </pre>
 </td></tr>
@@ -2372,8 +2372,8 @@ Bigloo implements a restricted version of <code id='code5354'
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog5365'
 >(string-&gt;number <font color="red">&quot;1243&quot;</font> 16)          =&gt; 4675
 (string-&gt;number <font color="red">&quot;1243.0&quot;</font> 16)        -|
-# *** ERROR<strong id='bold30592'
->:bigloo</strong><strong id='bold30594'
+# *** ERROR<strong id='bold30612'
+>:bigloo</strong><strong id='bold30614'
 >:string-&gt;number</strong>
 # Only radix `10' is legal for floating point number -- 16
 (string-&gt;elong <font color="red">&quot;234456353&quot;</font>)         =&gt; #e234456353
@@ -3294,9 +3294,9 @@ as possible, and for the back-ends that enable it, <code id='code6518'
 operate a side effect on its argument.<br/><br/><center id='center6525'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog6523'
->(<strong id='bold30656'
+>(<strong id='bold30676'
 >let</strong> ((s (string #\a #\b #\c #\d #\e)))
-   (<strong id='bold30657'
+   (<strong id='bold30677'
 >set!</strong> s (string-shrink! s 3))
    s)
    =&gt; <font color="red">&quot;abc&quot;</font>
@@ -3437,7 +3437,7 @@ position <code id='code6684'
 >o1</em></code>.<br/><br/><center id='center6691'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog6689'
->(<strong id='bold30659'
+>(<strong id='bold30679'
 >let</strong> ((s (make-string 20 #\-)))
 	(blit-string! <font color="red">&quot;toto&quot;</font> 0 s 16 4)
 	s)
@@ -4115,72 +4115,72 @@ need a non-iso-latin canonical representation must be given. For instance, the
 CP1252 table can be defined as:<br/><br/><center id='center7575'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog7573'
->(<font color="#6959cf"><strong id='bold30690'
->define</strong></font> <font color="#6959cf"><strong id='bold30692'
+>(<font color="#6959cf"><strong id='bold30710'
+>define</strong></font> <font color="#6959cf"><strong id='bold30712'
 >cp1252</strong></font>
-   '#(<font color="red">&quot;\xe2\x82\xac&quot;</font> <font color="#ffa600"><em id='it30695'
+   '#(<font color="red">&quot;\xe2\x82\xac&quot;</font> <font color="#ffa600"><em id='it30715'
 >;; 0x80</em></font>
-      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30698'
+      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30718'
 >;; 0x81</em></font>
-      <font color="red">&quot;\xe2\x80\x9a&quot;</font> <font color="#ffa600"><em id='it30701'
+      <font color="red">&quot;\xe2\x80\x9a&quot;</font> <font color="#ffa600"><em id='it30721'
 >;; 0x82</em></font>
-      <font color="red">&quot;\xc6\x92&quot;</font>     <font color="#ffa600"><em id='it30704'
+      <font color="red">&quot;\xc6\x92&quot;</font>     <font color="#ffa600"><em id='it30724'
 >;; 0x83</em></font>
-      <font color="red">&quot;\xe2\x80\x9e&quot;</font> <font color="#ffa600"><em id='it30707'
+      <font color="red">&quot;\xe2\x80\x9e&quot;</font> <font color="#ffa600"><em id='it30727'
 >;; 0x84</em></font>
-      <font color="red">&quot;\xe2\x80\xa6&quot;</font> <font color="#ffa600"><em id='it30710'
+      <font color="red">&quot;\xe2\x80\xa6&quot;</font> <font color="#ffa600"><em id='it30730'
 >;; 0x85</em></font>
-      <font color="red">&quot;\xe2\x80\xa0&quot;</font> <font color="#ffa600"><em id='it30713'
+      <font color="red">&quot;\xe2\x80\xa0&quot;</font> <font color="#ffa600"><em id='it30733'
 >;; 0x86</em></font>
-      <font color="red">&quot;\xe2\x80\xa1&quot;</font> <font color="#ffa600"><em id='it30716'
+      <font color="red">&quot;\xe2\x80\xa1&quot;</font> <font color="#ffa600"><em id='it30736'
 >;; 0x87</em></font>
-      <font color="red">&quot;\xcb\x86&quot;</font>     <font color="#ffa600"><em id='it30719'
+      <font color="red">&quot;\xcb\x86&quot;</font>     <font color="#ffa600"><em id='it30739'
 >;; 0x88</em></font>
-      <font color="red">&quot;\xe2\x80\xb0&quot;</font> <font color="#ffa600"><em id='it30722'
+      <font color="red">&quot;\xe2\x80\xb0&quot;</font> <font color="#ffa600"><em id='it30742'
 >;; 0x89</em></font>
-      <font color="red">&quot;\xc5\xa0&quot;</font>     <font color="#ffa600"><em id='it30725'
+      <font color="red">&quot;\xc5\xa0&quot;</font>     <font color="#ffa600"><em id='it30745'
 >;; 0x8a</em></font>
-      <font color="red">&quot;\xe2\x80\xb9&quot;</font> <font color="#ffa600"><em id='it30728'
+      <font color="red">&quot;\xe2\x80\xb9&quot;</font> <font color="#ffa600"><em id='it30748'
 >;; 0x8b</em></font>
-      <font color="red">&quot;\xc5\x92&quot;</font>     <font color="#ffa600"><em id='it30731'
+      <font color="red">&quot;\xc5\x92&quot;</font>     <font color="#ffa600"><em id='it30751'
 >;; 0x8c</em></font>
-      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30734'
+      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30754'
 >;; 0x8d</em></font>
-      <font color="red">&quot;\xc5\xbd&quot;</font>     <font color="#ffa600"><em id='it30737'
+      <font color="red">&quot;\xc5\xbd&quot;</font>     <font color="#ffa600"><em id='it30757'
 >;; 0x8e</em></font>
-      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30740'
+      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30760'
 >;; 0x8f</em></font>
-      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30743'
+      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30763'
 >;; 0x90</em></font>
-      <font color="red">&quot;\xe2\x80\x98&quot;</font> <font color="#ffa600"><em id='it30746'
+      <font color="red">&quot;\xe2\x80\x98&quot;</font> <font color="#ffa600"><em id='it30766'
 >;; 0x91</em></font>
-      <font color="red">&quot;\xe2\x80\x99&quot;</font> <font color="#ffa600"><em id='it30749'
+      <font color="red">&quot;\xe2\x80\x99&quot;</font> <font color="#ffa600"><em id='it30769'
 >;; 0x92</em></font>
-      <font color="red">&quot;\xe2\x80\x9c&quot;</font> <font color="#ffa600"><em id='it30752'
+      <font color="red">&quot;\xe2\x80\x9c&quot;</font> <font color="#ffa600"><em id='it30772'
 >;; 0x93</em></font>
-      <font color="red">&quot;\xe2\x80\x9d&quot;</font> <font color="#ffa600"><em id='it30755'
+      <font color="red">&quot;\xe2\x80\x9d&quot;</font> <font color="#ffa600"><em id='it30775'
 >;; 0x94</em></font>
-      <font color="red">&quot;\xe2\x80\xa2&quot;</font> <font color="#ffa600"><em id='it30758'
+      <font color="red">&quot;\xe2\x80\xa2&quot;</font> <font color="#ffa600"><em id='it30778'
 >;; 0x95</em></font>
-      <font color="red">&quot;\xe2\x80\x93&quot;</font> <font color="#ffa600"><em id='it30761'
+      <font color="red">&quot;\xe2\x80\x93&quot;</font> <font color="#ffa600"><em id='it30781'
 >;; 0x96</em></font>
-      <font color="red">&quot;\xe2\x80\x94&quot;</font> <font color="#ffa600"><em id='it30764'
+      <font color="red">&quot;\xe2\x80\x94&quot;</font> <font color="#ffa600"><em id='it30784'
 >;; 0x97</em></font>
-      <font color="red">&quot;\xcb\x9c&quot;</font>     <font color="#ffa600"><em id='it30767'
+      <font color="red">&quot;\xcb\x9c&quot;</font>     <font color="#ffa600"><em id='it30787'
 >;; 0x98</em></font>
-      <font color="red">&quot;\xe2\x84\xa2&quot;</font> <font color="#ffa600"><em id='it30770'
+      <font color="red">&quot;\xe2\x84\xa2&quot;</font> <font color="#ffa600"><em id='it30790'
 >;; 0x99</em></font>
-      <font color="red">&quot;\xc5\xa1&quot;</font>     <font color="#ffa600"><em id='it30773'
+      <font color="red">&quot;\xc5\xa1&quot;</font>     <font color="#ffa600"><em id='it30793'
 >;; 0x9a</em></font>
-      <font color="red">&quot;\xe2\x80\xba&quot;</font> <font color="#ffa600"><em id='it30776'
+      <font color="red">&quot;\xe2\x80\xba&quot;</font> <font color="#ffa600"><em id='it30796'
 >;; 0x9b</em></font>
-      <font color="red">&quot;\xc5\x93&quot;</font>     <font color="#ffa600"><em id='it30779'
+      <font color="red">&quot;\xc5\x93&quot;</font>     <font color="#ffa600"><em id='it30799'
 >;; 0x9c</em></font>
-      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30782'
+      <font color="red">&quot;&quot;</font>             <font color="#ffa600"><em id='it30802'
 >;; 0x9d</em></font>
-      <font color="red">&quot;\xc5\xbe&quot;</font>     <font color="#ffa600"><em id='it30785'
+      <font color="red">&quot;\xc5\xbe&quot;</font>     <font color="#ffa600"><em id='it30805'
 >;; 0x9e</em></font>
-      <font color="red">&quot;\xc5\xb8&quot;</font>))   <font color="#ffa600"><em id='it30788'
+      <font color="red">&quot;\xc5\xb8&quot;</font>))   <font color="#ffa600"><em id='it30808'
 >;; 0x9f</em></font>
 </pre>
 </td></tr>
@@ -4281,7 +4281,7 @@ Stores  <code id='code7694'
 >vector</em></code>. For instance:<br/><br/><center id='center7701'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog7699'
->(<strong id='bold30790'
+>(<strong id='bold30810'
 >let</strong> ((v (make-vector 5 #f)))
    (vector-fill! v #t)
    v)
@@ -4625,9 +4625,9 @@ is not true. The second version <code id='code8030'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8036'
 >(filter number? '(1 2 #\a <font color="red">&quot;foo&quot;</font> foo 3)) =&gt; (1 2 3)
-(<strong id='bold30792'
+(<strong id='bold30812'
 >let</strong> ((l (list 1 2 #\a <font color="red">&quot;foo&quot;</font> 'foo 3)))
-   (<strong id='bold30794'
+   (<strong id='bold30814'
 >set!</strong> l (filter! number? l))
    l)                                   =&gt; (1 2 3)
 </pre>
@@ -4658,7 +4658,7 @@ The expression
 is equivalent to:<br/><br/><center id='center8066'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8064'
->  (<strong id='bold30795'
+>  (<strong id='bold30815'
 >apply</strong> append (map f clist1 clist2 ...))
 </pre>
 </td></tr>
@@ -4676,7 +4676,7 @@ The expression
 is equivalent to:<br/><br/><center id='center8074'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8072'
->  (<strong id='bold30796'
+>  (<strong id='bold30816'
 >apply</strong> append! (map f clist1 clist2 ...))
 </pre>
 </td></tr>
@@ -4695,8 +4695,8 @@ is equivalent to:<br/><br/><center id='center8074'
 list. The Bigloo implementation complies with the SRFI-1 description.<br/><br/><center id='center8096'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8094'
->(filter-map (<strong id='bold30797'
->lambda</strong> (x) (<strong id='bold30798'
+>(filter-map (<strong id='bold30817'
+>lambda</strong> (x) (<strong id='bold30818'
 >if</strong> (number? x) '- #f)) '(1 2 #\a <font color="red">&quot;foo&quot;</font> foo 3)) =&gt; (- - -)
 </pre>
 </td></tr>
@@ -4725,9 +4725,9 @@ either be a vector or a list. In either case, a copy of the argument
 is returned. For instance:<br/><br/><center id='center8129'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8127'
->(<strong id='bold30800'
+>(<strong id='bold30820'
 >let</strong> ((l '((<font color="red">&quot;foo&quot;</font> 5) (<font color="red">&quot;bar&quot;</font> 6) (<font color="red">&quot;hux&quot;</font> 1) (<font color="red">&quot;gee&quot;</font> 4))))
-   (sort (<strong id='bold30805'
+   (sort (<strong id='bold30825'
 >lambda</strong> (x y) (string&lt;? (car x) (car y))) l))
    =&gt; ((bar 6) (foo 5) (gee 4) (hux 1))
 </pre>
@@ -4798,25 +4798,25 @@ while in the dynamic extent of the form. Bindings introduced by
 >bind-exit</code> are immutable.<br/><br/><center id='center8197'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8195'
->(<font color="red"><strong id='bold30806'
+>(<font color="red"><strong id='bold30826'
 >bind-exit</strong></font> (exit)
- (for-each (<strong id='bold30808'
+ (for-each (<strong id='bold30828'
 >lambda</strong> (x)
-             (<strong id='bold30809'
+             (<strong id='bold30829'
 >if</strong> (negative? x)
                  (exit x)))
            '(54 0 37 -3 245 19))
- #t)                                  =&gt; -3<br/><br/>(<font color="#6959cf"><strong id='bold30810'
->define</strong></font> <font color="#6959cf"><strong id='bold30812'
+ #t)                                  =&gt; -3<br/><br/>(<font color="#6959cf"><strong id='bold30830'
+>define</strong></font> <font color="#6959cf"><strong id='bold30832'
 >list-length</strong></font>
-  (<strong id='bold30814'
+  (<strong id='bold30834'
 >lambda</strong> (obj)
-    (<font color="red"><strong id='bold30815'
+    (<font color="red"><strong id='bold30835'
 >bind-exit</strong></font> (return)
-     (<strong id='bold30817'
->letrec</strong> ((r (<strong id='bold30818'
+     (<strong id='bold30837'
+>letrec</strong> ((r (<strong id='bold30838'
 >lambda</strong> (obj)
-                    (<strong id='bold30819'
+                    (<strong id='bold30839'
 >cond</strong> ((null? obj) 0)
                           ((pair? obj)
                            (+ (r (cdr obj)) 1))
@@ -4855,16 +4855,16 @@ always the value of <code id='code8219'
 >expr</em></code>.<br/><br/><center id='center8228'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8226'
->(<font color="#6959cf"><strong id='bold30820'
->define</strong></font> (<font color="#6959cf"><strong id='bold30822'
+>(<font color="#6959cf"><strong id='bold30840'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30842'
 >my-open</strong></font> f)
-   (<strong id='bold30824'
+   (<strong id='bold30844'
 >if</strong> (file-exists? f)
-       (<strong id='bold30825'
+       (<strong id='bold30845'
 >let</strong> ((port (open-input-file f)))
-          (<strong id='bold30826'
+          (<strong id='bold30846'
 >if</strong> (input-port? port)
-              (<font color="red"><strong id='bold30827'
+              (<font color="red"><strong id='bold30847'
 >unwind-protect</strong></font>
                  (bar port)
                  (close-input-port port))))))
@@ -4959,29 +4959,29 @@ extent of a call to <code id='code8297'
 >after</em></code> is undefined.<br/><br/><br/><center id='center8314'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8312'
->(<strong id='bold30829'
+>(<strong id='bold30849'
 >let</strong> ((path '())
       (c #f))
-  (<strong id='bold30830'
->let</strong> ((add (<strong id='bold30831'
+  (<strong id='bold30850'
+>let</strong> ((add (<strong id='bold30851'
 >lambda</strong> (s)
-               (<strong id='bold30832'
+               (<strong id='bold30852'
 >set!</strong> path (cons s path)))))
     (dynamic-wind
-      (<strong id='bold30833'
+      (<strong id='bold30853'
 >lambda</strong> () (add 'connect))
-      (<strong id='bold30834'
+      (<strong id='bold30854'
 >lambda</strong> ()
-        (add (<font color="red"><strong id='bold30835'
+        (add (<font color="red"><strong id='bold30855'
 >call/cc</strong></font>
-               (<strong id='bold30837'
+               (<strong id='bold30857'
 >lambda</strong> (c0)
-                 (<strong id='bold30838'
+                 (<strong id='bold30858'
 >set!</strong> c c0)
                  'talk1))))
-      (<strong id='bold30839'
+      (<strong id='bold30859'
 >lambda</strong> () (add 'disconnect)))
-    (<strong id='bold30840'
+    (<strong id='bold30860'
 >if</strong> (&lt; (length path) 4)
         (c 'talk2)
         (reverse path))))
@@ -5029,13 +5029,13 @@ Except for continuations created by the <code id='code8350'
 >Values</tt> might be defined as follows:<br/><br/><center id='center8362'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8360'
->(<font color="#6959cf"><strong id='bold30841'
->define</strong></font> (<font color="#6959cf"><strong id='bold30843'
+>(<font color="#6959cf"><strong id='bold30861'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30863'
 >values</strong></font> . things)
-  (<font color="red"><strong id='bold30845'
+  (<font color="red"><strong id='bold30865'
 >call/cc</strong></font>
-    (<strong id='bold30847'
->lambda</strong> (cont) (<strong id='bold30848'
+    (<strong id='bold30867'
+>lambda</strong> (cont) (<strong id='bold30868'
 >apply</strong> cont things))))
 </pre>
 </td></tr>
@@ -5063,9 +5063,9 @@ continuation of the call to <tt id='tt8380'
 >call-with-values</tt>.<br/><br/><center id='center8386'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8384'
->(call-with-values (<strong id='bold30849'
+>(call-with-values (<strong id='bold30869'
 >lambda</strong> () (values 4 5))
-                  (<strong id='bold30850'
+                  (<strong id='bold30870'
 >lambda</strong> (a b) b))
     =&gt; 5
 (call-with-values * -)
@@ -5103,11 +5103,11 @@ bound variables.
 <center id='center8425'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8423'
->(<font color="#6959cf"><strong id='bold30851'
->define</strong></font> (<font color="#6959cf"><strong id='bold30853'
+>(<font color="#6959cf"><strong id='bold30871'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30873'
 >bar</strong></font> a)
-   (values (modulo a 5) (quotient a 5)))<br/><br/>(<font color="#6959cf"><strong id='bold30855'
->define</strong></font> (<font color="#6959cf"><strong id='bold30857'
+   (values (modulo a 5) (quotient a 5)))<br/><br/>(<font color="#6959cf"><strong id='bold30875'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30877'
 >foo</strong></font> a)
    (multiple-value-bind (x y)
       (bar a)
@@ -5171,13 +5171,13 @@ See <a href="./r5rs-9.html#Ports">r5rs, Ports</a>, for more details.<br/><br/><c
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8486'
 >(call-with-input-file <font color="red">&quot;/etc/passwd&quot;</font>
-   (<strong id='bold30861'
+   (<strong id='bold30881'
 >lambda</strong> (port)
-      (<strong id='bold30862'
+      (<strong id='bold30882'
 >let</strong> loop ((line (read-line port)))
-         (<strong id='bold30863'
+         (<strong id='bold30883'
 >if</strong> (not (eof-object? line))
-             (<strong id='bold30864'
+             (<strong id='bold30884'
 >begin</strong>
                 (print line)
                 (loop (read-line port)))))))
@@ -5364,9 +5364,9 @@ close hook is a procedure of one argument, the closed port.<br/><br/>Example:
 <center id='center8718'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8716'
->(<strong id='bold30865'
+>(<strong id='bold30885'
 >let</strong> ((p (open-input-string <font color="red">&quot;/etc/passwd&quot;</font>)))
-  (input-port-close-hook-set! p (<strong id='bold30867'
+  (input-port-close-hook-set! p (<strong id='bold30887'
 >lambda</strong> () (display 'done)))
   ...
   (close-input-port p))
@@ -5467,13 +5467,13 @@ See <a href="./r5rs-9.html#Ports">r5rs, Ports</a>, for more details.<br/><br/><c
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8863'
 >(with-input-from-file <font color="red">&quot;/etc/passwd&quot;</font>
-   (<strong id='bold30869'
+   (<strong id='bold30889'
 >lambda</strong> ()
-      (<strong id='bold30870'
+      (<strong id='bold30890'
 >let</strong> loop ((line (read-line (current-input-port))))
-         (<strong id='bold30871'
+         (<strong id='bold30891'
 >if</strong> (not (eof-object? line))
-             (<strong id='bold30872'
+             (<strong id='bold30892'
 >begin</strong>
                 (print line)
                 (loop (read-line (current-input-port))))))))
@@ -5520,7 +5520,7 @@ of <code id='code8907'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8911'
 >(with-output-to-port (current-error-port) 
-   (<strong id='bold30873'
+   (<strong id='bold30893'
 >lambda</strong> () (display <font color="red">&quot;hello&quot;</font>)))
 </pre>
 </td></tr>
@@ -5549,11 +5549,11 @@ Instead of opening a regular file, Bigloo opens an input pipe.
 The same syntax is used for output file. <br/><br/><center id='center8943'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8941'
->(<font color="#6959cf"><strong id='bold30875'
->define</strong></font> <font color="#6959cf"><strong id='bold30877'
+>(<font color="#6959cf"><strong id='bold30895'
+>define</strong></font> <font color="#6959cf"><strong id='bold30897'
 >pin</strong></font> (open-input-file <font color="red">&quot;| cat /etc/passwd&quot;</font>))
-(<font color="#6959cf"><strong id='bold30880'
->define</strong></font> <font color="#6959cf"><strong id='bold30882'
+(<font color="#6959cf"><strong id='bold30900'
+>define</strong></font> <font color="#6959cf"><strong id='bold30902'
 >pout</strong></font> (open-output-file <font color="red">&quot;| wc -l&quot;</font>))<br/><br/>(display (read pin) pout)
 (close-input-port pin)
 (newline pout)
@@ -5579,7 +5579,7 @@ Example:<br/><br/><center id='center8959'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8957'
 >(with-input-from-file <font color="red">&quot;gzip:bigloo.tar.gz&quot;</font>
-   (<strong id='bold30886'
+   (<strong id='bold30906'
 >lambda</strong> ()
       (send-chars (current-input-port) (current-output-port))))
 </pre>
@@ -5595,7 +5595,7 @@ Example:<br/><br/><center id='center8968'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog8966'
 >(with-input-from-file <font color="red">&quot;string:foo bar Gee&quot;</font>
-   (<strong id='bold30888'
+   (<strong id='bold30908'
 >lambda</strong> ()
       (print (read))
       (print (read))
@@ -5691,9 +5691,9 @@ the <code id='code9040'
 >pi</em></code> port.<br/><br/><center id='center9047'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9045'
->(<strong id='bold30889'
+>(<strong id='bold30909'
 >let</strong> ((p (open-input-gzip-file <font color="red">&quot;bigloo.tar.gz&quot;</font>)))
-   (<font color="red"><strong id='bold30891'
+   (<font color="red"><strong id='bold30911'
 >unwind-protect</strong></font>
       (read-line p1)
       (close-input-port p)))
@@ -5704,10 +5704,10 @@ the <code id='code9040'
 <center id='center9053'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9051'
->(<strong id='bold30893'
+>(<strong id='bold30913'
 >let*</strong> ((p1 (open-input-file <font color="red">&quot;bigloo.tar.gz&quot;</font>))
        (p2 (open-input-gzip-port p1)))
-   (<font color="red"><strong id='bold30895'
+   (<font color="red"><strong id='bold30915'
 >unwind-protect</strong></font>
       (read-line p2)
       (close-input-port p2)
@@ -5803,9 +5803,9 @@ Returns an <code id='code9149'
 remote file located on a FTP server.<br/><br/>Example:<br/><br/><center id='center9156'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9154'
->(<strong id='bold30897'
+>(<strong id='bold30917'
 >let</strong> ((p (open-input-ftp-file &quot;ftp-sop.inria.fr/ls-lR.gz'')))
-  (<font color="red"><strong id='bold30898'
+  (<font color="red"><strong id='bold30918'
 >unwind-protect</strong></font>
      (read-string p)
      (close-input-port p)))
@@ -5816,10 +5816,10 @@ remote file located on a FTP server.<br/><br/>Example:<br/><br/><center id='cent
 The file name may contain user authentication such as:<br/><br/><center id='center9163'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9161'
->(<strong id='bold30900'
->let</strong> ((p (open-input-ftp-file &quot;anonymous<strong id='bold30901'
+>(<strong id='bold30920'
+>let</strong> ((p (open-input-ftp-file &quot;anonymous<strong id='bold30921'
 >:foo</strong>&#x40;ftp-sop.inria.fr/ls-lR.gz'')))
-  (<font color="red"><strong id='bold30903'
+  (<font color="red"><strong id='bold30923'
 >unwind-protect</strong></font>
      (read-string p)
      (close-input-port p)))
@@ -5847,16 +5847,16 @@ the boolean <code id='code9180'
 >#f</code>. This last value stands for the end of file. <br/><br/>Example:<br/><br/><center id='center9192'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9190'
->(<strong id='bold30905'
->let</strong> ((p (open-input-procedure (<strong id='bold30906'
+>(<strong id='bold30925'
+>let</strong> ((p (open-input-procedure (<strong id='bold30926'
 >let</strong> ((s #t))
-				  (<strong id='bold30907'
+				  (<strong id='bold30927'
 >lambda</strong> ()
-				     (<strong id='bold30908'
+				     (<strong id='bold30928'
 >if</strong> s
-					 (<strong id='bold30909'
+					 (<strong id='bold30929'
 >begin</strong> 
-                                            (<strong id='bold30910'
+                                            (<strong id='bold30930'
 >set!</strong> s #f)
                                             <font color="red">&quot;foobar&quot;</font>)
 					 s))))))
@@ -5893,8 +5893,8 @@ The next read character(s) will be the pushed ones. The <code id='code9227'
 be buffered and not be closed.<br/><br/>Example:<br/><br/><center id='center9235'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9233'
->(<font color="#6959cf"><strong id='bold30912'
->define</strong></font> <font color="#6959cf"><strong id='bold30914'
+>(<font color="#6959cf"><strong id='bold30932'
+>define</strong></font> <font color="#6959cf"><strong id='bold30934'
 >p</strong></font> (open-input-string <font color="red">&quot;a ymbol c&quot;</font>))
 (read p)                       =&gt; a
 (read-char p)                  =&gt; #\space
@@ -6141,14 +6141,14 @@ Let us consider the following source code: The value of the <code id='code9476'
 >sensitive</code>. Using any other value is an error.<br/><br/><center id='center9494'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9492'
->(<font color="#6959cf"><strong id='bold30918'
->define</strong></font> (<font color="#6959cf"><strong id='bold30920'
+>(<font color="#6959cf"><strong id='bold30938'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30940'
 >main</strong></font> argv)
-   (<strong id='bold30922'
+   (<strong id='bold30942'
 >let</strong> loop ((exp (read-case-sensitive)))
-      (<strong id='bold30923'
+      (<strong id='bold30943'
 >if</strong> (not (eof-object? exp))
-          (<strong id='bold30924'
+          (<strong id='bold30944'
 >begin</strong>
              (display <font color="red">&quot;exp: &quot;</font>)
              (write exp)
@@ -6239,23 +6239,23 @@ input-port, that is invoked when the reader hits an unparsed character.<br/><br/
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9569'
 >(set-read-syntax! #\{
-   (<strong id='bold30933'
+   (<strong id='bold30953'
 >lambda</strong> (port)
-      (<strong id='bold30934'
+      (<strong id='bold30954'
 >let</strong> loop ((c (peek-char port)) (exps '()))
-	 (<strong id='bold30935'
+	 (<strong id='bold30955'
 >cond</strong> ((eof-object? c)
-		(<font color="red"><strong id='bold30936'
+		(<font color="red"><strong id='bold30956'
 >error</strong></font> &quot;{<font color="red">&quot; &quot;</font>EOF encountered while parsing { ... } clause&quot; port))
 	       ((char=? c #\})
 		(read-char port)   ; discard
-		`(<strong id='bold30939'
+		`(<strong id='bold30959'
 >begin</strong> ,&#x40;(reverse exps)))
 	       ((char-whitespace? c)
 		(read-char port)   ; discard whitespace
 		(loop (peek-char port) exps))
 	       (else
-		(<strong id='bold30940'
+		(<strong id='bold30960'
 >let</strong> ((exp (read port)))
 		   (loop (peek-char port)
                       (cons exp exps))))))))
@@ -6328,16 +6328,16 @@ before characters are available. For instance, executing the
 following source code:<br/><br/><center id='center9666'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9664'
->(<strong id='bold30941'
+>(<strong id='bold30961'
 >let*</strong> ((proc (run-process <font color="red">&quot;/bin/ls&quot;</font> <font color="red">&quot;-l&quot;</font> <font color="red">&quot;/bin&quot;</font> output: pipe:))
        (port (process-output-port proc)))
-   (<strong id='bold30945'
+   (<strong id='bold30965'
 >let</strong> loop ((line (read-line port)))
       (print <font color="red">&quot;char ready &quot;</font> (char-ready? port))
-      (<strong id='bold30947'
+      (<strong id='bold30967'
 >if</strong> (eof-object? line)
           (close-input-port port)
-          (<strong id='bold30948'
+          (<strong id='bold30968'
 >begin</strong>
              (print line)
              (loop (read-line port))))))
@@ -6499,10 +6499,10 @@ except that it returns the <em id='emph9806'
 <center id='center9814'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog9812'
->(<strong id='bold30949'
+>(<strong id='bold30969'
 >let</strong> ((s (make-string 10 #\-)))
    (with-input-from-string <font color="red">&quot;abcdefghijlkmnops&quot;</font>
-      (<strong id='bold30951'
+      (<strong id='bold30971'
 >lambda</strong> ()
          (read-fill-string! s 3 5)
          s)))
@@ -6896,8 +6896,8 @@ of the object is displayed using the <code id='code10207'
 <center id='center10212'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog10210'
->(<font color="#6959cf"><strong id='bold30965'
->define</strong></font> <font color="#6959cf"><strong id='bold30967'
+>(<font color="#6959cf"><strong id='bold30985'
+>define</strong></font> <font color="#6959cf"><strong id='bold30987'
 >l</strong></font> (list 1 2 3))
 (set-car! (cdr l) l)
 (set-car! (cddr l) l)
@@ -7202,7 +7202,7 @@ These function open a gzipped file for input. The file is automatically
 unzipped when the characters are read. It is equivalent to:<br/><br/><center id='center10549'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog10547'
->(<strong id='bold30969'
+>(<strong id='bold30989'
 >let</strong> ((p (open-input-port path)))
   (port-&gt;gzip-port p))
 </pre>
@@ -7365,34 +7365,34 @@ The following example simulates the Unix command <code id='code10756'
 >tar xvfz</code>:<br/><br/><center id='center10775'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog10773'
->(<font color="#6959cf"><strong id='bold30970'
->define</strong></font> (<font color="#6959cf"><strong id='bold30972'
+>(<font color="#6959cf"><strong id='bold30990'
+>define</strong></font> (<font color="#6959cf"><strong id='bold30992'
 >untar</strong></font> path)
-   (<strong id='bold30974'
+   (<strong id='bold30994'
 >let</strong> ((pz (open-input-gzip-port path)))
-      (<font color="red"><strong id='bold30975'
+      (<font color="red"><strong id='bold30995'
 >unwind-protect</strong></font>
-	 (<strong id='bold30977'
+	 (<strong id='bold30997'
 >let</strong> loop ((lst '()))
-	    (<strong id='bold30978'
+	    (<strong id='bold30998'
 >let</strong> ((h (tar-read-header pz)))
-	       (<strong id='bold30979'
+	       (<strong id='bold30999'
 >if</strong> (not h)
 		   lst
-		   (<strong id='bold30980'
+		   (<strong id='bold31000'
 >case</strong> (tar-header-type h)
 		      ((dir)
-		       (<strong id='bold30981'
+		       (<strong id='bold31001'
 >let</strong> ((path (tar-header-name h)))
-			  (<strong id='bold30982'
+			  (<strong id='bold31002'
 >if</strong> (make-directory path)
 			      (loop lst)
-			      (<font color="red"><strong id='bold30983'
+			      (<font color="red"><strong id='bold31003'
 >error</strong></font> 'untar
 				     <font color="red">&quot;Cannot create directory&quot;</font>
 				     path))))
 		      ((normal)
-		       (<strong id='bold30986'
+		       (<strong id='bold31006'
 >let*</strong> ((path (tar-header-name h))
 			      (dir (dirname path)))
 			  (when (and (file-exists? dir) (not (directory? dir)))
@@ -7400,12 +7400,12 @@ The following example simulates the Unix command <code id='code10756'
 			  (unless (file-exists? dir)
 			     (make-directory dir))
 			  (with-output-to-file path
-			     (<strong id='bold30987'
+			     (<strong id='bold31007'
 >lambda</strong> ()
 				(display (tar-read-block h pz))))
 			  (loop (cons path lst))))
 		      (else
-		       (<font color="red"><strong id='bold30988'
+		       (<font color="red"><strong id='bold31008'
 >error</strong></font> 'untar
 			      (format <font color="red">&quot;Illegal file type `~a'&quot;</font>
 				      (tar-header-type h))
@@ -7681,30 +7681,30 @@ to the user to provide correct serializer and unserializer.<br/><br/>Here is an 
 may be correct under some Unix platform:<br/><br/><center id='center11088'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog11086'
->(<font color="#1919af"><strong id='bold30991'
->module</strong></font> <font color="#1919af"><strong id='bold30993'
+>(<font color="#1919af"><strong id='bold31011'
+>module</strong></font> <font color="#1919af"><strong id='bold31013'
 >foo</strong></font>
-   (<strong id='bold30995'
->extern</strong> (macro %sprintf<font color="#00cf00"><strong id='bold30996'
->::int</strong></font> (<font color="#00cf00"><strong id='bold30998'
->::string</strong></font> <font color="#00cf00"><strong id='bold31000'
->::string</strong></font> <font color="#00cf00"><strong id='bold31002'
->::procedure</strong></font>) <font color="red">&quot;sprintf&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold31005'
->define</strong></font> (<font color="#6959cf"><strong id='bold31007'
->string-&gt;procedure</strong></font> str)
-   (<strong id='bold31009'
->pragma</strong> <font color="red">&quot;(obj_t)(strtoul(BSTRING_TO_STRING($1), 0, 16))&quot;</font> str))<br/><br/>(<font color="#6959cf"><strong id='bold31011'
->define</strong></font> (<font color="#6959cf"><strong id='bold31013'
->procedure-&gt;string</strong></font> proc)
    (<strong id='bold31015'
+>extern</strong> (macro %sprintf<font color="#00cf00"><strong id='bold31016'
+>::int</strong></font> (<font color="#00cf00"><strong id='bold31018'
+>::string</strong></font> <font color="#00cf00"><strong id='bold31020'
+>::string</strong></font> <font color="#00cf00"><strong id='bold31022'
+>::procedure</strong></font>) <font color="red">&quot;sprintf&quot;</font>)))<br/><br/>(<font color="#6959cf"><strong id='bold31025'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31027'
+>string-&gt;procedure</strong></font> str)
+   (<strong id='bold31029'
+>pragma</strong> <font color="red">&quot;(obj_t)(strtoul(BSTRING_TO_STRING($1), 0, 16))&quot;</font> str))<br/><br/>(<font color="#6959cf"><strong id='bold31031'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31033'
+>procedure-&gt;string</strong></font> proc)
+   (<strong id='bold31035'
 >let</strong> ((item (make-string 10)))
       (%sprintf item <font color="red">&quot;#p%lx&quot;</font> proc)
-      item))<br/><br/>(register-procedure-serialization! procedure-&gt;string string-&gt;procedure)<br/><br/>(<strong id='bold31017'
+      item))<br/><br/>(register-procedure-serialization! procedure-&gt;string string-&gt;procedure)<br/><br/>(<strong id='bold31037'
 >let</strong> ((x 4))
-   (<strong id='bold31018'
->let</strong> ((obj (cons <font color="red">&quot;toto&quot;</font> (<strong id='bold31020'
+   (<strong id='bold31038'
+>let</strong> ((obj (cons <font color="red">&quot;toto&quot;</font> (<strong id='bold31040'
 >lambda</strong> (y) (+ x y)))))
-      (<strong id='bold31021'
+      (<strong id='bold31041'
 >let</strong> ((nobj (string-&gt;obj (obj-&gt;string obj))))
 	 (print ((cdr nobj) 5)))))
 </pre>
@@ -7724,33 +7724,33 @@ Register a serializer/unserializer for a class. Subclasses of <code id='code1110
 inherit this serializer.<br/><br/><center id='center11123'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog11121'
->(<font color="#1919af"><strong id='bold31022'
->module</strong></font> <font color="#1919af"><strong id='bold31024'
+>(<font color="#1919af"><strong id='bold31042'
+>module</strong></font> <font color="#1919af"><strong id='bold31044'
 >class-serialization-example</strong></font>
-   (<strong id='bold31026'
->static</strong> (<strong id='bold31027'
->class</strong> point<font color="#00cf00"><strong id='bold31028'
+   (<strong id='bold31046'
+>static</strong> (<strong id='bold31047'
+>class</strong> point<font color="#00cf00"><strong id='bold31048'
 >::object</strong></font> (x (default 10)) (y (default 20)))))<br/><br/>(register-class-serialization! point
-			       (<strong id='bold31030'
+			       (<strong id='bold31050'
 >lambda</strong> (o)
-				  (<strong id='bold31031'
->with-access</strong><font color="#00cf00"><strong id='bold31032'
+				  (<strong id='bold31051'
+>with-access</strong><font color="#00cf00"><strong id='bold31052'
 >::point</strong></font> o (x y)
 				     (cons x y)))
-			       (<strong id='bold31034'
+			       (<strong id='bold31054'
 >lambda</strong> (l)
-				  (<strong id='bold31035'
->instantiate</strong><font color="#00cf00"><strong id='bold31036'
+				  (<strong id='bold31055'
+>instantiate</strong><font color="#00cf00"><strong id='bold31056'
 >::point</strong></font>
 				     (x (car l))
-				     (y (cdr l)))))<br/><br/>(<strong id='bold31038'
->let</strong> ((o (<strong id='bold31039'
->instantiate</strong><font color="#00cf00"><strong id='bold31040'
+				     (y (cdr l)))))<br/><br/>(<strong id='bold31058'
+>let</strong> ((o (<strong id='bold31059'
+>instantiate</strong><font color="#00cf00"><strong id='bold31060'
 >::point</strong></font>)))
-   (<strong id='bold31042'
+   (<strong id='bold31062'
 >let</strong> ((s (obj-&gt;string (list o o))))
       (print (string-for-read s))
-      (<strong id='bold31043'
+      (<strong id='bold31063'
 >let</strong> ((l (string-&gt;obj s)))
 	 (print l)
 	 (eq? (car l) (cadr l))))) =&gt; #t
@@ -8039,8 +8039,8 @@ hash tables rely on <code id='code11455'
 >hashtable-equal?</code>, which is defined as:<br/><br/><center id='center11460'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog11458'
->(<font color="#6959cf"><strong id='bold31044'
->define</strong></font> (<font color="#6959cf"><strong id='bold31046'
+>(<font color="#6959cf"><strong id='bold31064'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31066'
 >hashtable-equal?</strong></font> obj1 obj2)
    (or (eq? obj1 obj2)
        (and (string? obj1)
@@ -8366,8 +8366,8 @@ which haven't dissapeared yet.
 Here is an example of hash table.<br/><br/><center id='center11779'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog11777'
->(<font color="#6959cf"><strong id='bold31048'
->define</strong></font> <font color="#6959cf"><strong id='bold31050'
+>(<font color="#6959cf"><strong id='bold31068'
+>define</strong></font> <font color="#6959cf"><strong id='bold31070'
 >*table*</strong></font> (make-hashtable))<br/><br/>(hashtable-put! *table* <font color="red">&quot;toto&quot;</font> <font color="red">&quot;tutu&quot;</font>)
 (hashtable-put! *table* <font color="red">&quot;tata&quot;</font> <font color="red">&quot;titi&quot;</font>)
 (hashtable-put! *table* <font color="red">&quot;titi&quot;</font> 5)
@@ -8377,7 +8377,7 @@ Here is an example of hash table.<br/><br/><center id='center11779'
 (print (hashtable-get *table* 'foo))
    -| 'foo
 (print (hashtable-get *table* 'bar))
-   -| #f<br/><br/>(hashtable-for-each *table* (<strong id='bold31060'
+   -| #f<br/><br/>(hashtable-for-each *table* (<strong id='bold31080'
 >lambda</strong> (key obj) (print (cons key obj))))
    -| (<font color="red">&quot;toto&quot;</font> . <font color="red">&quot;tutu&quot;</font>)
       (<font color="red">&quot;tata&quot;</font> . <font color="red">&quot;titi&quot;</font>)
@@ -8400,12 +8400,12 @@ This generic function computes a hash number of the instance <code id='code11790
 <center id='center11798'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog11796'
->(<font color="#6959cf"><strong id='bold31067'
->define-method</strong></font> (<font color="#6959cf"><strong id='bold31069'
->object-hashnumber</strong></font> pt<font color="#00cf00"><strong id='bold31071'
+>(<font color="#6959cf"><strong id='bold31087'
+>define-method</strong></font> (<font color="#6959cf"><strong id='bold31089'
+>object-hashnumber</strong></font> pt<font color="#00cf00"><strong id='bold31091'
 >::point</strong></font>)
-   (<strong id='bold31073'
->with-access</strong><font color="#00cf00"><strong id='bold31074'
+   (<strong id='bold31093'
+>with-access</strong><font color="#00cf00"><strong id='bold31094'
 >::point</strong></font> pt (x y)
       (+fx (*fx x 10) y)))
 </pre>
@@ -8753,7 +8753,7 @@ in millisecond.<br/><br/><center id='center12162'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog12160'
 >(multiple-value-bind (res rtime stime utime)
-  (time (<strong id='bold31081'
+  (time (<strong id='bold31101'
 >lambda</strong> () (fib 35)))
   (print <font color="red">&quot;real: &quot;</font> rtime <font color="red">&quot; sys: &quot;</font> stime <font color="red">&quot; user: &quot;</font> utime))
 </pre>
@@ -9374,8 +9374,8 @@ Returns the size (in bytes) for file <code id='code12825'
 >long</code>. If an full-sized integer is needed, one may write:<br/><br/><center id='center12834'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog12832'
->(<strong id='bold31136'
->let</strong> ((sz<font color="#00cf00"><strong id='bold31137'
+>(<strong id='bold31156'
+>let</strong> ((sz<font color="#00cf00"><strong id='bold31157'
 >::llong</strong></font> (file-size &lt;PATH&gt;)))
  ...)<br/><br/>On error, <code id='code12829'
 >-1</code> is returned.
@@ -9604,15 +9604,15 @@ are stored in the file <code id='code13003'
 The same example with a pipe for output:<br/><br/><center id='center13022'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13020'
->(<strong id='bold31147'
+>(<strong id='bold31167'
 >let*</strong> ((proc (run-process <font color="red">&quot;ls&quot;</font> <font color="red">&quot;-l&quot;</font> <font color="red">&quot;/bin&quot;</font> output: pipe:))
        (port (process-output-port proc)))
-   (<strong id='bold31151'
+   (<strong id='bold31171'
 >let</strong> loop ((line (read-line port)))
-      (<strong id='bold31152'
+      (<strong id='bold31172'
 >if</strong> (eof-object? line)
           (close-input-port port)
-          (<strong id='bold31153'
+          (<strong id='bold31173'
 >begin</strong>
              (print line)
              (loop (read-line port))))))
@@ -9627,14 +9627,14 @@ process handling but making use of the <code id='code13023'
 >open-input-file</code>.<br/><br/><center id='center13033'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13031'
->(<strong id='bold31154'
+>(<strong id='bold31174'
 >let</strong> ((port (open-input-file <font color="red">&quot;| ls -l /bin&quot;</font>)))
-   (<strong id='bold31156'
+   (<strong id='bold31176'
 >let</strong> loop ((line (read-line port)))
-      (<strong id='bold31157'
+      (<strong id='bold31177'
 >if</strong> (eof-object? line)
           (close-input-port port)
-          (<strong id='bold31158'
+          (<strong id='bold31178'
 >begin</strong>
              (print line)
              (loop (read-line port))))))
@@ -9645,7 +9645,7 @@ process handling but making use of the <code id='code13023'
 Both input and output ports can be piped:<br/><br/><center id='center13047'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13045'
->(<strong id='bold31159'
+>(<strong id='bold31179'
 >let*</strong> ((proc (run-process <font color="red">&quot;/usr/bin/dc&quot;</font> output: pipe: input: pipe:)) 
        (inport (process-input-port proc))
        (port (process-output-port proc)))
@@ -9655,12 +9655,12 @@ Both input and output ports can be piped:<br/><br/><center id='center13047'
    (fprint inport <font color="red">&quot;10&quot;</font>)
    (fprint inport <font color="red">&quot;+ p&quot;</font>)
    (flush-output-port inport)
-   (<strong id='bold31166'
+   (<strong id='bold31186'
 >let</strong> loop ((line (read-line port)))
-      (<strong id='bold31167'
+      (<strong id='bold31187'
 >if</strong> (eof-object? line)
 	  (close-input-port port)
-	  (<strong id='bold31168'
+	  (<strong id='bold31188'
 >begin</strong>
 	     (print line)
 	     (loop (read-line port))))))   -| 20
@@ -9935,13 +9935,13 @@ be eliminated.<br/><br/>Example:
 <center id='center13307'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13305'
-><font color="#ffa600"><em id='it31169'
+><font color="#ffa600"><em id='it31189'
 >;; open a client socket on port 80:</em></font>
 (make-client-socket <font color="red">&quot;www.inria.fr&quot;</font> 80) 
-<font color="#ffa600"><em id='it31172'
+<font color="#ffa600"><em id='it31192'
 >;; open an unbufferized connection</em></font>
-(make-client-socket <font color="red">&quot;www.inria.fr&quot;</font> 80 <strong id='bold31175'
->:inbuf</strong> #f <strong id='bold31177'
+(make-client-socket <font color="red">&quot;www.inria.fr&quot;</font> 80 <strong id='bold31195'
+>:inbuf</strong> #f <strong id='bold31197'
 >:outbuf</strong> #f)
 </pre>
 </td></tr>
@@ -10068,7 +10068,7 @@ socket on port 13 of the machine ``<code id='code13437'
 <center id='center13444'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13442'
->(<strong id='bold31179'
+>(<strong id='bold31199'
 >let</strong> ((s (make-client-socket <font color="red">&quot;kaolin.unice.fr&quot;</font> 13)))
   (print <font color="red">&quot;Time is: &quot;</font> (read-line (socket-input s)))
   (socket-shutdown  s))
@@ -10161,10 +10161,10 @@ output port.
 <center id='center13516'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13514'
->(<strong id='bold31182'
+>(<strong id='bold31202'
 >let*</strong> ((s (make-server-socket 1234))
        (s2 (socket-accept s)))
-  (<strong id='bold31183'
+  (<strong id='bold31203'
 >let</strong> ((l (read-line (socket-input s2))))
     (fprint (socket-output s2) <font color="red">&quot;Length is: &quot;</font> (string-length l))
     (flush-output-port (socket-output s2)))
@@ -10247,41 +10247,41 @@ with <code id='code13580'
 Here is another example of making use of stream sockets:<br/><br/><center id='center13608'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13606'
->(<font color="#6959cf"><strong id='bold31185'
->define</strong></font> <font color="#6959cf"><strong id='bold31187'
+>(<font color="#6959cf"><strong id='bold31205'
+>define</strong></font> <font color="#6959cf"><strong id='bold31207'
 >s1</strong></font> (make-server-socket))
-(<font color="#6959cf"><strong id='bold31189'
->define</strong></font> <font color="#6959cf"><strong id='bold31191'
+(<font color="#6959cf"><strong id='bold31209'
+>define</strong></font> <font color="#6959cf"><strong id='bold31211'
 >s2</strong></font> #unspecified)<br/><br/>(dynamic-wind 
-   <font color="#ffa600"><em id='it31193'
+   <font color="#ffa600"><em id='it31213'
 >;; Init: Launch an xterm with telnet running</em></font>
-   <font color="#ffa600"><em id='it31195'
+   <font color="#ffa600"><em id='it31215'
 >;; on the s listening port and connect</em></font>
-   (<strong id='bold31197'
+   (<strong id='bold31217'
 >lambda</strong> ()
       (run-process <font color="red">&quot;/usr/X11R6/bin/xterm&quot;</font> <font color="red">&quot;-display&quot;</font> <font color="red">&quot;:0&quot;</font> <font color="red">&quot;-e&quot;</font> <font color="red">&quot;telnet&quot;</font> <font color="red">&quot;localhost&quot;</font> 
 		   (number-&gt;string (socket-port-number s1)))
-      (<strong id='bold31204'
+      (<strong id='bold31224'
 >set!</strong> s2 (socket-accept s1))
       (display <font color="red">#&quot;\nWelcome on the socket REPL.\n\n&gt; &quot;</font> (socket-output s2))
-      (flush-output-port (socket-output s2)))<br/><br/>   <font color="#ffa600"><em id='it31206'
+      (flush-output-port (socket-output s2)))<br/><br/>   <font color="#ffa600"><em id='it31226'
 >;; Action: A toplevel like loop</em></font>
-   (<strong id='bold31208'
+   (<strong id='bold31228'
 >lambda</strong> ()
-      (<strong id='bold31209'
+      (<strong id='bold31229'
 >let</strong> loop ()
-	 (<strong id='bold31210'
+	 (<strong id='bold31230'
 >let</strong> ((obj (eval (read (socket-input s2)))))
 	    (fprint (socket-output s2) <font color="red">&quot;; Result: &quot;</font> obj)
 	    (display <font color="red">&quot;&gt; &quot;</font> (socket-output s2))
 	    (flush-output-port (socket-output s2))
-	    (loop))))<br/><br/>   <font color="#ffa600"><em id='it31213'
+	    (loop))))<br/><br/>   <font color="#ffa600"><em id='it31233'
 >;; Termination: We go here when </em></font>
-   <font color="#ffa600"><em id='it31215'
+   <font color="#ffa600"><em id='it31235'
 >;;     -a: an error occurs </em></font>
-   <font color="#ffa600"><em id='it31217'
+   <font color="#ffa600"><em id='it31237'
 >;;     -b: connection is closed</em></font>
-   (<strong id='bold31219'
+   (<strong id='bold31239'
 >lambda</strong> ()
       (print <font color="red">#&quot;Shutdown ......\n&quot;</font>)
       (socket-close s2)
@@ -10298,17 +10298,17 @@ a client-server architecture and it uses unbufferized
 First, here is the code of the client:<br/><br/><center id='center13624'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13622'
->(<font color="#1919af"><strong id='bold31221'
->module</strong></font> <font color="#1919af"><strong id='bold31223'
->client</strong></font>)<br/><br/>(<strong id='bold31225'
->let*</strong> ((s (make-client-socket <font color="red">&quot;localhost&quot;</font> 8080 <strong id='bold31227'
+>(<font color="#1919af"><strong id='bold31241'
+>module</strong></font> <font color="#1919af"><strong id='bold31243'
+>client</strong></font>)<br/><br/>(<strong id='bold31245'
+>let*</strong> ((s (make-client-socket <font color="red">&quot;localhost&quot;</font> 8080 <strong id='bold31247'
 >:outbuf</strong> #f))
        (p (socket-output s)))
    (display <font color="red">&quot;string&quot;</font> p)
    (newline p)
    (display <font color="red">&quot;abc&quot;</font> p)
    (flush-output-port p)
-   (<strong id='bold31231'
+   (<strong id='bold31251'
 >let</strong> loop ()
       (loop)))
 </pre>
@@ -10318,15 +10318,15 @@ First, here is the code of the client:<br/><br/><center id='center13624'
 Then, here is the code of the server:<br/><br/><center id='center13635'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13633'
->(<font color="#1919af"><strong id='bold31232'
->module</strong></font> <font color="#1919af"><strong id='bold31234'
->server</strong></font>)<br/><br/>(<strong id='bold31236'
+>(<font color="#1919af"><strong id='bold31252'
+>module</strong></font> <font color="#1919af"><strong id='bold31254'
+>server</strong></font>)<br/><br/>(<strong id='bold31256'
 >let*</strong> ((s (make-server-socket 8080))
-       (s2 (socket-accept s <strong id='bold31237'
+       (s2 (socket-accept s <strong id='bold31257'
 >:inbuf</strong> #f)))
-   (<strong id='bold31239'
+   (<strong id='bold31259'
 >let</strong> ((pin (socket-input s2)))
-      (<strong id='bold31240'
+      (<strong id='bold31260'
 >let</strong> loop ()
          (display (read-char pin))
          (flush-output-port (current-output-port))
@@ -10339,21 +10339,21 @@ At, to conclude here the source code for a server waiting for multiple
 consecutive connections:<br/><br/><center id='center13648'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13646'
->(<font color="#6959cf"><strong id='bold31241'
->define</strong></font> (<font color="#6959cf"><strong id='bold31243'
+>(<font color="#6959cf"><strong id='bold31261'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31263'
 >main</strong></font> argv)
-   (<strong id='bold31245'
->let</strong> ((n (<strong id='bold31246'
+   (<strong id='bold31265'
+>let</strong> ((n (<strong id='bold31266'
 >if</strong> (pair? (cdr argv))
                 (string-&gt;integer (cadr argv))
                 10))
 	 (s (make-server-socket)))
       (print <font color="red">&quot;s: &quot;</font> s)
-      (<strong id='bold31248'
+      (<strong id='bold31268'
 >let</strong> loop ((i 0))
-         (<strong id='bold31249'
+         (<strong id='bold31269'
 >if</strong> (&lt;fx i n)
-             (<strong id='bold31250'
+             (<strong id='bold31270'
 >let</strong> ((s2 (socket-accept s)))
 		(print <font color="red">&quot;i: &quot;</font> i <font color="red">&quot; &quot;</font> s2)
 		(print (read-line (socket-input s2)))
@@ -10734,20 +10734,20 @@ using the <code id='code13957'
 >library-load</code> function (see <a href="bigloo-30.html#Bigloo-Libraries" class="inbound">Bigloo Libraries</a>).<br/><br/><center id='center13971'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog13969'
->(<font color="#1919af"><strong id='bold31253'
->module</strong></font> <font color="#1919af"><strong id='bold31255'
+>(<font color="#1919af"><strong id='bold31273'
+>module</strong></font> <font color="#1919af"><strong id='bold31275'
 >imap</strong></font>
-   (<font color="#1919af"><strong id='bold31257'
->library</strong></font> <font color="#1919af"><strong id='bold31259'
+   (<font color="#1919af"><strong id='bold31277'
+>library</strong></font> <font color="#1919af"><strong id='bold31279'
 >ssl</strong></font>)
-   (main main))<br/><br/>(<strong id='bold31261'
+   (main main))<br/><br/>(<strong id='bold31281'
 >let*</strong> ((s (make-ssl-client-socket <font color="red">&quot;localhost&quot;</font> 993))
        (p (socket-output s)))
    (display <font color="red">&quot;string&quot;</font> p)
    (newline p)
    (display <font color="red">&quot;abc&quot;</font> p)
    (flush-output-port p)
-   (<strong id='bold31265'
+   (<strong id='bold31285'
 >let</strong> loop ()
       (loop)))
 </pre>
@@ -10888,23 +10888,23 @@ using the <code id='code14068'
 >library-load</code> function (see <a href="bigloo-30.html#Bigloo-Libraries" class="inbound">Bigloo Libraries</a>).<br/><br/><center id='center14085'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog14083'
->(<font color="#1919af"><strong id='bold31266'
->module</strong></font> <font color="#1919af"><strong id='bold31268'
+>(<font color="#1919af"><strong id='bold31286'
+>module</strong></font> <font color="#1919af"><strong id='bold31288'
 >secure-echo</strong></font>
-   (<font color="#1919af"><strong id='bold31270'
->library</strong></font> <font color="#1919af"><strong id='bold31272'
->ssl</strong></font>))<br/><br/>(<strong id='bold31274'
+   (<font color="#1919af"><strong id='bold31290'
+>library</strong></font> <font color="#1919af"><strong id='bold31292'
+>ssl</strong></font>))<br/><br/>(<strong id='bold31294'
 >let*</strong> ((cert (read-certificate <font color="red">&quot;/etc/ssl/my_cert.crt&quot;</font>))
        (pkey (read-private-key <font color="red">&quot;/etc/ssl/my_key.pkey&quot;</font>))
        (cas (read-pem-file <font color="red">&quot;/etc/ssl/ca.cert&quot;</font>))
-       (s (make-ssl-server-socket 1055 <strong id='bold31278'
->:CAs</strong> cas <strong id='bold31280'
->:cert</strong> cert <strong id='bold31282'
+       (s (make-ssl-server-socket 1055 <strong id='bold31298'
+>:CAs</strong> cas <strong id='bold31300'
+>:cert</strong> cert <strong id='bold31302'
 >:pkey</strong> pkey))
        (cs (socket-accept s))
        (ip (socket-input cs))
        (op (socket-output cs)))
-   (<strong id='bold31284'
+   (<strong id='bold31304'
 >let</strong> loop ((e (read ip)))
       (when (not (eof-object? e))
          (write e op)
@@ -11061,17 +11061,17 @@ Creates a <code id='code14220'
 <center id='center14237'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog14235'
->(write (make-date <strong id='bold31285'
->:sec</strong> 0 <strong id='bold31287'
->:min</strong> 22 <strong id='bold31289'
->:hour</strong> 17 <strong id='bold31291'
->:day</strong> 5 <strong id='bold31293'
->:month</strong> 2 <strong id='bold31295'
->:year</strong> 2003 <strong id='bold31297'
+>(write (make-date <strong id='bold31305'
+>:sec</strong> 0 <strong id='bold31307'
+>:min</strong> 22 <strong id='bold31309'
+>:hour</strong> 17 <strong id='bold31311'
+>:day</strong> 5 <strong id='bold31313'
+>:month</strong> 2 <strong id='bold31315'
+>:year</strong> 2003 <strong id='bold31317'
 >:dst</strong> 0))
-  -| #&lt;date<strong id='bold31299'
->:Wed</strong> Feb  5 17<strong id='bold31301'
->:22</strong><strong id='bold31303'
+  -| #&lt;date<strong id='bold31319'
+>:Wed</strong> Feb  5 17<strong id='bold31321'
+>:22</strong><strong id='bold31323'
 >:00</strong> 2003&gt;
 </pre>
 </td></tr>
@@ -11099,9 +11099,9 @@ Creates a new date from the argument <code id='code14255'
 <center id='center14262'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
 <tr><td bgcolor="#ffffcc"><pre class="prog" id='prog14260'
->(date-copy (current-date) <strong id='bold31305'
->:sec</strong> 32 <strong id='bold31307'
->:min</strong> 24 <strong id='bold31309'
+>(date-copy (current-date) <strong id='bold31325'
+>:sec</strong> 32 <strong id='bold31327'
+>:min</strong> 24 <strong id='bold31329'
 >:day</strong> 5)
 </pre>
 </td></tr>
@@ -11409,7 +11409,22 @@ a Bigloo date object.
 Converts a Bigloo date into a string representation compliant with the RFC2822
 format.
 </td></tr>
-</tbody></table><br/><br/><br/>
+</tbody></table><br/>
+<table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
+<tr><td><a name="g14657" class="mark"></a><a name="iso8601-date->date" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14661" align="left" colspan="1"><strong id='bold14659'
+>iso8601-date-&gt;date</strong><em id='it14660'
+> string</em></td><td id="tc14662" align="right" colspan="1">bigloo procedure</td></tr>
+</tbody></table>
+<a name="g14666" class="mark"></a><a name="iso8601-parse-date" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14670" align="left" colspan="1"><strong id='bold14668'
+>iso8601-parse-date</strong><em id='it14669'
+> input-port</em></td><td id="tc14671" align="right" colspan="1">bigloo procedure</td></tr>
+</tbody></table>
+Parses ISO8601 string representing a date. These functions produce
+a Bigloo date object.
+</td></tr>
+</tbody></table><br/><br/><br/><br/>
 
 </div><br>
 <!-- Digest -->
@@ -11417,111 +11432,111 @@ format.
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">6.9 Digest</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Digest" class="mark"></a><a name="g14657" class="mark"></a><a name="g14659" class="mark"></a><a name="g14661" class="mark"></a><a name="g14663" class="mark"></a><a name="g14665" class="mark"></a>
+<a name="Digest" class="mark"></a><a name="g14677" class="mark"></a><a name="g14679" class="mark"></a><a name="g14681" class="mark"></a><a name="g14683" class="mark"></a><a name="g14685" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14668" class="mark"></a><a name="base64-encode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14672" align="left" colspan="1"><strong id='bold14670'
->base64-encode</strong><em id='it14671'
-> string [padding 64]</em></td><td id="tc14673" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14688" class="mark"></a><a name="base64-encode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14692" align="left" colspan="1"><strong id='bold14690'
+>base64-encode</strong><em id='it14691'
+> string [padding 64]</em></td><td id="tc14693" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14677" class="mark"></a><a name="base64-decode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14681" align="left" colspan="1"><strong id='bold14679'
->base64-decode</strong><em id='it14680'
-> string [no-eof-padding]</em></td><td id="tc14682" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14697" class="mark"></a><a name="base64-decode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14701" align="left" colspan="1"><strong id='bold14699'
+>base64-decode</strong><em id='it14700'
+> string [no-eof-padding]</em></td><td id="tc14702" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14685" class="mark"></a>Encodes (respec. decodes) a string into a base64 representation.<br/><br/>When decoding, if the optional parameter <code id='code14689'
-><em id='it14688'
+<a name="g14705" class="mark"></a>Encodes (respec. decodes) a string into a base64 representation.<br/><br/>When decoding, if the optional parameter <code id='code14709'
+><em id='it14708'
 >no-eof-padding</em></code> is
-<code id='code14690'
+<code id='code14710'
 >#t</code>, the decoding success even if the input stream is not padded
-with <code id='code14691'
+with <code id='code14711'
 >=</code> characters.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14695" class="mark"></a><a name="base64-encode-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14699" align="left" colspan="1"><strong id='bold14697'
->base64-encode-port</strong><em id='it14698'
-> input-port output-port [padding 64]</em></td><td id="tc14700" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14715" class="mark"></a><a name="base64-encode-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14719" align="left" colspan="1"><strong id='bold14717'
+>base64-encode-port</strong><em id='it14718'
+> input-port output-port [padding 64]</em></td><td id="tc14720" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14704" class="mark"></a><a name="base64-decode-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14708" align="left" colspan="1"><strong id='bold14706'
->base64-decode-port</strong><em id='it14707'
-> input-port output-port [no-eof-padding]</em></td><td id="tc14709" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14724" class="mark"></a><a name="base64-decode-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14728" align="left" colspan="1"><strong id='bold14726'
+>base64-decode-port</strong><em id='it14727'
+> input-port output-port [no-eof-padding]</em></td><td id="tc14729" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14712" class="mark"></a>Encodes (respec. decodes) an input port into a base64 representation.<br/><br/>When decode succeeds, <code id='code14716'
-><em id='it14715'
->base64-decode-port</em></code> returns <code id='code14717'
+<a name="g14732" class="mark"></a>Encodes (respec. decodes) an input port into a base64 representation.<br/><br/>When decode succeeds, <code id='code14736'
+><em id='it14735'
+>base64-decode-port</em></code> returns <code id='code14737'
 >#t</code>, it
-returns <code id='code14718'
->#f</code> otherwise.<br/><br/>When decoding, if the optional parameter <code id='code14721'
-><em id='it14720'
+returns <code id='code14738'
+>#f</code> otherwise.<br/><br/>When decoding, if the optional parameter <code id='code14741'
+><em id='it14740'
 >no-eof-padding</em></code> is
-<code id='code14722'
+<code id='code14742'
 >#t</code>, the decoding success even if the input stream is not padded
-with <code id='code14723'
+with <code id='code14743'
 >=</code> characters.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14727" class="mark"></a><a name="pem-read-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14731" align="left" colspan="1"><strong id='bold14729'
->pem-read-file</strong><em id='it14730'
-> file-name</em></td><td id="tc14732" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14747" class="mark"></a><a name="pem-read-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14751" align="left" colspan="1"><strong id='bold14749'
+>pem-read-file</strong><em id='it14750'
+> file-name</em></td><td id="tc14752" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14736" class="mark"></a><a name="pem-decode-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14740" align="left" colspan="1"><strong id='bold14738'
->pem-decode-port</strong><em id='it14739'
-> input-port output-port</em></td><td id="tc14741" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14756" class="mark"></a><a name="pem-decode-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14760" align="left" colspan="1"><strong id='bold14758'
+>pem-decode-port</strong><em id='it14759'
+> input-port output-port</em></td><td id="tc14761" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Reads a PEM (Privacy Enhanced Mail) base64 encoded file.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14747" class="mark"></a><a name="md5sum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14751" align="left" colspan="1"><strong id='bold14749'
->md5sum</strong><em id='it14750'
-> obj</em></td><td id="tc14752" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14767" class="mark"></a><a name="md5sum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14771" align="left" colspan="1"><strong id='bold14769'
+>md5sum</strong><em id='it14770'
+> obj</em></td><td id="tc14772" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14756" class="mark"></a><a name="md5sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14760" align="left" colspan="1"><strong id='bold14758'
->md5sum-string</strong><em id='it14759'
-> string</em></td><td id="tc14761" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14776" class="mark"></a><a name="md5sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14780" align="left" colspan="1"><strong id='bold14778'
+>md5sum-string</strong><em id='it14779'
+> string</em></td><td id="tc14781" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14765" class="mark"></a><a name="md5sum-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14769" align="left" colspan="1"><strong id='bold14767'
->md5sum-mmap</strong><em id='it14768'
-> mmap</em></td><td id="tc14770" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14785" class="mark"></a><a name="md5sum-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14789" align="left" colspan="1"><strong id='bold14787'
+>md5sum-mmap</strong><em id='it14788'
+> mmap</em></td><td id="tc14790" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14774" class="mark"></a><a name="md5sum-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14778" align="left" colspan="1"><strong id='bold14776'
->md5sum-file</strong><em id='it14777'
-> string</em></td><td id="tc14779" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14794" class="mark"></a><a name="md5sum-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14798" align="left" colspan="1"><strong id='bold14796'
+>md5sum-file</strong><em id='it14797'
+> string</em></td><td id="tc14799" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14783" class="mark"></a><a name="md5sum-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14787" align="left" colspan="1"><strong id='bold14785'
->md5sum-port</strong><em id='it14786'
-> input-port</em></td><td id="tc14788" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14803" class="mark"></a><a name="md5sum-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14807" align="left" colspan="1"><strong id='bold14805'
+>md5sum-port</strong><em id='it14806'
+> input-port</em></td><td id="tc14808" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Computes MD5 message digest.<br/><br/>The function <code id='code14792'
+Computes MD5 message digest.<br/><br/>The function <code id='code14812'
 >md5sum</code> dispatches over its argument and invokes the
-ad-hoc function. That is, it invokes <code id='code14793'
+ad-hoc function. That is, it invokes <code id='code14813'
 >md5sum-string</code> if its 
-argument is a string, <code id='code14794'
+argument is a string, <code id='code14814'
 >md5sum-mmap</code> if it is a mmap, 
-<code id='code14795'
+<code id='code14815'
 >md5sum-port</code> if its argument is an input port.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14799" class="mark"></a><a name="hmac-md5sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14803" align="left" colspan="1"><strong id='bold14801'
->hmac-md5sum-string</strong><em id='it14802'
-> key string</em></td><td id="tc14804" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14819" class="mark"></a><a name="hmac-md5sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14823" align="left" colspan="1"><strong id='bold14821'
+>hmac-md5sum-string</strong><em id='it14822'
+> key string</em></td><td id="tc14824" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Computes the Hmac MD5 authentication:<br/><br/><center id='center14812'
+Computes the Hmac MD5 authentication:<br/><br/><center id='center14832'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog14810'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog14830'
 >(hmac-md5sum-string (make-string 16 #a011) <font color="red">&quot;Hi There&quot;</font>) 
   =&gt; <font color="red">&quot;9294727a3638bb1c13f48ef8158bfc9d&quot;</font>
 </pre>
@@ -11530,102 +11545,102 @@ Computes the Hmac MD5 authentication:<br/><br/><center id='center14812'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14816" class="mark"></a><a name="cram-md5sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14820" align="left" colspan="1"><strong id='bold14818'
->cram-md5sum-string</strong><em id='it14819'
-> user key string</em></td><td id="tc14821" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14836" class="mark"></a><a name="cram-md5sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14840" align="left" colspan="1"><strong id='bold14838'
+>cram-md5sum-string</strong><em id='it14839'
+> user key string</em></td><td id="tc14841" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Challenge-Response Authentication Mechanism as specified in RFC 2195.<br/><br/>The function <code id='code14825'
+Challenge-Response Authentication Mechanism as specified in RFC 2195.<br/><br/>The function <code id='code14845'
 >cram-md5sum-string</code> assumes that data is base64 encoded.
 The result is also base64 encoded.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14829" class="mark"></a><a name="sha1sum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14833" align="left" colspan="1"><strong id='bold14831'
->sha1sum</strong><em id='it14832'
-> obj</em></td><td id="tc14834" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14849" class="mark"></a><a name="sha1sum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14853" align="left" colspan="1"><strong id='bold14851'
+>sha1sum</strong><em id='it14852'
+> obj</em></td><td id="tc14854" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14838" class="mark"></a><a name="sha1sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14842" align="left" colspan="1"><strong id='bold14840'
->sha1sum-string</strong><em id='it14841'
-> string</em></td><td id="tc14843" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14858" class="mark"></a><a name="sha1sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14862" align="left" colspan="1"><strong id='bold14860'
+>sha1sum-string</strong><em id='it14861'
+> string</em></td><td id="tc14863" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14847" class="mark"></a><a name="sha1sum-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14851" align="left" colspan="1"><strong id='bold14849'
->sha1sum-mmap</strong><em id='it14850'
-> mmap</em></td><td id="tc14852" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14867" class="mark"></a><a name="sha1sum-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14871" align="left" colspan="1"><strong id='bold14869'
+>sha1sum-mmap</strong><em id='it14870'
+> mmap</em></td><td id="tc14872" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14856" class="mark"></a><a name="sha1sum-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14860" align="left" colspan="1"><strong id='bold14858'
->sha1sum-file</strong><em id='it14859'
-> string</em></td><td id="tc14861" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14876" class="mark"></a><a name="sha1sum-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14880" align="left" colspan="1"><strong id='bold14878'
+>sha1sum-file</strong><em id='it14879'
+> string</em></td><td id="tc14881" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14865" class="mark"></a><a name="sha1sum-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14869" align="left" colspan="1"><strong id='bold14867'
->sha1sum-port</strong><em id='it14868'
-> input-port</em></td><td id="tc14870" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14885" class="mark"></a><a name="sha1sum-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14889" align="left" colspan="1"><strong id='bold14887'
+>sha1sum-port</strong><em id='it14888'
+> input-port</em></td><td id="tc14890" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Computes SHA1 message digest.<br/><br/>The function <code id='code14874'
+Computes SHA1 message digest.<br/><br/>The function <code id='code14894'
 >sha1sum</code> dispatches over its argument and invokes the
-ad-hoc function. That is, it invokes <code id='code14875'
+ad-hoc function. That is, it invokes <code id='code14895'
 >sha1sum-string</code> if its 
-argument is a string, <code id='code14876'
+argument is a string, <code id='code14896'
 >sha1sum-mmap</code> if it is a mmap, 
-<code id='code14877'
+<code id='code14897'
 >sha1sum-port</code> if its argument is an input port.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14881" class="mark"></a><a name="hmac-sha1sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14885" align="left" colspan="1"><strong id='bold14883'
->hmac-sha1sum-string</strong><em id='it14884'
-> key string</em></td><td id="tc14886" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14901" class="mark"></a><a name="hmac-sha1sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14905" align="left" colspan="1"><strong id='bold14903'
+>hmac-sha1sum-string</strong><em id='it14904'
+> key string</em></td><td id="tc14906" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Computes the Hmac SHA1 authentication:
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14892" class="mark"></a><a name="sha256sum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14896" align="left" colspan="1"><strong id='bold14894'
->sha256sum</strong><em id='it14895'
-> obj</em></td><td id="tc14897" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14912" class="mark"></a><a name="sha256sum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14916" align="left" colspan="1"><strong id='bold14914'
+>sha256sum</strong><em id='it14915'
+> obj</em></td><td id="tc14917" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14901" class="mark"></a><a name="sha256sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14905" align="left" colspan="1"><strong id='bold14903'
->sha256sum-string</strong><em id='it14904'
-> string</em></td><td id="tc14906" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14921" class="mark"></a><a name="sha256sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14925" align="left" colspan="1"><strong id='bold14923'
+>sha256sum-string</strong><em id='it14924'
+> string</em></td><td id="tc14926" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14910" class="mark"></a><a name="sha256sum-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14914" align="left" colspan="1"><strong id='bold14912'
->sha256sum-mmap</strong><em id='it14913'
-> mmap</em></td><td id="tc14915" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14930" class="mark"></a><a name="sha256sum-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14934" align="left" colspan="1"><strong id='bold14932'
+>sha256sum-mmap</strong><em id='it14933'
+> mmap</em></td><td id="tc14935" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14919" class="mark"></a><a name="sha256sum-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14923" align="left" colspan="1"><strong id='bold14921'
->sha256sum-file</strong><em id='it14922'
-> string</em></td><td id="tc14924" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14939" class="mark"></a><a name="sha256sum-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14943" align="left" colspan="1"><strong id='bold14941'
+>sha256sum-file</strong><em id='it14942'
+> string</em></td><td id="tc14944" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g14928" class="mark"></a><a name="sha256sum-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14932" align="left" colspan="1"><strong id='bold14930'
->sha256sum-port</strong><em id='it14931'
-> input-port</em></td><td id="tc14933" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g14948" class="mark"></a><a name="sha256sum-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14952" align="left" colspan="1"><strong id='bold14950'
+>sha256sum-port</strong><em id='it14951'
+> input-port</em></td><td id="tc14953" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Computes SHA256 message digest.<br/><br/>The function <code id='code14937'
+Computes SHA256 message digest.<br/><br/>The function <code id='code14957'
 >sha256sum</code> dispatches over its argument and invokes the
-ad-hoc function. That is, it invokes <code id='code14938'
+ad-hoc function. That is, it invokes <code id='code14958'
 >sha256sum-string</code> if its 
-argument is a string, <code id='code14939'
+argument is a string, <code id='code14959'
 >sha256sum-mmap</code> if it is a mmap, 
-<code id='code14940'
+<code id='code14960'
 >sha256sum-port</code> if its argument is an input port.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g14944" class="mark"></a><a name="hmac-sha256sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc14948" align="left" colspan="1"><strong id='bold14946'
->hmac-sha256sum-string</strong><em id='it14947'
-> key string</em></td><td id="tc14949" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g14964" class="mark"></a><a name="hmac-sha256sum-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc14968" align="left" colspan="1"><strong id='bold14966'
+>hmac-sha256sum-string</strong><em id='it14967'
+> key string</em></td><td id="tc14969" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Computes the Hmac SHA256 authentication:
 </td></tr>
@@ -11637,129 +11652,129 @@ Computes the Hmac SHA256 authentication:
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">6.10 Cyclic Redundancy Check (CRC)</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="CRC" class="mark"></a><a name="g14955" class="mark"></a>
+<a name="CRC" class="mark"></a><a name="g14975" class="mark"></a>
 Bigloo provides several known cyclic redundancy checks as well as means to create custom
 checks.<br/><br/>Usually CRCs are executed starting with the leftmost bit inside a byte (big endian). However,
 especially for serial-port transmissions, a scheme where the least-significant bit is
 processed first is desirable. Bigloo's CRC procedures accept a key-parameter
-(<code id='code14958'
->:big-endian</code>) (by default <code id='code14959'
+(<code id='code14978'
+>:big-endian</code>) (by default <code id='code14979'
 >#t</code>) which allows to change this behavior.<br/><br/>The following CRCs (given with the associated polynomial) are provided:
-<ul class="itemize" id='itemize15015'
-><li><code id='code14961'
+<ul class="itemize" id='itemize15035'
+><li><code id='code14981'
 >itu-4</code>: 0x3
 </li>
-<li><code id='code14963'
+<li><code id='code14983'
 >epc-5</code>: 0x9
 </li>
-<li><code id='code14965'
+<li><code id='code14985'
 >itu-5</code>: 0x15
 </li>
-<li><code id='code14967'
+<li><code id='code14987'
 >usb-5</code>: 0x5
 </li>
-<li><code id='code14969'
+<li><code id='code14989'
 >itu-6</code>: 0x3
 </li>
-<li><code id='code14971'
+<li><code id='code14991'
 >7</code>: 0x9
 </li>
-<li><code id='code14973'
+<li><code id='code14993'
 >atm-8</code>: 0x7
 </li>
-<li><code id='code14975'
+<li><code id='code14995'
 >ccitt-8</code>: 0x8d
 </li>
-<li><code id='code14977'
+<li><code id='code14997'
 >dallas/maxim-8</code>: 0x31
 </li>
-<li><code id='code14979'
+<li><code id='code14999'
 >8</code>: 0xd5
 </li>
-<li><code id='code14981'
+<li><code id='code15001'
 >sae-j1850-8</code>: 0x1d
 </li>
-<li><code id='code14983'
+<li><code id='code15003'
 >10</code>: 0x233
 </li>
-<li><code id='code14985'
+<li><code id='code15005'
 >11</code>: 0x385
 </li>
-<li><code id='code14987'
+<li><code id='code15007'
 >12</code>: 0x80f
 </li>
-<li><code id='code14989'
+<li><code id='code15009'
 >can-15</code>: 0x4599
 </li>
-<li><code id='code14991'
+<li><code id='code15011'
 >ccitt-16</code>: 0x1021
 </li>
-<li><code id='code14993'
+<li><code id='code15013'
 >dnp-16</code>: 0x3d65
 </li>
-<li><code id='code14995'
+<li><code id='code15015'
 >ibm-16</code>: 0x8005
 </li>
-<li><code id='code14997'
+<li><code id='code15017'
 >24</code>: 0x5d6dcb
 </li>
-<li><code id='code14999'
+<li><code id='code15019'
 >radix-64-24</code>: 0x864cfb
 </li>
-<li><code id='code15001'
+<li><code id='code15021'
 >30</code>: 0x2030b9cf
 </li>
-<li><code id='code15003'
+<li><code id='code15023'
 >ieee-32</code>: 0x4c11db7
 </li>
-<li><code id='code15005'
+<li><code id='code15025'
 >c-32</code>: 0x1edc6f41
 </li>
-<li><code id='code15007'
+<li><code id='code15027'
 >k-32</code>: 0x741b8cd7
 </li>
-<li><code id='code15009'
+<li><code id='code15029'
 >q-32</code>: 0x814141ab
 </li>
-<li><code id='code15011'
+<li><code id='code15031'
 >iso-64</code>: 0x1b
 </li>
-<li><code id='code15013'
+<li><code id='code15033'
 >ecma-182-64</code>: 0x42f0e1eba9ea3693
 </li>
 </ul>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15017" class="mark"></a><a name="crc-names" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15021" align="left" colspan="1"><strong id='bold15019'
->crc-names</strong><em id='it15020'
-></em></td><td id="tc15022" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15037" class="mark"></a><a name="crc-names" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15041" align="left" colspan="1"><strong id='bold15039'
+>crc-names</strong><em id='it15040'
+></em></td><td id="tc15042" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns a list of all provided CRCs (<code id='code15025'
->itu-4</code>, <code id='code15026'
+Returns a list of all provided CRCs (<code id='code15045'
+>itu-4</code>, <code id='code15046'
 >epc-5</code>, etc.).
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15030" class="mark"></a><a name="crc-polynomial" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15034" align="left" colspan="1"><strong id='bold15032'
->crc-polynomial</strong><em id='it15033'
-> name</em></td><td id="tc15035" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15050" class="mark"></a><a name="crc-polynomial" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15054" align="left" colspan="1"><strong id='bold15052'
+>crc-polynomial</strong><em id='it15053'
+> name</em></td><td id="tc15055" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15039" class="mark"></a><a name="crc-polynomial-le" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15043" align="left" colspan="1"><strong id='bold15041'
->crc-polynomial-le</strong><em id='it15042'
-> name</em></td><td id="tc15044" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15059" class="mark"></a><a name="crc-polynomial-le" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15063" align="left" colspan="1"><strong id='bold15061'
+>crc-polynomial-le</strong><em id='it15062'
+> name</em></td><td id="tc15064" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the polynomial for the given name. The <code id='code15047'
+Returns the polynomial for the given name. The <code id='code15067'
 >-le</code> variant returns the
-little endian polynomial.<br/><br/><center id='center15051'
+little endian polynomial.<br/><br/><center id='center15071'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15049'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15069'
 >(crc-polynomial 'ieee-32)
-    -| #e79764439 <font color="#ffa600"><em id='it31313'
+    -| #e79764439 <font color="#ffa600"><em id='it31333'
 >;; == #ex4c11bd7</em></font>
 (crc-polynomial 24)
-    -| 6122955    <font color="#ffa600"><em id='it31315'
+    -| 6122955    <font color="#ffa600"><em id='it31335'
 >;; == #x5d6dcb</em></font>
 </pre>
 </td></tr>
@@ -11767,68 +11782,68 @@ little endian polynomial.<br/><br/><center id='center15051'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15055" class="mark"></a><a name="crc-length" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15059" align="left" colspan="1"><strong id='bold15057'
->crc-length</strong><em id='it15058'
-> name</em></td><td id="tc15060" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15075" class="mark"></a><a name="crc-length" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15079" align="left" colspan="1"><strong id='bold15077'
+>crc-length</strong><em id='it15078'
+> name</em></td><td id="tc15080" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Returns the length of the specified CRC.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15066" class="mark"></a><a name="crc" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15070" align="left" colspan="1"><strong id='bold15068'
->crc</strong><em id='it15069'
-> name obj [:init 0] [:final-xor 0] [:big-endian? #t]</em></td><td id="tc15071" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15086" class="mark"></a><a name="crc" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15090" align="left" colspan="1"><strong id='bold15088'
+>crc</strong><em id='it15089'
+> name obj [:init 0] [:final-xor 0] [:big-endian? #t]</em></td><td id="tc15091" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15075" class="mark"></a><a name="crc-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15079" align="left" colspan="1"><strong id='bold15077'
->crc-string</strong><em id='it15078'
-> name str::bstring [:init 0] [:final-xor 0] [:big-endian? #t]</em></td><td id="tc15080" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15095" class="mark"></a><a name="crc-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15099" align="left" colspan="1"><strong id='bold15097'
+>crc-string</strong><em id='it15098'
+> name str::bstring [:init 0] [:final-xor 0] [:big-endian? #t]</em></td><td id="tc15100" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15084" class="mark"></a><a name="crc-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15088" align="left" colspan="1"><strong id='bold15086'
->crc-port</strong><em id='it15087'
-> name p::input-port [:init 0] [:final-xor 0] [:big-endian? #t]</em></td><td id="tc15089" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15104" class="mark"></a><a name="crc-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15108" align="left" colspan="1"><strong id='bold15106'
+>crc-port</strong><em id='it15107'
+> name p::input-port [:init 0] [:final-xor 0] [:big-endian? #t]</em></td><td id="tc15109" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15093" class="mark"></a><a name="crc-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15097" align="left" colspan="1"><strong id='bold15095'
->crc-mmap</strong><em id='it15096'
-> name m::mmap [init 0] [:final-xor 0] [big-endian? #t]</em></td><td id="tc15098" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15113" class="mark"></a><a name="crc-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15117" align="left" colspan="1"><strong id='bold15115'
+>crc-mmap</strong><em id='it15116'
+> name m::mmap [init 0] [:final-xor 0] [big-endian? #t]</em></td><td id="tc15118" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15102" class="mark"></a><a name="crc-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15106" align="left" colspan="1"><strong id='bold15104'
->crc-file</strong><em id='it15105'
-> name f::bstring [init 0] [:final-xor 0] [big-endian? #t]</em></td><td id="tc15107" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15122" class="mark"></a><a name="crc-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15126" align="left" colspan="1"><strong id='bold15124'
+>crc-file</strong><em id='it15125'
+> name f::bstring [init 0] [:final-xor 0] [big-endian? #t]</em></td><td id="tc15127" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Computes the CRC of the given object. <code id='code15111'
-><em id='it15110'
+Computes the CRC of the given object. <code id='code15131'
+><em id='it15130'
 >name</em></code> must be one of the
-provided CRC-algorithms. The optional parameter <code id='code15113'
-><em id='it15112'
+provided CRC-algorithms. The optional parameter <code id='code15133'
+><em id='it15132'
 >init</em></code> can be used to
-initialize the CRC. The result of the CRC will be XORed with <code id='code15115'
-><em id='it15114'
+initialize the CRC. The result of the CRC will be XORed with <code id='code15135'
+><em id='it15134'
 >final-xor</em></code>. The result
-will however be of the CRC's length. That is, even if <code id='code15117'
-><em id='it15116'
+will however be of the CRC's length. That is, even if <code id='code15137'
+><em id='it15136'
 >final-xor</em></code> is bigger then
 the CRC's length only the relevant bits will be used to perform the final XOR.<br/><br/>The result will be a number. Depending on the CRC this number can be a fixnum,
-an elong, or an llong.<br/><br/>The following example mimicks the UNIX <code id='code15120'
+an elong, or an llong.<br/><br/>The following example mimicks the UNIX <code id='code15140'
 >cksum</code> command:
-<center id='center15130'
+<center id='center15150'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15128'
->(<font color="#1919af"><strong id='bold31317'
->module</strong></font> <font color="#1919af"><strong id='bold31319'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15148'
+>(<font color="#1919af"><strong id='bold31337'
+>module</strong></font> <font color="#1919af"><strong id='bold31339'
 >cksum</strong></font> (main main))
-(<font color="#6959cf"><strong id='bold31321'
->define</strong></font> (<font color="#6959cf"><strong id='bold31323'
+(<font color="#6959cf"><strong id='bold31341'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31343'
 >main</strong></font> args)
-  (<strong id='bold31325'
+  (<strong id='bold31345'
 >let</strong> loop ((sum (crc-file 'ieee-32 (cadr args)))
              (size (elong-&gt;fixnum (file-size (cadr args)))))
-    (<strong id='bold31326'
+    (<strong id='bold31346'
 >if</strong> (=fx size 0)
         (printf <font color="red">&quot;~a ~a ~a\n&quot;</font>
                 (bit-andllong #lxFFFFFFFF (elong-&gt;llong (bit-notelong sum)))
@@ -11836,7 +11851,7 @@ an elong, or an llong.<br/><br/>The following example mimicks the UNIX <code id=
                 (cadr args))
         (loop (crc-string 'ieee-32
                           (string (integer-&gt;char-ur (bit-and size #xFF)))
-                          <strong id='bold31328'
+                          <strong id='bold31348'
 >:init</strong> sum)
 	      (bit-rsh size 8)))))
 </pre>
@@ -11844,13 +11859,13 @@ an elong, or an llong.<br/><br/>The following example mimicks the UNIX <code id=
 </tbody></table></center>
 
 In the following example we implement OpenPGP's CRC-24:
-<center id='center15135'
+<center id='center15155'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15133'
->(<font color="#6959cf"><strong id='bold31330'
->define</strong></font> (<font color="#6959cf"><strong id='bold31332'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15153'
+>(<font color="#6959cf"><strong id='bold31350'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31352'
 >openpgp-crc-24</strong></font> str)
-  (crc-string 'radix-64-24 str <strong id='bold31334'
+  (crc-string 'radix-64-24 str <strong id='bold31354'
 >:init</strong> #xB704CE))
 </pre>
 </td></tr>
@@ -11859,21 +11874,21 @@ In the following example we implement OpenPGP's CRC-24:
 Be aware that many common CRCs use -1 as init value and invert the result. For
 compatibility with other implementations you might want to try
 one of the following alternatives:
-<center id='center15145'
+<center id='center15165'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15143'
->(<font color="#6959cf"><strong id='bold31336'
->define</strong></font> (<font color="#6959cf"><strong id='bold31338'
->alt1</strong></font> name obj) (crc name obj <strong id='bold31340'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15163'
+>(<font color="#6959cf"><strong id='bold31356'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31358'
+>alt1</strong></font> name obj) (crc name obj <strong id='bold31360'
 >:init</strong> -1))
-(<font color="#6959cf"><strong id='bold31342'
->define</strong></font> (<font color="#6959cf"><strong id='bold31344'
->alt2</strong></font> name obj) (crc name obj <strong id='bold31346'
+(<font color="#6959cf"><strong id='bold31362'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31364'
+>alt2</strong></font> name obj) (crc name obj <strong id='bold31366'
 >:final-xor</strong> -1))
-(<font color="#6959cf"><strong id='bold31348'
->define</strong></font> (<font color="#6959cf"><strong id='bold31350'
->alt3</strong></font> name obj) (crc name obj <strong id='bold31352'
->:init</strong> -1 <strong id='bold31354'
+(<font color="#6959cf"><strong id='bold31368'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31370'
+>alt3</strong></font> name obj) (crc name obj <strong id='bold31372'
+>:init</strong> -1 <strong id='bold31374'
 >:final-xor</strong> -1))
 </pre>
 </td></tr>
@@ -11883,91 +11898,91 @@ one of the following alternatives:
 </tbody></table><br/>
 Bigloo provides means to create additional CRCs: one can either simply provide
 a new polynomial or use Bigloo's low level functions.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15150" class="mark"></a><a name="register-crc!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15154" align="left" colspan="1"><strong id='bold15152'
->register-crc!</strong><em id='it15153'
-> name poly len</em></td><td id="tc15155" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15170" class="mark"></a><a name="register-crc!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15174" align="left" colspan="1"><strong id='bold15172'
+>register-crc!</strong><em id='it15173'
+> name poly len</em></td><td id="tc15175" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Adds the given CRC to Bigloo's list. Name can be of any type (<code id='code15158'
+Adds the given CRC to Bigloo's list. Name can be of any type (<code id='code15178'
 >crc</code> will
-use <code id='code15159'
+use <code id='code15179'
 >assoc</code> to find it in its list). The polynomial can be either a
-fixnum, an elong or an llong. <code id='code15161'
-><em id='it15160'
+fixnum, an elong or an llong. <code id='code15181'
+><em id='it15180'
 >len</em></code> should give the CRCs size. The
-type of the polynomial and the given <code id='code15163'
-><em id='it15162'
+type of the polynomial and the given <code id='code15183'
+><em id='it15182'
 >len</em></code> must be consistent. On a 32 bit
 machine the following CRC registration would be invalid and yield undefined
-results:<br/><br/><center id='center15167'
+results:<br/><br/><center id='center15187'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15165'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15185'
 >(register-crc! 'invalid 1337 55)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-As 55 is bigger than the fixnum's bit-size calling <code id='code15168'
+As 55 is bigger than the fixnum's bit-size calling <code id='code15188'
 >crc</code> with this CRC will
 yield undefinde results.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15172" class="mark"></a><a name="crc-long::long" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15176" align="left" colspan="1"><strong id='bold15174'
->crc-long::long</strong><em id='it15175'
-> c::char crc::long poly::long len::long</em></td><td id="tc15177" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15192" class="mark"></a><a name="crc-long::long" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15196" align="left" colspan="1"><strong id='bold15194'
+>crc-long::long</strong><em id='it15195'
+> c::char crc::long poly::long len::long</em></td><td id="tc15197" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15181" class="mark"></a><a name="crc-elong::elong" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15185" align="left" colspan="1"><strong id='bold15183'
->crc-elong::elong</strong><em id='it15184'
-> c::char crc::elong poly::elong len::long</em></td><td id="tc15186" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15201" class="mark"></a><a name="crc-elong::elong" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15205" align="left" colspan="1"><strong id='bold15203'
+>crc-elong::elong</strong><em id='it15204'
+> c::char crc::elong poly::elong len::long</em></td><td id="tc15206" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15190" class="mark"></a><a name="crc-llong::llong" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15194" align="left" colspan="1"><strong id='bold15192'
->crc-llong::llong</strong><em id='it15193'
-> c::char crc::llong poly::llong len::long</em></td><td id="tc15195" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15210" class="mark"></a><a name="crc-llong::llong" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15214" align="left" colspan="1"><strong id='bold15212'
+>crc-llong::llong</strong><em id='it15213'
+> c::char crc::llong poly::llong len::long</em></td><td id="tc15215" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15199" class="mark"></a><a name="crc-long-le::long" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15203" align="left" colspan="1"><strong id='bold15201'
->crc-long-le::long</strong><em id='it15202'
-> c::char crc::long poly::long len::long</em></td><td id="tc15204" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15219" class="mark"></a><a name="crc-long-le::long" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15223" align="left" colspan="1"><strong id='bold15221'
+>crc-long-le::long</strong><em id='it15222'
+> c::char crc::long poly::long len::long</em></td><td id="tc15224" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15208" class="mark"></a><a name="crc-elong-le::elong" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15212" align="left" colspan="1"><strong id='bold15210'
->crc-elong-le::elong</strong><em id='it15211'
-> c::char crc::elong poly::elong len::long</em></td><td id="tc15213" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15228" class="mark"></a><a name="crc-elong-le::elong" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15232" align="left" colspan="1"><strong id='bold15230'
+>crc-elong-le::elong</strong><em id='it15231'
+> c::char crc::elong poly::elong len::long</em></td><td id="tc15233" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15217" class="mark"></a><a name="crc-llong-le::llong" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15221" align="left" colspan="1"><strong id='bold15219'
->crc-llong-le::llong</strong><em id='it15220'
-> c::char crc::llong poly::llong len::long</em></td><td id="tc15222" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15237" class="mark"></a><a name="crc-llong-le::llong" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15241" align="left" colspan="1"><strong id='bold15239'
+>crc-llong-le::llong</strong><em id='it15240'
+> c::char crc::llong poly::llong len::long</em></td><td id="tc15242" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 These function perform a CRC operation on one byte. The previously described functions
 are based on these low level functions. The result of all the low level functions
 will return values that are not cut to the correct length. Usually a crc is done in
-a loop, and one needs to <code id='code15225'
+a loop, and one needs to <code id='code15245'
 >bit-and</code> only when returning the result.
-Polynomials can be given with or without the high-order bit.<br/><br/>For instance we could implement <code id='code15227'
+Polynomials can be given with or without the high-order bit.<br/><br/>For instance we could implement <code id='code15247'
 >openpgp-crc24</code> as follows:
-<center id='center15235'
+<center id='center15255'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15233'
->(<font color="#6959cf"><strong id='bold31356'
->define</strong></font> <font color="#6959cf"><strong id='bold31358'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15253'
+>(<font color="#6959cf"><strong id='bold31376'
+>define</strong></font> <font color="#6959cf"><strong id='bold31378'
 >*openpgp-init*</strong></font> #xB704CE)
-(<font color="#6959cf"><strong id='bold31360'
->define</strong></font> <font color="#6959cf"><strong id='bold31362'
+(<font color="#6959cf"><strong id='bold31380'
+>define</strong></font> <font color="#6959cf"><strong id='bold31382'
 >*radix-64-24-poly*</strong></font> #x864CFB)
-(<font color="#6959cf"><strong id='bold31364'
->define</strong></font> (<font color="#6959cf"><strong id='bold31366'
+(<font color="#6959cf"><strong id='bold31384'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31386'
 >openpgp-crc-24</strong></font> str)
-  (<strong id='bold31368'
+  (<strong id='bold31388'
 >let</strong> loop ((i 0)
              (crc *openpgp-init*))
-    (<strong id='bold31369'
+    (<strong id='bold31389'
 >if</strong> (=fx i (string-length str))
-        (bit-and crc #xFFFFFF) <font color="#ffa600"><em id='it31370'
+        (bit-and crc #xFFFFFF) <font color="#ffa600"><em id='it31390'
 >;; cut to correct length (24 bits)</em></font>
         (loop (+fx i 1)
               (crc-long (string-ref str i) crc *radix-64-24-poly* 24)))))
@@ -11977,10 +11992,10 @@ Polynomials can be given with or without the high-order bit.<br/><br/>For instan
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15239" class="mark"></a><a name="crc-polynomial-be->le" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15243" align="left" colspan="1"><strong id='bold15241'
->crc-polynomial-be-&gt;le</strong><em id='it15242'
-> len polynomial</em></td><td id="tc15244" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15259" class="mark"></a><a name="crc-polynomial-be->le" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15263" align="left" colspan="1"><strong id='bold15261'
+>crc-polynomial-be-&gt;le</strong><em id='it15262'
+> len polynomial</em></td><td id="tc15264" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Returns the little endian variant of a given polynomial.
 </td></tr>
@@ -11992,7 +12007,7 @@ Returns the little endian variant of a given polynomial.
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">6.11 Internet</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Internet" class="mark"></a><a name="g15249" class="mark"></a><a name="g15251" class="mark"></a><a name="g15253" class="mark"></a>
+<a name="Internet" class="mark"></a><a name="g15269" class="mark"></a><a name="g15271" class="mark"></a><a name="g15273" class="mark"></a>
 This section presents the Bigloo function aimed at helping internet
 programming. <br/><br/>
 </div><br>
@@ -12003,16 +12018,16 @@ programming. <br/><br/>
 </div><div class="section">
 <a name="URLs" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15257" class="mark"></a><a name="url-parse" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15261" align="left" colspan="1"><strong id='bold15259'
->url-parse</strong><em id='it15260'
-> url</em></td><td id="tc15262" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15277" class="mark"></a><a name="url-parse" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15281" align="left" colspan="1"><strong id='bold15279'
+>url-parse</strong><em id='it15280'
+> url</em></td><td id="tc15282" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The argument <code id='code15266'
-><em id='it15265'
+The argument <code id='code15286'
+><em id='it15285'
 >url</em></code> can either be a string or an input-port. The function
-<code id='code15267'
->url-parse</code> parses the url and returns four values:<br/><br/><ul class="itemize" id='itemize15274'
+<code id='code15287'
+>url-parse</code> parses the url and returns four values:<br/><br/><ul class="itemize" id='itemize15294'
 ><li>the protocol,
 </li>
 <li>the optional user info,
@@ -12025,16 +12040,16 @@ The argument <code id='code15266'
 </li>
 </ul>
 Example
-<center id='center15283'
+<center id='center15303'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15281'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15301'
 >(multiple-value-bind (protocol uinfo host port abspath)
    (url-parse <font color="red">&quot;http://www.inria.fr/sophia/teams/indes/index.html&quot;</font>)
    (list protocol uinfo host port abspath))
       =&gt; (<font color="red">&quot;http&quot;</font> #f <font color="red">&quot;www.inria.fr&quot;</font> 80 &quot;/sophia/teams/indes/index.html'')
 (multiple-value-bind (protocol uinfo host port abspath)
-   (url-parse &quot;https<strong id='bold31375'
->://foo</strong><strong id='bold31377'
+   (url-parse &quot;https<strong id='bold31395'
+>://foo</strong><strong id='bold31397'
 >:bar</strong>&#x40;www.inria.fr/sophia/teams/indes/index.html&quot;)
    (list protocol uinfo))
       =&gt; (<font color="red">&quot;https&quot;</font> &quot;foo&#x40;bar&quot;)
@@ -12044,44 +12059,44 @@ Example
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15287" class="mark"></a><a name="url-sans-protocol-parse" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15291" align="left" colspan="1"><strong id='bold15289'
->url-sans-protocol-parse</strong><em id='it15290'
-> url protocol</em></td><td id="tc15292" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15307" class="mark"></a><a name="url-sans-protocol-parse" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15311" align="left" colspan="1"><strong id='bold15309'
+>url-sans-protocol-parse</strong><em id='it15310'
+> url protocol</em></td><td id="tc15312" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 
-The argument <code id='code15296'
-><em id='it15295'
->url</em></code> can either be a string or an input-port.<br/><br/>This function behaves as <code id='code15298'
+The argument <code id='code15316'
+><em id='it15315'
+>url</em></code> can either be a string or an input-port.<br/><br/>This function behaves as <code id='code15318'
 >url-parse</code> except it assumes that the protocol
 part of the url has already been extracted from the URI. It is explicitly
-provided using the <code id='code15300'
-><em id='it15299'
+provided using the <code id='code15320'
+><em id='it15319'
 >protocol</em></code> argument.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15304" class="mark"></a><a name="http-url-parse" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15308" align="left" colspan="1"><strong id='bold15306'
->http-url-parse</strong><em id='it15307'
-> url</em></td><td id="tc15309" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15324" class="mark"></a><a name="http-url-parse" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15328" align="left" colspan="1"><strong id='bold15326'
+>http-url-parse</strong><em id='it15327'
+> url</em></td><td id="tc15329" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The argument <code id='code15313'
-><em id='it15312'
+The argument <code id='code15333'
+><em id='it15332'
 >url</em></code> can either be a string or an input-port. As 
-<code id='code15314'
+<code id='code15334'
 >url-parse</code>, it returns four values.<br/><br/>This function parses URL found in HTTP GET responses.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15319" class="mark"></a><a name="url-path-encode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15323" align="left" colspan="1"><strong id='bold15321'
->url-path-encode</strong><em id='it15322'
-> path</em></td><td id="tc15324" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15339" class="mark"></a><a name="url-path-encode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15343" align="left" colspan="1"><strong id='bold15341'
+>url-path-encode</strong><em id='it15342'
+> path</em></td><td id="tc15344" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Encode a path that can be used in valid URL.<br/><br/><center id='center15336'
+Encode a path that can be used in valid URL.<br/><br/><center id='center15356'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15334'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15354'
 >(url-path-encode <font color="red">&quot;/tmp/foo&quot;</font>) =&gt; <font color="red">&quot;/tmp/foo&quot;</font>
 (url-path-encode <font color="red">&quot;/tmp/foo&amp;bar&quot;</font>) =&gt; <font color="red">&quot;/tmp/foo%26bar&quot;</font>
 (url-path-encode <font color="red">&quot;http:///tmp/foo&quot;</font>) =&gt; <font color="red">&quot;http%3A//tmp/foo&quot;</font>
@@ -12092,24 +12107,24 @@ Encode a path that can be used in valid URL.<br/><br/><center id='center15336'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15340" class="mark"></a><a name="url-encode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15344" align="left" colspan="1"><strong id='bold15342'
->url-encode</strong><em id='it15343'
-> url</em></td><td id="tc15345" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15360" class="mark"></a><a name="url-encode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15364" align="left" colspan="1"><strong id='bold15362'
+>url-encode</strong><em id='it15363'
+> url</em></td><td id="tc15365" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15349" class="mark"></a><a name="uri-encode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15353" align="left" colspan="1"><strong id='bold15351'
->uri-encode</strong><em id='it15352'
-> url</em></td><td id="tc15354" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15369" class="mark"></a><a name="uri-encode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15373" align="left" colspan="1"><strong id='bold15371'
+>uri-encode</strong><em id='it15372'
+> url</em></td><td id="tc15374" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15358" class="mark"></a><a name="uri-encode-component" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15362" align="left" colspan="1"><strong id='bold15360'
->uri-encode-component</strong><em id='it15361'
-> url</em></td><td id="tc15363" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15378" class="mark"></a><a name="uri-encode-component" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15382" align="left" colspan="1"><strong id='bold15380'
+>uri-encode-component</strong><em id='it15381'
+> url</em></td><td id="tc15383" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Encode a URL by removing any illegal character.<br/><br/><center id='center15373'
+Encode a URL by removing any illegal character.<br/><br/><center id='center15393'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15371'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15391'
 >(url-encode <font color="red">&quot;http:///tmp/foo&quot;</font>) =&gt; <font color="red">&quot;http://tmp:80/foo&quot;</font>
 (url-encode <font color="red">&quot;http:///tmp/foo&amp;bar&quot;</font>) =&gt; <font color="red">&quot;http://tmp:80/foo%26&quot;</font>
 </pre>
@@ -12119,39 +12134,39 @@ Encode a URL by removing any illegal character.<br/><br/><center id='center15373
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15377" class="mark"></a><a name="url-decode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15381" align="left" colspan="1"><strong id='bold15379'
->url-decode</strong><em id='it15380'
-> url</em></td><td id="tc15382" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15397" class="mark"></a><a name="url-decode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15401" align="left" colspan="1"><strong id='bold15399'
+>url-decode</strong><em id='it15400'
+> url</em></td><td id="tc15402" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15386" class="mark"></a><a name="url-decode!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15390" align="left" colspan="1"><strong id='bold15388'
->url-decode!</strong><em id='it15389'
-> url</em></td><td id="tc15391" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15406" class="mark"></a><a name="url-decode!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15410" align="left" colspan="1"><strong id='bold15408'
+>url-decode!</strong><em id='it15409'
+> url</em></td><td id="tc15411" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15395" class="mark"></a><a name="uri-decode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15399" align="left" colspan="1"><strong id='bold15397'
->uri-decode</strong><em id='it15398'
-> url</em></td><td id="tc15400" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15415" class="mark"></a><a name="uri-decode" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15419" align="left" colspan="1"><strong id='bold15417'
+>uri-decode</strong><em id='it15418'
+> url</em></td><td id="tc15420" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15404" class="mark"></a><a name="uri-decode!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15408" align="left" colspan="1"><strong id='bold15406'
->uri-decode!</strong><em id='it15407'
-> url</em></td><td id="tc15409" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15424" class="mark"></a><a name="uri-decode!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15428" align="left" colspan="1"><strong id='bold15426'
+>uri-decode!</strong><em id='it15427'
+> url</em></td><td id="tc15429" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15413" class="mark"></a><a name="uri-decode-component" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15417" align="left" colspan="1"><strong id='bold15415'
->uri-decode-component</strong><em id='it15416'
-> url</em></td><td id="tc15418" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15433" class="mark"></a><a name="uri-decode-component" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15437" align="left" colspan="1"><strong id='bold15435'
+>uri-decode-component</strong><em id='it15436'
+> url</em></td><td id="tc15438" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15422" class="mark"></a><a name="uri-decode-component!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15426" align="left" colspan="1"><strong id='bold15424'
->uri-decode-component!</strong><em id='it15425'
-> url</em></td><td id="tc15427" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15442" class="mark"></a><a name="uri-decode-component!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15446" align="left" colspan="1"><strong id='bold15444'
+>uri-decode-component!</strong><em id='it15445'
+> url</em></td><td id="tc15447" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Decode a URL. The function <code id='code15430'
+Decode a URL. The function <code id='code15450'
 >url-decode!</code> may return its argument
-unmodified if no decoding is for the URL.<br/><br/>The variants <code id='code15432'
+unmodified if no decoding is for the URL.<br/><br/>The variants <code id='code15452'
 >-component</code> treat do not escape URI reserved characters
 (i.e., #, /, ?, :, &#x40;, &amp;, =, +, and $).
 </td></tr>
@@ -12163,10 +12178,10 @@ unmodified if no decoding is for the URL.<br/><br/>The variants <code id='code15
 </div><div class="section">
 <a name="HTTP" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15437" class="mark"></a><a name="http" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15441" align="left" colspan="1"><strong id='bold15439'
->http</strong><em id='it15440'
-> [:in #f] [:out #f] [:socket #f]</em></td><td id="tc15442" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15457" class="mark"></a><a name="http" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15461" align="left" colspan="1"><strong id='bold15459'
+>http</strong><em id='it15460'
+> [:in #f] [:out #f] [:socket #f]</em></td><td id="tc15462" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
                                [:protocol 'http] [:method 'get]
                                [:timeout 0] [:proxy #f]
@@ -12180,51 +12195,51 @@ unmodified if no decoding is for the URL.<br/><br/>The variants <code id='code15
                                [:header '((user-agent: &quot;Mozilla/5.0&quot;))]
                                [:args '()]
                                [:body #f]<br/><br/>Opens an HTTP connection. Returns a socket.<br/><br/>It is an error to specify a header twice. In particular, it is illegal
-to re-define keyword-ed arguments in the <code id='code15448'
-><em id='it15447'
+to re-define keyword-ed arguments in the <code id='code15468'
+><em id='it15467'
 >:header</em></code> list. For instance,
-it is illegal to include in the <code id='code15449'
+it is illegal to include in the <code id='code15469'
 >:header</code> actual list value a 
-value for the <code id='code15450'
->Connection</code> HTTP connection.<br/><br/><center id='center15483'
+value for the <code id='code15470'
+>Connection</code> HTTP connection.<br/><br/><center id='center15503'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15481'
->(<font color="#6959cf"><strong id='bold31390'
->define</strong></font> (<font color="#6959cf"><strong id='bold31392'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15501'
+>(<font color="#6959cf"><strong id='bold31410'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31412'
 >wget</strong></font> url)
    
-   (<font color="#6959cf"><strong id='bold31394'
->define</strong></font> (<font color="#6959cf"><strong id='bold31396'
+   (<font color="#6959cf"><strong id='bold31414'
+>define</strong></font> (<font color="#6959cf"><strong id='bold31416'
 >parser</strong></font> ip status-code header clen tenc)
-      (<strong id='bold31398'
+      (<strong id='bold31418'
 >if</strong> (not (and (&gt;=fx status-code 200) (&lt;=fx status-code 299)))
-	  (<strong id='bold31399'
+	  (<strong id='bold31419'
 >case</strong> status-code
 	     ((401)
-	      (<font color="red"><strong id='bold31400'
->raise</strong></font> (<strong id='bold31402'
->instantiate</strong><font color="#00cf00"><strong id='bold31403'
+	      (<font color="red"><strong id='bold31420'
+>raise</strong></font> (<strong id='bold31422'
+>instantiate</strong><font color="#00cf00"><strong id='bold31423'
 >::&amp;io-port-error</strong></font>
 			(proc 'open-input-file)
 			(msg <font color="red">&quot;Cannot open URL, authentication required&quot;</font>)
 			(obj url))))
 	     ((404)
-	      (<font color="red"><strong id='bold31406'
->raise</strong></font> (<strong id='bold31408'
->instantiate</strong><font color="#00cf00"><strong id='bold31409'
+	      (<font color="red"><strong id='bold31426'
+>raise</strong></font> (<strong id='bold31428'
+>instantiate</strong><font color="#00cf00"><strong id='bold31429'
 >::&amp;io-file-not-found-error</strong></font>
 			(proc 'open-input-file)
 			(msg <font color="red">&quot;Cannot open URL&quot;</font>)
 			(obj url))))
 	     (else
-	      (<font color="red"><strong id='bold31412'
->raise</strong></font> (<strong id='bold31414'
->instantiate</strong><font color="#00cf00"><strong id='bold31415'
+	      (<font color="red"><strong id='bold31432'
+>raise</strong></font> (<strong id='bold31434'
+>instantiate</strong><font color="#00cf00"><strong id='bold31435'
 >::&amp;io-port-error</strong></font>
 			(proc 'open-input-file)
 			(msg (format <font color="red">&quot;Cannot open URL (~a)&quot;</font> status-code))
 			(obj url)))))
-	  (<strong id='bold31418'
+	  (<strong id='bold31438'
 >cond</strong>
 	     ((not (input-port? ip))
 	      (open-input-string <font color="red">&quot;&quot;</font>))
@@ -12236,35 +12251,35 @@ value for the <code id='code15450'
    
    (multiple-value-bind (protocol login host port abspath)
       (url-parse url)
-      (<strong id='bold31420'
->let*</strong> ((sock (http <strong id='bold31421'
->:host</strong> host <strong id='bold31423'
->:port</strong> port <strong id='bold31425'
->:login</strong> login <strong id='bold31427'
+      (<strong id='bold31440'
+>let*</strong> ((sock (http <strong id='bold31441'
+>:host</strong> host <strong id='bold31443'
+>:port</strong> port <strong id='bold31445'
+>:login</strong> login <strong id='bold31447'
 >:path</strong> abspath))
 	     (ip (socket-input sock))
 	     (op (socket-output sock)))
-	 (<font color="red"><strong id='bold31429'
+	 (<font color="red"><strong id='bold31449'
 >with-handler</strong></font>
-	    (<strong id='bold31431'
+	    (<strong id='bold31451'
 >lambda</strong> (e)
-	       (<strong id='bold31432'
+	       (<strong id='bold31452'
 >if</strong> (isa? e &amp;http-redirection)
-                   (<strong id='bold31433'
->with-access</strong><font color="#00cf00"><strong id='bold31434'
+                   (<strong id='bold31453'
+>with-access</strong><font color="#00cf00"><strong id='bold31454'
 >::&amp;http-redirection</strong></font> e (url)
 		      (wget url))
-		   (<font color="red"><strong id='bold31436'
+		   (<font color="red"><strong id='bold31456'
 >raise</strong></font> e)))
 	    (read-string (http-parse-response ip op parser))))))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The optional argument <code id='code15484'
->args</code> is used for <code id='code15485'
+The optional argument <code id='code15504'
+>args</code> is used for <code id='code15505'
 >post</code> method. The actual
-value should be a list of lists. Each of these sublists must have two values:<br/><br/><ul class="itemize" id='itemize15489'
+value should be a list of lists. Each of these sublists must have two values:<br/><br/><ul class="itemize" id='itemize15509'
 ><li>the argument name
 </li>
 <li>the argument actual value
@@ -12273,16 +12288,16 @@ value should be a list of lists. Each of these sublists must have two values:<br
 The argument name can be either a string which is the name of the
 argument or a list of two elements. In that case, the first element of
 these list is the argument name. The second element should be a string
-that denotes additional parameter.<br/><br/>Example:<br/><br/><center id='center15506'
+that denotes additional parameter.<br/><br/>Example:<br/><br/><center id='center15526'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15504'
->(http <strong id='bold31438'
->:host</strong> <font color="red">&quot;localhost&quot;</font> <strong id='bold31441'
->:port</strong> 8080 <strong id='bold31443'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog15524'
+>(http <strong id='bold31458'
+>:host</strong> <font color="red">&quot;localhost&quot;</font> <strong id='bold31461'
+>:port</strong> 8080 <strong id='bold31463'
 >:method</strong> 'post
-   <strong id='bold31445'
+   <strong id='bold31465'
 >:header</strong> '((enctype: <font color="red">&quot;multipart/form-data&quot;</font>))
-   <strong id='bold31448'
+   <strong id='bold31468'
 >:args</strong> `((<font color="red">&quot;x&quot;</font> <font color="red">&quot;foo&quot;</font>) ((<font color="red">&quot;foo.scm&quot;</font> <font color="red">&quot;filename=\&quot;foo.scm\&quot;\nContent-type: application/octet-stream&quot;</font> ,(with-input-from-file <font color="red">&quot;foo.scm&quot;</font> read-string))))
    ...)
 </pre>
@@ -12290,33 +12305,33 @@ that denotes additional parameter.<br/><br/>Example:<br/><br/><center id='center
 </tbody></table></center>
 
 An http connection blocks until the connection is established. If the
-optional argument <code id='code15507'
+optional argument <code id='code15527'
 >timeout</code> is provided, the connection must be
 established before the specified time interval elapses. The timeout
 is expressed in microseconds.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15511" class="mark"></a><a name="http-read-line" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15515" align="left" colspan="1"><strong id='bold15513'
->http-read-line</strong><em id='it15514'
-> input-port</em></td><td id="tc15516" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15531" class="mark"></a><a name="http-read-line" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15535" align="left" colspan="1"><strong id='bold15533'
+>http-read-line</strong><em id='it15534'
+> input-port</em></td><td id="tc15536" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g15520" class="mark"></a><a name="http-read-crlf" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15524" align="left" colspan="1"><strong id='bold15522'
->http-read-crlf</strong><em id='it15523'
-> input-port</em></td><td id="tc15525" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g15540" class="mark"></a><a name="http-read-crlf" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15544" align="left" colspan="1"><strong id='bold15542'
+>http-read-crlf</strong><em id='it15543'
+> input-port</em></td><td id="tc15545" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Reads a line or an end-of-line of an HTTP response.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15531" class="mark"></a><a name="http-parse-status-line" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15535" align="left" colspan="1"><strong id='bold15533'
->http-parse-status-line</strong><em id='it15534'
-> input-port</em></td><td id="tc15536" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15551" class="mark"></a><a name="http-parse-status-line" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15555" align="left" colspan="1"><strong id='bold15553'
+>http-parse-status-line</strong><em id='it15554'
+> input-port</em></td><td id="tc15556" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Parses the status-line of an HTTP response. This returns a three values:<br/><br/><ul class="itemize" id='itemize15543'
+Parses the status-line of an HTTP response. This returns a three values:<br/><br/><ul class="itemize" id='itemize15563'
 ><li>The http version
 </li>
 <li>The status code
@@ -12326,55 +12341,55 @@ Parses the status-line of an HTTP response. This returns a three values:<br/><br
 </ul><br/><br/></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15548" class="mark"></a><a name="http-parse-header" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15552" align="left" colspan="1"><strong id='bold15550'
->http-parse-header</strong><em id='it15551'
-> input-port output-port</em></td><td id="tc15553" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15568" class="mark"></a><a name="http-parse-header" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15572" align="left" colspan="1"><strong id='bold15570'
+>http-parse-header</strong><em id='it15571'
+> input-port output-port</em></td><td id="tc15573" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Parses the whole header of an HTTP response. It returns multiple values
 which are:
   
-<ul class="itemize" id='itemize15576'
+<ul class="itemize" id='itemize15596'
 ><li>the whole header as an alist.
 </li>
-<li>the host given in the <code id='code15557'
+<li>the host given in the <code id='code15577'
 >host</code> header.
 </li>
-<li>the port given <code id='code15559'
+<li>the port given <code id='code15579'
 >host</code> field.
 </li>
-<li>the optional <code id='code15562'
-><em id='it15561'
+<li>the optional <code id='code15582'
+><em id='it15581'
 >content-length</em></code> header field.
 </li>
-<li>the optional <code id='code15565'
-><em id='it15564'
+<li>the optional <code id='code15585'
+><em id='it15584'
 >transfer-encoding</em></code> header field.
 </li>
-<li>the optional <code id='code15568'
-><em id='it15567'
+<li>the optional <code id='code15588'
+><em id='it15587'
 >authorization</em></code> header field.
 </li>
-<li>the optional <code id='code15571'
-><em id='it15570'
+<li>the optional <code id='code15591'
+><em id='it15590'
 >proxy-authorization</em></code> header field.
 </li>
-<li>the optional <code id='code15574'
-><em id='it15573'
+<li>the optional <code id='code15594'
+><em id='it15593'
 >connection</em></code> header field.
 </li>
 </ul></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15580" class="mark"></a><a name="http-parse-response" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15584" align="left" colspan="1"><strong id='bold15582'
->http-parse-response</strong><em id='it15583'
-> input-port output-port procedure</em></td><td id="tc15585" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15600" class="mark"></a><a name="http-parse-response" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15604" align="left" colspan="1"><strong id='bold15602'
+>http-parse-response</strong><em id='it15603'
+> input-port output-port procedure</em></td><td id="tc15605" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Parses the whole response of an HTTP request. The argument <code id='code15589'
-><em id='it15588'
+Parses the whole response of an HTTP request. The argument <code id='code15609'
+><em id='it15608'
 >procedure</em></code>
-is invoked with five arguments:<br/><br/><ul class="itemize" id='itemize15596'
+is invoked with five arguments:<br/><br/><ul class="itemize" id='itemize15616'
 ><li>the input port to read the characters of the response,
 </li>
 <li>the status code,
@@ -12388,36 +12403,36 @@ is invoked with five arguments:<br/><br/><ul class="itemize" id='itemize15596'
 </ul></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15600" class="mark"></a><a name="http-response-body->port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15604" align="left" colspan="1"><strong id='bold15602'
->http-response-body-&gt;port</strong><em id='it15603'
-> input-port output-port</em></td><td id="tc15605" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15620" class="mark"></a><a name="http-response-body->port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15624" align="left" colspan="1"><strong id='bold15622'
+>http-response-body-&gt;port</strong><em id='it15623'
+> input-port output-port</em></td><td id="tc15625" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Parses an HTTP response and build an output port that delivers the 
 characters of the content.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15611" class="mark"></a><a name="http-chunks->procedure" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15615" align="left" colspan="1"><strong id='bold15613'
->http-chunks-&gt;procedure</strong><em id='it15614'
-> input-port</em></td><td id="tc15616" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15631" class="mark"></a><a name="http-chunks->procedure" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15635" align="left" colspan="1"><strong id='bold15633'
+>http-chunks-&gt;procedure</strong><em id='it15634'
+> input-port</em></td><td id="tc15636" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15622" class="mark"></a><a name="http-chunks->port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15626" align="left" colspan="1"><strong id='bold15624'
->http-chunks-&gt;port</strong><em id='it15625'
-> input-port</em></td><td id="tc15627" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15642" class="mark"></a><a name="http-chunks->port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15646" align="left" colspan="1"><strong id='bold15644'
+>http-chunks-&gt;port</strong><em id='it15645'
+> input-port</em></td><td id="tc15647" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g15633" class="mark"></a><a name="http-send-chunks" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc15637" align="left" colspan="1"><strong id='bold15635'
->http-send-chunks</strong><em id='it15636'
-> input-port output-port</em></td><td id="tc15638" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g15653" class="mark"></a><a name="http-send-chunks" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc15657" align="left" colspan="1"><strong id='bold15655'
+>http-send-chunks</strong><em id='it15656'
+> input-port output-port</em></td><td id="tc15658" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table><br/>                      
@@ -12441,12 +12456,12 @@ the distant system's idea of the time of day.
 <div></div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph31460'
+<p class="ending" id='paragraph31480'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it31458'
->Tue May  5 15:25:29 2015</em>.</font></p></div>
+Last update <em id='it31478'
+>Thu Jul  2 15:55:40 2015</em>.</font></p></div>
 </body>
 </html>
