@@ -20,7 +20,7 @@
 #  include <regex.h>
 
 #  define N 4096
-#endif
+
 
 typedef obj_t (*fmt_t)( ns_msg*, int );
 
@@ -292,7 +292,8 @@ static get_rr_format( int nstyp ) {
       default: return &rr_format_default;
    }
 }
-   
+
+#endif
 /*---------------------------------------------------------------------*/
 /*    obj_t                                                            */
 /*    bgl_res_query ...                                                */
