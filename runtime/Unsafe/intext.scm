@@ -3,7 +3,7 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano & Pierre Weis                      */
 ;*    Creation    :  Tue Jan 18 08:11:58 1994                          */
-;*    Last change :  Sat Jan 17 19:32:38 2015 (serrano)                */
+;*    Last change :  Sun Jul 26 07:31:39 2015 (serrano)                */
 ;*    -------------------------------------------------------------    */
 ;*    The serialization process does not make hypothesis on word's     */
 ;*    size. Since 2.8b, the serialization/deserialization is thread    */
@@ -84,8 +84,8 @@
    
    (export  (set-obj-string-mode! ::obj)
 	    
-	    (string->obj ::bstring #!optional extension)
-	    (obj->string::bstring ::obj)
+	    (string->obj ::bstring #!optional extension unserialize-arg)
+	    (obj->string::bstring ::obj #!optional mark-arg)
 
 	    (make-serialization-substring ::bstring ::long ::long)
 	    
@@ -108,7 +108,7 @@
 	    (set! *unsafe-arity*  #t)
 	    (set! *unsafe-range*  #t)
 	    (set! *unsafe-struct* #t))
-   
+
    (pragma  (cnst->integer nesting)
 	    (integer->cnst nesting)
 	    (pointer? nesting)))
@@ -150,7 +150,7 @@
 ;*---------------------------------------------------------------------*/
 ;*    @deffn string->obj@ ...                                          */
 ;*---------------------------------------------------------------------*/
-(define (string->obj s #!optional extension)
+(define (string->obj s #!optional extension unserialize-arg)
    
    ;; *pointer*
    (define *pointer* 0)
@@ -480,10 +480,12 @@
       (let* ((defining (let ((old *defining*))
 			  (set! *defining* #f)
 			  old))
-	     (obj (read-item))
-	     (hash (read-item))
+	     (hashobj (read-item))
+	     (hash_ (read-item))
+	     (hash (car hashobj))
+	     (obj (cdr hashobj))
 	     (unserializer (find-class-unserializer hash))
-	     (val (unserializer obj)))
+	     (val (unserializer obj unserialize-arg)))
 	 (when (fixnum? defining)
 	    (vector-set! *definitions* defining val))
 	 val))
@@ -606,7 +608,7 @@
 ;*---------------------------------------------------------------------*/
 ;*    @deffn obj->string@ ...                                          */
 ;*---------------------------------------------------------------------*/
-(define (obj->string obj)
+(define (obj->string obj #!optional mark-arg)
    (let* ((table (create-hashtable
 		    :eqtest (lambda (a b)
 			       (cond
@@ -617,7 +619,7 @@
 				  (else
 				   (eq? a b))))
 		    :max-length -1))
-	  (nbref (mark-obj! table obj)))
+	  (nbref (mark-obj! table obj mark-arg)))
       (print-obj table nbref obj)))
 
 ;*---------------------------------------------------------------------*/
@@ -985,7 +987,8 @@
 
    ;; print-special
    (define (print-special markup item mark)
-      (print-string markup (mark-value mark)))
+      (!print-markup markup)
+      (print-item (mark-value mark)))
 
    ;; print-item
    (define (print-item item)
@@ -1113,10 +1116,13 @@
 ;*---------------------------------------------------------------------*/
 ;*    mark-obj! ...                                                    */
 ;*---------------------------------------------------------------------*/
-(define (mark-obj! table obj)
+(define (mark-obj! table obj mark-arg)
    
    ;; nbref
    (define nbref 0)
+
+   ;; error-ctx
+   (define error-ctx #f)
    
    ;; incr-mark!
    (define (incr-mark! m)
@@ -1154,11 +1160,8 @@
    
    ;; mark-object
    (define (mark-object obj)
-      (mark-class-instance obj (object-serializer obj)))
-
-   ;; mark-class-instance
-   (define (mark-class-instance obj custom)
-      (let ((klass (object-class obj)))
+      (let ((klass (object-class obj))
+	    (custom (object-serializer obj mark-arg)))
 	 (put-mark! table obj custom)
 	 (mark klass)
 	 (mark (class-hash klass))
@@ -1232,13 +1235,15 @@
    
    ;; mark-custom
    (define (mark-custom obj)
-      (let ((v ((find-custom-serializer (custom-identifier obj)) obj)))
+      (let ((v ((find-custom-serializer (custom-identifier obj)) obj mark-arg)))
 	 (put-mark! table obj v)
 	 (mark v)))
 
    ;; mark-procedure
    (define (mark-procedure obj)
-      (*procedure->string* obj))
+      (let ((custom (*procedure->string* obj)))
+	 (put-mark! table obj custom)
+	 (mark custom)))
    
    ;; mark-process
    (define (mark-process obj)
@@ -1326,10 +1331,18 @@
 ;*---------------------------------------------------------------------*/
 (define (register-custom-serialization! ident serializer unserializer)
    (let ((cell (assoc ident *custom-serialization*)))
-      (if (not (pair? cell))
-	  (set! *custom-serialization*
-		(cons (list ident serializer unserializer)
-		      *custom-serialization*)))))
+      (unless (pair? cell)
+	 (let ((proc (case (procedure-arity serializer)
+			((1)
+			 (lambda (o mark-arg) (serializer o)))
+			((2)
+			 serializer)
+			(else
+			 (error "register-custom-serialization!"
+			    "bad arity" serializer)))))
+	    (set! *custom-serialization*
+	       (cons (list ident proc unserializer)
+		  *custom-serialization*))))))
 
 ;*---------------------------------------------------------------------*/
 ;*    find-custom-serializer ...                                       */
@@ -1338,7 +1351,7 @@
    (let ((cell (assoc ident *custom-serialization*)))
       (if (pair? cell)
 	  (cadr cell)
-	  (error 'obj->string "Cannot find custom serializer" ident))))
+	  (error "obj->string" "Cannot find custom serializer" ident))))
    
 ;*---------------------------------------------------------------------*/
 ;*    find-custom-unserializer ...                                     */
@@ -1347,7 +1360,7 @@
    (let ((cell (assoc ident *custom-serialization*)))
       (if (pair? cell)
 	  (caddr cell)
-	  (error 'string->obj "Cannot find custom unserializer" ident))))
+	  (error "string->obj" "Cannot find custom unserializer" ident))))
 
 ;*---------------------------------------------------------------------*/
 ;*    get-custom-serialization ...                                     */
@@ -1442,7 +1455,7 @@
 ;*---------------------------------------------------------------------*/
 ;*    object-serializer ...                                            */
 ;*---------------------------------------------------------------------*/
-(define-generic (object-serializer obj::object)
+(define-generic (object-serializer obj::object mark-arg)
    obj)
 
 ;*---------------------------------------------------------------------*/
@@ -1454,19 +1467,42 @@
 ;*    register-class-serialization! ...                                */
 ;*---------------------------------------------------------------------*/
 (define (register-class-serialization! class serializer unserializer)
-   (when serializer
-      ;; optional serializer, can be #f for backward serialization compatibility
-      (generic-add-method! object-serializer
-	 class
-	 serializer
-	 (string-append
-	    (symbol->string! (class-name class)) "-serializer")))
+
+   (define (make-serializer hash serializer)
+      (case (procedure-arity serializer)
+	 ((1)
+	  (lambda (o mark-arg)
+	     (let ((so (serializer o)))
+		(if (eq? so o) o (cons hash so)))))
+	 ((2)
+	  (lambda (o mark-arg)
+	     (let ((so (serializer o mark-arg)))
+		(if (eq? so o) so (cons hash so)))))
+	 (else
+	  (error "register-class-serialization!" "bad arity" serializer))))
+
+   (define (make-unserializer unserializer)
+      (case (procedure-arity unserializer)
+	 ((1)
+	  (lambda (o arg)
+	     (unserializer o)))
+	 ((2)
+	  unserializer)
+	 (else
+	  (error "register-class-serialization!" "bad arity" unserializer))))
+   
    (let* ((hash (class-hash class))
-	  (cell (assq hash *class-serialization*)))
-      (if (not (pair? cell))
-	  (set! *class-serialization*
-		(cons (list hash serializer unserializer)
-		      *class-serialization*)))))
+	  (cell (assv hash *class-serialization*)))
+      (when serializer
+	 ;; optional serializer, can be #f for backward compatibility
+	 (generic-add-method! object-serializer
+	    class
+	    (make-serializer hash serializer)
+	    (string-append (symbol->string! (class-name class)) "-serializer")))
+      (unless (pair? cell)
+	 (set! *class-serialization*
+	    (cons (list hash serializer (make-unserializer unserializer))
+	       *class-serialization*)))))
 
 ;*---------------------------------------------------------------------*/
 ;*    find-class-unserializer ...                                      */
@@ -1475,7 +1511,7 @@
    (let ((cell (assv hash *class-serialization*)))
       (if (pair? cell)
 	  (caddr cell)
-	  (error 'string->obj "Cannot find class unserializer" hash))))
+	  (error "string->obj" "Cannot find class unserializer" hash))))
 
 ;*---------------------------------------------------------------------*/
 ;*    get-class-serialization ...                                      */

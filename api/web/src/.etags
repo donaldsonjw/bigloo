@@ -17,20 +17,20 @@ Llib/xml.scm,654
 (define (error-line81,3428
 (define-struct special88,3784
 (define (collect-up-to93,4057
-(define attribute-value-grammar152,5941
-(define attribute-grammar196,7554
-(define cdata-grammar238,9132
-(define (get-decoder261,9899
-(define xml-grammar289,10810
-(define (char-hexnumeric?363,13314
-(define (xml-string-decode-inner!371,13683
-(define (xml-count405,14861
-(define (xml-decode!440,15893
-(define (xml-string-decode487,17345
-(define (xml-string-decode!501,17841
-(define (xml-string-encode515,18304
-(define (read-xml562,19581
-(define (xml-metadata568,19895
+(define attribute-value-grammar152,5932
+(define attribute-grammar196,7545
+(define cdata-grammar238,9123
+(define (get-decoder261,9890
+(define xml-grammar289,10801
+(define (char-hexnumeric?363,13305
+(define (xml-string-decode-inner!371,13674
+(define (xml-count405,14852
+(define (xml-decode!440,15884
+(define (xml-string-decode487,17336
+(define (xml-string-decode!501,17832
+(define (xml-string-encode515,18295
+(define (read-xml562,19572
+(define (xml-metadata568,19886
 
 Llib/css.scm,167
 (module __web_css15,963
@@ -252,7 +252,7 @@ Llib/css_parser.scm,1976
 (define-method (css->list o::css-function make-klass make-elname make-decl737,25903
 (define-method (css->list o::css-hash-color make-klass make-elname make-decl747,26388
 
-Llib/cgi.scm,554
+Llib/cgi.scm,618
 (module __web_cgi15,963
 (define (hex-string-ref25,1404
 (define (unhex+!38,1961
@@ -262,13 +262,15 @@ Llib/cgi.scm,554
 (define (read-name114,4710
 (define (cgi-parse-content-disposition123,5098
 (define (cgi-parse-header151,6125
-(define (cgi-read-file196,7557
-(define cgi-multipart-data-grammar216,8448
-(define cgi-multipart-boundary-grammar269,10322
-(define (cgi-read-data320,12005
-(define (cgi-parse-entry328,12435
-(define (cgi-multipart->list339,12957
-(define (cgi-post-arg-field352,13502
+(define tmp-file-mutex196,7557
+(define (make-tmp-file201,7807
+(define (cgi-read-file220,8486
+(define cgi-multipart-data-grammar240,9376
+(define cgi-multipart-boundary-grammar293,11250
+(define (cgi-read-data344,12933
+(define (cgi-parse-entry352,13363
+(define (cgi-multipart->list363,13885
+(define (cgi-post-arg-field376,14430
 
 Llib/rss.scm,201
 (module __web_rss15,963
