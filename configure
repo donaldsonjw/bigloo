@@ -1,10 +1,10 @@
-#!/bin/sh
+!/bin/sh
 #*=====================================================================*/
 #*    serrano/prgm/project/bigloo/configure                            */
 #*    -------------------------------------------------------------    */
 #*    Author      :  Manuel Serrano                                    */
 #*    Creation    :  Tue Jan 25 16:05:10 1994                          */
-#*    Last change :  Sat Jun  6 11:08:40 2015 (serrano)                */
+#*    Last change :  Fri Sep  4 12:32:53 2015 (serrano)                */
 #*    Copyright   :  1994-2015 Manuel Serrano, see LICENSE file        */
 #*    -------------------------------------------------------------    */
 #*    The Bigloo configuration file                                    */
@@ -39,7 +39,8 @@ tmpdir=/tmp
 lispdir=
 
 #*--- api -------------------------------------------------------------*/
-apis="pthread fthread srfi18 ssl sqlite web multimedia mail calendar pkgcomp pkglib gstreamer text srfi1 srfi27 packrat crypto openpgp phone alsa mpg123 flac wav avahi phidget csv upnp libuv"
+importantapis="pthread fthread srfi18 ssl sqlite web multimedia mail calendar pkgcomp pkglib text srfi1 srfi27 packrat crypto openpgp csv upnp libuv"
+apis="$importantapis gstreamer phidget alsa wav flac mpg123 phone avahi"
 
 #*--- bee configuration -----------------------------------------------*/
 bee=partial # "partial" or "full"
@@ -317,6 +318,7 @@ droidtmp=
 #*---------------------------------------------------------------------*/
 #*--- configure debugging ---------------------------------------------*/
 configurelog=configure.log
+abortmissing=no
 
 #*--- The basename of the compiler and tools --------------------------*/
 afile=bglafile
@@ -478,6 +480,9 @@ while : ; do
 
     --configure.log=*)
       configurelog="`echo $1 | sed 's/^[^=]*=//'`";;
+
+    --abort-missing)
+      abortmissing=yes;;
 
     --bindir=*)
       bindir="`echo $1 | sed 's/^[^=]*=//'`";;
@@ -1077,6 +1082,7 @@ while : ; do
       echo "   --bigloo_config.jvm[=file]" >&2;
       echo "   --Makefile.config=file" >&2;
       echo "   --$configurelog=file" >&2;
+      echo "   --abort-missing (abort as soon as a system lib is missing)" >&2;
       echo "   --no-summary" >&2;
       echo "   --bootconfig" >&2;
       echo "   --bootdir=dir" >&2;
@@ -2839,7 +2845,9 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
     fi
 
     java_version=`$javac -version 2>&1 | head -n 1` || exit 1
-    if echo "$java_version" | grep "1.7" > /dev/null
+    if echo "$java_version" | grep "1.8" > /dev/null
+      then java_version=1.8
+    elif echo "$java_version" | grep "1.7" > /dev/null
       then java_version=1.7
     elif echo "$java_version" | grep "1.6" > /dev/null
       then java_version=1.6
@@ -4046,6 +4054,54 @@ cat $deb.in \
 chmod a+rx $deb
 
 #*---------------------------------------------------------------------*/
+#*    Checking missing dependencies                                    */
+#*---------------------------------------------------------------------*/
+if [ "$abortmissing " = "yes " ]; then
+    missing="";
+    
+    for p in $importantapis; do
+       res=0;
+       for q in $apis; do
+           if [ $q = $p ]; then
+	       res=1;
+	       break;
+	   fi
+       done
+       if [ $res = "0" ]; then
+	   missing="$p $missing"
+       fi
+    done
+
+    if [ "$missing " != " " ]; then
+	echo ""
+	echo "*** ERROR Missing libraries: $missing" >&2
+	echo "exiting..." >&2
+	exit 1;
+    fi
+
+    if [ "$unistring " = "no " ]; then
+	echo ""
+	echo "*** ERROR Missing library: unistring" >&2
+	echo "exiting..." >&2
+	exit 1;
+    fi
+    
+    if [ ! "$regexp " = "pcre " ]; then
+	echo ""
+	echo "*** ERROR Missing library: pcre" >&2
+	echo "exiting..." >&2
+	exit 1;
+    fi
+    
+    if [ ! "$havegmp= " = "1 " ]; then
+	echo ""
+	echo "*** ERROR Missing library: gmp" >&2
+	echo "exiting..." >&2
+	exit 1;
+    fi
+fi
+
+#*---------------------------------------------------------------------*/
 #*    Ok, we are done now                                              */
 #*---------------------------------------------------------------------*/
 bcke="native:yes"
@@ -4054,6 +4110,7 @@ if [ "$jvmbackend" = "yes" -o "$jvmbackend" = "force" ]; then
 else
   bcke="$bcke JVM:no"
 fi
+
 echo  >> $configurelog
 echo  >> $configurelog
 echo "** Configuration summary **" >> $configurelog

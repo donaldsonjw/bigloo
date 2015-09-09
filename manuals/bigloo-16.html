@@ -22,31 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>15. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015 -- Cryptography</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>15. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>September 2015 -- Cryptography</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center32648'
+<br/><center id='center32660'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32638" align="center" colspan="1"><font color="#ffffff"><strong id='bold32636'
+<tr bgcolor="#8381de"><th id="tc32650" align="center" colspan="1"><font color="#ffffff"><strong id='bold32648'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32625" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc32621" align="left" valign="top" colspan="1"><strong id='bold32620'
->top:</strong></td><td id="tc32622" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-May-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>May 2015</a></td></tr>
-<tr bgcolor="#ffffff"><td id="tc32645" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc32641" align="left" valign="top" colspan="1"><strong id='bold32640'
->top:</strong></td><td id="tc32642" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-July-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015</a></td></tr>
->>>>>>> LLP64
+<tr bgcolor="#ffffff"><td id="tc32657" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc32653" align="left" valign="top" colspan="1"><strong id='bold32652'
+>top:</strong></td><td id="tc32654" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-September-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>September 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center32658'
+<br/><br/><center id='center32670'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32652" align="center" colspan="1"><font color="#ffffff"><strong id='bold32650'
+<tr bgcolor="#8381de"><th id="tc32664" align="center" colspan="1"><font color="#ffffff"><strong id='bold32662'
 >Cryptography</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32655" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc32667" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">15.1</td><td colspan="4" width="100%"><a href="bigloo-16.html#Symmetric-Block-Ciphers">Symmetric Block Ciphers</a></td></tr>
  <tr><td></td><td valign="top" align="left">15.1.1</td><td colspan="3" width="100%"><a href="bigloo-16.html#String-to-Key">String to Key</a></td></tr>
@@ -63,11 +59,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center32668'
+<br/><br/><center id='center32680'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32662" align="center" colspan="1"><font color="#ffffff"><strong id='bold32660'
+<tr bgcolor="#8381de"><th id="tc32674" align="center" colspan="1"><font color="#ffffff"><strong id='bold32672'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32665" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc32677" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -115,32 +111,32 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Cryptography" class="mark"></a><a name="g19046" class="mark"></a>
+<a name="Cryptography" class="mark"></a><a name="g19059" class="mark"></a>
 Bigloo provides several functions for encrypting and decrypting documents.
 These are described in the chapter. Unless explicitly mentioned all functions
-presented in this document are accessible via the <code id='code19048'
->crypto</code> library.<br/><br/><em id='emph19050'
+presented in this document are accessible via the <code id='code19061'
+>crypto</code> library.<br/><br/><em id='emph19063'
 >None of the cryptographic functions are protected against timing attacks.
-No effort has been spent on protecting used memory.</em><br/><br/>Here is an example of a module that uses this library:<br/><br/><center id='center19064'
+No effort has been spent on protecting used memory.</em><br/><br/>Here is an example of a module that uses this library:<br/><br/><center id='center19077'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19062'
-><font color="#ffa600"><em id='it32669'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19075'
+><font color="#ffa600"><em id='it32681'
 >;; Encrypt a string using AES.</em></font>
-(<font color="#1919af"><strong id='bold32671'
->module</strong></font> <font color="#1919af"><strong id='bold32673'
+(<font color="#1919af"><strong id='bold32683'
+>module</strong></font> <font color="#1919af"><strong id='bold32685'
 >aes-encrypt</strong></font>
-   (<font color="#1919af"><strong id='bold32675'
->library</strong></font> <font color="#1919af"><strong id='bold32677'
+   (<font color="#1919af"><strong id='bold32687'
+>library</strong></font> <font color="#1919af"><strong id='bold32689'
 >crypto</strong></font>)
-   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold32679'
->define</strong></font> (<font color="#6959cf"><strong id='bold32681'
+   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold32691'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32693'
 >main</strong></font> argv)
    (when (and (pair? (cdr argv)) (pair? (cddr argv)))
-      (<strong id='bold32683'
+      (<strong id='bold32695'
 >let</strong> ((encrypt? (string=? <font color="red">&quot;-e&quot;</font> (cadr argv)))
             (passwd (caddr argv))
             (input (read-string)))
-         (<strong id='bold32685'
+         (<strong id='bold32697'
 >if</strong> encrypt?
              (display (encrypt 'aes input passwd))
              (display (decrypt 'aes input passwd))))))
@@ -153,10 +149,10 @@ No effort has been spent on protecting used memory.</em><br/><br/>Here is an exa
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">15.1 Symmetric Block Ciphers</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Symmetric-Block-Ciphers" class="mark"></a><a name="g19066" class="mark"></a>
+<a name="Symmetric-Block-Ciphers" class="mark"></a><a name="g19079" class="mark"></a>
 
 Bigloo supports some common block ciphers. Block ciphers work on blocks of fixed
-size. A <em id='emph19068'
+size. A <em id='emph19081'
 >mode of operation</em> defines the way bigger input is handled. For
 instance in ECB (Electronic Codebook mode) the blocks are all encrypted
 separately, whereas CBC (Cipher-Block Chaining) chains all blocks.<br/><br/>All modes that chain the blocks need an IV (Initial Vector) to ``bootstrap''
@@ -164,340 +160,340 @@ the chaining.<br/><br/>Block ciphers by themselves can only work on full blocks.
 constructed in a way that even incomplete blocks can be safely processed. For the
 remaining blocks a padding function needs to be given.<br/><br/>Most block ciphers only work with keys of specific length. The following functions
 take passwords (strings of arbitrary length) as input, and preprocess the given
-password by a <em id='emph19072'
+password by a <em id='emph19085'
 >:string-&gt;key</em> function. The result must then be of correct
 length.
  <br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19075" class="mark"></a><a name="encrypt::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19079" align="left" colspan="1"><strong id='bold19077'
->encrypt::bstring</strong><em id='it19078'
-> cipher plain password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19080" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19088" class="mark"></a><a name="encrypt::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19092" align="left" colspan="1"><strong id='bold19090'
+>encrypt::bstring</strong><em id='it19091'
+> cipher plain password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19093" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19084" class="mark"></a><a name="encrypt-string::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19088" align="left" colspan="1"><strong id='bold19086'
->encrypt-string::bstring</strong><em id='it19087'
-> cipher plaintext::bstring password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19089" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19097" class="mark"></a><a name="encrypt-string::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19101" align="left" colspan="1"><strong id='bold19099'
+>encrypt-string::bstring</strong><em id='it19100'
+> cipher plaintext::bstring password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19102" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19093" class="mark"></a><a name="encrypt-mmap::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19097" align="left" colspan="1"><strong id='bold19095'
->encrypt-mmap::bstring</strong><em id='it19096'
-> cipher plaintext::mmap password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19098" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19106" class="mark"></a><a name="encrypt-mmap::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19110" align="left" colspan="1"><strong id='bold19108'
+>encrypt-mmap::bstring</strong><em id='it19109'
+> cipher plaintext::mmap password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19111" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19102" class="mark"></a><a name="encrypt-port::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19106" align="left" colspan="1"><strong id='bold19104'
->encrypt-port::bstring</strong><em id='it19105'
-> cipher plaintext::input-port password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19107" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19115" class="mark"></a><a name="encrypt-port::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19119" align="left" colspan="1"><strong id='bold19117'
+>encrypt-port::bstring</strong><em id='it19118'
+> cipher plaintext::input-port password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19120" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19111" class="mark"></a><a name="encrypt-file::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19115" align="left" colspan="1"><strong id='bold19113'
->encrypt-file::bstring</strong><em id='it19114'
-> cipher filename::bstring password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19116" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19124" class="mark"></a><a name="encrypt-file::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19128" align="left" colspan="1"><strong id='bold19126'
+>encrypt-file::bstring</strong><em id='it19127'
+> cipher filename::bstring password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19129" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19120" class="mark"></a><a name="encrypt-sendchars" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19124" align="left" colspan="1"><strong id='bold19122'
->encrypt-sendchars</strong><em id='it19123'
-> cipher in::input-port out::output-port password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19125" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19133" class="mark"></a><a name="encrypt-sendchars" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19137" align="left" colspan="1"><strong id='bold19135'
+>encrypt-sendchars</strong><em id='it19136'
+> cipher in::input-port out::output-port password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19138" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 
-The procedure <code id='code19128'
->encrypt</code> encrypts its input using the chosen <code id='code19130'
-><em id='it19129'
+The procedure <code id='code19141'
+>encrypt</code> encrypts its input using the chosen <code id='code19143'
+><em id='it19142'
 >cipher</em></code>. The result is returned as string.
-<code id='code19131'
->encrypt</code> dispatches depending on the type of <code id='code19133'
-><em id='it19132'
->plain</em></code>. Strings are processed by <code id='code19134'
+<code id='code19144'
+>encrypt</code> dispatches depending on the type of <code id='code19146'
+><em id='it19145'
+>plain</em></code>. Strings are processed by <code id='code19147'
 >encrypt-string</code> (and
-not <code id='code19135'
->encrypt-file</code>).<br/><br/>The function <code id='code19137'
->encrypt-sendchars</code> reads from an input-port <code id='code19139'
-><em id='it19138'
+not <code id='code19148'
+>encrypt-file</code>).<br/><br/>The function <code id='code19150'
+>encrypt-sendchars</code> reads from an input-port <code id='code19152'
+><em id='it19151'
 >in</em></code> and encrypts its output directly
-into an output-port <code id='code19141'
-><em id='it19140'
->out</em></code>.<br/><br/>The symbol <code id='code19144'
-><em id='it19143'
+into an output-port <code id='code19154'
+><em id='it19153'
+>out</em></code>.<br/><br/>The symbol <code id='code19157'
+><em id='it19156'
 >cipher</em></code> can be one of:
-<ul class="itemize" id='itemize19165'
-><li><code id='code19145'
+<ul class="itemize" id='itemize19178'
+><li><code id='code19158'
 >des</code>: Data Encryption Standard (DES). DES works on blocks of 64 bits. DES requires keys of length 64 (bits),
  but only 56 of these bits are actually used. Bigloo's implementation therefore accepts both.
- <em id='emph19146'
+ <em id='emph19159'
 >DES is considered to be insecure and its usage is discouraged.</em>
 </li>
-<li><code id='code19148'
+<li><code id='code19161'
 >des3</code>: Triple DES, Triple Data Encryption Algorithm (DES3, TDEA).
 DES3 works on blocks of 64 bits. DES3 requires keys of
 length 128 or 192 (bits), but only 112/168 of these bits are actually used. Bigloo's
 implementation therefore accepts the smaller keys too.<br/><br/>Bigloo's DES3 implementation has been changed with release 3.4b. Earlier
 versions did not use the full key for en/decryption.<br/><br/></li>
-<li><code id='code19152'
->des-np</code>: Same as <code id='code19153'
+<li><code id='code19165'
+>des-np</code>: Same as <code id='code19166'
 >des</code>, but the initial and final permutations are not performed.
 </li>
-<li><code id='code19155'
->des3-np</code>: Same as <code id='code19156'
+<li><code id='code19168'
+>des3-np</code>: Same as <code id='code19169'
 >des3</code>, but the initial and final permutations are not performed.
 </li>
-<li><code id='code19158'
+<li><code id='code19171'
 >aes</code>: Advanced Encryption Standard (AES). AES works on blocks of 128 bits. AES requires
 keys of length 128, 192 or 256 bits.
 </li>
-<li><code id='code19160'
+<li><code id='code19173'
 >cast-128</code>: CAST-128 (CAST5). CAST-128 works on blocks of 64 bits. CAST-128 requires a
 key-length of 40-128 bits.
 </li>
-<li><code id='code19162'
+<li><code id='code19175'
 >idea</code>: International Data Encryption Algorithm (IDEA). IDEA works on blocks of 64 bits.
-It requires keys of length 128 (in bits). <em id='emph19163'
+It requires keys of length 128 (in bits). <em id='emph19176'
 >IDEA is patented in many countries (including
 the USA and most European countries) but it is free for non-commercial use.</em>
 </li>
 </ul>
-The given password must be a string. An optional parameter <code id='code19167'
-><em id='it19166'
+The given password must be a string. An optional parameter <code id='code19180'
+><em id='it19179'
 >:string-&gt;key</em></code> should transform this
 password so that it has the correct length for the cipher. A small list of possible functions are
-provided in the <a href="bigloo-16.html#String-to-Key" class="inbound">String to Key</a> section.<br/><br/>By default <code id='code19169'
+provided in the <a href="bigloo-16.html#String-to-Key" class="inbound">String to Key</a> section.<br/><br/>By default <code id='code19182'
 >string-&gt;key-hash</code> with SHA-1 will be used. The key-length will depend
 on the chosen cipher:
-<ul class="itemize" id='itemize19186'
-><li><code id='code19170'
+<ul class="itemize" id='itemize19199'
+><li><code id='code19183'
 >des</code>: 56 bits.
 </li>
-<li><code id='code19172'
+<li><code id='code19185'
 >des3</code>: 112 bits.
 </li>
-<li><code id='code19174'
->des-np</code>: Same as <code id='code19175'
+<li><code id='code19187'
+>des-np</code>: Same as <code id='code19188'
 >des</code>.
 </li>
-<li><code id='code19177'
->des3-np</code>: Same as <code id='code19178'
+<li><code id='code19190'
+>des3-np</code>: Same as <code id='code19191'
 >des3</code>.
 </li>
-<li><code id='code19180'
+<li><code id='code19193'
 >aes</code>: 192 bits.
 </li>
-<li><code id='code19182'
+<li><code id='code19195'
 >cast-128</code>: 128 bits.
 </li>
-<li><code id='code19184'
+<li><code id='code19197'
 >idea</code>: 128 bits.
 </li>
 </ul>
-Bigloo supports the following block cipher modes (<code id='code19188'
-><em id='it19187'
+Bigloo supports the following block cipher modes (<code id='code19201'
+><em id='it19200'
 >:mode</em></code>):
-<ul class="itemize" id='itemize19201'
-><li><code id='code19189'
+<ul class="itemize" id='itemize19214'
+><li><code id='code19202'
 >ecb</code>: Electronic codebook.
 </li>
-<li><code id='code19191'
+<li><code id='code19204'
 >cbc</code>: Cipher-block chaining.
 </li>
-<li><code id='code19193'
+<li><code id='code19206'
 >pcbc</code>: Propagating cipher-block chaining.
 </li>
-<li><code id='code19195'
+<li><code id='code19208'
 >cfb</code>: Cipher feedback.
 </li>
-<li><code id='code19197'
+<li><code id='code19210'
 >ofb</code>: Output feedback.
 </li>
-<li><code id='code19199'
+<li><code id='code19212'
 >ctr</code>: Counter.
 </li>
 </ul>
-By default <code id='code19202'
+By default <code id='code19215'
 >cfb</code> is chosen.<br/><br/>Electronic codebook mode en/decodes each block independently and is hence the
 closest to the block cipher. It is however inherently unsafe as blocks with
-the same content are encrypted to the same output.<br/><br/>With the exception of <code id='code19205'
+the same content are encrypted to the same output.<br/><br/>With the exception of <code id='code19218'
 >ecb</code> all other modes can be initialized with an IV
-(Initialization vector). If <code id='code19207'
-><em id='it19206'
+(Initialization vector). If <code id='code19220'
+><em id='it19219'
 >:IV</em></code> is false, then a random one will be generated.
 During encryption this randomly generated IV will be prefixed to the result. When
 calling the decryption routine without any IV the procedure will use the first block
-of the input as IV.<br/><br/>In <code id='code19209'
+of the input as IV.<br/><br/>In <code id='code19222'
 >ctr</code> (counter) mode the IV parameter serves as nonce. Two additional
-key-parameters <code id='code19210'
->:nonce-init</code> and <code id='code19211'
+key-parameters <code id='code19223'
+>:nonce-init</code> and <code id='code19224'
 >:nonce-update</code> are then used to
 initialize and update the block-sized nonce string. Before encrypting the first block
-<code id='code19212'
+<code id='code19225'
 >nonce-init</code> will be invoked with an empty block-sized string and the initial
 nonce (IV). It must initialize the string with the nonce. For each block
-<code id='code19213'
+<code id='code19226'
 >nonce-update</code> will be called with the string, the nonce, and the number of
 already encrypted blocks (hence 0 at the very beginning). By default
-<code id='code19214'
->nonce-init</code> takes the IV-<em id='emph19215'
+<code id='code19227'
+>nonce-init</code> takes the IV-<em id='emph19228'
 >string</em> and blits it into the given string.
-<code id='code19216'
+<code id='code19229'
 >nonce-update</code> simply increments the string (treating the given string as
 one big number).<br/><br/>Note that the initial nonce (passed using IV) may be of any type. As long as
-<code id='code19218'
->nonce-init</code> and <code id='code19219'
+<code id='code19231'
+>nonce-init</code> and <code id='code19232'
 >nonce-update</code> correctly initialize and update the
-passed string.<br/><br/>The input's length of modes <code id='code19221'
->ecb</code>, <code id='code19222'
->cbc</code> and <code id='code19223'
+passed string.<br/><br/>The input's length of modes <code id='code19234'
+>ecb</code>, <code id='code19235'
+>cbc</code> and <code id='code19236'
 >pcbc</code> must be a
 multiple of the block-size. Should this not be the case a padding algorithm
-must be specified (<code id='code19224'
+must be specified (<code id='code19237'
 >:pad</code>). Currently are implemented (examples for
-hexadecimal string ``DD'' and cipher block size 4):<br/><br/><ul class="itemize" id='itemize19238'
-><li><code id='code19226'
+hexadecimal string ``DD'' and cipher block size 4):<br/><br/><ul class="itemize" id='itemize19251'
+><li><code id='code19239'
 >none</code>: No padding. Raises an error should the input not be a multiple.
 </li>
-<li><code id='code19228'
+<li><code id='code19241'
 >bit</code>: Bit padding. Add a '1' bit and then '0' bits.
 Example: ``DD 80 00 00''.
 </li>
-<li><code id='code19230'
+<li><code id='code19243'
 >ansi-x.923</code>: Byte padding. Fill with #x00s followed by the number of added
 bytes (the counter inclusive). Example: ``DD 00 00 03''.
 </li>
-<li><code id='code19232'
+<li><code id='code19245'
 >iso-10126</code>: Fill with random characters followed by the number of added
 bytes (the counter inclusive). Example: ``DD 42 31 03''.
 </li>
-<li><code id='code19234'
+<li><code id='code19247'
 >pkcs7</code>: Fill with the number of added bytes. Example: ``DD 03 03 03''.
 </li>
-<li><code id='code19236'
+<li><code id='code19249'
 >zero</code>: Fill with zeros. This is only reversible if the input is guaranteed
 not to finish with a zero character. Example: ``DD 00 00 00''.
 </li>
 </ul>
 Alternatively users can supply their own (un)pad functions (instead of a symbol). The
-signature of a padding function is <code id='code19239'
+signature of a padding function is <code id='code19252'
 >(pad::bool str::bstring valid-chars::long)</code>. It
 receives the last block of the input. Should the input be of correct length then the an
-empty block will be sent to the padding function. <code id='code19240'
+empty block will be sent to the padding function. <code id='code19253'
 >valid-chars</code> indicates the number
 of read characters. It ranges from 0 to blocksize-1. The
-padding function should fill the block and return <code id='code19241'
+padding function should fill the block and return <code id='code19254'
 >#t</code> if this last block should
-be encoded. By returning <code id='code19242'
+be encoded. By returning <code id='code19255'
 >#f</code> the last block will be discarded. This makes
-only sense if <code id='code19243'
->valid-chars</code> was equal to 0.<br/><br/>The unpadding procedure has the signature <code id='code19245'
+only sense if <code id='code19256'
+>valid-chars</code> was equal to 0.<br/><br/>The unpadding procedure has the signature <code id='code19258'
 >(unpad::long str::bstring)</code>. The
 input string will have the length of the block-size. The unpadding function may
 modify the string and must return the number of characters that are valid.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19249" class="mark"></a><a name="decrypt::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19253" align="left" colspan="1"><strong id='bold19251'
->decrypt::bstring</strong><em id='it19252'
-> cipher ciphertext password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19254" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19262" class="mark"></a><a name="decrypt::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19266" align="left" colspan="1"><strong id='bold19264'
+>decrypt::bstring</strong><em id='it19265'
+> cipher ciphertext password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19267" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19258" class="mark"></a><a name="decrypt-string::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19262" align="left" colspan="1"><strong id='bold19260'
->decrypt-string::bstring</strong><em id='it19261'
-> cipher ciphertext::bstring password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19263" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19271" class="mark"></a><a name="decrypt-string::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19275" align="left" colspan="1"><strong id='bold19273'
+>decrypt-string::bstring</strong><em id='it19274'
+> cipher ciphertext::bstring password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19276" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19267" class="mark"></a><a name="decrypt-mmap::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19271" align="left" colspan="1"><strong id='bold19269'
->decrypt-mmap::bstring</strong><em id='it19270'
-> cipher ciphertext::mmap password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19272" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19280" class="mark"></a><a name="decrypt-mmap::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19284" align="left" colspan="1"><strong id='bold19282'
+>decrypt-mmap::bstring</strong><em id='it19283'
+> cipher ciphertext::mmap password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19285" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19276" class="mark"></a><a name="decrypt-port::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19280" align="left" colspan="1"><strong id='bold19278'
->decrypt-port::bstring</strong><em id='it19279'
-> cipher ciphertext::input-port password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19281" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19289" class="mark"></a><a name="decrypt-port::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19293" align="left" colspan="1"><strong id='bold19291'
+>decrypt-port::bstring</strong><em id='it19292'
+> cipher ciphertext::input-port password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19294" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19285" class="mark"></a><a name="decrypt-file::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19289" align="left" colspan="1"><strong id='bold19287'
->decrypt-file::bstring</strong><em id='it19288'
-> cipher filename::bstring password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19290" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19298" class="mark"></a><a name="decrypt-file::bstring" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19302" align="left" colspan="1"><strong id='bold19300'
+>decrypt-file::bstring</strong><em id='it19301'
+> cipher filename::bstring password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19303" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19294" class="mark"></a><a name="decrypt-sendchars" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19298" align="left" colspan="1"><strong id='bold19296'
->decrypt-sendchars</strong><em id='it19297'
-> cipher in::input-port out::output-port password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19299" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19307" class="mark"></a><a name="decrypt-sendchars" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19311" align="left" colspan="1"><strong id='bold19309'
+>decrypt-sendchars</strong><em id='it19310'
+> cipher in::input-port out::output-port password [:string-&gt;key] [:mode 'cfb] [:IV #f] [:pad 'none] [:nonce-init!] [:nonce-update!]</em></td><td id="tc19312" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 
-Counterpart to the encryption functions. With the same parameters the <code id='code19302'
+Counterpart to the encryption functions. With the same parameters the <code id='code19315'
 >decrypt</code> function will
-decrypt the result of an <code id='code19303'
->encrypt</code> call. Without <code id='code19305'
-><em id='it19304'
->:IV</em></code> (Initial Vector) the <code id='code19306'
+decrypt the result of an <code id='code19316'
+>encrypt</code> call. Without <code id='code19318'
+><em id='it19317'
+>:IV</em></code> (Initial Vector) the <code id='code19319'
 >decrypt</code> function
 will use the first block as IV.<br/><br/></td></tr>
 </tbody></table><br/><br/><br/>For compatibility the following functions remain in Bigloo. They are in the default
-library and not inside the <code id='code19311'
+library and not inside the <code id='code19324'
 >crypto</code> library.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19314" class="mark"></a><a name="aes-ctr-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19318" align="left" colspan="1"><strong id='bold19316'
->aes-ctr-encrypt</strong><em id='it19317'
-> text password [nbits 128]</em></td><td id="tc19319" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g19327" class="mark"></a><a name="aes-ctr-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19331" align="left" colspan="1"><strong id='bold19329'
+>aes-ctr-encrypt</strong><em id='it19330'
+> text password [nbits 128]</em></td><td id="tc19332" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g19323" class="mark"></a><a name="aes-ctr-encrypt-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19327" align="left" colspan="1"><strong id='bold19325'
->aes-ctr-encrypt-mmap</strong><em id='it19326'
-> mmap password [nbits 128]</em></td><td id="tc19328" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g19336" class="mark"></a><a name="aes-ctr-encrypt-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19340" align="left" colspan="1"><strong id='bold19338'
+>aes-ctr-encrypt-mmap</strong><em id='it19339'
+> mmap password [nbits 128]</em></td><td id="tc19341" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g19332" class="mark"></a><a name="aes-ctr-encrypt-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19336" align="left" colspan="1"><strong id='bold19334'
->aes-ctr-encrypt-string</strong><em id='it19335'
-> string password [nbits 128]</em></td><td id="tc19337" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g19345" class="mark"></a><a name="aes-ctr-encrypt-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19349" align="left" colspan="1"><strong id='bold19347'
+>aes-ctr-encrypt-string</strong><em id='it19348'
+> string password [nbits 128]</em></td><td id="tc19350" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g19341" class="mark"></a><a name="aes-ctr-encrypt-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19345" align="left" colspan="1"><strong id='bold19343'
->aes-ctr-encrypt-port</strong><em id='it19344'
-> iport password [nbits 128]</em></td><td id="tc19346" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g19354" class="mark"></a><a name="aes-ctr-encrypt-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19358" align="left" colspan="1"><strong id='bold19356'
+>aes-ctr-encrypt-port</strong><em id='it19357'
+> iport password [nbits 128]</em></td><td id="tc19359" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g19350" class="mark"></a><a name="aes-ctr-encrypt-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19354" align="left" colspan="1"><strong id='bold19352'
->aes-ctr-encrypt-file</strong><em id='it19353'
-> filename password [nbits 128]</em></td><td id="tc19355" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g19363" class="mark"></a><a name="aes-ctr-encrypt-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19367" align="left" colspan="1"><strong id='bold19365'
+>aes-ctr-encrypt-file</strong><em id='it19366'
+> filename password [nbits 128]</em></td><td id="tc19368" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-These functions are equivalent to a call to <code id='code19358'
+These functions are equivalent to a call to <code id='code19371'
 >aes-encrypt</code> with mode set to
-<code id='code19359'
->ctr</code> and a special <code id='code19360'
+<code id='code19372'
+>ctr</code> and a special <code id='code19373'
 >:string-&gt;key</code> parameter. The optional
-argument <code id='code19362'
-><em id='it19361'
->nbits</em></code> must either be <code id='code19363'
->128</code>, <code id='code19364'
->192</code>, or <code id='code19365'
+argument <code id='code19375'
+><em id='it19374'
+>nbits</em></code> must either be <code id='code19376'
+>128</code>, <code id='code19377'
+>192</code>, or <code id='code19378'
 >256</code> and
 determines the size of the key.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19369" class="mark"></a><a name="aes-ctr-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19373" align="left" colspan="1"><strong id='bold19371'
->aes-ctr-decrypt</strong><em id='it19372'
-> text password [nbits 128]</em></td><td id="tc19374" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g19382" class="mark"></a><a name="aes-ctr-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19386" align="left" colspan="1"><strong id='bold19384'
+>aes-ctr-decrypt</strong><em id='it19385'
+> text password [nbits 128]</em></td><td id="tc19387" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g19378" class="mark"></a><a name="aes-ctr-decrypt-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19382" align="left" colspan="1"><strong id='bold19380'
->aes-ctr-decrypt-mmap</strong><em id='it19381'
-> mmap password [nbits 128]</em></td><td id="tc19383" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g19391" class="mark"></a><a name="aes-ctr-decrypt-mmap" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19395" align="left" colspan="1"><strong id='bold19393'
+>aes-ctr-decrypt-mmap</strong><em id='it19394'
+> mmap password [nbits 128]</em></td><td id="tc19396" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g19387" class="mark"></a><a name="aes-ctr-decrypt-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19391" align="left" colspan="1"><strong id='bold19389'
->aes-ctr-decrypt-string</strong><em id='it19390'
-> string password [nbits 128]</em></td><td id="tc19392" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g19400" class="mark"></a><a name="aes-ctr-decrypt-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19404" align="left" colspan="1"><strong id='bold19402'
+>aes-ctr-decrypt-string</strong><em id='it19403'
+> string password [nbits 128]</em></td><td id="tc19405" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g19396" class="mark"></a><a name="aes-ctr-decrypt-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19400" align="left" colspan="1"><strong id='bold19398'
->aes-ctr-decrypt-port</strong><em id='it19399'
-> iport password [nbits 128]</em></td><td id="tc19401" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g19409" class="mark"></a><a name="aes-ctr-decrypt-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19413" align="left" colspan="1"><strong id='bold19411'
+>aes-ctr-decrypt-port</strong><em id='it19412'
+> iport password [nbits 128]</em></td><td id="tc19414" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g19405" class="mark"></a><a name="aes-ctr-decrypt-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19409" align="left" colspan="1"><strong id='bold19407'
->aes-ctr-decrypt-file</strong><em id='it19408'
-> filename password [nbits 128]</em></td><td id="tc19410" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g19418" class="mark"></a><a name="aes-ctr-decrypt-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19422" align="left" colspan="1"><strong id='bold19420'
+>aes-ctr-decrypt-file</strong><em id='it19421'
+> filename password [nbits 128]</em></td><td id="tc19423" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Counterpart to <code id='code19413'
+Counterpart to <code id='code19426'
 >aes-ctr-encrypt</code>.
 </td></tr>
 </tbody></table><br/>
@@ -506,76 +502,76 @@ Counterpart to <code id='code19413'
 <div class="subsection-atitle"><table width="100%"><tr><td bgcolor="#ffffff"><h3><font color="#8381de">15.1.1 String to Key</font>
 </h3></td></tr></table>
 </div><div class="subsection">
-<a name="String-to-Key" class="mark"></a><a name="g19416" class="mark"></a>The following string-&gt;key algorithms take a password string and transform it to
-a key string of a given length. In all the functions the <code id='code19419'
-><em id='it19418'
+<a name="String-to-Key" class="mark"></a><a name="g19429" class="mark"></a>The following string-&gt;key algorithms take a password string and transform it to
+a key string of a given length. In all the functions the <code id='code19432'
+><em id='it19431'
 >len</em></code> is expressed in
 bytes.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19422" class="mark"></a><a name="string->key-zero" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19426" align="left" colspan="1"><strong id='bold19424'
->string-&gt;key-zero</strong><em id='it19425'
-> str len</em></td><td id="tc19427" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19435" class="mark"></a><a name="string->key-zero" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19439" align="left" colspan="1"><strong id='bold19437'
+>string-&gt;key-zero</strong><em id='it19438'
+> str len</em></td><td id="tc19440" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-If the length of the input string <code id='code19431'
-><em id='it19430'
->str</em></code> is greater or equal to <code id='code19433'
-><em id='it19432'
+If the length of the input string <code id='code19444'
+><em id='it19443'
+>str</em></code> is greater or equal to <code id='code19446'
+><em id='it19445'
 >len</em></code>
-bytes then the first <code id='code19435'
-><em id='it19434'
->str</em></code> characters are returned. Otherwise <code id='code19437'
-><em id='it19436'
+bytes then the first <code id='code19448'
+><em id='it19447'
+>str</em></code> characters are returned. Otherwise <code id='code19450'
+><em id='it19449'
 >str</em></code> is
-suffixed with '0' (<code id='code19438'
+suffixed with '0' (<code id='code19451'
 >#a000</code>) characters.<br/><br/></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19443" class="mark"></a><a name="string->key-hash" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19447" align="left" colspan="1"><strong id='bold19445'
->string-&gt;key-hash</strong><em id='it19446'
-> str len hash-fun</em></td><td id="tc19448" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19456" class="mark"></a><a name="string->key-hash" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19460" align="left" colspan="1"><strong id='bold19458'
+>string-&gt;key-hash</strong><em id='it19459'
+> str len hash-fun</em></td><td id="tc19461" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-The input string <code id='code19452'
-><em id='it19451'
->str</em></code> is run through the given hash function <code id='code19454'
-><em id='it19453'
+The input string <code id='code19465'
+><em id='it19464'
+>str</em></code> is run through the given hash function <code id='code19467'
+><em id='it19466'
 >hash-fun</em></code>.
 The result is then concatenated multiple times (with itself) until a string of the
-<code id='code19456'
-><em id='it19455'
->len</em></code> bytes is obtained.<br/><br/>In the following example we encrypt <code id='code19459'
-><em id='it19458'
+<code id='code19469'
+><em id='it19468'
+>len</em></code> bytes is obtained.<br/><br/>In the following example we encrypt <code id='code19472'
+><em id='it19471'
 >some-message</em></code> using a
-password <code id='code19460'
+password <code id='code19473'
 >&quot;my password&quot;</code>. The password will be transformed to
-256 bits (32 bytes) using the <code id='code19461'
->string-&gt;key256</code> function.<br/><br/><center id='center19469'
+256 bits (32 bytes) using the <code id='code19474'
+>string-&gt;key256</code> function.<br/><br/><center id='center19482'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19467'
->(<font color="#6959cf"><strong id='bold32686'
->define</strong></font> (<font color="#6959cf"><strong id='bold32688'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19480'
+>(<font color="#6959cf"><strong id='bold32698'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32700'
 >string-&gt;key256</strong></font> password)
   (string-&gt;key-hash password 32
-                    (<strong id='bold32690'
+                    (<strong id='bold32702'
 >lambda</strong> (str) (string-hex-intern (sha1sum str)))))
-(encrypt 'aes some-message <font color="red">&quot;my password&quot;</font> <strong id='bold32692'
+(encrypt 'aes some-message <font color="red">&quot;my password&quot;</font> <strong id='bold32704'
 >:string-&gt;key</strong> string-&gt;key256)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Note that the following example yields an identical result:<br/><br/><center id='center19478'
+Note that the following example yields an identical result:<br/><br/><center id='center19491'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19476'
->(<font color="#6959cf"><strong id='bold32694'
->define</strong></font> (<font color="#6959cf"><strong id='bold32696'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19489'
+>(<font color="#6959cf"><strong id='bold32706'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32708'
 >string-&gt;key256</strong></font> password)
   (string-&gt;key-hash password 32
-                    (<strong id='bold32698'
+                    (<strong id='bold32710'
 >lambda</strong> (str) (string-hex-intern (sha1sum str)))))
 (encrypt 'aes some-message (string-&gt;key256 <font color="red">&quot;my password&quot;</font>)
-         <strong id='bold32700'
->:string-&gt;key</strong> (<strong id='bold32702'
+         <strong id='bold32712'
+>:string-&gt;key</strong> (<strong id='bold32714'
 >lambda</strong> (x) x))
 </pre>
 </td></tr>
@@ -584,47 +580,47 @@ Note that the following example yields an identical result:<br/><br/><center id=
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19482" class="mark"></a><a name="string->key-simple" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19486" align="left" colspan="1"><strong id='bold19484'
->string-&gt;key-simple</strong><em id='it19485'
-> str len hash-fun</em></td><td id="tc19487" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19495" class="mark"></a><a name="string->key-simple" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19499" align="left" colspan="1"><strong id='bold19497'
+>string-&gt;key-simple</strong><em id='it19498'
+> str len hash-fun</em></td><td id="tc19500" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 
 This function implements the simple s2k algorithm of OpenPGP (RFC 2440). Basically
-<code id='code19491'
-><em id='it19490'
+<code id='code19504'
+><em id='it19503'
 >str</em></code> is run through the hash-fun several times until the concatenation of
 the results is long enough. At each iteration the string is prefixed with
-<code id='code19493'
-><em id='it19492'
->count</em></code> '0'-bytes (where <code id='code19495'
-><em id='it19494'
+<code id='code19506'
+><em id='it19505'
+>count</em></code> '0'-bytes (where <code id='code19508'
+><em id='it19507'
 >count</em></code> is the iteration counter).<br/><br/></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19500" class="mark"></a><a name="string->key-salted" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19504" align="left" colspan="1"><strong id='bold19502'
->string-&gt;key-salted</strong><em id='it19503'
-> str len hash-fun salt</em></td><td id="tc19505" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19513" class="mark"></a><a name="string->key-salted" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19517" align="left" colspan="1"><strong id='bold19515'
+>string-&gt;key-salted</strong><em id='it19516'
+> str len hash-fun salt</em></td><td id="tc19518" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 This function implements the salted s2k algorithm of OpenPGP (RFC 2440).
-Similar to <code id='code19508'
+Similar to <code id='code19521'
 >string-&gt;key-simple</code> but the input string is first prefixed with
-<code id='code19510'
-><em id='it19509'
+<code id='code19523'
+><em id='it19522'
 >salt</em></code>.<br/><br/></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19515" class="mark"></a><a name="string->key-iterated-salted" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19519" align="left" colspan="1"><strong id='bold19517'
->string-&gt;key-iterated-salted</strong><em id='it19518'
-> str len hash-fun salt count</em></td><td id="tc19520" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19528" class="mark"></a><a name="string->key-iterated-salted" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19532" align="left" colspan="1"><strong id='bold19530'
+>string-&gt;key-iterated-salted</strong><em id='it19531'
+> str len hash-fun salt count</em></td><td id="tc19533" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 This function implements the iterated salted s2k algorithm of OpenPGP (RFC 2440).
-The variable <code id='code19524'
-><em id='it19523'
+The variable <code id='code19537'
+><em id='it19536'
 >count</em></code> must be a long. This algorithm is an extension of
-<code id='code19525'
+<code id='code19538'
 >string-&gt;key-salted</code> where the hash function is applied
 repeatedly.<br/><br/>This function has changed with release 3.4b. Earlier
 versions could be incompatible with RFC 2440.<br/><br/></td></tr>
@@ -635,7 +631,7 @@ versions could be incompatible with RFC 2440.<br/><br/></td></tr>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">15.2 Public Key Cryptography</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Public-Key-Cryptography" class="mark"></a><a name="g19531" class="mark"></a>
+<a name="Public-Key-Cryptography" class="mark"></a><a name="g19544" class="mark"></a>
 
 <!-- Rivest, Shamir, and Adleman (RSA) -->
 <a name="Rivest-Shamir-and-Adleman-(RSA)"></a>
@@ -644,7 +640,7 @@ versions could be incompatible with RFC 2440.<br/><br/></td></tr>
 </div><div class="subsection">
 <a name="RSA" class="mark"></a>
 Bigloo's implementation of RSA is based on RFC 3447, PKCS #1 v2.1. It does
-not feature multiprime RSA, though.<br/><br/>Bigloo's implementation is <em id='emph19534'
+not feature multiprime RSA, though.<br/><br/>Bigloo's implementation is <em id='emph19547'
 >not</em> secure against timing attacks. Furthermore
 some error codes might reveal information to attackers.<br/><br/><!-- RSA Keys -->
 <a name="RSA-Keys"></a>
@@ -655,53 +651,53 @@ A complete key contains the information of both the public and the private
 key (together with other information that could be reconstructed out of
 the private key). A partial key just contains the modulus and the private
 or public exponent.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19538" class="mark"></a><a name="RSA-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19542" align="left" colspan="1"><strong id='bold19540'
->RSA-Key</strong><em id='it19541'
-></em></td><td id="tc19543" align="right" colspan="1">Bigloo Cryptography class</td></tr>
+<tr><td><a name="g19551" class="mark"></a><a name="RSA-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19555" align="left" colspan="1"><strong id='bold19553'
+>RSA-Key</strong><em id='it19554'
+></em></td><td id="tc19556" align="right" colspan="1">Bigloo Cryptography class</td></tr>
 </tbody></table>
-<a name="g19547" class="mark"></a><a name="Complete-RSA-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19551" align="left" colspan="1"><strong id='bold19549'
->Complete-RSA-Key</strong><em id='it19550'
-></em></td><td id="tc19552" align="right" colspan="1">Bigloo Cryptography class</td></tr>
+<a name="g19560" class="mark"></a><a name="Complete-RSA-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19564" align="left" colspan="1"><strong id='bold19562'
+>Complete-RSA-Key</strong><em id='it19563'
+></em></td><td id="tc19565" align="right" colspan="1">Bigloo Cryptography class</td></tr>
 </tbody></table>
-<center id='center19567'
+<center id='center19580'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19565'
->(<strong id='bold32703'
->class</strong> Rsa-Key modulus<font color="#00cf00"><strong id='bold32704'
->::bignum</strong></font> exponent<font color="#00cf00"><strong id='bold32706'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19578'
+>(<strong id='bold32715'
+>class</strong> Rsa-Key modulus<font color="#00cf00"><strong id='bold32716'
+>::bignum</strong></font> exponent<font color="#00cf00"><strong id='bold32718'
 >::bignum</strong></font>)
-(final-class Complete-Rsa-Key<font color="#00cf00"><strong id='bold32708'
+(final-class Complete-Rsa-Key<font color="#00cf00"><strong id='bold32720'
 >::Rsa-Key</strong></font>
-  <font color="#ffa600"><em id='it32710'
+  <font color="#ffa600"><em id='it32722'
 >;; for the complete-rsa-key &quot;exponent&quot; takes the role of 'd'</em></font>
-  e<font color="#00cf00"><strong id='bold32712'
->::bignum</strong></font> p<font color="#00cf00"><strong id='bold32714'
->::bignum</strong></font> q<font color="#00cf00"><strong id='bold32716'
+  e<font color="#00cf00"><strong id='bold32724'
+>::bignum</strong></font> p<font color="#00cf00"><strong id='bold32726'
+>::bignum</strong></font> q<font color="#00cf00"><strong id='bold32728'
 >::bignum</strong></font>
-  exp1<font color="#00cf00"><strong id='bold32718'
->::bignum</strong></font>   <font color="#ffa600"><em id='it32720'
+  exp1<font color="#00cf00"><strong id='bold32730'
+>::bignum</strong></font>   <font color="#ffa600"><em id='it32732'
 >;; d mod (p-1)</em></font>
-  exp2<font color="#00cf00"><strong id='bold32722'
->::bignum</strong></font>   <font color="#ffa600"><em id='it32724'
+  exp2<font color="#00cf00"><strong id='bold32734'
+>::bignum</strong></font>   <font color="#ffa600"><em id='it32736'
 >;; d mod (q-1)</em></font>
-  coeff<font color="#00cf00"><strong id='bold32726'
->::bignum</strong></font>) <font color="#ffa600"><em id='it32728'
+  coeff<font color="#00cf00"><strong id='bold32738'
+>::bignum</strong></font>) <font color="#ffa600"><em id='it32740'
 >;; (inverse of q) mod p</em></font>
 </pre>
 </td></tr>
 </tbody></table></center>
 </td></tr>
 </tbody></table><br/>
-RSA keys can be read and written using <code id='code19570'
+RSA keys can be read and written using <code id='code19583'
 >read-pem-key</code> and
-<code id='code19571'
+<code id='code19584'
 >write-pem-key</code> (<a href="bigloo-16.html#PEM" class="inbound">PEM</a>).<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19574" class="mark"></a><a name="generate-rsa-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19578" align="left" colspan="1"><strong id='bold19576'
->generate-rsa-key</strong><em id='it19577'
-> [:key 1024] [:show-trace]</em></td><td id="tc19579" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19587" class="mark"></a><a name="generate-rsa-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19591" align="left" colspan="1"><strong id='bold19589'
+>generate-rsa-key</strong><em id='it19590'
+> [:key 1024] [:show-trace]</em></td><td id="tc19592" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 
 This function generates a new RSA key (with its public and private components).<br/><br/>Do not use this function for critical applications. No special effort has been
@@ -711,22 +707,22 @@ weed out insecure keys.
 </tbody></table><br/>
 Complete keys can be accessed using the following functions:
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19586" class="mark"></a><a name="extract-public-rsa-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19590" align="left" colspan="1"><strong id='bold19588'
->extract-public-rsa-key</strong><em id='it19589'
-> complete-key</em></td><td id="tc19591" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19599" class="mark"></a><a name="extract-public-rsa-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19603" align="left" colspan="1"><strong id='bold19601'
+>extract-public-rsa-key</strong><em id='it19602'
+> complete-key</em></td><td id="tc19604" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 Returns the public partial key of the given complete key.<br/><br/>This procedure is implemented as follows:
-<center id='center19602'
+<center id='center19615'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19600'
->(<font color="#6959cf"><strong id='bold32730'
->define</strong></font> (<font color="#6959cf"><strong id='bold32732'
->extract-public-rsa-key</strong></font><font color="#00cf00"><strong id='bold32734'
->::Rsa-Key</strong></font> key<font color="#00cf00"><strong id='bold32736'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19613'
+>(<font color="#6959cf"><strong id='bold32742'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32744'
+>extract-public-rsa-key</strong></font><font color="#00cf00"><strong id='bold32746'
+>::Rsa-Key</strong></font> key<font color="#00cf00"><strong id='bold32748'
 >::Complete-Rsa-Key</strong></font>)
-   (<strong id='bold32738'
->with-access</strong><font color="#00cf00"><strong id='bold32739'
+   (<strong id='bold32750'
+>with-access</strong><font color="#00cf00"><strong id='bold32751'
 >::Complete-Rsa-Key</strong></font> key (modulus e)
       (make-Rsa-Key modulus e)))
 </pre>
@@ -735,29 +731,29 @@ Returns the public partial key of the given complete key.<br/><br/>This procedur
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19606" class="mark"></a><a name="extract-private-rsa-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19610" align="left" colspan="1"><strong id='bold19608'
->extract-private-rsa-key</strong><em id='it19609'
-> complete-key</em></td><td id="tc19611" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19619" class="mark"></a><a name="extract-private-rsa-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19623" align="left" colspan="1"><strong id='bold19621'
+>extract-private-rsa-key</strong><em id='it19622'
+> complete-key</em></td><td id="tc19624" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 Returns the private partial key of the given complete key.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19617" class="mark"></a><a name="rsa-key=?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19621" align="left" colspan="1"><strong id='bold19619'
->rsa-key=?</strong><em id='it19620'
-> key1 key2</em></td><td id="tc19622" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19630" class="mark"></a><a name="rsa-key=?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19634" align="left" colspan="1"><strong id='bold19632'
+>rsa-key=?</strong><em id='it19633'
+> key1 key2</em></td><td id="tc19635" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 Returns true if the two keys have the same modulus and public exponent.
 The exponent of a partial key is considered to be public.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19628" class="mark"></a><a name="rsa-key-length" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19632" align="left" colspan="1"><strong id='bold19630'
->rsa-key-length</strong><em id='it19631'
-> key</em></td><td id="tc19633" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19641" class="mark"></a><a name="rsa-key-length" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19645" align="left" colspan="1"><strong id='bold19643'
+>rsa-key-length</strong><em id='it19644'
+> key</em></td><td id="tc19646" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 Returns the key length in bytes.
 </td></tr>
@@ -770,13 +766,13 @@ Returns the key length in bytes.
 RSA only works on bignums (up to the size of the modulus). The following
 procedures implement basic encryption, decryption, signing and
 signature verification.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19640" class="mark"></a><a name="rsa-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19644" align="left" colspan="1"><strong id='bold19642'
->rsa-encrypt</strong><em id='it19643'
-> key m</em></td><td id="tc19645" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19653" class="mark"></a><a name="rsa-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19657" align="left" colspan="1"><strong id='bold19655'
+>rsa-encrypt</strong><em id='it19656'
+> key m</em></td><td id="tc19658" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-Encrypts the bignum <code id='code19649'
-><em id='it19648'
+Encrypts the bignum <code id='code19662'
+><em id='it19661'
 >m</em></code> using the given key. If the key is a complete
 key then its public exponent is used. For partial keys only one
 exponent is available (which is assumed to be the public 'e' of the
@@ -784,13 +780,13 @@ recipient). The result is again a bignum.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19653" class="mark"></a><a name="rsa-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19657" align="left" colspan="1"><strong id='bold19655'
->rsa-decrypt</strong><em id='it19656'
-> key c</em></td><td id="tc19658" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19666" class="mark"></a><a name="rsa-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19670" align="left" colspan="1"><strong id='bold19668'
+>rsa-decrypt</strong><em id='it19669'
+> key c</em></td><td id="tc19671" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-Decrypts the bignum <code id='code19662'
-><em id='it19661'
+Decrypts the bignum <code id='code19675'
+><em id='it19674'
 >c</em></code> using the given key. If the key is a complete
 key then its private exponent is used. For partial keys only one exponent
 is available (which is assumed to be the private 'd').
@@ -798,34 +794,34 @@ The result is again a bignum.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19666" class="mark"></a><a name="rsa-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19670" align="left" colspan="1"><strong id='bold19668'
->rsa-sign</strong><em id='it19669'
-> k m</em></td><td id="tc19671" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19679" class="mark"></a><a name="rsa-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19683" align="left" colspan="1"><strong id='bold19681'
+>rsa-sign</strong><em id='it19682'
+> k m</em></td><td id="tc19684" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-Signs the bignum <code id='code19675'
-><em id='it19674'
->m</em></code> using key <code id='code19677'
-><em id='it19676'
+Signs the bignum <code id='code19688'
+><em id='it19687'
+>m</em></code> using key <code id='code19690'
+><em id='it19689'
 >k</em></code>. Uses the private exponent
 of complete keys. The result is a bignum.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19681" class="mark"></a><a name="rsa-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19685" align="left" colspan="1"><strong id='bold19683'
->rsa-verify</strong><em id='it19684'
-> k m s</em></td><td id="tc19686" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19694" class="mark"></a><a name="rsa-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19698" align="left" colspan="1"><strong id='bold19696'
+>rsa-verify</strong><em id='it19697'
+> k m s</em></td><td id="tc19699" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-Verifies the signature <code id='code19690'
-><em id='it19689'
->s</em></code>. Returns true if <code id='code19692'
-><em id='it19691'
+Verifies the signature <code id='code19703'
+><em id='it19702'
+>s</em></code>. Returns true if <code id='code19705'
+><em id='it19704'
 >s</em></code> is the
-signature of <code id='code19694'
-><em id='it19693'
->m</em></code>. The key <code id='code19696'
-><em id='it19695'
+signature of <code id='code19707'
+><em id='it19706'
+>m</em></code>. The key <code id='code19709'
+><em id='it19708'
 >k</em></code> should be the public
 key of the signer.
 </td></tr>
@@ -837,9 +833,9 @@ key of the signer.
 </h4></div><div class="subsubsection">
 
 In this section we will present an example of using RSA.<br/><br/>Let's start by generating an RSA key in openssl:
-<center id='center19702'
+<center id='center19715'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog19700'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog19713'
 >$ openssl genrsa -out my_rsa_key.pem 1024
 </pre>
 </td></tr>
@@ -848,37 +844,37 @@ In this section we will present an example of using RSA.<br/><br/>Let's start by
 Our key will have 1024 bits (for the public modulus), and therefore
 RSA will only be able to work with bignums up to 1024 bits
 (128 bytes).<br/><br/>Now some Bigloo code that uses this key.<br/><br/>Start by loading the library.
-<center id='center19711'
+<center id='center19724'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19709'
->(<font color="#1919af"><strong id='bold32741'
->module</strong></font> <font color="#1919af"><strong id='bold32743'
->rsa-example</strong></font> (<font color="#1919af"><strong id='bold32745'
->library</strong></font> <font color="#1919af"><strong id='bold32747'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19722'
+>(<font color="#1919af"><strong id='bold32753'
+>module</strong></font> <font color="#1919af"><strong id='bold32755'
+>rsa-example</strong></font> (<font color="#1919af"><strong id='bold32757'
+>library</strong></font> <font color="#1919af"><strong id='bold32759'
 >crypto</strong></font>))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Now read the key:
-<center id='center19717'
+<center id='center19730'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19715'
->(<font color="#6959cf"><strong id='bold32749'
->define</strong></font> <font color="#6959cf"><strong id='bold32751'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19728'
+>(<font color="#6959cf"><strong id='bold32761'
+>define</strong></font> <font color="#6959cf"><strong id='bold32763'
 >*key*</strong></font> (read-pem-key <font color="red">&quot;my_rsa_key.pem&quot;</font>))
-(<font color="#6959cf"><strong id='bold32754'
->define</strong></font> <font color="#6959cf"><strong id='bold32756'
+(<font color="#6959cf"><strong id='bold32766'
+>define</strong></font> <font color="#6959cf"><strong id='bold32768'
 >*public-key*</strong></font> (extract-public-rsa-key *key*))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 The public portion of the key can be distributed:
-<center id='center19720'
+<center id='center19733'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19718'
-><font color="#ffa600"><em id='it32758'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19731'
+><font color="#ffa600"><em id='it32770'
 >;; publish the *public-key*:</em></font>
 (write-pem-key-string *public-key*)
 </pre>
@@ -888,54 +884,54 @@ The public portion of the key can be distributed:
 Now let's sign the message ``My Important Message''. This message is
 sufficiently short to be signed directly, but in general it is better
 to get a hash of the message:
-<center id='center19726'
+<center id='center19739'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19724'
->(<font color="#6959cf"><strong id='bold32760'
->define</strong></font> <font color="#6959cf"><strong id='bold32762'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19737'
+>(<font color="#6959cf"><strong id='bold32772'
+>define</strong></font> <font color="#6959cf"><strong id='bold32774'
 >msg-hash</strong></font> (sha1sum <font color="red">&quot;my message&quot;</font>))
-(<font color="#6959cf"><strong id='bold32765'
->define</strong></font> <font color="#6959cf"><strong id='bold32767'
+(<font color="#6959cf"><strong id='bold32777'
+>define</strong></font> <font color="#6959cf"><strong id='bold32779'
 >msg-hash-bignum</strong></font> (octet-string-&gt;bignum msg-hash))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The result of <code id='code19727'
+The result of <code id='code19740'
 >sha1sum</code> returns a human readable representation
 of the hash. It would hence be possible to transform it back to
 an internal representation before applying the
-<code id='code19728'
+<code id='code19741'
 >octet-string-&gt;bignum</code> function:
-<center id='center19732'
+<center id='center19745'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19730'
->(<font color="#6959cf"><strong id='bold32769'
->define</strong></font> <font color="#6959cf"><strong id='bold32771'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19743'
+>(<font color="#6959cf"><strong id='bold32781'
+>define</strong></font> <font color="#6959cf"><strong id='bold32783'
 >msg-hash-bignum</strong></font> (octet-string-&gt;bignum (string-hex-intern msg-hash)))
 </pre>
 </td></tr>
 </tbody></table></center>
 In our case both variants are small enough to fit into our keys. The latter version
 is however more often used.<br/><br/>Now that we have a message hash in bignum form we can sign it.
-<center id='center19737'
+<center id='center19750'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19735'
->(<font color="#6959cf"><strong id='bold32773'
->define</strong></font> <font color="#6959cf"><strong id='bold32775'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19748'
+>(<font color="#6959cf"><strong id='bold32785'
+>define</strong></font> <font color="#6959cf"><strong id='bold32787'
 >signature</strong></font> (rsa-sign *key* msg-hash-bignum))
 </pre>
 </td></tr>
 </tbody></table></center>
 The signature is again in bignum form. If needed there are several ways to transform
-it into string-form (for instance <code id='code19738'
->bignum-&gt;string</code> or <code id='code19739'
+it into string-form (for instance <code id='code19751'
+>bignum-&gt;string</code> or <code id='code19752'
 >bignum-&gt;octet-string</code>).<br/><br/>The signature can now be distributed. Anyone wanting to verify the signature
-simply has to create the same message-hash and call <code id='code19741'
+simply has to create the same message-hash and call <code id='code19754'
 >rsa-verify</code> with our
-public key:<br/><br/><center id='center19745'
+public key:<br/><br/><center id='center19758'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19743'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19756'
 >(rsa-verify *public-key* msg-hash-bignum signature) =&gt; #t
 </pre>
 </td></tr>
@@ -948,11 +944,11 @@ transform this short string into a bignum and directly encrypt
 the bignum. This approach would however not work for longer strings. In the following we
 will present the generic version that works with strings of any size.<br/><br/>Public key cryptography is relatively slow and Alice thus starts by encrypting our
 message a fast block cipher with a ``random'' password:
-<center id='center19753'
+<center id='center19766'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19751'
->(<font color="#6959cf"><strong id='bold32777'
->define</strong></font> <font color="#6959cf"><strong id='bold32779'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19764'
+>(<font color="#6959cf"><strong id='bold32789'
+>define</strong></font> <font color="#6959cf"><strong id='bold32791'
 >encrypted</strong></font> (encrypt 'aes <font color="red">&quot;Cryptography&quot;</font> <font color="red">&quot;my random password&quot;</font>))
 </pre>
 </td></tr>
@@ -960,33 +956,33 @@ message a fast block cipher with a ``random'' password:
 
 Alice can already send us the encrypted message. We will just not yet be able
 to decrypt it, as we don't have the random password yet.<br/><br/>Alice now takes her random password string and encrypts it with our public key:
-<center id='center19759'
+<center id='center19772'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19757'
->(<font color="#6959cf"><strong id='bold32783'
->define</strong></font> <font color="#6959cf"><strong id='bold32785'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19770'
+>(<font color="#6959cf"><strong id='bold32795'
+>define</strong></font> <font color="#6959cf"><strong id='bold32797'
 >encrypted-key</strong></font> (rsa-encrypt *public-key* (octet-string-&gt;bignum <font color="red">&quot;my random password&quot;</font>)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Alice simply sends us the <code id='code19760'
+Alice simply sends us the <code id='code19773'
 >encrypted-key</code>. On our side we can now
 decrypt the key:
-<center id='center19764'
+<center id='center19777'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19762'
->(<font color="#6959cf"><strong id='bold32788'
->define</strong></font> <font color="#6959cf"><strong id='bold32790'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19775'
+>(<font color="#6959cf"><strong id='bold32800'
+>define</strong></font> <font color="#6959cf"><strong id='bold32802'
 >aes-key</strong></font> (bignum-&gt;octet-string (rsa-decrypt *key* encrypted-key)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 We can now decrypt the previously received message:
-<center id='center19768'
+<center id='center19781'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19766'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19779'
 >(decrypt 'aes aes-key encrypted) =&gt; <font color="red">&quot;Cryptography&quot;</font>
 </pre>
 </td></tr>
@@ -999,33 +995,33 @@ We can now decrypt the previously received message:
 </h4></div><div class="subsubsection">
 
 The following functions have been defined in RFC 3447.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19771" class="mark"></a><a name="RSAEP" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19775" align="left" colspan="1"><strong id='bold19773'
->RSAEP</strong><em id='it19774'
-> k m</em></td><td id="tc19776" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19784" class="mark"></a><a name="RSAEP" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19788" align="left" colspan="1"><strong id='bold19786'
+>RSAEP</strong><em id='it19787'
+> k m</em></td><td id="tc19789" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19780" class="mark"></a><a name="RSADP" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19784" align="left" colspan="1"><strong id='bold19782'
->RSADP</strong><em id='it19783'
-> k c</em></td><td id="tc19785" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19793" class="mark"></a><a name="RSADP" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19797" align="left" colspan="1"><strong id='bold19795'
+>RSADP</strong><em id='it19796'
+> k c</em></td><td id="tc19798" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19789" class="mark"></a><a name="RSASP1" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19793" align="left" colspan="1"><strong id='bold19791'
->RSASP1</strong><em id='it19792'
-> k m</em></td><td id="tc19794" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19802" class="mark"></a><a name="RSASP1" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19806" align="left" colspan="1"><strong id='bold19804'
+>RSASP1</strong><em id='it19805'
+> k m</em></td><td id="tc19807" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19798" class="mark"></a><a name="RSAVP1" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19802" align="left" colspan="1"><strong id='bold19800'
->RSAVP1</strong><em id='it19801'
-> k s</em></td><td id="tc19803" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19811" class="mark"></a><a name="RSAVP1" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19815" align="left" colspan="1"><strong id='bold19813'
+>RSAVP1</strong><em id='it19814'
+> k s</em></td><td id="tc19816" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 These are the RFC 3447 names for encryption, decryption, signature and
 signature verification. Note that the verification does not receive the
-original message as parameter.<br/><br/>In fact <code id='code19807'
+original message as parameter.<br/><br/>In fact <code id='code19820'
 >rsa-verify</code> is implemented as follows:
-<center id='center19810'
+<center id='center19823'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog19808'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog19821'
 >(define (rsa-verify k m s)
   (=bx m (RSAVP1 k s)))
 </pre>
@@ -1034,82 +1030,82 @@ original message as parameter.<br/><br/>In fact <code id='code19807'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19814" class="mark"></a><a name="PKCS1-v1.5-pad" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19818" align="left" colspan="1"><strong id='bold19816'
->PKCS1-v1.5-pad</strong><em id='it19817'
-> m-str key-len mode</em></td><td id="tc19819" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19827" class="mark"></a><a name="PKCS1-v1.5-pad" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19831" align="left" colspan="1"><strong id='bold19829'
+>PKCS1-v1.5-pad</strong><em id='it19830'
+> m-str key-len mode</em></td><td id="tc19832" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19823" class="mark"></a><a name="PKCS1-v1.5-unpad" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19827" align="left" colspan="1"><strong id='bold19825'
->PKCS1-v1.5-unpad</strong><em id='it19826'
-> em-str mode</em></td><td id="tc19828" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19836" class="mark"></a><a name="PKCS1-v1.5-unpad" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19840" align="left" colspan="1"><strong id='bold19838'
+>PKCS1-v1.5-unpad</strong><em id='it19839'
+> em-str mode</em></td><td id="tc19841" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 Pads (resp. unpads) the given string using PKCS1-v1.5 specifications.
 Mode must be 0, 1 or 2.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19834" class="mark"></a><a name="RSAES-PKCS1-v1.5-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19838" align="left" colspan="1"><strong id='bold19836'
->RSAES-PKCS1-v1.5-encrypt</strong><em id='it19837'
->t key m-str</em></td><td id="tc19839" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19847" class="mark"></a><a name="RSAES-PKCS1-v1.5-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19851" align="left" colspan="1"><strong id='bold19849'
+>RSAES-PKCS1-v1.5-encrypt</strong><em id='it19850'
+>t key m-str</em></td><td id="tc19852" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19843" class="mark"></a><a name="RSAES-PKCS1-v1.5-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19847" align="left" colspan="1"><strong id='bold19845'
->RSAES-PKCS1-v1.5-decrypt</strong><em id='it19846'
-> key c-str</em></td><td id="tc19848" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19856" class="mark"></a><a name="RSAES-PKCS1-v1.5-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19860" align="left" colspan="1"><strong id='bold19858'
+>RSAES-PKCS1-v1.5-decrypt</strong><em id='it19859'
+> key c-str</em></td><td id="tc19861" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19852" class="mark"></a><a name="RSASSA-PKCS1-v1.5-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19856" align="left" colspan="1"><strong id='bold19854'
->RSASSA-PKCS1-v1.5-sign</strong><em id='it19855'
-> key msg-str [:hash-algo 'sha-1]</em></td><td id="tc19857" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19865" class="mark"></a><a name="RSASSA-PKCS1-v1.5-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19869" align="left" colspan="1"><strong id='bold19867'
+>RSASSA-PKCS1-v1.5-sign</strong><em id='it19868'
+> key msg-str [:hash-algo 'sha-1]</em></td><td id="tc19870" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19861" class="mark"></a><a name="RSASSA-PKCS1-v1.5-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19865" align="left" colspan="1"><strong id='bold19863'
->RSASSA-PKCS1-v1.5-verify</strong><em id='it19864'
-> key msg-str S-str</em></td><td id="tc19866" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19874" class="mark"></a><a name="RSASSA-PKCS1-v1.5-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19878" align="left" colspan="1"><strong id='bold19876'
+>RSASSA-PKCS1-v1.5-verify</strong><em id='it19877'
+> key msg-str S-str</em></td><td id="tc19879" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19870" class="mark"></a><a name="RSASSA-PKCS1-v1.5-sign-bignum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19874" align="left" colspan="1"><strong id='bold19872'
->RSASSA-PKCS1-v1.5-sign-bignum</strong><em id='it19873'
-> key msg-str [:hash-algo 'sha-1]</em></td><td id="tc19875" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19883" class="mark"></a><a name="RSASSA-PKCS1-v1.5-sign-bignum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19887" align="left" colspan="1"><strong id='bold19885'
+>RSASSA-PKCS1-v1.5-sign-bignum</strong><em id='it19886'
+> key msg-str [:hash-algo 'sha-1]</em></td><td id="tc19888" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19879" class="mark"></a><a name="RSASSA-PKCS1-v1.5-verify-bignum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19883" align="left" colspan="1"><strong id='bold19881'
->RSASSA-PKCS1-v1.5-verify-bignum</strong><em id='it19882'
-> key msg-str S</em></td><td id="tc19884" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19892" class="mark"></a><a name="RSASSA-PKCS1-v1.5-verify-bignum" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19896" align="left" colspan="1"><strong id='bold19894'
+>RSASSA-PKCS1-v1.5-verify-bignum</strong><em id='it19895'
+> key msg-str S</em></td><td id="tc19897" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 RSAES-PKCS1-v1.5 functions work on strings. However their length is
 limited by the size of the modulus (to be exact: by key-len - 11).
-The <code id='code19887'
+The <code id='code19900'
 >-bignum</code> functions skip the last step of converting the
-internal bignum to strings.<br/><br/>The optional <code id='code19889'
->:hash-algo</code> must be either <code id='code19890'
->sha-1</code> or <code id='code19891'
+internal bignum to strings.<br/><br/>The optional <code id='code19902'
+>:hash-algo</code> must be either <code id='code19903'
+>sha-1</code> or <code id='code19904'
 >md5</code>
 (RFC 3447 allows other hash algorithms, but they are not yet implemented).
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19895" class="mark"></a><a name="RSAES-OAEP-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19899" align="left" colspan="1"><strong id='bold19897'
->RSAES-OAEP-encrypt</strong><em id='it19898'
-> key m-str [:label &quot;&quot;]</em></td><td id="tc19900" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19908" class="mark"></a><a name="RSAES-OAEP-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19912" align="left" colspan="1"><strong id='bold19910'
+>RSAES-OAEP-encrypt</strong><em id='it19911'
+> key m-str [:label &quot;&quot;]</em></td><td id="tc19913" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19904" class="mark"></a><a name="RSAES-OAEP-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19908" align="left" colspan="1"><strong id='bold19906'
->RSAES-OAEP-decrypt</strong><em id='it19907'
-> key cypher-str [:label &quot;&quot;]</em></td><td id="tc19909" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19917" class="mark"></a><a name="RSAES-OAEP-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19921" align="left" colspan="1"><strong id='bold19919'
+>RSAES-OAEP-decrypt</strong><em id='it19920'
+> key cypher-str [:label &quot;&quot;]</em></td><td id="tc19922" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19913" class="mark"></a><a name="RSASSA-PSS-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19917" align="left" colspan="1"><strong id='bold19915'
->RSASSA-PSS-sign</strong><em id='it19916'
-> key msg-str</em></td><td id="tc19918" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19926" class="mark"></a><a name="RSASSA-PSS-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19930" align="left" colspan="1"><strong id='bold19928'
+>RSASSA-PSS-sign</strong><em id='it19929'
+> key msg-str</em></td><td id="tc19931" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g19922" class="mark"></a><a name="RSASSA-PSS-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19926" align="left" colspan="1"><strong id='bold19924'
->RSASSA-PSS-verify</strong><em id='it19925'
-> key msg-str sig-str</em></td><td id="tc19927" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g19935" class="mark"></a><a name="RSASSA-PSS-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19939" align="left" colspan="1"><strong id='bold19937'
+>RSASSA-PSS-verify</strong><em id='it19938'
+> key msg-str sig-str</em></td><td id="tc19940" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 These functions pad, mask, etc the input string before they perform their
 operation on them. See RFC 3447 for more information.
@@ -1125,37 +1121,37 @@ operation on them. See RFC 3447 for more information.
 <a name="DSA" class="mark"></a>
 Bigloo has rudimentary (but usually sufficient) support for DSA.
 While it is not possible to generate new DSA keys inside Bigloo
-one can sign or verify with Bigloo.<br/><br/>DSA keys can be read and written using <code id='code19933'
+one can sign or verify with Bigloo.<br/><br/>DSA keys can be read and written using <code id='code19946'
 >read-pem</code> (<a href="bigloo-16.html#PEM" class="inbound">PEM</a>).<br/><br/>For consistency with RSA we have named DSA keys in a similar way as
 the RSA keys. The public part of a DSA key can be found in the class
-<code id='code19935'
+<code id='code19948'
 >DSA-Key</code> while the private part is added in the
-<code id='code19936'
+<code id='code19949'
 >Complete-DSA-Key</code> subclass.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19939" class="mark"></a><a name="DSA-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19943" align="left" colspan="1"><strong id='bold19941'
->DSA-Key</strong><em id='it19942'
-></em></td><td id="tc19944" align="right" colspan="1">Bigloo Cryptography class</td></tr>
+<tr><td><a name="g19952" class="mark"></a><a name="DSA-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19956" align="left" colspan="1"><strong id='bold19954'
+>DSA-Key</strong><em id='it19955'
+></em></td><td id="tc19957" align="right" colspan="1">Bigloo Cryptography class</td></tr>
 </tbody></table>
-<a name="g19948" class="mark"></a><a name="Complete-DSA-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19952" align="left" colspan="1"><strong id='bold19950'
->Complete-DSA-Key</strong><em id='it19951'
-></em></td><td id="tc19953" align="right" colspan="1">Bigloo Cryptography class</td></tr>
+<a name="g19961" class="mark"></a><a name="Complete-DSA-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19965" align="left" colspan="1"><strong id='bold19963'
+>Complete-DSA-Key</strong><em id='it19964'
+></em></td><td id="tc19966" align="right" colspan="1">Bigloo Cryptography class</td></tr>
 </tbody></table>
-<center id='center19965'
+<center id='center19978'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19963'
->(<strong id='bold32793'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19976'
+>(<strong id='bold32805'
 >class</strong> Dsa-Key
-   p<font color="#00cf00"><strong id='bold32794'
->::bignum</strong></font> q<font color="#00cf00"><strong id='bold32796'
->::bignum</strong></font> g<font color="#00cf00"><strong id='bold32798'
->::bignum</strong></font> y<font color="#00cf00"><strong id='bold32800'
+   p<font color="#00cf00"><strong id='bold32806'
+>::bignum</strong></font> q<font color="#00cf00"><strong id='bold32808'
+>::bignum</strong></font> g<font color="#00cf00"><strong id='bold32810'
+>::bignum</strong></font> y<font color="#00cf00"><strong id='bold32812'
 >::bignum</strong></font>)
-(final-class Complete-Dsa-Key<font color="#00cf00"><strong id='bold32802'
+(final-class Complete-Dsa-Key<font color="#00cf00"><strong id='bold32814'
 >::Dsa-Key</strong></font>
-   x<font color="#00cf00"><strong id='bold32804'
->::bignum</strong></font>)) <font color="#ffa600"><em id='it32806'
+   x<font color="#00cf00"><strong id='bold32816'
+>::bignum</strong></font>)) <font color="#ffa600"><em id='it32818'
 >;; the private key</em></font>
 </pre>
 </td></tr>
@@ -1163,37 +1159,37 @@ the RSA keys. The public part of a DSA key can be found in the class
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19969" class="mark"></a><a name="extract-public-dsa-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19973" align="left" colspan="1"><strong id='bold19971'
->extract-public-dsa-key</strong><em id='it19972'
-> complete-key</em></td><td id="tc19974" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19982" class="mark"></a><a name="extract-public-dsa-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19986" align="left" colspan="1"><strong id='bold19984'
+>extract-public-dsa-key</strong><em id='it19985'
+> complete-key</em></td><td id="tc19987" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-Returns a <code id='code19977'
->DSA-Key</code> without the private <code id='code19979'
-><em id='it19978'
+Returns a <code id='code19990'
+>DSA-Key</code> without the private <code id='code19992'
+><em id='it19991'
 >x</em></code>.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g19983" class="mark"></a><a name="dsa-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc19987" align="left" colspan="1"><strong id='bold19985'
->dsa-sign</strong><em id='it19986'
-> m key</em></td><td id="tc19988" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g19996" class="mark"></a><a name="dsa-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20000" align="left" colspan="1"><strong id='bold19998'
+>dsa-sign</strong><em id='it19999'
+> m key</em></td><td id="tc20001" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-Signs the bignum <code id='code19992'
-><em id='it19991'
->m</em></code> using the private dsa key <code id='code19994'
-><em id='it19993'
+Signs the bignum <code id='code20005'
+><em id='it20004'
+>m</em></code> using the private dsa key <code id='code20007'
+><em id='it20006'
 >key</em></code>. The
-result are two values: <code id='code19996'
-><em id='it19995'
->r</em></code> and <code id='code19998'
-><em id='it19997'
->s</em></code>.<br/><br/>A typical call to <code id='code20000'
+result are two values: <code id='code20009'
+><em id='it20008'
+>r</em></code> and <code id='code20011'
+><em id='it20010'
+>s</em></code>.<br/><br/>A typical call to <code id='code20013'
 >dsa-sign</code> is hence of the following form
-<center id='center20003'
+<center id='center20016'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20001'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20014'
 >(receive (r s)
   (dsa-sign secret-key hashed-msg-bignum)
   (process-signature r s))
@@ -1203,15 +1199,15 @@ result are two values: <code id='code19996'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20007" class="mark"></a><a name="dsa-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20011" align="left" colspan="1"><strong id='bold20009'
->dsa-verify</strong><em id='it20010'
-> m key r s</em></td><td id="tc20012" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g20020" class="mark"></a><a name="dsa-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20024" align="left" colspan="1"><strong id='bold20022'
+>dsa-verify</strong><em id='it20023'
+> m key r s</em></td><td id="tc20025" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-Verifies a signature (consisting of <code id='code20016'
-><em id='it20015'
->r</em></code> and <code id='code20018'
-><em id='it20017'
+Verifies a signature (consisting of <code id='code20029'
+><em id='it20028'
+>r</em></code> and <code id='code20031'
+><em id='it20030'
 >s</em></code>).
 </td></tr>
 </tbody></table><br/>
@@ -1225,31 +1221,31 @@ DSA works very similar to RSA. Have a look at RSA's example section.<br/><br/></
 Bigloo supports ElGamal encryption (but not signing). Bigloo's
 implementation is minimal.<br/><br/>For consistency with RSA ElGamal keys are similarly named as their
 RSA counterparts.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20025" class="mark"></a><a name="ElGamal-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20029" align="left" colspan="1"><strong id='bold20027'
->ElGamal-Key</strong><em id='it20028'
-></em></td><td id="tc20030" align="right" colspan="1">Bigloo Cryptography class</td></tr>
+<tr><td><a name="g20038" class="mark"></a><a name="ElGamal-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20042" align="left" colspan="1"><strong id='bold20040'
+>ElGamal-Key</strong><em id='it20041'
+></em></td><td id="tc20043" align="right" colspan="1">Bigloo Cryptography class</td></tr>
 </tbody></table>
-<a name="g20034" class="mark"></a><a name="Complete-ElGamal-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20038" align="left" colspan="1"><strong id='bold20036'
->Complete-ElGamal-Key</strong><em id='it20037'
-></em></td><td id="tc20039" align="right" colspan="1">Bigloo Cryptography class</td></tr>
+<a name="g20047" class="mark"></a><a name="Complete-ElGamal-Key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20051" align="left" colspan="1"><strong id='bold20049'
+>Complete-ElGamal-Key</strong><em id='it20050'
+></em></td><td id="tc20052" align="right" colspan="1">Bigloo Cryptography class</td></tr>
 </tbody></table>
-<center id='center20050'
+<center id='center20063'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20048'
->(<strong id='bold32808'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20061'
+>(<strong id='bold32820'
 >class</strong> ElGamal-Key
-  p<font color="#00cf00"><strong id='bold32809'
+  p<font color="#00cf00"><strong id='bold32821'
 >::bignum</strong></font>
-  g<font color="#00cf00"><strong id='bold32811'
+  g<font color="#00cf00"><strong id='bold32823'
 >::bignum</strong></font>
-  y<font color="#00cf00"><strong id='bold32813'
+  y<font color="#00cf00"><strong id='bold32825'
 >::bignum</strong></font>)
-(final-class Complete-ElGamal-Key<font color="#00cf00"><strong id='bold32815'
+(final-class Complete-ElGamal-Key<font color="#00cf00"><strong id='bold32827'
 >::ElGamal-Key</strong></font>
-  x<font color="#00cf00"><strong id='bold32817'
->::bignum</strong></font>)) <font color="#ffa600"><em id='it32819'
+  x<font color="#00cf00"><strong id='bold32829'
+>::bignum</strong></font>)) <font color="#ffa600"><em id='it32831'
 >;; the private key</em></font>
 </pre>
 </td></tr>
@@ -1257,26 +1253,26 @@ RSA counterparts.<br/><br/><table cellspacing="0" class="frame" cellpadding="10"
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20054" class="mark"></a><a name="extract-public-elgamal-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20058" align="left" colspan="1"><strong id='bold20056'
->extract-public-elgamal-key</strong><em id='it20057'
-> complete-key</em></td><td id="tc20059" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g20067" class="mark"></a><a name="extract-public-elgamal-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20071" align="left" colspan="1"><strong id='bold20069'
+>extract-public-elgamal-key</strong><em id='it20070'
+> complete-key</em></td><td id="tc20072" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-Returns a copy of the public part (as <code id='code20062'
+Returns a copy of the public part (as <code id='code20075'
 >ElGamal Key</code>).
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20066" class="mark"></a><a name="elgamal-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20070" align="left" colspan="1"><strong id='bold20068'
->elgamal-encrypt</strong><em id='it20069'
-> key m</em></td><td id="tc20071" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g20079" class="mark"></a><a name="elgamal-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20083" align="left" colspan="1"><strong id='bold20081'
+>elgamal-encrypt</strong><em id='it20082'
+> key m</em></td><td id="tc20084" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-Encrypts the bignum <code id='code20075'
-><em id='it20074'
+Encrypts the bignum <code id='code20088'
+><em id='it20087'
 >m</em></code> using the given public key. The result are two
-values <code id='code20076'
->c1</code> and <code id='code20077'
+values <code id='code20089'
+>c1</code> and <code id='code20090'
 >c2</code>.<br/><br/>Note that ElGamal encryption needs random bytes for every encryption. This
 means that this function may return different results with the same parameters.
 It furthermore implies that the result is insecure if the operating system
@@ -1285,24 +1281,24 @@ For critical applications be sure to verify both requirements.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20082" class="mark"></a><a name="elgamal-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20086" align="left" colspan="1"><strong id='bold20084'
->elgamal-decrypt</strong><em id='it20085'
-> complete-key c1 c2</em></td><td id="tc20087" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g20095" class="mark"></a><a name="elgamal-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20099" align="left" colspan="1"><strong id='bold20097'
+>elgamal-decrypt</strong><em id='it20098'
+> complete-key c1 c2</em></td><td id="tc20100" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 Decrypts an ElGamal encrypted message (consisting of the two bignums
-<code id='code20091'
-><em id='it20090'
->c1</em></code> and <code id='code20093'
-><em id='it20092'
+<code id='code20104'
+><em id='it20103'
+>c1</em></code> and <code id='code20106'
+><em id='it20105'
 >c2</em></code>) with the given private key.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20097" class="mark"></a><a name="elgamal-key-length" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20101" align="left" colspan="1"><strong id='bold20099'
->elgamal-key-length</strong><em id='it20100'
-> key</em></td><td id="tc20102" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g20110" class="mark"></a><a name="elgamal-key-length" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20114" align="left" colspan="1"><strong id='bold20112'
+>elgamal-key-length</strong><em id='it20113'
+> key</em></td><td id="tc20115" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 Returns the key length in bytes.
 </td></tr>
@@ -1316,74 +1312,74 @@ ElGamal works very similar to RSA. Have a look at RSA's example section.<br/><br
 <a name="PEM" class="mark"></a>Bigloo is able to read and write RSA and DSA keys in PEM format. This is
 the default format used by OpenSSL.<br/><br/>The following example creates a new DSA key pair in OpenSSL and stores it
 in PEM format.
-<center id='center20111'
+<center id='center20124'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20109'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20122'
 >$ openssl dsaparam 1024 -out /tmp/dsaparam
 $ openssl gendsa /tmp/dsaparam
 </pre>
 </td></tr>
 </tbody></table></center>
 <br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20114" class="mark"></a><a name="read-pem-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20118" align="left" colspan="1"><strong id='bold20116'
->read-pem-key</strong><em id='it20117'
-> in</em></td><td id="tc20119" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g20127" class="mark"></a><a name="read-pem-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20131" align="left" colspan="1"><strong id='bold20129'
+>read-pem-key</strong><em id='it20130'
+> in</em></td><td id="tc20132" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g20123" class="mark"></a><a name="read-pem-key-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20127" align="left" colspan="1"><strong id='bold20125'
->read-pem-key-port</strong><em id='it20126'
-> input-port</em></td><td id="tc20128" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g20136" class="mark"></a><a name="read-pem-key-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20140" align="left" colspan="1"><strong id='bold20138'
+>read-pem-key-port</strong><em id='it20139'
+> input-port</em></td><td id="tc20141" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g20132" class="mark"></a><a name="read-pem-key-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20136" align="left" colspan="1"><strong id='bold20134'
->read-pem-key-file</strong><em id='it20135'
-> filename</em></td><td id="tc20137" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g20145" class="mark"></a><a name="read-pem-key-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20149" align="left" colspan="1"><strong id='bold20147'
+>read-pem-key-file</strong><em id='it20148'
+> filename</em></td><td id="tc20150" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g20141" class="mark"></a><a name="read-pem-key-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20145" align="left" colspan="1"><strong id='bold20143'
->read-pem-key-string</strong><em id='it20144'
-> str</em></td><td id="tc20146" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g20154" class="mark"></a><a name="read-pem-key-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20158" align="left" colspan="1"><strong id='bold20156'
+>read-pem-key-string</strong><em id='it20157'
+> str</em></td><td id="tc20159" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 These functions will read a PEM encoded key. The encoded file may contain
-a private or public RSA key, or a private or public DSA key.<br/><br/>The procedure <code id='code20150'
+a private or public RSA key, or a private or public DSA key.<br/><br/>The procedure <code id='code20163'
 >read-pem-key</code> accepts input-ports and strings. In the case
-of a string it will invoke <code id='code20151'
+of a string it will invoke <code id='code20164'
 >read-pem-key-file</code>
-(and not <code id='code20152'
+(and not <code id='code20165'
 >read-pem-key-string</code>).
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20156" class="mark"></a><a name="write-pem-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20160" align="left" colspan="1"><strong id='bold20158'
->write-pem-key</strong><em id='it20159'
-> key out [public-key-only?]</em></td><td id="tc20161" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<tr><td><a name="g20169" class="mark"></a><a name="write-pem-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20173" align="left" colspan="1"><strong id='bold20171'
+>write-pem-key</strong><em id='it20172'
+> key out [public-key-only?]</em></td><td id="tc20174" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g20165" class="mark"></a><a name="write-pem-key-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20169" align="left" colspan="1"><strong id='bold20167'
->write-pem-key-port</strong><em id='it20168'
-> key out [public-key-only?]</em></td><td id="tc20170" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g20178" class="mark"></a><a name="write-pem-key-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20182" align="left" colspan="1"><strong id='bold20180'
+>write-pem-key-port</strong><em id='it20181'
+> key out [public-key-only?]</em></td><td id="tc20183" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g20174" class="mark"></a><a name="write-pem-key-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20178" align="left" colspan="1"><strong id='bold20176'
->write-pem-key-file</strong><em id='it20177'
-> key out [public-key-only?]</em></td><td id="tc20179" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g20187" class="mark"></a><a name="write-pem-key-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20191" align="left" colspan="1"><strong id='bold20189'
+>write-pem-key-file</strong><em id='it20190'
+> key out [public-key-only?]</em></td><td id="tc20192" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
-<a name="g20183" class="mark"></a><a name="write-pem-key-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20187" align="left" colspan="1"><strong id='bold20185'
->write-pem-key-string</strong><em id='it20186'
-> key [public-key-only?]</em></td><td id="tc20188" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
+<a name="g20196" class="mark"></a><a name="write-pem-key-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20200" align="left" colspan="1"><strong id='bold20198'
+>write-pem-key-string</strong><em id='it20199'
+> key [public-key-only?]</em></td><td id="tc20201" align="right" colspan="1">Bigloo Cryptography procedure</td></tr>
 </tbody></table>
 These functions write the given key. The key may be a private/public
-RSA/DSA key.<br/><br/>The procedure <code id='code20192'
+RSA/DSA key.<br/><br/>The procedure <code id='code20205'
 >write-pem-key</code> accepts output-ports and strings as
-<code id='code20194'
-><em id='it20193'
->out</em></code> parameter. If <code id='code20196'
-><em id='it20195'
+<code id='code20207'
+><em id='it20206'
+>out</em></code> parameter. If <code id='code20209'
+><em id='it20208'
 >out</em></code> is a string it will delegate to
-<code id='code20197'
+<code id='code20210'
 >write-pem-key-file</code>.
 </td></tr>
 </tbody></table><br/>
@@ -1394,62 +1390,62 @@ RSA/DSA key.<br/><br/>The procedure <code id='code20192'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">15.3 OpenPGP</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="OpenPGP" class="mark"></a><a name="g20200" class="mark"></a>
+<a name="OpenPGP" class="mark"></a><a name="g20213" class="mark"></a>
 <br/><br/>Bigloo implements parts of OpenPGP (RFC 2440, RFC 4880). All OpenPGP
-functions are accessible via the <code id='code20203'
->openpgp</code> library.<br/><br/>Here is an example of a module that uses this library:<br/><br/><center id='center20220'
+functions are accessible via the <code id='code20216'
+>openpgp</code> library.<br/><br/>Here is an example of a module that uses this library:<br/><br/><center id='center20233'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20218'
-><font color="#ffa600"><em id='it32821'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20231'
+><font color="#ffa600"><em id='it32833'
 >;; Encrypt a string using openpgp default encryption.</em></font>
-(<font color="#1919af"><strong id='bold32823'
->module</strong></font> <font color="#1919af"><strong id='bold32825'
+(<font color="#1919af"><strong id='bold32835'
+>module</strong></font> <font color="#1919af"><strong id='bold32837'
 >pgp-encrypt</strong></font>
-   (<font color="#1919af"><strong id='bold32827'
->library</strong></font> <font color="#1919af"><strong id='bold32829'
+   (<font color="#1919af"><strong id='bold32839'
+>library</strong></font> <font color="#1919af"><strong id='bold32841'
 >openpgp</strong></font>)
-   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold32831'
->define</strong></font> (<font color="#6959cf"><strong id='bold32833'
+   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold32843'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32845'
 >main</strong></font> argv)
    (when (and (pair? (cdr argv)) (pair? (cddr argv)))
-      (<strong id='bold32835'
+      (<strong id='bold32847'
 >let</strong> ((encrypt? (string=? <font color="red">&quot;-e&quot;</font> (cadr argv)))
             (passwd (caddr argv))
             (input (read-string)))
-         (<strong id='bold32837'
+         (<strong id='bold32849'
 >if</strong> encrypt?
              (display (pgp-write-string (pgp-encrypt input
-                                                     '()  <font color="#ffa600"><em id='it32838'
+                                                     '()  <font color="#ffa600"><em id='it32850'
 >;; no public keys</em></font>
                                                      (list passwd))))
-             (<strong id='bold32840'
+             (<strong id='bold32852'
 >let</strong> ((composition (pgp-read-string input)))
                (display (pgp-decrypt composition
-                                     <strong id='bold32841'
->:passkey-provider</strong> (<strong id='bold32843'
+                                     <strong id='bold32853'
+>:passkey-provider</strong> (<strong id='bold32855'
 >lambda</strong> () passwd))))))))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20222" class="mark"></a><a name="pgp-read-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20226" align="left" colspan="1"><strong id='bold20224'
->pgp-read-string</strong><em id='it20225'
-> str</em></td><td id="tc20227" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20235" class="mark"></a><a name="pgp-read-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20239" align="left" colspan="1"><strong id='bold20237'
+>pgp-read-string</strong><em id='it20238'
+> str</em></td><td id="tc20240" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20231" class="mark"></a><a name="pgp-read-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20235" align="left" colspan="1"><strong id='bold20233'
->pgp-read-port</strong><em id='it20234'
-> iport</em></td><td id="tc20236" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20244" class="mark"></a><a name="pgp-read-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20248" align="left" colspan="1"><strong id='bold20246'
+>pgp-read-port</strong><em id='it20247'
+> iport</em></td><td id="tc20249" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20240" class="mark"></a><a name="pgp-read-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20244" align="left" colspan="1"><strong id='bold20242'
->pgp-read-file</strong><em id='it20243'
-> file-name</em></td><td id="tc20245" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20253" class="mark"></a><a name="pgp-read-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20257" align="left" colspan="1"><strong id='bold20255'
+>pgp-read-file</strong><em id='it20256'
+> file-name</em></td><td id="tc20258" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 These functions read and decode PGP data. OpenPGP allows several keys
-to be stored in the same message. Therefore <code id='code20248'
+to be stored in the same message. Therefore <code id='code20261'
 >pgp-read</code> will
 return keys always in a list (even if the message only contains one
 key).<br/><br/>The return value is either a list of PGP-compositions (PGP-Keys), or a
@@ -1457,44 +1453,44 @@ single PGP-composition.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20253" class="mark"></a><a name="pgp-write-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20257" align="left" colspan="1"><strong id='bold20255'
->pgp-write-string</strong><em id='it20256'
-> composition [:format 'armored]</em></td><td id="tc20258" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20266" class="mark"></a><a name="pgp-write-string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20270" align="left" colspan="1"><strong id='bold20268'
+>pgp-write-string</strong><em id='it20269'
+> composition [:format 'armored]</em></td><td id="tc20271" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20262" class="mark"></a><a name="pgp-write-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20266" align="left" colspan="1"><strong id='bold20264'
->pgp-write-port</strong><em id='it20265'
-> oport composition [:format 'armored]</em></td><td id="tc20267" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20275" class="mark"></a><a name="pgp-write-port" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20279" align="left" colspan="1"><strong id='bold20277'
+>pgp-write-port</strong><em id='it20278'
+> oport composition [:format 'armored]</em></td><td id="tc20280" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20271" class="mark"></a><a name="pgp-write-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20275" align="left" colspan="1"><strong id='bold20273'
->pgp-write-file</strong><em id='it20274'
-> file-name composition [:format 'armored]</em></td><td id="tc20276" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20284" class="mark"></a><a name="pgp-write-file" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20288" align="left" colspan="1"><strong id='bold20286'
+>pgp-write-file</strong><em id='it20287'
+> file-name composition [:format 'armored]</em></td><td id="tc20289" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-The counter-part of <code id='code20279'
+The counter-part of <code id='code20292'
 >pgp-read</code>. These functions encode
 PGP-compositions. By default the result is armored (i.e. encoded with
-ASCII characters). If the optional <code id='code20280'
+ASCII characters). If the optional <code id='code20293'
 >:format</code> parameter is
-different than the symbol <code id='code20281'
+different than the symbol <code id='code20294'
 >armored</code>, then the composition is
 encoded in binary.<br/><br/>Note that there is no means to encode a list of PGP-keys.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20286" class="mark"></a><a name="pgp-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20290" align="left" colspan="1"><strong id='bold20288'
->pgp-encrypt</strong><em id='it20289'
-> msg-string keys passwords [:hash-algo 'sha-1] [:symmetric-algo 'cast5]</em></td><td id="tc20291" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20299" class="mark"></a><a name="pgp-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20303" align="left" colspan="1"><strong id='bold20301'
+>pgp-encrypt</strong><em id='it20302'
+> msg-string keys passwords [:hash-algo 'sha-1] [:symmetric-algo 'cast5]</em></td><td id="tc20304" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 Encrypts the given string. The returned composition can be decrypted
 by the owners of the keys, or with one of the passwords.<br/><br/>In the following example Alice and Bob may use their private key to
 decrypt the secret message. Users knowing the one of the passwords
 (``foo'' and ``bar'') will also be able to decrypt the message.
-<center id='center20301'
+<center id='center20314'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20299'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20312'
 >(pgp-write-file <font color="red">&quot;encrypted.pgp&quot;</font>
    (pgp-encrypt <font color="red">&quot;my secret message&quot;</font>
                 (list alice-key bob-key)
@@ -1505,7 +1501,7 @@ decrypt the secret message. Users knowing the one of the passwords
 The given keys should be subkeys of a PGP-key, but if a PGP-key is
 given Bigloo will do its best to pick the correct subkey for
 encryption.
-<ul class="itemize" id='itemize20306'
+<ul class="itemize" id='itemize20319'
 ><li>If only one subkey exists (the main-key) then this subkey is
 used.
 </li>
@@ -1520,83 +1516,83 @@ for encryption, then this subkey is used.
 </ul></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20310" class="mark"></a><a name="pgp-password-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20314" align="left" colspan="1"><strong id='bold20312'
->pgp-password-encrypt</strong><em id='it20313'
-> msg-string password [:hash-algo 'sha-1] [:symmetric-algo 'cast5] [:mdc #t]</em></td><td id="tc20315" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20323" class="mark"></a><a name="pgp-password-encrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20327" align="left" colspan="1"><strong id='bold20325'
+>pgp-password-encrypt</strong><em id='it20326'
+> msg-string password [:hash-algo 'sha-1] [:symmetric-algo 'cast5] [:mdc #t]</em></td><td id="tc20328" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 Deprecated.
-Encrypts <code id='code20318'
+Encrypts <code id='code20331'
 >msg-string</code> with the given password. The returned
 PGP-composition does not contain any information which hash-algorithm
 and symmetric encryption algorithm has been used. RFC 4880 specifies
 that IDEA and MD5 should be used. However GnuPG uses SHA-1 and
 CAST5. Therefore Bigloo defaults to the latter algorithms.<br/><br/>Even though the usage of this PGP message is deprecated it yields the
 smallest encrypted data. It may be of interest when compatibility with
-other tools is not a requirement (but why use OpenPGP then).<br/><br/>The optional <code id='code20321'
+other tools is not a requirement (but why use OpenPGP then).<br/><br/>The optional <code id='code20334'
 >mdc</code> flag triggers the usage of a modification
 detection code. It is more secure against tampering but requires more
 space and might not be recognized by old openpgp implementations.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20325" class="mark"></a><a name="pgp-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20329" align="left" colspan="1"><strong id='bold20327'
->pgp-decrypt</strong><em id='it20328'
-> encrypted [:passkey-provider (lambda () #f)] [:password-provider (lambda (key) #f)] [:key-manager (lambda (key-id) '())] [:hash-algo 'sha-1] [:symmetric-algo 'cast5]</em></td><td id="tc20330" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20338" class="mark"></a><a name="pgp-decrypt" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20342" align="left" colspan="1"><strong id='bold20340'
+>pgp-decrypt</strong><em id='it20341'
+> encrypted [:passkey-provider (lambda () #f)] [:password-provider (lambda (key) #f)] [:key-manager (lambda (key-id) '())] [:hash-algo 'sha-1] [:symmetric-algo 'cast5]</em></td><td id="tc20343" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 Decrypts a PGP-composition that has been generated by
-<code id='code20333'
->pgp-encrypt</code> or by <code id='code20334'
+<code id='code20346'
+>pgp-encrypt</code> or by <code id='code20347'
 >pgp-password-encrypt</code>.
-The function returns the decrypted message (a string) or <code id='code20335'
+The function returns the decrypted message (a string) or <code id='code20348'
 >#f</code> if
 decryption was not possible.<br/><br/>If the message can be decrypted with a private key, then Bigloo will
-call the <code id='code20337'
+call the <code id='code20350'
 >key-manager</code> and request a list of PGP-subkeys that
 match the given key-id.<br/><br/>If a subkey (returned by the key-manager) is not yet decrypted, Bigloo
-will invoke the <code id='code20339'
+will invoke the <code id='code20352'
 >password-provider</code> with the subkey, and request
 a password to decrypt the private part of the subkey.<br/><br/>If the message can be decrypted with a password Bigloo will then
-request a passkey by invoking the <code id='code20341'
->passkey-provider</code>.<br/><br/>The optional arguments <code id='code20343'
->hash-algo</code> and <code id='code20344'
+request a passkey by invoking the <code id='code20354'
+>passkey-provider</code>.<br/><br/>The optional arguments <code id='code20356'
+>hash-algo</code> and <code id='code20357'
 >symmetric-algo</code> are
 only used for messages that have been encrypted with
-<code id='code20345'
+<code id='code20358'
 >pgp-password-encrypt</code>.<br/><br/></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20350" class="mark"></a><a name="pgp-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20354" align="left" colspan="1"><strong id='bold20352'
->pgp-sign</strong><em id='it20353'
-> msg-string key password-provider [:detached-signature? #t] [:one-pass? #f] [:hash-algo 'sha-1]</em></td><td id="tc20355" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20363" class="mark"></a><a name="pgp-sign" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20367" align="left" colspan="1"><strong id='bold20365'
+>pgp-sign</strong><em id='it20366'
+> msg-string key password-provider [:detached-signature? #t] [:one-pass? #f] [:hash-algo 'sha-1]</em></td><td id="tc20368" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-Signs <code id='code20358'
+Signs <code id='code20371'
 >msg-string</code> with the given key. Ideally the key should be
 a subkey, but if a complete PGP-Key is given, Bigloo will use the
 main-key instead. If the main-key is not suitable for signing, then an
 error is raised.<br/><br/>If the private part of the key has not yet been decrypted then Bigloo
 will call the password-provider (a procedure) with the subkey to get a
-password (a string).<br/><br/>The function returns a PGP-composition.<br/><br/>If the optional <code id='code20362'
+password (a string).<br/><br/>The function returns a PGP-composition.<br/><br/>If the optional <code id='code20375'
 >detached-signature?</code> parameter is set to
-<code id='code20363'
+<code id='code20376'
 >#f</code> then the msg-string is not included in the returned
-composition.<br/><br/>The <code id='code20365'
->one-pass?</code> and <code id='code20366'
+composition.<br/><br/>The <code id='code20378'
+>one-pass?</code> and <code id='code20379'
 >hash-algo</code> parameters are usually left
 at its default values.<br/><br/>Example:
-<center id='center20377'
+<center id='center20390'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20375'
->(<strong id='bold32848'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20388'
+>(<strong id='bold32860'
 >let</strong> ((my-key (car (pgp-read-file <font color="red">&quot;my-key.pgp&quot;</font>))))
   (pgp-write-file <font color="red">&quot;msg.sig&quot;</font>
      (pgp-sign <font color="red">&quot;my signed message&quot;</font>
                my-key
-               (<strong id='bold32852'
+               (<strong id='bold32864'
 >lambda</strong> (key) <font color="red">&quot;my-password&quot;</font>)
-               <strong id='bold32854'
+               <strong id='bold32866'
 >:detached-signature?</strong> #f)))
 </pre>
 </td></tr>
@@ -1604,10 +1600,10 @@ at its default values.<br/><br/>Example:
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20381" class="mark"></a><a name="pgp-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20385" align="left" colspan="1"><strong id='bold20383'
->pgp-verify</strong><em id='it20384'
-> signature key-manager [:msg #f]</em></td><td id="tc20386" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20394" class="mark"></a><a name="pgp-verify" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20398" align="left" colspan="1"><strong id='bold20396'
+>pgp-verify</strong><em id='it20397'
+> signature key-manager [:msg #f]</em></td><td id="tc20399" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 Verifies a signature.<br/><br/>The key-manager is a function that takes a substring identifier and
 returns a list of keys matching this id. Since a signature composition
@@ -1617,14 +1613,14 @@ key-manager doesn't have any of the signature-keys then the result is
 the empty list.<br/><br/>A message (string) needs only be given if the signature is
 detached. Otherwise the original message is encoded in the
 signature-composition.<br/><br/><br/>Example:
-<center id='center20400'
+<center id='center20413'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20398'
->(<strong id='bold32856'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20411'
+>(<strong id='bold32868'
 >let</strong> ((sig (pgp-read-file <font color="red">&quot;msg.sig&quot;</font>)))
-  (<strong id='bold32858'
+  (<strong id='bold32870'
 >let</strong> ((signers (pgp-verify sig my-key-manager)))
-   (for-each (<strong id='bold32859'
+   (for-each (<strong id='bold32871'
 >lambda</strong> (subkey)
                (print (subkey-&gt;string subkey) <font color="red">&quot; signed the message&quot;</font>))
              signers)))
@@ -1634,57 +1630,57 @@ signature-composition.<br/><br/><br/>Example:
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20404" class="mark"></a><a name="pgp-signature-message" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20408" align="left" colspan="1"><strong id='bold20406'
->pgp-signature-message</strong><em id='it20407'
-> signature</em></td><td id="tc20409" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20417" class="mark"></a><a name="pgp-signature-message" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20421" align="left" colspan="1"><strong id='bold20419'
+>pgp-signature-message</strong><em id='it20420'
+> signature</em></td><td id="tc20422" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-Returns the signature's message, or <code id='code20412'
+Returns the signature's message, or <code id='code20425'
 >#f</code> if the signature is a
 detached signature.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20416" class="mark"></a><a name="pgp-key?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20420" align="left" colspan="1"><strong id='bold20418'
->pgp-key?</strong><em id='it20419'
-> key</em></td><td id="tc20421" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20429" class="mark"></a><a name="pgp-key?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20433" align="left" colspan="1"><strong id='bold20431'
+>pgp-key?</strong><em id='it20432'
+> key</em></td><td id="tc20434" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20425" class="mark"></a><a name="pgp-subkey?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20429" align="left" colspan="1"><strong id='bold20427'
->pgp-subkey?</strong><em id='it20428'
-> key</em></td><td id="tc20430" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20438" class="mark"></a><a name="pgp-subkey?" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20442" align="left" colspan="1"><strong id='bold20440'
+>pgp-subkey?</strong><em id='it20441'
+> key</em></td><td id="tc20443" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 Predicates for PGP-Key and PGP-Subkey.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20436" class="mark"></a><a name="pgp-subkeys" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20440" align="left" colspan="1"><strong id='bold20438'
->pgp-subkeys</strong><em id='it20439'
-> key</em></td><td id="tc20441" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20449" class="mark"></a><a name="pgp-subkeys" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20453" align="left" colspan="1"><strong id='bold20451'
+>pgp-subkeys</strong><em id='it20452'
+> key</em></td><td id="tc20454" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 Returns a list of PGP-Subkeys of the PGP-Key. The first key in the
-list is the <em id='emph20444'
+list is the <em id='emph20457'
 >main-key</em>. The main-key is used as default for
 signatures.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20448" class="mark"></a><a name="pgp-key->string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20452" align="left" colspan="1"><strong id='bold20450'
->pgp-key-&gt;string</strong><em id='it20451'
-> key</em></td><td id="tc20453" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20461" class="mark"></a><a name="pgp-key->string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20465" align="left" colspan="1"><strong id='bold20463'
+>pgp-key-&gt;string</strong><em id='it20464'
+> key</em></td><td id="tc20466" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20457" class="mark"></a><a name="pgp-subkey->string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20461" align="left" colspan="1"><strong id='bold20459'
->pgp-subkey-&gt;string</strong><em id='it20460'
-> key</em></td><td id="tc20462" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20470" class="mark"></a><a name="pgp-subkey->string" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20474" align="left" colspan="1"><strong id='bold20472'
+>pgp-subkey-&gt;string</strong><em id='it20473'
+> key</em></td><td id="tc20475" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 Returns a string representation of the key (resp. subkey).<br/><br/>Example outputs:
-<center id='center20469'
+<center id='center20482'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20467'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20480'
 >(pgp-key-&gt;string key)
 =&gt; John Doe john.doe&#x40;gmail.com
 =&gt; bd4df3b2ddef790c RSA (Encrypt or Sign)
@@ -1697,44 +1693,44 @@ Returns a string representation of the key (resp. subkey).<br/><br/>Example outp
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20473" class="mark"></a><a name="pgp-key-id" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20477" align="left" colspan="1"><strong id='bold20475'
->pgp-key-id</strong><em id='it20476'
-> subkey</em></td><td id="tc20478" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20486" class="mark"></a><a name="pgp-key-id" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20490" align="left" colspan="1"><strong id='bold20488'
+>pgp-key-id</strong><em id='it20489'
+> subkey</em></td><td id="tc20491" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20482" class="mark"></a><a name="pgp-key-fingerprint" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20486" align="left" colspan="1"><strong id='bold20484'
->pgp-key-fingerprint</strong><em id='it20485'
-> subkey</em></td><td id="tc20487" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20495" class="mark"></a><a name="pgp-key-fingerprint" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20499" align="left" colspan="1"><strong id='bold20497'
+>pgp-key-fingerprint</strong><em id='it20498'
+> subkey</em></td><td id="tc20500" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 Returns the id (resp. fingerprint) of a subkey.<br/><br/>A subkey-id is a 8-character binary string.<br/><br/>A fingerprint is a 20-character binary string.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g20495" class="mark"></a><a name="pgp-make-key-db" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20499" align="left" colspan="1"><strong id='bold20497'
->pgp-make-key-db</strong><em id='it20498'
-></em></td><td id="tc20500" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<tr><td><a name="g20508" class="mark"></a><a name="pgp-make-key-db" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20512" align="left" colspan="1"><strong id='bold20510'
+>pgp-make-key-db</strong><em id='it20511'
+></em></td><td id="tc20513" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20504" class="mark"></a><a name="pgp-add-key-to-db" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20508" align="left" colspan="1"><strong id='bold20506'
->pgp-add-key-to-db</strong><em id='it20507'
-> db key</em></td><td id="tc20509" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20517" class="mark"></a><a name="pgp-add-key-to-db" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20521" align="left" colspan="1"><strong id='bold20519'
+>pgp-add-key-to-db</strong><em id='it20520'
+> db key</em></td><td id="tc20522" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20513" class="mark"></a><a name="pgp-add-keys-to-db" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20517" align="left" colspan="1"><strong id='bold20515'
->pgp-add-keys-to-db</strong><em id='it20516'
-> db keys</em></td><td id="tc20518" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20526" class="mark"></a><a name="pgp-add-keys-to-db" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20530" align="left" colspan="1"><strong id='bold20528'
+>pgp-add-keys-to-db</strong><em id='it20529'
+> db keys</em></td><td id="tc20531" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20522" class="mark"></a><a name="pgp-resolve-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20526" align="left" colspan="1"><strong id='bold20524'
->pgp-resolve-key</strong><em id='it20525'
-> db id</em></td><td id="tc20527" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20535" class="mark"></a><a name="pgp-resolve-key" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20539" align="left" colspan="1"><strong id='bold20537'
+>pgp-resolve-key</strong><em id='it20538'
+> db id</em></td><td id="tc20540" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
-<a name="g20531" class="mark"></a><a name="pgp-db-print-keys" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc20535" align="left" colspan="1"><strong id='bold20533'
->pgp-db-print-keys</strong><em id='it20534'
-> db</em></td><td id="tc20536" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
+<a name="g20544" class="mark"></a><a name="pgp-db-print-keys" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc20548" align="left" colspan="1"><strong id='bold20546'
+>pgp-db-print-keys</strong><em id='it20547'
+> db</em></td><td id="tc20549" align="right" colspan="1">Bigloo OpenPGP procedure</td></tr>
 </tbody></table>
 A simple key-manager implementation based on lists.
 </td></tr>
@@ -1753,9 +1749,9 @@ A simple key-manager implementation based on lists.
 Unless you already have a gpg key create a new PGP key with gpg. Note
 that DSA with a keysize greater than 1024 does not work with
 SHA-1. SHA-224,256,384,512 would work, but are not yet implemented
-in Bigloo.<br/><br/><center id='center20545'
+in Bigloo.<br/><br/><center id='center20558'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20543'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20556'
 >$ gpg --gen-key
 ...
 pub   1024D/A2DA694E 2010-08-07 [expires: 2010-08-27]
@@ -1767,9 +1763,9 @@ sub   1024g/0B8985E5 2010-08-07 [expires: 2010-08-27]
 </tbody></table></center>
 
 We export both the public and the private key.
-<center id='center20548'
+<center id='center20561'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20546'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20559'
 >$ gpg  -a -o A8453FAB_Bigloo_Example_User.pkey --export A8453FAB
 $ gpg  -a -o A8453FAB_Bigloo_Example_User.skey --export-secret-keys A8453FAB
 </pre>
@@ -1778,21 +1774,21 @@ $ gpg  -a -o A8453FAB_Bigloo_Example_User.skey --export-secret-keys A8453FAB
 
 This small program will simply read the key and print a human-readable
 representation.
-<center id='center20560'
+<center id='center20573'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20558'
-><font color="#ffa600"><em id='it32861'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20571'
+><font color="#ffa600"><em id='it32873'
 >;; contents of print-key.scm</em></font>
-(<font color="#1919af"><strong id='bold32863'
->module</strong></font> <font color="#1919af"><strong id='bold32865'
+(<font color="#1919af"><strong id='bold32875'
+>module</strong></font> <font color="#1919af"><strong id='bold32877'
 >print-key</strong></font>
-   (<font color="#1919af"><strong id='bold32867'
->library</strong></font> <font color="#1919af"><strong id='bold32869'
+   (<font color="#1919af"><strong id='bold32879'
+>library</strong></font> <font color="#1919af"><strong id='bold32881'
 >openpgp</strong></font>)
-   (main my-main))<br/><br/>(<font color="#6959cf"><strong id='bold32871'
->define</strong></font> (<font color="#6959cf"><strong id='bold32873'
+   (main my-main))<br/><br/>(<font color="#6959cf"><strong id='bold32883'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32885'
 >my-main</strong></font> args)
-   (<strong id='bold32875'
+   (<strong id='bold32887'
 >let</strong> ((public-key (car (pgp-read-file <font color="red">&quot;A2DA694E_Bigloo_Example.pkey&quot;</font>)))
          (secret-key (car (pgp-read-file <font color="red">&quot;A2DA694E_Bigloo_Example.skey&quot;</font>))))
       (display (pgp-key-&gt;string public-key))
@@ -1802,9 +1798,9 @@ representation.
 </tbody></table></center>
 
 The compilation is straight-forward and does not require any special flags:
-<center id='center20563'
+<center id='center20576'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20561'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20574'
 >$ bigloo print-key.scm -o print-key
 $ ./print-key
 Bigloo Example
@@ -1817,31 +1813,31 @@ Bigloo Example
 </td></tr>
 </tbody></table></center>
 
-As can be seen, the <code id='code20564'
+As can be seen, the <code id='code20577'
 >pgp-key-&gt;string</code> routine does not
 differentiate between public and private keys.<br/><br/>We can also sign a message:
-<center id='center20574'
+<center id='center20587'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20572'
->(<strong id='bold32878'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20585'
+>(<strong id='bold32890'
 >let</strong> ((my-key (car (pgp-read-file <font color="red">&quot;A2DA694E_Bigloo_Example.skey&quot;</font>))))
   (pgp-write-file <font color="red">&quot;msg.sig&quot;</font>
      (pgp-sign (read-string)
                my-key
-               (<strong id='bold32881'
+               (<strong id='bold32893'
 >lambda</strong> (key) <font color="red">&quot;&lt;Bigloo Example Password&gt;&quot;</font>)
-               <strong id='bold32883'
+               <strong id='bold32895'
 >:detached-signature?</strong> #f)))
 </pre>
 </td></tr>
 </tbody></table></center>
 
 Signatures from Bigloo follow RFC 4880 and can therefore be verified
-by <code id='code20575'
+by <code id='code20588'
 >gpg</code>.
-<center id='center20578'
+<center id='center20591'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20576'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20589'
 >$ echo &quot;Gpg can verify Bigloo's signature&quot; | ./sign
 $ gpg --verify msg.sig
 gpg: Signature made Sat 07 Aug 2010 10:12:21 PM CEST using DSA key ID A2DA694E
@@ -1850,12 +1846,12 @@ gpg: Good signature from &quot;Bigloo Example&quot;
 </td></tr>
 </tbody></table></center>
 
-Inversely Bigloo can verify <code id='code20579'
+Inversely Bigloo can verify <code id='code20592'
 >pgp</code>'s signature. Here we first
-generate a signature with <code id='code20580'
->gpg</code>.<br/><br/><center id='center20585'
+generate a signature with <code id='code20593'
+>gpg</code>.<br/><br/><center id='center20598'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20583'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20596'
 >$ echo &quot;Bigloo can verify gpg's signatures.&quot; | \
  gpg -o msg_gpg.sig -a \
      --default-key &quot;Bigloo Example&quot; \
@@ -1870,19 +1866,19 @@ user: &quot;Bigloo Example&quot;
 The following program reads OpenPGP signatures and verifies them. For
 simplicity the key database will only contain one key, but it could
 contain any number of keys.
-<center id='center20595'
+<center id='center20608'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20593'
->(<strong id='bold32885'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20606'
+>(<strong id='bold32897'
 >let</strong> ((my-key (car (pgp-read-file <font color="red">&quot;A2DA694E_Bigloo_Example.pkey&quot;</font>)))
       (sig (pgp-read-file <font color="red">&quot;msg_gpg.sig&quot;</font>))
       (db (pgp-make-key-db)))
    (pgp-add-key-to-db db my-key)
    (print <font color="red">&quot;Signature message: &quot;</font> (pgp-signature-message sig))
-   (<strong id='bold32889'
->let</strong> ((signers (pgp-verify sig (<strong id='bold32890'
+   (<strong id='bold32901'
+>let</strong> ((signers (pgp-verify sig (<strong id='bold32902'
 >lambda</strong> (id) (pgp-resolve-key db id)))))
-      (for-each (<strong id='bold32891'
+      (for-each (<strong id='bold32903'
 >lambda</strong> (subkey)
                    (display (pgp-subkey-&gt;string subkey)))
                 signers)))
@@ -1891,9 +1887,9 @@ contain any number of keys.
 </tbody></table></center>
 
 As expected, the program verifies the correct signature.
-<center id='center20599'
+<center id='center20612'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20597'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20610'
 >$ ./verify
 Signature message: Bigloo can verify gpg's signatures.<br/><br/>Bigloo Example
 07ca0495a2da694e DSA (Digital Signature Standard)
@@ -1921,10 +1917,10 @@ message for more than one recipient. In such a case the data will be
 encrypted by a session-key which in turn is encrypted separately for
 each recipient. Since the session-key is not very big (compared to the
 data) the size overhead is usually insignificant.<br/><br/>Let's start by encrypting a message with a simple passkey.
-<center id='center20610'
+<center id='center20623'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20608'
->(<strong id='bold32892'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20621'
+>(<strong id='bold32904'
 >let*</strong> ((secret-data <font color="red">&quot;My secret data\n&quot;</font>)
        (composition (pgp-encrypt secret-data '() '(<font color="red">&quot;My secret passkey&quot;</font>))))
   (pgp-write-file <font color="red">&quot;secret.pgp&quot;</font> composition))
@@ -1932,11 +1928,11 @@ data) the size overhead is usually insignificant.<br/><br/>Let's start by encryp
 </td></tr>
 </tbody></table></center>
 
-As usual the pgp message is compatible with <code id='code20611'
+As usual the pgp message is compatible with <code id='code20624'
 >gpg</code>:
-<center id='center20614'
+<center id='center20627'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20612'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20625'
 >$ gpg secret.pgp
 gpg: CAST5 encrypted data
 Enter passphrase: &lt;My secret passkey&gt;
@@ -1949,9 +1945,9 @@ My secret data
 
 As expected, Bigloo can decrypt password protected files that have
 been generated by gpg:
-<center id='center20617'
+<center id='center20630'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20615'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog20628'
 >$ echo &quot;A secret message encrypted with gpg.&quot; | \
   gpg -o encrypted.pgp --symmetric \
       --passphrase &quot;secret key&quot;
@@ -1960,12 +1956,12 @@ been generated by gpg:
 </tbody></table></center>
 
 The Bigloo code to decrypt the message is very simple:
-<center id='center20624'
+<center id='center20637'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20622'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20635'
 >(print (pgp-decrypt (pgp-read-file <font color="red">&quot;encrypted.pgp&quot;</font>)
-                    <strong id='bold32897'
->:passkey-provider</strong> (<strong id='bold32899'
+                    <strong id='bold32909'
+>:passkey-provider</strong> (<strong id='bold32911'
 >lambda</strong> () <font color="red">&quot;secret key&quot;</font>))))
 </pre>
 </td></tr>
@@ -1974,28 +1970,28 @@ The Bigloo code to decrypt the message is very simple:
 In a similar vein it is possible to use public key encryption.
 The following example tests the encryption and decryption part of
 Bigloo.
-<center id='center20639'
+<center id='center20652'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20637'
->(<strong id='bold32901'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20650'
+>(<strong id='bold32913'
 >let*</strong> ((my-key (car (pgp-read-file <font color="red">&quot;A2DA694E_Bigloo_Example.skey&quot;</font>)))
        (db (pgp-make-key-db))
        (secret-data <font color="red">&quot;My secret message&quot;</font>)
        (encrypted (pgp-encrypt secret-data `(,my-key) '())))
    (pgp-add-key-to-db db my-key)
-   (<strong id='bold32904'
->let*</strong> ((key-manager (<strong id='bold32905'
+   (<strong id='bold32916'
+>let*</strong> ((key-manager (<strong id='bold32917'
 >lambda</strong> (id) (pgp-resolve-key db id)))
-          (password-provider (<strong id='bold32906'
+          (password-provider (<strong id='bold32918'
 >lambda</strong> (key) &lt;Bigloo Example Password&gt;))
           (decrypted (pgp-decrypt encrypted
-                                 <strong id='bold32907'
+                                 <strong id='bold32919'
 >:key-manager</strong> key-manager
-                                 <strong id='bold32909'
+                                 <strong id='bold32921'
 >:password-provider</strong> password-provider)))
-     (<strong id='bold32911'
+     (<strong id='bold32923'
 >if</strong> (not (string=? decrypted secret-data))
-         (<font color="red"><strong id='bold32912'
+         (<font color="red"><strong id='bold32924'
 >error</strong></font> <font color="red">&quot;decrypt-test&quot;</font>
                 <font color="red">&quot;Something went horribly wrong&quot;</font>
                 decrypted))))
@@ -2011,10 +2007,10 @@ user. Here, in this toy example, we know that the password that is
 needed is for the Bigloo Example key. In a more general case the
 password-provider will have to print the key to give more information
 to the user.<br/><br/>In the following example we show how to encrypt data for 3 passwords and
-one key.<br/><br/><center id='center20651'
+one key.<br/><br/><center id='center20664'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20649'
->(<strong id='bold32916'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog20662'
+>(<strong id='bold32928'
 >let*</strong> ((my-key (car (pgp-read-file <font color="red">&quot;A2DA694E_Bigloo_Example.skey&quot;</font>)))
        (db (pgp-make-key-db))
        (secret-data <font color="red">&quot;My secret message&quot;</font>)
@@ -2025,7 +2021,7 @@ one key.<br/><br/><center id='center20651'
 </td></tr>
 </tbody></table></center>
 
-We believe that <code id='code20652'
+We believe that <code id='code20665'
 >gpg</code> has a bug and does not know how to handle
 such messages correctly. Bigloo, however, decrypts the message with
 any of the possible options.<br/><br/></div>
@@ -2045,7 +2041,7 @@ time-consuming part is generally designing a clean API and the
 testing/debugging of new features: when something goes wrong it can
 take a huge amount of time to find the reason.<br/><br/>Developers interested in improving Bigloo's OpenPGP library can print
 a huge amount of debugging information by enabling the debug-macro in
-<code id='code20655'
+<code id='code20668'
 >util.scm</code>. Bigloo's OpenPGP implementation is not designed for
 speed and takes no shortcuts. The debugging output can therefore be
 used to follow the specification of RFC 4880 (or 2440).
@@ -2055,12 +2051,12 @@ used to follow the specification of RFC 4880 (or 2440).
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph32928'
+<p class="ending" id='paragraph32940'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it32926'
->Thu Jul  2 15:55:40 2015</em>.</font></p></div>
+Last update <em id='it32938'
+>Wed Sep  9 07:55:47 2015</em>.</font></p></div>
 </body>
 </html>

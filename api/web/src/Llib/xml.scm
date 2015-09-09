@@ -3,8 +3,8 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Fri Mar 11 16:23:53 2005                          */
-;*    Last change :  Fri Dec 13 12:51:44 2013 (serrano)                */
-;*    Copyright   :  2005-13 Manuel Serrano                            */
+;*    Last change :  Mon Aug 10 16:53:05 2015 (serrano)                */
+;*    Copyright   :  2005-15 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    XML parsing                                                      */
 ;*=====================================================================*/
@@ -104,15 +104,15 @@
 		    (make tag attributes (reverse! acc)))
 		   (strict
 		    (xml-parse-error "Illegal closing tag"
-				     (format "`~a' expected, `~a' provided"
-					     tag item)
-				     name po))
+		       (format "`~a' expected, `~a' provided"
+			  tag item)
+		       name po))
 		   (else
 		    (make tag attributes (reverse! acc)))))
 	       ((special? item)
 		(let ((nitem (make (special-tag item)
-				   (special-attributes item)
-				   (special-body item))))
+				(special-attributes item)
+				(special-body item))))
 		   (if (memq (special-tag item) tags)
 		       (loop acc nitem)
 		       (begin
@@ -120,9 +120,9 @@
 	       ((eof-object? item)
 		(if strict
 		    (xml-parse-error
-		     (format "Premature end of line, expecting tag `~a'"
-			     tag)
-		     item name po)
+		       (format "Premature end of line, expecting tag `~a'"
+			  tag)
+		       item name po)
 		    (make tag attributes (reverse! acc))))
 	       (else
 		(let ((po (input-port-last-token-position port)))
@@ -144,7 +144,7 @@
 				    specials strict decoder encoding)))) 
 	     (collect ignore (cdr spec))))
 	 (else
-	  (error 'xml-parse "Illegal special handler" spec)))))
+	  (error "xml-parse" "Illegal special handler" spec)))))
 
 ;*---------------------------------------------------------------------*/
 ;*    attribute-value-grammar ...                                      */
@@ -605,7 +605,7 @@
 			 (loop3 (cdr lattr)))))))
 	    (loop1 (cdr l))))
       (unless xml-root
-	 (error 'xml-metadata "Empty XML document !" xml))
+	 (error "xml-metadata" "Empty XML document !" xml))
       ;; Values are :
       ;; - XML Version (1.0 or 1.1) or #f
       ;; - XML Encoding (#f if unknown)

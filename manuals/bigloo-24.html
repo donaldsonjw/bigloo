@@ -22,27 +22,27 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>23. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015 -- Eval and code interpretation</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>23. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>September 2015 -- Eval and code interpretation</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center34583'
+<br/><center id='center34595'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc34573" align="center" colspan="1"><font color="#ffffff"><strong id='bold34571'
+<tr bgcolor="#8381de"><th id="tc34585" align="center" colspan="1"><font color="#ffffff"><strong id='bold34583'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc34580" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc34576" align="left" valign="top" colspan="1"><strong id='bold34575'
->top:</strong></td><td id="tc34577" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-July-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc34592" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc34588" align="left" valign="top" colspan="1"><strong id='bold34587'
+>top:</strong></td><td id="tc34589" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-September-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>September 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center34593'
+<br/><br/><center id='center34605'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc34587" align="center" colspan="1"><font color="#ffffff"><strong id='bold34585'
+<tr bgcolor="#8381de"><th id="tc34599" align="center" colspan="1"><font color="#ffffff"><strong id='bold34597'
 >Eval and code interpretation</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc34590" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc34602" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left">23.1</td><td colspan="4" width="100%"><a href="bigloo-24.html#Eval-compliance">Eval compliance</a></td></tr>
  <tr><td valign="top" align="left">23.2</td><td colspan="4" width="100%"><a href="bigloo-24.html#Eval-standard-functions">Eval standard functions</a></td></tr>
@@ -53,11 +53,11 @@
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center34603'
+<br/><br/><center id='center34615'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc34597" align="center" colspan="1"><font color="#ffffff"><strong id='bold34595'
+<tr bgcolor="#8381de"><th id="tc34609" align="center" colspan="1"><font color="#ffffff"><strong id='bold34607'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc34600" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc34612" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -105,17 +105,17 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Eval" class="mark"></a><a name="g25801" class="mark"></a><a name="g25803" class="mark"></a>
+<a name="Eval" class="mark"></a><a name="g25814" class="mark"></a><a name="g25816" class="mark"></a>
 This chapter describes the Bigloo evaluator.<br/><br/>
 <!-- Eval compliance -->
 <a name="Eval-compliance"></a>
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">23.1 Eval compliance</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Eval-compliance" class="mark"></a><a name="g25806" class="mark"></a><a name="g25808" class="mark"></a>
+<a name="Eval-compliance" class="mark"></a><a name="g25819" class="mark"></a><a name="g25821" class="mark"></a>
 Bigloo includes an interpreter. Unfortunately, the language accepted by the
 interpreter is a proper subset of that accepted by the compiler. The main
-differences are:<br/><br/><ul class="itemize" id='itemize25814'
+differences are:<br/><br/><ul class="itemize" id='itemize25827'
 ><li>No foreign objects can be handled by interpreter. 
 </li>
 <li>Classes of the object system cannot be declared within interpreted
@@ -129,11 +129,11 @@ is, interpreted code is allowed to call compiled code and vice
 versa. This connection can be use to circumvent the missing
 features of the interpreter (see Section see <a href="bigloo-4.html#Module-Declaration" class="inbound">Module Declaration</a>, 
 for a description of how to connect compiled and interpreted code).<br/><br/>By default the evaluator assumes that operators from the standard
-library (e.g., <code id='code25816'
->+</code>, <code id='code25817'
+library (e.g., <code id='code25829'
+>+</code>, <code id='code25830'
 >car</code>) are immutable. Hence, it optimizes
 these operators's calls. This optimization can be disabled using
-the <code id='code25818'
+the <code id='code25831'
 >bigloo-eval-strict-module</code> parameter described in
 the chapter describing the parameters (see see <a href="bigloo-26.html#Parameters" class="inbound">Parameters</a>). <br/><br/></div><br>
 <!-- Eval standard functions -->
@@ -141,20 +141,20 @@ the chapter describing the parameters (see see <a href="bigloo-26.html#Parameter
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">23.2 Eval standard functions</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Eval-standard-functions" class="mark"></a><a name="g25820" class="mark"></a>
+<a name="Eval-standard-functions" class="mark"></a><a name="g25833" class="mark"></a>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25824" align="left" colspan="1"><strong id='bold25822'
->eval</strong><em id='it25823'
-> exp [env]</em></td><td id="tc25825" align="right" colspan="1">procedure</td></tr>
+<tr><td id="tc25837" align="left" colspan="1"><strong id='bold25835'
+>eval</strong><em id='it25836'
+> exp [env]</em></td><td id="tc25838" align="right" colspan="1">procedure</td></tr>
 </tbody></table>
-This form evaluates <code id='code25829'
-><em id='it25828'
+This form evaluates <code id='code25842'
+><em id='it25841'
 >exp</em></code>. The second argument is optional. It can be
 the evaluation of one of these three function forms: 
-<center id='center25832'
+<center id='center25845'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog25830'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog25843'
 >(scheme-report-environment 5)
 (null-environment 5)
 (interaction-environment)
@@ -164,24 +164,24 @@ the evaluation of one of these three function forms:
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g25836" class="mark"></a><a name="scheme-report-environment" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25840" align="left" colspan="1"><strong id='bold25838'
->scheme-report-environment</strong><em id='it25839'
-> version</em></td><td id="tc25841" align="right" colspan="1">procedure</td></tr>
+<tr><td><a name="g25849" class="mark"></a><a name="scheme-report-environment" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25853" align="left" colspan="1"><strong id='bold25851'
+>scheme-report-environment</strong><em id='it25852'
+> version</em></td><td id="tc25854" align="right" colspan="1">procedure</td></tr>
 </tbody></table>
-<a name="g25845" class="mark"></a><a name="null-environment" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25851" align="left" colspan="1"><strong id='bold25847'
->null-environment</strong><em id='it25850'
-> <code id='code25849'
-><em id='it25848'
->version</em></code></em></td><td id="tc25852" align="right" colspan="1">procedure</td></tr>
+<a name="g25858" class="mark"></a><a name="null-environment" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25864" align="left" colspan="1"><strong id='bold25860'
+>null-environment</strong><em id='it25863'
+> <code id='code25862'
+><em id='it25861'
+>version</em></code></em></td><td id="tc25865" align="right" colspan="1">procedure</td></tr>
 </tbody></table>
-<a name="g25856" class="mark"></a><a name="interaction-environment" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25862" align="left" colspan="1"><strong id='bold25858'
->interaction-environment</strong><em id='it25861'
-> <code id='code25860'
-><em id='it25859'
->version</em></code></em></td><td id="tc25863" align="right" colspan="1">procedure</td></tr>
+<a name="g25869" class="mark"></a><a name="interaction-environment" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25875" align="left" colspan="1"><strong id='bold25871'
+>interaction-environment</strong><em id='it25874'
+> <code id='code25873'
+><em id='it25872'
+>version</em></code></em></td><td id="tc25876" align="right" colspan="1">procedure</td></tr>
 </tbody></table>
 These three procedures have the definitions given in the R5RS so see
 info-file `r5rs.info', 6.5 Eval, for more
@@ -189,40 +189,40 @@ details.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g25869" class="mark"></a><a name="byte-code-compile" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25873" align="left" colspan="1"><strong id='bold25871'
->byte-code-compile</strong><em id='it25872'
-> exp [env (default-environment)]</em></td><td id="tc25874" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g25882" class="mark"></a><a name="byte-code-compile" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25886" align="left" colspan="1"><strong id='bold25884'
+>byte-code-compile</strong><em id='it25885'
+> exp [env (default-environment)]</em></td><td id="tc25887" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g25878" class="mark"></a><a name="byte-code-run" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25882" align="left" colspan="1"><strong id='bold25880'
->byte-code-run</strong><em id='it25881'
-> byte-code</em></td><td id="tc25883" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g25891" class="mark"></a><a name="byte-code-run" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25895" align="left" colspan="1"><strong id='bold25893'
+>byte-code-run</strong><em id='it25894'
+> byte-code</em></td><td id="tc25896" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The function <code id='code25886'
+The function <code id='code25899'
 >byte-code-compile</code> compiles a Scheme expression into
 a sequence of byte codes that is implemented as a string. 
-The function <code id='code25887'
+The function <code id='code25900'
 >byte-code-run</code> execute such a sequence.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g25891" class="mark"></a><a name="repl" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25895" align="left" colspan="1"><strong id='bold25893'
->repl</strong><em id='it25894'
-></em></td><td id="tc25896" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g25904" class="mark"></a><a name="repl" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25908" align="left" colspan="1"><strong id='bold25906'
+>repl</strong><em id='it25907'
+></em></td><td id="tc25909" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g25899" class="mark"></a>This invokes the <code id='code25902'
-><em id='it25901'
->read-eval-print</em></code> loop. Several <code id='code25903'
+<a name="g25912" class="mark"></a>This invokes the <code id='code25915'
+><em id='it25914'
+>read-eval-print</em></code> loop. Several <code id='code25916'
 >repl</code>
-can be embedded.<br/><br/>The <code id='code25905'
+can be embedded.<br/><br/>The <code id='code25918'
 >repl</code> function can be used to implement custom Bigloo interpreters.
-For instance, one may write:<br/><br/><center id='center25911'
+For instance, one may write:<br/><br/><center id='center25924'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog25909'
->(<font color="#1919af"><strong id='bold34604'
->module</strong></font> <font color="#1919af"><strong id='bold34606'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog25922'
+>(<font color="#1919af"><strong id='bold34616'
+>module</strong></font> <font color="#1919af"><strong id='bold34618'
 >repl</strong></font>)
 (repl)
 </pre>
@@ -233,81 +233,81 @@ When compiled, this will deliver an executable containingthe sole Bigloo interpr
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g25915" class="mark"></a><a name="quit" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25919" align="left" colspan="1"><strong id='bold25917'
->quit</strong><em id='it25918'
-> </em></td><td id="tc25920" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g25928" class="mark"></a><a name="quit" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25932" align="left" colspan="1"><strong id='bold25930'
+>quit</strong><em id='it25931'
+> </em></td><td id="tc25933" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-This exits from the currently running <code id='code25923'
+This exits from the currently running <code id='code25936'
 >repl</code>. If the current 
-<code id='code25924'
+<code id='code25937'
 >repl</code> is the first one then this function ends the interpreter.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g25928" class="mark"></a><a name="set-prompter!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25932" align="left" colspan="1"><strong id='bold25930'
->set-prompter!</strong><em id='it25931'
-> proc</em></td><td id="tc25933" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g25941" class="mark"></a><a name="set-prompter!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25945" align="left" colspan="1"><strong id='bold25943'
+>set-prompter!</strong><em id='it25944'
+> proc</em></td><td id="tc25946" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The argument <code id='code25937'
-><em id='it25936'
+The argument <code id='code25950'
+><em id='it25949'
 >proc</em></code> has to be a procedure of one argument and invoking
-this function sets the <code id='code25938'
+this function sets the <code id='code25951'
 >repl</code> prompter. That is, to display its prompt, 
-<code id='code25939'
->repl</code> invokes <code id='code25941'
-><em id='it25940'
+<code id='code25952'
+>repl</code> invokes <code id='code25954'
+><em id='it25953'
 >proc</em></code> giving it the nesting level of the 
 current loop as its argument.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g25945" class="mark"></a><a name="get-prompter" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25949" align="left" colspan="1"><strong id='bold25947'
->get-prompter</strong><em id='it25948'
-></em></td><td id="tc25950" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g25958" class="mark"></a><a name="get-prompter" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25962" align="left" colspan="1"><strong id='bold25960'
+>get-prompter</strong><em id='it25961'
+></em></td><td id="tc25963" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the current <code id='code25953'
+Returns the current <code id='code25966'
 >repl</code> prompter.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g25957" class="mark"></a><a name="set-repl-printer!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25961" align="left" colspan="1"><strong id='bold25959'
->set-repl-printer!</strong><em id='it25960'
-> proc</em></td><td id="tc25962" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g25970" class="mark"></a><a name="set-repl-printer!" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc25974" align="left" colspan="1"><strong id='bold25972'
+>set-repl-printer!</strong><em id='it25973'
+> proc</em></td><td id="tc25975" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-The argument <code id='code25966'
-><em id='it25965'
+The argument <code id='code25979'
+><em id='it25978'
 >proc</em></code> has to be a procedure accepting one or two arguments.
-This function sets the <code id='code25967'
+This function sets the <code id='code25980'
 >repl</code> display function. That is, to display the
-result of its evaluations, <code id='code25968'
->repl</code> invokes <code id='code25970'
-><em id='it25969'
+result of its evaluations, <code id='code25981'
+>repl</code> invokes <code id='code25983'
+><em id='it25982'
 >proc</em></code> giving it the 
 evaluated expression as first argument and the current output port (or
-a file in case of transcript) as second argument. <code id='code25971'
+a file in case of transcript) as second argument. <code id='code25984'
 >Set-repl-printer!</code>
-returns the former <code id='code25972'
->repl</code> display function.<br/><br/>For instance, one may write:<br/><br/><center id='center25985'
+returns the former <code id='code25985'
+>repl</code> display function.<br/><br/>For instance, one may write:<br/><br/><center id='center25998'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog25983'
->1<strong id='bold34608'
->:=&gt;</strong> (<font color="#6959cf"><strong id='bold34610'
->define</strong></font> <font color="#6959cf"><strong id='bold34612'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog25996'
+>1<strong id='bold34620'
+>:=&gt;</strong> (<font color="#6959cf"><strong id='bold34622'
+>define</strong></font> <font color="#6959cf"><strong id='bold34624'
 >x</strong></font> (cons 1 2))         -| X
-1<strong id='bold34614'
->:=&gt;</strong> (<font color="#6959cf"><strong id='bold34616'
->define</strong></font> <font color="#6959cf"><strong id='bold34618'
->y</strong></font> (cons x x))         -| Y
-1<strong id='bold34620'
->:=&gt;</strong> y                             -| (#0=(1 . 2) . #0#)
-1<strong id='bold34622'
->:=&gt;</strong> (set-repl-printer! display)   -| #&lt;procedure<strong id='bold34624'
->:83b8c70.-2&gt;</strong>
 1<strong id='bold34626'
+>:=&gt;</strong> (<font color="#6959cf"><strong id='bold34628'
+>define</strong></font> <font color="#6959cf"><strong id='bold34630'
+>y</strong></font> (cons x x))         -| Y
+1<strong id='bold34632'
+>:=&gt;</strong> y                             -| (#0=(1 . 2) . #0#)
+1<strong id='bold34634'
+>:=&gt;</strong> (set-repl-printer! display)   -| #&lt;procedure<strong id='bold34636'
+>:83b8c70.-2&gt;</strong>
+1<strong id='bold34638'
 >:=&gt;</strong> y                             -| ((1 . 2) 1 . 2)
 </pre>
 </td></tr>
@@ -315,43 +315,43 @@ returns the former <code id='code25972'
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g25989" class="mark"></a><a name="native-repl-printer" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc25993" align="left" colspan="1"><strong id='bold25991'
->native-repl-printer</strong><em id='it25992'
-></em></td><td id="tc25994" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g26002" class="mark"></a><a name="native-repl-printer" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26006" align="left" colspan="1"><strong id='bold26004'
+>native-repl-printer</strong><em id='it26005'
+></em></td><td id="tc26007" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the native (default) <code id='code25997'
+Returns the native (default) <code id='code26010'
 >repl</code> display function.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26001" class="mark"></a><a name="expand" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26005" align="left" colspan="1"><strong id='bold26003'
->expand</strong><em id='it26004'
-> exp</em></td><td id="tc26006" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g26014" class="mark"></a><a name="expand" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26018" align="left" colspan="1"><strong id='bold26016'
+>expand</strong><em id='it26017'
+> exp</em></td><td id="tc26019" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the value of <code id='code26010'
-><em id='it26009'
+Returns the value of <code id='code26023'
+><em id='it26022'
 >exp</em></code> after all macro expansions 
 have been performed.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26014" class="mark"></a><a name="expand-once" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26018" align="left" colspan="1"><strong id='bold26016'
->expand-once</strong><em id='it26017'
-> exp</em></td><td id="tc26019" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g26027" class="mark"></a><a name="expand-once" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26031" align="left" colspan="1"><strong id='bold26029'
+>expand-once</strong><em id='it26030'
+> exp</em></td><td id="tc26032" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-Returns the value of <code id='code26023'
-><em id='it26022'
+Returns the value of <code id='code26036'
+><em id='it26035'
 >exp</em></code> after one macro expansion has been performed.
 </td></tr>
 </tbody></table><br/>
 It is possible to specify files which have to be loaded when the interpreter
 is invoked. For this, see section see <a href="bigloo-33.html#Compiler-Description" class="inbound">Compiler Description</a>.<br/><br/>If a Bigloo file starts with the line:
-<center id='center26029'
+<center id='center26042'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26027'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26040'
 > #! bigloo-command-name
 </pre>
 </td></tr>
@@ -361,39 +361,39 @@ and if this file is executable (in the meaning of the system) and if the user
 tries to execute it, Bigloo will evaluate it. Note also that SRFI-22 support
 enables to run any Unix interpreter (see <a href="bigloo-32.html#SRFIs" class="inbound">SRFIs</a>).<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
 <tr><td><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26033" align="left" colspan="1"><strong id='bold26031'
->load</strong><em id='it26032'
-> filename</em></td><td id="tc26034" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td id="tc26046" align="left" colspan="1"><strong id='bold26044'
+>load</strong><em id='it26045'
+> filename</em></td><td id="tc26047" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<a name="g26038" class="mark"></a><a name="loadq" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26042" align="left" colspan="1"><strong id='bold26040'
->loadq</strong><em id='it26041'
-> filename</em></td><td id="tc26043" align="right" colspan="1">bigloo procedure</td></tr>
+<a name="g26051" class="mark"></a><a name="loadq" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26055" align="left" colspan="1"><strong id='bold26053'
+>loadq</strong><em id='it26054'
+> filename</em></td><td id="tc26056" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-<code id='code26047'
-><em id='it26046'
+<code id='code26060'
+><em id='it26059'
 >Filename</em></code> should be a string naming an existing file which contains
 Bigloo source code. This file is searched in the current directory and
-in all the directories mentioned in the variable <code id='code26048'
+in all the directories mentioned in the variable <code id='code26061'
 >*load-path*</code>.
-The <code id='code26049'
+The <code id='code26062'
 >load</code> procedure reads expressions and
 definitions from the file, evaluating them sequentially. If the file
 loaded is a module (i.e. if it begins with a regular
 module clause), load behaves as module initialization. Otherwise, this
-function returns the result of the last evaluation. The function <code id='code26050'
+function returns the result of the last evaluation. The function <code id='code26063'
 >loadq</code>
-differs from the function <code id='code26051'
->load</code> in the sense that <code id='code26052'
+differs from the function <code id='code26064'
+>load</code> in the sense that <code id='code26065'
 >loadq</code> does 
 not print any intermediate evaluations.<br/><br/>Both functions return the full path of the loaded file.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26057" class="mark"></a><a name="loada" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26061" align="left" colspan="1"><strong id='bold26059'
->loada</strong><em id='it26060'
-> filename</em></td><td id="tc26062" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g26070" class="mark"></a><a name="loada" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26074" align="left" colspan="1"><strong id='bold26072'
+>loada</strong><em id='it26073'
+> filename</em></td><td id="tc26075" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 Loads an ``access file'', which allows the interpreter to find 
 the modules imported by a loaded module. It returns the full path 
@@ -401,41 +401,42 @@ of the loaded file.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26068" class="mark"></a><a name="*load-path*" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26072" align="left" colspan="1"><strong id='bold26070'
->*load-path*</strong><em id='it26071'
-></em></td><td id="tc26073" align="right" colspan="1">bigloo variable</td></tr>
+<tr><td><a name="g26081" class="mark"></a><a name="*load-path*" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26085" align="left" colspan="1"><strong id='bold26083'
+>*load-path*</strong><em id='it26084'
+></em></td><td id="tc26086" align="right" colspan="1">bigloo variable</td></tr>
 </tbody></table>
-A list of search paths for the <code id='code26076'
+A list of search paths for the <code id='code26089'
 >load</code> functions.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26080" class="mark"></a><a name="dynamic-load" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26084" align="left" colspan="1"><strong id='bold26082'
->dynamic-load</strong><em id='it26083'
-> filename #!optional (init init-point)</em></td><td id="tc26085" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g26093" class="mark"></a><a name="dynamic-load" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26097" align="left" colspan="1"><strong id='bold26095'
+>dynamic-load</strong><em id='it26096'
+> filename #!optional (init init-point)</em></td><td id="tc26098" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 
-Loads a shared library named <code id='code26088'
->filename</code>. <br/><br/><em id='emph26090'
->Important note: </em> The function <code id='code26091'
+Loads a shared library named <code id='code26101'
+>filename</code>. Returns the value of the
+last top-level expression.<br/><br/><em id='emph26103'
+>Important note: </em> The function <code id='code26104'
 >dynamic-load</code> can only be
 used from interpreters linked against dynamic libraries. In particular,
-the <code id='code26092'
->dynamic-load</code> function can be issued from the <code id='code26093'
+the <code id='code26105'
+>dynamic-load</code> function can be issued from the <code id='code26106'
 >bigloo</code>
-command if and only if the option <code id='code26094'
+command if and only if the option <code id='code26107'
 >--sharedcompiler=yes</code> has been
-used when configuring Bigloo. If the <code id='code26095'
+used when configuring Bigloo. If the <code id='code26108'
 >bigloo</code> command is not linked
-against dynamic libraries and if <code id='code26096'
+against dynamic libraries and if <code id='code26109'
 >dynamic-load</code> is
 required inside a read-eval-print loop (REPL) it exists a simple workaround.
 It consists in implementing a new REPL and linking it against dynamic 
-libraries. This can be done as:<br/><br/><center id='center26100'
+libraries. This can be done as:<br/><br/><center id='center26113'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog26098'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog26111'
 >$ cat &gt; new-repl.scm &lt;&lt;EOF
 (module new-repl)
 (repl)
@@ -447,83 +448,80 @@ $ new-repl
 </td></tr>
 </tbody></table></center>
 
-<br/><br/><br/>The function <code id='code26103'
->dynamic-load</code> returns the name of the loaded
-library. If <code id='code26105'
-><em id='it26104'
->init-point</em></code> is specified and if it is a string and if
-the library defines a function named <code id='code26106'
->init-point</code>, this function
-is called when the library is loaded. <code id='code26108'
-><em id='it26107'
->Init-point</em></code> is a C
-identifier, not a Scheme identifier. In order to set the C name a
-Scheme function, use the extern <code id='code26109'
->export</code> clause (see Section
-see <a href="bigloo-28.html#C-Interface" class="inbound">C Interface</a>). If the <code id='code26111'
-><em id='it26110'
->init-point</em></code> is provided and is not a
-string, no initialization function is called after the library is
-loaded. If the <code id='code26113'
-><em id='it26112'
->init-point</em></code> value is not provided, once the
-library is loaded, <code id='code26114'
->dynamic-load</code> uses the Bigloo default entry
-point. Normally you should <em id='emph26115'
->not</em> provide an <code id='code26117'
+<br/><br/><br/>If <code id='code26117'
 ><em id='it26116'
+>init-point</em></code> is specified and if it is a string and if the
+library defines a function named <code id='code26118'
+>init-point</code>, this function is
+called when the library is loaded. <code id='code26120'
+><em id='it26119'
+>Init-point</em></code> is a C identifier,
+not a Scheme identifier. In order to set the C name a Scheme function,
+use the extern <code id='code26121'
+>export</code> clause (see Section see <a href="bigloo-28.html#C-Interface" class="inbound">C Interface</a>). If the <code id='code26123'
+><em id='it26122'
+>init-point</em></code> is provided and is not a string,
+no initialization function is called after the library is loaded. If
+the <code id='code26125'
+><em id='it26124'
+>init-point</em></code> value is not provided, once the library is
+loaded, <code id='code26126'
+>dynamic-load</code> uses the Bigloo default entry
+point. Normally you should <em id='emph26127'
+>not</em> provide an <code id='code26129'
+><em id='it26128'
 >init-point</em></code> to
-<code id='code26118'
+<code id='code26130'
 >dynamic-load</code> unless you known what you are doing. When
 producing C code, to force the Bigloo compiler to emit such a default
-entry point, use the <code id='code26119'
+entry point, use the <code id='code26131'
 >-dload-sym</code> compilation option (see Section
 see <a href="bigloo-33.html#Compiler-Description" class="inbound">Compiler Description</a>). This option is useless when using the
 JVM code generator. Let's assume a Linux system and two Bigloo
-modules. The first:<br/><br/><center id='center26133'
+modules. The first:<br/><br/><center id='center26145'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26131'
->(<font color="#1919af"><strong id='bold34628'
->module</strong></font> <font color="#1919af"><strong id='bold34630'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26143'
+>(<font color="#1919af"><strong id='bold34640'
+>module</strong></font> <font color="#1919af"><strong id='bold34642'
 >mod1</strong></font>
-   (eval (<font color="#1919af"><strong id='bold34632'
->export</strong></font> <font color="#1919af"><strong id='bold34634'
+   (eval (<font color="#1919af"><strong id='bold34644'
+>export</strong></font> <font color="#1919af"><strong id='bold34646'
 >foo</strong></font>))
-   (<font color="#1919af"><strong id='bold34636'
->export</strong></font> (<font color="#1919af"><strong id='bold34638'
->foo</strong></font> x)))<br/><br/>(<font color="#6959cf"><strong id='bold34640'
->define</strong></font> (<font color="#6959cf"><strong id='bold34642'
+   (<font color="#1919af"><strong id='bold34648'
+>export</strong></font> (<font color="#1919af"><strong id='bold34650'
+>foo</strong></font> x)))<br/><br/>(<font color="#6959cf"><strong id='bold34652'
+>define</strong></font> (<font color="#6959cf"><strong id='bold34654'
 >foo</strong></font> x)
    (print <font color="red">&quot;foo: &quot;</font> x))<br/><br/>(foo 4)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-The second:<br/><br/><center id='center26150'
+The second:<br/><br/><center id='center26162'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26148'
->(<font color="#1919af"><strong id='bold34645'
->module</strong></font> <font color="#1919af"><strong id='bold34647'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26160'
+>(<font color="#1919af"><strong id='bold34657'
+>module</strong></font> <font color="#1919af"><strong id='bold34659'
 >mod2</strong></font>
-   (<font color="#1919af"><strong id='bold34649'
->import</strong></font> (<font color="#1919af"><strong id='bold34651'
+   (<font color="#1919af"><strong id='bold34661'
+>import</strong></font> (<font color="#1919af"><strong id='bold34663'
 >mod1</strong></font> <font color="red">&quot;mod1.scm&quot;</font>))
-   (eval (<font color="#1919af"><strong id='bold34654'
->export</strong></font> <font color="#1919af"><strong id='bold34656'
+   (eval (<font color="#1919af"><strong id='bold34666'
+>export</strong></font> <font color="#1919af"><strong id='bold34668'
 >bar</strong></font>))
-   (<font color="#1919af"><strong id='bold34658'
->export</strong></font> (<font color="#1919af"><strong id='bold34660'
->bar</strong></font> x)))<br/><br/>(<font color="#6959cf"><strong id='bold34662'
->define</strong></font> (<font color="#6959cf"><strong id='bold34664'
+   (<font color="#1919af"><strong id='bold34670'
+>export</strong></font> (<font color="#1919af"><strong id='bold34672'
+>bar</strong></font> x)))<br/><br/>(<font color="#6959cf"><strong id='bold34674'
+>define</strong></font> (<font color="#6959cf"><strong id='bold34676'
 >bar</strong></font> x)
    (print <font color="red">&quot;bar: &quot;</font> x))<br/><br/>(bar 5)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-If these modules are compiled as:<br/><br/><center id='center26154'
+If these modules are compiled as:<br/><br/><center id='center26166'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog26152'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog26164'
 >$ bigloo mod1.scm -c -o mod1.o 
 $ bigloo mod2.scm -c -o mod2.o -dload-sym
 </pre>
@@ -531,24 +529,24 @@ $ bigloo mod2.scm -c -o mod2.o -dload-sym
 </tbody></table></center>
 
 Then, if a shared library is built using these two modules (note that on
-non Linux systems, a different command line is required):<br/><br/><center id='center26158'
+non Linux systems, a different command line is required):<br/><br/><center id='center26170'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog26156'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog26168'
 >$ ld -G -o lib.so mod1.o mod2.o
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Then, <code id='code26159'
+Then, <code id='code26171'
 >lib.so</code> cant be dynamically loaded and the variables it defines
-used such as :<br/><br/><center id='center26165'
+used such as :<br/><br/><center id='center26177'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26163'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog26175'
 >$ bigloo -i
 (dynamic-load <font color="red">&quot;lib.so&quot;</font>)
      -| foo: 4
        bar: 5
-1<strong id='bold34668'
+1<strong id='bold34680'
 >:=&gt;</strong> (foo 6)
      -| foo: 7
 </pre>
@@ -556,57 +554,57 @@ used such as :<br/><br/><center id='center26165'
 </tbody></table></center>
 
 As the example illustrates, when Bigloo modules are dynamically loaded,
-they are initialized. This initialization is ensure <em id='emph26166'
+they are initialized. This initialization is ensure <em id='emph26178'
 >only</em> if
-<code id='code26167'
+<code id='code26179'
 >dynamic-load</code> is called with exactly one parameter. If
-<code id='code26168'
+<code id='code26180'
 >dynamic-load</code> is called with two parameters, it is of the
 responsibility of the program to initialize the dynamically loaded
-module before using any Scheme reference.<br/><br/><em id='emph26170'
+module before using any Scheme reference.<br/><br/><em id='emph26182'
 >Note: </em> In order to let the loaded module accesses the variables
 defined by the loader application, special compilation flags must be
-used (e.g., <code id='code26171'
+used (e.g., <code id='code26183'
 >-rdynamic</code> under the Linux operating
-system). <code id='code26172'
+system). <code id='code26184'
 >Dynamic-load</code> is implemented on the top of the
-<code id='code26173'
->dlopen</code> facility. For more information read the <code id='code26174'
+<code id='code26185'
+>dlopen</code> facility. For more information read the <code id='code26186'
 >dlopen</code> and
-<code id='code26175'
+<code id='code26187'
 >ld</code> manuals.<br/><br/></td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26180" class="mark"></a><a name="dynamic-unload" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26184" align="left" colspan="1"><strong id='bold26182'
->dynamic-unload</strong><em id='it26183'
-> filename</em></td><td id="tc26185" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g26192" class="mark"></a><a name="dynamic-unload" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26196" align="left" colspan="1"><strong id='bold26194'
+>dynamic-unload</strong><em id='it26195'
+> filename</em></td><td id="tc26197" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
 On the operating system that supports this facility, unloads a shared library.
-Returns <code id='code26188'
->#t</code> on success. Returns <code id='code26189'
+Returns <code id='code26200'
+>#t</code> on success. Returns <code id='code26201'
 >#f</code> otherwise.
 </td></tr>
 </tbody></table><br/>
 <table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26193" class="mark"></a><a name="*dynamic-load-path*" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26197" align="left" colspan="1"><strong id='bold26195'
->*dynamic-load-path*</strong><em id='it26196'
-></em></td><td id="tc26198" align="right" colspan="1">bigloo variable</td></tr>
+<tr><td><a name="g26205" class="mark"></a><a name="*dynamic-load-path*" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26209" align="left" colspan="1"><strong id='bold26207'
+>*dynamic-load-path*</strong><em id='it26208'
+></em></td><td id="tc26210" align="right" colspan="1">bigloo variable</td></tr>
 </tbody></table>
-A list of search paths for the <code id='code26201'
+A list of search paths for the <code id='code26213'
 >dynamic-load</code> functions.
 </td></tr>
 </tbody></table><br/><br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g26206" class="mark"></a><a name="transcript-on" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26210" align="left" colspan="1"><strong id='bold26208'
->transcript-on</strong><em id='it26209'
-> filename</em></td><td id="tc26211" align="right" colspan="1">procedure</td></tr>
+<tr><td><a name="g26218" class="mark"></a><a name="transcript-on" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26222" align="left" colspan="1"><strong id='bold26220'
+>transcript-on</strong><em id='it26221'
+> filename</em></td><td id="tc26223" align="right" colspan="1">procedure</td></tr>
 </tbody></table>
-<a name="g26215" class="mark"></a><a name="transcript-off" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc26219" align="left" colspan="1"><strong id='bold26217'
->transcript-off</strong><em id='it26218'
-> </em></td><td id="tc26220" align="right" colspan="1">procedure</td></tr>
+<a name="g26227" class="mark"></a><a name="transcript-off" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc26231" align="left" colspan="1"><strong id='bold26229'
+>transcript-off</strong><em id='it26230'
+> </em></td><td id="tc26232" align="right" colspan="1">procedure</td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table><br/>
@@ -616,33 +614,33 @@ A list of search paths for the <code id='code26201'
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">23.3 Eval command line options</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Eval-command-line-options" class="mark"></a><a name="g26225" class="mark"></a>
+<a name="Eval-command-line-options" class="mark"></a><a name="g26237" class="mark"></a>
 This section presents the Bigloo compiler options that impact the interaction
 between compiled and interpreted code. The whole list of the Bigloo
 compiler options can be found in 
-<a href="bigloo-33.html#Compiler-Description" class="inbound">The Bigloo command line</a>.<br/><br/><ul class="itemize" id='itemize26242'
-><li><code id='code26228'
+<a href="bigloo-33.html#Compiler-Description" class="inbound">The Bigloo command line</a>.<br/><br/><ul class="itemize" id='itemize26254'
+><li><code id='code26240'
 >-i</code> Don't compile a module, interpret it!
 </li>
-<li><code id='code26230'
->-export-all</code> Make all the bindings <em id='emph26231'
+<li><code id='code26242'
+>-export-all</code> Make all the bindings <em id='emph26243'
 >defined</em> by 
       the compiled module available from the interpreter.
 </li>
-<li><code id='code26233'
->-export-export</code> Make all the bindings <em id='emph26234'
+<li><code id='code26245'
+>-export-export</code> Make all the bindings <em id='emph26246'
 >exported</em> by the 
       compiled module available from the interpreter.
 </li>
-<li><code id='code26236'
->-export-mutable</code> Make all the bindings <em id='emph26237'
+<li><code id='code26248'
+>-export-mutable</code> Make all the bindings <em id='emph26249'
 >exported</em> by the 
       compiled module mutable from outside the module. This option is
-      <em id='emph26238'
+      <em id='emph26250'
 >dangerous</em>! Either all the modules composing the application 
-      must be compiled with or without <code id='code26239'
+      must be compiled with or without <code id='code26251'
 >-export-mutable</code>. It is impossible
-      to mix <code id='code26240'
+      to mix <code id='code26252'
 >-export-mutable</code> enabled and disabled compilations.
 </li>
 </ul>
@@ -652,7 +650,7 @@ compiler options can be found in
 <div class="section-atitle"><table width="100%"><tr><td bgcolor="#dedeff"><h3><font color="black">23.4 Eval and the foreign interface</font>
 </h3></td></tr></table>
 </div><div class="section">
-<a name="Eval-and-the-foreign-interface" class="mark"></a><a name="g26243" class="mark"></a>
+<a name="Eval-and-the-foreign-interface" class="mark"></a><a name="g26255" class="mark"></a>
 To be able to get access to foreign functions within the Bigloo 
 interpreter, some extra measurements have to be taken. The foreign 
 functions have to be present in the interpreter binary, which means you 
@@ -664,12 +662,12 @@ Section <a href="bigloo-28.html#Using-C-bindings-within-the-interpreter" class="
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph34675'
+<p class="ending" id='paragraph34687'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it34673'
->Thu Jul  2 15:55:40 2015</em>.</font></p></div>
+Last update <em id='it34685'
+>Wed Sep  9 07:55:48 2015</em>.</font></p></div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 /*    -------------------------------------------------------------    */
 /*    Author      :  Manuel Serrano                                    */
 /*    Creation    :  Tue Jun  7 09:02:35 1994                          */
-/*    Last change :  Sat Apr 19 12:19:37 2014 (serrano)                */
+/*    Last change :  Thu Jul 16 07:57:39 2015 (serrano)                */
 /*    -------------------------------------------------------------    */
 /*    Binary input and output ports.                                   */
 /*=====================================================================*/
@@ -47,8 +47,8 @@
 /*---------------------------------------------------------------------*/
 /*    Les recuperations externes                                       */
 /*---------------------------------------------------------------------*/
-extern obj_t obj_to_string( obj_t );
-extern obj_t string_to_obj( obj_t, obj_t );
+extern obj_t obj_to_string( obj_t, obj_t );
+extern obj_t string_to_obj( obj_t, obj_t, obj_t );
 extern obj_t c_constant_string_to_string( char * );
 extern obj_t make_string_sans_fill( BGL_LONG_T );
 extern obj_t bgl_string_shrink();
@@ -201,7 +201,7 @@ output_obj( obj_t port, obj_t obj ) {
    BGL_LONG_T clen;
 
    /* Le calcul de la chaine a dumper */
-   string = obj_to_string( obj );
+   string = obj_to_string( obj, BFALSE );
 
    /* Le mot magique */
    fwrite( MAGIC_WORD, 4, 1, file );
@@ -278,7 +278,7 @@ input_obj( obj_t port ) {
       
       fread( BSTRING_TO_STRING( BSTRING( string ) ), clen, 1, file );
 
-      res = string_to_obj( BSTRING( string ), BFALSE );
+      res = string_to_obj( BSTRING( string ), BFALSE, BFALSE );
 
 #if( defined( BIGLOO_TRACE ) )
       POP_TRACE();
@@ -301,7 +301,7 @@ input_obj( obj_t port ) {
 		
       fread( BSTRING_TO_STRING( BSTRING( string ) ), clen, 1, file );
       
-      res = string_to_obj( BSTRING( string ), BFALSE );
+      res = string_to_obj( BSTRING( string ), BFALSE, BFALSE );
 
       free( string );
 		

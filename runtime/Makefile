@@ -110,10 +110,13 @@ C_CLIB		= $(CLIB:%=Clib/%.c)
 #*    Java objects                                                     */
 #*---------------------------------------------------------------------*/
 JDK_LIBS	= JDK
-ifeq ($(JAVA_VERSION), 1.7)
+ifeq ($(JAVA_VERSION), 1.8)
   JDK_LIBS	+= JDK16
 else
-  ifeq ($(JAVA_VERSION), 1.6)
+  ifeq ($(JAVA_VERSION), 1.7)
+    JDK_LIBS    += JDK16
+  else
+   ifeq ($(JAVA_VERSION), 1.6)
     JDK_LIBS	+= JDK16
    else
     ifeq ($(JAVA_VERSION), 1.5)
@@ -125,6 +128,7 @@ else
        JDK_LIBS	+= JDK13
      endif
    endif
+ endif
  endif
 endif
 

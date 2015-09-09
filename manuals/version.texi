@@ -1,3 +1,3 @@
 @c -- Version and date --------------------------------------------- @c
 @set bigloovers 4.2a
-@set bigloodate July 2015
+@set bigloodate September 2015

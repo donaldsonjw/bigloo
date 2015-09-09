@@ -3,7 +3,7 @@
 /*    -------------------------------------------------------------    */
 /*    Author      :  Manuel Serrano                                    */
 /*    Creation    :  Mon Jun 29 18:18:45 1998                          */
-/*    Last change :  Mon Jun 15 09:26:35 2015 (serrano)                */
+/*    Last change :  Tue Jul  7 17:47:29 2015 (serrano)                */
 /*    -------------------------------------------------------------    */
 /*    Scheme sockets                                                   */
 /*    -------------------------------------------------------------    */
@@ -310,9 +310,12 @@ client_socket_error( char *proc, obj_t hostname, int port, char *msg, int err ) 
    char buffer1[ 512 ];
    char buffer2[ 512 ];
 
-   if( msg ) sprintf( buffer1, "%s, ", msg );
    BGL_MUTEX_LOCK( socket_mutex );
-   sprintf( buffer1, "%s (%d)", strerror( err ), err );
+   if( msg ){
+      sprintf( buffer1, "%s (%d), %s", strerror( err ), err, msg ); 
+   } else {
+      sprintf( buffer1, "%s (%d)", strerror( err ), err );
+   }
    BGL_MUTEX_UNLOCK( socket_mutex );
    
    if( port >= 0 ) {

@@ -1,4 +1,4 @@
-This is bigloo.info, produced by makeinfo version 5.2 from bigloo.texi.
+This is bigloo.info, produced by makeinfo version 6.0 from bigloo.texi.
 
 INFO-DIR-SECTION The Algorithmic Language Scheme
 START-INFO-DIR-ENTRY
@@ -5790,7 +5790,8 @@ SRFI-22 support enables to run any Unix interpreter (*note SRFIs::).
 
  -- bigloo procedure: dynamic-load filename #!optional (init init-point)
 
-     Loads a shared library named 'filename'.
+     Loads a shared library named 'filename'.  Returns the value of the
+     last top-level expression.
 
      _Important note: _ The function 'dynamic-load' can only be used
      from interpreters linked against dynamic libraries.  In particular,
@@ -5811,7 +5812,6 @@ SRFI-22 support enables to run any Unix interpreter (*note SRFIs::).
           1:=> (dynamic-load ...)
 
 
-     The function 'dynamic-load' returns the name of the loaded library.
      If INIT-POINT is specified and if it is a string and if the library
      defines a function named 'init-point', this function is called when
      the library is loaded.  INIT-POINT is a C identifier, not a Scheme
@@ -6824,8 +6824,8 @@ produced code.  It is _only_ applicable to the C back-end.  In
 particular, the JVM back-end (see Chapter *note Java Interface::) does
 not support it.
 
- -- bigloo syntax: pragma:: IDENT string [args]
- -- bigloo syntax: free-pragma:: IDENT string [args]
+ -- bigloo syntax: pragma::IDENT string [args]
+ -- bigloo syntax: free-pragma::IDENT string [args]
      This force Bigloo to include STRING in the produced C code as a
      regular C fragment of code.  This form must not be used without an
      in depth understanding of Bigloo C code production; with unskilled

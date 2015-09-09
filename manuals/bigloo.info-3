@@ -1,4 +1,4 @@
-This is bigloo.info, produced by makeinfo version 5.2 from bigloo.texi.
+This is bigloo.info, produced by makeinfo version 6.0 from bigloo.texi.
 
 INFO-DIR-SECTION The Algorithmic Language Scheme
 START-INFO-DIR-ENTRY
@@ -1049,10 +1049,10 @@ the exhaustive list of Bigloo options and configuration variables:
           default: read
         - *inlining-kfactor* :
           Inlining growth factor
-          default: #<procedure:40f9c0.1>
+          default: #<procedure:40f910.1>
         - *inlining-reduce-kfactor* :
           Inlinine growth factor reductor
-          default: #<procedure:40f910.1>
+          default: #<procedure:40f860.1>
         - *inlining?* :
           Inlining optimization
           default: #t
@@ -1256,7 +1256,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: ld
         - *pre-processor* :
           An optional function that pre-processes the source file
-          default: #<procedure:40ad60.1>
+          default: #<procedure:40aca0.1>
         - *prof-table-name* :
           Bprof translation table file name
           default: "bmon.out"
@@ -2029,7 +2029,7 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * &process-exception:                    Exceptions.          (line 138)
 * &type-error:                           Exceptions.          (line  82)
 * &warning:                              Exceptions.          (line 142)
-* ''':                                   Expressions.         (line  34)
+* '''datum:                              Expressions.         (line  34)
 * *:                                     Numbers.             (line 138)
 * *auto-mode*:                           User Extensions.     (line  20)
 * *bx:                                   Numbers.             (line 143)
@@ -2365,7 +2365,7 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * class-super:                           Object library.      (line  18)
 * class?:                                Object library.      (line  15)
 * client-server:                         Socket.              (line 220)
-* client-socket-use-ssl!:                SSL Sockets.         (line  96)
+* client-socket-use-ssl!:                SSL Sockets.         (line 100)
 * close-binary-port:                     Serialization.       (line  33)
 * close-input-port:                      Library functions.   (line 356)
 * close-mmap:                            Memory mapped area.  (line  26)
@@ -2559,7 +2559,7 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * dump-trace-stack:                      Errors and Warnings. (line  57)
 * duplicate:                             Creating and accessing objects.
                                                               (line 116)
-* duplicate:::                           Creating and accessing objects.
+* duplicate::CLASS:                      Creating and accessing objects.
                                                               (line 115)
 * dynamic-load:                          Eval standard functions.
                                                               (line 114)
@@ -2716,7 +2716,7 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * format:                                Library functions.   (line 636)
 * fprint:                                Library functions.   (line 615)
 * fprintf:                               Library functions.   (line 703)
-* free-pragma:::                         The very dangerous pragma Bigloo special forms.
+* free-pragma::IDENT:                    The very dangerous pragma Bigloo special forms.
                                                               (line  12)
 * from:                                  Module Declaration.  (line 215)
 * gb2312->ucs2:                          Character encodings. (line   6)
@@ -2853,7 +2853,7 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * installing the bee:                    Installing the Bee.  (line   6)
 * instantiate:                           Creating and accessing objects.
                                                               (line  15)
-* instantiate:::                         Creating and accessing objects.
+* instantiate::CLASS:                    Creating and accessing objects.
                                                               (line  14)
 * instantiate::fthread:                  Thread.              (line   6)
 * instantiate::pthread:                  Threads API.         (line   6)
@@ -3038,8 +3038,8 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * make-scheduler:                        Scheduler.           (line   6)
 * make-server-socket:                    Socket.              (line 108)
 * make-shared-library-name:              Files.               (line 125)
-* make-ssl-client-socket:                SSL Sockets.         (line  11)
-* make-ssl-server-socket:                SSL Sockets.         (line 103)
+* make-ssl-client-socket:                SSL Sockets.         (line  15)
+* make-ssl-server-socket:                SSL Sockets.         (line 107)
 * make-static-library-name:              Files.               (line 121)
 * make-string:                           Strings.             (line  24)
 * make-string <1>:                       Strings.             (line  25)
@@ -3344,7 +3344,7 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * Posix Threads <1>:                     Posix Threads.       (line   6)
 * Posix Threads <2>:                     Mixing Thread APIs.  (line   6)
 * pp:                                    Library functions.   (line 706)
-* pragma:::                              The very dangerous pragma Bigloo special forms.
+* pragma::IDENT:                         The very dangerous pragma Bigloo special forms.
                                                               (line  11)
 * prefix:                                Files.               (line  14)
 * pregexp:                               Regular Expressions Procedures.
@@ -3656,6 +3656,7 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * SSL:                                   SSL.                 (line   6)
 * SSL Sockets:                           SSL Sockets.         (line   6)
 * SSL support:                           SSL.                 (line   6)
+* ssl-socket?:                           SSL Sockets.         (line  11)
 * ssl-version:                           SSL.                 (line  15)
 * Stack allocation:                      Compiler Description.
                                                               (line  96)
@@ -3997,8 +3998,8 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * ucs2>?:                                UCS-2 Characters.    (line  15)
 * ucs2?:                                 UCS-2 Characters.    (line  11)
 * unbufferized socket port:              Socket.              (line  19)
-* unbufferized socket port <1>:          SSL Sockets.         (line  14)
-* unbufferized socket port <2>:          SSL Sockets.         (line 106)
+* unbufferized socket port <1>:          SSL Sockets.         (line  18)
+* unbufferized socket port <2>:          SSL Sockets.         (line 110)
 * uncaught-exception-reason:             SRFI-18 compatibility.
                                                               (line  20)
 * uncaught-exception-reason <1>:         Threads API.         (line  74)
@@ -4089,14 +4090,14 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * wide-object?:                          Object library.      (line  36)
 * widen!:                                Widening and shrinking.
                                                               (line  21)
-* widen!:::                              Widening and shrinking.
+* widen!::WIDE-CLASS:                    Widening and shrinking.
                                                               (line  20)
 * Widening and shrinking:                Widening and shrinking.
                                                               (line   6)
 * with:                                  Module Declaration.  (line 152)
 * with-access:                           Creating and accessing objects.
                                                               (line  52)
-* with-access:::                         Creating and accessing objects.
+* with-access::CLASS:                    Creating and accessing objects.
                                                               (line  51)
 * with-append-to-file:                   Library functions.   (line 110)
 * with-error-to-file:                    Library functions.   (line 111)

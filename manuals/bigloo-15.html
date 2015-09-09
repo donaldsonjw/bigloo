@@ -22,34 +22,34 @@
 
 <body class="chapter" bgcolor="#ffffff">
 <table width="100%" class="skribetitle" cellspacing="0" cellpadding="0"><tbody>
-<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>14. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015 -- Command Line Parsing</big></big></big></strong></div><center>
+<tr><td align="center" bgcolor="#8381de"><div class="skribetitle"><strong><big><big><big>14. Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>September 2015 -- Command Line Parsing</big></big></big></strong></div><center>
 </center>
 </td></tr></tbody></table>
 <table cellpadding="3" cellspacing="0" width="100%" class="skribe-margins"><tr>
 <td align="left" valign="top" class="skribe-left-margin" width="20%" bgcolor="#dedeff"><div class="skribe-left-margin">
-<br/><center id='center32582'
+<br/><center id='center32594'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32572" align="center" colspan="1"><font color="#ffffff"><strong id='bold32570'
+<tr bgcolor="#8381de"><th id="tc32584" align="center" colspan="1"><font color="#ffffff"><strong id='bold32582'
 >main page</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32579" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc32575" align="left" valign="top" colspan="1"><strong id='bold32574'
->top:</strong></td><td id="tc32576" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-July-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>July 2015</a></td></tr>
+<tr bgcolor="#ffffff"><td id="tc32591" align="center" colspan="1"><table width="100%" border="0" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc32587" align="left" valign="top" colspan="1"><strong id='bold32586'
+>top:</strong></td><td id="tc32588" align="right" valign="top" colspan="1"><a href="bigloo.html#Bigloo-A-practical-Scheme-compiler-User-manual-for-version-4.2a-September-2015" class="inbound">Bigloo<br/>A practical Scheme compiler<br/>User manual for version 4.2a<br/>September 2015</a></td></tr>
 </tbody></table>
 </td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center32592'
+<br/><br/><center id='center32604'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32586" align="center" colspan="1"><font color="#ffffff"><strong id='bold32584'
+<tr bgcolor="#8381de"><th id="tc32598" align="center" colspan="1"><font color="#ffffff"><strong id='bold32596'
 >Command Line Parsing</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32589" align="center" colspan="1"></td></tr>
+<tr bgcolor="#ffffff"><td id="tc32601" align="center" colspan="1"></td></tr>
 </tbody></table>
 </center>
-<br/><br/><center id='center32602'
+<br/><br/><center id='center32614'
 ><table width="97%" border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" frame="box" rules="none"><tbody>
-<tr bgcolor="#8381de"><th id="tc32596" align="center" colspan="1"><font color="#ffffff"><strong id='bold32594'
+<tr bgcolor="#8381de"><th id="tc32608" align="center" colspan="1"><font color="#ffffff"><strong id='bold32606'
 >Chapters</strong></font></th></tr>
-<tr bgcolor="#ffffff"><td id="tc32599" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
+<tr bgcolor="#ffffff"><td id="tc32611" align="center" colspan="1"><table cellspacing="1" cellpadding="1" width="100%" class="toc">
 <tbody>
  <tr><td valign="top" align="left"></td><td colspan="4" width="100%"><a href="bigloo-1.html#Acknowledgements">Acknowledgements</a></td></tr>
  <tr><td valign="top" align="left">1</td><td colspan="4" width="100%"><a href="bigloo-2.html#Table-of-contents">Table of contents</a></td></tr>
@@ -97,109 +97,109 @@
 </center>
 </div></td>
 <td align="left" valign="top" class="skribe-body"><div class="skribe-body">
-<a name="Command-Line-Parsing" class="mark"></a><a name="g18941" class="mark"></a><a name="g18943" class="mark"></a>
+<a name="Command-Line-Parsing" class="mark"></a><a name="g18954" class="mark"></a><a name="g18956" class="mark"></a>
 Bigloo supports command line argument parsing. That is, when an
-application is spawn from an Unix shell, the <code id='code18945'
+application is spawn from an Unix shell, the <code id='code18958'
 >main</code> function
  is called and its argument is bound to the list of the command line
 arguments, See <a href="bigloo-4.html#Modules" class="inbound">Module declaration</a>. The
-<code id='code18946'
+<code id='code18959'
 >args-parse</code> form may be used to parse these.<br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g18949" class="mark"></a><a name="args-parse" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc18953" align="left" colspan="1"><strong id='bold18951'
->args-parse</strong><em id='it18952'
-> list rules [null-rule] [else-rule] ...</em></td><td id="tc18954" align="right" colspan="1">bigloo syntax</td></tr>
+<tr><td><a name="g18962" class="mark"></a><a name="args-parse" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc18966" align="left" colspan="1"><strong id='bold18964'
+>args-parse</strong><em id='it18965'
+> list rules [null-rule] [else-rule] ...</em></td><td id="tc18967" align="right" colspan="1">bigloo syntax</td></tr>
 </tbody></table>
 
-The argument <code id='code18958'
-><em id='it18957'
->list</em></code> is a list of strings. <code id='code18960'
-><em id='it18959'
+The argument <code id='code18971'
+><em id='it18970'
+>list</em></code> is a list of strings. <code id='code18973'
+><em id='it18972'
 >Rules</em></code> is defined by
-the following grammar:<br/><br/><center id='center18970'
+the following grammar:<br/><br/><center id='center18983'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccccff"><pre class="prog" id='prog18968'
->&lt;rule&gt;      ==&gt; (<code id='code18962'
+<tr><td bgcolor="#ccccff"><pre class="prog" id='prog18981'
+>&lt;rule&gt;      ==&gt; (<code id='code18975'
 >section</code> &lt;string&gt;)
               | ((&lt;option&gt; &lt;help&gt;) &lt;s-expression&gt;)
               | ((&lt;option&gt;) &lt;s-expression&gt;)
               | ((&lt;flag&gt; &lt;var&gt; &lt;var&gt; ...) &lt;s-expression&gt;)
               | ((&lt;flag&gt; &lt;var&gt; &lt;var&gt; ... &lt;help&gt;) &lt;s-expression&gt;)
-&lt;null-rule&gt; ==&gt; (<code id='code18963'
+&lt;null-rule&gt; ==&gt; (<code id='code18976'
 >()</code> &lt;s-expression&gt;)
-&lt;else-rule&gt; ==&gt; (<code id='code18964'
+&lt;else-rule&gt; ==&gt; (<code id='code18977'
 >else</code> &lt;s-expression&gt;)
 &lt;option&gt;    ==&gt; &lt;flag&gt;
               | &lt;string&gt;&lt;var&gt;
 &lt;flag&gt;      ==&gt; &lt;string&gt;
               | (&lt;string&gt;+)
-&lt;var&gt;       ==&gt; an identifier leaded by the <code id='code18965'
+&lt;var&gt;       ==&gt; an identifier leaded by the <code id='code18978'
 >?</code> character
-&lt;help&gt;      ==&gt; (<code id='code18966'
+&lt;help&gt;      ==&gt; (<code id='code18979'
 >help</code> &lt;s-expression&gt;)
-              | (<code id='code18967'
+              | (<code id='code18980'
 >help</code> &lt;string&gt; &lt;s-expression&gt;)
 </pre>
 </td></tr>
 </tbody></table></center>
 
-Each elements of <code id='code18972'
-><em id='it18971'
->list</em></code> are match against the <code id='code18974'
-><em id='it18973'
+Each elements of <code id='code18985'
+><em id='it18984'
+>list</em></code> are match against the <code id='code18987'
+><em id='it18986'
 >rules</em></code>. If one
-of these matches, <code id='code18975'
->args-parse</code> proceeds as follows:<br/><br/><ol class="enumerate" id='enumerate18985'
-><li>The matched argument elements of <code id='code18978'
-><em id='it18977'
+of these matches, <code id='code18988'
+>args-parse</code> proceeds as follows:<br/><br/><ol class="enumerate" id='enumerate18998'
+><li>The matched argument elements of <code id='code18991'
+><em id='it18990'
 >list</em></code> are removed from the list.
 </li>
-<li>The <code id='code18980'
+<li>The <code id='code18993'
 >&lt;s-expression&gt;</code> associated to the matching rule
       is evaluated in an environment where the rule variables are bound. 
 </li>
-<li>The argument parsing is resumed with the rest of <code id='code18983'
-><em id='it18982'
+<li>The argument parsing is resumed with the rest of <code id='code18996'
+><em id='it18995'
 >list</em></code>.
 </li>
 </ol></td></tr>
 </tbody></table><br/>
-In addition to parsing the command line arguments, <code id='code18988'
+In addition to parsing the command line arguments, <code id='code19001'
 >args-parse</code> enables
 help message printing. <br/><br/><table cellspacing="0" class="frame" cellpadding="10" border="1" width="100%"><tbody>
-<tr><td><a name="g18991" class="mark"></a><a name="args-parse-usage" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
-<tr><td id="tc18995" align="left" colspan="1"><strong id='bold18993'
->args-parse-usage</strong><em id='it18994'
-> fmt</em></td><td id="tc18996" align="right" colspan="1">bigloo procedure</td></tr>
+<tr><td><a name="g19004" class="mark"></a><a name="args-parse-usage" class="mark"></a><table width="100%" style="border-collapse: collapse;" frame="void" rules="none"><tbody>
+<tr><td id="tc19008" align="left" colspan="1"><strong id='bold19006'
+>args-parse-usage</strong><em id='it19007'
+> fmt</em></td><td id="tc19009" align="right" colspan="1">bigloo procedure</td></tr>
 </tbody></table>
-This is a procedure of one argument, an boolean. <code id='code18999'
+This is a procedure of one argument, an boolean. <code id='code19012'
 >Args-parse-usage</code>
-constructs an help message from all the option described in a <code id='code19000'
+constructs an help message from all the option described in a <code id='code19013'
 >args-parse</code>
-form. <code id='code19001'
->Args-parse-usage</code> is only defined in the <code id='code19002'
+form. <code id='code19014'
+>Args-parse-usage</code> is only defined in the <code id='code19015'
 >&lt;s-expression&gt;</code>
-of an <code id='code19003'
+of an <code id='code19016'
 >args-parse</code> form.
 </td></tr>
 </tbody></table><br/>
-At last, if no rule matches an argument and if the <code id='code19006'
+At last, if no rule matches an argument and if the <code id='code19019'
 >args-parse</code>
-form contains an <code id='code19007'
+form contains an <code id='code19020'
 >else</code> rule, this is evaluated. In the
-<code id='code19008'
+<code id='code19021'
 >&lt;s-expression&gt;</code> part of that rule, the pseudo-variable
-<code id='code19009'
+<code id='code19022'
 >else</code> is bound to the first unmatched argument and the pseudo-variable
-<code id='code19010'
->rest</code> is bound to all the unmatched arguments.<br/><br/>Here is an example of argument parsing deploying all the possible rules:<br/><br/><center id='center19037'
+<code id='code19023'
+>rest</code> is bound to all the unmatched arguments.<br/><br/>Here is an example of argument parsing deploying all the possible rules:<br/><br/><center id='center19050'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19035'
->(<font color="#1919af"><strong id='bold32603'
->module</strong></font> <font color="#1919af"><strong id='bold32605'
+<tr><td bgcolor="#ffffcc"><pre class="prog" id='prog19048'
+>(<font color="#1919af"><strong id='bold32615'
+>module</strong></font> <font color="#1919af"><strong id='bold32617'
 >args-example</strong></font>
-   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold32607'
->define</strong></font> (<font color="#6959cf"><strong id='bold32609'
+   (main main))<br/><br/>(<font color="#6959cf"><strong id='bold32619'
+>define</strong></font> (<font color="#6959cf"><strong id='bold32621'
 >main</strong></font> argv)
    (args-parse (cdr argv)
       (section <font color="red">&quot;Help&quot;</font>)
@@ -211,10 +211,10 @@ form contains an <code id='code19007'
       (((<font color="red">&quot;-v&quot;</font> <font color="red">&quot;--version&quot;</font>) (help <font color="red">&quot;Version number&quot;</font>))
        (print *version*))
       ((<font color="red">&quot;-o&quot;</font> ?file (help <font color="red">&quot;The output file&quot;</font>))
-       (<strong id='bold32623'
+       (<strong id='bold32635'
 >set!</strong> *dest* file))
       ((<font color="red">&quot;--input=?file&quot;</font> (help <font color="red">&quot;The input file&quot;</font>))
-       (<strong id='bold32626'
+       (<strong id='bold32638'
 >set!</strong> *input* file))
       (else
        (print <font color="red">&quot;Illegal argument `&quot;</font> else <font color="red">&quot;'. Usage:&quot;</font>)
@@ -223,10 +223,10 @@ form contains an <code id='code19007'
 </td></tr>
 </tbody></table></center>
 
-Invoking the compiled <code id='code19038'
->args-example</code> module could produce:<br/><br/><center id='center19044'
+Invoking the compiled <code id='code19051'
+>args-example</code> module could produce:<br/><br/><center id='center19057'
 ><table cellspacing="0" class="color" cellpadding="0" width="95%"><tbody>
-<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog19042'
+<tr><td bgcolor="#ccffcc"><pre class="prog" id='prog19055'
 >&gt; bigloo.new args.scm
 args.scm:
 &gt; a.out toto        
@@ -243,12 +243,12 @@ Illegal argument `toto'. Usage:<br/><br/>Help:
 </div></td>
 </tr></table><div class="skribe-ending">
 <hr> 
-<p class="ending" id='paragraph32634'
+<p class="ending" id='paragraph32646'
 ><font size="-1">
 This <span class="sc">Html</span> page has been produced by 
 <a href="http://www-sop.inria.fr/indes/fp/Skribe" class="http">Skribe</a>.
 <br/>
-Last update <em id='it32632'
->Thu Jul  2 15:55:40 2015</em>.</font></p></div>
+Last update <em id='it32644'
+>Wed Sep  9 07:55:47 2015</em>.</font></p></div>
 </body>
 </html>
