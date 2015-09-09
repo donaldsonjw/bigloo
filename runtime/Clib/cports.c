@@ -3,7 +3,7 @@
 /*    -------------------------------------------------------------    */
 /*    Author      :  Manuel Serrano                                    */
 /*    Creation    :  Thu Jul 23 15:34:53 1992                          */
-/*    Last change :  Mon Jun 15 09:38:59 2015 (serrano)                */
+/*    Last change :  Fri Sep  4 09:27:59 2015 (serrano)                */
 /*    -------------------------------------------------------------    */
 /*    Input ports handling                                             */
 /*=====================================================================*/
@@ -2601,7 +2601,6 @@ bgl_sendfile( obj_t name, obj_t op, long sz, long offset ) {
 
    if( OUTPUT_PORT( op ).stream_type == BGL_STREAM_TYPE_CHANNEL ) {
       /* closed socket and ssl socket do not support send file */
-      fprintf( stderr, "send file no\n" );
       return BFALSE;
    }
 
@@ -2841,7 +2840,7 @@ bgl_password( char *prompt ) {
 /*    bool_t                                                           */
 /*    bgl_port_isatty ...                                              */
 /*---------------------------------------------------------------------*/
-bool_t
+BGL_RUNTIME_DEF bool_t
 bgl_port_isatty( obj_t port ) {
    if( OUTPUT_PORTP( port ) ) {
       switch( OUTPUT_PORT( port ).stream_type ) {

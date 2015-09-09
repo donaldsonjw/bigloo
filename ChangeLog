@@ -1,3 +1,45 @@
+2015-09-09  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor JVM configuration fix
+	<4.2a> [38560379a1cc]
+
+2015-09-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Warning elimination (bootstrap)
+	<4.2a> [66e929278d57]
+
+2015-09-03  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Configure fixes
+	<4.2a> [351130ffe494]
+
+	SSL predicate (bootstrap)
+	<4.2a> [100595992f1a]
+
+2015-09-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Warning fix (bootstrap)
+	<4.2a> [969a215c01af]
+
+	Minor dload bug fix (bootstrap)
+	<4.2a> [9cd534d72798]
+
+2015-08-28  Manuel Serrano <Manuel.Serrano@inria.fr>
+	dynamic-load change (bootstrap)
+	<4.2a> [937d5dffbc10]
+
+2015-07-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Serialization (bootstrap)
+	<4.2a> [45dede13eb34]
+
+2015-07-16  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Unserialization (bootstrap)
+	<4.2a> [74b774ceb4ae]
+
+2015-07-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	New serialization options (bootstrap)
+	<4.2a> [5e002489f194]
+
+2015-07-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Socket dup (bootstrap)
+	<4.2a> [09610fd88520]
+
 2015-07-02  Manuel Serrano <Manuel.Serrano@inria.fr>
 	resolv autoconf
 	<4.2a> [45bae39ebc81]

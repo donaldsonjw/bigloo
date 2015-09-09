@@ -1,4 +1,4 @@
-This is bigloo.info, produced by makeinfo version 5.2 from bigloo.texi.
+This is bigloo.info, produced by makeinfo version 6.0 from bigloo.texi.
 
 INFO-DIR-SECTION The Algorithmic Language Scheme
 START-INFO-DIR-ENTRY
@@ -113,7 +113,7 @@ mine.
 please forgive me and send a mail message to the following address:
 <bigloo@sophia.inria.fr>.
 
-  This is Bigloo documentation version 4.2a, July 2015.
+  This is Bigloo documentation version 4.2a, September 2015.
 
 
 File: bigloo.info,  Node: Overview,  Next: Modules,  Prev: Acknowledgements,  Up: Top
@@ -1029,7 +1029,7 @@ macro class.
 
  -- syntax: <variable>
  -- syntax: quote datum
- -- syntax: ''' datum
+ -- syntax: '''datum
  -- syntax: <constant>
           (define x 28)                          =>
           x                                      => 28
@@ -5516,6 +5516,10 @@ objects.  SSL Sockets permits processes to communicate even if they are
 on different machines securely via encrypted connections.  SSL Sockets
 are useful for creating secure client-server applications.
 
+ -- SSL library procedure: ssl-socket? obj
+     Returns '#t' if an only if obj is a SSL socket (either client or
+     server).  Returns '#f' otherwise.
+
  -- SSL library procedure: make-ssl-client-socket hostname port-number
           #!key (buffer #t) (timeout 0) (protocol 'sslv23) (cert #f)
           (pkey #f) (CAs '()) (accepted-certs #f)
@@ -6855,7 +6859,7 @@ and forms created automatically by Bigloo when a new class is defined.
      This function returns '#t' if OBJ is an instance of CLASS or an
      instance of a sub-class of CLASS, otherwise, it returns '#f'.
 
- -- bigloo syntax: instantiate:: CLASS (ident value)...
+ -- bigloo syntax: instantiate::CLASS (ident value)...
      This forms allocates object of class CLASS and fills the fields
      with values found in the list of parameters (note that field are
      explicitly named and that there is no ordering for field naming).
@@ -6892,7 +6896,7 @@ and forms created automatically by Bigloo when a new class is defined.
           (eq? (class-nil point) (class-nil point2d))
             => #f
 
- -- bigloo syntax: with-access:: CLASS obj (binding...) body
+ -- bigloo syntax: with-access::CLASS obj (binding...) body
 
      A reference to any of the variables defined in as a BINDING is
      replaced by the appropriate field access form.  This is true for
@@ -6956,7 +6960,7 @@ and forms created automatically by Bigloo when a new class is defined.
                    (+ x y))))
              => 30
 
- -- bigloo syntax: duplicate:: CLASS obj (ident value)...
+ -- bigloo syntax: duplicate::CLASS obj (ident value)...
      This forms allocates an instance of class CLASS.  The field values
      of the new object are picked up from the field values of the OLD
      object unless they are explicitly given in the parameter list.
@@ -7043,7 +7047,7 @@ related to this pass.
 be widened in order to become instances of _wide classes_.  Widening is
 performed by the 'widen!' syntax:
 
- -- bigloo syntax: widen!:: WIDE-CLASS obj (id value) ...
+ -- bigloo syntax: widen!::WIDE-CLASS obj (id value) ...
 
      The object OBJ is widened to be instance of the wide class
      WIDE-CLASS.  Fields values are either picked up from the parameter
