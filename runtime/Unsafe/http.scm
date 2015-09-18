@@ -3,7 +3,7 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Thu Aug  9 15:02:05 2007                          */
-;*    Last change :  Mon Aug 10 14:52:16 2015 (serrano)                */
+;*    Last change :  Wed Sep 16 06:20:14 2015 (serrano)                */
 ;*    Copyright   :  2007-15 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    Dealing with HTTP requests                                       */
@@ -43,7 +43,8 @@
 	   __evenv
 	   __os
 	   __structure
-	   __param)
+	   __param
+	   __reader)
 
    (import __url
 	   __rgc
@@ -346,6 +347,31 @@
 		     (CODE (+ (in digit)))
 		     (line (or (: (+ all) "\r\n") (: (+ all) "\n") (+ all))))
       ((: (or HTTP ICY) SP)
+       (let ((http (the-substring 0 (-fx (the-length) 1))))
+	  (let ((code (http-read-fixnum (the-port))))
+	     (http-skip-blank (the-port))
+	     (values http code (http-read-line (the-port))))))
+      (else
+       (let ((c (the-failure)))
+	  (raise 
+	     (if (eof-object? c)
+		 (instantiate::&io-parse-error
+		    (obj (the-port))
+		    (proc 'http-parse-status-line)
+		    (msg "Illegal status line, premature end of input"))
+		 (instantiate::&io-parse-error
+		    (obj (http-parse-error-msg c (the-port)))
+		    (proc 'http-parse-status-line)
+		    (msg "Illegal status line"))))))))
+
+(define status-line-grammar-old
+   (regular-grammar ((SP #\Space)
+		     (HTTP (: (+ (in "httpsHTTPS"))
+			      #\/ (+ digit) #\. (+ digit)))
+		     (ICY "ICY")
+		     (CODE (+ (in digit)))
+		     (line (or (: (+ all) "\r\n") (: (+ all) "\n") (+ all))))
+      ((: (or HTTP ICY) SP)
        (if (eq? (rgc-context) 'code)
 	   (begin
 	      (rgc-context #unspecified)
@@ -409,7 +435,21 @@
 		       c
 		       (the-string)))))
       p))
- 
+
+;*---------------------------------------------------------------------*/
+;*    http-skip-blank ...                                              */
+;*---------------------------------------------------------------------*/
+(define (http-skip-blank p)
+   (read/rp (regular-grammar ()
+	       ((+ (in " \t")) #unspecified)
+	       (else
+		(raise
+		   (instantiate::&io-parse-error
+		      (obj (http-parse-error-msg (the-failure) (the-port)))
+		      (proc "http")
+		      (msg "Illegal separator")))))
+      p))
+
 ;*---------------------------------------------------------------------*/
 ;*    http-skip-line ...                                               */
 ;*---------------------------------------------------------------------*/
@@ -420,6 +460,21 @@
 	       (else
 		(let ((c (the-failure)))
 		   (when (eof-object? c) c))))
+      p))
+
+;*---------------------------------------------------------------------*/
+;*    http-read-fixnum ...                                             */
+;*---------------------------------------------------------------------*/
+(define (http-read-fixnum p)
+   (read/rp (regular-grammar ((DIGIT (in ("09"))))
+	       ((+ DIGIT) (the-fixnum))
+	       ((+ (in " \t")) (ignore))
+	       (else
+		(raise
+		   (instantiate::&io-parse-error
+		      (obj (http-parse-error-msg (the-failure) (the-port)))
+		      (proc "http")
+		      (msg "Illegal integer")))))
       p))
 
 ;*---------------------------------------------------------------------*/
@@ -448,7 +503,7 @@
       (regular-grammar ()
 	 ((: (+ (out ":\n\r\t ")) #\:)
 	  (let* ((h (the-substring 0 -1))
-		 (p (read/rp fixnum-grammar (the-port))))
+		 (p (http-read-fixnum (the-port))))
 	     (values h p)))
 	 ((+ (out ":\n\r\t "))
 	  (values (the-string) #f))
@@ -458,11 +513,6 @@
    (define name-grammar
       (regular-grammar ()
 	 ((+ (out "\n\r\t ")) (the-string))
-	 ((+ (in " \t")) (ignore))))
-   
-   (define fixnum-grammar
-      (regular-grammar ((DIGIT (in ("09"))))
-	 ((+ DIGIT) (the-fixnum))
 	 ((+ (in " \t")) (ignore))))
    
    (define elong-grammar

@@ -1,3 +1,7 @@
+2015-09-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix http parsing (bootstrap)
+	<4.2a> [19acff6bf254]
+
 2015-09-09  Manuel Serrano <Manuel.Serrano@inria.fr>
 	Minor JVM configuration fix
 	<4.2a> [38560379a1cc]
