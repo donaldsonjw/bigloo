@@ -5,7 +5,7 @@ START-INFO-DIR-ENTRY
 * bigloo: (bigloo).            The Bigloo Scheme compiler
 END-INFO-DIR-ENTRY
 
-4.2a
+4.2b
 
   This file documents Bigloo, an implementation of an extended version
 of the Scheme programming language.
@@ -887,7 +887,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: #f
         - *bigloo-name* :
           The Bigloo name
-          default: "Bigloo (4.2a)"
+          default: "Bigloo (4.2b)"
         - *bigloo-specific-version* :
           The Bigloo specific version
           default: ""
@@ -899,7 +899,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: ("-ldl" "-lunistring" "-lresolv" "-lgmp" "-lpcre" "-lm")
         - *bigloo-version* :
           The Bigloo major release number
-          default: "4.2a"
+          default: "4.2b"
         - *bmem-profiling* :
           Instrument code for bmem profiling
           default: #f
@@ -959,7 +959,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: "-pg -fno-inline -Wpointer-arith -Wswitch -Wtrigraphs -DBGL_BOOTCONFIG"
         - *cflags-rpath* :
           The C compiler rpath option
-          default: ("/home/serrano/prgm/project/bigloo/lib/bigloo/4.2a")
+          default: ("/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b")
         - *compiler-debug* :
           Debugging level
           default: 0
@@ -983,7 +983,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: 0
         - *default-lib-dir* :
           Depreacted, don't use
-          default: "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2a"
+          default: "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b"
         - *dest* :
           The target name
           default: #f
@@ -1112,7 +1112,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: "-g "
         - *ld-library-dir* :
           Depreacted, don't use
-          default: "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2a"
+          default: "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b"
         - *ld-o-option* :
           The C linker -o option
           default: "-o "
@@ -1133,7 +1133,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: "gcc"
         - *lib-dir* :
           The lib dir path
-          default: ("." "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2a")
+          default: ("." "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b")
         - *lib-mode* :
           Lib-mode compilation?
           default: #f
@@ -1142,7 +1142,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: "runtime"
         - *load-path* :
           The load path
-          default: ("." "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2a")
+          default: ("." "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b")
         - *max-c-foreign-arity* :
           Max C function arity
           default: 16

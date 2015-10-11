@@ -1,3 +1,39 @@
+2015-10-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	inexact->exact (bootstrap)
+	<4.2a> [045278bf30f8]
+
+2015-10-07  Manuel Serrano <Manuel.Serrano@inria.fr>
+	exact->inexact improvement (2) (bootstrap)
+	<4.2a> [ae095ca0dfe0]
+
+	exact->inexact improvement
+	<4.2a> [294498a89f9d]
+
+	gmp installation
+	<4.2a> [34e610a09109]
+
+	Gmp installation
+	<4.2a> [d35262a7766b]
+
+2015-10-06  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Attempt to fix gmp problem
+	<4.2a> [1ddbcbe9ce2a]
+
+2015-10-02  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Rgc error signaling (bootstrap)
+	<4.2a> [6285ecfed083]
+
+2015-09-20  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 4.2b for changeset 1527479107f3
+	<4.2a> [51b6d603efa6]
+
+	4.2b branch (bootstrap)
+	<4.2a> [1527479107f3]
+
+2015-09-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Generic typing bug fix (bootstrap)
+	<4.2a> [717fb7cb4a5d]
+
 2015-09-15  Manuel Serrano <Manuel.Serrano@inria.fr>
 	Fix http parsing (bootstrap)
 	<4.2a> [19acff6bf254]
