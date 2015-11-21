@@ -4,7 +4,7 @@
 #*    -------------------------------------------------------------    */
 #*    Author      :  Manuel Serrano                                    */
 #*    Creation    :  Tue Jan 25 16:05:10 1994                          */
-#*    Last change :  Tue Oct  6 11:04:02 2015 (serrano)                */
+#*    Last change :  Mon Oct 19 07:55:42 2015 (serrano)                */
 #*    Copyright   :  1994-2015 Manuel Serrano, see LICENSE file        */
 #*    -------------------------------------------------------------    */
 #*    The Bigloo configuration file                                    */
@@ -164,6 +164,8 @@ pthreadlocalstorage=
 #*--- openssl library (left blank for autoconfiguration) --------------*/
 openssllibs=
 openssldtls=
+openssltls11=
+openssltls12=
 opensslrand=
 opensslv2=
 opensslv23=
@@ -376,7 +378,6 @@ bigloo_static_h=
 bigloo_config_h=
 bigloo_config_jvm=
 bigloo_config_sch=
-bigloo_config_el=
 summary=yes
 java_configured=no
 os=posix
@@ -567,6 +568,9 @@ while : ; do
 
     --ld=*)
       ld="`echo $1 | sed 's/^[^=]*=//'`";;
+
+    --shell=*)
+      shell="`echo $1 | sed 's/^[^=]*=//'`";;
 
     --mv=*)
       bgl_shell_mv="`echo $1 | sed 's/^[^=]*=//'`";;
@@ -1011,6 +1015,7 @@ while : ; do
       echo "   --indent=file" >&2;
       echo "   --icc (configure for icc, Intel C compiler)"  >&2;
       echo "   --clang (configure for clang LLVM C compiler)"  >&2;
+      echo "   --shell=cmd [default $shell]" >&2;
       echo "   --mv=cmd [default $shell_mv]" >&2;
       echo "   --rm=dmd [default $shell_rm]" >&2;
       echo "" >&2;
@@ -1093,6 +1098,23 @@ while : ; do
   esac
   shift
 done
+
+# buildbindir
+if [ "$buildbindir " = " " ]; then
+  buildbindir=$bootdir/bin
+  if [ "$buildlibdir " = " " ]; then
+    buildlibdir=$bootdir/lib/bigloo/$release
+  fi
+else
+  if [ "$buildlibdir " = " " ]; then
+    buildlibdir=`$buildbindir/bigloo -eval '(begin (print *default-lib-dir*) (exit 0))'`
+  fi
+fi
+
+# bigloo
+if [ "$bigloo " = " " ]; then
+  bigloo=$buildbindir/bigloo
+fi
 
 # The bigloo.h file
 if [ "$bigloo_h " = " " ]; then
@@ -2094,6 +2116,8 @@ fi
 
 if [ "$openssllibs" != "no" ]; then
   openssldtls=`$autoconf openssl-dtls --cflags="$opensslcflags" --lib="$openssllibs"` || exit 1;
+  openssltls11=`$autoconf openssl-tls11 --cflags="$opensslcflags" --lib="$openssllibs"` || exit 1;
+  openssltls12=`$autoconf openssl-tls12 --cflags="$opensslcflags" --lib="$openssllibs"` || exit 1;
   opensslrand=`$autoconf openssl-rand --cflags="$opensslcflags" --lib="$openssllibs"` || exit 1;
   opensslv2=`$autoconf openssl-v2 --cflags="$opensslcflags" --lib="$openssllibs"` || exit 1;
   opensslv23=`$autoconf openssl-v23 --cflags="$opensslcflags" --lib="$openssllibs"` || exit 1;
@@ -2900,8 +2924,8 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
     ostmp=/tmp
   fi
 
-  # bigloo_config_h, bigloo_config_jvm, bigloo_config_sch
-  for p in $bigloo_config_h $bigloo_config_jvm $bigloo_config_sch; do
+  # bigloo_config_h, bigloo_config_jvm, bigloo_config_sch, bigloo.sh
+  for p in $bigloo_config_h $bigloo_config_jvm $bigloo_config_sch bigloo.sh bglafile.sh bgltags.sh bgljfile.sh bgldepend.sh bglmco.sh bglrun.sh; do
     if [ "$p " != " " ]; then
       rm -f $p 2> /dev/null
       rel=`echo $release | sed -e "s|[.]|_|"`;
@@ -3073,12 +3097,28 @@ if [ $action = "all" -o $action = "bigloo_config" ]; then
               -e "s|@BGL_HEAP_DEBUG_COPT@||" \
               -e "s|@BGL_HAVE_MIXER@|$havemixer|" \
               -e "s|@BGL_REGEXP_FAMILY@|$regexp|" \
+	      -e "s|@BOOTBINDIR@|$bootdir/bin|" \
+	      -e "s|@BGLBUILDBINDIR@|$buildbindir|" \
+	      -e "s|@BGLBUILDLIBDIR@|$buildlibdir|" \
+	      -e "s|@SHELL@|$shell|" \
+	      -e "s|@BIGLOO@|$bigloo|" \
+	      -e "s|@AFILE@|$buildbindir/$afile|" \
+	      -e "s|@JFILE@|$buildbindir/$jfile|" \
+	      -e "s|@BTAGS@|$buildbindir/$btags|" \
+	      -e "s|@BDEPEND@|$buildbindir/$bdepend|" \
+	      -e "s|@MCO@|$buildbindir/$mco|" \
         > $p
     fi
   done
 
   # bigloo_h
   cp runtime/Include/`basename $bigloo_h` $bigloo_h
+
+  # bigloo.sh
+  for p in bigloo.sh bglafile.sh bgljfile.sh bgltags.sh bgldepend.sh bglmco.sh bglrun.sh; do
+    mv $p $buildbindir/$p
+    chmod u+rx $buildbindir/$p
+  done
 fi
 
 #*---------------------------------------------------------------------*/
@@ -3264,22 +3304,6 @@ if [ $action = "all" -o $action = "Makefile.config" ]; then
   echo "BIGLOOSVN=$bigloosvn" >> $makefile_cfg
   echo >> $makefile_cfg
 
-  # The tools
-  echo "AFILE_EXE=$afile" >> $makefile_cfg
-  echo "JFILE_EXE=$jfile" >> $makefile_cfg
-  echo "BTAGS_EXE=$btags" >> $makefile_cfg
-  echo "BDEPEND_EXE=$bdepend" >> $makefile_cfg
-  echo "BMAKE_EXE=$bmake" >> $makefile_cfg
-  echo "BPP_EXE=$bpp" >> $makefile_cfg
-  echo "BPROF_EXE=$bprof" >> $makefile_cfg
-  echo "MCO_EXE=$mco" >> $makefile_cfg
-  echo "JAS_EXE=$jas" >> $makefile_cfg
-  echo "BMEM_EXE=$bmem" >> $makefile_cfg
-  echo "BMEMRUN_EXE=$bmemrun" >> $makefile_cfg
-  echo "BDB_EXE=$bdb" >> $makefile_cfg
-  echo "BGLPKG_EXE=$bglpkg" >> $makefile_cfg
-  echo >> $makefile_cfg
-
   # The OS
   echo "HOSTOS=$hostos" >> $makefile_cfg
   echo >> $makefile_cfg
@@ -3304,20 +3328,28 @@ if [ $action = "all" -o $action = "Makefile.config" ]; then
   echo >> $makefile_cfg
 
   # The Buildbin directory
-  if [ "$buildbindir " = " " ]; then
-      echo "BGLBUILDBINDIR=$bootdir/bin" >> $makefile_cfg
-      echo "BGLBUILDLIBDIR=$bootdir/lib/bigloo/$release" >> $makefile_cfg
-  else
-      buildlibdir=`$buildbindir/bigloo -eval '(begin (print *default-lib-dir*) (exit 0))'`
-      echo "BGLBUILDBINDIR=$buildbindir" >> $makefile_cfg
-      echo "BGLBUILDLIBDIR=$buildlibdir" >> $makefile_cfg
-  fi
-  # build bigloo
-  if [ "$bigloo " = " " ]; then
-    echo "BGLBUILDBIGLOO=$""(BGLBUILDBINDIR)/bigloo" >> $makefile_cfg
-  else
-    echo "BGLBUILDBIGLOO=$bigloo" >> $makefile_cfg
-  fi
+  echo "BGLBUILDBINDIR=$buildbindir" >> $makefile_cfg
+  echo "BGLBUILDLIBDIR=$buildlibdir" >> $makefile_cfg
+  echo >> $makefile_cfg
+
+  # The cmopilers and tools
+  echo 'BIGLOO=$'"(BGLBUILDBINDIR)/bigloo.sh" >> $makefile_cfg
+  echo 'BGLAFILE=$'"(BGLBUILDBINDIR)/bglafile.sh" >> $makefile_cfg
+  echo 'BGLJFILE=$'"(BGLBUILDBINDIR)/bgljfile.sh" >> $makefile_cfg
+  echo 'BGLTAGS=$'"(BGLBUILDBINDIR)/bgltags.sh" >> $makefile_cfg
+  echo 'BGLDEPEND=$'"(BGLBUILDBINDIR)/bgldepend.sh" >> $makefile_cfg
+  echo 'BGLMCO=$'"(BGLBUILDBINDIR)/bglmco.sh" >> $makefile_cfg
+  echo 'CIGLOO=$'"(BGLBUILDBINDIR)/cigloo" >> $makefile_cfg
+  echo >> $makefile_cfg
+
+  echo "BPP_EXE=$bpp" >> $makefile_cfg
+  echo "BPROF_EXE=$bprof" >> $makefile_cfg
+  echo "MCO_EXE=$mco" >> $makefile_cfg
+  echo "JAS_EXE=$jas" >> $makefile_cfg
+  echo "BMEM_EXE=$bmem" >> $makefile_cfg
+  echo "BMEMRUN_EXE=$bmemrun" >> $makefile_cfg
+  echo "BDB_EXE=$bdb" >> $makefile_cfg
+  echo "BGLPKG_EXE=$bglpkg" >> $makefile_cfg
   echo >> $makefile_cfg
 
   # Directories
@@ -3526,6 +3558,8 @@ if [ $action = "all" -o $action = "Makefile.config" ]; then
               -e "s|@OPENSSLCFLAGS@|$opensslcflags|g" \
         >>  api/ssl/src/Misc/ssl.init
 
+    tls11=1
+    tls12=1
     dtls=1
     sslv2=1
     sslv23=1
@@ -3533,6 +3567,12 @@ if [ $action = "all" -o $action = "Makefile.config" ]; then
     randpoll=1;
     if [ "$openssldtls" = "no" ]; then
       dtls=0;
+    fi
+    if [ "$openssltls11" = "no" ]; then
+      ttl11=0;
+    fi
+    if [ "$openssltls12" = "no" ]; then
+      ttl12=0;
     fi
     if [ "$opensslv2" = "no" ]; then
       sslv2=0;
@@ -3548,6 +3588,8 @@ if [ $action = "all" -o $action = "Makefile.config" ]; then
     echo "/* automatically generated, Don't edit */" >  api/ssl/src/C/bglssl.h
     cat api/ssl/src/C/bglssl.h.in \
       | sed -e "s|@HAVEDTLS@|$dtls|g" \
+	    -e "s|@HAVETLS1_1@|$tls11|g" \
+	    -e "s|@HAVETLS1_2@|$tls12|g" \
             -e "s|@HAVEV2@|$sslv2|g" \
             -e "s|@HAVEV23@|$sslv23|g" \
             -e "s|@HAVERANDSTATUS@|$randstatus|g" \
@@ -3999,7 +4041,7 @@ fi
 
 # Bigloo compilation flags
 echo "" >> $makefile_cfg
-echo "BFLAGS=$bflags" >> $makefile_cfg
+echo "BFLAGS=$bflags -lib-dir "'$'"(BOOTLIBDIR)" >> $makefile_cfg
 echo "BOOTFLAGS=$bootflags" >> $makefile_cfg
 echo "BFEATUREFLAGS=$featureflags" >> $makefile_cfg
 if [ "$csflags " = " " ]; then

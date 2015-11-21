@@ -1,3 +1,29 @@
+2015-10-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	tlsv1_2 (bootstrap)
+	<4.2a> [a8a8ed770a3d]
+
+2015-10-15  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Test static link
+	<4.2a> [22e32e4f9ab2]
+
+	Makefile config
+	<4.2a> [123e3f566644]
+
+2015-10-14  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Makefile and module resolution (bootstrap)
+	<4.2a> [8bf0daf1c3e0]
+
+	Makefiles for OSX (bootstrap)
+	<4.2a> [6915b9e94eab]
+
+2015-10-13  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Makefile LD_LIBRARY_PATH (bootstrap)
+	<4.2a> [fe02b25431c0]
+
+2015-10-12  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor SSL fix (bootstrap)
+	<4.2a> [bb4e5baf039c]
+
 2015-10-08  Manuel Serrano <Manuel.Serrano@inria.fr>
 	inexact->exact (bootstrap)
 	<4.2a> [045278bf30f8]

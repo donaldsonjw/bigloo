@@ -252,7 +252,7 @@ Llib/css_parser.scm,1976
 (define-method (css->list o::css-function make-klass make-elname make-decl737,25903
 (define-method (css->list o::css-hash-color make-klass make-elname make-decl747,26388
 
-Llib/cgi.scm,618
+Llib/cgi.scm,659
 (module __web_cgi15,963
 (define (hex-string-ref25,1404
 (define (unhex+!38,1961
@@ -260,17 +260,18 @@ Llib/cgi.scm,618
 (define (cgi-fetch-arg88,3711
 (define (fill-line!96,4069
 (define (read-name114,4710
-(define (cgi-parse-content-disposition123,5098
-(define (cgi-parse-header151,6125
-(define tmp-file-mutex196,7557
-(define (make-tmp-file201,7807
-(define (cgi-read-file220,8486
-(define cgi-multipart-data-grammar240,9376
-(define cgi-multipart-boundary-grammar293,11250
-(define (cgi-read-data344,12933
-(define (cgi-parse-entry352,13363
-(define (cgi-multipart->list363,13885
-(define (cgi-post-arg-field376,14430
+(define cgi-content-disposition123,5098
+(define (cgi-parse-content-disposition128,5396
+(define (cgi-parse-header156,6407
+(define tmp-file-mutex201,7839
+(define (make-tmp-file206,8089
+(define (cgi-read-file225,8768
+(define cgi-multipart-data-grammar245,9658
+(define cgi-multipart-boundary-grammar298,11479
+(define (cgi-read-data349,13207
+(define (cgi-parse-entry357,13637
+(define (cgi-multipart->list368,14159
+(define (cgi-post-arg-field393,15049
 
 Llib/rss.scm,201
 (module __web_rss15,963
@@ -299,17 +300,17 @@ Llib/feeds.scm,116
 Llib/html.scm,439
 (module __web_html15,963
 (define *html-special-elements*33,1568
-(define (html-parse49,2310
-(define (html-parse-script64,2815
-(define (html-string-decode112,4304
-(define (html-string-encode118,4588
-(define unhtml-table171,6043
-(define (make-unhtml-table176,6291
-(define (unhtml-default-table190,6774
-(define *unhtml-comment-grammar*197,7123
-(define *unhtml-grammar*211,7578
-(define (unhtml-port256,9014
-(define (unhtml262,9355
+(define (html-parse46,2083
+(define (html-parse-script61,2588
+(define (html-string-decode109,4077
+(define (html-string-encode115,4361
+(define unhtml-table168,5816
+(define (make-unhtml-table173,6064
+(define (unhtml-default-table187,6547
+(define *unhtml-comment-grammar*194,6896
+(define *unhtml-grammar*208,7351
+(define (unhtml-port253,8787
+(define (unhtml259,9128
 
 Llib/webdav.scm,1416
 (module __web_webdav15,963
