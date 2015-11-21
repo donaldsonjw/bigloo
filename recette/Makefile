@@ -3,8 +3,8 @@
 #*    -------------------------------------------------------------    */
 #*    Author      :  Manuel Serrano                                    */
 #*    Creation    :  Mon Nov  2 17:38:43 1992                          */
-#*    Last change :  Wed Nov 16 11:56:34 2011 (serrano)                */
-#*    Copyright   :  1992-2011 Manuel Serrano, see LICENSE file        */
+#*    Last change :  Thu Oct 15 08:41:52 2015 (serrano)                */
+#*    Copyright   :  1992-2015 Manuel Serrano, see LICENSE file        */
 #*    -------------------------------------------------------------    */
 #*    The Makefile to build the recette                                */
 #*=====================================================================*/
@@ -17,8 +17,6 @@ include ../Makefile.config
 #*---------------------------------------------------------------------*/
 #*    Compilers, Tools and Destinations                                */
 #*---------------------------------------------------------------------*/
-# the executable used to bootstrap
-BIGLOO          = $(BGLBUILDBIGLOO)
 # which C compiler to be used
 CC              = `$(BIGLOO) -eval '(begin (print *cc*) (exit 0))'`
 # the shell to be used
@@ -27,12 +25,6 @@ SHELL           = /bin/sh
 LINT		= lint
 # lint options
 LINTFLAGS	= -u -v -I$(BOOTLIBDIR)
-# The package to compute afile
-AFILE		= $(BGLBUILDBINDIR)/$(AFILE_EXE)
-# The package association tool
-JFILE		= $(BGLBUILDBINDIR)/$(JFILE_EXE)
-# The tags producer
-BTAGS		= $(BGLBUILDBINDIR)/$(BTAGS_EXE)
 #
 JVMCLASSPATH	= -jvm-bigloo-classpath $(BOOTLIBDIR)
 
@@ -44,7 +36,8 @@ JVMCLASSPATH	= -jvm-bigloo-classpath $(BOOTLIBDIR)
 VERBOSE		= 
 EFLAGS		= 
 BFLAGS          = $(VERBOSE) -cg -g -O3 -q -Wall -init-lib \
-                  -eval "(set! *indent* (= 1 2))" -gself
+                  -eval "(set! *indent* (= 1 2))" -gself \
+                  -lib-dir $(BOOTLIBDIR)
 
 BCFLAGS         = $(BFLAGS) -afile .afile-c
                   
@@ -122,7 +115,7 @@ recette-c: .etags .afile-c objs_c
 	@ $(MAKE) recette-bin
 
 recette-bin: $(C_OBJECTS:%=objs_c/%) $(OBJECT_C_FOREIGN:%=objs_c/%)
-	$(BIGLOO) $(BCFLAGS) $(EFLAGS) -o recette $(C_OBJECTS:%=objs_c/%) $(OBJECT_C_FOREIGN:%=objs_c/%)
+	$(BIGLOO) $(BFLAGS) $(BCFLAGS) $(EFLAGS) -o recette $(C_OBJECTS:%=objs_c/%) $(OBJECT_C_FOREIGN:%=objs_c/%)
 	@ echo "Recette (C) Done..."
 	@ echo "-------------------------------"
 
@@ -134,7 +127,7 @@ new-jvm:
 
 static: recette-static
 recette-static: .afile-c objs_c $(C_OBJECTS:%=objs_c/%) $(OBJECT_C_FOREIGN:%=objs_c/%)
-	$(BIGLOO) $(BCFLAGS) $(EFLAGS) -o $@ $(C_OBJECTS:%=objs_c/%) $(OBJECT_C_FOREIGN:%=objs_c/%) -static-bigloo
+	$(BIGLOO) $(BFLAGS) $(BCFLAGS) $(EFLAGS) -o $@ $(C_OBJECTS:%=objs_c/%) $(OBJECT_C_FOREIGN:%=objs_c/%) -static-bigloo
 	@ echo "Static Recette Done..."
 	@ echo "-------------------------------"
 
@@ -143,7 +136,7 @@ recette-jvm-nojar: .jfile-jvm .afile-jvm
 	@ $(MAKE) recette-jvm
 
 recette-jvm: objs_jvm $(JVM_OBJECTS:%=objs_jvm/%) $(OBJECT_JVM_FORE:%=objs_jvm/%)
-	$(BIGLOO) -jvm -jvm-directory objs_jvm -jvm-classpath "objs_jvm" -no-jvm-jar $(BCFLAGS) $(EFLAGS) $(JVMCLASSPATH) -o $@$(SCRIPTEXTENSION) $(JVM_OBJECTS:%=objs_jvm/%) $(OBJECT_JVM_FORE:%=objs_jvm/%)
+	$(BIGLOO) $(BFLAGS) -jvm -jvm-directory objs_jvm -jvm-classpath "objs_jvm" -no-jvm-jar $(BCFLAGS) $(EFLAGS) $(JVMCLASSPATH) -o $@$(SCRIPTEXTENSION) $(JVM_OBJECTS:%=objs_jvm/%) $(OBJECT_JVM_FORE:%=objs_jvm/%)
 	@ echo "Recette (JVM) Done..."
 	@ echo "-------------------------------"
 
@@ -152,7 +145,7 @@ recette-jvm-jar: .jfile-jvm .afile-jvm
 	@ $(MAKE) recette-jar
 
 recette-jar: objs_jvm $(JVM_OBJECTS:%=objs_jvm/%) $(OBJECT_JVM_FORE:%=objs_jvm/%)
-	$(BIGLOO) -jvm -jvm-directory objs_jvm -jvm-classpath "objs_jvm" -jvm-jar $(BCFLAGS) $(EFLAGS) $(JVMCLASSPATH) -o $@$(SCRIPTEXTENSION) $(OBJECT_JVM_FORE:%=objs_jvm/%) $(JVM_OBJECTS:%=objs_jvm/%)
+	$(BIGLOO) $(BFLAGS) -jvm -jvm-directory objs_jvm -jvm-classpath "objs_jvm" -jvm-jar $(BCFLAGS) $(EFLAGS) $(JVMCLASSPATH) -o $@$(SCRIPTEXTENSION) $(OBJECT_JVM_FORE:%=objs_jvm/%) $(JVM_OBJECTS:%=objs_jvm/%)
 	@ echo "Recette (JVM jar) Done..."
 	@ echo "-------------------------------"
 
@@ -161,7 +154,7 @@ recette-jvm-debug: .jfile-jvm .afile-jvm
 	@ $(MAKE) recette-class-debug
 
 recette-class-debug: objs_jvm $(JVM_OBJECTS:%=objs_jvm/%) $(OBJECT_JVM_FORE:%=objs_jvm/%)
-	$(BIGLOO) -jvm $(BCFLAGS) $(EFLAGS) $(JVMCLASSPATH) -o $@$(SCRIPTEXTENSION) $(JVM_OBJECTS:%=objs_jvm/%) $(OBJECT_JVM_FORE:%=objs_jvm/%)
+	$(BIGLOO) $(BFLAGS) -jvm $(BCFLAGS) $(EFLAGS) $(JVMCLASSPATH) -o $@$(SCRIPTEXTENSION) $(JVM_OBJECTS:%=objs_jvm/%) $(OBJECT_JVM_FORE:%=objs_jvm/%)
 	@ echo "Recette (JVM debug) Done..."
 	@ echo "-------------------------------"
 
@@ -267,58 +260,58 @@ all.lint: $(LN_OBJECTS)
 #*    .etags                                                           */
 #*---------------------------------------------------------------------*/
 .etags:
-	$(BTAGS) $(JVM_OBJECTS:%.class=%.scm) $(C_OBJECTS:%.$(C_OBJ_EXTENSION)=%.scm) -o .etags
+	$(BGLTAGS) $(JVM_OBJECTS:%.class=%.scm) $(C_OBJECTS:%.$(C_OBJ_EXTENSION)=%.scm) -o .etags
 
 #*---------------------------------------------------------------------*/
 #*    .jfile-jvm                                                       */
 #*---------------------------------------------------------------------*/
 .jfile-jvm:
-	$(JFILE) $(JVM_OBJECTS:%.class=%.scm) -o .jfile-jvm
+	$(BGLJFILE) $(JVM_OBJECTS:%.class=%.scm) -o .jfile-jvm
 
 #*---------------------------------------------------------------------*/
 #*    .afile-c                                                         */
 #*---------------------------------------------------------------------*/
 .afile-c:
-	$(AFILE) $(C_OBJECTS:%.$(C_OBJ_EXTENSION)=%.scm) -o .afile-c
+	$(BGLAFILE) $(C_OBJECTS:%.$(C_OBJ_EXTENSION)=%.scm) -o .afile-c
 
 #*---------------------------------------------------------------------*/
 #*    .afile-jvm                                                       */
 #*---------------------------------------------------------------------*/
 .afile-jvm:
-	$(AFILE) $(JVM_OBJECTS:%.class=%.scm) -o .afile-jvm
+	$(BGLAFILE) $(JVM_OBJECTS:%.class=%.scm) -o .afile-jvm
 
 #*---------------------------------------------------------------------*/
 #*    .scm.$(C_OBJ_EXTENSION)                                          */
 #*---------------------------------------------------------------------*/
 objs_c/%.$(C_OBJ_EXTENSION): %.scm
-	$(BIGLOO) -c $(BCFLAGS) $(EFLAGS) $< -o $@
+	$(BIGLOO) $(BFLAGS) -c $(BCFLAGS) $(EFLAGS) $< -o $@
 
 #*---------------------------------------------------------------------*/
 #*    .scm.class                                                       */
 #*---------------------------------------------------------------------*/
 objs_jvm/%.class: %.scm
-	$(BIGLOO) -jvm $(BJVMFLAGS) $(BPURIFYJVMFLAGS) $(EFLAGS) -c $< -jvm-directory objs_jvm -o $(@F)
+	$(BIGLOO) $(BFLAGS) -jvm $(BJVMFLAGS) $(BPURIFYJVMFLAGS) $(EFLAGS) -c $< -jvm-directory objs_jvm -o $(@F)
 
 #*---------------------------------------------------------------------*/
 #*    Specific compilations                                            */
 #*---------------------------------------------------------------------*/
 objs_c/callcc.$(C_OBJ_EXTENSION): callcc.scm
-	$(BIGLOO) -call/cc -c $(BCFLAGS) $(EFLAGS) $< -o $@
+	$(BIGLOO) $(BFLAGS) -call/cc -c $(BCFLAGS) $(EFLAGS) $< -o $@
 
 objs_jvm/callcc.class: callcc.scm
-	$(BIGLOO) -call/cc -jvm $(BJVMFLAGS) $(BPURIFYJVMFLAGS) $(EFLAGS) -c $< -jvm-directory objs_jvm -o $(@F)
+	$(BIGLOO) $(BFLAGS) -call/cc -jvm $(BJVMFLAGS) $(BPURIFYJVMFLAGS) $(EFLAGS) -c $< -jvm-directory objs_jvm -o $(@F)
 
 objs_c/fringe.$(C_OBJ_EXTENSION): fringe.scm
-	$(BIGLOO) -c $(BCFLAGS) -call/cc $(EFLAGS) $< -o $@
+	$(BIGLOO) $(BFLAGS) -c $(BCFLAGS) -call/cc $(EFLAGS) $< -o $@
 
 objs_jvm/fringe.class: fringe.scm
-	$(BIGLOO) -call/cc -jvm $(BJVMFLAGS) $(BPURIFYJVMFLAGS) $(EFLAGS) -c $< -jvm-directory objs_jvm -o $(@F)
+	$(BIGLOO) $(BFLAGS) -call/cc -jvm $(BJVMFLAGS) $(BPURIFYJVMFLAGS) $(EFLAGS) -c $< -jvm-directory objs_jvm -o $(@F)
 
 objs_c/wind.$(C_OBJ_EXTENSION): wind.scm
-	$(BIGLOO) -c $(BCFLAGS) -call/cc $(EFLAGS) $< -o $@
+	$(BIGLOO) $(BFLAGS) -c $(BCFLAGS) -call/cc $(EFLAGS) $< -o $@
 
 objs_jvm/wind.class: wind.scm
-	$(BIGLOO) -call/cc -jvm $(BJVMFLAGS) $(BPURIFYJVMFLAGS) $(EFLAGS) -c $< -jvm-directory objs_jvm -o $(@F)
+	$(BIGLOO) $(BFLAGS) -call/cc -jvm $(BJVMFLAGS) $(BPURIFYJVMFLAGS) $(EFLAGS) -c $< -jvm-directory objs_jvm -o $(@F)
 
 #*---------------------------------------------------------------------*/
 #*    .c.$(C_OBJ_EXTENSION)                                            */
