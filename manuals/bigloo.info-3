@@ -1049,10 +1049,10 @@ the exhaustive list of Bigloo options and configuration variables:
           default: read
         - *inlining-kfactor* :
           Inlining growth factor
-          default: #<procedure:40f910.1>
+          default: #<procedure:40f530.1>
         - *inlining-reduce-kfactor* :
           Inlinine growth factor reductor
-          default: #<procedure:40f860.1>
+          default: #<procedure:40f480.1>
         - *inlining?* :
           Inlining optimization
           default: #t
@@ -1256,7 +1256,7 @@ the exhaustive list of Bigloo options and configuration variables:
           default: ld
         - *pre-processor* :
           An optional function that pre-processes the source file
-          default: #<procedure:40aca0.1>
+          default: #<procedure:40a8a0.1>
         - *prof-table-name* :
           Bprof translation table file name
           default: "bmon.out"
@@ -3605,8 +3605,8 @@ File: bigloo.info,  Node: Global Index,  Next: Library Index,  Prev: Bee,  Up: T
 * sqlite-format:                         SQLite.              (line  46)
 * sqlite-last-insert-rowid:              SQLite.              (line 165)
 * sqlite-map:                            SQLite.              (line 107)
-* sqlite-name-of-columns:                SQLite.              (line 162)
 * sqlite-name-of-tables:                 SQLite.              (line 154)
+* sqlite-table-name-of-columns:          SQLite.              (line 162)
 * sqrt:                                  Numbers.             (line 215)
 * sqrtfl:                                Numbers.             (line 216)
 * SRFI:                                  SRFIs.               (line   6)

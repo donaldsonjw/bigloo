@@ -4393,7 +4393,7 @@ this library.
              (lambda (x) x)
              "SELECT name FROM sqlite_master WHERE type='table'")
 
- -- Bigloo Sqlite function: sqlite-name-of-columns SQLITE TABLE
+ -- Bigloo Sqlite function: sqlite-table-name-of-columns SQLITE TABLE
      Returns the name of columns in the table.
 
  -- Bigloo Sqlite function: sqlite-last-insert-rowid SQLITE

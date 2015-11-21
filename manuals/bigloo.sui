@@ -2843,7 +2843,7 @@
     ("g23563" :file "bigloo-19.html" :mark "g23563" :class "mark")
     ("sqlite-name-of-tables" :file "bigloo-19.html" :mark "sqlite-name-of-tables" :class "mark")
     ("g23582" :file "bigloo-19.html" :mark "g23582" :class "mark")
-    ("sqlite-name-of-columns" :file "bigloo-19.html" :mark "sqlite-name-of-columns" :class "mark")
+    ("sqlite-table-name-of-columns" :file "bigloo-19.html" :mark "sqlite-table-name-of-columns" :class "mark")
     ("g23597" :file "bigloo-19.html" :mark "g23597" :class "mark")
     ("sqlite-last-insert-rowid" :file "bigloo-19.html" :mark "sqlite-last-insert-rowid" :class "mark")
     ("Multimedia" :file "bigloo-20.html" :mark "Multimedia" :class "mark")

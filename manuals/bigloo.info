@@ -31,7 +31,7 @@ of the Scheme programming language.
 Indirect:
 bigloo.info-1: 1122
 bigloo.info-2: 305731
-bigloo.info-3: 612384
+bigloo.info-3: 612390
 
 Tag Table:
 (Indirect)
@@ -189,104 +189,104 @@ Node: SRFI-18467036
 Node: Mixing Thread APIs468011
 Node: Database470480
 Node: SQLite470696
-Node: Multimedia477141
-Node: Photography477992
-Node: Music480656
-Node: Metadata and Playlist481142
-Node: Mixer483192
-Node: Playback484705
-Node: MPD493796
-Node: Color495700
-Node: Mail496581
-Node: RFC 2045497180
-Node: RFC 2047499976
-Node: RFC 2426500991
-Node: RFC 2822502975
-Node: Mail servers504392
-Node: mailbox504879
-Node: imap510623
-Node: maildir512049
-Node: Text512618
-Node: BibTeX512832
-Node: Character strings514315
-Node: Character encodings517598
-Node: CSV517864
-Node: CSV Overview518209
-Node: API Reference518658
-Node: read-csv-record519000
-Node: read-csv-records519520
-Node: csv-for-each520074
-Node: csv-map520617
-Node: make-csv-lexer521188
-Node: +csv-lexer+521483
-Node: +tsv-lexer+521728
-Node: +psv-lexer+521959
-Node: Example522171
-Node: Eval522692
-Node: Eval compliance523006
-Node: Eval standard functions524170
-Node: Eval command line options532877
-Node: Eval and the foreign interface533927
-Node: Macro Expansion534427
-Node: Parameters536523
-Node: Explicit Typing540109
-Node: C Interface543095
-Node: The syntax of the foreign declarations545385
-Node: Automatic extern clauses generation546394
-Node: Importing an extern variable546983
-Node: Importing an extern function548096
-Node: Including an extern file549339
-Node: Exporting a Scheme variable549697
-Node: Defining an extern type550489
-Node: Atomic types552003
-Node: C structures and unions553474
-Node: C pointers556335
-Node: C null pointers558388
-Node: C arrays559213
-Node: C functions561219
-Node: C enums562386
-Node: C opaques563540
-Node: The very dangerous pragma Bigloo special forms565210
-Node: Name mangling567346
-Node: Embedded Bigloo applications569021
-Node: Using C bindings within the interpreter570314
-Node: Java Interface571680
-Node: Compiling with the JVM back-end572400
-Node: JVM back-end and SRFI-0574507
-Node: Limitation of the JVM back-end575315
-Node: Connecting Scheme and Java code576661
-Node: Automatic Java clauses generation578367
-Node: Declaring Java classes578950
-Node: Declaring abstract Java classes580658
-Node: Extending Java classes581130
-Node: Declaring Java arrays581824
-Node: Exporting Scheme variables583123
-Node: Bigloo module initialization583924
-Node: Performance of the JVM back-end584504
-Node: Bigloo Libraries585280
-Node: Extending the Runtime System612384
-Node: SRFIs612783
-Node: Compiler Description622825
-Node: Cross Compilation668433
-Node: User Extensions675300
-Node: Bee677789
-Node: Installing the Bee679669
-Node: Entering the Bee680454
-Node: The Bee Root Directory680829
-Node: Building a Makefile681561
-Node: Compiling682358
-Node: Interpreting682717
-Node: Pretty Printing683498
-Node: Expansing684054
-Node: On-line documentation684810
-Node: Searching for source code685845
-Node: Importing and Exporting686558
-Node: Debugging687715
-Node: Profiling688201
-Node: Revision control688788
-Node: Literate Programming689699
-Node: Global Index691681
-Node: Library Index846749
-Node: Bibliography846879
+Node: Multimedia477147
+Node: Photography477998
+Node: Music480662
+Node: Metadata and Playlist481148
+Node: Mixer483198
+Node: Playback484711
+Node: MPD493802
+Node: Color495706
+Node: Mail496587
+Node: RFC 2045497186
+Node: RFC 2047499982
+Node: RFC 2426500997
+Node: RFC 2822502981
+Node: Mail servers504398
+Node: mailbox504885
+Node: imap510629
+Node: maildir512055
+Node: Text512624
+Node: BibTeX512838
+Node: Character strings514321
+Node: Character encodings517604
+Node: CSV517870
+Node: CSV Overview518215
+Node: API Reference518664
+Node: read-csv-record519006
+Node: read-csv-records519526
+Node: csv-for-each520080
+Node: csv-map520623
+Node: make-csv-lexer521194
+Node: +csv-lexer+521489
+Node: +tsv-lexer+521734
+Node: +psv-lexer+521965
+Node: Example522177
+Node: Eval522698
+Node: Eval compliance523012
+Node: Eval standard functions524176
+Node: Eval command line options532883
+Node: Eval and the foreign interface533933
+Node: Macro Expansion534433
+Node: Parameters536529
+Node: Explicit Typing540115
+Node: C Interface543101
+Node: The syntax of the foreign declarations545391
+Node: Automatic extern clauses generation546400
+Node: Importing an extern variable546989
+Node: Importing an extern function548102
+Node: Including an extern file549345
+Node: Exporting a Scheme variable549703
+Node: Defining an extern type550495
+Node: Atomic types552009
+Node: C structures and unions553480
+Node: C pointers556341
+Node: C null pointers558394
+Node: C arrays559219
+Node: C functions561225
+Node: C enums562392
+Node: C opaques563546
+Node: The very dangerous pragma Bigloo special forms565216
+Node: Name mangling567352
+Node: Embedded Bigloo applications569027
+Node: Using C bindings within the interpreter570320
+Node: Java Interface571686
+Node: Compiling with the JVM back-end572406
+Node: JVM back-end and SRFI-0574513
+Node: Limitation of the JVM back-end575321
+Node: Connecting Scheme and Java code576667
+Node: Automatic Java clauses generation578373
+Node: Declaring Java classes578956
+Node: Declaring abstract Java classes580664
+Node: Extending Java classes581136
+Node: Declaring Java arrays581830
+Node: Exporting Scheme variables583129
+Node: Bigloo module initialization583930
+Node: Performance of the JVM back-end584510
+Node: Bigloo Libraries585286
+Node: Extending the Runtime System612390
+Node: SRFIs612789
+Node: Compiler Description622831
+Node: Cross Compilation668439
+Node: User Extensions675306
+Node: Bee677795
+Node: Installing the Bee679675
+Node: Entering the Bee680460
+Node: The Bee Root Directory680835
+Node: Building a Makefile681567
+Node: Compiling682364
+Node: Interpreting682723
+Node: Pretty Printing683504
+Node: Expansing684060
+Node: On-line documentation684816
+Node: Searching for source code685851
+Node: Importing and Exporting686564
+Node: Debugging687721
+Node: Profiling688207
+Node: Revision control688794
+Node: Literate Programming689705
+Node: Global Index691687
+Node: Library Index846755
+Node: Bibliography846885
 
 End Tag Table
