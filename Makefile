@@ -288,7 +288,7 @@ compile-bee0:
 	$(MAKE) -C bdl
 	$(MAKE) -C cigloo
 	if [ "$(JVMBACKEND) " = "yes " ]; then \
-            $(MAKE) -C higloo; \
+            $(MAKE) -C jigloo; \
         fi
 	if [ "$(EMACSDIR) " != " " ]; then \
             $(MAKE) -C bmacs compile-bee; \
