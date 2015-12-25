@@ -1620,6 +1620,7 @@ case $hostos in
     jshell="msdos"
     syszipdir=$zipdir
     syszipdirstr=$zipdir
+    gcconfigurethreadsopt="$gcconfigurethreadsopt --enable-parallel-mark=no"
     ;;
 
   darwin)
@@ -1852,7 +1853,11 @@ else
   fi
 
   # get the number of processors of the machine
-  if [ "$gcparallelmark " = " " ]; then
+  # and enable parallel mark unless we are building for
+  # mingw. The gc hangs randomly when configured for parallel mark
+  # on mingw, likely due to bug in the combination of  winpthreads
+  # and boehm gc
+  if [ "$gcparallelmark " = " " -a $hostos != "mingw"]; then
     nbprocs=`$autoconf nbprocs --cflags="$cflags"` || exit 1
 
     if [ "$nbprocs " = "0 " -o "$nbprocs " = "1 " ]; then
