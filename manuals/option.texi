@@ -368,7 +368,7 @@ Bigloo Control Variables:
      default: #f
    - *bigloo-name* : 
      The Bigloo name
-     default: "Bigloo (4.2b)"
+     default: "Bigloo (4.2c)"
    - *bigloo-specific-version* : 
      The Bigloo specific version
      default: ""
@@ -380,7 +380,7 @@ Bigloo Control Variables:
      default: ("-ldl" "-lunistring" "-lresolv" "-lgmp" "-lpcre" "-lm")
    - *bigloo-version* : 
      The Bigloo major release number
-     default: "4.2b"
+     default: "4.2c"
    - *bmem-profiling* : 
      Instrument code for bmem profiling
      default: #f
@@ -440,7 +440,7 @@ Bigloo Control Variables:
      default: "-pg -fno-inline -Wpointer-arith -Wswitch -Wtrigraphs -DBGL_BOOTCONFIG"
    - *cflags-rpath* : 
      The C compiler rpath option
-     default: ("/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b")
+     default: ("/home/serrano/prgm/project/bigloo/lib/bigloo/4.2c")
    - *compiler-debug* : 
      Debugging level
      default: 0
@@ -464,7 +464,7 @@ Bigloo Control Variables:
      default: 0
    - *default-lib-dir* : 
      Depreacted, don't use
-     default: "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b"
+     default: "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2c"
    - *dest* : 
      The target name
      default: #f
@@ -593,7 +593,7 @@ Bigloo Control Variables:
      default: "-g "
    - *ld-library-dir* : 
      Depreacted, don't use
-     default: "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b"
+     default: "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2c"
    - *ld-o-option* : 
      The C linker -o option
      default: "-o "
@@ -614,7 +614,7 @@ Bigloo Control Variables:
      default: "gcc"
    - *lib-dir* : 
      The lib dir path
-     default: ("." "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b")
+     default: ("." "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2c")
    - *lib-mode* : 
      Lib-mode compilation?
      default: #f
@@ -623,7 +623,7 @@ Bigloo Control Variables:
      default: "runtime"
    - *load-path* : 
      The load path
-     default: ("." "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2b")
+     default: ("." "/home/serrano/prgm/project/bigloo/lib/bigloo/4.2c")
    - *max-c-foreign-arity* : 
      Max C function arity
      default: 16

@@ -3,7 +3,7 @@
 #*    -------------------------------------------------------------    */
 #*    Author      :  Manuel Serrano                                    */
 #*    Creation    :  Wed Apr  1 18:45:46 1998                          */
-#*    Last change :  Wed Oct 14 07:01:00 2015 (serrano)                */
+#*    Last change :  Fri Dec  4 16:55:38 2015 (serrano)                */
 #*    -------------------------------------------------------------    */
 #*    The makefile to build the library.                               */
 #*=====================================================================*/
@@ -34,7 +34,7 @@ JFILE		= $(BGLBUILDBINDIR)/bgljfile.sh
 DEPEND		= $(BGLBUILDBINDIR)/bglbdepend.sh
 BTAGS		= $(BGLBUILDBINDIR)/bgltags.sh
 # Bigloo compilation options
-BAPIFLAGS	= $(BFLAGS) -I Llib -lib-dir $(BOOTLIBDIR) #-unsafe -safee
+BAPIFLAGS	= $(BFLAGS) -I Llib -lib-dir $(BOOTLIBDIR) -unsafe -safee
 CAPIFLAGS       = $(OPENSSLLIBSCFLAGS) 
 # Flags to build a heap
 BHEAPFLAGS	= -unsafe -q -mkaddheap -mkaddlib -L $(BOOTLIBDIR) -I Llib \
@@ -88,16 +88,24 @@ INCLUDES	= $(C_SRC_DIR)/bglssl.h $(C_SRC_DIR)/root_certs.h \
 #*---------------------------------------------------------------------*/
 #*    Java objects                                                     */
 #*---------------------------------------------------------------------*/
-ifeq ($(JAVA_VERSION), 1.7)
+ifeq ($(JAVA_VERSION), 1.9)
   JAVA_CLASSES_SRC+=$(CLASS_DIR)/certificate.java $(CLASS_DIR)/private_key.java
-else
- ifeq ($(JAVA_VERSION), 1.6)
-  JAVA_CLASSES_SRC+=$(CLASS_DIR)/certificate.java $(CLASS_DIR)/private_key.java
- else
-  ifeq ($(JAVA_VERSION), 1.5)
+else 
+  ifeq ($(JAVA_VERSION), 1.8)
     JAVA_CLASSES_SRC+=$(CLASS_DIR)/certificate.java $(CLASS_DIR)/private_key.java
+  else
+    ifeq ($(JAVA_VERSION), 1.7)
+      JAVA_CLASSES_SRC+=$(CLASS_DIR)/certificate.java $(CLASS_DIR)/private_key.java
+    else
+     ifeq ($(JAVA_VERSION), 1.6)
+      JAVA_CLASSES_SRC+=$(CLASS_DIR)/certificate.java $(CLASS_DIR)/private_key.java
+     else
+      ifeq ($(JAVA_VERSION), 1.5)
+        JAVA_CLASSES_SRC+=$(CLASS_DIR)/certificate.java $(CLASS_DIR)/private_key.java
+      endif
+     endif
+    endif
   endif
- endif
 endif
 
 #*---------------------------------------------------------------------*/
