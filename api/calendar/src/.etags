@@ -113,54 +113,54 @@ Llib/types.scm,3958
 
 Llib/icalendar.scm,1616
 (module __calendar_ical15,963
-(define (line?24,1189
-(define (make-line24,1189
-(define (fill-line!24,1189
-   (static (class line24,1189
-(define (line-name::symbol25,1212
-(define (line-params::pair-nil26,1244
-(define (line-val::bstring27,1280
-(define (line-fname-set!28,1312
-(define (line-fname28,1312
-(define (line-location-set!29,1325
-(define (line-location29,1325
-(define (block?31,1347
-(define (make-block31,1347
-(define (fill-block!31,1347
-	   (class block31,1347
-(define (block-l0::line32,1364
-(define (block-ln::line33,1392
-(define (block-body::pair-nil34,1420
-(define (write-icalendar39,1680
-(define (write-block67,2573
-(define (write-line75,2951
-(define (write-list90,3469
-(define (write-list-line101,3881
-(define (write-value116,4403
-(define (write-calevent143,5250
-(define (port->icalendar231,8183
-(define (read-block281,9793
-(define (read-block-body304,10583
-(define (line-show329,11408
-(define (is-line?337,11738
-(define (is-line-name?344,12057
-(define (is-line-value?350,12354
-(define (read-icalendar-line356,12653
-(define (parse-error362,12952
-(define-macro (lexer-error374,13399
-(define *contentline-lexer*388,13910
-(define *params-lexer*416,14984
-(define *param-name-lexer*430,15582
-(define *param-values-lexer*442,16150
-(define *value-lexer*474,17207
-(define *rrule-value-lexer*495,17908
-(define (vevent->calevent709,24096
-(define (icalendar-line-list->list779,26645
-(define (icalendar-date->date803,27426
-(define (int4->string836,28688
-(define (int2->string850,29192
-(define (date->icalendar-date867,29656
-(define (date->icalendar-date-time876,30086
+(define (line?26,1246
+(define (make-line26,1246
+(define (fill-line!26,1246
+   (static (class line26,1246
+(define (line-name::symbol27,1269
+(define (line-params::pair-nil28,1301
+(define (line-val::bstring29,1337
+(define (line-fname-set!30,1369
+(define (line-fname30,1369
+(define (line-location-set!31,1382
+(define (line-location31,1382
+(define (block?33,1404
+(define (make-block33,1404
+(define (fill-block!33,1404
+	   (class block33,1404
+(define (block-l0::line34,1421
+(define (block-ln::line35,1449
+(define (block-body::pair-nil36,1477
+(define (write-icalendar41,1737
+(define (write-block69,2630
+(define (write-line77,3008
+(define (write-list92,3526
+(define (write-list-line103,3938
+(define (write-value118,4460
+(define (write-calevent145,5307
+(define (port->icalendar233,8240
+(define (read-block283,9850
+(define (read-block-body306,10640
+(define (line-show331,11465
+(define (is-line?339,11795
+(define (is-line-name?346,12114
+(define (is-line-value?352,12411
+(define (read-icalendar-line358,12710
+(define (parse-error364,13009
+(define-macro (lexer-error376,13456
+(define *contentline-lexer*390,13967
+(define *params-lexer*418,15041
+(define *param-name-lexer*432,15639
+(define *param-values-lexer*444,16207
+(define *value-lexer*476,17264
+(define *rrule-value-lexer*497,17965
+(define (vevent->calevent711,24153
+(define (icalendar-line-list->list781,26702
+(define (icalendar-date->date805,27483
+(define (int4->string838,28745
+(define (int2->string852,29249
+(define (date->icalendar-date869,29713
+(define (date->icalendar-date-time878,30143
 
 Llib/utils.scm,271
 (module __calendar_utils15,963

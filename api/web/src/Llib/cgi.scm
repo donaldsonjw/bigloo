@@ -3,7 +3,7 @@
 ;*    -------------------------------------------------------------    */
 ;*    Author      :  Manuel Serrano                                    */
 ;*    Creation    :  Sun Feb 16 11:17:40 2003                          */
-;*    Last change :  Tue Oct 20 18:27:32 2015 (serrano)                */
+;*    Last change :  Fri Nov 27 08:15:54 2015 (serrano)                */
 ;*    Copyright   :  2003-15 Manuel Serrano                            */
 ;*    -------------------------------------------------------------    */
 ;*    CGI scripts handling                                             */
@@ -16,7 +16,7 @@
 
    (export (cgi-args->list::pair-nil ::bstring)
 	   (cgi-fetch-arg ::bstring ::bstring)
-	   (cgi-multipart->list ::bstring ::input-port ::elong ::bstring)
+	   (cgi-multipart->list ::obj ::input-port ::elong ::bstring)
 	   (cgi-post-arg-field ::obj ::pair-nil)))
 
 ;*---------------------------------------------------------------------*/
@@ -359,7 +359,8 @@
       (cgi-parse-content-disposition port)
       (let ((header (cgi-parse-header port)))
 	 (if (string? file)
-	     (cgi-read-file name header port file tmp boundary)
+	     (let ((dir (if (string? tmp) tmp (tmp))))
+		(cgi-read-file name header port file dir boundary))
 	     (cgi-read-data name header port boundary)))))
 
 ;*---------------------------------------------------------------------*/
@@ -384,7 +385,7 @@
        (raise
 	  (instantiate::&io-parse-error
 	     (proc "cgi-multipart->list")
-	     (msg "empty body")
+	     (msg (format "empty body [~a]" boundary))
 	     (obj port)))))
 
 ;*---------------------------------------------------------------------*/

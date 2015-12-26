@@ -5,7 +5,7 @@ START-INFO-DIR-ENTRY
 * bigloo: (bigloo).            The Bigloo Scheme compiler
 END-INFO-DIR-ENTRY
 
-4.2b
+4.2c
 
   This file documents Bigloo, an implementation of an extended version
 of the Scheme programming language.

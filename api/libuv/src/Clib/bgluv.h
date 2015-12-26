@@ -1,9 +1,9 @@
 /*===========================================================================*/
 /*   (Llib/uvtypes.scm)                                                      */
-/*   Bigloo (4.2b)                                                           */
-/*   Inria -- Sophia Antipolis (c)       Tue Oct 27 15:44:41 CET 2015        */
+/*   Bigloo (4.2c)                                                           */
+/*   Inria -- Sophia Antipolis (c)       Mon Dec 21 13:29:02 CET 2015        */
 /*===========================================================================*/
-/* COMPILATION: (/home/serrano/prgm/project/bigloo/bin/bigloo -O3 -fcfa-arithmetic -q -lib-dir /home/serrano/prgm/project/bigloo/lib/bigloo/4.2b -I Llib -lib-dir /home/serrano/prgm/project/bigloo/lib/bigloo/4.2b -srfi libuv -copt -I/home/serrano/prgm/project/bigloo/libuv/libuv-1.x-24jan2015/include -safee -unsafe -copt -fPIC -copt -IClib -copt  Llib/uvtypes.scm -o Clib/bgluv.h -hgen)*/
+/* COMPILATION: (/home/serrano/prgm/project/bigloo/bin/bigloo -O3 -fcfa-arithmetic -q -lib-dir /home/serrano/prgm/project/bigloo/lib/bigloo/4.2c -I Llib -lib-dir /home/serrano/prgm/project/bigloo/lib/bigloo/4.2c -srfi libuv -copt -I/home/serrano/prgm/project/bigloo/libuv/libuv-1.x-24jan2015/include -safee -unsafe -copt -fPIC -copt -IClib -copt  Llib/uvtypes.scm -o Clib/bgluv.h -hgen)*/
 
 /* Object type definitions */
 typedef struct BgL_z52uvz52_bgl {
