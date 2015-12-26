@@ -118,7 +118,7 @@ tm_to_date( struct tm *tm ) {
 /*    bgl_seconds_to_date ...                                          */
 /*---------------------------------------------------------------------*/
 BGL_RUNTIME_DEF obj_t
-bgl_seconds_to_date( BGL_LONG_T sec ) {
+bgl_seconds_to_date( BGL_LONG_T s ) {
    obj_t res;
    time_t sec = (time_t)s;
 
