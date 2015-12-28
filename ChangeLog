@@ -1,3 +1,60 @@
+2015-12-21  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Date minor fix (bootstrap)
+	<4.2a> [03993691451f]
+
+2015-12-10  Manuel Serrano <Manuel.Serrano@inria.fr>
+	libuv fix
+	<4.2a> [6c03d9f8ff60]
+
+2015-12-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor Java fix (bootstrap)
+	<4.2a> [6fe2d9ef69dc]
+
+2015-12-01  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Remove useless bind-exit (bootstrap)
+	<4.2a> [1f75d49bad3f]
+
+2015-11-30  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Enable define-inline inside function body (bootstrap)
+	<4.2a> [ed2e6fdfb900]
+
+2015-11-26  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Minor api/web speed improvement (bootstrap)
+	<4.2a> [6e4ab095834f]
+
+2015-11-23  Manuel Serrano <Manuel.Serrano@inria.fr>
+	No-gmp configuration
+	<4.2a> [b5bc27e31868]
+
+	Fix C current-date (2)
+	<4.2a> [6f54e4713bee]
+
+	Fix C current-date
+	<4.2a> [c52c59330272]
+
+2015-11-19  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Fix openssl autoconfiguration
+	<4.2a> [f96f3448a83b]
+
+2015-11-18  Manuel Serrano <Manuel.Serrano@inria.fr>
+	SSL configuration (bootstrap)
+	<4.2a> [38f345efd021]
+
+2015-11-17  Manuel Serrano <Manuel.Serrano@inria.fr>
+	SSL fix (bootstrap)
+	<4.2a> [fdca1bec4438]
+
+2015-11-08  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Ronly class fields (bootstrap)
+	<4.2a> [97d15ee35aa6]
+
+2015-11-04  Manuel Serrano <Manuel.Serrano@inria.fr>
+	Added tag 4.2c for changeset 2b69f9d96f02
+	<4.2a> [6c00b5d92e07]
+
+	Fix json parsing (bootstrap)
+	<4.2a> [2b69f9d96f02]
+
 2015-10-19  Manuel Serrano <Manuel.Serrano@inria.fr>
 	tlsv1_2 (bootstrap)
 	<4.2a> [a8a8ed770a3d]

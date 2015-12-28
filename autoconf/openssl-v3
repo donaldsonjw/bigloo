@@ -1,19 +1,19 @@
 #!/bin/sh
 #*=====================================================================*/
-#*    serrano/prgm/project/bigloo/autoconf/pthreadlocalstorage         */
+#*    serrano/prgm/project/bigloo/autoconf/openssl-v2                  */
 #*    -------------------------------------------------------------    */
 #*    Author      :  Manuel Serrano                                    */
 #*    Creation    :  Wed Aug  9 13:27:23 1995                          */
-#*    Last change :  Wed Dec 16 06:45:23 2015 (serrano)                */
+#*    Last change :  Mon May  4 18:01:40 2015 (serrano)                */
 #*    -------------------------------------------------------------    */
-#*    Check if the host supports pthread local storage.                */
+#*    Check for the host openssl library.                              */
 #*=====================================================================*/
 
 #*---------------------------------------------------------------------*/
 #*    flags                                                            */
 #*---------------------------------------------------------------------*/
 cflags=
-pthreadlibs="-lpthread"
+openssllibs=
 
 #*---------------------------------------------------------------------*/
 #*    We parse the arguments                                           */
@@ -27,7 +27,7 @@ while : ; do
       cflags="`echo $1 | sed 's/^[-a-z]*=//'`";;
 
     --lib=*|-lib=*)
-      pthreadlibs="`echo $1 | sed 's/^[-a-z]*=//'`";;
+      openssllibs="`echo $1 | sed 's/^[-a-z]*=//'`";;
 
     -*)
       echo "Unknown option \"$1\", ignored" >&2;;
@@ -35,6 +35,15 @@ while : ; do
   shift
 done
 
+if [ "$openssllibs " = " " ]; then
+  case $HOSTOS in
+    mingw)
+      openssllibs="-leay32 -lssleay32";;
+
+    *)
+      openssllibs="-lssl";;
+  esac
+fi
 
 file=$TMP/actest$USER
 aout=$TMP/Xactest$USER
@@ -42,7 +51,7 @@ aout=$TMP/Xactest$USER
 #*---------------------------------------------------------------------*/
 #*    compile                                                          */
 #*---------------------------------------------------------------------*/
-compile="$CC $cflags $file.c -o $aout $pthreadlibs >/dev/null"
+compile="$CC $cflags $file.c -o $aout $openssllibs >/dev/null"
 
 #*---------------------------------------------------------------------*/
 #*    The test C file                                                  */
@@ -55,38 +64,21 @@ fi
 #*    Test                                                             */
 #*---------------------------------------------------------------------*/
 cat > $file.c <<EOF
-#include <pthread.h>
-#include <stdio.h>
+#include <openssl/ssl.h>
+#include <openssl/bio.h>
 
-static __thread int tls;
+static SSL_CTX *ctx;
 
-main( int argc, char *argv[] ) {
-#if defined( __GNUC__ )
-   pthread_mutex_t mutex;
-   pthread_cond_t cv;
-   pthread_t thread;
-   pthread_key_t key;
-   
-   tls = 23;
+int main( int argc, char *argv[] ) {
+    BIO *sbio;
 
-   pthread_key_create( &key, 0L );
-   pthread_mutex_init( &mutex, 0L );
-   pthread_cond_init( &cv, 0L );
-   pthread_create( &thread, 0L, 0L, 0L );
-   printf( "%d\n", tls );
+    SSL_library_init();
+    SSL_load_error_strings();
 
-   pthread_mutex_lock( &mutex );
-   pthread_cond_wait( &cv, &mutex );
-   pthread_mutex_unlock( &mutex );
-
-   pthread_mutex_timedlock( &mutex, 0 );
-   pthread_cond_signal( &cv );
-   pthread_mutex_unlock( &mutex );
-
-   pthread_join( thread, 0L );
-#else
-   -> no tls without gcc
-#endif
+    ctx = SSL_CTX_new( SSLv2_server_method() );
+ 
+    sbio = BIO_new_socket( 0, BIO_NOCLOSE );
+    BIO_free( sbio );
 }
 EOF
 

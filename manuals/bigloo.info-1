@@ -5,7 +5,7 @@ START-INFO-DIR-ENTRY
 * bigloo: (bigloo).            The Bigloo Scheme compiler
 END-INFO-DIR-ENTRY
 
-4.2b
+4.2c
 
   This file documents Bigloo, an implementation of an extended version
 of the Scheme programming language.
@@ -113,7 +113,7 @@ mine.
 please forgive me and send a mail message to the following address:
 <bigloo@sophia.inria.fr>.
 
-  This is Bigloo documentation version 4.2b, October 2015.
+  This is Bigloo documentation version 4.2c, December 2015.
 
 
 File: bigloo.info,  Node: Overview,  Next: Modules,  Prev: Acknowledgements,  Up: Top
@@ -146,7 +146,7 @@ and not fully described.
 1.1 SRFI
 ========
 
-The Bigloo version 4.2b supports the following SRFIs:
+The Bigloo version 4.2c supports the following SRFIs:
 
    * 'srfi-0' (conditional execution).
    * 'srfi-2' (AND-LET*: an AND with local bindings, a guarded LET*

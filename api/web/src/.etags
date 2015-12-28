@@ -254,24 +254,24 @@ Llib/css_parser.scm,1976
 
 Llib/cgi.scm,659
 (module __web_cgi15,963
-(define (hex-string-ref25,1404
-(define (unhex+!38,1961
-(define (cgi-args->list62,2790
-(define (cgi-fetch-arg88,3711
-(define (fill-line!96,4069
-(define (read-name114,4710
-(define cgi-content-disposition123,5098
-(define (cgi-parse-content-disposition128,5396
-(define (cgi-parse-header156,6407
-(define tmp-file-mutex201,7839
-(define (make-tmp-file206,8089
-(define (cgi-read-file225,8768
-(define cgi-multipart-data-grammar245,9658
-(define cgi-multipart-boundary-grammar298,11479
-(define (cgi-read-data349,13207
-(define (cgi-parse-entry357,13637
-(define (cgi-multipart->list368,14159
-(define (cgi-post-arg-field393,15049
+(define (hex-string-ref25,1400
+(define (unhex+!38,1957
+(define (cgi-args->list62,2786
+(define (cgi-fetch-arg88,3707
+(define (fill-line!96,4065
+(define (read-name114,4706
+(define cgi-content-disposition123,5094
+(define (cgi-parse-content-disposition128,5392
+(define (cgi-parse-header156,6403
+(define tmp-file-mutex201,7835
+(define (make-tmp-file206,8085
+(define (cgi-read-file225,8764
+(define cgi-multipart-data-grammar245,9654
+(define cgi-multipart-boundary-grammar298,11475
+(define (cgi-read-data349,13203
+(define (cgi-parse-entry357,13633
+(define (cgi-multipart->list369,14200
+(define (cgi-post-arg-field394,15113
 
 Llib/rss.scm,201
 (module __web_rss15,963
@@ -357,9 +357,10 @@ Llib/date.scm,176
 (define (w3c-datetime->date98,4308
 (define (date->w3c-datetime115,4940
 
-Llib/json.scm,143
+Llib/json.scm,166
 (module __web_json15,963
 (define-macro (return29,1487
 (define *json-lexer*40,2033
 (define (ucs2->utf8118,4418
-(define (json-parse163,5904
+(define *eot*163,5904
+(define (json-parse168,6153
